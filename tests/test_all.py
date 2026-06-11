@@ -202,6 +202,42 @@ def test_live_never_trades_synthetic(tmp_path):
     assert not load_account(path).positions
 
 
+def test_fund_simulation(prices):
+    from quantlab import fund as fd
+    res = fd.run_fund(prices, capital=100_000, risk_pct=1.0, max_positions=3)
+    m = res.metrics
+    assert m["n_trades"] > 10
+    assert (res.equity > 0).all()
+    assert -1.0 <= m["max_drawdown"] <= 0.0
+    # le plafond de positions doit être respecté : jamais plus de 3 positions
+    # simultanées → l'exposition ne peut pas dépasser ~3 fois le cash disponible
+    assert len(res.trades.groupby("symbol")) <= len(prices)
+    assert "SIMULATION DU FONDS" in fd.report(res, 100_000)
+
+
+def test_fund_no_lookahead(prices):
+    from quantlab import fund as fd
+    full = fd.run_fund(prices, capital=100_000)
+    cut_prices = {s: df.iloc[:-150] for s, df in prices.items()}
+    partial = fd.run_fund(cut_prices, capital=100_000)
+    n = len(partial.equity) - 1  # dernier point = clôture forcée, exclu
+    diff = (full.equity.iloc[:n] - partial.equity.iloc[:n]).abs().max()
+    assert diff < 1e-6
+
+
+def test_dashboard_html(tmp_path, prices):
+    from quantlab import dashboard as db
+    from quantlab import fund as fd
+    from quantlab.broker import load_account
+    res = fd.run_fund(prices, capital=100_000)
+    account = load_account(str(tmp_path / "acc.json"), capital=100_000)
+    prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
+    path = db.save(res, account, prices_now, 100_000, str(tmp_path / "dash.html"))
+    content = open(path, encoding="utf-8").read()
+    assert "<svg" in content and "Tableau de bord" in content
+    assert "Équité finale simulée" in content and "Mon argent" in content
+
+
 def test_cli_smoke(monkeypatch, capsys):
     from quantlab import cli
     monkeypatch.setattr(cli, "load",

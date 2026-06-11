@@ -16,6 +16,8 @@ Exemples :
   python -m quantlab all        --symbol SPY
   python -m quantlab live                      # cycle de trading papier (marché réel)
   python -m quantlab account                   # état du compte papier
+  python -m quantlab fund --capital 100000     # simulation du fonds complet (entraînement)
+  python -m quantlab dashboard                 # tableau de bord HTML (état de l'argent)
 """
 
 from __future__ import annotations
@@ -25,7 +27,9 @@ import sys
 
 from . import alpha as al
 from . import backtest as bt
+from . import dashboard as db
 from . import drawdown as dd
+from . import fund as fd
 from . import live as lv
 from . import macro as mcr
 from . import montecarlo as mc
@@ -112,6 +116,13 @@ def main(argv: list[str] | None = None) -> int:
                     help="réinitialise le compte papier au capital de départ")
     sp.add_argument("--max-positions", type=int, default=3)
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
+    sp = sub.add_parser("fund", help="Simulation du fonds complet (entraînement)")
+    common(sp, symbol=False, symbols=True)
+    sp.add_argument("--max-positions", type=int, default=5)
+    sp = sub.add_parser("dashboard", help="Génère le tableau de bord HTML")
+    common(sp, symbol=False, symbols=True)
+    sp.add_argument("--max-positions", type=int, default=5)
+    sp.add_argument("--open", action="store_true", help="ouvre le fichier dans le navigateur")
 
     args = p.parse_args(argv)
 
@@ -173,6 +184,23 @@ def main(argv: list[str] | None = None) -> int:
 
     elif args.cmd == "account":
         print(lv.account_report())
+
+    elif args.cmd == "fund":
+        prices, _ = _load_many(args.symbols, args.years)
+        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
+        print(fd.report(res, args.capital))
+
+    elif args.cmd == "dashboard":
+        from .broker import load_account
+        prices, _ = _load_many(args.symbols, args.years)
+        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
+        account = load_account(capital=args.capital)
+        prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
+        path = db.save(res, account, prices_now, args.capital)
+        print(f"Tableau de bord généré : {path}")
+        if args.open:
+            import webbrowser
+            webbrowser.open(path)
 
     elif args.cmd == "all":
         df, src = load(args.symbol, args.years)

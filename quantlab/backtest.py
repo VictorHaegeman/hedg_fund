@@ -134,7 +134,12 @@ def max_drawdown(equity: pd.Series) -> float:
 
 def compute_metrics(equity: pd.Series, trades: pd.DataFrame, capital: float) -> dict:
     rets = equity.pct_change().dropna()
-    n_years = max(len(equity) / 252.0, 1e-9)
+    # Années calculées sur les dates réelles : un calendrier mixte actions (5j/7)
+    # + crypto (7j/7) fausserait le compte de barres / 252
+    if isinstance(equity.index, pd.DatetimeIndex) and len(equity) > 1:
+        n_years = max((equity.index[-1] - equity.index[0]).days / 365.25, 1e-9)
+    else:
+        n_years = max(len(equity) / 252.0, 1e-9)
     total_return = float(equity.iloc[-1] / capital - 1)
     cagr = float((equity.iloc[-1] / capital) ** (1 / n_years) - 1)
     vol = float(rets.std() * np.sqrt(252)) if len(rets) > 1 else 0.0

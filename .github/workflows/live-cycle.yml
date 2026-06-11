@@ -27,12 +27,14 @@ jobs:
       - name: Exécuter le cycle live
         run: |
           mkdir -p live_logs
-          python -m quantlab live | tee "live_logs/$(date -u +%F).txt"
+          python -m quantlab live --capital 100000 | tee "live_logs/$(date -u +%F).txt"
+      - name: Régénérer le tableau de bord
+        run: python -m quantlab dashboard --capital 100000 --years 10
       - name: Committer l'état du compte
         run: |
           git config user.name "quantlab-bot"
           git config user.email "actions@github.com"
-          git add paper_account.json live_logs/
+          git add paper_account.json live_logs/ dashboard.html
           git diff --cached --quiet || git commit -m "live: cycle du $(date -u +%F)"
           git pull --rebase origin main
           git push

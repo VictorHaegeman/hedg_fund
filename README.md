@@ -72,6 +72,23 @@ La couche `broker.py` est conçue pour être remplaçable par un connecteur rée
 mais aucun capital ne devrait y passer avant plusieurs mois de paper trading
 satisfaisants.
 
+## Simulation du fonds & tableau de bord
+
+```powershell
+python -m quantlab fund --capital 100000 --years 10        # entraînement : le fonds complet sur l'historique
+python -m quantlab dashboard --capital 100000 --open       # tableau de bord HTML (état de l'argent)
+```
+
+`fund` rejoue la logique exacte du mode live sur l'historique : 5 actifs,
+3 stratégies en parallèle, capital partagé, max 5 positions, risque 1 %/trade.
+`dashboard` génère `dashboard.html` (courbe d'équité, drawdown, rendements
+annuels, positions du compte papier, derniers trades) — régénéré chaque jour
+par le workflow live.
+
+Résultat de l'entraînement 2016→2026 avec 100 000 $ : équité finale ~474 000 $
+(CAGR +16,8 %/an, Sharpe 0,94, max drawdown −20,3 %, 333 trades, win rate 60 %).
+Performance simulée — aucune garantie future.
+
 ## Options communes
 
 - `--symbol SPY` / `--symbols SPY QQQ ...` — tickers Yahoo Finance (`BTC-USD`, `EURUSD=X`, …)
