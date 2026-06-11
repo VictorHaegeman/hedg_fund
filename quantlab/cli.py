@@ -11,6 +11,8 @@ Exemples :
   python -m quantlab setups     --symbols SPY QQQ BTC-USD
   python -m quantlab montecarlo --strategy trend --symbol SPY
   python -m quantlab drawdown   --strategy trend --symbol SPY
+  python -m quantlab macro
+  python -m quantlab alpha      --symbol SPY
   python -m quantlab all        --symbol SPY
 """
 
@@ -19,8 +21,10 @@ from __future__ import annotations
 import argparse
 import sys
 
+from . import alpha as al
 from . import backtest as bt
 from . import drawdown as dd
+from . import macro as mcr
 from . import montecarlo as mc
 from . import multifactor as mf
 from . import optimize as opt
@@ -96,7 +100,9 @@ def main(argv: list[str] | None = None) -> int:
     common(sp, strategy=True)
     sp.add_argument("--paths", type=int, default=5_000)
     common(sub.add_parser("drawdown", help="Module 10 — drawdowns"), strategy=True)
-    common(sub.add_parser("all", help="Exécute les 10 modules"), strategy=True)
+    common(sub.add_parser("macro", help="Module 11 — stratégie macro"), symbol=False)
+    common(sub.add_parser("alpha", help="Module 12 — détection d'alpha/edge"))
+    common(sub.add_parser("all", help="Exécute les 12 modules"), strategy=True)
 
     args = p.parse_args(argv)
 
@@ -139,11 +145,22 @@ def main(argv: list[str] | None = None) -> int:
         res, _, _ = _run_bt(args)
         print(dd.report(res))
 
+    elif args.cmd == "macro":
+        prices, sources = _load_many(mcr.PROXIES + ["SPY", "QQQ", "GLD", "TLT"],
+                                     args.years)
+        print(mcr.report(prices, sources, args.capital, args.risk))
+
+    elif args.cmd == "alpha":
+        df, src = load(args.symbol, args.years)
+        print(al.report(df, args.symbol, src))
+
     elif args.cmd == "all":
         df, src = load(args.symbol, args.years)
         res = bt.run_backtest(df, get_strategy(args.strategy), args.capital,
                               args.risk, symbol=args.symbol, source=src)
         prices, sources = _load_many(DEFAULT_UNIVERSE, args.years)
+        macro_prices, macro_sources = _load_many(
+            mcr.PROXIES + ["SPY", "QQQ", "GLD", "TLT"], args.years)
         blocks = [
             describe_all(args.capital, args.risk),
             bt.report(res),
@@ -155,6 +172,8 @@ def main(argv: list[str] | None = None) -> int:
             st.report(prices, args.capital, args.risk),
             mc.report(res),
             dd.report(res),
+            mcr.report(macro_prices, macro_sources, args.capital, args.risk),
+            al.report(df, args.symbol, src),
         ]
         print(("\n\n" + "#" * 78 + "\n\n").join(blocks))
 

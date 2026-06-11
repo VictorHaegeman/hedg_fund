@@ -4,8 +4,10 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from quantlab import alpha as al
 from quantlab import backtest as bt
 from quantlab import drawdown as dd
+from quantlab import macro as mcr
 from quantlab import montecarlo as mc
 from quantlab import multifactor as mf
 from quantlab import optimize as opt
@@ -133,6 +135,28 @@ def test_module10_drawdown(result):
     assert "MODULE 10" in text and "position sizing" in text
 
 
+def test_module11_macro():
+    prices = {s: synthetic_ohlcv(s, years=5, seed=i)
+              for i, s in enumerate(mcr.PROXIES + ["SPY", "QQQ", "GLD", "TLT"])}
+    m = mcr.detect_macro(prices)
+    assert m["rates"][0] in ("up", "down")
+    assert m["quadrant"] in [q[0] for q in mcr.QUADRANTS.values()] or "(" in m["quadrant"]
+    assert len(m["favor"]) >= 1
+    text = mcr.report(prices, {s: "synthetic" for s in prices})
+    assert "MODULE 11" in text and "QUADRANT MACRO" in text and "LONG" in text
+
+
+def test_module12_alpha(df):
+    edges = al.detect_edges(df)
+    assert len(edges) == 4
+    assert all(np.isfinite(e["tstat"]) for e in edges)
+    # classement décroissant par |t|
+    ts = [abs(e["tstat"]) for e in edges]
+    assert ts == sorted(ts, reverse=True)
+    text = al.report(df, "TEST")
+    assert "MODULE 12" in text and "STRATÉGIE UNIQUE 2" in text and "pas à pas" in text
+
+
 def test_cli_smoke(monkeypatch, capsys):
     from quantlab import cli
     monkeypatch.setattr(cli, "load",
@@ -141,5 +165,7 @@ def test_cli_smoke(monkeypatch, capsys):
     assert cli.main(["strategies"]) == 0
     assert cli.main(["backtest", "--strategy", "meanrev", "--symbol", "X"]) == 0
     assert cli.main(["regime", "--symbol", "X"]) == 0
+    assert cli.main(["macro"]) == 0
+    assert cli.main(["alpha", "--symbol", "X"]) == 0
     out = capsys.readouterr().out
-    assert "MODULE 4" in out
+    assert "MODULE 4" in out and "MODULE 11" in out and "MODULE 12" in out

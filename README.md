@@ -1,7 +1,7 @@
 # quantlab — Boîte à outils quantitative de trading
 
-Implémentation fonctionnelle des 10 modules d'analyse de trading (génération de
-stratégies → analyse des drawdowns), en Python, avec données réelles Yahoo Finance
+Implémentation fonctionnelle des 12 modules d'analyse de trading (génération de
+stratégies → détection d'alpha), en Python, avec données réelles Yahoo Finance
 (cache local) et fallback synthétique hors-ligne.
 
 > ⚠️ **Avertissement** : outil d'étude et de recherche. Rien ici n'est un conseil
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 python -m pytest tests/ -q        # vérification : 14 tests
 ```
 
-## Les 10 modules
+## Les 12 modules
 
 | # | Module | Commande |
 |---|--------|----------|
@@ -29,6 +29,8 @@ python -m pytest tests/ -q        # vérification : 14 tests
 | 8 | Trade setups (entrée/stop/TP/R:R + raisonnement) | `python -m quantlab setups` |
 | 9 | Monte Carlo (P(perte), distribution, pires scénarios, verdict) | `python -m quantlab montecarlo --strategy trend --symbol SPY` |
 | 10 | Analyse des drawdowns (profondeur, récupération, sizing) | `python -m quantlab drawdown --strategy trend --symbol SPY` |
+| 11 | Stratégie macro (taux ^TNX, inflation TIP/IEF, croissance XLY/XLP, quadrants) | `python -m quantlab macro` |
+| 12 | Détection d'alpha/edge (4 anomalies mesurées avec t-stats, 2 stratégies) | `python -m quantlab alpha --symbol SPY` |
 
 Tout enchaîner sur un actif :
 
@@ -63,8 +65,9 @@ quantlab/
   risk.py         # Module 3    regime.py      # Module 4    multifactor.py # Module 5
   optimize.py     # Module 6    portfolio.py   # Module 7    setups.py      # Module 8
   montecarlo.py   # Module 9    drawdown.py    # Module 10
+  macro.py        # Module 11   alpha.py       # Module 12
   cli.py          # point d'entrée argparse
-tests/test_all.py # 14 tests (déterministes, hors-ligne) dont absence de look-ahead
+tests/test_all.py # 16 tests (déterministes, hors-ligne) dont absence de look-ahead
 ```
 
 Points de rigueur du backtester : signal à la clôture J → exécution à l'open J+1
