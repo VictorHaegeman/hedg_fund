@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data_cache/
+.jolli/
+.claude/settings.local.json
