@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "quantlab-bot"
           git config user.email "actions@github.com"
-          git add paper_account.json live_logs/ dashboard.html
+          git add paper_account.json live_logs/ docs/
           git diff --cached --quiet || git commit -m "live: cycle du $(date -u +%F)"
           git pull --rebase origin main
           git push

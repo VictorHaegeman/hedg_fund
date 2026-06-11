@@ -19,8 +19,9 @@ from .backtest import BacktestResult, yearly_returns
 from .broker import Account
 from .drawdown import drawdown_series
 
+# Publié via GitHub Pages (dossier docs/) : le dashboard est servi en ligne
 OUT_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dashboard.html")
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "index.html")
 
 
 def _downsample(s: pd.Series, n: int = 700) -> pd.Series:
@@ -199,6 +200,7 @@ Aucun ordre réel n'est passé.</div>
 
 def save(fund_res: BacktestResult, account: Account, prices_now: dict[str, float],
          capital_sim: float, path: str = OUT_PATH) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(render_html(fund_res, account, prices_now, capital_sim))
     return path

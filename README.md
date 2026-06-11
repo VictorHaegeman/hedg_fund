@@ -81,9 +81,10 @@ python -m quantlab dashboard --capital 100000 --open       # tableau de bord HTM
 
 `fund` rejoue la logique exacte du mode live sur l'historique : 5 actifs,
 3 stratégies en parallèle, capital partagé, max 5 positions, risque 1 %/trade.
-`dashboard` génère `dashboard.html` (courbe d'équité, drawdown, rendements
+`dashboard` génère `docs/index.html` (courbe d'équité, drawdown, rendements
 annuels, positions du compte papier, derniers trades) — régénéré chaque jour
-par le workflow live.
+par le workflow live et **publié en ligne via GitHub Pages** :
+<https://victorhaegeman.github.io/hedg_fund/>
 
 Résultat de l'entraînement 2016→2026 avec 100 000 $ : équité finale ~474 000 $
 (CAGR +16,8 %/an, Sharpe 0,94, max drawdown −20,3 %, 333 trades, win rate 60 %).
