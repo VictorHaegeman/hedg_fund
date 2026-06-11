@@ -83,11 +83,20 @@ def _pos_color(x: float) -> str:
 
 
 def render_html(fund_res: BacktestResult, account: Account,
-                prices_now: dict[str, float], capital_sim: float) -> str:
+                prices_now: dict[str, float], capital_sim: float,
+                benchmark: dict | None = None) -> str:
     m = fund_res.metrics
     eq_live = account.equity(prices_now)
     pnl_live = eq_live - account.initial_capital
     pnl_live_pct = (eq_live / account.initial_capital - 1) * 100
+
+    bench_card = ""
+    if benchmark:
+        diff = eq_live - benchmark["equity"]
+        bench_card = _card(
+            f"Si tout était sur {benchmark['label']}",
+            f"{benchmark['equity']:,.2f} $",
+            f"fonds vs ETF : {diff:+,.2f} $", _pos_color(diff))
 
     dd = drawdown_series(fund_res.equity)
     yr = yearly_returns(fund_res.equity)
@@ -167,6 +176,7 @@ def render_html(fund_res: BacktestResult, account: Account,
          _pos_color(pnl_live))}
   {_card("PnL depuis le départ", f"{pnl_live:+,.2f} $", f"{pnl_live_pct:+.2f} %",
          _pos_color(pnl_live))}
+  {bench_card}
   {_card("Cash disponible", f"{account.cash:,.2f} $")}
   {_card("Positions ouvertes", f"{len(account.positions)}")}
   {_card("Trades clôturés", f"{len(account.history)}")}
@@ -198,9 +208,22 @@ Aucun ordre réel n'est passé.</div>
 </body></html>"""
 
 
+def spy_benchmark(account: Account, spy_df: pd.DataFrame) -> dict | None:
+    """Valeur de initial_capital investi en buy & hold SPY depuis la création du compte."""
+    try:
+        created = pd.Timestamp(str(account.created)[:10])
+    except (ValueError, TypeError):
+        return None
+    after = spy_df.loc[spy_df.index >= created, "Close"]
+    base = float(after.iloc[0]) if len(after) else float(spy_df["Close"].iloc[-1])
+    return {"label": "SPY (buy & hold)",
+            "equity": account.initial_capital * float(spy_df["Close"].iloc[-1]) / base}
+
+
 def save(fund_res: BacktestResult, account: Account, prices_now: dict[str, float],
-         capital_sim: float, path: str = OUT_PATH) -> str:
+         capital_sim: float, path: str = OUT_PATH,
+         benchmark: dict | None = None) -> str:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
-        f.write(render_html(fund_res, account, prices_now, capital_sim))
+        f.write(render_html(fund_res, account, prices_now, capital_sim, benchmark))
     return path

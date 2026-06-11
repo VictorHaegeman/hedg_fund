@@ -196,7 +196,8 @@ def main(argv: list[str] | None = None) -> int:
         res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
         account = load_account(capital=args.capital)
         prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
-        path = db.save(res, account, prices_now, args.capital)
+        bench = db.spy_benchmark(account, prices["SPY"]) if "SPY" in prices else None
+        path = db.save(res, account, prices_now, args.capital, benchmark=bench)
         print(f"Tableau de bord généré : {path}")
         if args.open:
             import webbrowser
