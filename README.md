@@ -38,6 +38,40 @@ Tout enchaîner sur un actif :
 python -m quantlab all --strategy trend --symbol SPY
 ```
 
+## Mode marché réel (paper trading)
+
+Le système trade le **vrai marché** en compte papier : données réelles
+rafraîchies à chaque exécution, ordres simulés, stops/targets suivis, état
+persistant dans `paper_account.json`.
+
+```powershell
+python -m quantlab live              # un cycle : gère les positions + nouvelles entrées
+python -m quantlab account           # état du compte (équité, positions, historique)
+python -m quantlab live --reset      # remet le compte à $10 000
+```
+
+Logique d'un cycle : télécharge les dernières données (cache ignoré) → vérifie
+stop/target/signaux de sortie des positions ouvertes → ouvre les nouvelles
+positions dont le signal vient de se déclencher **et** dont le régime de marché
+(module 4) est favorable, max 3 positions, sizing 1 % de risque par trade.
+
+**Sécurité** : si les données réelles d'un symbole sont indisponibles, le
+symbole est ignoré pour le cycle — aucun ordre n'est jamais passé sur des prix
+synthétiques (testé).
+
+**Automatisation** : le workflow GitHub Actions
+[live-cycle.yml](.github/workflows/live-cycle.yml) exécute le cycle chaque jour
+de semaine après la clôture US (22:30 UTC) et committe `paper_account.json` +
+le journal dans `live_logs/`. Lançable aussi manuellement (onglet Actions →
+Run workflow). En local, planifiable via le Planificateur de tâches Windows :
+`python -m quantlab live` une fois par jour.
+
+**Passage aux ordres réels** : il faudrait un compte de courtage avec API
+(ex. Alpaca paper/live, Binance pour la crypto) et des clés API personnelles.
+La couche `broker.py` est conçue pour être remplaçable par un connecteur réel —
+mais aucun capital ne devrait y passer avant plusieurs mois de paper trading
+satisfaisants.
+
 ## Options communes
 
 - `--symbol SPY` / `--symbols SPY QQQ ...` — tickers Yahoo Finance (`BTC-USD`, `EURUSD=X`, …)
@@ -66,8 +100,11 @@ quantlab/
   optimize.py     # Module 6    portfolio.py   # Module 7    setups.py      # Module 8
   montecarlo.py   # Module 9    drawdown.py    # Module 10
   macro.py        # Module 11   alpha.py       # Module 12
+  broker.py       # courtier papier persistant (paper_account.json)
+  live.py         # cycle de trading sur le marché réel
   cli.py          # point d'entrée argparse
-tests/test_all.py # 16 tests (déterministes, hors-ligne) dont absence de look-ahead
+tests/test_all.py # 19 tests (déterministes, hors-ligne) dont absence de look-ahead
+.github/workflows # CI pytest + cycle live quotidien automatisé
 ```
 
 Points de rigueur du backtester : signal à la clôture J → exécution à l'open J+1

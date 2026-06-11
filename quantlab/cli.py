@@ -14,6 +14,8 @@ Exemples :
   python -m quantlab macro
   python -m quantlab alpha      --symbol SPY
   python -m quantlab all        --symbol SPY
+  python -m quantlab live                      # cycle de trading papier (marché réel)
+  python -m quantlab account                   # état du compte papier
 """
 
 from __future__ import annotations
@@ -24,6 +26,7 @@ import sys
 from . import alpha as al
 from . import backtest as bt
 from . import drawdown as dd
+from . import live as lv
 from . import macro as mcr
 from . import montecarlo as mc
 from . import multifactor as mf
@@ -103,6 +106,12 @@ def main(argv: list[str] | None = None) -> int:
     common(sub.add_parser("macro", help="Module 11 — stratégie macro"), symbol=False)
     common(sub.add_parser("alpha", help="Module 12 — détection d'alpha/edge"))
     common(sub.add_parser("all", help="Exécute les 12 modules"), strategy=True)
+    sp = sub.add_parser("live", help="Cycle de trading papier sur le marché réel")
+    common(sp, symbol=False, symbols=True)
+    sp.add_argument("--reset", action="store_true",
+                    help="réinitialise le compte papier au capital de départ")
+    sp.add_argument("--max-positions", type=int, default=3)
+    common(sub.add_parser("account", help="État du compte papier"), symbol=False)
 
     args = p.parse_args(argv)
 
@@ -153,6 +162,17 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "alpha":
         df, src = load(args.symbol, args.years)
         print(al.report(df, args.symbol, src))
+
+    elif args.cmd == "live":
+        if args.reset:
+            from .broker import reset_account
+            reset_account(capital=args.capital)
+            print(f"Compte papier réinitialisé à ${args.capital:,.0f}.")
+        print(lv.run_cycle(args.symbols, args.capital, args.risk,
+                           max_positions=args.max_positions))
+
+    elif args.cmd == "account":
+        print(lv.account_report())
 
     elif args.cmd == "all":
         df, src = load(args.symbol, args.years)

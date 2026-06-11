@@ -99,9 +99,12 @@ def synthetic_ohlcv(symbol: str, years: int = 10, seed: int | None = None) -> pd
     return df
 
 
-def load(symbol: str, years: int = 10, allow_synthetic: bool = True) -> tuple[pd.DataFrame, str]:
-    """Renvoie (df OHLCV journalier, source) — source ∈ {'cache', 'yahoo', 'synthetic'}."""
-    cached = _from_cache(symbol, years)
+def load(symbol: str, years: int = 10, allow_synthetic: bool = True,
+         fresh: bool = False) -> tuple[pd.DataFrame, str]:
+    """Renvoie (df OHLCV journalier, source) — source ∈ {'cache', 'yahoo', 'synthetic'}.
+
+    fresh=True ignore le cache (mode live : toujours les dernières données)."""
+    cached = None if fresh else _from_cache(symbol, years)
     if cached is not None:
         return cached, "cache"
     df = _download(symbol, years)

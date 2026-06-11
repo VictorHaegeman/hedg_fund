@@ -1,0 +1,38 @@
+name: Cycle de trading papier quotidien
+
+# Tourne chaque jour de semaine après la clôture US (22:30 UTC couvre été/hiver).
+# Le compte papier (paper_account.json) est versionné dans le dépôt : chaque
+# cycle committe l'état mis à jour + le journal du jour dans live_logs/.
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Exécuter le cycle live
+        run: |
+          mkdir -p live_logs
+          python -m quantlab live | tee "live_logs/$(date -u +%F).txt"
+      - name: Committer l'état du compte
+        run: |
+          git config user.name "quantlab-bot"
+          git config user.email "actions@github.com"
+          git add paper_account.json live_logs/
+          git diff --cached --quiet || git commit -m "live: cycle du $(date -u +%F)"
+          git pull --rebase origin main
+          git push

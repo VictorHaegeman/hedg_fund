@@ -157,6 +157,51 @@ def test_module12_alpha(df):
     assert "MODULE 12" in text and "STRATÉGIE UNIQUE 2" in text and "pas à pas" in text
 
 
+def test_broker_buy_sell(tmp_path):
+    from quantlab import broker as bk
+    path = str(tmp_path / "account.json")
+    acc = bk.load_account(path, capital=10_000)
+    pos = bk.buy(acc, "AAA", price=100.0, stop=95.0, target=110.0,
+                 strategy="trend", date="2026-01-02", risk_pct=1.0)
+    assert pos is not None
+    assert abs(pos["shares"] * 5.0 - 100.0) < 1e-6  # risque = 1% de 10k
+    assert acc.cash < 10_000
+    bk.save_account(acc, path)
+    acc2 = bk.load_account(path)
+    assert "AAA" in acc2.positions
+    trade = bk.sell(acc2, "AAA", price=110.0, date="2026-01-10", reason="target")
+    assert trade["pnl"] > 0
+    assert not acc2.positions
+    # 20 shares × (10 de gain) − frais ≈ +198 $
+    assert 150 < trade["pnl"] < 210
+
+
+def test_live_cycle(tmp_path):
+    from quantlab import live as lv
+    path = str(tmp_path / "account.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+    out1 = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
+                        loader=fake_load)
+    assert "COMPTE PAPIER" in out1 and "Équité" in out1
+    # le cycle doit être idempotent au sein d'une même journée de données
+    out2 = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
+                        loader=fake_load)
+    assert "COMPTE PAPIER" in out2
+
+
+def test_live_never_trades_synthetic(tmp_path):
+    """Sécurité critique : aucun ordre ne doit être passé sur des prix fictifs."""
+    from quantlab import live as lv
+    path = str(tmp_path / "account.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=1), "synthetic")
+    out = lv.run_cycle(["AAA"], capital=10_000, state_path=path, loader=fake_load)
+    assert "IGNORÉ" in out
+    from quantlab.broker import load_account
+    assert not load_account(path).positions
+
+
 def test_cli_smoke(monkeypatch, capsys):
     from quantlab import cli
     monkeypatch.setattr(cli, "load",
