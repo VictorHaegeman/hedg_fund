@@ -1,0 +1,10 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-06-11T13:39:50 | Univers : SPY, QQQ, GLD, TLT, BTC-USD
+==============================================================================
+  Aucun ordre ce cycle (positions inchangées, pas de signal).
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:35:19 | Dernier cycle : 2026-06-11T13:39:53
+  Équité : 10,000.00 $ (+0.00% depuis le départ) | Cash : 10,000.00 $
+  Aucune position ouverte.
