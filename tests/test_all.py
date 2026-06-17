@@ -215,6 +215,16 @@ def test_fund_simulation(prices):
     assert "SIMULATION DU FONDS" in fd.report(res, 100_000)
 
 
+def test_fund_validate_report(prices):
+    from quantlab import fund as fd
+    res_d = fd.run_fund(prices, capital=100_000)
+    res_b = fd.run_fund({k: prices[k] for k in list(prices)[:3]}, capital=100_000)
+    text = fd.validate_report(res_d, res_b, 100_000)
+    assert "VALIDATION" in text and "biais de survie" in text
+    assert "Attente réaliste" in text
+    assert fd.BIAS_FREE_SECTORS[0] == "XLK" and len(fd.BIAS_FREE_UNIVERSE) == 14
+
+
 def test_fund_no_lookahead(prices):
     from quantlab import fund as fd
     full = fd.run_fund(prices, capital=100_000)

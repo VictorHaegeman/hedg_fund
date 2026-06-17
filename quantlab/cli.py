@@ -129,6 +129,8 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--max-positions", type=int, default=5)
     sp.add_argument("--full", action="store_true",
                     help="batterie complète : risque/rendement + Monte Carlo + drawdowns")
+    common(sub.add_parser("validate", help="Edge réel vs biais de sélection (ETF sectoriels)"),
+           symbol=False)
     sp = sub.add_parser("dashboard", help="Génère le tableau de bord HTML")
     common(sp, symbol=False, symbols=True)
     sp.add_argument("--max-positions", type=int, default=5)
@@ -205,6 +207,15 @@ def main(argv: list[str] | None = None) -> int:
         if args.full:
             blocks = [rk.report(res, args.risk), mc.report(res), dd.report(res)]
             print("\n\n" + ("\n\n" + "#" * 78 + "\n\n").join(blocks))
+
+    elif args.cmd == "validate":
+        cap = args.capital if args.capital != 10_000.0 else 100_000.0
+        pd_, _ = _load_many(DEFAULT_UNIVERSE, args.years)
+        pb_, sb_ = _load_many(fd.BIAS_FREE_UNIVERSE, args.years)
+        pb_ = {k: v for k, v in pb_.items() if sb_[k] != "synthetic"}
+        res_d = fd.run_fund(pd_, cap, args.risk, 8)
+        res_b = fd.run_fund(pb_, cap, args.risk, 8)
+        print(fd.validate_report(res_d, res_b, cap))
 
     elif args.cmd == "dashboard":
         from .broker import load_account

@@ -229,6 +229,7 @@ def render_html(fund_res: BacktestResult, account: Account,
 
 <h2>Entraînement — simulation du fonds sur {m['years']:.0f} ans ({capital_sim:,.0f} $ de départ)</h2>
 <p class="gen">Même configuration que le bot live : {n_assets} actifs (ETF + actions + BTC), 3 stratégies, max 8 positions, 1 % de risque/trade.</p>
+<p class="warn" style="margin-top:0">⚠ Backtest optimiste : les actions ont été choisies en connaissant leurs gagnants. Test sans biais de survie (ETF sectoriels) → attente réaliste ~13 %/an, Sharpe ~0,8. Commande : <code>quantlab validate</code></p>
 <div class="cards">
   {_card("Équité finale simulée", f"{m['final_equity']:,.0f} $",
          f"{m['total_return'] * 100:+.1f} % au total", _pos_color(m['total_return']))}
