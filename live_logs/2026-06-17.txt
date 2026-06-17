@@ -1,12 +1,14 @@
 ==============================================================================
 MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
-Exécuté : 2026-06-17T10:22:19 | Univers : SPY, QQQ, GLD, TLT, AAPL, MSFT, NVDA, AMZN, GOOGL, META, JPM, V, JNJ, UNH, XOM, WMT, HD
+Exécuté : 2026-06-17T23:57:55 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD
 ==============================================================================
-  Contexte risque : VIX 16.5 (37e pct) → NEUTRE
-  Aucun ordre ce cycle (positions inchangées, pas de signal).
+  Contexte risque : VIX 18.4 (63e pct) → NEUTRE
+  ACHAT XLP @ 83.68 [meanrev] — 264.7632 u | stop 79.90 | target suiveur | risque 999.88 $
 
 — COMPTE PAPIER —
-  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-06-17T10:22:24
-  Équité : 99,987.94 $ (-0.01% depuis le départ) | Cash : 75,858.43 $
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-06-17T23:58:00
+  Équité : 99,976.86 $ (-0.02% depuis le départ) | Cash : 53,691.97 $
   Positions ouvertes :
     JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +0.00 $
+    XLP      264.7632 u @ 83.68 [meanrev] | stop 79.90 | latent +0.00 $
+Variation du cycle : -11.08 $

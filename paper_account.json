@@ -1,5 +1,5 @@
 {
-  "cash": 75858.4321879852,
+  "cash": 53691.96964284078,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -11,11 +11,21 @@
       "strategy": "breakout",
       "entry_date": "2026-06-16",
       "risk_amount": 1000.0
+    },
+    "XLP": {
+      "symbol": "XLP",
+      "shares": 264.7632023412853,
+      "entry": 83.68000030517578,
+      "stop": 79.90349607935126,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-06-17",
+      "risk_amount": 999.88
     }
   },
   "history": [],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-06-17T10:22:24",
+  "last_cycle": "2026-06-17T23:58:00",
   "equity_curve": [
     [
       "2026-06-11",
@@ -24,6 +34,10 @@
     [
       "2026-06-16",
       99987.94
+    ],
+    [
+      "2026-06-17",
+      99976.86
     ]
   ]
 }

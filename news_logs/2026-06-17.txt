@@ -3,48 +3,42 @@ MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
 ==============================================================================
 
 — Jauge de risque géopolitique (basée marché) —
-  VIX (indice de la peur) : 16.5 (37e percentile sur 2 ans)
-  Or sur 1 mois : -0.05 | Pétrole sur 1 mois : -0.227
+  VIX (indice de la peur) : 18.4 (63e percentile sur 2 ans)
+  Or sur 1 mois : -0.056 | Pétrole sur 1 mois : -0.253
   NIVEAU : NEUTRE — tension dans la normale
   → Nouvelles entrées : autorisées
 
 — Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
-  SPY    : neutre   (score +0.09, 15 titres)
-           ex: « S&P 500, Nasdaq, Dow Futures Edge Higher Ahead Of Fed Rate Decision: I »
-  QQQ    : négatif  (score -0.18, 15 titres)
-           ex: « S&P 500, Nasdaq, Dow Futures Edge Higher Ahead Of Fed Rate Decision: I »
-  GLD    : neutre   (score +0.00, 15 titres) | 4 mention(s) géopolitique(s)
-           ex: « DGP vs. UGL: Which 2x Gold Play Costs You More Than the Leverage? »
+  SPY    : neutre   (score -0.04, 15 titres)
+           ex: « Which S&P 500 ETF Is the Better Buy: iShares' IVV or State Street's SP »
+  QQQ    : négatif  (score -0.31, 15 titres)
+           ex: « S&P 500, Nasdaq And Dow Slip As Investors Assess Rate Hike Possibility »
+  GLD    : neutre   (score +0.13, 15 titres) | 4 mention(s) géopolitique(s)
+           ex: « GLD vs GLDM vs IAU: Which Gold ETF Should You Actually Buy? »
   TLT    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
            ex: « Which Long-Term Bond ETF Is the Better Buy: iShares' IGLB or Its Treas »
-  AAPL   : neutre   (score -0.11, 15 titres)
-           ex: « How America Got to SpaceX: The Long Trail of Big IPOs That Began in 17 »
-  MSFT   : neutre   (score +0.13, 15 titres)
-           ex: « Aembit Extends IAM for Agentic AI to Microsoft Copilot Studio »
-  NVDA   : neutre   (score +0.13, 15 titres)
-           ex: « PayPal Is Yesterday's News. Is This Fintech the Better Buy? »
-  AMZN   : neutre   (score +0.00, 15 titres)
-           ex: « SpaceX overtakes Amazon to become the world's fifth most valuable comp »
-  GOOGL  : neutre   (score +0.13, 15 titres)
-           ex: « Market Chatter: JPMorgan, Google Among Firms Asked to Preserve Records »
-  META   : négatif  (score -0.20, 15 titres)
-           ex: « General Atlantic in Talks to Lead Round for China’s Kling AI »
-  JPM    : neutre   (score +0.00, 15 titres)
-           ex: « Market Chatter: JPMorgan, Google Among Firms Asked to Preserve Records »
-  V      : neutre   (score +0.00, 15 titres)
-           ex: « Visa and Mintoak Join Forces to Bring Merchant SaaS Capabilities to Ac »
-  JNJ    : neutre   (score +0.07, 15 titres)
-           ex: « How to Build $3,000 a Month in Dividend Income to Cover the Average So »
-  UNH    : positif  (score +0.40, 15 titres) | 2 mention(s) géopolitique(s)
-           ex: « Why Did UnitedHealth Stock Choose Pain Over Growth? »
-  XOM    : négatif  (score -0.20, 15 titres) | 1 mention(s) géopolitique(s)
-           ex: « Why I Like the Energy Stocks »
-  WMT    : neutre   (score +0.13, 15 titres) | 1 mention(s) géopolitique(s)
-           ex: « AI vs. inflation: why Wall Street is ignoring soaring rates »
-  HD     : positif  (score +0.20, 15 titres)
-           ex: « The Number That Could Test Walmart Stock »
+  XLK    : neutre   (score +0.00, 1 titres)
+           ex: « Yahoo! Finance: XLK News »
+  XLF    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Financial Stocks Softer Late Afternoon »
+  XLE    : négatif  (score -0.40, 15 titres)
+           ex: « Sector Update: Energy Stocks Fall Late Afternoon »
+  XLV    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Healthcare Stocks Retreat Late Afternoon »
+  XLY    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLP    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLI    : neutre   (score +0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Wednesday  »
+  XLU    : neutre   (score +0.07, 15 titres)
+           ex: « How Is NRG Energy's Stock Performance Compared to Other Utility Stocks »
+  XLB    : neutre   (score +0.00, 15 titres)
+           ex: « Oil’s 5.7% Weekly Drop Opens the Door for Jets, Materials, and Infrast »
+  BTC-USD: neutre   (score +0.13, 15 titres)
+           ex: « Canadian dollar falls to seven-month low on Fed hawkish shift »
 
-Total mentions géopolitiques dans les titres : 9
+Total mentions géopolitiques dans les titres : 10
 
 Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
 aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
