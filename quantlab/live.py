@@ -26,7 +26,7 @@ from .strategies import ALL_STRATEGIES, get_strategy
 
 DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
                     "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META",
-                    "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD"]
+                    "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD", "BTC-USD"]
 
 
 def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,

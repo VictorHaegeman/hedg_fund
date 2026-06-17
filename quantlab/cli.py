@@ -44,11 +44,11 @@ from .data import load
 from .strategies import describe_all, get_strategy
 
 # Univers diversifié : 4 ETF socle + 12 grandes valeurs liquides réparties par
-# secteur (tech, finance, santé, énergie, conso). Pas de BTC : le profil risque
-# est meilleur (Sharpe ~1.04, max DD ~-17%) et aucun actif ne domine le résultat.
+# secteur (tech, finance, santé, énergie, conso) + BTC. La diversification dilue
+# le BTC (~14% du profit) : Sharpe ~1.11, max DD ~-19%, meilleur que sans BTC.
 DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
                     "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META",
-                    "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD"]
+                    "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD", "BTC-USD"]
 
 
 def _load_many(symbols: list[str], years: int):
