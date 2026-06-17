@@ -93,10 +93,13 @@ def render_html(fund_res: BacktestResult, account: Account,
     bench_card = ""
     if benchmark:
         diff = eq_live - benchmark["equity"]
-        bench_card = _card(
-            f"Si tout était sur {benchmark['label']}",
-            f"{benchmark['equity']:,.2f} $",
-            f"fonds vs ETF : {diff:+,.2f} $", _pos_color(diff))
+        verdict = "fonds devant" if diff >= 0 else "fonds derrière"
+        bench_card = (
+            f'<div class="card"><div class="lbl">Si tout était sur '
+            f'{html.escape(benchmark["label"])}</div>'
+            f'<div class="val">{benchmark["equity"]:,.2f} $</div>'
+            f'<div class="sub" style="color:{_pos_color(diff)}">'
+            f'{verdict} : {diff:+,.2f} $</div></div>')
 
     dd = drawdown_series(fund_res.equity)
     yr = yearly_returns(fund_res.equity)
