@@ -25,7 +25,7 @@ from .setups import _fits
 from .strategies import ALL_STRATEGIES, get_strategy
 
 DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
-                    "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META",
+                    "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA",
                     "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD", "BTC-USD"]
 
 

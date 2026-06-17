@@ -43,11 +43,11 @@ from . import setups as st
 from .data import load
 from .strategies import describe_all, get_strategy
 
-# Univers diversifié : 4 ETF socle + 12 grandes valeurs liquides réparties par
+# Univers diversifié : 4 ETF socle + 13 grandes valeurs liquides réparties par
 # secteur (tech, finance, santé, énergie, conso) + BTC. La diversification dilue
-# le BTC (~14% du profit) : Sharpe ~1.11, max DD ~-19%, meilleur que sans BTC.
+# le BTC (~14% du profit) : Sharpe ~1.12, max DD ~-21%, Calmar ~1.13.
 DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
-                    "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META",
+                    "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA",
                     "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD", "BTC-USD"]
 
 
