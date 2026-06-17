@@ -238,6 +238,66 @@ def test_dashboard_html(tmp_path, prices):
     assert "Équité finale simulée" in content and "Mon argent" in content
 
 
+def test_module13_sentiment():
+    from quantlab import news as nw
+    assert nw.score_text("Stock surges to record profit, beats estimates") > 0.3
+    assert nw.score_text("Shares plunge on lawsuit and recession fears") < -0.3
+    assert nw.score_text("The company held a meeting today") == 0.0
+    assert nw.count_geo("War escalation triggers new sanctions and tariffs") >= 3
+
+
+def test_module13_headline_sentiment_offline():
+    from quantlab import news as nw
+    fake = lambda sym, **k: ["Nvidia surges to record high on strong demand",
+                             "Analysts upgrade outlook, raise price target"]
+    s = nw.headline_sentiment("NVDA", fetch=fake)
+    assert s["label"] == "positif" and s["n"] == 2 and s["score"] > 0
+    empty = nw.headline_sentiment("XXX", fetch=lambda sym, **k: [])
+    assert empty["label"] == "n/a" and empty["n"] == 0
+
+
+def test_module13_risk_gauge(prices):
+    from quantlab import news as nw
+
+    def loader(sym, years=3, fresh=False, **k):
+        base = synthetic_ohlcv(sym, years=3, seed=hash(sym) % 100)
+        if sym == "^VIX":  # forcer un VIX très haut sur la dernière barre
+            base.iloc[-1, base.columns.get_loc("Close")] = base["Close"].max() * 3
+        return base, "synthetic"
+
+    g = nw.risk_gauge(loader)
+    assert g["level"] in ("risk-on", "neutre", "prudence", "risk-off")
+    assert g["vix"] is not None
+    # VIX au plus haut historique → risk-off → bloque les entrées
+    assert nw.blocks_new_entries(g)
+
+
+def test_module13_risk_gauge_failsafe():
+    from quantlab import news as nw
+
+    def broken(sym, **k):
+        raise RuntimeError("réseau coupé")
+
+    g = nw.risk_gauge(broken)
+    assert g["level"] == "neutre" and not nw.blocks_new_entries(g)
+
+
+def test_live_blocks_entries_when_risk_off(tmp_path, monkeypatch):
+    """En peur extrême, le cycle ne doit ouvrir aucune position."""
+    from quantlab import live as lv
+    from quantlab import news as nw
+    from quantlab.broker import load_account
+    path = str(tmp_path / "acc.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+    monkeypatch.setattr(nw, "risk_gauge", lambda loader: {
+        "level": "risk-off", "vix": 55.0, "vix_pct": 0.99, "note": "test"})
+    out = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
+                       loader=fake_load)
+    assert "bloquées" in out
+    assert not load_account(path).positions
+
+
 def test_cli_smoke(monkeypatch, capsys):
     from quantlab import cli
     monkeypatch.setattr(cli, "load",

@@ -82,9 +82,28 @@ def _pos_color(x: float) -> str:
     return "#4ade80" if x >= 0 else "#f87171"
 
 
+def _gauge_panel(gauge: dict | None) -> str:
+    if not gauge or gauge.get("vix") is None:
+        return ""
+    colors = {"risk-on": "#4ade80", "neutre": "#e7ecf3", "prudence": "#facc15",
+              "risk-off": "#f87171"}
+    col = colors.get(gauge["level"], "#e7ecf3")
+    entries = "bloquées (défensif)" if gauge["level"] == "risk-off" else "autorisées"
+    vix_pct = f"{int(gauge['vix_pct'] * 100)}e percentile / 2 ans"
+    gold = gauge.get("gold_1m")
+    gold_str = f"{gold * 100:+.1f} %" if gold is not None else "n/a"
+    cards = (
+        _card("Niveau de risque", gauge["level"].upper(), gauge.get("note", ""), col)
+        + _card("VIX (indice de la peur)", str(gauge["vix"]), vix_pct)
+        + _card("Or sur 1 mois", gold_str)
+        + _card("Nouvelles entrées", entries, "filtre VIX automatique"))
+    return ('<h2>Contexte de marché &amp; risque géopolitique</h2>'
+            f'<div class="cards">{cards}</div>')
+
+
 def render_html(fund_res: BacktestResult, account: Account,
                 prices_now: dict[str, float], capital_sim: float,
-                benchmark: dict | None = None) -> str:
+                benchmark: dict | None = None, gauge: dict | None = None) -> str:
     m = fund_res.metrics
     eq_live = account.equity(prices_now)
     pnl_live = eq_live - account.initial_capital
@@ -188,6 +207,8 @@ def render_html(fund_res: BacktestResult, account: Account,
 <h3>Derniers trades clôturés</h3>
 <div class="panel">{history_html}</div>
 
+{_gauge_panel(gauge)}
+
 <h2>Entraînement — simulation du fonds sur {m['years']:.0f} ans ({capital_sim:,.0f} $ de départ)</h2>
 <div class="cards">
   {_card("Équité finale simulée", f"{m['final_equity']:,.0f} $",
@@ -225,8 +246,9 @@ def spy_benchmark(account: Account, spy_df: pd.DataFrame) -> dict | None:
 
 def save(fund_res: BacktestResult, account: Account, prices_now: dict[str, float],
          capital_sim: float, path: str = OUT_PATH,
-         benchmark: dict | None = None) -> str:
+         benchmark: dict | None = None, gauge: dict | None = None) -> str:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
-        f.write(render_html(fund_res, account, prices_now, capital_sim, benchmark))
+        f.write(render_html(fund_res, account, prices_now, capital_sim,
+                            benchmark, gauge))
     return path

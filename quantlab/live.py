@@ -82,8 +82,18 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             lines.append(f"  VENTE {sym} @ {px:,.2f} (signal de sortie) — "
                          f"PnL {t['pnl']:+,.2f} $ ({t['pnl_pct']:+.1f}%)")
 
-    # ---- 2) Nouvelles entrées ----
+    # ---- 2) Nouvelles entrées (sauf filtre de risque géopolitique) ----
+    from . import news as nw
+    gauge = nw.risk_gauge(loader)
+    risk_block = nw.blocks_new_entries(gauge)
+    if gauge["vix"] is not None:
+        lines.append(f"  Contexte risque : VIX {gauge['vix']} "
+                     f"({int(gauge['vix_pct'] * 100)}e pct) → {gauge['level'].upper()}"
+                     + ("  ⛔ nouvelles entrées bloquées (peur extrême)"
+                        if risk_block else ""))
     for sym, df in data.items():
+        if risk_block:
+            break
         if sym in account.positions or len(account.positions) >= max_positions:
             continue
         regime = detect(df)
@@ -106,7 +116,7 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
                     f"risque {pos['risk_amount']:,.2f} $")
                 break
 
-    if len(lines) == 4 + sum("IGNORÉ" in l for l in lines):
+    if not any(l.lstrip().startswith(("ACHAT", "VENTE")) for l in lines):
         lines.append("  Aucun ordre ce cycle (positions inchangées, pas de signal).")
 
     # ---- 3) État du compte ----

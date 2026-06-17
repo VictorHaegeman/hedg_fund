@@ -32,6 +32,7 @@ from . import drawdown as dd
 from . import fund as fd
 from . import live as lv
 from . import macro as mcr
+from . import news as nw
 from . import montecarlo as mc
 from . import multifactor as mf
 from . import optimize as opt
@@ -121,9 +122,13 @@ def main(argv: list[str] | None = None) -> int:
                     help="réinitialise le compte papier au capital de départ")
     sp.add_argument("--max-positions", type=int, default=3)
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
+    common(sub.add_parser("pulse", help="Module 13 — pouls de marché (actu + géopolitique)"),
+           symbol=False, symbols=True)
     sp = sub.add_parser("fund", help="Simulation du fonds complet (entraînement)")
     common(sp, symbol=False, symbols=True)
     sp.add_argument("--max-positions", type=int, default=5)
+    sp.add_argument("--full", action="store_true",
+                    help="batterie complète : risque/rendement + Monte Carlo + drawdowns")
     sp = sub.add_parser("dashboard", help="Génère le tableau de bord HTML")
     common(sp, symbol=False, symbols=True)
     sp.add_argument("--max-positions", type=int, default=5)
@@ -190,10 +195,16 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "account":
         print(lv.account_report())
 
+    elif args.cmd == "pulse":
+        print(nw.report(args.symbols, load))
+
     elif args.cmd == "fund":
         prices, _ = _load_many(args.symbols, args.years)
         res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
         print(fd.report(res, args.capital))
+        if args.full:
+            blocks = [rk.report(res, args.risk), mc.report(res), dd.report(res)]
+            print("\n\n" + ("\n\n" + "#" * 78 + "\n\n").join(blocks))
 
     elif args.cmd == "dashboard":
         from .broker import load_account
@@ -202,7 +213,9 @@ def main(argv: list[str] | None = None) -> int:
         account = load_account(capital=args.capital)
         prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
         bench = db.spy_benchmark(account, prices["SPY"]) if "SPY" in prices else None
-        path = db.save(res, account, prices_now, args.capital, benchmark=bench)
+        gauge = nw.risk_gauge(load)
+        path = db.save(res, account, prices_now, args.capital,
+                       benchmark=bench, gauge=gauge)
         print(f"Tableau de bord généré : {path}")
         if args.open:
             import webbrowser
