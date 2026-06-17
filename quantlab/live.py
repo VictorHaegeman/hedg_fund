@@ -121,9 +121,13 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
 
     # ---- 3) État du compte ----
     account.last_cycle = datetime.now().isoformat(timespec="seconds")
+    eq = account.equity(last_prices)
+    # date de marché du cycle (dernière barre dispo), sinon date du jour
+    mkt_date = (max(str(d.index[-1].date()) for d in data.values())
+                if data else datetime.now().strftime("%Y-%m-%d"))
+    account.record_equity(mkt_date, eq)
     save_account(account, state_path)
     lines += ["", account_summary(account, last_prices)]
-    eq = account.equity(last_prices)
     if abs(eq - equity_before) > 0.005:
         lines.append(f"Variation du cycle : {eq - equity_before:+,.2f} $")
     return "\n".join(lines)

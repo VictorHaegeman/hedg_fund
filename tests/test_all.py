@@ -238,6 +238,46 @@ def test_dashboard_html(tmp_path, prices):
     assert "Équité finale simulée" in content and "Mon argent" in content
 
 
+def test_equity_curve_tracking(tmp_path):
+    from quantlab import broker as bk
+    path = str(tmp_path / "acc.json")
+    acc = bk.load_account(path, capital=100_000)
+    acc.created = "2026-06-16T10:00:00"  # création la veille du 1er enregistrement
+    acc.record_equity("2026-06-17", 100_500)
+    acc.record_equity("2026-06-18", 101_500)
+    acc.record_equity("2026-06-18", 101_800)  # même jour → mise à jour, pas d'ajout
+    assert len(acc.equity_curve) == 3   # amorce (16) + 17 + 18
+    assert acc.equity_curve[0] == ["2026-06-16", 100_000]  # amorce au capital initial
+    assert acc.equity_curve[-1] == ["2026-06-18", 101_800]
+    bk.save_account(acc, path)
+    assert bk.load_account(path).equity_curve[-1][1] == 101_800
+
+
+def test_live_records_equity(tmp_path):
+    from quantlab import live as lv
+    from quantlab.broker import load_account
+    path = str(tmp_path / "acc.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 999), "yahoo")
+    lv.run_cycle(["AAA", "BBB"], capital=100_000, state_path=path, loader=fake_load)
+    curve = load_account(path).equity_curve
+    assert len(curve) >= 1 and curve[-1][1] > 0
+
+
+def test_dashboard_live_curve(tmp_path, prices):
+    from quantlab import dashboard as db
+    from quantlab import fund as fd
+    from quantlab.broker import load_account
+    res = fd.run_fund(prices, capital=100_000)
+    account = load_account(str(tmp_path / "acc.json"), capital=100_000)
+    account.record_equity("2026-06-17", 100_000)
+    account.record_equity("2026-06-18", 102_000)
+    prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
+    path = db.save(res, account, prices_now, 100_000, str(tmp_path / "d.html"))
+    content = open(path, encoding="utf-8").read()
+    assert "Courbe d'équité du compte live" in content
+
+
 def test_module13_sentiment():
     from quantlab import news as nw
     assert nw.score_text("Stock surges to record profit, beats estimates") > 0.3

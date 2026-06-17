@@ -149,6 +149,22 @@ def render_html(fund_res: BacktestResult, account: Account,
     else:
         history_html = "<p class='muted'>Aucun trade clôturé pour l'instant.</p>"
 
+    # Courbe d'équité du compte live (un point par cycle quotidien)
+    curve = account.equity_curve
+    if len(curve) >= 2:
+        s = pd.Series([v for _, v in curve],
+                      index=pd.to_datetime([d for d, _ in curve]), name="live")
+        live_curve_html = (
+            "<h3>Courbe d'équité du compte live</h3>"
+            f'<div class="panel">{_svg_area(s, h=200, baseline=account.initial_capital)}</div>')
+    else:
+        n = len(curve)
+        live_curve_html = (
+            "<h3>Courbe d'équité du compte live</h3>"
+            f'<div class="panel"><p class="muted">Historique en cours de constitution '
+            f'({n} point{"s" if n > 1 else ""}). La courbe se dessinera au fil des '
+            "cycles quotidiens.</p></div>")
+
     contrib_html = ""
     if len(fund_res.trades):
         by_sym = fund_res.trades.groupby("symbol")["pnl"].agg(["count", "sum"]).round(0)
@@ -159,6 +175,7 @@ def render_html(fund_res: BacktestResult, account: Account,
                         f'<div><h3>Par stratégie</h3>{_table(by_strat)}</div></div>')
 
     gen = datetime.now().strftime("%Y-%m-%d %H:%M")
+    n_assets = len([s for s in fund_res.symbol.split(" + ") if s])
     return f"""<!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -203,6 +220,7 @@ def render_html(fund_res: BacktestResult, account: Account,
   {_card("Positions ouvertes", f"{len(account.positions)}")}
   {_card("Trades clôturés", f"{len(account.history)}")}
 </div>
+{live_curve_html}
 <div class="panel">{positions_html}</div>
 <h3>Derniers trades clôturés</h3>
 <div class="panel">{history_html}</div>
@@ -210,6 +228,7 @@ def render_html(fund_res: BacktestResult, account: Account,
 {_gauge_panel(gauge)}
 
 <h2>Entraînement — simulation du fonds sur {m['years']:.0f} ans ({capital_sim:,.0f} $ de départ)</h2>
+<p class="gen">Même configuration que le bot live : {n_assets} actifs (ETF + actions, sans BTC), 3 stratégies, max 8 positions, 1 % de risque/trade.</p>
 <div class="cards">
   {_card("Équité finale simulée", f"{m['final_equity']:,.0f} $",
          f"{m['total_return'] * 100:+.1f} % au total", _pos_color(m['total_return']))}

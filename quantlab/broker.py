@@ -24,12 +24,24 @@ class Account:
     history: list = field(default_factory=list)     # trades clôturés
     created: str = ""
     last_cycle: str = ""
+    equity_curve: list = field(default_factory=list)  # [[date_iso, equity], ...]
 
     def equity(self, prices: dict[str, float]) -> float:
         value = self.cash
         for sym, pos in self.positions.items():
             value += pos["shares"] * prices.get(sym, pos["entry"])
         return value
+
+    def record_equity(self, date: str, value: float) -> None:
+        """Ajoute (ou met à jour) le point d'équité du jour."""
+        if not self.equity_curve:
+            # amorce la courbe au capital de départ, à la date de création
+            start = str(self.created)[:10] or date
+            self.equity_curve.append([start, round(self.initial_capital, 2)])
+        if self.equity_curve and self.equity_curve[-1][0] == date:
+            self.equity_curve[-1][1] = round(value, 2)
+        else:
+            self.equity_curve.append([date, round(value, 2)])
 
 
 def load_account(path: str = DEFAULT_STATE, capital: float = 10_000.0) -> Account:
