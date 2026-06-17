@@ -43,12 +43,12 @@ from . import setups as st
 from .data import load
 from .strategies import describe_all, get_strategy
 
-# Univers diversifié : 4 ETF socle + 13 grandes valeurs liquides réparties par
-# secteur (tech, finance, santé, énergie, conso) + BTC. La diversification dilue
-# le BTC (~14% du profit) : Sharpe ~1.12, max DD ~-21%, Calmar ~1.13.
+# Univers sans biais de survie : 4 ETF socle + 9 ETF sectoriels SPDR (existent
+# depuis 1998, contiennent gagnants ET perdants de chaque secteur) + BTC.
+# Aucune action individuelle : impossible de choisir rétrospectivement les gagnants.
 DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
-                    "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA",
-                    "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD", "BTC-USD"]
+                    "XLK", "XLF", "XLE", "XLV", "XLY", "XLP", "XLI", "XLU", "XLB",
+                    "BTC-USD"]
 
 
 def _load_many(symbols: list[str], years: int):
