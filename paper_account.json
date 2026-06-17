@@ -1,8 +1,19 @@
 {
-  "cash": 100000.0,
+  "cash": 75858.4321879852,
   "initial_capital": 100000.0,
-  "positions": {},
+  "positions": {
+    "JPM": {
+      "symbol": "JPM",
+      "shares": 72.86797726968214,
+      "entry": 331.1400146484375,
+      "stop": 317.4165652339021,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-06-16",
+      "risk_amount": 1000.0
+    }
+  },
   "history": [],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-06-16T23:56:58"
+  "last_cycle": "2026-06-17T10:09:40"
 }
