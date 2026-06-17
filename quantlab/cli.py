@@ -42,7 +42,12 @@ from . import setups as st
 from .data import load
 from .strategies import describe_all, get_strategy
 
-DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT", "BTC-USD"]
+# Univers diversifié : 4 ETF socle + 12 grandes valeurs liquides réparties par
+# secteur (tech, finance, santé, énergie, conso). Pas de BTC : le profil risque
+# est meilleur (Sharpe ~1.04, max DD ~-17%) et aucun actif ne domine le résultat.
+DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
+                    "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META",
+                    "JPM", "V", "JNJ", "UNH", "XOM", "WMT", "HD"]
 
 
 def _load_many(symbols: list[str], years: int):
