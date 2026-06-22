@@ -248,6 +248,28 @@ def test_dashboard_html(tmp_path, prices):
     assert "Équité finale simulée" in content and "Mon argent" in content
 
 
+def test_dashboard_screener_panel(tmp_path, prices):
+    from quantlab import dashboard as db
+    from quantlab import fund as fd
+    from quantlab.broker import load_account
+    res = fd.run_fund(prices, capital=100_000)
+    account = load_account(str(tmp_path / "acc.json"), capital=100_000)
+    prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
+    # liste de candidats → panneau avec puces (chips)
+    p1 = db.save(res, account, prices_now, 100_000, str(tmp_path / "d1.html"),
+                 screener=["AAPL", "MSFT"])
+    c1 = open(p1, encoding="utf-8").read()
+    assert "Univers dynamique" in c1 and "AAPL" in c1 and "Candidats screenés" in c1
+    # screener indisponible → mention du fallback univers fixe
+    p2 = db.save(res, account, prices_now, 100_000, str(tmp_path / "d2.html"),
+                 screener=[])
+    c2 = open(p2, encoding="utf-8").read()
+    assert "indisponible" in c2 and "univers fixe" in c2
+    # None → panneau masqué (rétro-compatibilité)
+    p3 = db.save(res, account, prices_now, 100_000, str(tmp_path / "d3.html"))
+    assert "Univers dynamique" not in open(p3, encoding="utf-8").read()
+
+
 def test_equity_curve_tracking(tmp_path):
     from quantlab import broker as bk
     path = str(tmp_path / "acc.json")

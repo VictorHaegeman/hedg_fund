@@ -145,6 +145,8 @@ def main(argv: list[str] | None = None) -> int:
     sp = sub.add_parser("dashboard", help="Génère le tableau de bord HTML")
     common(sp, symbol=False, symbols=True)
     sp.add_argument("--max-positions", type=int, default=5)
+    sp.add_argument("--screen-limit", type=int, default=15,
+                    help="candidats du screener affichés sur le tableau de bord")
     sp.add_argument("--open", action="store_true", help="ouvre le fichier dans le navigateur")
 
     args = p.parse_args(argv)
@@ -242,8 +244,9 @@ def main(argv: list[str] | None = None) -> int:
         prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
         bench = db.spy_benchmark(account, prices["SPY"]) if "SPY" in prices else None
         gauge = nw.risk_gauge(load)
+        screened = scr.candidates(limit=args.screen_limit)
         path = db.save(res, account, prices_now, args.capital,
-                       benchmark=bench, gauge=gauge)
+                       benchmark=bench, gauge=gauge, screener=screened)
         print(f"Tableau de bord généré : {path}")
         if args.open:
             import webbrowser

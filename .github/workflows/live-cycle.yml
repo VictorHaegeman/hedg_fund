@@ -27,13 +27,13 @@ jobs:
       - name: Exécuter le cycle live
         run: |
           mkdir -p live_logs
-          python -m quantlab live --capital 100000 --max-positions 8 | tee "live_logs/$(date -u +%F).txt"
+          python -m quantlab live --capital 100000 --max-positions 8 --screener --screen-limit 15 | tee "live_logs/$(date -u +%F).txt"
       - name: Pouls de marché (actualité + contexte géopolitique)
         run: |
           mkdir -p news_logs
           python -m quantlab pulse | tee "news_logs/$(date -u +%F).txt" || true
       - name: Régénérer le tableau de bord
-        run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8
+        run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8 --screen-limit 15
       - name: Committer l'état du compte
         run: |
           git config user.name "quantlab-bot"
