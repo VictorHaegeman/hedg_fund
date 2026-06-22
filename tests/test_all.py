@@ -348,6 +348,68 @@ def test_live_blocks_entries_when_risk_off(tmp_path, monkeypatch):
     assert not load_account(path).positions
 
 
+def test_screener_symbol_mapping():
+    from quantlab import screener as sc
+    assert sc.to_yf_symbol("NASDAQ:AAPL") == "AAPL"
+    assert sc.to_yf_symbol("NYSE:BRK.B") == "BRK-B"  # classe d'action → tiret
+    assert sc.to_yf_symbol("AAPL") == "AAPL"          # sans préfixe exchange
+    assert sc.to_yf_symbol("BINANCE:BTCUSDT", crypto=True) == "BTC-USD"
+    assert sc.to_yf_symbol("ETHUSD", crypto=True) == "ETH-USD"
+    assert sc.to_yf_symbol("") is None
+    assert sc.to_yf_symbol("NASDAQ:WE!RD") is None    # ticker invalide → écarté
+    assert sc.to_yf_symbol("KRAKEN:DOGEEUR", crypto=True) is None  # quote non gérée
+
+
+def test_screener_candidates_offline():
+    """candidates mappe, déduplique, filtre l'invalide et respecte la limite."""
+    from quantlab import screener as sc
+    fake = lambda **k: ["NASDAQ:AAPL", "NYSE:JPM", "NASDAQ:AAPL", "BAD!!", "NYSE:KO"]
+    assert sc.candidates(limit=5, fetch=fake) == ["AAPL", "JPM", "KO"]
+    assert sc.candidates(limit=2, fetch=fake) == ["AAPL", "JPM"]
+    # fail-safe : réponse vide ou None → liste vide (l'appelant retombe sur l'univers fixe)
+    assert sc.candidates(fetch=lambda **k: []) == []
+    assert sc.candidates(fetch=lambda **k: None) == []
+
+
+def test_screener_fetch_never_raises():
+    """_fetch est le seul point réseau : il ne lève jamais, renvoie toujours une liste."""
+    from quantlab import screener as sc
+    res = sc._fetch(market="america", limit=2, min_mcap=1e9, min_volume=1e5, crypto=False)
+    assert isinstance(res, list)
+
+
+def test_live_uses_screener(tmp_path):
+    """Avec un screener fourni, l'univers du cycle se restreint à ses candidats."""
+    from quantlab import live as lv
+    path = str(tmp_path / "acc.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+    out = lv.run_cycle(["AAA", "BBB", "CCC"], capital=10_000, state_path=path,
+                       loader=fake_load, screener=lambda: ["ZZZ"])
+    uni_line = [l for l in out.splitlines() if "Univers" in l][0]
+    assert "ZZZ" in uni_line and "AAA" not in uni_line
+
+
+def test_live_screener_failsafe(tmp_path):
+    """Screener vide → on garde l'univers fixe passé en argument."""
+    from quantlab import live as lv
+    path = str(tmp_path / "acc.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+    out = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
+                       loader=fake_load, screener=lambda: [])
+    uni_line = [l for l in out.splitlines() if "Univers" in l][0]
+    assert "AAA" in uni_line and "BBB" in uni_line
+
+
+def test_cli_screen(monkeypatch, capsys):
+    from quantlab import cli
+    from quantlab import screener as sc
+    monkeypatch.setattr(sc, "candidates", lambda **k: ["AAA", "BBB"])
+    assert cli.main(["screen", "--screen-limit", "5"]) == 0
+    assert "SCREENER TRADINGVIEW" in capsys.readouterr().out
+
+
 def test_cli_smoke(monkeypatch, capsys):
     from quantlab import cli
     monkeypatch.setattr(cli, "load",

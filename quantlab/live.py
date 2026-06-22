@@ -31,8 +31,16 @@ DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
 
 def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
               risk_pct: float = 1.0, state_path: str = DEFAULT_STATE,
-              loader=load, max_positions: int = 3) -> str:
+              loader=load, max_positions: int = 3, screener=None) -> str:
     account = load_account(state_path, capital)
+    # Univers : si un screener FORWARD est fourni (ex. screener.candidates), on
+    # trade ses candidats ∪ les positions ouvertes. Fail-safe : screener vide →
+    # on garde l'univers fixe passé en argument. Réservé au live, jamais aux
+    # backtests (cf. garde-fou d'intégrité dans screener.py).
+    if screener is not None:
+        screened = screener()
+        if screened:
+            symbols = list(dict.fromkeys(list(screened) + list(account.positions)))
     lines = [
         "=" * 78,
         "MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)",

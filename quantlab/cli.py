@@ -39,6 +39,7 @@ from . import optimize as opt
 from . import portfolio as pf
 from . import regime as rg
 from . import risk as rk
+from . import screener as scr
 from . import setups as st
 from .data import load
 from .strategies import describe_all, get_strategy
@@ -121,6 +122,16 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--reset", action="store_true",
                     help="réinitialise le compte papier au capital de départ")
     sp.add_argument("--max-positions", type=int, default=3)
+    sp.add_argument("--screener", action="store_true",
+                    help="univers dynamique via le screener TradingView (forward)")
+    sp.add_argument("--screen-limit", type=int, default=15,
+                    help="nombre de candidats du screener")
+    sp = sub.add_parser("screen",
+                        help="Screener TradingView — univers de candidats (live)")
+    sp.add_argument("--market", default="america")
+    sp.add_argument("--screen-limit", type=int, default=15)
+    sp.add_argument("--crypto", action="store_true",
+                    help="screene les cryptos les plus liquides au lieu des actions")
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
     common(sub.add_parser("pulse", help="Module 13 — pouls de marché (actu + géopolitique)"),
            symbol=False, symbols=True)
@@ -191,8 +202,14 @@ def main(argv: list[str] | None = None) -> int:
             from .broker import reset_account
             reset_account(capital=args.capital)
             print(f"Compte papier réinitialisé à ${args.capital:,.0f}.")
+        screener = ((lambda: scr.candidates(limit=args.screen_limit))
+                    if args.screener else None)
         print(lv.run_cycle(args.symbols, args.capital, args.risk,
-                           max_positions=args.max_positions))
+                           max_positions=args.max_positions, screener=screener))
+
+    elif args.cmd == "screen":
+        print(scr.report(market=args.market, limit=args.screen_limit,
+                         crypto=args.crypto))
 
     elif args.cmd == "account":
         print(lv.account_report())
