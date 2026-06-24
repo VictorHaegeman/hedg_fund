@@ -27,7 +27,7 @@ jobs:
       - name: Exécuter le cycle live
         run: |
           mkdir -p live_logs
-          python -m quantlab live --capital 100000 --max-positions 8 --screener --screen-limit 15 | tee "live_logs/$(date -u +%F).txt"
+          python -m quantlab live --capital 100000 --max-positions 8 | tee "live_logs/$(date -u +%F).txt"
       - name: Pouls de marché (actualité + contexte géopolitique)
         run: |
           mkdir -p news_logs
