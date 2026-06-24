@@ -1,0 +1,35 @@
+name: Rafraîchir le tableau de bord (données réelles, sans trading)
+
+# Déclenchement MANUEL uniquement (onglet Actions → Run workflow).
+# Rafraîchit les données de marché réelles + le tableau de bord, SANS exécuter
+# de cycle de trading : aucun ordre, paper_account.json N'EST JAMAIS modifié.
+# Le cours du fonds (positions, équité, historique) reste donc intact.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dashboard-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Régénérer le tableau de bord sur données réelles (aucun ordre passé)
+        run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8
+      - name: Committer UNIQUEMENT le tableau de bord (jamais paper_account.json)
+        run: |
+          git config user.name "quantlab-bot"
+          git config user.email "actions@github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "dashboard: rafraîchissement données réelles $(date -u +%F)"
+          git pull --rebase origin main
+          git push
