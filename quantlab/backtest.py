@@ -26,13 +26,16 @@ class BacktestResult:
 
 def run_backtest(df: pd.DataFrame, strategy: Strategy, capital: float = 10_000.0,
                  risk_pct: float = 1.0, commission_bps: float = 5.0,
-                 symbol: str = "", source: str = "") -> BacktestResult:
+                 symbol: str = "", source: str = "", trail: bool = False) -> BacktestResult:
     """Backtest bar-par-bar, long-only.
 
     - Signal calculé à la clôture du jour J → exécution à l'open de J+1.
     - Stop/target fixés à l'entrée (distances ATR translatées au prix d'exécution).
     - Taille de position : (capital_courant × risque%) / distance au stop.
     - Commission + slippage : commission_bps points de base par côté.
+    - trail=True : stop suiveur en cliquet. Le stop ne fait que monter, en suivant
+      la bande ATR close de la stratégie (stop[i-1], donnée connue → pas de
+      look-ahead). Le risque initial reste figé pour le calcul du R-multiple.
     """
     sig = strategy.generate_signals(df)
     o = df["Open"].to_numpy(float)
@@ -48,18 +51,19 @@ def run_backtest(df: pd.DataFrame, strategy: Strategy, capital: float = 10_000.0
 
     cash = capital
     shares = 0.0
-    stop = target = entry_price = np.nan
+    stop = stop_init = target = entry_price = np.nan
     entry_i = -1
     pending_entry = pending_exit = False
     equity = np.empty(n)
     trades: list[dict] = []
 
     def close_trade(i: int, price: float, reason: str):
-        nonlocal cash, shares, stop, target, entry_price, entry_i
+        nonlocal cash, shares, stop, stop_init, target, entry_price, entry_i
         proceeds = shares * price * (1 - fee)
         cost = shares * entry_price * (1 + fee)
         pnl = proceeds - cost
-        risk = shares * (entry_price - stop) if entry_price > stop else np.nan
+        # Risque = distance au stop INITIAL (le trailing ne doit pas fausser le R)
+        risk = shares * (entry_price - stop_init) if entry_price > stop_init else np.nan
         trades.append({
             "entry_date": df.index[entry_i], "exit_date": df.index[i],
             "entry": round(entry_price, 4), "exit": round(price, 4),
@@ -70,7 +74,7 @@ def run_backtest(df: pd.DataFrame, strategy: Strategy, capital: float = 10_000.0
         })
         cash += proceeds
         shares = 0.0
-        stop = target = entry_price = np.nan
+        stop = stop_init = target = entry_price = np.nan
         entry_i = -1
 
     for i in range(n):
@@ -83,7 +87,7 @@ def run_backtest(df: pd.DataFrame, strategy: Strategy, capital: float = 10_000.0
             stop_dist = c[j] - stop_lvl[j]
             if np.isfinite(stop_dist) and stop_dist > 0:
                 entry_price = o[i]
-                stop = entry_price - stop_dist
+                stop = stop_init = entry_price - stop_dist
                 target = entry_price + (tgt_lvl[j] - c[j]) if np.isfinite(tgt_lvl[j]) else np.nan
                 risk_amount = cash * risk_pct / 100.0
                 size = risk_amount / stop_dist
@@ -93,11 +97,13 @@ def run_backtest(df: pd.DataFrame, strategy: Strategy, capital: float = 10_000.0
                     cash -= shares * entry_price * (1 + fee)
                     entry_i = i
                 else:
-                    entry_price = stop = target = np.nan
+                    entry_price = stop = stop_init = target = np.nan
             pending_entry = False
 
-        # 2) Stops / targets en intraday
+        # 2) Stops / targets en intraday (stop suiveur en cliquet si trail=True)
         if shares > 0:
+            if trail and i > 0 and np.isfinite(stop_lvl[i - 1]) and stop_lvl[i - 1] > stop:
+                stop = stop_lvl[i - 1]
             if l[i] <= stop:
                 px = min(o[i], stop)  # gap baissier : exécuté à l'open
                 close_trade(i, px, "stop")

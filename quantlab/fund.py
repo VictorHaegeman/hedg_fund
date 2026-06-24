@@ -24,12 +24,35 @@ from .strategies import ALL_STRATEGIES, get_strategy
 BIAS_FREE_SECTORS = ["XLK", "XLF", "XLE", "XLV", "XLY", "XLP", "XLI", "XLU", "XLB"]
 BIAS_FREE_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT"] + BIAS_FREE_SECTORS + ["BTC-USD"]
 
+# Stratégies « laisser courir les gagnants » : un stop suiveur y a du sens. La mean
+# reversion (sortie RSI rapide) est exclue — un trailing y couperait les rebonds.
+TRAILING_STRATEGIES = frozenset({"trend", "breakout"})
+
+
+def vol_scale(equity_history, target_vol: float | None, window: int = 20,
+              lo: float = 0.5, hi: float = 2.0) -> float:
+    """Facteur de vol-targeting : target_vol / volatilité réalisée récente, borné.
+
+    Estime la volatilité annualisée des `window` derniers rendements quotidiens de
+    l'équité (passé uniquement → pas de look-ahead) et renvoie le multiplicateur à
+    appliquer au risque par trade. Marché calme → on monte (≤ hi) ; agité → on
+    réduit (≥ lo). target_vol None ou historique trop court → 1.0 (neutre)."""
+    if target_vol is None or equity_history is None or len(equity_history) <= window:
+        return 1.0
+    arr = np.asarray(equity_history[-(window + 1):], dtype=float)
+    rets = np.diff(arr) / arr[:-1]
+    realized = float(rets.std() * np.sqrt(252))
+    if realized <= 1e-9:
+        return hi
+    return float(np.clip(target_vol / realized, lo, hi))
+
 
 def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
              risk_pct: float = 1.0, max_positions: int = 5,
              commission_bps: float = 5.0,
              strategy_keys: tuple[str, ...] = ("trend", "meanrev", "breakout"),
-             ) -> BacktestResult:
+             vol_target: float | None = None, vol_window: int = 20,
+             trail: bool = False) -> BacktestResult:
     fee = commission_bps / 10_000.0
 
     # Pré-calculs par actif : arrays OHLC + signaux de chaque stratégie
@@ -66,7 +89,9 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
         proceeds = p["shares"] * price * (1 - fee)
         cost = p["shares"] * p["entry"] * (1 + fee)
         pnl = proceeds - cost
-        risk = p["shares"] * (p["entry"] - p["stop"]) if p["entry"] > p["stop"] else np.nan
+        # Risque = distance au stop INITIAL (un trailing ne doit pas fausser le R)
+        s0 = p.get("stop_init", p["stop"])
+        risk = p["shares"] * (p["entry"] - s0) if p["entry"] > s0 else np.nan
         trades.append({
             "symbol": sym, "strategy": p["strategy"],
             "entry_date": p["entry_date"], "exit_date": date,
@@ -100,19 +125,26 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
                         stop = entry - stop_dist
                         target = (entry + (sg["target"][j] - d["c"][j])
                                   if np.isfinite(sg["target"][j]) else np.nan)
-                        shares = min(eq_prev * risk_pct / 100.0 / stop_dist,
+                        # Vol-targeting : module le risque selon la vol réalisée récente
+                        eff_risk = risk_pct * vol_scale(equity_vals, vol_target, vol_window)
+                        shares = min(eq_prev * eff_risk / 100.0 / stop_dist,
                                      cash / (entry * (1 + fee)))
                         if shares > 0:
                             cash -= shares * entry * (1 + fee)
                             positions[sym] = {
                                 "shares": shares, "entry": entry, "stop": stop,
-                                "target": target, "strategy": key,
+                                "stop_init": stop, "target": target, "strategy": key,
                                 "entry_date": t, "entry_i": i,
+                                "trail": trail and key in TRAILING_STRATEGIES,
                             }
 
-            # 2) Stops / targets intraday
+            # 2) Stops / targets intraday (stop suiveur en cliquet si activé)
             if sym in positions:
                 p = positions[sym]
+                if p["trail"] and i > 0:
+                    tl = d["sig"][p["strategy"]]["stop"][i - 1]
+                    if np.isfinite(tl) and tl > p["stop"]:
+                        p["stop"] = tl
                 if d["l"][i] <= p["stop"]:
                     close_position(sym, i, min(d["o"][i], p["stop"]), t, "stop")
                 elif np.isfinite(p["target"]) and d["h"][i] >= p["target"]:
@@ -179,6 +211,52 @@ def validate_report(deployed: BacktestResult, bias_free: BacktestResult,
         f"(Sharpe ~{b['sharpe']:.1f}), PAS les {d['cagr'] * 100:.0f}% du backtest déployé.",
         f"  • Les {d['cagr'] * 100:.0f}% supposent que les actions choisies refassent",
         "    leurs performances passées — pari, pas prévision.",
+    ]
+    return "\n".join(lines)
+
+
+def compare_report(baseline: BacktestResult, improved: BacktestResult,
+                   capital: float) -> str:
+    """Avant/après : fonds de base vs fonds avec vol-targeting + stop suiveur.
+
+    Mesure l'effet des deux améliorations sur les métriques ajustées du risque
+    (Sharpe, Calmar, max drawdown) — sur le MÊME univers, donc comparable."""
+    b, m = baseline.metrics, improved.metrics
+
+    def row(name, x):
+        return (f"  {name:<26} équité {x['final_equity']:>11,.0f}$  "
+                f"CAGR {x['cagr'] * 100:>5.1f}%  vol {x['volatility'] * 100:>4.1f}%  "
+                f"Sharpe {x['sharpe']:>4.2f}  Calmar {x['calmar']:>4.2f}  "
+                f"MaxDD {x['max_drawdown'] * 100:>6.1f}%")
+
+    def delta(key, pct=False, inv=False):
+        dv = m[key] - b[key]
+        unit = " pts" if pct else ""
+        arrow = "▲" if (dv > 0) != inv else "▼" if dv != 0 else "="
+        val = dv * 100 if pct else dv
+        return f"{arrow} {val:+.2f}{unit}"
+
+    lines = [
+        "=" * 78,
+        "COMPARAISON — BASE vs VOL-TARGETING + STOP SUIVEUR",
+        f"Univers : {improved.symbol}",
+        f"Capital : {capital:,.0f} $ | période {b['years']:.1f} ans | même tirage",
+        "=" * 78,
+        "",
+        row("Base", baseline.metrics),
+        row("Amélioré", improved.metrics),
+        "",
+        "Effet des améliorations :",
+        f"  • Sharpe         {delta('sharpe')}   (volatilité plus stable → meilleur ratio)",
+        f"  • Calmar         {delta('calmar')}   (rendement par unité de drawdown)",
+        f"  • Max drawdown   {delta('max_drawdown', pct=True)}   "
+        "(un trailing + un risque réduit en marché agité limitent les creux)",
+        f"  • CAGR           {delta('cagr', pct=True)}",
+        f"  • Volatilité     {delta('volatility', pct=True)}   (ciblée par le vol-targeting)",
+        "",
+        "Lecture : on vise une amélioration du Sharpe/Calmar et une réduction du",
+        "drawdown — pas forcément un CAGR plus élevé. Un fonds plus régulier est",
+        "préférable à un fonds plus rentable mais plus volatil.",
     ]
     return "\n".join(lines)
 

@@ -235,6 +235,55 @@ def test_fund_no_lookahead(prices):
     assert diff < 1e-6
 
 
+def test_vol_scale_math():
+    from quantlab import fund as fd
+    rng = np.random.default_rng(0)
+    calm = list(100_000 * np.cumprod(1 + rng.normal(0, 0.002, 300)))
+    wild = list(100_000 * np.cumprod(1 + rng.normal(0, 0.03, 300)))
+    assert fd.vol_scale(calm, 0.12) > 1.0       # vol basse → on monte l'exposition
+    assert fd.vol_scale(wild, 0.12) < 1.0       # vol haute → on réduit
+    assert fd.vol_scale([1, 2, 3], 0.12) == 1.0  # historique trop court → neutre
+    assert fd.vol_scale(calm, None) == 1.0       # désactivé → neutre
+    assert 0.5 <= fd.vol_scale(wild, 0.12) <= 2.0  # bornes respectées
+
+
+def test_backtest_trailing_stop():
+    from quantlab import backtest as bt
+    df = synthetic_ohlcv("T", years=8, seed=5)
+    base = bt.run_backtest(df, get_strategy("trend"), 10_000, 1.0)
+    tr = bt.run_backtest(df, get_strategy("trend"), 10_000, 1.0, trail=True)
+    assert (tr.equity > 0).all() and tr.metrics["n_trades"] >= 1
+    # le cliquet déclenche au moins autant de sorties "stop" que la version fixe
+    bs = (base.trades["reason"] == "stop").sum() if len(base.trades) else 0
+    ts = (tr.trades["reason"] == "stop").sum() if len(tr.trades) else 0
+    assert ts >= bs
+    # le trailing a un effet mesurable sur la courbe d'équité
+    assert (base.equity - tr.equity).abs().max() > 0
+    # R-multiple basé sur le stop INITIAL : les pertes restent bornées (~ -1R)
+    losses = tr.trades["r_multiple"].dropna()
+    if len(losses):
+        assert losses.min() > -1.5
+
+
+def test_fund_vol_trail_no_lookahead(prices):
+    """Le vol-targeting (vol passée) + trailing ne réintroduisent pas de look-ahead."""
+    from quantlab import fund as fd
+    full = fd.run_fund(prices, capital=100_000, vol_target=0.12, trail=True)
+    cut = fd.run_fund({s: df.iloc[:-150] for s, df in prices.items()},
+                      capital=100_000, vol_target=0.12, trail=True)
+    n = len(cut.equity) - 1
+    diff = (full.equity.iloc[:n] - cut.equity.iloc[:n]).abs().max()
+    assert diff < 1e-6
+
+
+def test_fund_compare_report(prices):
+    from quantlab import fund as fd
+    base = fd.run_fund(prices, capital=100_000)
+    impr = fd.run_fund(prices, capital=100_000, vol_target=0.12, trail=True)
+    text = fd.compare_report(base, impr, 100_000)
+    assert "COMPARAISON" in text and "Sharpe" in text and "Max drawdown" in text
+
+
 def test_dashboard_html(tmp_path, prices):
     from quantlab import dashboard as db
     from quantlab import fund as fd
@@ -430,6 +479,14 @@ def test_cli_screen(monkeypatch, capsys):
     monkeypatch.setattr(sc, "candidates", lambda **k: ["AAA", "BBB"])
     assert cli.main(["screen", "--screen-limit", "5"]) == 0
     assert "SCREENER TRADINGVIEW" in capsys.readouterr().out
+
+
+def test_cli_fund_compare(monkeypatch, capsys):
+    from quantlab import cli
+    monkeypatch.setattr(cli, "load", lambda sym, years=10, **k: (
+        synthetic_ohlcv(sym, years, seed=3), "synthetic"))
+    assert cli.main(["fund", "--symbols", "AAA", "BBB", "CCC", "--compare"]) == 0
+    assert "COMPARAISON" in capsys.readouterr().out
 
 
 def test_cli_smoke(monkeypatch, capsys):

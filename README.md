@@ -136,6 +136,34 @@ Résultat de l'entraînement 2016→2026 avec 100 000 $ : équité finale ~474 0
 (CAGR +16,8 %/an, Sharpe 0,94, max drawdown −20,3 %, 333 trades, win rate 60 %).
 Performance simulée — aucune garantie future.
 
+## Améliorations du modèle (overlays optionnels)
+
+Deux surcouches robustes, **désactivées par défaut** (opt-in), pour améliorer le
+risque ajusté sans toucher aux règles des stratégies :
+
+- **Vol-targeting** (`--vol-target 0.12`) : module le risque par trade selon la
+  volatilité réalisée récente du compte/fonds — on réduit l'exposition quand le
+  marché s'agite, on la remonte quand il se calme (borné ×0,5–×2). Calculé sur le
+  passé uniquement (pas de look-ahead).
+- **Stop suiveur** (`--trail`) : stop en cliquet (ne descend jamais) qui suit la
+  bande ATR de la stratégie, sur trend/breakout seulement (la mean reversion garde
+  sa sortie RSI). Le risque initial reste figé pour le calcul du R-multiple.
+
+Comparer avant/après sur le **même univers** (le vrai juge : Sharpe, Calmar, max DD) :
+
+```powershell
+python -m quantlab fund --compare --years 10                 # base vs amélioré
+python -m quantlab fund --vol-target 0.12 --trail            # fonds avec overlays
+python -m quantlab live --vol-target 0.12 --trail            # live avec overlays
+```
+
+> ⚠️ **À valider sur données réelles avant activation en production.** Sur les
+> données synthétiques hors-ligne (sans persistance de tendance réaliste), ces
+> overlays n'améliorent pas le risque ajusté ; et la cible de vol doit être réglée
+> par rapport à la volatilité effective du fonds. C'est pourquoi le pipeline
+> automatisé les laisse désactivés tant que `fund --compare` sur données réelles
+> ne montre pas un gain net. Ne pas sur-ajuster les paramètres (piège classique).
+
 ## Options communes
 
 - `--symbol SPY` / `--symbols SPY QQQ ...` — tickers Yahoo Finance (`BTC-USD`, `EURUSD=X`, …)
