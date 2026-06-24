@@ -72,6 +72,52 @@ La couche `broker.py` est conçue pour être remplaçable par un connecteur rée
 mais aucun capital ne devrait y passer avant plusieurs mois de paper trading
 satisfaisants.
 
+## Univers dynamique — screener TradingView (source FORWARD)
+
+Par défaut le cycle live trade un univers figé (4 ETF socle + 9 ETF sectoriels +
+BTC). Le module `screener.py` permet de générer un **univers de candidats liquides
+en direct** via le screener TradingView (lib `tradingview-screener`, sans clé API).
+
+```powershell
+python -m quantlab screen                       # liste les candidats actuels (inspection)
+python -m quantlab screen --crypto              # cryptos les plus liquides
+python -m quantlab live --screener --screen-limit 15   # cycle live sur l'univers screené
+```
+
+Les symboles TradingView (`NASDAQ:AAPL`, `BINANCE:BTCUSDT`) sont remappés au format
+yfinance (`AAPL`, `BTC-USD`) avant chargement. Tout est **fail-safe** : si le screener
+est indisponible (réseau/lib), le cycle retombe sur l'univers fixe.
+
+> ⚠️ **Garde-fou d'intégrité** : le screener est une source *forward*, réservée au
+> cycle **live**. Il n'alimente jamais `backtest` / `fund` / `validate` — sélectionner
+> les actifs qui sortent du screener aujourd'hui puis les backtester dans le passé
+> introduirait un biais de sélection / look-ahead. Voir l'en-tête de `screener.py`.
+
+## Recherche assistée par IA — MCP TradingView (optionnel, local)
+
+Pour **prototyper** des idées (screening, analyse technique, sentiment) directement
+dans une session Claude Code locale, on peut brancher un serveur MCP TradingView. Ce
+n'est **pas** utilisé par le pipeline automatisé (GitHub Actions reste headless) ; c'est
+un outil de recherche pour l'humain. Workflow recommandé : *idée explorée via le MCP →
+règles formalisées dans `strategies.py` → validée par le backtester sans look-ahead →
+seulement ensuite éligible au live*.
+
+Ajout opt-in dans un `.mcp.json` à la racine (lance un paquet externe via `uvx` ; à
+ajouter délibérément) :
+
+```json
+{
+  "mcpServers": {
+    "tradingview": { "command": "uvx", "args": ["tradingview-mcp-server"] }
+  }
+}
+```
+
+> Le serveur de *pilotage de charts* TradingView Desktop (Chrome DevTools Protocol)
+> a été volontairement écarté : il exige un desktop GUI + abonnement payant et n'a
+> pas de backtest — incompatible avec un fonds headless. Rien ici n'est un conseil
+> en investissement.
+
 ## Simulation du fonds & tableau de bord
 
 ```powershell
@@ -89,6 +135,34 @@ par le workflow live et **publié en ligne via GitHub Pages** :
 Résultat de l'entraînement 2016→2026 avec 100 000 $ : équité finale ~474 000 $
 (CAGR +16,8 %/an, Sharpe 0,94, max drawdown −20,3 %, 333 trades, win rate 60 %).
 Performance simulée — aucune garantie future.
+
+## Améliorations du modèle (overlays optionnels)
+
+Deux surcouches robustes, **désactivées par défaut** (opt-in), pour améliorer le
+risque ajusté sans toucher aux règles des stratégies :
+
+- **Vol-targeting** (`--vol-target 0.12`) : module le risque par trade selon la
+  volatilité réalisée récente du compte/fonds — on réduit l'exposition quand le
+  marché s'agite, on la remonte quand il se calme (borné ×0,5–×2). Calculé sur le
+  passé uniquement (pas de look-ahead).
+- **Stop suiveur** (`--trail`) : stop en cliquet (ne descend jamais) qui suit la
+  bande ATR de la stratégie, sur trend/breakout seulement (la mean reversion garde
+  sa sortie RSI). Le risque initial reste figé pour le calcul du R-multiple.
+
+Comparer avant/après sur le **même univers** (le vrai juge : Sharpe, Calmar, max DD) :
+
+```powershell
+python -m quantlab fund --compare --years 10                 # base vs amélioré
+python -m quantlab fund --vol-target 0.12 --trail            # fonds avec overlays
+python -m quantlab live --vol-target 0.12 --trail            # live avec overlays
+```
+
+> ⚠️ **À valider sur données réelles avant activation en production.** Sur les
+> données synthétiques hors-ligne (sans persistance de tendance réaliste), ces
+> overlays n'améliorent pas le risque ajusté ; et la cible de vol doit être réglée
+> par rapport à la volatilité effective du fonds. C'est pourquoi le pipeline
+> automatisé les laisse désactivés tant que `fund --compare` sur données réelles
+> ne montre pas un gain net. Ne pas sur-ajuster les paramètres (piège classique).
 
 ## Options communes
 
@@ -120,6 +194,7 @@ quantlab/
   macro.py        # Module 11   alpha.py       # Module 12
   broker.py       # courtier papier persistant (paper_account.json)
   live.py         # cycle de trading sur le marché réel
+  screener.py     # screener TradingView — univers FORWARD pour le live (fail-safe)
   cli.py          # point d'entrée argparse
 tests/test_all.py # 19 tests (déterministes, hors-ligne) dont absence de look-ahead
 .github/workflows # CI pytest + cycle live quotidien automatisé

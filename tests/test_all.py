@@ -235,6 +235,55 @@ def test_fund_no_lookahead(prices):
     assert diff < 1e-6
 
 
+def test_vol_scale_math():
+    from quantlab import fund as fd
+    rng = np.random.default_rng(0)
+    calm = list(100_000 * np.cumprod(1 + rng.normal(0, 0.002, 300)))
+    wild = list(100_000 * np.cumprod(1 + rng.normal(0, 0.03, 300)))
+    assert fd.vol_scale(calm, 0.12) > 1.0       # vol basse → on monte l'exposition
+    assert fd.vol_scale(wild, 0.12) < 1.0       # vol haute → on réduit
+    assert fd.vol_scale([1, 2, 3], 0.12) == 1.0  # historique trop court → neutre
+    assert fd.vol_scale(calm, None) == 1.0       # désactivé → neutre
+    assert 0.5 <= fd.vol_scale(wild, 0.12) <= 2.0  # bornes respectées
+
+
+def test_backtest_trailing_stop():
+    from quantlab import backtest as bt
+    df = synthetic_ohlcv("T", years=8, seed=5)
+    base = bt.run_backtest(df, get_strategy("trend"), 10_000, 1.0)
+    tr = bt.run_backtest(df, get_strategy("trend"), 10_000, 1.0, trail=True)
+    assert (tr.equity > 0).all() and tr.metrics["n_trades"] >= 1
+    # le cliquet déclenche au moins autant de sorties "stop" que la version fixe
+    bs = (base.trades["reason"] == "stop").sum() if len(base.trades) else 0
+    ts = (tr.trades["reason"] == "stop").sum() if len(tr.trades) else 0
+    assert ts >= bs
+    # le trailing a un effet mesurable sur la courbe d'équité
+    assert (base.equity - tr.equity).abs().max() > 0
+    # R-multiple basé sur le stop INITIAL : les pertes restent bornées (~ -1R)
+    losses = tr.trades["r_multiple"].dropna()
+    if len(losses):
+        assert losses.min() > -1.5
+
+
+def test_fund_vol_trail_no_lookahead(prices):
+    """Le vol-targeting (vol passée) + trailing ne réintroduisent pas de look-ahead."""
+    from quantlab import fund as fd
+    full = fd.run_fund(prices, capital=100_000, vol_target=0.12, trail=True)
+    cut = fd.run_fund({s: df.iloc[:-150] for s, df in prices.items()},
+                      capital=100_000, vol_target=0.12, trail=True)
+    n = len(cut.equity) - 1
+    diff = (full.equity.iloc[:n] - cut.equity.iloc[:n]).abs().max()
+    assert diff < 1e-6
+
+
+def test_fund_compare_report(prices):
+    from quantlab import fund as fd
+    base = fd.run_fund(prices, capital=100_000)
+    impr = fd.run_fund(prices, capital=100_000, vol_target=0.12, trail=True)
+    text = fd.compare_report(base, impr, 100_000)
+    assert "COMPARAISON" in text and "Sharpe" in text and "Max drawdown" in text
+
+
 def test_dashboard_html(tmp_path, prices):
     from quantlab import dashboard as db
     from quantlab import fund as fd
@@ -246,6 +295,28 @@ def test_dashboard_html(tmp_path, prices):
     content = open(path, encoding="utf-8").read()
     assert "<svg" in content and "Tableau de bord" in content
     assert "Équité finale simulée" in content and "Mon argent" in content
+
+
+def test_dashboard_screener_panel(tmp_path, prices):
+    from quantlab import dashboard as db
+    from quantlab import fund as fd
+    from quantlab.broker import load_account
+    res = fd.run_fund(prices, capital=100_000)
+    account = load_account(str(tmp_path / "acc.json"), capital=100_000)
+    prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
+    # liste de candidats → panneau avec puces (chips)
+    p1 = db.save(res, account, prices_now, 100_000, str(tmp_path / "d1.html"),
+                 screener=["AAPL", "MSFT"])
+    c1 = open(p1, encoding="utf-8").read()
+    assert "Univers dynamique" in c1 and "AAPL" in c1 and "Candidats screenés" in c1
+    # screener indisponible → mention du fallback univers fixe
+    p2 = db.save(res, account, prices_now, 100_000, str(tmp_path / "d2.html"),
+                 screener=[])
+    c2 = open(p2, encoding="utf-8").read()
+    assert "indisponible" in c2 and "univers fixe" in c2
+    # None → panneau masqué (rétro-compatibilité)
+    p3 = db.save(res, account, prices_now, 100_000, str(tmp_path / "d3.html"))
+    assert "Univers dynamique" not in open(p3, encoding="utf-8").read()
 
 
 def test_equity_curve_tracking(tmp_path):
@@ -346,6 +417,76 @@ def test_live_blocks_entries_when_risk_off(tmp_path, monkeypatch):
                        loader=fake_load)
     assert "bloquées" in out
     assert not load_account(path).positions
+
+
+def test_screener_symbol_mapping():
+    from quantlab import screener as sc
+    assert sc.to_yf_symbol("NASDAQ:AAPL") == "AAPL"
+    assert sc.to_yf_symbol("NYSE:BRK.B") == "BRK-B"  # classe d'action → tiret
+    assert sc.to_yf_symbol("AAPL") == "AAPL"          # sans préfixe exchange
+    assert sc.to_yf_symbol("BINANCE:BTCUSDT", crypto=True) == "BTC-USD"
+    assert sc.to_yf_symbol("ETHUSD", crypto=True) == "ETH-USD"
+    assert sc.to_yf_symbol("") is None
+    assert sc.to_yf_symbol("NASDAQ:WE!RD") is None    # ticker invalide → écarté
+    assert sc.to_yf_symbol("KRAKEN:DOGEEUR", crypto=True) is None  # quote non gérée
+
+
+def test_screener_candidates_offline():
+    """candidates mappe, déduplique, filtre l'invalide et respecte la limite."""
+    from quantlab import screener as sc
+    fake = lambda **k: ["NASDAQ:AAPL", "NYSE:JPM", "NASDAQ:AAPL", "BAD!!", "NYSE:KO"]
+    assert sc.candidates(limit=5, fetch=fake) == ["AAPL", "JPM", "KO"]
+    assert sc.candidates(limit=2, fetch=fake) == ["AAPL", "JPM"]
+    # fail-safe : réponse vide ou None → liste vide (l'appelant retombe sur l'univers fixe)
+    assert sc.candidates(fetch=lambda **k: []) == []
+    assert sc.candidates(fetch=lambda **k: None) == []
+
+
+def test_screener_fetch_never_raises():
+    """_fetch est le seul point réseau : il ne lève jamais, renvoie toujours une liste."""
+    from quantlab import screener as sc
+    res = sc._fetch(market="america", limit=2, min_mcap=1e9, min_volume=1e5, crypto=False)
+    assert isinstance(res, list)
+
+
+def test_live_uses_screener(tmp_path):
+    """Avec un screener fourni, l'univers du cycle se restreint à ses candidats."""
+    from quantlab import live as lv
+    path = str(tmp_path / "acc.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+    out = lv.run_cycle(["AAA", "BBB", "CCC"], capital=10_000, state_path=path,
+                       loader=fake_load, screener=lambda: ["ZZZ"])
+    uni_line = [l for l in out.splitlines() if "Univers" in l][0]
+    assert "ZZZ" in uni_line and "AAA" not in uni_line
+
+
+def test_live_screener_failsafe(tmp_path):
+    """Screener vide → on garde l'univers fixe passé en argument."""
+    from quantlab import live as lv
+    path = str(tmp_path / "acc.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+    out = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
+                       loader=fake_load, screener=lambda: [])
+    uni_line = [l for l in out.splitlines() if "Univers" in l][0]
+    assert "AAA" in uni_line and "BBB" in uni_line
+
+
+def test_cli_screen(monkeypatch, capsys):
+    from quantlab import cli
+    from quantlab import screener as sc
+    monkeypatch.setattr(sc, "candidates", lambda **k: ["AAA", "BBB"])
+    assert cli.main(["screen", "--screen-limit", "5"]) == 0
+    assert "SCREENER TRADINGVIEW" in capsys.readouterr().out
+
+
+def test_cli_fund_compare(monkeypatch, capsys):
+    from quantlab import cli
+    monkeypatch.setattr(cli, "load", lambda sym, years=10, **k: (
+        synthetic_ohlcv(sym, years, seed=3), "synthetic"))
+    assert cli.main(["fund", "--symbols", "AAA", "BBB", "CCC", "--compare"]) == 0
+    assert "COMPARAISON" in capsys.readouterr().out
 
 
 def test_cli_smoke(monkeypatch, capsys):

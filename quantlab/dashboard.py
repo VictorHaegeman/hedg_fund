@@ -101,9 +101,35 @@ def _gauge_panel(gauge: dict | None) -> str:
             f'<div class="cards">{cards}</div>')
 
 
+def _screener_panel(candidates: list[str] | None) -> str:
+    """Panneau de l'univers dynamique (screener TradingView, source forward/live).
+
+    candidates None → panneau masqué ; [] → screener indisponible (fallback univers
+    fixe) ; liste → candidats liquides du cycle live."""
+    if candidates is None:
+        return ""
+    if not candidates:
+        cards = _card("Screener", "indisponible", "fallback univers fixe", "#facc15")
+        body = ('<p class="muted">Screener indisponible (réseau/lib) — le cycle live '
+                "retombe sur l'univers fixe (ETF sectoriels + BTC).</p>")
+    else:
+        cards = _card("Candidats screenés", str(len(candidates)),
+                      "actifs les plus liquides")
+        chips = " ".join(f'<span class="chip">{html.escape(s)}</span>'
+                         for s in candidates)
+        body = f'<div class="chips">{chips}</div>'
+    return ('<h2>Univers dynamique — screener TradingView (forward)</h2>'
+            '<p class="gen">Candidats liquides considérés par le cycle live. Source '
+            "forward : jamais utilisée pour les backtests/simulations (biais de "
+            'sélection).</p>'
+            f'<div class="cards">{cards}</div>'
+            f'<div class="panel">{body}</div>')
+
+
 def render_html(fund_res: BacktestResult, account: Account,
                 prices_now: dict[str, float], capital_sim: float,
-                benchmark: dict | None = None, gauge: dict | None = None) -> str:
+                benchmark: dict | None = None, gauge: dict | None = None,
+                screener: list[str] | None = None) -> str:
     m = fund_res.metrics
     eq_live = account.equity(prices_now)
     pnl_live = eq_live - account.initial_capital
@@ -204,6 +230,9 @@ def render_html(fund_res: BacktestResult, account: Account,
   .tbl th, .tbl td {{ padding:6px 10px; text-align:left; border-bottom:1px solid #2a3447; }}
   .tbl th {{ color:#8b98ad; font-weight:600; }}
   .cols {{ display:flex; gap:24px; flex-wrap:wrap; }} .cols > div {{ flex:1; min-width:260px; }}
+  .chips {{ display:flex; flex-wrap:wrap; gap:6px; }}
+  .chip {{ background:#1d2940; border:1px solid #2a3447; border-radius:6px;
+           padding:4px 9px; font-size:12px; color:#cdd7e6; }}
   .warn {{ color:#facc15; font-size:12px; margin-top:18px; }}
 </style></head><body>
 <h1>🏦 Hedge Fund — Tableau de bord</h1>
@@ -224,6 +253,8 @@ def render_html(fund_res: BacktestResult, account: Account,
 <div class="panel">{positions_html}</div>
 <h3>Derniers trades clôturés</h3>
 <div class="panel">{history_html}</div>
+
+{_screener_panel(screener)}
 
 {_gauge_panel(gauge)}
 
@@ -266,9 +297,10 @@ def spy_benchmark(account: Account, spy_df: pd.DataFrame) -> dict | None:
 
 def save(fund_res: BacktestResult, account: Account, prices_now: dict[str, float],
          capital_sim: float, path: str = OUT_PATH,
-         benchmark: dict | None = None, gauge: dict | None = None) -> str:
+         benchmark: dict | None = None, gauge: dict | None = None,
+         screener: list[str] | None = None) -> str:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(render_html(fund_res, account, prices_now, capital_sim,
-                            benchmark, gauge))
+                            benchmark, gauge, screener))
     return path

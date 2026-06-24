@@ -39,6 +39,7 @@ from . import optimize as opt
 from . import portfolio as pf
 from . import regime as rg
 from . import risk as rk
+from . import screener as scr
 from . import setups as st
 from .data import load
 from .strategies import describe_all, get_strategy
@@ -121,6 +122,20 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--reset", action="store_true",
                     help="réinitialise le compte papier au capital de départ")
     sp.add_argument("--max-positions", type=int, default=3)
+    sp.add_argument("--screener", action="store_true",
+                    help="univers dynamique via le screener TradingView (forward)")
+    sp.add_argument("--screen-limit", type=int, default=15,
+                    help="nombre de candidats du screener")
+    sp.add_argument("--vol-target", type=float, default=None,
+                    help="cible de volatilité annualisée (ex. 0.12) — vol-targeting")
+    sp.add_argument("--trail", action="store_true",
+                    help="stop suiveur en cliquet (trend/breakout)")
+    sp = sub.add_parser("screen",
+                        help="Screener TradingView — univers de candidats (live)")
+    sp.add_argument("--market", default="america")
+    sp.add_argument("--screen-limit", type=int, default=15)
+    sp.add_argument("--crypto", action="store_true",
+                    help="screene les cryptos les plus liquides au lieu des actions")
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
     common(sub.add_parser("pulse", help="Module 13 — pouls de marché (actu + géopolitique)"),
            symbol=False, symbols=True)
@@ -129,11 +144,23 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--max-positions", type=int, default=5)
     sp.add_argument("--full", action="store_true",
                     help="batterie complète : risque/rendement + Monte Carlo + drawdowns")
+    sp.add_argument("--vol-target", type=float, default=None,
+                    help="cible de volatilité annualisée (ex. 0.12) — vol-targeting")
+    sp.add_argument("--trail", action="store_true",
+                    help="stop suiveur en cliquet (trend/breakout)")
+    sp.add_argument("--compare", action="store_true",
+                    help="affiche base vs vol-targeting+trailing (avant/après)")
     common(sub.add_parser("validate", help="Edge réel vs biais de sélection (ETF sectoriels)"),
            symbol=False)
     sp = sub.add_parser("dashboard", help="Génère le tableau de bord HTML")
     common(sp, symbol=False, symbols=True)
     sp.add_argument("--max-positions", type=int, default=5)
+    sp.add_argument("--screen-limit", type=int, default=15,
+                    help="candidats du screener affichés sur le tableau de bord")
+    sp.add_argument("--vol-target", type=float, default=None,
+                    help="cible de volatilité annualisée (ex. 0.12) — vol-targeting")
+    sp.add_argument("--trail", action="store_true",
+                    help="stop suiveur en cliquet (trend/breakout)")
     sp.add_argument("--open", action="store_true", help="ouvre le fichier dans le navigateur")
 
     args = p.parse_args(argv)
@@ -191,8 +218,15 @@ def main(argv: list[str] | None = None) -> int:
             from .broker import reset_account
             reset_account(capital=args.capital)
             print(f"Compte papier réinitialisé à ${args.capital:,.0f}.")
+        screener = ((lambda: scr.candidates(limit=args.screen_limit))
+                    if args.screener else None)
         print(lv.run_cycle(args.symbols, args.capital, args.risk,
-                           max_positions=args.max_positions))
+                           max_positions=args.max_positions, screener=screener,
+                           vol_target=args.vol_target, trail=args.trail))
+
+    elif args.cmd == "screen":
+        print(scr.report(market=args.market, limit=args.screen_limit,
+                         crypto=args.crypto))
 
     elif args.cmd == "account":
         print(lv.account_report())
@@ -202,11 +236,18 @@ def main(argv: list[str] | None = None) -> int:
 
     elif args.cmd == "fund":
         prices, _ = _load_many(args.symbols, args.years)
-        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
-        print(fd.report(res, args.capital))
-        if args.full:
-            blocks = [rk.report(res, args.risk), mc.report(res), dd.report(res)]
-            print("\n\n" + ("\n\n" + "#" * 78 + "\n\n").join(blocks))
+        if args.compare:
+            base = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
+            impr = fd.run_fund(prices, args.capital, args.risk, args.max_positions,
+                               vol_target=args.vol_target or 0.12, trail=True)
+            print(fd.compare_report(base, impr, args.capital))
+        else:
+            res = fd.run_fund(prices, args.capital, args.risk, args.max_positions,
+                              vol_target=args.vol_target, trail=args.trail)
+            print(fd.report(res, args.capital))
+            if args.full:
+                blocks = [rk.report(res, args.risk), mc.report(res), dd.report(res)]
+                print("\n\n" + ("\n\n" + "#" * 78 + "\n\n").join(blocks))
 
     elif args.cmd == "validate":
         cap = args.capital if args.capital != 10_000.0 else 100_000.0
@@ -220,13 +261,15 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "dashboard":
         from .broker import load_account
         prices, _ = _load_many(args.symbols, args.years)
-        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
+        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions,
+                          vol_target=args.vol_target, trail=args.trail)
         account = load_account(capital=args.capital)
         prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
         bench = db.spy_benchmark(account, prices["SPY"]) if "SPY" in prices else None
         gauge = nw.risk_gauge(load)
+        screened = scr.candidates(limit=args.screen_limit)
         path = db.save(res, account, prices_now, args.capital,
-                       benchmark=bench, gauge=gauge)
+                       benchmark=bench, gauge=gauge, screener=screened)
         print(f"Tableau de bord généré : {path}")
         if args.open:
             import webbrowser

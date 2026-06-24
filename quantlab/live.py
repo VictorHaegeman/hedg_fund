@@ -20,6 +20,7 @@ import pandas as pd
 
 from .broker import DEFAULT_STATE, Account, buy, load_account, save_account, sell
 from .data import load
+from .fund import TRAILING_STRATEGIES, vol_scale
 from .regime import detect
 from .setups import _fits
 from .strategies import ALL_STRATEGIES, get_strategy
@@ -31,8 +32,18 @@ DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
 
 def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
               risk_pct: float = 1.0, state_path: str = DEFAULT_STATE,
-              loader=load, max_positions: int = 3) -> str:
+              loader=load, max_positions: int = 3, screener=None,
+              vol_target: float | None = None, vol_window: int = 20,
+              trail: bool = False) -> str:
     account = load_account(state_path, capital)
+    # Univers : si un screener FORWARD est fourni (ex. screener.candidates), on
+    # trade ses candidats ∪ les positions ouvertes. Fail-safe : screener vide →
+    # on garde l'univers fixe passé en argument. Réservé au live, jamais aux
+    # backtests (cf. garde-fou d'intégrité dans screener.py).
+    if screener is not None:
+        screened = screener()
+        if screened:
+            symbols = list(dict.fromkeys(list(screened) + list(account.positions)))
     lines = [
         "=" * 78,
         "MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)",
@@ -64,7 +75,8 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
         date = str(df.index[-1].date())
         pos = account.positions[sym]
         strat = get_strategy(pos["strategy"])
-        exit_sig = bool(strat.generate_signals(df)["exit"].iloc[-1])
+        sigs = strat.generate_signals(df)
+        exit_sig = bool(sigs["exit"].iloc[-1])
 
         if float(bar["Low"]) <= pos["stop"]:
             px = min(float(bar["Open"]), pos["stop"])
@@ -81,6 +93,13 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             t = sell(account, sym, px, date, "signal")
             lines.append(f"  VENTE {sym} @ {px:,.2f} (signal de sortie) — "
                          f"PnL {t['pnl']:+,.2f} $ ({t['pnl_pct']:+.1f}%)")
+        elif trail and pos["strategy"] in TRAILING_STRATEGIES:
+            # Stop suiveur en cliquet : remonte le stop sur la bande ATR close,
+            # persisté pour le prochain cycle (ne descend jamais).
+            new_stop = float(sigs["stop"].iloc[-1])
+            if np.isfinite(new_stop) and new_stop > pos["stop"]:
+                lines.append(f"  Stop suiveur {sym} : {pos['stop']:,.2f} → {new_stop:,.2f}")
+                pos["stop"] = new_stop
 
     # ---- 2) Nouvelles entrées (sauf filtre de risque géopolitique) ----
     from . import news as nw
@@ -91,6 +110,12 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
                      f"({int(gauge['vix_pct'] * 100)}e pct) → {gauge['level'].upper()}"
                      + ("  ⛔ nouvelles entrées bloquées (peur extrême)"
                         if risk_block else ""))
+    # Vol-targeting : module le risque par trade selon la vol réalisée du compte.
+    scale = vol_scale([v for _, v in account.equity_curve], vol_target, vol_window)
+    eff_risk = risk_pct * scale
+    if vol_target is not None and abs(scale - 1.0) > 0.01:
+        lines.append(f"  Vol-targeting : risque {risk_pct:.2f}% × {scale:.2f} "
+                     f"= {eff_risk:.2f}% (cible {vol_target * 100:.0f}% de vol)")
     for sym, df in data.items():
         if risk_block:
             break
@@ -107,7 +132,7 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             stop = float(sig["stop"])
             target = float(sig["target"]) if np.isfinite(sig["target"]) else None
             pos = buy(account, sym, price, stop, target, key, date,
-                      risk_pct, equity=account.equity(last_prices))
+                      eff_risk, equity=account.equity(last_prices))
             if pos:
                 tgt = f"{target:,.2f}" if target else "suiveur"
                 lines.append(
