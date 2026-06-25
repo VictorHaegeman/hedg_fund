@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 18.9 (66e percentile sur 2 ans)
+  Or sur 1 mois : -0.096 | Pétrole sur 1 mois : -0.166
+  NIVEAU : PRUDENCE — tension supérieure à la normale : tailles réduites conseillées
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : positif  (score +0.36, 15 titres)
+           ex: « S&P 500 Ends Flat As Apple Weakness Offsets Micron Gains, Nasdaq 100 A »
+  QQQ    : positif  (score +0.22, 15 titres)
+           ex: « S&P 500 Ends Flat As Apple Weakness Offsets Micron Gains, Nasdaq 100 A »
+  GLD    : négatif  (score -0.20, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Silver Selloff Tests Key Support Zone »
+  TLT    : neutre   (score +0.00, 15 titres)
+           ex: « How TMF Turned $10,000 Into $1,527: The Daily Rebalancing Tax Nobody T »
+  XLK    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Tech Shares Rise Thursday Afternoon »
+  XLF    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Financial Stocks Mixed Late Afternoon »
+  XLE    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « State Street Energy ETF vs Alerian MLP ETF: Which Is the Better Energy »
+  XLV    : neutre   (score +0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Healthcare Stocks Gain Late Afternoon »
+  XLY    : neutre   (score +0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLP    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLI    : positif  (score +0.20, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday as Inve »
+  XLU    : neutre   (score +0.07, 15 titres)
+           ex: « Forget XLU. The Grid Fund Actually Powering the AI Boom Is Up 23% in 2 »
+  XLB    : neutre   (score +0.00, 15 titres)
+           ex: « Smurfit Westrock Stock: Is SW Underperforming the Material Sector? »
+  BTC-USD: négatif  (score -0.27, 15 titres)
+           ex: « How Much Will One Bitcoin Be Worth in 2030? »
+
+Total mentions géopolitiques dans les titres : 8
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
