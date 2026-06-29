@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 17.6 (53e percentile sur 2 ans)
+  Or sur 1 mois : -0.116 | Pétrole sur 1 mois : -0.171
+  NIVEAU : NEUTRE — tension dans la normale
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : positif  (score +0.33, 15 titres) | 2 mention(s) géopolitique(s)
+           ex: « S&P 500, Nasdaq End Higher To Record Best Quarter Since 2020, While Al »
+  QQQ    : positif  (score +0.20, 15 titres)
+           ex: « AI Just Minted $10 Trillion and You Own None of It. These 4 ETFs Put Y »
+  GLD    : négatif  (score -0.27, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Update: Gold Edges Down Despite a Weaker Dollar as Yields Rise »
+  TLT    : neutre   (score -0.13, 15 titres)
+           ex: « Daily ETF Flows: TLT Takes In $629M »
+  XLK    : neutre   (score -0.13, 15 titres)
+           ex: « Sector Update: Tech Stocks Gain Late Afternoon »
+  XLF    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Financial Stocks Rise Late Afternoon »
+  XLE    : négatif  (score -0.33, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « What XLE's Past Dips Say About This One »
+  XLV    : neutre   (score +0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Healthcare Stocks Higher Late Afternoon »
+  XLY    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Consumer Stocks Mixed Late Afternoon »
+  XLP    : neutre   (score -0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Consumer Stocks Mixed Late Afternoon »
+  XLI    : neutre   (score +0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday Amid Hope »
+  XLU    : neutre   (score +0.07, 15 titres)
+           ex: « Forget the Utility Sector Sell-Off: 1 Legally Protected Water Monopoly »
+  XLB    : neutre   (score +0.00, 15 titres)
+           ex: « Smurfit Westrock Stock: Is SW Underperforming the Material Sector? »
+  BTC-USD: neutre   (score +0.00, 15 titres)
+           ex: « Europe's central bank head defends its recent rate hike to fight infla »
+
+Total mentions géopolitiques dans les titres : 8
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
