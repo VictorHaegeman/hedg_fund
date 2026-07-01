@@ -1,5 +1,5 @@
 {
-  "cash": 76178.04019764377,
+  "cash": 38727.27480094059,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -11,6 +11,26 @@
       "strategy": "breakout",
       "entry_date": "2026-06-16",
       "risk_amount": 1000.0
+    },
+    "XLE": {
+      "symbol": "XLE",
+      "shares": 284.8596281003745,
+      "entry": 52.810001373291016,
+      "stop": 49.288704096908155,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-01",
+      "risk_amount": 1003.08
+    },
+    "XLU": {
+      "symbol": "XLU",
+      "shares": 500.0806743784334,
+      "entry": 44.77000045776367,
+      "stop": 42.76432364043577,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-01",
+      "risk_amount": 1003.0
     }
   },
   "history": [
@@ -46,7 +66,7 @@
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-06-30T23:45:28",
+  "last_cycle": "2026-07-01T23:52:02",
   "equity_curve": [
     [
       "2026-06-11",
@@ -91,6 +111,10 @@
     [
       "2026-06-30",
       100307.54
+    ],
+    [
+      "2026-07-01",
+      100288.83
     ]
   ]
 }
