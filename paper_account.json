@@ -1,5 +1,5 @@
 {
-  "cash": 41455.05759451662,
+  "cash": 0.0,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -21,6 +21,36 @@
       "strategy": "breakout",
       "entry_date": "2026-07-02",
       "risk_amount": 1009.01
+    },
+    "QQQ": {
+      "symbol": "QQQ",
+      "shares": 22.268988450191877,
+      "entry": 695.3300170898438,
+      "stop": 649.4860705929559,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-17",
+      "risk_amount": 1020.9
+    },
+    "XLK": {
+      "symbol": "XLK",
+      "shares": 60.65432865102159,
+      "entry": 175.58999633789062,
+      "stop": 158.75985550089996,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-17",
+      "risk_amount": 1020.82
+    },
+    "XLI": {
+      "symbol": "XLI",
+      "shares": 85.27813748760413,
+      "entry": 179.41000366210938,
+      "stop": 170.13065067582608,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-17",
+      "risk_amount": 1020.77
     }
   },
   "history": [
@@ -101,7 +131,7 @@
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-07-16T23:25:47",
+  "last_cycle": "2026-07-17T23:24:57",
   "equity_curve": [
     [
       "2026-06-11",
@@ -194,6 +224,10 @@
     [
       "2026-07-16",
       102407.78
+    ],
+    [
+      "2026-07-17",
+      102069.11
     ]
   ]
 }
