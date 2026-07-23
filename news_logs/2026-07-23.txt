@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 18.7 (65e percentile sur 2 ans)
+  Or sur 1 mois : 0.015 | Pétrole sur 1 mois : 0.312
+  NIVEAU : NEUTRE — tension dans la normale
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : négatif  (score -0.20, 15 titres)
+           ex: « S&P 500, Dow, Nasdaq End Lower Over Capex Concerns, Surging Oil — CBRS »
+  QQQ    : négatif  (score -0.20, 15 titres)
+           ex: « S&P 500, Dow, Nasdaq End Lower Over Capex Concerns, Surging Oil — CBRS »
+  GLD    : positif  (score +0.27, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Update: Gold Retreats from Two-Week High as Dollar and Treasury Yields »
+  TLT    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Brent Sullivan: Why 351 Exchange ETFs Are Now Everywhere »
+  XLK    : neutre   (score +0.07, 15 titres)
+           ex: « Sector Update: Tech Stocks Fall Late Afternoon »
+  XLF    : neutre   (score -0.13, 15 titres)
+           ex: « Sector Update: Financial Stocks Softer Late Afternoon »
+  XLE    : neutre   (score +0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Sector Update: Energy Stocks Gain Late Afternoon »
+  XLV    : neutre   (score +0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « ETFs to Buy Post JNJ's Q2 Earnings Beat & Bullish 2026 Outlook »
+  XLY    : neutre   (score +0.07, 15 titres)
+           ex: « These Growth Funds Are On Quiet Sale »
+  XLP    : neutre   (score +0.07, 15 titres)
+           ex: « Exchange-Traded Funds, Equity Futures Lower Pre-Bell Thursday Amid Maj »
+  XLI    : neutre   (score +0.13, 15 titres) | 2 mention(s) géopolitique(s)
+           ex: « Industrial Stocks And This ETF Claw Gains From A Falling Market »
+  XLU    : neutre   (score +0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « UTES Charges 0.50% for AI Power Exposure: Is the Premium Worth It in 2 »
+  XLB    : neutre   (score +0.07, 15 titres)
+           ex: « Stock Market News for July 21, 2026 »
+  BTC-USD: neutre   (score +0.07, 15 titres)
+           ex: « BlackRock’s IBIT Leads Nearly $1B Bitcoin ETF Recovery as Inflows Hit  »
+
+Total mentions géopolitiques dans les titres : 7
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
