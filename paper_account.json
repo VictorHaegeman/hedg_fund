@@ -1,5 +1,5 @@
 {
-  "cash": 0.0,
+  "cash": 5504.437909775952,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -32,25 +32,15 @@
       "entry_date": "2026-07-24",
       "risk_amount": 1029.15
     },
-    "XLK": {
-      "symbol": "XLK",
-      "shares": 66.97823002550511,
-      "entry": 174.3000030517578,
-      "stop": 158.88824918627614,
+    "XLU": {
+      "symbol": "XLU",
+      "shares": 460.44328307950707,
+      "entry": 44.65999984741211,
+      "stop": 42.40684030360512,
       "target": null,
       "strategy": "meanrev",
-      "entry_date": "2026-07-27",
-      "risk_amount": 1032.25
-    },
-    "XLE": {
-      "symbol": "XLE",
-      "shares": 242.8948149177765,
-      "entry": 57.56999969482422,
-      "stop": 54.123730317491884,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-07-28",
-      "risk_amount": 1033.11
+      "entry_date": "2026-07-30",
+      "risk_amount": 1037.45
     }
   },
   "history": [
@@ -173,10 +163,40 @@
       "reason": "signal",
       "pnl": 200.35,
       "pnl_pct": 1.41
+    },
+    {
+      "symbol": "XLK",
+      "shares": 66.97823002550511,
+      "entry": 174.3000030517578,
+      "stop": 158.88824918627614,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-27",
+      "risk_amount": 1032.25,
+      "exit": 175.72999572753906,
+      "exit_date": "2026-07-30",
+      "reason": "signal",
+      "pnl": 84.06,
+      "pnl_pct": 0.82
+    },
+    {
+      "symbol": "XLE",
+      "shares": 242.8948149177765,
+      "entry": 57.56999969482422,
+      "stop": 54.123730317491884,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-28",
+      "risk_amount": 1033.11,
+      "exit": 58.959999084472656,
+      "exit_date": "2026-07-30",
+      "reason": "signal",
+      "pnl": 323.47,
+      "pnl_pct": 2.41
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-07-29T23:30:58",
+  "last_cycle": "2026-07-30T23:33:34",
   "equity_curve": [
     [
       "2026-06-11",
@@ -305,6 +325,10 @@
     [
       "2026-07-29",
       102333.44
+    ],
+    [
+      "2026-07-30",
+      103734.94
     ]
   ]
 }

@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 17.1 (44e percentile sur 2 ans)
+  Or sur 1 mois : 0.018 | Pétrole sur 1 mois : 0.234
+  NIVEAU : NEUTRE — tension dans la normale
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : positif  (score +0.27, 15 titres)
+           ex: « S&P 500, Nasdaq End Best Day In A Month On Support From Microsoft Gain »
+  QQQ    : positif  (score +0.20, 15 titres)
+           ex: « S&P 500, Nasdaq End Best Day In A Month On Support From Microsoft Gain »
+  GLD    : neutre   (score -0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday Amid Te »
+  TLT    : neutre   (score -0.13, 15 titres)
+           ex: « Market Minute 7-29-26- Wall Street Waits on Warsh, While Oil Spikes »
+  XLK    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Tech Stocks Sharply Higher Late Afternoon »
+  XLF    : neutre   (score -0.13, 15 titres)
+           ex: « Sector Update: Financial Stocks Advance Late Afternoon »
+  XLE    : neutre   (score +0.13, 15 titres)
+           ex: « Sector Update: Energy Stocks Higher Late Afternoon »
+  XLV    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Healthcare Stocks Decline Late Afternoon »
+  XLY    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday Amid Te »
+  XLP    : neutre   (score -0.07, 15 titres)
+           ex: « Is Wall Street Bullish or Bearish on Mondelez International Stock? »
+  XLI    : neutre   (score +0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday Amid Te »
+  XLU    : neutre   (score +0.07, 15 titres)
+           ex: « Want $6,000 a Year on $100K, Paid Monthly? This Utility Fund Just Rais »
+  XLB    : neutre   (score +0.00, 15 titres)
+           ex: « Stock Market News for July 27, 2026 »
+  BTC-USD: neutre   (score +0.07, 15 titres)
+           ex: « Strategy misses Q2 earnings estimates by a wide margin »
+
+Total mentions géopolitiques dans les titres : 3
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
