@@ -1,5 +1,5 @@
 {
-  "cash": 22155.78717327259,
+  "cash": 0.0,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -31,6 +31,16 @@
       "strategy": "meanrev",
       "entry_date": "2026-07-30",
       "risk_amount": 1037.45
+    },
+    "SPY": {
+      "symbol": "SPY",
+      "shares": 28.709779634163084,
+      "entry": 771.3300170898438,
+      "stop": 751.9618808663636,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-08-04",
+      "risk_amount": 1041.52
     }
   },
   "history": [
@@ -201,7 +211,7 @@
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-08-03T23:37:16",
+  "last_cycle": "2026-08-04T23:33:33",
   "equity_curve": [
     [
       "2026-06-11",
@@ -342,6 +352,10 @@
     [
       "2026-08-03",
       103942.56
+    ],
+    [
+      "2026-08-04",
+      104140.81
     ]
   ]
 }
