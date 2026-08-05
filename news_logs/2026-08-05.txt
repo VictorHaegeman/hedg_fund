@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 15.8 (21e percentile sur 2 ans)
+  Or sur 1 mois : 0.041 | Pétrole sur 1 mois : 0.024
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : positif  (score +0.33, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Amid Corpo »
+  QQQ    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « How ProShares Ultra QQQ Quietly Built $14.46 Billion in Assets Despite »
+  GLD    : neutre   (score +0.00, 15 titres)
+           ex: « Gold and Silver Break Out as Market Makes Surprise Shift »
+  TLT    : neutre   (score -0.13, 15 titres)
+           ex: « Traders in the world’s most important financial market are bracing for »
+  XLK    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Tech Stocks Mixed Late Afternoon »
+  XLF    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Financial Stocks Advance Late Afternoon »
+  XLE    : négatif  (score -0.33, 15 titres)
+           ex: « Sector Update: Energy Stocks Decline Wednesday Afternoon »
+  XLV    : neutre   (score +0.00, 15 titres)
+           ex: « Healthcare Stocks Have Been Forgotten. Eli Lilly, McKesson, and 9 More »
+  XLY    : neutre   (score +0.07, 15 titres)
+           ex: « Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Amid Corpo »
+  XLP    : neutre   (score +0.00, 15 titres)
+           ex: « Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Amid Corpo »
+  XLI    : neutre   (score -0.07, 15 titres)
+           ex: « Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Amid Corpo »
+  XLU    : neutre   (score +0.07, 15 titres)
+           ex: « Utilities Are Up 8% on AI Power Demand. The Fund Actually Building the »
+  XLB    : neutre   (score +0.00, 15 titres)
+           ex: « What Are Wall Street Analysts' Target Price for Mosaic Stock? »
+  BTC-USD: neutre   (score -0.13, 15 titres)
+           ex: « Bitcoin Is Down 44%, and BlackRock Just Launched a Fund That Pays You  »
+
+Total mentions géopolitiques dans les titres : 2
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
