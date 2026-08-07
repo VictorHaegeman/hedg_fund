@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 15.1 (12e percentile sur 2 ans)
+  Or sur 1 mois : 0.03 | Pétrole sur 1 mois : 0.09
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : positif  (score +0.20, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « A Market Drop at 67 Does Twice the Damage of One at 57. Here’s the Mat »
+  QQQ    : neutre   (score +0.07, 15 titres)
+           ex: « S&P 500 Gains as Iran-Oman Deal Eases Oil Fears »
+  GLD    : neutre   (score +0.13, 15 titres)
+           ex: « Daily ETF Flows: GLD Makes Appearance »
+  TLT    : neutre   (score -0.13, 15 titres)
+           ex: « U.S.-Japan Yen Move Puts These ETF Areas in Focus »
+  XLK    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Tech Stocks Mixed Late Afternoon »
+  XLF    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Financial Stocks Softer Late Afternoon »
+  XLE    : neutre   (score -0.13, 15 titres)
+           ex: « Sector Update: Energy Stocks Gain Late Afternoon »
+  XLV    : neutre   (score -0.07, 15 titres)
+           ex: « State Street XLV vs VanEck BBH: Which Healthcare ETF Is the Better Buy »
+  XLY    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLP    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLI    : neutre   (score -0.07, 15 titres)
+           ex: « Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Thursday Amid Cor »
+  XLU    : neutre   (score +0.13, 15 titres)
+           ex: « Play Earnings Growth Momentum With These ETFs »
+  XLB    : neutre   (score +0.07, 15 titres)
+           ex: « Play Earnings Growth Momentum With These ETFs »
+  BTC-USD: positif  (score +0.27, 15 titres)
+           ex: « Cleanspark Q3 Earnings Call Highlights »
+
+Total mentions géopolitiques dans les titres : 1
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
