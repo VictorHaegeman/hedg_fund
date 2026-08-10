@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 15.5 (17e percentile sur 2 ans)
+  Or sur 1 mois : 0.096 | Pétrole sur 1 mois : 0.069
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : neutre   (score +0.00, 15 titres)
+           ex: « VYM’s 2.2% Yield Hides $141,000 in Decade-Long Underperformance Versus »
+  QQQ    : positif  (score +0.22, 15 titres)
+           ex: « Same 100 Stocks, Different Price: Why QQQ Costs $180 Annually While QQ »
+  GLD    : positif  (score +0.27, 15 titres)
+           ex: « Semiconductor ETFs See Profit-Taking as Investors Pile Into QQQ »
+  TLT    : neutre   (score -0.07, 15 titres)
+           ex: « Semiconductor ETFs See Profit-Taking as Investors Pile Into QQQ »
+  XLK    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Tech Stocks Decline Late Afternoon »
+  XLF    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Financial Stocks Mixed Late Afternoon »
+  XLE    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Energy Stocks Rise Late Afternoon »
+  XLV    : positif  (score +0.20, 15 titres)
+           ex: « Sector Update: Healthcare Stocks Gain Late Afternoon »
+  XLY    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Consumer Stocks Lower in Late Afternoon Trading »
+  XLP    : neutre   (score -0.13, 15 titres)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLI    : neutre   (score +0.13, 15 titres)
+           ex: « Semiconductor ETFs See Profit-Taking as Investors Pile Into QQQ »
+  XLU    : neutre   (score +0.00, 15 titres)
+           ex: « Do Wall Street Analysts Like Evergy Stock? »
+  XLB    : positif  (score +0.20, 15 titres)
+           ex: « Are Wall Street Analysts Bullish on Corteva Stock? »
+  BTC-USD: neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Bad news for the economy just became great news for Bitcoin »
+
+Total mentions géopolitiques dans les titres : 1
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
