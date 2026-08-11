@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 15.3 (14e percentile sur 2 ans)
+  Or sur 1 mois : 0.077 | Pétrole sur 1 mois : 0.062
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : positif  (score +0.23, 13 titres)
+           ex: « JEPQ’s 10.9% Yield Hides $2,900 Annual Tax Bill Most Retirees Never Se »
+  QQQ    : neutre   (score +0.14, 14 titres)
+           ex: « Exchange-Traded Funds Mixed, US Equities Fall After Midday »
+  GLD    : positif  (score +0.27, 15 titres)
+           ex: « Best-Performing ETF Areas of Last Week »
+  TLT    : neutre   (score +0.00, 15 titres)
+           ex: « Daily ETF Flows: TLT Inflows Surge »
+  XLK    : négatif  (score -0.27, 15 titres)
+           ex: « Sector Update: Tech Stocks Mixed Late Afternoon »
+  XLF    : négatif  (score -0.20, 15 titres)
+           ex: « VFH vs. XLF: Which Financial ETF Is the Better Buy? »
+  XLE    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Energy Stocks Gain Late Afternoon »
+  XLV    : positif  (score +0.27, 15 titres)
+           ex: « Are Wall Street Analysts Bullish on DaVita Stock? »
+  XLY    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Consumer Stocks Advance Late Afternoon »
+  XLP    : neutre   (score -0.13, 15 titres)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLI    : neutre   (score +0.07, 15 titres)
+           ex: « 3 Industrial Stocks to Buy Amid Manufacturing Resilience »
+  XLU    : neutre   (score +0.00, 15 titres)
+           ex: « Do Wall Street Analysts Like Consolidated Edison Stock? »
+  XLB    : neutre   (score +0.07, 15 titres)
+           ex: « Should You Invest in the State Street Materials Select Sector SPDR ETF »
+  BTC-USD: neutre   (score +0.00, 15 titres)
+           ex: « Bitcoin Price Prediction: Can Bitcoin Reach $1 Million? »
+
+Total mentions géopolitiques dans les titres : 0
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
