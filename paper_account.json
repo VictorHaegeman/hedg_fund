@@ -1,5 +1,5 @@
 {
-  "cash": 0.0,
+  "cash": 20175.74068366343,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -21,16 +21,6 @@
       "strategy": "breakout",
       "entry_date": "2026-07-02",
       "risk_amount": 1009.01
-    },
-    "XLU": {
-      "symbol": "XLU",
-      "shares": 460.44328307950707,
-      "entry": 44.65999984741211,
-      "stop": 42.40684030360512,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-07-30",
-      "risk_amount": 1037.45
     },
     "SPY": {
       "symbol": "SPY",
@@ -208,10 +198,25 @@
       "reason": "signal",
       "pnl": 74.43,
       "pnl_pct": 0.55
+    },
+    {
+      "symbol": "XLU",
+      "shares": 460.44328307950707,
+      "entry": 44.65999984741211,
+      "stop": 42.40684030360512,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-07-30",
+      "risk_amount": 1037.45,
+      "exit": 43.84000015258789,
+      "exit_date": "2026-08-12",
+      "reason": "signal",
+      "pnl": -397.94,
+      "pnl_pct": -1.84
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-08-11T23:12:43",
+  "last_cycle": "2026-08-12T23:11:20",
   "equity_curve": [
     [
       "2026-06-11",
@@ -372,6 +377,10 @@
     [
       "2026-08-11",
       103845.78
+    ],
+    [
+      "2026-08-12",
+      104065.65
     ]
   ]
 }
