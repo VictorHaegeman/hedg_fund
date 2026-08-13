@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 14.6 (6e percentile sur 2 ans)
+  Or sur 1 mois : 0.093 | Pétrole sur 1 mois : 0.048
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : neutre   (score +0.10, 10 titres)
+           ex: « Wall Street Declared Active Funds Dead. Nobody Told the Growth Fund of »
+  QQQ    : neutre   (score +0.08, 12 titres)
+           ex: « QYLD’s 12% Yield Looks Great. The Long-Term Cost Is Much Higher »
+  GLD    : positif  (score +0.20, 15 titres)
+           ex: « Forget Buying Gold Directly: Wheaton Precious Metals Could Be the Bett »
+  TLT    : neutre   (score -0.07, 15 titres)
+           ex: « U.S. Budget Deficits Just Surged to $432.3 billion in July While Trump »
+  XLK    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Tech Stocks Mixed Late Afternoon »
+  XLF    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Financial Stocks Rise Late Afternoon »
+  XLE    : neutre   (score +0.13, 15 titres)
+           ex: « Are Wall Street Analysts Bullish on ONEOK Stock? »
+  XLV    : positif  (score +0.33, 15 titres)
+           ex: « Exchange-Traded Funds, Equity Futures Higher Pre-Bell Thursday Amid Pr »
+  XLY    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Consumer Stocks Advance Late Afternoon »
+  XLP    : négatif  (score -0.33, 15 titres)
+           ex: « Sector Update: Consumer Stocks Decline Late Afternoon »
+  XLI    : neutre   (score +0.13, 15 titres)
+           ex: « AMETEK Stock: Is Wall Street Bullish or Bearish? »
+  XLU    : neutre   (score +0.07, 15 titres)
+           ex: « Do Wall Street Analysts Like Consolidated Edison Stock? »
+  XLB    : positif  (score +0.20, 15 titres)
+           ex: « Sherwin-Williams Stock Outlook: Is Wall Street Bullish or Bearish? »
+  BTC-USD: neutre   (score +0.13, 15 titres)
+           ex: « Goldman's buying bitcoin ETFs, Tether's buying gold, and bitcoin doesn »
+
+Total mentions géopolitiques dans les titres : 0
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
