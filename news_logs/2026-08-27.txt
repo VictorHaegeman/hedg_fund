@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 15.2 (14e percentile sur 2 ans)
+  Or sur 1 mois : 0.135 | Pétrole sur 1 mois : -0.015
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : neutre   (score +0.13, 15 titres) | 3 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds Lower, Equity Futures Mixed Pre-Bell Wednesday A »
+  QQQ    : neutre   (score +0.00, 15 titres)
+           ex: « QQQI’s 14% Yield Hides a Negative SEC Yield: The Fund Earns Nothing Be »
+  GLD    : positif  (score +0.33, 15 titres)
+           ex: « Your 60/40 Portfolio May Be 100% Exposed to a Dying Dollar, Bitwise Sa »
+  TLT    : neutre   (score +0.13, 15 titres)
+           ex: « As U.S. Debt Tops $40 Trillion, This Trade Bets On Further Weakness In »
+  XLK    : neutre   (score -0.07, 15 titres)
+           ex: « Exchange-Traded Funds Fall as US Equities Decline After Midday »
+  XLF    : neutre   (score -0.07, 15 titres)
+           ex: « XLF vs IYF: Which Financial Sector ETF Offers Better Value? »
+  XLE    : négatif  (score -0.60, 15 titres)
+           ex: « Sector Update: Energy Stocks Rise Wednesday Afternoon »
+  XLV    : neutre   (score -0.13, 15 titres)
+           ex: « Should You Invest in the State Street Health Care Select Sector SPDR E »
+  XLY    : négatif  (score -0.20, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Are Wall Street Analysts Predicting Genuine Parts Stock Will Climb or  »
+  XLP    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Consumer Stocks Softer Late Afternoon »
+  XLI    : neutre   (score +0.07, 15 titres)
+           ex: « Should You Invest in the State Street Industrial Select Sector SPDR ET »
+  XLU    : neutre   (score -0.07, 15 titres)
+           ex: « Utility Stocks Hit Record Lows vs. S&P 500: Why It’s Time to Buy »
+  XLB    : neutre   (score -0.13, 15 titres)
+           ex: « Do Wall Street Analysts Like Martin Marietta Materials Stock? »
+  BTC-USD: neutre   (score +0.07, 15 titres)
+           ex: « Is BlackRock’s Crypto ETF and AI Push Rewiring The Investment Case For »
+
+Total mentions géopolitiques dans les titres : 4
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
