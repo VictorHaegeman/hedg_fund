@@ -1,0 +1,23 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-08-29T03:48:21 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD
+==============================================================================
+  Contexte risque : VIX 14.4 (5e pct) → RISK-ON
+  ACHAT XLV @ 171.16 [meanrev] — 115.6288 u | stop 163.19 | target suiveur | risque 1,037.17 $
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-08-29T03:48:24
+  Équité : 103,707.59 $ (+3.71% depuis le départ) | Cash : 0.00 $
+  Positions ouvertes :
+    JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +0.00 $
+    XLF      648.8673 u @ 55.62 [breakout] | stop 54.06 | latent +1,609.19 $
+    SPY      28.7098 u @ 771.33 [breakout] | stop 751.96 | latent -56.85 $
+    XLV      115.6288 u @ 171.16 [meanrev] | stop 163.19 | latent +0.00 $
+  Trades clôturés : 13 | win rate 77% | PnL réalisé total : +2,206.33 $
+  5 derniers trades :
+    2026-07-30 XLK      [meanrev] 174.30 → 175.73 (signal) PnL +84.06 $
+    2026-07-30 XLE      [meanrev] 57.57 → 58.96 (signal) PnL +323.47 $
+    2026-07-31 QQQ      [meanrev] 684.23 → 687.99 (signal) PnL +74.43 $
+    2026-08-12 XLU      [meanrev] 44.66 → 43.84 (signal) PnL -397.94 $
+    2026-08-26 XLI      [meanrev] 183.57 → 180.34 (signal) PnL -374.81 $
+Variation du cycle : -9.90 $
