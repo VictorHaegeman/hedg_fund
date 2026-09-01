@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 14.9 (10e percentile sur 2 ans)
+  Or sur 1 mois : 0.099 | Pétrole sur 1 mois : 0.095
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : neutre   (score +0.09, 15 titres)
+           ex: « Deere and AGCO Rally 4% as Baird Upgrades Both on North America Row Cr »
+  QQQ    : neutre   (score -0.07, 15 titres)
+           ex: « Exchange-Traded Funds Lower as US Equities Fall After Midday »
+  GLD    : neutre   (score +0.13, 15 titres)
+           ex: « The Best Gold ETF for 2027 Won't Surprise You. It's Still GLD. »
+  TLT    : neutre   (score +0.13, 15 titres)
+           ex: « $100,000 in TLT at the 2020 Peak Is Down More Than 40% Today, Even Aft »
+  XLK    : neutre   (score -0.13, 15 titres)
+           ex: « Sector Update: Tech Stocks Gain Late Afternoon »
+  XLF    : négatif  (score -0.20, 15 titres)
+           ex: « XLF vs. KRE: Which State Street Financial Sector ETF Is the Better Buy »
+  XLE    : neutre   (score +0.00, 15 titres) | 2 mention(s) géopolitique(s)
+           ex: « The Energy Sector Stands Out in Today's Selloff »
+  XLV    : neutre   (score +0.00, 15 titres)
+           ex: « This Popular Healthcare ETF Is Diluting Your Dividend Income »
+  XLY    : négatif  (score -0.33, 15 titres)
+           ex: « Are Wall Street Analysts Predicting Genuine Parts Stock Will Climb or  »
+  XLP    : neutre   (score -0.13, 15 titres)
+           ex: « These 3 Dividend Stocks Make a Strong Case for Skipping XLP »
+  XLI    : neutre   (score -0.07, 15 titres)
+           ex: « Should You Invest in the State Street Industrial Select Sector SPDR ET »
+  XLU    : neutre   (score -0.07, 15 titres)
+           ex: « Forget XLU: These 3 Utility Dividend Stocks Offer More Exposure to AI »
+  XLB    : neutre   (score -0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « U.S. steel and materials stocks swing amid U.S.-Canada trade war »
+  BTC-USD: neutre   (score +0.00, 15 titres)
+           ex: « Strategy Just Bought Bitcoin for the First Time in Over Two Months. He »
+
+Total mentions géopolitiques dans les titres : 3
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
