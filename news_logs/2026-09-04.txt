@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 14.3 (5e percentile sur 2 ans)
+  Or sur 1 mois : 0.034 | Pétrole sur 1 mois : 0.229
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : positif  (score +0.30, 15 titres)
+           ex: « Campbell’s Slides 9% on 36% Dividend Cut, General Mills Falls 4%, Kraf »
+  QQQ    : neutre   (score +0.04, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Exchange-Traded Funds Rise as US Equities Advance After Midday »
+  GLD    : neutre   (score +0.07, 15 titres)
+           ex: « The Best Gold ETF for 2027 Won't Surprise You. It's Still GLD. »
+  TLT    : neutre   (score +0.00, 15 titres)
+           ex: « $100,000 in TLT at the 2020 Peak Is Down More Than 40% Today, Even Aft »
+  XLK    : négatif  (score -0.27, 15 titres)
+           ex: « Exchange-Traded Funds Rise as US Equities Advance After Midday »
+  XLF    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Financial Stocks Gain Late Afternoon »
+  XLE    : négatif  (score -0.20, 15 titres)
+           ex: « Bond yields still high as investors weigh rate hike risk: AlphaCheck »
+  XLV    : neutre   (score -0.07, 15 titres)
+           ex: « This Popular Healthcare ETF Is Diluting Your Dividend Income »
+  XLY    : neutre   (score -0.13, 15 titres)
+           ex: « Bond yields still high as investors weigh rate hike risk: AlphaCheck »
+  XLP    : négatif  (score -0.17, 15 titres)
+           ex: « Campbell’s Slides 9% on 36% Dividend Cut, General Mills Falls 4%, Kraf »
+  XLI    : neutre   (score +0.00, 15 titres)
+           ex: « Bond yields still high as investors weigh rate hike risk: AlphaCheck »
+  XLU    : neutre   (score +0.00, 15 titres)
+           ex: « Bond yields still high as investors weigh rate hike risk: AlphaCheck »
+  XLB    : neutre   (score -0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « U.S. steel and materials stocks swing amid U.S.-Canada trade war »
+  BTC-USD: positif  (score +0.47, 15 titres)
+           ex: « Where Will Bitcoin Be in 2030? »
+
+Total mentions géopolitiques dans les titres : 2
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
