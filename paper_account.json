@@ -1,5 +1,5 @@
 {
-  "cash": 19988.007381480515,
+  "cash": 0.0,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -31,6 +31,16 @@
       "strategy": "breakout",
       "entry_date": "2026-08-04",
       "risk_amount": 1041.52
+    },
+    "XLV": {
+      "symbol": "XLV",
+      "shares": 119.53579721548186,
+      "entry": 167.1300048828125,
+      "stop": 158.88953088737665,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-09-08",
+      "risk_amount": 1032.88
     }
   },
   "history": [
@@ -246,7 +256,7 @@
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-09-09T00:27:20",
+  "last_cycle": "2026-09-10T00:26:46",
   "equity_curve": [
     [
       "2026-06-11",
@@ -487,6 +497,10 @@
     [
       "2026-09-09",
       103928.68
+    ],
+    [
+      "2026-09-10",
+      103278.16
     ]
   ]
 }
