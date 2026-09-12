@@ -22,16 +22,6 @@
       "entry_date": "2026-07-02",
       "risk_amount": 1009.01
     },
-    "SPY": {
-      "symbol": "SPY",
-      "shares": 28.709779634163084,
-      "entry": 771.3300170898438,
-      "stop": 751.9618808663636,
-      "target": null,
-      "strategy": "breakout",
-      "entry_date": "2026-08-04",
-      "risk_amount": 1041.52
-    },
     "XLV": {
       "symbol": "XLV",
       "shares": 119.53579721548186,
@@ -41,6 +31,16 @@
       "strategy": "meanrev",
       "entry_date": "2026-09-08",
       "risk_amount": 1032.88
+    },
+    "QQQ": {
+      "symbol": "QQQ",
+      "shares": 30.669808317127416,
+      "entry": 708.6900024414062,
+      "stop": 681.669683079685,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-09-10",
+      "risk_amount": 1025.79
     }
   },
   "history": [
@@ -253,10 +253,25 @@
       "reason": "signal",
       "pnl": 187.08,
       "pnl_pct": 1.05
+    },
+    {
+      "symbol": "SPY",
+      "shares": 28.709779634163084,
+      "entry": 771.3300170898438,
+      "stop": 751.9618808663636,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-08-04",
+      "risk_amount": 1041.52,
+      "exit": 757.8300170898438,
+      "exit_date": "2026-09-10",
+      "reason": "signal",
+      "pnl": -409.53,
+      "pnl_pct": -1.75
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-09-11T00:23:20",
+  "last_cycle": "2026-09-12T00:29:50",
   "equity_curve": [
     [
       "2026-06-11",
@@ -505,6 +520,10 @@
     [
       "2026-09-11",
       102954.48
+    ],
+    [
+      "2026-09-12",
+      102568.27
     ]
   ]
 }
