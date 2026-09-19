@@ -1,5 +1,5 @@
 {
-  "cash": 29688.834391421547,
+  "cash": 51665.63894676702,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -11,16 +11,6 @@
       "strategy": "breakout",
       "entry_date": "2026-06-16",
       "risk_amount": 1000.0
-    },
-    "QQQ": {
-      "symbol": "QQQ",
-      "shares": 30.669808317127416,
-      "entry": 708.6900024414062,
-      "stop": 681.669683079685,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-09-10",
-      "risk_amount": 1025.79
     },
     "XLF": {
       "symbol": "XLF",
@@ -288,10 +278,25 @@
       "reason": "signal",
       "pnl": 164.96,
       "pnl_pct": 0.56
+    },
+    {
+      "symbol": "QQQ",
+      "shares": 30.669808317127416,
+      "entry": 708.6900024414062,
+      "stop": 681.669683079685,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-09-10",
+      "risk_amount": 1025.79,
+      "exit": 716.9199829101562,
+      "exit_date": "2026-09-17",
+      "reason": "signal",
+      "pnl": 230.55,
+      "pnl_pct": 1.16
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-09-18T00:39:50",
+  "last_cycle": "2026-09-19T00:30:40",
   "equity_curve": [
     [
       "2026-06-11",
@@ -560,6 +565,10 @@
     [
       "2026-09-18",
       102044.93
+    ],
+    [
+      "2026-09-19",
+      102384.31
     ]
   ]
 }
