@@ -1,5 +1,5 @@
 {
-  "cash": 51665.63894676702,
+  "cash": 33367.92673463795,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -21,6 +21,16 @@
       "strategy": "meanrev",
       "entry_date": "2026-09-16",
       "risk_amount": 1020.58
+    },
+    "BTC-USD": {
+      "symbol": "BTC-USD",
+      "shares": 0.21295714085754816,
+      "entry": 85879.1015625,
+      "stop": 81071.8057228239,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-09-22",
+      "risk_amount": 1023.75
     }
   },
   "history": [
@@ -296,7 +306,7 @@
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-09-19T00:30:40",
+  "last_cycle": "2026-09-22T01:02:19",
   "equity_curve": [
     [
       "2026-06-11",
@@ -569,6 +579,10 @@
     [
       "2026-09-19",
       102384.31
+    ],
+    [
+      "2026-09-22",
+      102365.65
     ]
   ]
 }
