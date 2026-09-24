@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 15.2 (15e percentile sur 2 ans)
+  Or sur 1 mois : -0.062 | Pétrole sur 1 mois : 0.09
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : négatif  (score -0.60, 15 titres)
+           ex: « Vanguard Will Put $1,500 Into Your Kid’s Trump Account Starting in 202 »
+  QQQ    : neutre   (score +0.00, 15 titres)
+           ex: « SK Hynix Falls 3% Despite Wolfe Research Lifting Its Target to $250; S »
+  GLD    : neutre   (score +0.00, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Will Rising Interest Rates Send Gold Back to Its Highs? »
+  TLT    : neutre   (score -0.07, 15 titres)
+           ex: « ‘Jackpot Mode’: Bloomberg’s Eric Balchunas Says Traders Are Betting $7 »
+  XLK    : négatif  (score -0.20, 15 titres)
+           ex: « Tech retreats as Treasury yields and oil climb: AlphaCheck »
+  XLF    : négatif  (score -0.27, 15 titres)
+           ex: « Should You Invest in the State Street Financial Select Sector SPDR ETF »
+  XLE    : négatif  (score -0.47, 15 titres)
+           ex: « Sector Update: Energy Stocks Fall Late Afternoon »
+  XLV    : neutre   (score -0.02, 15 titres)
+           ex: « Ocular Therapeutix and ANI Pharmaceuticals Stocks Trade Down, What You »
+  XLY    : neutre   (score -0.03, 15 titres)
+           ex: « DraftKings Drops 4% as Prediction-Market Spending Plans Stir Margin Do »
+  XLP    : neutre   (score +0.00, 15 titres)
+           ex: « Better Consumer Staples ETF: Vanguard's VDC vs. State Street's XLP »
+  XLI    : neutre   (score +0.07, 15 titres)
+           ex: « Blowout jobs report raises worries of Fed rate hike: AlphaCheck »
+  XLU    : neutre   (score +0.00, 15 titres)
+           ex: « Blowout jobs report raises worries of Fed rate hike: AlphaCheck »
+  XLB    : négatif  (score -0.20, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « U.S. steel and materials stocks swing amid U.S.-Canada trade war »
+  BTC-USD: neutre   (score +0.00, 15 titres)
+           ex: « Why TeraWulf (WULF) Is Up 6.2% After Securing a 20-Year Anthropic AI L »
+
+Total mentions géopolitiques dans les titres : 2
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
