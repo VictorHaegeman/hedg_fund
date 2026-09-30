@@ -1,5 +1,5 @@
 {
-  "cash": 17115.24934614121,
+  "cash": 42694.83423174468,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -11,16 +11,6 @@
       "strategy": "breakout",
       "entry_date": "2026-06-16",
       "risk_amount": 1000.0
-    },
-    "XLF": {
-      "symbol": "XLF",
-      "shares": 475.82626977636704,
-      "entry": 55.93000030517578,
-      "stop": 53.78513693279202,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-09-16",
-      "risk_amount": 1020.58
     },
     "BTC-USD": {
       "symbol": "BTC-USD",
@@ -313,10 +303,25 @@
       "reason": "signal",
       "pnl": 230.55,
       "pnl_pct": 1.16
+    },
+    {
+      "symbol": "XLF",
+      "shares": 475.82626977636704,
+      "entry": 55.93000030517578,
+      "stop": 53.78513693279202,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-09-16",
+      "risk_amount": 1020.58,
+      "exit": 53.78513693279202,
+      "exit_date": "2026-09-29",
+      "reason": "stop",
+      "pnl": -1046.69,
+      "pnl_pct": -3.83
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-09-29T02:11:43",
+  "last_cycle": "2026-09-30T01:25:56",
   "equity_curve": [
     [
       "2026-06-11",
@@ -613,6 +618,10 @@
     [
       "2026-09-29",
       101014.93
+    ],
+    [
+      "2026-09-30",
+      100788.41
     ]
   ]
 }
