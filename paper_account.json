@@ -1,5 +1,5 @@
 {
-  "cash": 42694.83423174468,
+  "cash": 4649.212866229082,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -22,15 +22,25 @@
       "entry_date": "2026-09-22",
       "risk_amount": 1023.75
     },
-    "XLE": {
-      "symbol": "XLE",
-      "shares": 262.9419785030004,
-      "entry": 61.779998779296875,
-      "stop": 57.918548579157495,
+    "XLK": {
+      "symbol": "XLK",
+      "shares": 159.321082140016,
+      "entry": 197.80999755859375,
+      "stop": 191.4510438799666,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-10-01",
+      "risk_amount": 1013.12
+    },
+    "XLV": {
+      "symbol": "XLV",
+      "shares": 138.27490760483198,
+      "entry": 166.1999969482422,
+      "stop": 158.8743163718527,
       "target": null,
       "strategy": "meanrev",
-      "entry_date": "2026-09-22",
-      "risk_amount": 1015.34
+      "entry_date": "2026-10-01",
+      "risk_amount": 1012.96
     }
   },
   "history": [
@@ -318,10 +328,25 @@
       "reason": "stop",
       "pnl": -1046.69,
       "pnl_pct": -3.83
+    },
+    {
+      "symbol": "XLE",
+      "shares": 262.9419785030004,
+      "entry": 61.779998779296875,
+      "stop": 57.918548579157495,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-09-22",
+      "risk_amount": 1015.34,
+      "exit": 62.70000076293945,
+      "exit_date": "2026-10-01",
+      "reason": "signal",
+      "pnl": 225.54,
+      "pnl_pct": 1.49
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-10-01T01:25:52",
+  "last_cycle": "2026-10-02T01:46:19",
   "equity_curve": [
     [
       "2026-06-11",
@@ -626,6 +651,10 @@
     [
       "2026-10-01",
       100810.82
+    ],
+    [
+      "2026-10-02",
+      101284.29
     ]
   ]
 }
