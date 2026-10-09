@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 15.4 (20e percentile sur 2 ans)
+  Or sur 1 mois : -0.045 | Pétrole sur 1 mois : -0.068
+  NIVEAU : RISK-ON — marché calme : environnement favorable aux prises de position
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : neutre   (score -0.09, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Nasdaq 100 Ends Lower As Report Of Weaker-Than-Expected OpenAI Revenue »
+  QQQ    : neutre   (score +0.02, 15 titres)
+           ex: « Why Buy-and-Hold Investors Are Switching From QQQ to This Lower-Fee Al »
+  GLD    : neutre   (score +0.13, 15 titres)
+           ex: « GLD, GDX, and GDXJ Are 3 Ways to Bet on Gold. The Same Move Can Produc »
+  TLT    : neutre   (score -0.07, 15 titres)
+           ex: « Options traders are betting on a dramatic drop in interest rates »
+  XLK    : négatif  (score -0.27, 15 titres)
+           ex: « Exchange-Traded Funds Lower as US Equities Decline After Midday »
+  XLF    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Financial Stocks Lean Lower Pre-Bell Thursday »
+  XLE    : neutre   (score +0.00, 15 titres)
+           ex: « Energy ETFs to Watch as Bond Market Carnage Shows Signs of Cooling »
+  XLV    : négatif  (score -0.20, 15 titres)
+           ex: « 'The market has had every reason to sell off' — and it hasn't »
+  XLY    : négatif  (score -0.23, 15 titres)
+           ex: « Higher rates are pummeling consumer discretionary stocks — here's the  »
+  XLP    : neutre   (score -0.07, 15 titres)
+           ex: « Sector Update: Consumer Stocks Advance in Afternoon Trading »
+  XLI    : neutre   (score +0.07, 15 titres)
+           ex: « Blowout jobs report raises worries of Fed rate hike: AlphaCheck »
+  XLU    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Constellation Energy Soars 12% on Google Nuclear Deal for 890 MW; Vist »
+  XLB    : neutre   (score -0.07, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « U.S. steel and materials stocks swing amid U.S.-Canada trade war »
+  BTC-USD: neutre   (score +0.07, 15 titres)
+           ex: « Why Bitcoin Futures Funds Like BITO Keep Losing Ground to Direct-Holdi »
+
+Total mentions géopolitiques dans les titres : 3
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.
