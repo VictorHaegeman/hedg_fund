@@ -1,5 +1,5 @@
 {
-  "cash": 0.0,
+  "cash": 62141.26034946756,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -11,36 +11,6 @@
       "strategy": "breakout",
       "entry_date": "2026-06-16",
       "risk_amount": 1000.0
-    },
-    "BTC-USD": {
-      "symbol": "BTC-USD",
-      "shares": 0.21295714085754816,
-      "entry": 85879.1015625,
-      "stop": 81071.8057228239,
-      "target": null,
-      "strategy": "breakout",
-      "entry_date": "2026-09-22",
-      "risk_amount": 1023.75
-    },
-    "QQQ": {
-      "symbol": "QQQ",
-      "shares": 35.26628207807179,
-      "entry": 728.9500122070312,
-      "stop": 700.6108231884103,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-10-14",
-      "risk_amount": 999.42
-    },
-    "XLK": {
-      "symbol": "XLK",
-      "shares": 102.53749372412527,
-      "entry": 190.42999267578125,
-      "stop": 180.68439366885323,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-10-14",
-      "risk_amount": 999.29
     },
     "XLV": {
       "symbol": "XLV",
@@ -383,10 +353,55 @@
       "reason": "stop",
       "pnl": -1044.12,
       "pnl_pct": -3.21
+    },
+    {
+      "symbol": "BTC-USD",
+      "shares": 0.21295714085754816,
+      "entry": 85879.1015625,
+      "stop": 81071.8057228239,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-09-22",
+      "risk_amount": 1023.75,
+      "exit": 81071.8057228239,
+      "exit_date": "2026-10-23",
+      "reason": "stop",
+      "pnl": -1041.52,
+      "pnl_pct": -5.6
+    },
+    {
+      "symbol": "QQQ",
+      "shares": 35.26628207807179,
+      "entry": 728.9500122070312,
+      "stop": 700.6108231884103,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-10-14",
+      "risk_amount": 999.42,
+      "exit": 725.2000122070312,
+      "exit_date": "2026-10-21",
+      "reason": "signal",
+      "pnl": -157.89,
+      "pnl_pct": -0.51
+    },
+    {
+      "symbol": "XLK",
+      "shares": 102.53749372412527,
+      "entry": 190.42999267578125,
+      "stop": 180.68439366885323,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-10-14",
+      "risk_amount": 999.29,
+      "exit": 188.5399932861328,
+      "exit_date": "2026-10-21",
+      "reason": "signal",
+      "pnl": -213.23,
+      "pnl_pct": -0.99
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-10-22T00:49:45",
+  "last_cycle": "2026-10-23T00:50:05",
   "equity_curve": [
     [
       "2026-06-11",
@@ -751,6 +766,10 @@
     [
       "2026-10-22",
       99794.27
+    ],
+    [
+      "2026-10-23",
+      99605.05
     ]
   ]
 }
