@@ -30,11 +30,38 @@ DEFAULT_UNIVERSE = ["SPY", "QQQ", "GLD", "TLT",
                     "BTC-USD"]
 
 
+def dedupe_same_issuer(data: dict, candidates: list[str], keep: set[str] | None = None,
+                       min_corr: float = 0.97, window: int = 120) -> list[str]:
+    """Une seule ligne par émetteur : GOOG / GOOGL, BRK-A / BRK-B…
+
+    Deux actions dont les rendements journaliers sont corrélés à plus de 0,97 sur
+    ~6 mois sont la même société (classes d'actions) : on garde la première,
+    pour ne pas doubler l'exposition. Basé sur les données, pas sur le nom."""
+    kept = [k for k in (keep or set()) if k in data]
+    out = []
+    for s in candidates:
+        if s not in data:
+            continue
+        r = data[s]["Close"].pct_change().tail(window)
+        dup = False
+        for k in kept + out:
+            rk = data[k]["Close"].pct_change().tail(window)
+            both = pd.concat([r, rk], axis=1).dropna()
+            if len(both) >= 30 and both.corr().iloc[0, 1] >= min_corr:
+                dup = True
+                break
+        if not dup:
+            out.append(s)
+    return out
+
+
 def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
               risk_pct: float = 1.0, state_path: str = DEFAULT_STATE,
               loader=load, max_positions: int = 3, screener=None,
               vol_target: float | None = None, vol_window: int = 20,
-              trail: bool = False, after=None) -> str:
+              trail: bool = False, after=None, screener_mode: str = "replace",
+              max_screened_positions: int | None = None, earnings_guard=None,
+              earnings_days: int = 5) -> str:
     """`after(account, last_prices) -> str` : action optionnelle en fin de cycle
     (ex. miroir des positions sur Alpaca). N'influence jamais les décisions."""
     account = load_account(state_path, capital)
@@ -42,10 +69,15 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
     # trade ses candidats ∪ les positions ouvertes. Fail-safe : screener vide →
     # on garde l'univers fixe passé en argument. Réservé au live, jamais aux
     # backtests (cf. garde-fou d'intégrité dans screener.py).
+    #   screener_mode="add" : univers fixe (ETF + BTC) ∪ actions screenées ∪ positions
+    #   (le fonds trade alors ETF ET actions ; les ETF restent prioritaires).
+    screened_set: set[str] = set()
     if screener is not None:
-        screened = screener()
+        screened = list(screener() or [])
         if screened:
-            symbols = list(dict.fromkeys(list(screened) + list(account.positions)))
+            base = list(symbols) if screener_mode == "add" else []
+            screened_set = set(screened) - set(base)
+            symbols = list(dict.fromkeys(base + list(screened) + list(account.positions)))
     lines = [
         "=" * 78,
         "MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)",
@@ -65,6 +97,17 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             continue
         data[sym] = df
         last_prices[sym] = float(df["Close"].iloc[-1])
+
+    if screened_set:   # classes d'actions d'un même émetteur : on n'en garde qu'une
+        fixed = set(data) - screened_set
+        uniq = set(dedupe_same_issuer(data, [s for s in data if s in screened_set],
+                                      keep=fixed | set(account.positions)))
+        dropped = [s for s in data if s in screened_set and s not in uniq
+                   and s not in account.positions]
+        for s in dropped:
+            data.pop(s, None)
+        if dropped:
+            lines.append(f"  Doublons d'émetteur écartés : {', '.join(dropped)}")
 
     equity_before = account.equity(last_prices)
 
@@ -123,6 +166,17 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             break
         if sym in account.positions or len(account.positions) >= max_positions:
             continue
+        if sym in screened_set:
+            n_stock = sum(1 for p in account.positions if p in screened_set)
+            if max_screened_positions is not None and n_stock >= max_screened_positions:
+                continue
+            # Action individuelle : pas d'entrée juste avant ses résultats (risque de
+            # gap qui saute le stop — le danger propre aux actions vs les ETF).
+            if earnings_guard is not None:
+                days = earnings_guard(sym)
+                if days is not None and days <= earnings_days:
+                    lines.append(f"  {sym} : résultats dans {days} j → pas d'entrée")
+                    continue
         regime = detect(df)
         date = str(df.index[-1].date())
         for key in ALL_STRATEGIES:

@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name "quantlab-bot"
           git config user.email "actions@github.com"
-          git add ai_trades.json 2>/dev/null || true
+          git add ai_trades.json ai_greeks.json 2>/dev/null || true
           git add ai_logs 2>/dev/null || true
           git diff --cached --quiet || git commit -m "ai: cycle du $(date -u '+%F %H:%M')"
           for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done

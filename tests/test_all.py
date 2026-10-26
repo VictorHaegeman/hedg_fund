@@ -1,5 +1,7 @@
 """Tests fonctionnels des 10 modules sur données synthétiques (déterministes, hors-ligne)."""
 
+import json
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -560,6 +562,9 @@ class FakeAlpaca:
             return {s: {"latestTrade": {"p": 140.0}} for s in syms}
         if "latest/trades" in path:
             return {"trades": {s: {"p": 140.0} for s in syms}}
+        if path == "/v1beta1/options/snapshots":
+            snaps = {s: {"impliedVolatility": 0.3} for s in syms}
+            return {"snapshots": snaps}
         if path.startswith("/v1beta1/options/snapshots/"):
             und = path.rsplit("/", 1)[1]
             exp = (pd.Timestamp.today() + pd.Timedelta(days=30)).strftime("%y%m%d")
@@ -840,3 +845,110 @@ def test_mirror_protects_ai_positions():
                      history=[{"symbol": "NVDA"}, {"symbol": "AMD"}])
     uni = mr.managed_universe(acc, ["SPY"], protected={"NVDA"})
     assert "AMD" in uni and "SPY" in uni and "NVDA" not in uni
+
+
+def test_live_with_stocks_hybrid_universe(tmp_path):
+    """Mode --with-stocks : ETF fixes ∪ actions screenées, doublons d'émetteur
+    écartés, garde-fou résultats, et au plus la moitié des places en actions."""
+    from quantlab import live as lv
+    path = str(tmp_path / "account.json")
+    base = synthetic_ohlcv("ETF1", years=3, seed=11)
+    twin = base.copy(); twin[["Open", "High", "Low", "Close"]] *= 1.001   # GOOG/GOOGL
+    datasets = {"ETF1": base, "AAA": synthetic_ohlcv("AAA", years=3, seed=5),
+                "AAAL": twin.assign(Close=synthetic_ohlcv("AAA", years=3, seed=5)["Close"] * 1.002),
+                "BBB": synthetic_ohlcv("BBB", years=3, seed=9)}
+    loader = lambda sym, years=2, fresh=False, **k: (datasets[sym], "yahoo")
+    asked = []
+    guard = lambda s: (asked.append(s), 2 if s == "BBB" else None)[1]
+    out = lv.run_cycle(["ETF1"], capital=10_000, state_path=path, loader=loader,
+                       screener=lambda: ["AAA", "AAAL", "BBB"], screener_mode="add",
+                       max_screened_positions=1, earnings_guard=guard)
+    assert "ETF1" in out.splitlines()[2]                 # l'univers fixe reste présent
+    assert "Doublons d'émetteur écartés : AAAL" in out
+    if "BBB" in asked:
+        assert "BBB : résultats dans 2 j" in out
+    acc = lv.load_account(path)
+    assert sum(1 for s in acc.positions if s in {"AAA", "AAAL", "BBB"}) <= 1
+    assert "BBB" not in acc.positions
+
+
+def test_ai_live_greeks_and_limits(tmp_path):
+    from quantlab import ai_trader as ai
+    client = FakeAlpaca()
+    kw = dict(earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "-",
+              sleep=lambda s: None)
+    gp = str(tmp_path / "greeks.json")
+    straddle = lambda p: {"action": "OPEN", "strategy": "LONG_STRADDLE", "underlying": "NVDA",
+                          "confidence": 0.8, "reasoning": "x"}
+    st = str(tmp_path / "ai.json")
+    client.data_iv = 0.3
+    ai.run_cycle(client, straddle, state_path=st, greeks_path=gp, **kw)
+    t = ai.load_trades(st)
+    if not t:          # refusé par le filtre d'avantage de vol : on force l'ouverture pour le test
+        ai.VOL_EDGE_MAX, old = 99, ai.VOL_EDGE_MAX
+        ai.run_cycle(client, straddle, state_path=st, greeks_path=gp, **kw)
+        ai.VOL_EDGE_MAX = old
+        t = ai.load_trades(st)
+    assert t and t[0]["strategy"] == "LONG_STRADDLE"
+    out, _ = ai.run_cycle(client, lambda p: {"action": "HOLD", "reasoning": "x"},
+                          state_path=st, greeks_path=gp, **kw)
+    assert "Grecques du portefeuille" in out
+    g = json.load(open(gp))
+    tot = g["total"]
+    assert tot["vega"] > 0 and tot["theta_day"] < 0 and tot["gamma_usd"] > 0   # long straddle
+    assert abs(tot["delta_usd"]) < 0.3 * 140 * 100 * t[0]["qty"]               # ~ delta-neutre
+    ok, why = ai.greek_limits_ok({"total": {"delta_usd": 80_000, "vega": 0, "theta_day": 0}}, 100_000)
+    assert not ok and "delta" in why
+    ok, _ = ai.greek_limits_ok(g, 100_000)
+    assert ok
+
+
+def test_bonds_and_forwards():
+    from quantlab import bonds as bd
+    # au pair : coupon = taux → prix = nominal
+    assert abs(bd.bond_price(1000, 0.05, 10, 0.05) - 1000) < 1e-9
+    p = bd.bond_price(1000, 0.04, 10, 0.045, freq=2)
+    assert abs(bd.ytm(p, 1000, 0.04, 10, freq=2) - 0.045) < 1e-8
+    assert abs(bd.zero_coupon_price(100, 5, 0.03) - 100 / 1.03 ** 5) < 1e-12
+    d = bd.durations(1000, 0.0, 10, 0.04)
+    assert abs(d["macaulay"] - 10) < 1e-9                    # zéro-coupon : duration = maturité
+    d = bd.durations(1000, 0.04, 10, 0.045)
+    exact = bd.bond_price(1000, 0.04, 10, 0.055) / d["price"] - 1
+    approx1 = -d["modified"] * 0.01
+    approx2 = bd.price_change(d["modified"], d["convexity"], 0.01)
+    assert abs(approx2 - exact) < abs(approx1 - exact) < 0.01   # la convexité améliore
+    assert abs(d["dv01"] - (bd.bond_price(1000, 0.04, 10, 0.0449) - bd.bond_price(1000, 0.04, 10, 0.0451)) / 2) < 1e-3
+    assert abs(bd.forward_price(100, 0.04, 1) - 100 * np.exp(0.04)) < 1e-12
+    assert abs(bd.forward_value(100, bd.forward_price(100, 0.04, 1), 0.04, 1)) < 1e-9
+    # duration empirique d'un « ETF » qui perd 7 % par point de taux
+    idx = pd.bdate_range("2024-01-01", periods=400)
+    rng = np.random.default_rng(0)
+    y = pd.Series(4 + np.cumsum(rng.normal(0, 0.05, 400)), index=idx)
+    etf = pd.Series(100 * np.cumprod(1 - 7 * y.diff().fillna(0) / 100), index=idx)
+    assert abs(bd.empirical_duration(etf, y) - 7) < 0.3
+
+
+def test_factsheet_nav_fees_metrics(prices):
+    from quantlab import factsheet as fs
+    from quantlab import fund as fd
+    idx = pd.bdate_range("2020-01-01", periods=3 * 252)
+    eq = pd.Series(np.linspace(100_000, 133_100, len(idx)), index=idx)
+    gross = fs.nav(eq)
+    assert gross.iloc[0] == 100
+    net = fs.apply_fees(gross, mgmt=0.02, perf=0.20)
+    assert net.iloc[-1] < gross.iloc[-1]                          # les frais coûtent
+    flat = fs.apply_fees(pd.Series(100.0, index=idx), 0.0, 0.20)
+    assert abs(flat.iloc[-1] - 100) < 1e-9                       # pas de gain → pas de commission
+    down_up = pd.Series(np.r_[np.linspace(100, 80, 252), np.linspace(80, 100, 252)], index=idx[:504])
+    assert abs(fs.apply_fees(down_up, 0.0, 0.20).iloc[-1] - 100) < 1e-9   # high-water mark
+    res = fd.run_fund(prices, 100_000)
+    spy = prices["AAA"]["Close"]
+    m = fs.metrics(res.equity, spy)
+    assert {"sharpe", "sortino", "var95_daily", "cvar95_daily", "beta", "alpha"} <= set(m)
+    assert m["cvar95_daily"] >= m["var95_daily"] > 0 and m["max_drawdown"] <= 0
+    tab = fs.monthly_table(res.equity)
+    assert "Année" in tab.columns and len(tab) >= 7
+    a = fs.activity(res.trades, res.equity)
+    assert a["trades_per_year"] > 0 and a["turnover"] > 0
+    out = fs.report(res.equity, spy, None, profiles={"Prudent": (0.5, res.equity)}, trades=res.trades)
+    assert "Net de frais" in out and "Profils de risque" in out and "rotation" in out

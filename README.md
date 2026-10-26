@@ -207,6 +207,44 @@ python -m quantlab live --vol-target 0.12 --trail            # live avec overlay
 > automatisé les laisse désactivés tant que `fund --compare` sur données réelles
 > ne montre pas un gain net. Ne pas sur-ajuster les paramètres (piège classique).
 
+## Fonds d'investissement : fiche, frais, risque, actions (modules 16 & factsheet)
+
+```powershell
+python -m quantlab factsheet --profiles   # VL, brut vs net de frais, risque, activité, profils
+python -m quantlab bonds                  # module 16 : obligations, duration, convexité, forwards
+python -m quantlab options --symbol SPY   # module 15 : Black-Scholes, grecques, stratégies
+python -m quantlab live --with-stocks     # ETF + BTC + actions screenées (mode du live)
+```
+
+- **Factsheet** : valeur de part base 100, frais 2 %/an + 20 % de performance au-dessus
+  du plus haut historique (high-water mark), Sharpe, Sortino, Calmar, VaR/CVaR 95 %,
+  bêta/alpha/corrélation vs S&P 500, rendements mensuels, rotation (turnover), durée de
+  détention, profils de risque. Publiée sur le tableau de bord.
+- **Actions individuelles dans le fonds** (`--with-stocks`, activé en live) : l'univers
+  fixe (ETF + BTC) reste prioritaire ; s'y ajoutent les actions les plus liquides du
+  screener TradingView, au plus la moitié des places, sans entrée à moins de 5 jours des
+  résultats (risque de gap), et une seule ligne par émetteur (GOOG/GOOGL dédoublonnés
+  par corrélation). Les backtests restent sur les ETF (pas de biais de sélection).
+- **Grecques en continu** (poche IA) : Δ, Γ, ν, Θ, ρ de chaque position d'options et du
+  portefeuille recalculées à chaque cycle (spot et vol implicite du moment), publiées
+  dans `ai_greeks.json` et sur le tableau de bord, avec limites de risque (|Δ| ≤ 50 %
+  de l'équité, |ν| ≤ 1 % par point de vol, Θ ≥ -0,2 %/jour) qui bloquent les nouveaux trades.
+
+### Résultats des tests d'optimisation (oct. 2026, 13 dates de départ, 2016→2026)
+
+| Variante | Rendement/an (médiane) | Sharpe | Pire baisse | Décision |
+|---|---|---|---|---|
+| Config live (risque 1 %) | 11,5 % | 0,72 | −21,5 % | conservée |
+| Stop suiveur | 10,1 % | 0,78 | −21,9 % | non : rapporte moins, ne réduit pas les creux |
+| Vol-targeting 12 % | 9,4 % | 0,53 | −33,7 % | non |
+| + ETF obligataires (IEF, SHY, LQD, HYG, TIP) | 10,2 % | 0,69 | −21,3 % | non |
+| Risque 0,5 %/trade (profil prudent) | 10,4 % | 0,84 | −15,0 % | meilleur risque ajusté — au choix du gérant |
+
+Un seul backtest varie de ±1 %/an selon des micro-différences de données : seules les
+conclusions stables sur toutes les dates de départ sont retenues. Net de frais 2/20, la
+simulation rend ~6 %/an contre ~15 % pour le S&P 500 sur la période : un produit
+commercialisable demanderait des frais plus bas ou un meilleur rendement.
+
 ## Options communes
 
 - `--symbol SPY` / `--symbols SPY QQQ ...` — tickers Yahoo Finance (`BTC-USD`, `EURUSD=X`, …)
@@ -240,7 +278,10 @@ quantlab/
   screener.py     # screener TradingView — univers FORWARD pour le live (fail-safe)
   alpaca.py       # connecteur courtier Alpaca (REST, clés via env)
   mirror.py       # miroir du compte papier sur Alpaca (réconciliation)
-  ai_trader.py    # Module 14 — poche IA (options, short, news, Groq)
+  ai_trader.py    # Module 14 — poche IA (options, short, news, Groq, grecques en continu)
+  pricing.py      # Module 15 — pricing d'options, grecques, stratégies (cours EFREI)
+  bonds.py        # Module 16 — obligations, duration, convexité, forwards (cours EFREI)
+  factsheet.py    # fiche du fonds : VL, frais, risque, activité, profils
   cli.py          # point d'entrée argparse
 tests/test_all.py # 19 tests (déterministes, hors-ligne) dont absence de look-ahead
 .github/workflows # CI pytest + cycle live quotidien automatisé

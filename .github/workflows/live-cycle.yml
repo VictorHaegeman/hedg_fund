@@ -30,7 +30,7 @@ jobs:
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
         run: |
           mkdir -p live_logs
-          python -m quantlab live --capital 100000 --max-positions 8 --broker alpaca | tee "live_logs/$(date -u +%F).txt"
+          python -m quantlab live --capital 100000 --max-positions 8 --with-stocks --screen-limit 15 --broker alpaca | tee "live_logs/$(date -u +%F).txt"
       - name: Pouls de marché (actualité + contexte géopolitique)
         run: |
           mkdir -p news_logs

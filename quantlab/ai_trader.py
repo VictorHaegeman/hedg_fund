@@ -39,6 +39,7 @@ from . import pricing as pr
 from .alpaca import ROOT, Alpaca, AlpacaError, load_env, position_symbol, to_alpaca_symbol
 
 STATE_PATH = os.path.join(ROOT, "ai_trades.json")
+GREEKS_PATH = os.path.join(ROOT, "ai_greeks.json")
 
 STOCKS = [
     "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "AVGO", "NFLX",
@@ -80,6 +81,9 @@ OPTION_STRATEGIES = {"BULL_CALL_SPREAD", "BEAR_PUT_SPREAD", "LONG_STRADDLE", "LO
 LONG_VOL = {"LONG_STRADDLE", "LONG_STRANGLE"}
 RISK_FREE = 0.04               # taux sans risque annuel pour Black-Scholes
 VOL_EDGE_MAX = 1.15            # long vol refusé si prix payé > 1,15 × valeur BS à la vol réalisée
+MAX_DELTA_PCT = 0.50           # |delta $ du portefeuille| ≤ 50 % de l'équité, sinon pas de nouveau trade
+MAX_VEGA_PCT = 0.01            # |vega pour +1 pt de vol| ≤ 1 % de l'équité
+MAX_THETA_PCT = 0.002          # érosion temporelle ≤ 0,2 % de l'équité par jour
 SPOT_STRATEGIES = {"BUY_STOCK", "SHORT_STOCK", "BUY_CRYPTO"}
 
 CRYPTO_RSS = ["https://www.coindesk.com/arc/outboundfeeds/rss/",
@@ -587,6 +591,82 @@ def mleg_order(legs: list[dict], qty: int, opening: bool) -> dict:
     return body
 
 
+# ── grecques en continu (recalculées à chaque cycle) ───────────────────────
+def live_greeks(client: Alpaca, trades: list[dict]) -> dict:
+    """Grecques du portefeuille de la poche IA, recalculées avec le spot et la vol
+    implicite du moment (Black-Scholes, formules du cours).
+
+    Options : Δ, Γ, ν, Θ, ρ par position (× 100 unités par contrat, × ratio, signe).
+    Actions/crypto : delta = quantité détenue (Γ = ν = Θ = 0).
+    Unités : delta en équivalent-actions et en $, gamma par $ de spot, vega en $ pour
+    +1 point de vol, theta en $ par jour, rho en $ pour +1 point de taux.
+    """
+    open_t = [t for t in trades if t["status"] == "OPEN"]
+    out = {"updated_at": now_iso(), "positions": [],
+           "total": {"delta_usd": 0.0, "gamma_usd": 0.0, "vega": 0.0, "theta_day": 0.0, "rho": 0.0}}
+    if not open_t:
+        return out
+    opt_syms = [l["symbol"] for t in open_t if t["kind"] == "options" for l in t["legs"]]
+    snaps = {}
+    if opt_syms:
+        try:
+            snaps = (client.data("/v1beta1/options/snapshots",
+                                 {"symbols": ",".join(opt_syms), "feed": "indicative"})
+                     .get("snapshots") or {})
+        except Exception:
+            snaps = {}
+    stock_syms = sorted({t["underlying"] for t in open_t if "/" not in t["underlying"]})
+    crypto_syms = sorted({t["underlying"] for t in open_t if "/" in t["underlying"]})
+    spots = {**last_prices(client, stock_syms), **last_prices(client, crypto_syms, crypto=True)}
+    try:
+        held = {p["symbol"]: _num(p.get("qty"), 0.0) for p in client.positions()}
+    except Exception:
+        held = {}
+    tot = out["total"]
+    for t in open_t:
+        S = spots.get(t["underlying"]) or t.get("spot_at_entry") or t.get("entry_price")
+        if not S:
+            continue
+        g = pr.Greeks(0, 0, 0, 0, 0)
+        if t["kind"] == "options":
+            T = max((date.fromisoformat(t["expiry"]) - date.today()).days, 1) / 365
+            for l in t["legs"]:
+                snap = snaps.get(l["symbol"]) or {}
+                iv = _num(snap.get("impliedVolatility"), 0.0) or _num(l.get("iv"), 0.0) \
+                    or _num((t.get("analysis") or {}).get("iv"), 0.3)
+                sign = 1 if l["side"] == "buy" else -1
+                n_units = sign * l.get("ratio", 1) * t["qty"] * 100
+                g = g + pr.greeks(S, l["strike"], T, RISK_FREE, iv, l["type"]).scale(n_units)
+        else:
+            qty = held.get(t["position_symbol"], 0.0)
+            g = pr.Greeks(qty, 0, 0, 0, 0)
+        row = {"id": t["id"], "strategy": t["strategy"], "underlying": t["underlying"],
+               "spot": round(S, 2), "delta": round(g.delta, 2),
+               "delta_usd": round(g.delta * S, 2), "gamma_usd": round(g.gamma * S, 4),
+               "vega": round(g.vega / 100, 2), "theta_day": round(g.theta / 365, 2),
+               "rho": round(g.rho / 100, 2)}
+        out["positions"].append(row)
+        for k in tot:
+            tot[k] = round(tot[k] + row[k], 2)
+    return out
+
+
+def save_greeks(greeks: dict, path: str = GREEKS_PATH) -> None:
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(greeks, f, indent=2, ensure_ascii=False)
+
+
+def greek_limits_ok(greeks: dict, equity: float) -> tuple[bool, str]:
+    t = greeks.get("total") or {}
+    if abs(t.get("delta_usd", 0)) > MAX_DELTA_PCT * equity:
+        return False, f"Exposition delta trop forte ({t['delta_usd']:,.0f} $)"
+    if abs(t.get("vega", 0)) > MAX_VEGA_PCT * equity:
+        return False, f"Exposition vega trop forte ({t['vega']:,.0f} $/pt de vol)"
+    if -t.get("theta_day", 0) > MAX_THETA_PCT * equity:
+        return False, f"Érosion theta trop forte ({t['theta_day']:,.0f} $/jour)"
+    return True, "OK"
+
+
 # ── filtre de risque ────────────────────────────────────────────────────────
 def validate(d: dict, ctx: dict) -> tuple[bool, str]:
     strat, und = d.get("strategy"), d.get("underlying")
@@ -604,6 +684,10 @@ def validate(d: dict, ctx: dict) -> tuple[bool, str]:
         return False, f"Deja en position sur {und}"
     if len(ctx["open_underlyings"]) >= MAX_OPEN_TRADES:
         return False, "Nombre max de positions atteint"
+    if ctx.get("greeks"):
+        ok, why = greek_limits_ok(ctx["greeks"], ctx["equity"])
+        if not ok:
+            return False, why
     return True, "OK"
 
 
@@ -740,7 +824,7 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
 # ── cycle ───────────────────────────────────────────────────────────────────
 def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
               fund_universe: list[str] | None = None, sleep=time.sleep,
-              **snapshot_kw) -> tuple[str, dict]:
+              greeks_path: str | None = None, **snapshot_kw) -> tuple[str, dict]:
     """Un cycle complet. `decide(prompt) -> dict` (Groq en prod, factice en test).
 
     Renvoie (rapport texte, dernière décision).
@@ -762,6 +846,14 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
     lines += manage_positions(client, trades, market_open, sleep)
     save_trades(trades, state_path)
 
+    greeks = live_greeks(client, trades)
+    if greeks["positions"]:
+        g = greeks["total"]
+        lines.append(f"  Grecques du portefeuille : Δ {g['delta_usd']:+,.0f} $ | Γ {g['gamma_usd']:+,.2f} | "
+                     f"ν {g['vega']:+,.0f} $/pt | Θ {g['theta_day']:+,.0f} $/j | ρ {g['rho']:+,.0f} $/pt")
+    if greeks_path:
+        save_greeks(greeks, greeks_path)
+
     decision: dict = {"action": "HOLD", "reasoning": ""}
     if daily <= -DAILY_LOSS_CAP * 100:
         decision["reasoning"] = f"Pause : perte du jour {daily:.2f} % ≤ -{DAILY_LOSS_CAP:.0%}"
@@ -773,7 +865,8 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
     ctx = {"equity": equity, "cash": _num(acct.get("non_marginable_buying_power"),
                                           _num(acct.get("cash"), 0.0)),
            "daily_pnl_pct": daily, "market_open": market_open,
-           "open_underlyings": open_und, "stocks": stocks, "cryptos": cryptos}
+           "open_underlyings": open_und, "stocks": stocks, "cryptos": cryptos,
+           "greeks": greeks}
     lines.append(f"  Candidats envoyés à l'IA : {', '.join(r['symbol'] for r in snap['rows']) or 'aucun'}")
 
     decision = decide(build_prompt(snap, ctx))
@@ -812,7 +905,16 @@ def summary(state_path: str = STATE_PATH) -> dict:
     trades = load_trades(state_path)
     closed = [t for t in trades if t["status"] == "CLOSED" and t.get("pnl") is not None]
     wins = sum(1 for t in closed if t["pnl"] > 0)
+    greeks = None
+    gp = os.path.join(os.path.dirname(state_path), "ai_greeks.json")
+    if os.path.exists(gp):
+        try:
+            with open(gp, encoding="utf-8") as f:
+                greeks = json.load(f)
+        except Exception:
+            pass
     return {"trades": trades, "open": [t for t in trades if t["status"] == "OPEN"],
+            "greeks": greeks,
             "closed": closed, "realized": round(sum(t["pnl"] for t in closed), 2),
             "win_rate": wins / len(closed) if closed else None}
 
@@ -830,4 +932,5 @@ def main_cycle(fund_universe_if_shared: list[str]) -> tuple[str, dict]:
         missing = [n for n, ok in (("ALPACA_API_KEY/ALPACA_SECRET_KEY", client),
                                    ("GROQ_API_KEY", groq_key)) if not ok]
         return f"Poche IA non lancée : clé(s) manquante(s) : {', '.join(missing)}", {}
-    return run_cycle(client, lambda p: groq_decide(p, groq_key), fund_universe=shared)
+    return run_cycle(client, lambda p: groq_decide(p, groq_key), fund_universe=shared,
+                     greeks_path=GREEKS_PATH)

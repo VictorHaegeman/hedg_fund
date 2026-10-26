@@ -126,6 +126,23 @@ def _screener_panel(candidates: list[str] | None) -> str:
             f'<div class="panel">{body}</div>')
 
 
+def build_factsheet(fund_res: BacktestResult, spy_close: pd.Series | None,
+                    mgmt: float = 0.02, perf: float = 0.20) -> dict | None:
+    """Données de la fiche du fonds pour le tableau de bord (fail-safe)."""
+    try:
+        from . import factsheet as fsh
+        gross = fsh.nav(fund_res.equity)
+        net = fsh.apply_fees(gross, mgmt, perf)
+        return {"gross_rows": fsh.summary_rows(fsh.metrics(gross, spy_close)),
+                "net_rows": fsh.summary_rows(fsh.metrics(net, spy_close)),
+                "nav_gross": float(gross.iloc[-1]), "nav_net": float(net.iloc[-1]),
+                "mgmt": mgmt, "perf": perf,
+                "activity": fsh.activity_line(fsh.activity(fund_res.trades, fund_res.equity)).strip(),
+                "monthly_html": _table(fsh.monthly_table(net).tail(6))}
+    except Exception:
+        return None
+
+
 def _ai_panel(ai: dict | None, alpaca_lines: list[str] | None) -> str:
     """Section Alpaca + poche IA (module 14). Vide si rien n'est configuré."""
     if not ai and not alpaca_lines:
@@ -148,6 +165,18 @@ def _ai_panel(ai: dict | None, alpaca_lines: list[str] | None) -> str:
                  "PnL $": t.get("pnl"), "Raison IA": (t.get("reasoning") or "")[:90]}
                 for t in ai["trades"][-12:][::-1]]
         out.append(f'<div class="panel">{_table(pd.DataFrame(rows))}</div>')
+        g = ai.get("greeks") or {}
+        if g.get("positions"):
+            t = g["total"]
+            out.append(f'<h3>Grecques en continu (mises à jour {html.escape(str(g.get("updated_at", ""))[:16])})</h3>'
+                       '<div class="cards">'
+                       + _card("Delta", f"{t['delta_usd']:+,.0f} $", "exposition directionnelle")
+                       + _card("Gamma", f"{t['gamma_usd']:+,.2f}", "variation du delta")
+                       + _card("Vega", f"{t['vega']:+,.0f} $", "pour +1 pt de vol")
+                       + _card("Theta", f"{t['theta_day']:+,.0f} $/j", "érosion du temps",
+                               _pos_color(t['theta_day']))
+                       + _card("Rho", f"{t['rho']:+,.0f} $", "pour +1 pt de taux") + "</div>")
+            out.append(f'<div class="panel">{_table(pd.DataFrame(g["positions"]).drop(columns=["id"]))}</div>')
     elif ai is not None:
         out.append("<p class='muted'>La poche IA n'a encore ouvert aucun trade "
                    "(HOLD est la décision la plus fréquente).</p>")
@@ -157,11 +186,28 @@ def _ai_panel(ai: dict | None, alpaca_lines: list[str] | None) -> str:
     return "".join(out)
 
 
+def _factsheet_panel(fs: dict | None) -> str:
+    """Fiche du fonds : VL, brut vs net de frais, risque, activité, mensuel."""
+    if not fs:
+        return ""
+    rows = "".join(f"<tr><td>{html.escape(k)}</td><td>{html.escape(vg)}</td><td>{html.escape(vn)}</td></tr>"
+                   for (k, vg), (_, vn) in zip(fs["gross_rows"], fs["net_rows"]))
+    return ("<h2>Fiche du fonds (factsheet) — simulation sur données réelles</h2>"
+            f'<p class="gen">VL base 100 → brute {fs["nav_gross"]:,.1f} · nette {fs["nav_net"]:,.1f} '
+            f'(frais {fs["mgmt"]:.0%} gestion + {fs["perf"]:.0%} performance au-dessus du plus haut '
+            "historique). Indice de référence : S&amp;P 500 (SPY).</p>"
+            f'<div class="panel"><table class="tbl"><tr><th>Indicateur</th><th>Brut</th>'
+            f"<th>Net de frais</th></tr>{rows}</table></div>"
+            f'<h3>Activité de trading</h3><div class="panel">{html.escape(fs["activity"])}</div>'
+            f'<h3>Rendements mensuels nets (%)</h3><div class="panel">{fs["monthly_html"]}</div>')
+
+
 def render_html(fund_res: BacktestResult, account: Account,
                 prices_now: dict[str, float], capital_sim: float,
                 benchmark: dict | None = None, gauge: dict | None = None,
                 screener: list[str] | None = None,
-                ai: dict | None = None, alpaca_lines: list[str] | None = None) -> str:
+                ai: dict | None = None, alpaca_lines: list[str] | None = None,
+                factsheet: dict | None = None) -> str:
     m = fund_res.metrics
     eq_live = account.equity(prices_now)
     pnl_live = eq_live - account.initial_capital
@@ -290,6 +336,8 @@ def render_html(fund_res: BacktestResult, account: Account,
 
 {_ai_panel(ai, alpaca_lines)}
 
+{_factsheet_panel(factsheet)}
+
 {_gauge_panel(gauge)}
 
 <h2>Entraînement — simulation du fonds sur {m['years']:.0f} ans ({capital_sim:,.0f} $ de départ)</h2>
@@ -333,9 +381,10 @@ def save(fund_res: BacktestResult, account: Account, prices_now: dict[str, float
          capital_sim: float, path: str = OUT_PATH,
          benchmark: dict | None = None, gauge: dict | None = None,
          screener: list[str] | None = None,
-         ai: dict | None = None, alpaca_lines: list[str] | None = None) -> str:
+         ai: dict | None = None, alpaca_lines: list[str] | None = None,
+         factsheet: dict | None = None) -> str:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(render_html(fund_res, account, prices_now, capital_sim,
-                            benchmark, gauge, screener, ai, alpaca_lines))
+                            benchmark, gauge, screener, ai, alpaca_lines, factsheet))
     return path

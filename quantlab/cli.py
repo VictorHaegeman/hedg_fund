@@ -22,6 +22,8 @@ Exemples :
   python -m quantlab ai                        # module 14 : un cycle de la poche IA
   python -m quantlab alpaca                    # état des comptes Alpaca
   python -m quantlab options --symbol SPY      # module 15 : pricing, grecques, stratégies
+  python -m quantlab bonds                     # module 16 : obligations, duration, forwards
+  python -m quantlab factsheet --profiles      # fiche du fonds (VL, frais, risque, activité)
 """
 
 from __future__ import annotations
@@ -134,6 +136,9 @@ def main(argv: list[str] | None = None) -> int:
                     help="cible de volatilité annualisée (ex. 0.12) — vol-targeting")
     sp.add_argument("--trail", action="store_true",
                     help="stop suiveur en cliquet (trend/breakout)")
+    sp.add_argument("--with-stocks", action="store_true",
+                    help="ETF + BTC + actions individuelles screenées (moitié des places max, "
+                         "pas d'entrée à moins de 5 j des résultats)")
     sp = sub.add_parser("screen",
                         help="Screener TradingView — univers de candidats (live)")
     sp.add_argument("--market", default="america")
@@ -145,6 +150,13 @@ def main(argv: list[str] | None = None) -> int:
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
     sub.add_parser("ai", help="Module 14 — un cycle de la poche IA (Alpaca + Groq)")
     sub.add_parser("alpaca", help="État des comptes Alpaca (fonds et poche IA)")
+    sp = sub.add_parser("factsheet", help="Fiche du fonds : VL, frais, risque, activité, profils")
+    common(sp, symbol=False, symbols=True)
+    sp.add_argument("--max-positions", type=int, default=8)
+    sp.add_argument("--mgmt-fee", type=float, default=0.02)
+    sp.add_argument("--perf-fee", type=float, default=0.20)
+    sp.add_argument("--profiles", action="store_true", help="compare prudent/équilibré/dynamique")
+    sp = sub.add_parser("bonds", help="Module 16 — obligations, duration, forwards (cours EFREI)")
     sp = sub.add_parser("options", help="Module 15 — pricing d'options & stratégies (cours EFREI)")
     sp.add_argument("--symbol", default="SPY")
     sp.add_argument("--days", type=int, default=30, help="échéance en jours")
@@ -233,7 +245,13 @@ def main(argv: list[str] | None = None) -> int:
             reset_account(capital=args.capital)
             print(f"Compte papier réinitialisé à ${args.capital:,.0f}.")
         screener = ((lambda: scr.candidates(limit=args.screen_limit))
-                    if args.screener else None)
+                    if (args.screener or args.with_stocks) else None)
+        stock_kw = {}
+        if args.with_stocks:
+            from .ai_trader import days_to_earnings
+            stock_kw = dict(screener_mode="add",
+                            max_screened_positions=max(1, args.max_positions // 2),
+                            earnings_guard=days_to_earnings)
         after = None
         if args.broker == "alpaca":
             from . import ai_trader as ai
@@ -246,11 +264,29 @@ def main(argv: list[str] | None = None) -> int:
             after = lambda acc, px: mirror_report(client, acc, px, args.symbols, protected)
         print(lv.run_cycle(args.symbols, args.capital, args.risk,
                            max_positions=args.max_positions, screener=screener,
-                           vol_target=args.vol_target, trail=args.trail, after=after))
+                           vol_target=args.vol_target, trail=args.trail, after=after,
+                           **stock_kw))
 
     elif args.cmd == "screen":
         print(scr.report(market=args.market, limit=args.screen_limit,
                          crypto=args.crypto))
+
+    elif args.cmd == "factsheet":
+        from . import factsheet as fsh
+        from .broker import load_account
+        prices, _ = _load_many(args.symbols, args.years)
+        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
+        spy = prices["SPY"]["Close"] if "SPY" in prices else None
+        profiles = None
+        if args.profiles:
+            profiles = {n: (r, fd.run_fund(prices, args.capital, r, args.max_positions).equity)
+                        for n, r in fsh.RISK_PROFILES.items()}
+        print(fsh.report(res.equity, spy, load_account().equity_curve, args.mgmt_fee,
+                         args.perf_fee, profiles, trades=res.trades))
+
+    elif args.cmd == "bonds":
+        from . import bonds as bd
+        print(bd.report(load))
 
     elif args.cmd == "options":
         from . import pricing as pr
@@ -314,9 +350,10 @@ def main(argv: list[str] | None = None) -> int:
         clients = [c for c in (Alpaca.from_env("ALPACA", label="fonds"),
                                Alpaca.from_env("ALPACA_AI", label="poche IA")) if c]
         ai_sum = ai.summary() if (clients or ai.load_trades()) else None
+        fs = db.build_factsheet(res, prices["SPY"]["Close"] if "SPY" in prices else None)
         path = db.save(res, account, prices_now, args.capital,
                        benchmark=bench, gauge=gauge, screener=screened, ai=ai_sum,
-                       alpaca_lines=[account_line(c) for c in clients])
+                       alpaca_lines=[account_line(c) for c in clients], factsheet=fs)
         print(f"Tableau de bord généré : {path}")
         if args.open:
             import webbrowser
