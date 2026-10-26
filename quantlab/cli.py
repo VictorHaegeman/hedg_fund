@@ -349,7 +349,8 @@ def main(argv: list[str] | None = None) -> int:
         from .alpaca import Alpaca, account_line
         clients = [c for c in (Alpaca.from_env("ALPACA", label="fonds"),
                                Alpaca.from_env("ALPACA_AI", label="poche IA")) if c]
-        ai_sum = ai.summary() if (clients or ai.load_trades()) else None
+        import os as _os
+        ai_sum = ai.summary() if (clients or _os.path.exists(ai.STATE_PATH)) else None
         fs = db.build_factsheet(res, prices["SPY"]["Close"] if "SPY" in prices else None)
         path = db.save(res, account, prices_now, args.capital,
                        benchmark=bench, gauge=gauge, screener=screened, ai=ai_sum,

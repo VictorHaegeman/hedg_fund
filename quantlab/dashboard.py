@@ -93,7 +93,7 @@ def _gauge_panel(gauge: dict | None) -> str:
     gold = gauge.get("gold_1m")
     gold_str = f"{gold * 100:+.1f} %" if gold is not None else "n/a"
     cards = (
-        _card("Niveau de risque", gauge["level"].upper(), gauge.get("note", ""), col)
+        _card("Risque géopolitique (VIX)", gauge["level"].upper(), gauge.get("note", ""), col)
         + _card("VIX (indice de la peur)", str(gauge["vix"]), vix_pct)
         + _card("Or sur 1 mois", gold_str)
         + _card("Nouvelles entrées", entries, "filtre VIX automatique"))
@@ -165,21 +165,29 @@ def _ai_panel(ai: dict | None, alpaca_lines: list[str] | None) -> str:
                  "PnL $": t.get("pnl"), "Raison IA": (t.get("reasoning") or "")[:90]}
                 for t in ai["trades"][-12:][::-1]]
         out.append(f'<div class="panel">{_table(pd.DataFrame(rows))}</div>')
-        g = ai.get("greeks") or {}
-        if g.get("positions"):
-            t = g["total"]
-            out.append(f'<h3>Grecques en continu (mises à jour {html.escape(str(g.get("updated_at", ""))[:16])})</h3>'
-                       '<div class="cards">'
-                       + _card("Delta", f"{t['delta_usd']:+,.0f} $", "exposition directionnelle")
-                       + _card("Gamma", f"{t['gamma_usd']:+,.2f}", "variation du delta")
-                       + _card("Vega", f"{t['vega']:+,.0f} $", "pour +1 pt de vol")
-                       + _card("Theta", f"{t['theta_day']:+,.0f} $/j", "érosion du temps",
-                               _pos_color(t['theta_day']))
-                       + _card("Rho", f"{t['rho']:+,.0f} $", "pour +1 pt de taux") + "</div>")
-            out.append(f'<div class="panel">{_table(pd.DataFrame(g["positions"]).drop(columns=["id"]))}</div>')
     elif ai is not None:
         out.append("<p class='muted'>La poche IA n'a encore ouvert aucun trade "
                    "(HOLD est la décision la plus fréquente).</p>")
+    if ai is not None:
+        g = ai.get("greeks") or {}
+        t = g.get("total") or {"delta_usd": 0, "gamma_usd": 0, "vega": 0, "theta_day": 0, "rho": 0}
+        when = html.escape(str(g.get("updated_at", "—"))[:16].replace("T", " "))
+        out.append(f'<h3>Grecques en continu — recalculées à chaque cycle (dernier : {when})</h3>'
+                   '<div class="cards">'
+                   + _card("Delta", f"{t['delta_usd']:+,.0f} $", "exposition directionnelle")
+                   + _card("Gamma", f"{t['gamma_usd']:+,.2f}", "variation du delta")
+                   + _card("Vega", f"{t['vega']:+,.0f} $", "pour +1 pt de vol")
+                   + _card("Theta", f"{t['theta_day']:+,.0f} $/j", "érosion du temps",
+                           _pos_color(t['theta_day']))
+                   + _card("Rho", f"{t['rho']:+,.0f} $", "pour +1 pt de taux") + "</div>")
+        if g.get("positions"):
+            out.append('<div class="panel">'
+                       + _table(pd.DataFrame(g["positions"]).drop(columns=["id"], errors="ignore"))
+                       + "</div>")
+        else:
+            out.append("<p class='muted'>Aucune position ouverte dans la poche IA : toutes les "
+                       "grecques valent 0. Elles s'affichent position par position dès qu'un trade "
+                       "est ouvert.</p>")
     out.append('<p class="warn" style="margin-top:6px">ℹ Décisions prises par un LLM : '
                "non backtestables. Elles sont mesurées en conditions réelles pour être "
                "comparées au fonds, pas mélangées avec lui.</p>")

@@ -24,7 +24,12 @@ jobs:
           python-version: "3.11"
       - run: pip install -r requirements.txt
       - name: Régénérer le tableau de bord sur données réelles (aucun ordre passé)
-        run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_AI_API_KEY: ${{ secrets.ALPACA_AI_API_KEY }}
+          ALPACA_AI_SECRET_KEY: ${{ secrets.ALPACA_AI_SECRET_KEY }}
+        run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8 --screen-limit 15
       - name: Committer UNIQUEMENT le tableau de bord (jamais paper_account.json)
         run: |
           git config user.name "quantlab-bot"

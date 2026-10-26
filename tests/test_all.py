@@ -952,3 +952,15 @@ def test_factsheet_nav_fees_metrics(prices):
     assert a["trades_per_year"] > 0 and a["turnover"] > 0
     out = fs.report(res.equity, spy, None, profiles={"Prudent": (0.5, res.equity)}, trades=res.trades)
     assert "Net de frais" in out and "Profils de risque" in out and "rotation" in out
+
+
+def test_dashboard_shows_greeks_even_without_positions(tmp_path, prices):
+    from quantlab import dashboard as db
+    from quantlab import fund as fd
+    from quantlab.broker import load_account
+    res = fd.run_fund(prices, capital=100_000)
+    account = load_account(str(tmp_path / "acc.json"), capital=100_000)
+    ai = {"trades": [], "open": [], "closed": [], "realized": 0.0, "win_rate": None, "greeks": None}
+    content = open(db.save(res, account, {}, 100_000, str(tmp_path / "d.html"), ai=ai),
+                   encoding="utf-8").read()
+    assert "Grecques en continu" in content and "toutes les grecques valent 0" in content
