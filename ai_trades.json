@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "464c6aacc5",
+    "opened_at": "2026-10-26T13:41:30",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "BAH",
+    "position_symbol": "BAH",
+    "cost": 10000.0,
+    "entry_price": 81.79,
+    "sl_pct": 0.03,
+    "tp_pct": 0.06,
+    "source": "presse",
+    "niche": false,
+    "confidence": 0.72,
+    "reasoning": "BAH montre une forte tendance haussière (+10,4% sur 5 jours), un RSI élevé (71,7) et un IV/HV raisonnable (1,09), ce qui indique un potentiel de continuation sans risque excessif.",
+    "pnl": null
+  }
+]
