@@ -1,7 +1,10 @@
 """Tests fonctionnels des 10 modules sur données synthétiques (déterministes, hors-ligne)."""
 
 import json
+import os
 import zlib
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 import numpy as np
 import pandas as pd
@@ -1082,3 +1085,60 @@ def test_terminal_model_and_page(tmp_path, prices):
                              groups={})
     assert empty["assets"] == [] and empty["risk"]["stress"]
     term.save(empty, str(tmp_path / "e.html"))
+
+
+def test_workflow_commands_parse():
+    """Chaque commande `python -m quantlab ...` des workflows GitHub doit être valide."""
+    import glob, re, shlex
+    from quantlab import cli
+    cli.PARSE_ONLY = True
+    try:
+        cmds = []
+        for f in glob.glob(os.path.join(ROOT_DIR, ".github", "workflows", "*.yml")):
+            for line in open(f, encoding="utf-8"):
+                m = re.search(r"python -m quantlab ([^|&]+)", line)
+                if m:
+                    cmds.append(shlex.split(m.group(1)))
+        assert len(cmds) >= 5
+        for c in cmds:
+            assert cli.main(c) == 0, c
+    finally:
+        cli.PARSE_ONLY = False
+
+
+def test_treasury_puts_idle_cash_to_work(tmp_path, prices):
+    from quantlab import treasury as tr
+    from quantlab import fund as fd
+    from quantlab.broker import load_account, buy
+    acc = load_account(str(tmp_path / "t.json"), capital=100_000)
+    px = {"SPY": 500.0, "BIL": 91.5, "AAA": 50.0}
+    tr.rebalance(acc, px, core_pct=0.30, sweep="BIL")
+    v = {s: h["shares"] * px[s] for s, h in acc.treasury.items()}
+    assert abs(v["SPY"] - 30_000) < 50 and abs(v["BIL"] - 69_000) < 100
+    assert 0 < acc.cash < 1_500 and abs(acc.equity(px) - 100_000) < 100
+    # une stratégie a besoin de 50 000 $ : BIL vendu d'abord, le socle reste
+    tr.raise_cash(acc, 50_000, px)
+    assert acc.cash >= 50_000 and "SPY" in acc.treasury
+    assert buy(acc, "AAA", 50.0, 45.0, None, "trend", "2026-10-26", 1.0, equity=acc.equity(px))
+    # tout l'argent pris par les stratégies → plus de trésorerie, jamais de cash négatif
+    tr.raise_cash(acc, acc.equity(px), px)
+    assert acc.cash >= 0 and acc.treasury == {}
+    assert acc.holdings() == {"AAA": acc.positions["AAA"]["shares"]}
+    # backtest : avec un socle, le fonds est plus investi et la trésorerie ne bloque rien
+    tp = {"SPY": prices["AAA"], "BIL": prices["BBB"]}
+    base = fd.run_fund(prices, 100_000)
+    core = fd.run_fund(prices, 100_000, core_pct=0.3, treasury_prices=tp, sweep="BIL")
+    assert len(core.trades) >= len(base.trades) * 0.9
+    assert not core.equity.equals(base.equity) and (core.equity > 0).all()
+
+
+def test_mirror_includes_treasury_and_reserve(tmp_path):
+    from quantlab import mirror as mr
+    from quantlab.broker import load_account
+    acc = load_account(str(tmp_path / "m.json"), capital=100_000)
+    acc.cash = 10_000
+    acc.treasury = {"SPY": {"shares": 60.0, "cost": 30_000, "last": 500.0},
+                    "BIL": {"shares": 655.7, "cost": 60_000, "last": 91.5}}
+    plan = mr.plan_mirror(acc, {"SPY": 500.0, "BIL": 91.5}, ["SPY"], {}, 100_000, reserve=0.25)
+    q = {a["symbol"]: a["qty"] for a in plan}
+    assert abs(q["SPY"] - 45.0) < 0.1 and abs(q["BIL"] - 655.7 * 0.75) < 0.5

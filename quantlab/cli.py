@@ -77,6 +77,30 @@ def _run_bt(args):
                            source=src), df, src
 
 
+PARSE_ONLY = False
+
+
+def _sweep(args):
+    v = (getattr(args, "sweep", None) or "").strip()
+    return None if v.lower() in ("", "none", "cash") else v
+
+
+def _treasury_kw(args, prices: dict) -> dict:
+    """Paramètres de trésorerie du backtest (socle SPY + bons du Trésor), fail-safe."""
+    core, sweep = getattr(args, "core_pct", 0.0), _sweep(args)
+    if not core and not sweep:
+        return {}
+    tp = {}
+    for s in ["SPY"] + ([sweep] if sweep else []):
+        if s in prices:
+            tp[s] = prices[s]
+            continue
+        df, src = load(s, getattr(args, "years", 10))
+        if src != "synthetic":
+            tp[s] = df
+    return {"core_pct": core, "sweep": sweep if sweep in tp else None, "treasury_prices": tp}
+
+
 def main(argv: list[str] | None = None) -> int:
     # Console Windows souvent en cp1252 : forcer UTF-8 pour les caractères → █ é
     for stream in (sys.stdout, sys.stderr):
@@ -101,6 +125,12 @@ def main(argv: list[str] | None = None) -> int:
         sp.add_argument("--capital", type=float, default=10_000.0)
         sp.add_argument("--risk", type=float, default=1.0,
                         help="risque par trade en %% de l'équité")
+
+    def treasury_args(sp):
+        sp.add_argument("--core-pct", type=float, default=0.30,
+                        help="part max du socle S&P 500 (SPY) financée par le cash non utilisé")
+        sp.add_argument("--sweep", default="BIL",
+                        help="placement du reste du cash (bons du Trésor) ; 'none' = cash")
 
     common(sub.add_parser("strategies", help="Module 1 — génération de stratégies"),
            symbol=False)
@@ -140,14 +170,15 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--with-stocks", action="store_true",
                     help="ETF + BTC + actions individuelles screenées (moitié des places max, "
                          "pas d'entrée à moins de 5 j des résultats)")
+    sp.add_argument("--broker", default="paper", choices=["paper", "alpaca"],
+                    help="alpaca : recopie aussi les positions sur le compte Alpaca")
+    treasury_args(sp)
     sp = sub.add_parser("screen",
                         help="Screener TradingView — univers de candidats (live)")
     sp.add_argument("--market", default="america")
     sp.add_argument("--screen-limit", type=int, default=15)
     sp.add_argument("--crypto", action="store_true",
                     help="screene les cryptos les plus liquides au lieu des actions")
-    sp.add_argument("--broker", default="paper", choices=["paper", "alpaca"],
-                    help="alpaca : recopie aussi les positions sur le compte Alpaca")
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
     sub.add_parser("ai", help="Module 14 — un cycle de la poche IA (Alpaca + Groq)")
     sp = sub.add_parser("ideas", help="Module 17 — idées « niche » tirées de la presse")
@@ -160,6 +191,7 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--mgmt-fee", type=float, default=0.02)
     sp.add_argument("--perf-fee", type=float, default=0.20)
     sp.add_argument("--profiles", action="store_true", help="compare prudent/équilibré/dynamique")
+    treasury_args(sp)
     sp = sub.add_parser("bonds", help="Module 16 — obligations, duration, forwards (cours EFREI)")
     sp = sub.add_parser("options", help="Module 15 — pricing d'options & stratégies (cours EFREI)")
     sp.add_argument("--symbol", default="SPY")
@@ -192,8 +224,11 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--trail", action="store_true",
                     help="stop suiveur en cliquet (trend/breakout)")
     sp.add_argument("--open", action="store_true", help="ouvre le fichier dans le navigateur")
+    treasury_args(sp)
 
     args = p.parse_args(argv)
+    if PARSE_ONLY:          # tests : vérifie seulement que la commande est valide
+        return 0
 
     if args.cmd == "strategies":
         print(describe_all(args.capital, args.risk))
@@ -265,11 +300,14 @@ def main(argv: list[str] | None = None) -> int:
             # positions de la poche IA (si elle partage le compte) : jamais touchées
             protected = {t.get("position_symbol") or position_symbol(t["underlying"])
                          for t in ai.load_trades() if t["status"] == "OPEN"}
-            after = lambda acc, px: mirror_report(client, acc, px, args.symbols, protected)
+            # poche IA sur le même compte (pas de clés ALPACA_AI) : on lui laisse 25 %
+            reserve = 0.0 if Alpaca.from_env("ALPACA_AI") else ai.SHARED_RESERVE
+            after = lambda acc, px: mirror_report(client, acc, px, args.symbols, protected,
+                                                  reserve=reserve)
         print(lv.run_cycle(args.symbols, args.capital, args.risk,
                            max_positions=args.max_positions, screener=screener,
                            vol_target=args.vol_target, trail=args.trail, after=after,
-                           **stock_kw))
+                           core_pct=args.core_pct, sweep=_sweep(args), **stock_kw))
 
     elif args.cmd == "screen":
         print(scr.report(market=args.market, limit=args.screen_limit,
@@ -279,7 +317,8 @@ def main(argv: list[str] | None = None) -> int:
         from . import factsheet as fsh
         from .broker import load_account
         prices, _ = _load_many(args.symbols, args.years)
-        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions)
+        res = fd.run_fund(prices, args.capital, args.risk, args.max_positions,
+                          **_treasury_kw(args, prices))
         spy = prices["SPY"]["Close"] if "SPY" in prices else None
         profiles = None
         if args.profiles:
@@ -358,11 +397,13 @@ def main(argv: list[str] | None = None) -> int:
         from .broker import load_account
         prices, _ = _load_many(args.symbols, args.years)
         res = fd.run_fund(prices, args.capital, args.risk, args.max_positions,
-                          vol_target=args.vol_target, trail=args.trail)
+                          vol_target=args.vol_target, trail=args.trail,
+                          **_treasury_kw(args, prices))
         account = load_account(capital=args.capital)
         prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
         from . import terminal as term
-        for s_, df_ in term.download([s for s in account.positions if s not in prices_now]).items():
+        held_syms = list(account.positions) + list(account.treasury)
+        for s_, df_ in term.download([s for s in held_syms if s not in prices_now]).items():
             prices_now[s_] = float(df_["Close"].iloc[-1])   # actions détenues hors univers ETF
         bench = db.spy_benchmark(account, prices["SPY"]) if "SPY" in prices else None
         gauge = nw.risk_gauge(load)
@@ -387,12 +428,13 @@ def main(argv: list[str] | None = None) -> int:
                   "Idées presse": [i["symbol"] for i in idea_data.get("ideas", [])],
                   "Cryptos": [c.replace("/USD", "-USD") for c in ai.CRYPTOS],
                   "Univers poche IA": [s for s in ai.STOCKS if s not in args.symbols]}
-        wanted = {s for g in groups.values() for s in g} | set(account.positions) | set(term.MACRO)
+        wanted = ({s for g in groups.values() for s in g} | set(account.positions)
+                  | set(account.treasury) | set(term.MACRO))
         wanted |= {t["underlying"].replace("/USD", "-USD") for t in (ai_sum or {}).get("open", [])}
         data = term.download(sorted(wanted - set(prices)))
         data.update(prices)
         for s_, df_ in data.items():          # actions détenues hors univers ETF : vrai prix
-            if s_ in account.positions and s_ not in prices_now:
+            if (s_ in account.positions or s_ in account.treasury) and s_ not in prices_now:
                 prices_now[s_] = float(df_["Close"].iloc[-1])
         client = clients[0] if clients else None
         stock_syms = [s for s in groups["Actions screenées"] + groups["Idées presse"] + list(account.positions)

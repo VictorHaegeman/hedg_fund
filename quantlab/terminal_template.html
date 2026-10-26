@@ -230,8 +230,9 @@ overview(el){
     ${kpi("Aujourd'hui", pct(o.day), "", cls(o.day))}
     ${kpi("Depuis le 1er du mois", pct(o.mtd), "", cls(o.mtd))}
     ${kpi("Depuis le 1er janvier", pct(o.ytd), vsSpy, cls(o.ytd))}
-    ${kpi("Cash disponible", pct(o.cash_pct,1,false), money(o.cash))}
-    ${kpi("Exposition investie", pct(o.gross,1,false), `${o.n_pos} positions fonds · ${o.n_ai} IA`)}
+    ${kpi("Stratégies investies", pct(o.gross,1,false), `${o.n_pos} positions fonds · ${o.n_ai} IA`)}
+    ${kpi("Trésorerie placée", pct(o.treasury_pct,1,false), `${money(o.treasury)} · socle S&P + bons du Trésor`)}
+    ${kpi("Cash qui dort", pct(o.cash_pct,1,false), money(o.cash), o.cash_pct>5?"warn":"")}
     ${kpi("Baisse depuis le plus haut", pct(o.dd), `plus haut le ${esc(o.peak_date||"—")}`, cls(o.dd))}
   </div>
   <div class="grid two" style="margin-top:12px">
@@ -246,7 +247,7 @@ overview(el){
   <h2>Positions principales</h2><div id="ov-pos"></div>`;
   const c=D.curve||[], spyMap=Object.fromEntries((o.spy_curve||[]));
   lineChart($("#ov-curve",el),{x:c.map(r=>r[0]),series:[{name:"Fonds",data:c.map(r=>r[1]),color:"#5eb1ff",fill:true,w:2},
-    {name:"S&P 500 (même départ)",data:c.map(r=>spyMap[r[0]]??null),color:"#8b98a7",dash:true}],fmt:v=>nf(v,0)});
+    {name:"S&P 500 (même départ)",data:(()=>{let last=null; return c.map(r=>{ if(spyMap[r[0]]!=null) last=spyMap[r[0]]; return last; });})(),color:"#8b98a7",dash:true}],fmt:v=>nf(v,0)});
   const cl=Object.entries(o.by_class||{}).filter(([,v])=>v>0), tot=cl.reduce((s,[,v])=>s+v,0)||1;
   $("#ov-class",el).innerHTML=`<div class="stack">${cl.map(([k,v],i)=>`<i title="${esc(k)}" style="width:${v/tot*100}%;background:${COLORS[i%COLORS.length]}"></i>`).join("")}</div>
     <div class="legend">${cl.map(([k,v],i)=>`<span style="--c:${COLORS[i%COLORS.length]}">${esc(k)} ${nf(v/tot*100,1)} %</span>`).join("")}</div>`;
@@ -257,8 +258,14 @@ overview(el){
 positions(el){
   el.innerHTML=`<h2>Fonds principal (stratégies testées : tendance, retour à la moyenne, cassure)</h2><div id="ps-f"></div>
    <p class="note">Risque = perte si le stop est touché. Cliquer une ligne ouvre le détail de l'actif.</p>
+   <h2>Trésorerie — le cash non utilisé travaille (socle S&P 500 ≤ 30 %, reste en bons du Trésor)</h2><div id="ps-t"></div>
+   <p class="note">Vendue automatiquement (bons du Trésor d'abord) dès qu'une stratégie a besoin d'argent pour entrer.</p>
    <h2>Poche IA (options, ventes à découvert, cryptos, idées presse)</h2><div id="ps-a"></div>`;
   posTable($("#ps-f",el), D.positions||[]);
+  table($("#ps-t",el),[{t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span>`},{t:"Rôle",k:"label"},
+    {t:"Poids",k:"weight",n:1,f:r=>pct(r.weight,1,false)},{t:"Valeur",k:"value",n:1,f:r=>money(r.value)},
+    {t:"Prix",k:"price",n:1,f:r=>px(r.price)},{t:"P&L",k:"pnl",n:1,f:r=>`<span class="${cls(r.pnl)}">${money(r.pnl)}</span>`}],
+    D.treasury||[], r=>openAsset(r.symbol));
   table($("#ps-a",el),[
     {t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span> ${r.niche?'<span class="tag niche">niche</span>':""}${r.source?'<span class="tag">presse</span>':""}`},
     {t:"Stratégie",k:"strategy",f:r=>`<span class="tag ai">${esc(r.strategy)}</span>`},

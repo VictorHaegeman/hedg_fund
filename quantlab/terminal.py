@@ -361,6 +361,16 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
     aip = ai_positions(ai)
     invested = sum(r["value"] or 0 for r in pos)
     weights = {r["symbol"]: (r["value"] or 0) / nav for r in pos}
+    tre_rows = []
+    for sym, h in (getattr(account, "treasury", None) or {}).items():
+        px_ = prices_now.get(sym) or h.get("last") or 0.0
+        val = h["shares"] * px_
+        tre_rows.append({"symbol": sym, "label": "Socle S&P 500" if sym == "SPY" else "Bons du Trésor",
+                         "shares": _f(h["shares"], 4), "price": _f(px_), "value": _f(val),
+                         "weight": _f(val / nav * 100, 2) if nav else None,
+                         "pnl": _f(val - h.get("cost", val))})
+        weights[sym] = weights.get(sym, 0.0) + (val / nav if nav else 0.0)
+    tre_value = sum(r["value"] or 0 for r in tre_rows)
 
     # univers « Marchés » : chaque actif une seule fois, avec ses groupes
     member: dict[str, list[str]] = {}
@@ -419,6 +429,8 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
     for r in pos:
         by_class[r["asset_class"]] = by_class.get(r["asset_class"], 0) + (r["value"] or 0)
         by_sector[r["sector"]] = by_sector.get(r["sector"], 0) + (r["value"] or 0)
+    for r in tre_rows:
+        by_class[r["label"]] = by_class.get(r["label"], 0) + (r["value"] or 0)
     by_class["Cash"] = account.cash
 
     risk = portfolio_risk(weights, data, nav)
@@ -435,7 +447,7 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
     lim_rows = [
         {"name": "Positions ouvertes (fonds)", "used": len(pos), "max": lim.get("max_positions", 8),
          "unit": ""},
-        {"name": "Exposition investie", "used": _f(invested / nav * 100, 1), "max": 100, "unit": "%"},
+        {"name": "Exposition des stratégies", "used": _f(invested / nav * 100, 1), "max": 100, "unit": "%"},
         {"name": "Risque engagé jusqu'aux stops", "used": _f(risk["used_risk_usd"] / nav * 100, 2),
          "max": _f(lim.get("risk_pct", 1.0) * lim.get("max_positions", 8), 2), "unit": "%"},
     ]
@@ -523,13 +535,14 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
                      "pnl_pct": _f((nav / account.initial_capital - 1) * 100, 2),
                      "cash": _f(account.cash), "cash_pct": _f(account.cash / nav * 100, 1),
                      "gross": _f(invested / nav * 100, 1), "net": _f(invested / nav * 100, 1),
+                     "treasury": _f(tre_value), "treasury_pct": _f(tre_value / nav * 100, 1) if nav else None,
                      "n_pos": len(pos), "n_ai": len(aip), "created": str(account.created)[:10],
                      "last_cycle": str(getattr(account, "last_cycle", ""))[:16],
                      "by_class": {k: _f(v) for k, v in by_class.items()},
                      "by_sector": {k: _f(v) for k, v in sorted(by_sector.items(), key=lambda x: -x[1])},
                      "alpaca": alpaca_lines or [], **cs},
         "curve": curve,
-        "positions": pos, "ai_positions": aip,
+        "positions": pos, "ai_positions": aip, "treasury": tre_rows,
         "ai_greeks": g, "risk": risk, "assets": assets,
         "ideas": (ideas or {}), "activity": activity,
         "factsheet": {k: v for k, v in (factsheet or {}).items() if k != "monthly_html"},

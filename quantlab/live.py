@@ -61,7 +61,8 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
               vol_target: float | None = None, vol_window: int = 20,
               trail: bool = False, after=None, screener_mode: str = "replace",
               max_screened_positions: int | None = None, earnings_guard=None,
-              earnings_days: int = 5) -> str:
+              earnings_days: int = 5, core_pct: float = 0.0,
+              sweep: str | None = None) -> str:
     """`after(account, last_prices) -> str` : action optionnelle en fin de cycle
     (ex. miroir des positions sur Alpaca). N'influence jamais les décisions."""
     account = load_account(state_path, capital)
@@ -78,6 +79,8 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             base = list(symbols) if screener_mode == "add" else []
             screened_set = set(screened) - set(base)
             symbols = list(dict.fromkeys(base + list(screened) + list(account.positions)))
+    # positions ouvertes TOUJOURS suivies (stops), même si le screener ne répond pas
+    symbols = list(dict.fromkeys(list(symbols) + list(account.positions)))
     lines = [
         "=" * 78,
         "MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)",
@@ -108,6 +111,20 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             data.pop(s, None)
         if dropped:
             lines.append(f"  Doublons d'émetteur écartés : {', '.join(dropped)}")
+
+    # Trésorerie (pas de cash qui dort) : prix du socle SPY et des bons du Trésor (BIL).
+    # Ces actifs ne sont PAS ajoutés à `data` : aucune stratégie ne les trade.
+    from . import treasury as tr
+    use_treasury = core_pct > 0 or bool(sweep) or bool(account.treasury)
+    if use_treasury:
+        for sym in {tr.CORE_SYMBOL, sweep or tr.SWEEP_SYMBOL} | set(account.treasury):
+            if sym not in last_prices:
+                try:
+                    df_t, src_t = loader(sym, years=2, fresh=True)
+                    if src_t != "synthetic":
+                        last_prices[sym] = float(df_t["Close"].iloc[-1])
+                except Exception:
+                    pass
 
     equity_before = account.equity(last_prices)
 
@@ -187,8 +204,12 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
             price = float(df["Close"].iloc[-1])
             stop = float(sig["stop"])
             target = float(sig["target"]) if np.isfinite(sig["target"]) else None
+            eq_now = account.equity(last_prices)
+            if account.treasury and price > stop:   # les stratégies passent avant la trésorerie
+                need = eq_now * eff_risk / 100.0 / (price - stop) * price * 1.001
+                lines += tr.raise_cash(account, need, last_prices)
             pos = buy(account, sym, price, stop, target, key, date,
-                      eff_risk, equity=account.equity(last_prices))
+                      eff_risk, equity=eq_now)
             if pos:
                 tgt = f"{target:,.2f}" if target else "suiveur"
                 lines.append(
@@ -199,6 +220,9 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
 
     if not any(l.lstrip().startswith(("ACHAT", "VENTE")) for l in lines):
         lines.append("  Aucun ordre ce cycle (positions inchangées, pas de signal).")
+
+    if use_treasury:
+        lines += tr.rebalance(account, last_prices, core_pct, sweep)
 
     # ---- 3) État du compte ----
     account.last_cycle = datetime.now().isoformat(timespec="seconds")
@@ -236,6 +260,9 @@ def account_summary(account: Account, prices: dict[str, float] | None = None) ->
                 f"latent {upnl:+,.2f} $")
     else:
         lines.append("  Aucune position ouverte.")
+    if account.treasury:
+        from . import treasury as tr
+        lines.append(tr.summary_line(account, prices))
     if account.history:
         pnls = [t["pnl"] for t in account.history]
         wins = sum(1 for x in pnls if x > 0)

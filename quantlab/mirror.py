@@ -26,7 +26,7 @@ TOLERANCE = 0.02         # 2 % d'écart relatif toléré avant de rééquilibrer
 
 def plan_mirror(account: Account, prices: dict[str, float], universe: list[str],
                 alpaca_positions: dict[str, float], alpaca_equity: float,
-                pending: set[str] | None = None) -> list[dict]:
+                pending: set[str] | None = None, reserve: float = 0.0) -> list[dict]:
     """Calcule les ordres pour aligner Alpaca sur le compte papier.
 
     alpaca_positions : {symbole de position Alpaca (ex. BTCUSD): quantité}
@@ -34,8 +34,9 @@ def plan_mirror(account: Account, prices: dict[str, float], universe: list[str],
     """
     pending = pending or set()
     fund_eq = account.equity(prices)
-    scale = alpaca_equity / fund_eq if fund_eq > 0 else 1.0
-    targets = {s: p["shares"] * scale for s, p in account.positions.items()}
+    # reserve : part du compte Alpaca laissée libre (poche IA sur le même compte)
+    scale = alpaca_equity * (1 - reserve) / fund_eq if fund_eq > 0 else 1.0
+    targets = {s: q * scale for s, q in account.holdings().items()}
 
     actions = []
     for sym in sorted(set(universe) | set(targets)):
@@ -44,7 +45,8 @@ def plan_mirror(account: Account, prices: dict[str, float], universe: list[str],
             continue
         want = targets.get(sym, 0.0)
         have = float(alpaca_positions.get(psym, 0.0))
-        price = prices.get(sym) or (account.positions.get(sym) or {}).get("entry") or 0.0
+        price = (prices.get(sym) or (account.positions.get(sym) or {}).get("entry")
+                 or (account.treasury.get(sym) or {}).get("last") or 0.0)
         if want <= 0 and have > 0:
             actions.append({"symbol": sym, "action": "close", "qty": have,
                             "reason": "position fermée par le fonds"})
@@ -95,13 +97,15 @@ def managed_universe(account: Account, universe: list[str],
     """Actifs gérés par le fonds : univers du cycle + positions + actifs déjà tradés
     (utile avec le screener, dont l'univers change d'un jour à l'autre), moins les
     positions protégées de la poche IA si elle partage le compte."""
-    syms = set(universe) | set(account.positions) | {t["symbol"] for t in account.history}
+    syms = (set(universe) | set(account.positions) | set(account.treasury)
+            | {t["symbol"] for t in account.history})
     protected = protected or set()
     return sorted(s for s in syms if position_symbol(s) not in protected)
 
 
 def mirror_report(client: Alpaca | None, account: Account, prices: dict[str, float],
-                  universe: list[str], protected: set[str] | None = None) -> str:
+                  universe: list[str], protected: set[str] | None = None,
+                  reserve: float = 0.0) -> str:
     """Synchronise le compte Alpaca et renvoie le compte rendu (jamais d'exception)."""
     lines = ["", "— MIROIR ALPACA —"]
     if client is None:
@@ -113,7 +117,7 @@ def mirror_report(client: Alpaca | None, account: Account, prices: dict[str, flo
         positions = {p["symbol"]: float(p["qty"]) for p in client.positions()}
         pending = {o["symbol"].replace("/", "") for o in client.open_orders()}
         actions = plan_mirror(account, prices, managed_universe(account, universe, protected),
-                              positions, float(acct["equity"]), pending)
+                              positions, float(acct["equity"]), pending, reserve)
         lines += execute_mirror(client, actions) or ["  Alpaca déjà aligné sur le fonds."]
         if pending:
             lines.append(f"  Ordres en attente (exécution à l'ouverture) : "

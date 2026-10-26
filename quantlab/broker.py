@@ -25,12 +25,25 @@ class Account:
     created: str = ""
     last_cycle: str = ""
     equity_curve: list = field(default_factory=list)  # [[date_iso, equity], ...]
+    # trésorerie placée (socle SPY + bons du Trésor BIL) : symbol -> {shares, cost, last}
+    treasury: dict = field(default_factory=dict)
 
     def equity(self, prices: dict[str, float]) -> float:
         value = self.cash
         for sym, pos in self.positions.items():
             value += pos["shares"] * prices.get(sym, pos["entry"])
+        for sym, h in self.treasury.items():
+            value += h["shares"] * (prices.get(sym) or h.get("last") or 0.0)
         return value
+
+    def holdings(self) -> dict[str, float]:
+        """Quantités totales par symbole (stratégies + trésorerie), pour le courtier."""
+        out: dict[str, float] = {}
+        for sym, pos in self.positions.items():
+            out[sym] = out.get(sym, 0.0) + pos["shares"]
+        for sym, h in self.treasury.items():
+            out[sym] = out.get(sym, 0.0) + h["shares"]
+        return out
 
     def record_equity(self, date: str, value: float) -> None:
         """Ajoute (ou met à jour) le point d'équité du jour."""

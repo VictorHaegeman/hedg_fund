@@ -68,6 +68,7 @@ GROQ_MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.8-27b"]
 
 MIN_CONFIDENCE = 0.65
 MAX_OPEN_TRADES = 5
+SHARED_RESERVE = 0.25          # compte partagé : le miroir du fonds laisse 25 % libres à l'IA
 DAILY_LOSS_CAP = 0.03          # -3 % sur la journée → pas de nouvelle entrée
 OPTION_MAX_RISK_PCT = 0.05     # perte max d'un trade options = 5 % de l'équité
 SPOT_MAX_PCT = 0.10            # achat / vente à découvert = 10 % de l'équité max

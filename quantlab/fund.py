@@ -52,8 +52,22 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
              commission_bps: float = 5.0,
              strategy_keys: tuple[str, ...] = ("trend", "meanrev", "breakout"),
              vol_target: float | None = None, vol_window: int = 20,
-             trail: bool = False) -> BacktestResult:
+             trail: bool = False, core_pct: float = 0.0,
+             treasury_prices: dict[str, pd.DataFrame] | None = None,
+             sweep: str | None = None) -> BacktestResult:
+    """Fonds multi-stratégies. core_pct / sweep : trésorerie (voir treasury.py) — le cash non utilisé va
+    jusqu'à core_pct dans le socle SPY, le reste en bons du Trésor (`sweep`, ex. BIL).
+    Les entrées de stratégie revendent d'abord la trésorerie. `treasury_prices` :
+    historiques (Open/Close) du socle et du placement, jamais tradés par les stratégies."""
     fee = commission_bps / 10_000.0
+    from . import treasury as trz
+    core_sym = trz.CORE_SYMBOL
+    tp = treasury_prices or {}
+    use_tre = (core_pct > 0 or sweep) and core_sym in tp
+    t_open = {s_: df_["Open"] for s_, df_ in tp.items()} if use_tre else {}
+    t_close = {s_: df_["Close"] for s_, df_ in tp.items()} if use_tre else {}
+    tre: dict[str, float] = {}           # symbole -> parts
+    tre_last: dict[str, float] = {}
 
     # Pré-calculs par actif : arrays OHLC + signaux de chaque stratégie
     arr: dict[str, dict] = {}
@@ -79,9 +93,34 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
     equity_vals: list[float] = []
     trades: list[dict] = []
 
+    def tre_value() -> float:
+        return sum(q * tre_last.get(s_, 0.0) for s_, q in tre.items())
+
     def mark_equity() -> float:
-        return cash + sum(p["shares"] * last_close.get(s, p["entry"])
-                          for s, p in positions.items())
+        return cash + tre_value() + sum(p["shares"] * last_close.get(s, p["entry"])
+                                        for s, p in positions.items())
+
+    def tre_px(sym, t, kind="open"):
+        ser = (t_open if kind == "open" else t_close).get(sym)
+        if ser is None:
+            return tre_last.get(sym, 0.0)
+        v = ser.get(t)
+        return float(v) if v is not None and np.isfinite(v) else tre_last.get(sym, 0.0)
+
+    def tre_raise(needed, t):
+        """Vend BIL puis SPY à l'open pour financer une entrée."""
+        nonlocal cash
+        for sym in ([sweep] if sweep else []) + [core_sym]:
+            if cash >= needed or sym not in tre:
+                continue
+            px = tre_px(sym, t, "open")
+            if px <= 0:
+                continue
+            q = min((needed - cash) * 1.002 / px, tre[sym])
+            tre[sym] -= q
+            cash += q * px * (1 - fee)
+            if tre[sym] <= 1e-9:
+                tre.pop(sym)
 
     def close_position(sym: str, i: int, price: float, date, reason: str):
         nonlocal cash
@@ -127,8 +166,10 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
                                   if np.isfinite(sg["target"][j]) else np.nan)
                         # Vol-targeting : module le risque selon la vol réalisée récente
                         eff_risk = risk_pct * vol_scale(equity_vals, vol_target, vol_window)
-                        shares = min(eq_prev * eff_risk / 100.0 / stop_dist,
-                                     cash / (entry * (1 + fee)))
+                        want = eq_prev * eff_risk / 100.0 / stop_dist
+                        if use_tre and want * entry * (1 + fee) > cash:
+                            tre_raise(want * entry * (1 + fee), t)
+                        shares = min(want, cash / (entry * (1 + fee)))
                         if shares > 0:
                             cash -= shares * entry * (1 + fee)
                             positions[sym] = {
@@ -161,6 +202,33 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
                         pending_entry[sym] = key
                         break
 
+        if use_tre:   # fin de journée : placer le cash non utilisé (socle puis T-bills)
+            for s_ in t_close:
+                v = t_close[s_].get(t)
+                if v is not None and np.isfinite(v):
+                    tre_last[s_] = float(v)
+            strat_val = sum(p["shares"] * last_close.get(s, p["entry"]) for s, p in positions.items())
+            eq_t = cash + tre_value() + strat_val
+            avail = max(cash + tre_value() - trz.BUFFER_PCT * eq_t, 0.0)
+            tgt = {core_sym: min(core_pct * eq_t, avail)}
+            if sweep and sweep in t_close:
+                tgt[sweep] = max(avail - tgt[core_sym], 0.0)
+            for s_ in sorted(tgt, key=lambda k: tgt[k] - tre.get(k, 0) * tre_last.get(k, 0)):
+                px = tre_last.get(s_, 0.0)
+                if px <= 0:
+                    continue
+                diff = tgt[s_] - tre.get(s_, 0.0) * px
+                tol = trz.BAND_PCT * eq_t if s_ == core_sym else 0.01 * eq_t
+                if abs(diff) < tol:
+                    continue
+                if diff > 0:
+                    diff = min(diff, cash / (1 + fee))
+                    tre[s_] = tre.get(s_, 0.0) + diff / px
+                    cash -= diff * (1 + fee)
+                else:
+                    q = min(-diff / px, tre.get(s_, 0.0))
+                    tre[s_] -= q
+                    cash += q * px * (1 - fee)
         equity_vals.append(mark_equity())
 
     # Clôture forcée des positions restantes au dernier cours connu
@@ -168,6 +236,8 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
     for sym in list(positions):
         i = len(arr[sym]["c"]) - 1
         close_position(sym, i, last_close[sym], final_date, "fin_historique")
+    cash += tre_value()
+    tre.clear()
     equity_vals[-1] = cash
 
     eq = pd.Series(equity_vals, index=pd.DatetimeIndex(calendar), name="equity")

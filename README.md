@@ -204,6 +204,30 @@ Résultat de l'entraînement 2016→2026 avec 100 000 $ : équité finale ~474 0
 (CAGR +16,8 %/an, Sharpe 0,94, max drawdown −20,3 %, 333 trades, win rate 60 %).
 Performance simulée — aucune garantie future.
 
+## Trésorerie : pas de cash qui dort (comme un vrai fonds)
+
+Le cash que les stratégies n'utilisent pas est placé automatiquement à chaque cycle :
+jusqu'à **30 % dans le S&P 500 (SPY, « socle »)**, le reste en **bons du Trésor US
+très courts (BIL)**, 1 % gardé en cash. Les stratégies restent prioritaires : dès qu'une
+entrée a besoin d'argent, on revend BIL puis SPY (`quantlab/treasury.py`). Ces lignes
+ne comptent pas dans le nombre max de positions ni dans les statistiques de trades, et
+sont recopiées sur Alpaca par le miroir (25 % du compte Alpaca restent libres pour la
+poche IA quand elle partage le compte). Options : `--core-pct 0.3 --sweep BIL`
+(`--core-pct 0 --sweep none` = ancien comportement).
+
+Test 2007 → 2026 (univers sans biais, avant frais) :
+
+| | Gain / an | Volatilité | Sharpe | Pire baisse | Bat le S&P (13 dates de départ) |
+|---|---|---|---|---|---|
+| S&P 500 | 10,6 % | 19,7 % | 0,54 | −55 % | — |
+| Fonds sans trésorerie | 10,6 % | 13,1 % | 0,73 | −21 % | 0/13 |
+| Fonds + socle 30 % + BIL | 11,7 % | 14,0 % | 0,76 | −28 % | 4/13 |
+| Fonds + socle 40 % + BIL | 12,0 % | 14,5 % | 0,76 | −31 % | 8/13 |
+
+Les autres stratégies de hedge funds testées (tendance multi-actifs façon CTA, rotation
+sectorielle, parité de risque, vente de puts) réduisent le risque mais rapportent moins
+sur la période : non retenues pour l'instant.
+
 ## Améliorations du modèle (overlays optionnels)
 
 Deux surcouches robustes, **désactivées par défaut** (opt-in), pour améliorer le
