@@ -7,3 +7,13 @@ Exécuté : 2026-10-26T13:41:16 | équité 100,000.00 $ (+0.00 % jour) | bourse 
   IA : BUY_STOCK BAH | confiance 0.72 | BAH montre une forte tendance haussière (+10,4% sur 5 jours), un RSI élevé (71,7) et un IV/HV raisonnable (1,09), ce qui indique un potentiel de continuation sans risque excessif.
   OUVERT BUY_STOCK BAH | coût 10,000 $
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-10-26T18:57:40 | équité 100,227.83 $ (+0.23 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +10,230 $ | Γ +0.00 | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : PEB*, BAH, FCNCA, HST, DDOG, AZO, CTSH, CUBI*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : HST, GOOGL, CAT, DDOG, XOM, CTSH, COIN, CVX, PEB, FCNCA, CUBI, AMZN, ETH/USD, XRP/USD, DOGE/USD, ADA/USD, SOL/USD
+  IA : BUY_STOCK XOM | confiance 0.72 | XOM montre une tendance haussière forte (RSI 77.5, +3.4% sur 5 jours) avec un volume implicite raisonnable et aucune annonce de résultats imminente, ce qui justifie un achat prudent.
+  OUVERT BUY_STOCK XOM | coût 10,023 $
+  Idées presse : 15 idées rafraîchies

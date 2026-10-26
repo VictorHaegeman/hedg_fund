@@ -16,5 +16,23 @@
     "confidence": 0.72,
     "reasoning": "BAH montre une forte tendance haussière (+10,4% sur 5 jours), un RSI élevé (71,7) et un IV/HV raisonnable (1,09), ce qui indique un potentiel de continuation sans risque excessif.",
     "pnl": null
+  },
+  {
+    "id": "371ce3ea37",
+    "opened_at": "2026-10-26T18:57:48",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "XOM",
+    "position_symbol": "XOM",
+    "cost": 10022.78,
+    "entry_price": 184.3,
+    "sl_pct": 0.03,
+    "tp_pct": 0.06,
+    "source": null,
+    "niche": false,
+    "confidence": 0.72,
+    "reasoning": "XOM montre une tendance haussière forte (RSI 77.5, +3.4% sur 5 jours) avec un volume implicite raisonnable et aucune annonce de résultats imminente, ce qui justifie un achat prudent.",
+    "pnl": null
   }
 ]

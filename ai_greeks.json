@@ -1,8 +1,21 @@
 {
-  "updated_at": "2026-10-26T13:41:16",
-  "positions": [],
+  "updated_at": "2026-10-26T18:57:40",
+  "positions": [
+    {
+      "id": "464c6aacc5",
+      "strategy": "BUY_STOCK",
+      "underlying": "BAH",
+      "spot": 83.74,
+      "delta": 122.16,
+      "delta_usd": 10229.65,
+      "gamma_usd": 0.0,
+      "vega": 0.0,
+      "theta_day": 0.0,
+      "rho": 0.0
+    }
+  ],
   "total": {
-    "delta_usd": 0.0,
+    "delta_usd": 10229.65,
     "gamma_usd": 0.0,
     "vega": 0.0,
     "theta_day": 0.0,
