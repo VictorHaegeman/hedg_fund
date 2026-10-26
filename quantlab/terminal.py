@@ -307,6 +307,44 @@ def fund_positions(account, data, prices_now, nav, sector_lookup) -> list[dict]:
     return sorted(rows, key=lambda r: -(r["value"] or 0))
 
 
+AI_KIND_FR = {
+    "BUY_STOCK": "Achat d'actions", "SHORT_STOCK": "Vente à découvert (pari à la baisse)",
+    "BUY_CRYPTO": "Achat de crypto",
+    "BULL_CALL_SPREAD": "Option : bull call spread (pari à la hausse)",
+    "BEAR_PUT_SPREAD": "Option : bear put spread (pari à la baisse)",
+    "LONG_STRADDLE": "Option : straddle (gros mouvement, sens inconnu)",
+    "LONG_STRANGLE": "Option : strangle (gros mouvement, sens inconnu)",
+    "LONG_CALL_BUTTERFLY": "Option : butterfly (le prix reste stable)",
+}
+
+
+def describe_ai_trade(t: dict) -> tuple[str, str]:
+    """(type en clair, détail) : jambes call/put pour les options, stop/objectif sinon."""
+    kind = AI_KIND_FR.get(t.get("strategy"), t.get("strategy") or "")
+    if t.get("legs"):
+        legs = []
+        for l in t["legs"]:
+            n = l.get("ratio", 1)
+            legs.append(f"{'achat' if l['side'] == 'buy' else 'vente'} {n if n > 1 else ''}"
+                        f"{'×' if n > 1 else ''}{'call' if l['type'] == 'call' else 'put'} "
+                        f"{l['strike']:g}")
+        qty = t.get("qty")
+        out = " + ".join(legs) + (f" · {qty} contrat{'s' if qty and qty > 1 else ''}" if qty else "")
+        a = t.get("analysis") or {}
+        if a.get("breakevens"):
+            out += " · point mort " + " / ".join(f"{b:,.2f}" for b in a["breakevens"])
+        if a.get("prob_profit") is not None:
+            out += f" · proba. de gain {a['prob_profit'] * 100:.0f} %"
+        return kind, out
+    sl, tp = t.get("sl_pct"), t.get("tp_pct")
+    px = t.get("entry_price")
+    if sl and tp:
+        d = f"stop {'+' if t.get('strategy') == 'SHORT_STOCK' else '−'}{sl * 100:.0f} % · objectif " \
+            f"{'−' if t.get('strategy') == 'SHORT_STOCK' else '+'}{tp * 100:.0f} %"
+        return kind, (f"à {px:,.2f} $ · " if px else "") + d
+    return kind, ""
+
+
 def ai_positions(ai: dict | None) -> list[dict]:
     if not ai:
         return []
@@ -315,9 +353,18 @@ def ai_positions(ai: dict | None) -> list[dict]:
     for t in ai.get("open", []):
         g = greeks.get(t["id"], {})
         und = t["underlying"].replace("/USD", "-USD")
+        what, detail = describe_ai_trade(t)
+        if not g and t.get("kind") in ("stock", "crypto", "short") and t.get("cost"):
+            g = {"delta_usd": -t["cost"] if t["kind"] == "short" else t["cost"]}   # action : Δ = 1
+        spot = t.get("kind") != "options"
+        max_loss = t.get("max_loss") if not spot else (
+            round(t["cost"] * t["sl_pct"], 2) if t.get("cost") and t.get("sl_pct") else None)
+        max_gain = t.get("max_gain") if not spot else (
+            round(t["cost"] * t["tp_pct"], 2) if t.get("cost") and t.get("tp_pct") else None)
         rows.append({"symbol": und, "book": "Poche IA", "strategy": t["strategy"],
-                     "kind": t["kind"], "cost": t.get("cost"), "max_loss": t.get("max_loss"),
-                     "max_gain": t.get("max_gain"), "expiry": t.get("expiry"),
+                     "what": what, "detail": detail,
+                     "kind": t["kind"], "cost": t.get("cost"), "max_loss": max_loss,
+                     "max_gain": max_gain, "gain_is_target": spot, "expiry": t.get("expiry"),
                      "opened": str(t.get("opened_at", ""))[:10], "niche": t.get("niche"),
                      "source": t.get("source"), "reasoning": t.get("reasoning"),
                      "delta_usd": g.get("delta_usd"), "gamma_usd": g.get("gamma_usd"),

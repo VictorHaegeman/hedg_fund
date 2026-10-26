@@ -268,10 +268,12 @@ positions(el){
     D.treasury||[], r=>openAsset(r.symbol));
   table($("#ps-a",el),[
     {t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span> ${r.niche?'<span class="tag niche">niche</span>':""}${r.source?'<span class="tag">presse</span>':""}`},
-    {t:"Stratégie",k:"strategy",f:r=>`<span class="tag ai">${esc(r.strategy)}</span>`},
+    {t:"Type",k:"what",f:r=>`<span class="tag ${r.kind==="options"?"ai":r.strategy==="SHORT_STOCK"?"sell":"buy"}">${esc(r.what||r.strategy)}</span>`},
+    {t:"Détail",k:"detail",f:r=>`<span style="white-space:normal">${esc(r.detail||"")}</span>`},
     {t:"Ouvert",k:"opened"},{t:"Échéance",k:"expiry",f:r=>esc(r.expiry||"—")},
-    {t:"Coût",k:"cost",n:1,f:r=>money(r.cost)},{t:"Perte max",k:"max_loss",n:1,f:r=>money(r.max_loss)},
-    {t:"Gain max",k:"max_gain",n:1,f:r=>r.max_gain==null?"illimité":money(r.max_gain)},
+    {t:"Montant",k:"cost",n:1,f:r=>money(r.cost)},
+    {t:"Perte max",k:"max_loss",n:1,f:r=>money(r.max_loss)+(r.gain_is_target&&isNum(r.max_loss)?' <span class="muted">au stop</span>':"")},
+    {t:"Gain visé",k:"max_gain",n:1,f:r=>r.max_gain==null?"illimité":money(r.max_gain)+(r.gain_is_target?' <span class="muted">objectif</span>':"")},
     {t:"Δ $",k:"delta_usd",n:1,f:r=>money(r.delta_usd)},{t:"ν $/pt",k:"vega",n:1,f:r=>nf(r.vega)},{t:"Θ $/j",k:"theta_day",n:1,f:r=>nf(r.theta_day)},
     {t:"Pourquoi (IA)",k:"reasoning",f:r=>`<span class="muted" style="white-space:normal">${esc((r.reasoning||"").slice(0,110))}</span>`}],
     D.ai_positions||[], r=>openAsset(r.symbol));
