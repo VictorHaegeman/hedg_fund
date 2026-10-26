@@ -361,6 +361,9 @@ def main(argv: list[str] | None = None) -> int:
                           vol_target=args.vol_target, trail=args.trail)
         account = load_account(capital=args.capital)
         prices_now = {s: float(df["Close"].iloc[-1]) for s, df in prices.items()}
+        from . import terminal as term
+        for s_, df_ in term.download([s for s in account.positions if s not in prices_now]).items():
+            prices_now[s_] = float(df_["Close"].iloc[-1])   # actions détenues hors univers ETF
         bench = db.spy_benchmark(account, prices["SPY"]) if "SPY" in prices else None
         gauge = nw.risk_gauge(load)
         screened = scr.candidates(limit=args.screen_limit)
@@ -378,7 +381,6 @@ def main(argv: list[str] | None = None) -> int:
                           alpaca_lines=alpaca_lines, factsheet=fs)
         print(f"Page classique : {classic}")
         from . import ideas as ide
-        from . import terminal as term
         idea_data = ide.load()
         groups = {"Univers du fonds": list(args.symbols),
                   "Actions screenées": list(screened or []),
@@ -389,6 +391,9 @@ def main(argv: list[str] | None = None) -> int:
         wanted |= {t["underlying"].replace("/USD", "-USD") for t in (ai_sum or {}).get("open", [])}
         data = term.download(sorted(wanted - set(prices)))
         data.update(prices)
+        for s_, df_ in data.items():          # actions détenues hors univers ETF : vrai prix
+            if s_ in account.positions and s_ not in prices_now:
+                prices_now[s_] = float(df_["Close"].iloc[-1])
         client = clients[0] if clients else None
         stock_syms = [s for s in groups["Actions screenées"] + groups["Idées presse"] + list(account.positions)
                       if not s.endswith("-USD")][:50]
