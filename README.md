@@ -170,10 +170,35 @@ python -m quantlab dashboard --capital 100000 --open       # tableau de bord HTM
 
 `fund` rejoue la logique exacte du mode live sur l'historique : 5 actifs,
 3 stratégies en parallèle, capital partagé, max 5 positions, risque 1 %/trade.
-`dashboard` génère `docs/index.html` (courbe d'équité, drawdown, rendements
-annuels, positions du compte papier, derniers trades) — régénéré chaque jour
-par le workflow live et **publié en ligne via GitHub Pages** :
+`dashboard` génère le **terminal du gérant** `docs/index.html` (et l'ancienne page
+`docs/classic.html`) — régénéré à chaque cycle IA (toutes les 30 min en séance) et
+chaque soir par le workflow live, **publié en ligne via GitHub Pages** :
 <https://victorhaegeman.github.io/hedg_fund/>
+
+Onglets du terminal (page autonome, sans dépendance externe) :
+
+| Onglet | Contenu |
+|---|---|
+| Vue d'ensemble | VL, P&L jour / mois / année vs S&P 500, cash, exposition, drawdown, répartition classe / secteur, alertes (stop proche, résultats, limites) |
+| Positions | fonds + poche IA, poids, P&L, distance au stop, risque engagé, grecques des options |
+| Risque | VaR / CVaR 95 % du portefeuille actuel, vol, bêta, stress (actions, taux, bitcoin, or, vol), limites, corrélations |
+| Grecques | Δ Γ ν Θ ρ du portefeuille + options ATM 30 j de chaque actif (IV Alpaca sinon vol réalisée) |
+| Marchés | ~100 actifs (univers du fonds, actions screenées, idées presse, 13 cryptos, univers IA). **Un clic** → graphique 6 mois, indicateurs, signaux des 3 stratégies, résultats, news, calculateur Black-Scholes (strike / jours / vol réglables) |
+| Idées presse | module 17 (ci-dessous) |
+| Activité, Fiche, Contexte | historique des trades, factsheet brute / nette, VIX, taux, dollar, pétrole, or, titres de presse |
+
+### Idées « niche » tirées de la presse (module 17)
+
+```powershell
+python -m quantlab ideas            # idées des dernières 48 h (+ résumé IA si GROQ_API_KEY)
+```
+
+Source gratuite : le fil Benzinga d'Alpaca (centaines de sociétés par jour, beaucoup de
+petites valeurs). Bloomberg, WSJ et X/Grok sont payants : non utilisés. Filtres : prix ≥ 5 $,
+≥ 10 M$ échangés par jour ; score = attention (nombre d'articles) + ton des titres + tendance.
+Les idées (≤ 8, rafraîchies toutes les 3 h) entrent dans la **poche IA**, jamais dans le
+fonds principal ; une valeur « niche » (< 50 M$/jour) y est prise avec une **taille ÷ 2**.
+Elles ne sont pas backtestables (l'actualité passée ne se rejoue pas sans biais).
 
 Résultat de l'entraînement 2016→2026 avec 100 000 $ : équité finale ~474 000 $
 (CAGR +16,8 %/an, Sharpe 0,94, max drawdown −20,3 %, 333 trades, win rate 60 %).

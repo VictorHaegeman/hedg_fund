@@ -116,21 +116,26 @@ def yf_sector(sym: str) -> str | None:
     return (yf.Ticker(sym).info or {}).get("sector")
 
 
+YF_ALIAS = {"UNI-USD": "UNI7083-USD"}     # tickers Yahoo différents du symbole Alpaca
+
+
 def download(symbols: list[str], period: str = "1y") -> dict[str, pd.DataFrame]:
     """Historique journalier en un seul appel yfinance (fail-safe)."""
     symbols = sorted(set(symbols))
     if not symbols:
         return {}
+    yf_syms = [YF_ALIAS.get(s, s) for s in symbols]
     try:
         import yfinance as yf
-        raw = yf.download(symbols, period=period, interval="1d", group_by="ticker",
+        raw = yf.download(yf_syms, period=period, interval="1d", group_by="ticker",
                           auto_adjust=True, progress=False, threads=True)
     except Exception:
         return {}
     out = {}
     for s in symbols:
         try:
-            df = raw[s] if isinstance(raw.columns, pd.MultiIndex) else raw
+            y = YF_ALIAS.get(s, s)
+            df = raw[y] if isinstance(raw.columns, pd.MultiIndex) else raw
             df = df.dropna(subset=["Close"])
             if len(df) >= 30:
                 out[s] = df
