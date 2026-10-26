@@ -51,7 +51,14 @@ STOCKS = [
     "SPY", "QQQ", "IWM", "XLE", "XLF", "GLD", "TLT",
 ]
 ETFS = {"SPY", "QQQ", "IWM", "XLE", "XLF", "GLD", "TLT"}
-CRYPTOS = ["BTC/USD", "ETH/USD", "SOL/USD"]
+# Cryptos liquides tradables sur Alpaca (stablecoins, or tokenisé et memecoins exclus)
+CRYPTOS = ["BTC/USD", "ETH/USD", "SOL/USD", "XRP/USD", "DOGE/USD", "AVAX/USD", "LINK/USD",
+           "LTC/USD", "BCH/USD", "DOT/USD", "ADA/USD", "UNI/USD", "AAVE/USD"]
+TOP_CRYPTOS = 5                # cryptos envoyées au LLM après pré-tri
+MAX_IDEAS = 8                  # idées « presse » ajoutées aux candidats (module 17)
+IDEAS_MAX_AGE_H = 72           # idées plus vieilles : ignorées
+IDEAS_REFRESH_H = 3            # le cycle IA reconstruit ideas.json au-delà de cet âge
+NICHE_SIZE = 0.5               # valeur « niche » (peu liquide) → taille de position × 0,5
 
 TOP_CANDIDATES = 12            # actions envoyées au LLM après pré-tri (quota Groq)
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
@@ -90,7 +97,17 @@ CRYPTO_RSS = ["https://www.coindesk.com/arc/outboundfeeds/rss/",
               "https://cointelegraph.com/rss"]
 CRYPTO_KEYWORDS = {"BTC/USD": ["bitcoin", "btc"],
                    "ETH/USD": ["ethereum", "ether", "eth"],
-                   "SOL/USD": ["solana", "sol"]}
+                   "SOL/USD": ["solana", "sol"],
+                   "XRP/USD": ["xrp", "ripple"],
+                   "DOGE/USD": ["dogecoin", "doge"],
+                   "AVAX/USD": ["avalanche", "avax"],
+                   "LINK/USD": ["chainlink", "link"],
+                   "LTC/USD": ["litecoin", "ltc"],
+                   "BCH/USD": ["bitcoin cash", "bch"],
+                   "DOT/USD": ["polkadot", "dot"],
+                   "ADA/USD": ["cardano", "ada"],
+                   "UNI/USD": ["uniswap", "uni"],
+                   "AAVE/USD": ["aave"]}
 
 
 def now_iso() -> str:
@@ -134,6 +151,8 @@ def interest_score(r: dict) -> float:
         score += 2
     if r["trend"] != "neutre":
         score += 1
+    if r.get("idea"):
+        score += 1.5
     return score + min(len(r.get("news", [])), 2) * 0.5
 
 
@@ -322,8 +341,9 @@ def days_to_earnings(symbol: str) -> int | None:
 def build_snapshot(client: Alpaca, market_open: bool, stocks: list[str],
                    cryptos: list[str], open_underlyings: list[str],
                    earnings=days_to_earnings, crypto_news=crypto_headlines,
-                   fng=fear_greed) -> dict:
+                   fng=fear_greed, ideas: list[dict] | None = None) -> dict:
     rows, prices, chains = [], {}, {}
+    ideas = {i["symbol"]: i for i in (ideas or [])}
     if market_open and stocks:
         closes = daily_closes(client, stocks)
         prices.update(last_prices(client, stocks))
@@ -335,9 +355,15 @@ def build_snapshot(client: Alpaca, market_open: bool, stocks: list[str],
                 continue
             price = prices.get(s) or c[-1]
             prices[s] = price
-            cands.append({"symbol": s, "kind": "ETF" if s in ETFS else "action",
+            idea = ideas.get(s)
+            kind = ("ETF" if s in ETFS else
+                    ("idee presse, niche" if idea.get("niche") else "idee presse") if idea
+                    else "action")
+            cands.append({"symbol": s, "kind": kind,
                           "price": round(price, 2), **metrics(c, price),
-                          "earnings": earnings(s), "news": news.get(s, []),
+                          "earnings": earnings(s),
+                          "news": news.get(s) or (idea or {}).get("headlines", [])[:3],
+                          "idea": bool(idea), "niche": bool(idea and idea.get("niche")),
                           "iv": None, "iv_hv": None})
         cands.sort(key=interest_score, reverse=True)
         for r in cands[:TOP_CANDIDATES]:
@@ -356,15 +382,19 @@ def build_snapshot(client: Alpaca, market_open: bool, stocks: list[str],
         cc = daily_closes(client, cryptos, crypto=True)
         prices.update(last_prices(client, cryptos, crypto=True))
         heads = crypto_news()
+        crows = []
         for s in cryptos:
             c = cc.get(s) or []
             if len(c) < 55:
                 continue
             price = prices.get(s) or c[-1]
             prices[s] = price
-            rows.append({"symbol": s, "kind": "crypto", "price": round(price, 2),
-                         **metrics(c, price, 365), "earnings": None,
-                         "news": crypto_news_for(s, heads), "iv": None, "iv_hv": None})
+            crows.append({"symbol": s, "kind": "crypto", "price": round(price, 2),
+                          **metrics(c, price, 365), "earnings": None,
+                          "news": crypto_news_for(s, heads), "iv": None, "iv_hv": None})
+        crows = [r for r in crows if r["symbol"] not in open_underlyings]
+        crows.sort(key=interest_score, reverse=True)
+        rows += crows[:TOP_CRYPTOS]
 
     macro = (f"Fear & Greed crypto: {fng()}\nTitres du marche: "
              + " ; ".join(market_headlines(client)[:6]))
@@ -420,6 +450,9 @@ REGLES:
 - Pas de trade sur un sous-jacent deja en position.
 - Options, BUY_STOCK et SHORT_STOCK uniquement si le marche actions est OUVERT.
 - SHORT_STOCK jamais juste avant des resultats : prefere BEAR_PUT_SPREAD.
+- "idee presse" = societe tres citee dans la presse financiere ces derniers jours (souvent
+  une petite valeur). Exige une tendance qui confirme les news ; "niche" = peu liquide,
+  la position sera automatiquement deux fois plus petite.
 - confidence entre 0 et 1, sois honnete. Sous {MIN_CONFIDENCE}, choisis HOLD.
 
 Reponds avec ce JSON:
@@ -428,15 +461,16 @@ Reponds avec ce JSON:
 stop_loss_pct / take_profit_pct : seulement pour BUY_STOCK, SHORT_STOCK, BUY_CRYPTO."""
 
 
-def groq_decide(prompt: str, api_key: str, timeout: int = 60) -> dict:
+def groq_decide(prompt: str, api_key: str, timeout: int = 60, system: str | None = None,
+                max_tokens: int = 1500) -> dict:
     """Appelle Groq (API compatible OpenAI) ; bascule sur le petit modèle si quota."""
     last = ""
     custom = os.environ.get("GROQ_MODEL", "").strip()
     for model in ([custom] if custom else []) + GROQ_MODELS:
         payload = {
-            "model": model, "temperature": 0.2, "max_tokens": 1500,
+            "model": model, "temperature": 0.2, "max_tokens": max_tokens,
             "response_format": {"type": "json_object"},
-            "messages": [{"role": "system", "content": SYSTEM_PROMPT},
+            "messages": [{"role": "system", "content": system or SYSTEM_PROMPT},
                          {"role": "user", "content": prompt}]}
         if "gpt-oss" in model:          # modèle à raisonnement : on le garde court
             payload["reasoning_effort"] = "low"
@@ -707,7 +741,7 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
     if strat in LONG_VOL and analysis.get("vol_edge") and analysis["vol_edge"] > VOL_EDGE_MAX:
         return None, (f"Vol trop chère : débit {plan['debit']:.2f} = {analysis['vol_edge']:.2f}× "
                       f"la valeur Black-Scholes à la vol réalisée (max {VOL_EDGE_MAX})")
-    budget = ctx["equity"] * OPTION_MAX_RISK_PCT
+    budget = ctx["equity"] * OPTION_MAX_RISK_PCT * (NICHE_SIZE if und in ctx.get("niche", ()) else 1)
     qty = min(MAX_CONTRACTS, int(budget // plan["max_loss"]))
     if qty < 1:
         return None, f"1 contrat risque {plan['max_loss']:.0f}$, max autorise {budget:.0f}$"
@@ -732,6 +766,8 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
             "max_gain": None if max_gain is None else round(max_gain, 2),
             "tp_amount": round(tp, 2), "sl_amount": round(sl, 2), "spot_at_entry": spot,
             "analysis": analysis,
+            "source": "presse" if und in ctx.get("ideas", ()) else None,
+            "niche": und in ctx.get("niche", ()),
             "confidence": d.get("confidence"), "reasoning": d.get("reasoning"),
             "pnl": None}, "OK"
 
@@ -741,6 +777,7 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
     is_crypto, is_short = strat == "BUY_CRYPTO", strat == "SHORT_STOCK"
     sl = min(max(_num(d.get("stop_loss_pct"), 0.03), 0.02), 0.05)
     tp = max(_num(d.get("take_profit_pct"), 0.0), sl * 1.5)
+    size = SPOT_MAX_PCT * (NICHE_SIZE if und in ctx.get("niche", ()) else 1)
     if is_short:
         asset = client.asset(und)
         if not (asset.get("shortable") and asset.get("easy_to_borrow")):
@@ -748,14 +785,14 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
         price = snap["prices"].get(und)
         if not price:
             return None, f"Prix de {und} indisponible"
-        qty = int(ctx["equity"] * SPOT_MAX_PCT // price)
+        qty = int(ctx["equity"] * size // price)
         if qty < 1:
             return None, f"Capital trop petit pour vendre 1 {und}"
         notional = qty * price
         body = {"symbol": und, "qty": str(qty), "side": "sell", "type": "market",
                 "time_in_force": "day"}
     else:
-        notional = min(ctx["equity"] * SPOT_MAX_PCT, ctx["cash"] * 0.95)
+        notional = min(ctx["equity"] * size, ctx["cash"] * 0.95)
         if notional < 10:
             return None, "Pas assez de cash disponible"
         body = {"symbol": und, "notional": f"{notional:.2f}", "side": "buy",
@@ -767,6 +804,8 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
             "strategy": strat, "underlying": und, "position_symbol": position_symbol(und),
             "cost": round(notional, 2), "entry_price": snap["prices"].get(und),
             "sl_pct": round(sl, 4), "tp_pct": round(tp, 4),
+            "source": "presse" if und in ctx.get("ideas", ()) else None,
+            "niche": und in ctx.get("niche", ()),
             "confidence": d.get("confidence"), "reasoning": d.get("reasoning"),
             "pnl": None}, "OK"
 
@@ -821,10 +860,49 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
     return lines
 
 
+# ── idées presse (module 17) ────────────────────────────────────────────────
+def fresh_ideas(path: str | None, exclude: set[str] = frozenset()) -> list[dict]:
+    """Idées de ideas.json récentes (< IDEAS_MAX_AGE_H), hors univers déjà suivi."""
+    if not path:
+        return []
+    from . import ideas as ideas_mod
+    d = ideas_mod.load(path)
+    try:
+        age = (datetime.now() - datetime.fromisoformat(d["updated_at"])).total_seconds() / 3600
+    except Exception:
+        return []
+    if age > IDEAS_MAX_AGE_H:
+        return []
+    out = [i for i in d.get("ideas", []) if i.get("symbol") and i["symbol"] not in exclude
+           and i.get("score", 0) > 0]
+    return out[:MAX_IDEAS]
+
+
+def refresh_ideas(client: Alpaca, path: str, summarize=None, exclude: set[str] = frozenset(),
+                  max_age_h: float = IDEAS_REFRESH_H) -> str:
+    """Reconstruit ideas.json si trop ancien (fail-safe). Renvoie une ligne de rapport."""
+    from . import ideas as ideas_mod
+    d = ideas_mod.load(path)
+    try:
+        age = (datetime.now() - datetime.fromisoformat(d["updated_at"])).total_seconds() / 3600
+    except Exception:
+        age = float("inf")
+    if age < max_age_h:
+        return f"  Idées presse : à jour (il y a {age:.1f} h, {len(d.get('ideas', []))} idées)"
+    try:
+        rows = ideas_mod.build_ideas(client, exclude=exclude, summarize=summarize)
+    except Exception as e:
+        return f"  Idées presse : échec ({str(e)[:80]})"
+    if rows or not d.get("ideas"):
+        ideas_mod.save(rows, path)
+    return f"  Idées presse : {len(rows)} idées rafraîchies"
+
+
 # ── cycle ───────────────────────────────────────────────────────────────────
 def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
               fund_universe: list[str] | None = None, sleep=time.sleep,
-              greeks_path: str | None = None, **snapshot_kw) -> tuple[str, dict]:
+              greeks_path: str | None = None, ideas_path: str | None = None,
+              **snapshot_kw) -> tuple[str, dict]:
     """Un cycle complet. `decide(prompt) -> dict` (Groq en prod, factice en test).
 
     Renvoie (rapport texte, dernière décision).
@@ -861,12 +939,19 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
         return "\n".join(lines), decision
 
     open_und = [t["underlying"] for t in trades if t["status"] == "OPEN"]
-    snap = build_snapshot(client, market_open, stocks, cryptos, open_und, **snapshot_kw)
+    ideas = fresh_ideas(ideas_path, exclude=set(stocks) | set(fund_universe or []))
+    stocks = stocks + [i["symbol"] for i in ideas]
+    if ideas:
+        lines.append(f"  Idées presse ajoutées : {', '.join(i['symbol'] + ('*' if i.get('niche') else '') for i in ideas)}"
+                     "  (* = niche, taille ÷ 2)")
+    snap = build_snapshot(client, market_open, stocks, cryptos, open_und, ideas=ideas,
+                          **snapshot_kw)
     ctx = {"equity": equity, "cash": _num(acct.get("non_marginable_buying_power"),
                                           _num(acct.get("cash"), 0.0)),
            "daily_pnl_pct": daily, "market_open": market_open,
            "open_underlyings": open_und, "stocks": stocks, "cryptos": cryptos,
-           "greeks": greeks}
+           "greeks": greeks, "ideas": {i["symbol"] for i in ideas},
+           "niche": {i["symbol"] for i in ideas if i.get("niche")}}
     lines.append(f"  Candidats envoyés à l'IA : {', '.join(r['symbol'] for r in snap['rows']) or 'aucun'}")
 
     decision = decide(build_prompt(snap, ctx))
@@ -932,5 +1017,9 @@ def main_cycle(fund_universe_if_shared: list[str]) -> tuple[str, dict]:
         missing = [n for n, ok in (("ALPACA_API_KEY/ALPACA_SECRET_KEY", client),
                                    ("GROQ_API_KEY", groq_key)) if not ok]
         return f"Poche IA non lancée : clé(s) manquante(s) : {', '.join(missing)}", {}
-    return run_cycle(client, lambda p: groq_decide(p, groq_key), fund_universe=shared,
-                     greeks_path=GREEKS_PATH)
+    from .ideas import IDEAS_PATH, groq_summarizer
+    note = refresh_ideas(client, IDEAS_PATH, summarize=groq_summarizer(groq_key),
+                         exclude=set(STOCKS) | set(shared or []))
+    rep, dec = run_cycle(client, lambda p: groq_decide(p, groq_key), fund_universe=shared,
+                         greeks_path=GREEKS_PATH, ideas_path=IDEAS_PATH)
+    return rep + "\n" + note, dec

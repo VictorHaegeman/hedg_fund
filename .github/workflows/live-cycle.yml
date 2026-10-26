@@ -48,4 +48,4 @@ jobs:
           git config user.email "actions@github.com"
           git add paper_account.json live_logs/ news_logs/ docs/
           git diff --cached --quiet || git commit -m "live: cycle du $(date -u +%F)"
-          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
+          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 5; done

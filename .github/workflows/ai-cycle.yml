@@ -39,11 +39,18 @@ jobs:
           if grep -qE "OUVERT|FERME|refusé|\[!\]" ai_cycle.txt; then
             mkdir -p ai_logs && cat ai_cycle.txt >> "ai_logs/$(date -u +%F).txt"
           fi
+      - name: Terminal du gérant (grecques, positions et idées à jour)
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_AI_API_KEY: ${{ secrets.ALPACA_AI_API_KEY }}
+          ALPACA_AI_SECRET_KEY: ${{ secrets.ALPACA_AI_SECRET_KEY }}
+        run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8 --screen-limit 15 || echo "dashboard ignoré"
       - name: Committer le journal de la poche IA
         run: |
           git config user.name "quantlab-bot"
           git config user.email "actions@github.com"
-          git add ai_trades.json ai_greeks.json 2>/dev/null || true
+          for f in ai_trades.json ai_greeks.json ideas.json docs; do git add "$f" 2>/dev/null || true; done
           git add ai_logs 2>/dev/null || true
           git diff --cached --quiet || git commit -m "ai: cycle du $(date -u '+%F %H:%M')"
-          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
+          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 5; done

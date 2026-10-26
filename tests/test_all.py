@@ -1,6 +1,7 @@
 """Tests fonctionnels des 10 modules sur données synthétiques (déterministes, hors-ligne)."""
 
 import json
+import zlib
 
 import numpy as np
 import pandas as pd
@@ -182,7 +183,7 @@ def test_live_cycle(tmp_path):
     from quantlab import live as lv
     path = str(tmp_path / "account.json")
     fake_load = lambda sym, years=2, fresh=False, **k: (
-        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+        synthetic_ohlcv(sym, years=3, seed=zlib.crc32(sym.encode()) % 1000), "yahoo")
     out1 = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
                         loader=fake_load)
     assert "COMPTE PAPIER" in out1 and "Équité" in out1
@@ -341,7 +342,7 @@ def test_live_records_equity(tmp_path):
     from quantlab.broker import load_account
     path = str(tmp_path / "acc.json")
     fake_load = lambda sym, years=2, fresh=False, **k: (
-        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 999), "yahoo")
+        synthetic_ohlcv(sym, years=3, seed=zlib.crc32(sym.encode()) % 999), "yahoo")
     lv.run_cycle(["AAA", "BBB"], capital=100_000, state_path=path, loader=fake_load)
     curve = load_account(path).equity_curve
     assert len(curve) >= 1 and curve[-1][1] > 0
@@ -383,7 +384,7 @@ def test_module13_risk_gauge(prices):
     from quantlab import news as nw
 
     def loader(sym, years=3, fresh=False, **k):
-        base = synthetic_ohlcv(sym, years=3, seed=hash(sym) % 100)
+        base = synthetic_ohlcv(sym, years=3, seed=zlib.crc32(sym.encode()) % 100)
         if sym == "^VIX":  # forcer un VIX très haut sur la dernière barre
             base.iloc[-1, base.columns.get_loc("Close")] = base["Close"].max() * 3
         return base, "synthetic"
@@ -412,7 +413,7 @@ def test_live_blocks_entries_when_risk_off(tmp_path, monkeypatch):
     from quantlab.broker import load_account
     path = str(tmp_path / "acc.json")
     fake_load = lambda sym, years=2, fresh=False, **k: (
-        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+        synthetic_ohlcv(sym, years=3, seed=zlib.crc32(sym.encode()) % 1000), "yahoo")
     monkeypatch.setattr(nw, "risk_gauge", lambda loader: {
         "level": "risk-off", "vix": 55.0, "vix_pct": 0.99, "note": "test"})
     out = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
@@ -456,7 +457,7 @@ def test_live_uses_screener(tmp_path):
     from quantlab import live as lv
     path = str(tmp_path / "acc.json")
     fake_load = lambda sym, years=2, fresh=False, **k: (
-        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+        synthetic_ohlcv(sym, years=3, seed=zlib.crc32(sym.encode()) % 1000), "yahoo")
     out = lv.run_cycle(["AAA", "BBB", "CCC"], capital=10_000, state_path=path,
                        loader=fake_load, screener=lambda: ["ZZZ"])
     uni_line = [l for l in out.splitlines() if "Univers" in l][0]
@@ -468,7 +469,7 @@ def test_live_screener_failsafe(tmp_path):
     from quantlab import live as lv
     path = str(tmp_path / "acc.json")
     fake_load = lambda sym, years=2, fresh=False, **k: (
-        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+        synthetic_ohlcv(sym, years=3, seed=zlib.crc32(sym.encode()) % 1000), "yahoo")
     out = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
                        loader=fake_load, screener=lambda: [])
     uni_line = [l for l in out.splitlines() if "Univers" in l][0]
@@ -628,7 +629,7 @@ def test_live_cycle_mirrors_to_alpaca(tmp_path):
     from quantlab import mirror as mr
     path = str(tmp_path / "account.json")
     fake_load = lambda sym, years=2, fresh=False, **k: (
-        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+        synthetic_ohlcv(sym, years=3, seed=zlib.crc32(sym.encode()) % 1000), "yahoo")
     client = FakeAlpaca(positions={"XLE": {"qty": "2"}})
     out = lv.run_cycle(["AAA", "XLE"], capital=10_000, state_path=path, loader=fake_load,
                        after=lambda acc, px: mr.mirror_report(client, acc, px, ["AAA", "XLE"]))
@@ -964,3 +965,120 @@ def test_dashboard_shows_greeks_even_without_positions(tmp_path, prices):
     content = open(db.save(res, account, {}, 100_000, str(tmp_path / "d.html"), ai=ai),
                    encoding="utf-8").read()
     assert "Grecques en continu" in content and "toutes les grecques valent 0" in content
+
+
+# ── module 17 : idées presse ────────────────────────────────────────────────
+class NewsClient:
+    def __init__(self, news):
+        self.news = news
+
+    def data(self, path, params=None):
+        return {"news": self.news, "next_page_token": None}
+
+
+def _bars(price, dollar_volume, n=80, drift=0.004):
+    idx = pd.bdate_range(end=pd.Timestamp.today(), periods=n)
+    close = price * np.exp(np.linspace(-drift * n, 0, n))
+    return pd.DataFrame({"Close": close, "Volume": dollar_volume / close}, index=idx)
+
+
+def test_ideas_aggregate_filters_and_niche(tmp_path):
+    from quantlab import ideas as ide
+    news = [{"headline": "Analyst upgrades NICH, raises price target", "symbols": ["NICH"],
+             "created_at": "2026-10-26T10:00:00Z"},
+            {"headline": "NICH beats estimates, strong growth", "symbols": ["NICH"]},
+            {"headline": "BIGC record revenue", "symbols": ["BIGC", "AAPL"]},
+            {"headline": "Penny stock surges", "symbols": ["PENY"]},
+            {"headline": "Thin stock rallies", "symbols": ["THIN"]},
+            {"headline": "Roundup", "symbols": list("ABCDEFG")},          # fourre-tout ignoré
+            {"headline": "Bitcoin", "symbols": ["BTCUSD"]}]                # pas un ticker action
+    bars = {"NICH": _bars(20, 30e6), "BIGC": _bars(150, 2e9), "PENY": _bars(2, 50e6),
+            "THIN": _bars(30, 2e6), "AAPL": _bars(200, 1e10)}
+    rows = ide.build_ideas(NewsClient(news), exclude={"AAPL"}, bars_fn=lambda s: bars,
+                           summarize=lambda r: {"NICH": {"why": "Relèvement", "risk": "Petite valeur"}})
+    syms = [r["symbol"] for r in rows]
+    assert syms == ["NICH", "BIGC"]                    # penny, illiquide, exclu, roundup filtrés
+    nich = rows[0]
+    assert nich["mentions"] == 2 and nich["niche"] and nich["sentiment"] > 0
+    assert nich["trend"] == "haussiere" and nich["why"] == "Relèvement"
+    assert not rows[1]["niche"]
+    path = str(tmp_path / "ideas.json")
+    ide.save(rows, path)
+    assert ide.load(path)["ideas"][0]["symbol"] == "NICH"
+    assert "NICH" in ide.report(rows) and "niche" in ide.report(rows).lower()
+    assert ide.build_ideas(NewsClient([]), bars_fn=lambda s: {}) == []      # fail-safe
+
+
+def test_ai_cycle_trades_press_idea_at_half_size(tmp_path):
+    from quantlab import ai_trader as ai
+    from quantlab import ideas as ide
+    ideas_path = str(tmp_path / "ideas.json")
+    ide.save([{"symbol": "NICH", "score": 5.0, "niche": True, "headlines": ["NICH upgraded"]},
+              {"symbol": "NVDA", "score": 4.0, "niche": False, "headlines": []}], ideas_path)
+    assert [i["symbol"] for i in ai.fresh_ideas(ideas_path, exclude={"NVDA"})] == ["NICH"]
+    seen = []
+    def decide(prompt):
+        seen.append(prompt)
+        return {"action": "OPEN", "strategy": "BUY_STOCK", "underlying": "NICH",
+                "confidence": 0.8, "stop_loss_pct": 0.03, "reasoning": "presse"}
+    client = FakeAlpaca()
+    out, _ = ai.run_cycle(client, decide, state_path=str(tmp_path / "ai.json"),
+                          ideas_path=ideas_path, sleep=lambda s: None,
+                          earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "-")
+    assert "Idées presse ajoutées : NICH*" in out and "OUVERT BUY_STOCK NICH" in out, out
+    assert "NICH (idee presse, niche)" in seen[0]
+    t = ai.load_trades(str(tmp_path / "ai.json"))[0]
+    assert t["niche"] and t["source"] == "presse"
+    assert t["cost"] == 100_000 * ai.SPOT_MAX_PCT * ai.NICHE_SIZE     # taille divisée par 2
+    crypto_rows = [l for l in seen[0].splitlines() if "(crypto)" in l]
+    assert 0 < len(crypto_rows) <= ai.TOP_CRYPTOS                        # pré-tri crypto
+    # idées trop anciennes → ignorées
+    old = ide.load(ideas_path)
+    old["updated_at"] = "2020-01-01T00:00:00"
+    with open(ideas_path, "w", encoding="utf-8") as f:
+        json.dump(old, f)
+    assert ai.fresh_ideas(ideas_path) == []
+    assert "rafraîchies" in ai.refresh_ideas(NewsClient([]), ideas_path)
+
+
+# ── terminal du gérant ──────────────────────────────────────────────────────
+def test_terminal_model_and_page(tmp_path, prices):
+    from quantlab import terminal as term
+    from quantlab import fund as fd
+    from quantlab.broker import load_account, buy
+    data = {"SPY": prices["AAA"], "TLT": prices["BBB"], "GLD": prices["CCC"],
+            "BTC-USD": prices["DDD"], "NVDA": prices["BBB"], "^VIX": prices["CCC"]}
+    account = load_account(str(tmp_path / "acc.json"), capital=100_000)
+    spot = float(data["NVDA"]["Close"].iloc[-1])
+    buy(account, "NVDA", spot, spot * 0.95, None, "trend", "2026-10-01", 1.0)
+    account.record_equity("2026-10-01", 100_000)
+    account.record_equity("2026-10-02", 100_500)
+    prices_now = {s: float(d["Close"].iloc[-1]) for s, d in data.items()}
+    res = fd.run_fund({k: data[k] for k in ("SPY", "TLT", "GLD")}, 100_000)
+    ai = {"open": [], "closed": [], "realized": 0.0, "win_rate": None,
+          "greeks": {"updated_at": "x", "positions": [], "total": {"vega": 10.0}}}
+    m = term.build_model(account, data, prices_now,
+                         groups={"Univers du fonds": ["SPY", "TLT", "GLD", "BTC-USD"],
+                                 "Idées presse": ["NVDA"]},
+                         fund_res=res, ai=ai, earnings_fn=lambda s: 3,
+                         ideas={"ideas": [{"symbol": "NVDA", "score": 5, "headlines": ["NVDA up"]}]},
+                         limits={"max_positions": 8, "risk_pct": 1.0})
+    assert {a["symbol"] for a in m["assets"]} == {"SPY", "TLT", "GLD", "BTC-USD", "NVDA"}
+    nv = next(a for a in m["assets"] if a["symbol"] == "NVDA")
+    assert "En portefeuille" in nv["groups"] and nv["earnings"] == 3 and nv["news"] == ["NVDA up"]
+    assert nv["signals"] and len(nv["chart"]["c"]) == term.CHART_DAYS and nv["hv"] > 0
+    assert m["positions"][0]["symbol"] == "NVDA" and m["positions"][0]["risk_usd"] > 0
+    r = m["risk"]
+    assert r["var95"] > 0 and r["cvar95"] >= r["var95"]
+    assert [s["name"] for s in r["stress"]][-1].startswith("Volatilité") and r["stress"][-1]["pnl"] == 100
+    assert abs(m["overview"]["by_class"]["Cash"] - account.cash) < 0.01 and m["backtest"]["gross"]
+    assert any(l["name"].startswith("Positions") for l in r["limits"])
+    html = open(term.save(m, str(tmp_path / "index.html")), encoding="utf-8").read()
+    assert "Terminal du gérant" in html and "/*__DATA__*/null" not in html
+    payload = html.split("const D = ", 1)[1].split(";\n", 1)[0]
+    assert json.loads(payload)["assets"]                                   # JSON strict
+    # sans données de marché : la page se construit quand même
+    empty = term.build_model(load_account(str(tmp_path / "b.json"), capital=1000), {}, {},
+                             groups={})
+    assert empty["assets"] == [] and empty["risk"]["stress"]
+    term.save(empty, str(tmp_path / "e.html"))

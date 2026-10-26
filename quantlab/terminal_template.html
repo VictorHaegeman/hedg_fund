@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terminal du gérant</title>
+<style>
+:root{
+  --bg:#0b0f14; --bg2:#10161d; --panel:#131a22; --panel2:#18212b; --line:#223040;
+  --text:#e6edf3; --muted:#8b98a7; --dim:#5f6d7c; --accent:#5eb1ff; --accent2:#a78bfa;
+  --up:#34d399; --down:#f87171; --warn:#fbbf24; --chip:#1c2632;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 var(--sans)}
+a{color:var(--accent)}
+.num,td.n,th.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 20px;
+  border-bottom:1px solid var(--line);background:var(--bg2)}
+header h1{font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin:0;font-weight:700}
+header h1 span{color:var(--accent)}
+.pill{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--muted);
+  border:1px solid var(--line);white-space:nowrap}
+.pill b{color:var(--text);font-weight:600}
+.spacer{flex:1}
+nav{position:sticky;top:0;z-index:20;display:flex;gap:2px;overflow-x:auto;background:var(--bg2);
+  border-bottom:1px solid var(--line);padding:0 12px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{background:none;border:0;color:var(--muted);padding:12px 14px;font:600 13px var(--sans);
+  cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+nav button:hover{color:var(--text)}
+nav button.on{color:var(--text);border-bottom-color:var(--accent)}
+main{padding:18px 20px 60px;max-width:1500px;margin:0 auto}
+section{display:none} section.on{display:block}
+h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px;font-weight:700}
+h2:first-child{margin-top:4px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.two{grid-template-columns:2fr 1fr} .half{grid-template-columns:1fr 1fr}
+@media (max-width:900px){.two,.half{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.kpi .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.kpi .v{font:600 20px var(--mono);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi .s{font-size:12px;color:var(--muted);margin-top:2px}
+.up{color:var(--up)} .down{color:var(--down)} .warn{color:var(--warn)} .muted{color:var(--muted)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{position:sticky;top:0;background:var(--panel2);color:var(--muted);font-weight:600;font-size:12px;
+  letter-spacing:.02em;text-align:left;padding:8px 10px;cursor:pointer;white-space:nowrap;user-select:none}
+th.n,td.n{text-align:right}
+td{padding:7px 10px;border-top:1px solid var(--line);white-space:nowrap}
+tr.click{cursor:pointer} tr.click:hover td{background:#1a2430}
+.sym{font-weight:700;font-family:var(--mono)}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:6px;background:var(--chip);color:var(--muted);margin-right:4px}
+.tag.buy{background:#0f3b2c;color:var(--up)} .tag.sell{background:#3d1a1d;color:var(--down)}
+.tag.niche{background:#33280d;color:var(--warn)} .tag.ai{background:#2a2147;color:var(--accent2)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.chips button{background:var(--chip);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+  padding:5px 12px;font:600 12px var(--sans);cursor:pointer}
+.chips button.on{background:var(--accent);border-color:var(--accent);color:#06121f}
+input[type=search],input[type=number]{background:var(--panel);border:1px solid var(--line);color:var(--text);
+  border-radius:8px;padding:7px 10px;font:13px var(--sans)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.bar{height:8px;border-radius:4px;background:var(--chip);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent);border-radius:4px}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:6px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.alert{border-left:3px solid var(--warn);padding:7px 10px;background:#1c1a12;border-radius:6px;margin-bottom:6px;font-size:13px}
+.alert.ok{border-color:var(--up);background:#0f1d18}
+.alert.bad{border-color:var(--down);background:#1f1214}
+svg text{fill:var(--muted);font:11px var(--mono)}
+.tip{position:absolute;pointer-events:none;background:#0d131a;border:1px solid var(--line);border-radius:6px;
+  padding:6px 8px;font:12px var(--mono);white-space:nowrap;z-index:5;display:none}
+.chart{position:relative}
+.stack{display:flex;height:22px;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.stack i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:12px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;background:var(--c)}
+.heat td{text-align:center;font:11px var(--mono);padding:5px 4px;color:#e6edf3}
+.heat th{text-align:center;font-size:10px;padding:5px 4px;cursor:default}
+.idea{cursor:pointer} .idea:hover{border-color:var(--accent)}
+.idea h3{margin:0 0 4px;font:700 16px var(--mono);display:flex;gap:8px;align-items:center}
+.idea p{margin:6px 0 0;font-size:13px}
+.heads{margin:8px 0 0;padding-left:16px;color:var(--muted);font-size:12px}
+#modal{position:fixed;inset:0;background:rgba(3,6,10,.72);display:none;z-index:50;overflow-y:auto;padding:30px 14px}
+#modal.on{display:block}
+.mbox{max-width:1050px;margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.mhead{position:relative;padding-right:46px}
+.mgrid{grid-template-columns:1.2fr 1fr} @media (max-width:900px){.mgrid{grid-template-columns:1fr}}
+.mhead h2{margin:0;font:700 22px var(--mono);color:var(--text);letter-spacing:0;text-transform:none}
+.x{position:absolute;top:0;right:0;background:var(--chip);border:1px solid var(--line);color:var(--text);border-radius:8px;
+  width:34px;height:34px;font-size:18px;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.stats div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px}
+.stats b{display:block;font:600 14px var(--mono)} .stats small{color:var(--muted);font-size:11px}
+.calc label{font-size:12px;color:var(--muted);display:block;margin-top:8px}
+.calc .val{float:right;color:var(--text);font-family:var(--mono)}
+.glossary dt{font-weight:700;margin-top:8px} .glossary dd{margin:2px 0 0;color:var(--muted);font-size:13px}
+footer{color:var(--dim);font-size:12px;padding:20px;text-align:center;border-top:1px solid var(--line)}
+@media (max-width:600px){header{padding:12px 16px} main{padding:14px 16px 50px} .kpi .v{font-size:17px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>hedg<span>_</span>fund · terminal du gérant</h1>
+  <span class="pill" id="p-time"></span>
+  <span class="pill" id="p-vix"></span>
+  <span class="pill" id="p-cycle"></span>
+  <span class="spacer"></span>
+  <a class="pill" href="classic.html">ancienne page</a>
+</header>
+<nav id="tabs"></nav>
+<main>
+  <section id="t-overview"></section>
+  <section id="t-positions"></section>
+  <section id="t-risk"></section>
+  <section id="t-greeks"></section>
+  <section id="t-markets"></section>
+  <section id="t-ideas"></section>
+  <section id="t-activity"></section>
+  <section id="t-fact"></section>
+  <section id="t-context"></section>
+</main>
+<div id="modal"><div class="mbox" id="mbox"></div></div>
+<footer>Capital fictif (paper trading) — outil d'entraînement. Performance passée ou simulée ≠ performance future.
+Commercialiser un fonds en France exige un agrément AMF.</footer>
+<script>
+const D = /*__DATA__*/null;
+// ───────── formatage ─────────
+const $ = (s, el=document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const isNum = x => typeof x === "number" && isFinite(x);
+const nf = (x, d=2) => isNum(x) ? x.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d}) : "—";
+const money = (x, d=0) => isNum(x) ? nf(x,d)+" $" : "—";
+const pct = (x, d=2, sign=true) => isNum(x) ? (sign && x>0 ? "+" : "")+nf(x,d)+" %" : "—";
+const cls = x => isNum(x) ? (x>0 ? "up" : x<0 ? "down" : "") : "";
+const sp = (x, d=2) => `<span class="${cls(x)}">${pct(x,d)}</span>`;
+const px = x => isNum(x) ? nf(x, Math.abs(x) < 1 ? 4 : 2) : "—";
+const COLORS = ["#5eb1ff","#a78bfa","#34d399","#fbbf24","#f472b6","#22d3ee","#fb923c","#94a3b8","#4ade80","#e879f9"];
+
+// ───────── Black-Scholes (mêmes formules que quantlab/pricing.py) ─────────
+function ncdf(x){ const t=1/(1+0.2316419*Math.abs(x)); const d=0.3989422804014327*Math.exp(-x*x/2);
+  const p=d*t*(0.319381530+t*(-0.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));
+  return x>0 ? 1-p : p; }
+const npdf = x => Math.exp(-x*x/2)/Math.sqrt(2*Math.PI);
+function bs(S,K,T,r,v,kind){
+  if(T<=0||v<=0){ const f=S-K*Math.exp(-r*Math.max(T,0)); return {price:Math.max(kind==="call"?f:-f,0),delta:0,gamma:0,vega:0,theta:0,rho:0,itm:0}; }
+  const sq=Math.sqrt(T), d1=(Math.log(S/K)+(r+v*v/2)*T)/(v*sq), d2=d1-v*sq, disc=Math.exp(-r*T);
+  const gamma=npdf(d1)/(S*v*sq), vega=S*npdf(d1)*sq, common=-S*v*npdf(d1)/(2*sq);
+  if(kind==="call") return {price:S*ncdf(d1)-K*disc*ncdf(d2), delta:ncdf(d1), gamma, vega:vega/100,
+     theta:(common-r*K*disc*ncdf(d2))/365, rho:K*T*disc*ncdf(d2)/100, itm:ncdf(d2)};
+  return {price:K*disc*ncdf(-d2)-S*ncdf(-d1), delta:ncdf(d1)-1, gamma, vega:vega/100,
+     theta:(common+r*K*disc*ncdf(-d2))/365, rho:-K*T*disc*ncdf(-d2)/100, itm:ncdf(-d2)};
+}
+
+// ───────── graphiques SVG (sans dépendance) ─────────
+function lineChart(el, {x, series, hlines=[], h=260, fmt=v=>nf(v,2)}){
+  el.classList.add("chart"); el.innerHTML="";
+  const W = Math.max(el.clientWidth||700, 280), H=h, L=58, R=10, T=10, B=24;
+  const sv = series.flatMap(s=>s.data.filter(isNum)), smin=Math.min(...sv), smax=Math.max(...sv);
+  hlines = hlines.filter(l=>isNum(l.y) && l.y>smin*0.75 && l.y<smax*1.33);   // ligne hors échelle → masquée
+  const all = sv.concat(hlines.map(l=>l.y));
+  if(!all.length||!x.length){ el.innerHTML='<p class="note">Pas encore de données.</p>'; return; }
+  let lo=Math.min(...all), hi=Math.max(...all); if(lo===hi){lo-=1;hi+=1} const pad=(hi-lo)*.06; lo-=pad; hi+=pad;
+  const n=x.length, X=i=>L+(W-L-R)*(n<2?0:i/(n-1)), Y=v=>T+(H-T-B)*(1-(v-lo)/(hi-lo));
+  let g="";
+  for(let k=0;k<=4;k++){ const v=lo+(hi-lo)*k/4; g+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#1f2a36"/><text x="${L-6}" y="${Y(v)+4}" text-anchor="end">${fmt(v)}</text>`; }
+  const ticks=Math.min(W<520?3:6,n); for(let k=0;k<ticks;k++){ const i=Math.round((n-1)*k/Math.max(ticks-1,1)); g+=`<text x="${X(i)}" y="${H-6}" text-anchor="${k===0?"start":k===ticks-1?"end":"middle"}">${esc(String(x[i]).slice(2,10))}</text>`; }
+  for(const l of hlines){ if(!isNum(l.y)) continue; g+=`<line x1="${L}" x2="${W-R}" y1="${Y(l.y)}" y2="${Y(l.y)}" stroke="${l.color}" stroke-dasharray="4 4"/><text x="${W-R-4}" y="${Y(l.y)-4}" text-anchor="end" style="fill:${l.color}">${esc(l.label)}</text>`; }
+  for(const s of series){ let d="", pen=false; s.data.forEach((v,i)=>{ if(isNum(v)){ d+=(pen?"L":"M")+X(i).toFixed(1)+","+Y(v).toFixed(1); pen=true;} else pen=false; });
+    if(s.fill && s.data.length){ const f=s.data.findIndex(isNum); g+=`<path d="${d}L${X(n-1)},${H-B}L${X(f)},${H-B}Z" fill="${s.color}" opacity=".08"/>`; }
+    g+=`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.w||1.8}" ${s.dash?'stroke-dasharray="5 4"':""}/>`; }
+  el.innerHTML=`<svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="display:block;height:${H}px">${g}<line id="cx" y1="${T}" y2="${H-B}" stroke="#3b4a5c" style="display:none"/></svg><div class="tip"></div>`
+    + (series.length>1 ? `<div class="legend">${series.map(s=>`<span style="--c:${s.color}">${esc(s.name)}</span>`).join("")}</div>`:"");
+  const svg=el.querySelector("svg"), tip=el.querySelector(".tip"), cx=el.querySelector("#cx");
+  svg.addEventListener("mousemove", e=>{ const r=svg.getBoundingClientRect(); const xx=(e.clientX-r.left)*W/r.width;
+    const i=Math.max(0,Math.min(n-1,Math.round((xx-L)/(W-L-R)*(n-1)))); cx.setAttribute("x1",X(i)); cx.setAttribute("x2",X(i)); cx.style.display="";
+    tip.innerHTML=`${esc(x[i])}<br>`+series.map(s=>`<span style="color:${s.color}">${esc(s.name)}</span> ${fmt(s.data[i])}`).join("<br>");
+    tip.style.display="block"; const left=(X(i)/W)*r.width; tip.style.left=Math.min(left+12, r.width-tip.offsetWidth-4)+"px"; tip.style.top="8px"; });
+  svg.addEventListener("mouseleave", ()=>{tip.style.display="none"; cx.style.display="none"});
+}
+function spark(data, color){ const v=(data||[]).filter(isNum); if(v.length<2) return ""; const lo=Math.min(...v), hi=Math.max(...v)||1;
+  const pts=v.map((y,i)=>`${(i/(v.length-1)*100).toFixed(1)},${(28-(y-lo)/((hi-lo)||1)*26).toFixed(1)}`).join(" ");
+  return `<svg viewBox="0 0 100 30" preserveAspectRatio="none" style="width:100%;height:30px;display:block"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>`; }
+
+// ───────── tableaux triables ─────────
+function table(el, cols, rows, onClick){
+  let key=null, dir=-1;
+  const draw=()=>{ const rs=[...rows]; if(key!==null){ const c=cols[key]; const v=r=>c.sort?c.sort(r):r[c.k];
+      rs.sort((a,b)=>{ const x=v(a), y=v(b); if(x==null) return 1; if(y==null) return -1; return (x>y?1:x<y?-1:0)*dir; }); }
+    el.innerHTML=`<div class="tbl"><table><thead><tr>${cols.map((c,i)=>`<th class="${c.n?"n":""}" data-i="${i}">${c.t}${key===i?(dir>0?" ▲":" ▼"):""}</th>`).join("")}</tr></thead><tbody>${
+      rs.length? rs.map((r,j)=>`<tr class="${onClick?"click":""}" data-j="${rows.indexOf(r)}">${cols.map(c=>`<td class="${c.n?"n":""}">${c.f?c.f(r):esc(r[c.k])}</td>`).join("")}</tr>`).join("")
+      : `<tr><td colspan="${cols.length}" class="muted">Rien pour l'instant.</td></tr>`}</tbody></table></div>`;
+    el.querySelectorAll("th").forEach(th=>th.onclick=()=>{ const i=+th.dataset.i; if(key===i) dir=-dir; else {key=i; dir=-1;} draw(); });
+    if(onClick) el.querySelectorAll("tbody tr.click").forEach(tr=>tr.onclick=()=>onClick(rows[+tr.dataset.j])); };
+  draw();
+}
+const kpi = (l,v,s="",c="") => `<div class="card kpi"><div class="l">${l}</div><div class="v ${c}">${v}</div><div class="s">${s}</div></div>`;
+const bars = (items, total, fmtv) => items.map(([k,v],i)=>`<div class="row"><span style="min-width:0;flex:1">${esc(k)}<div class="bar" style="margin-top:4px"><i style="width:${Math.max(0,Math.min(100,v/total*100))}%;background:${COLORS[i%COLORS.length]}"></i></div></span><span class="num">${fmtv(v)}</span></div>`).join("");
+
+// ───────── onglets ─────────
+const TABS=[["overview","Vue d'ensemble"],["positions","Positions"],["risk","Risque"],["greeks","Grecques"],
+  ["markets","Marchés"],["ideas","Idées presse"],["activity","Activité"],["fact","Fiche du fonds"],["context","Contexte"]];
+const drawn={};
+function show(id){ document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===id));
+  document.querySelectorAll("main section").forEach(s=>s.classList.toggle("on",s.id==="t-"+id));
+  if(!drawn[id]){ drawn[id]=true; RENDER[id]($("#t-"+id)); }
+  try{ localStorage.setItem("tab",id) }catch(e){} history.replaceState(null,"","#"+id); }
+const ASSETS = Object.fromEntries((D.assets||[]).map(a=>[a.symbol,a]));
+const POS = Object.fromEntries((D.positions||[]).map(p=>[p.symbol,p]));
+const vol = a => a.iv || a.hv;
+
+const RENDER = {
+overview(el){
+  const o=D.overview, g=D.gauge||{};
+  const alerts=[];
+  (D.positions||[]).forEach(p=>{ if(isNum(p.to_stop_pct)&&p.to_stop_pct>-2) alerts.push(["bad",`${p.symbol} est à ${pct(p.to_stop_pct)} de son stop.`]);
+    const a=ASSETS[p.symbol]; if(a&&isNum(a.earnings)&&a.earnings<=5) alerts.push(["",`${p.symbol} publie ses résultats dans ${a.earnings} j.`]); });
+  (D.risk.limits||[]).forEach(l=>{ if(isNum(l.used)&&isNum(l.max)&&l.max>0&&l.used/l.max>=.8) alerts.push(["",`Limite « ${l.name} » utilisée à ${Math.round(l.used/l.max*100)} %.`]); });
+  if(g.level==="risk-off") alerts.push(["bad","VIX élevé : nouvelles entrées du fonds bloquées."]);
+  if(isNum(o.dd)&&o.dd<-5) alerts.push(["bad",`Drawdown en cours : ${pct(o.dd)}.`]);
+  if(!alerts.length) alerts.push(["ok","Rien d'anormal : stops éloignés, limites respectées."]);
+  const vsSpy = isNum(o.ytd)&&isNum(o.spy_ytd) ? `S&P 500 : ${pct(o.spy_ytd)}` : "";
+  el.innerHTML=`<h2>Le fonds aujourd'hui</h2><div class="grid kpis">
+    ${kpi("Valeur du fonds", money(o.nav), `départ ${money(o.initial)} le ${esc(o.created)}`)}
+    ${kpi("Gain / perte total", money(o.pnl), pct(o.pnl_pct)+(isNum(o.spy_total)?` · S&P 500 ${pct(o.spy_total)}`:""), cls(o.pnl))}
+    ${kpi("Aujourd'hui", pct(o.day), "", cls(o.day))}
+    ${kpi("Depuis le 1er du mois", pct(o.mtd), "", cls(o.mtd))}
+    ${kpi("Depuis le 1er janvier", pct(o.ytd), vsSpy, cls(o.ytd))}
+    ${kpi("Cash disponible", pct(o.cash_pct,1,false), money(o.cash))}
+    ${kpi("Exposition investie", pct(o.gross,1,false), `${o.n_pos} positions fonds · ${o.n_ai} IA`)}
+    ${kpi("Baisse depuis le plus haut", pct(o.dd), `plus haut le ${esc(o.peak_date||"—")}`, cls(o.dd))}
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="card"><h2 style="margin-top:0">Valeur du fonds (réel, compte papier) vs même somme sur le S&P 500</h2><div id="ov-curve"></div></div>
+    <div class="card"><h2 style="margin-top:0">À surveiller</h2>${alerts.map(a=>`<div class="alert ${a[0]}">${esc(a[1])}</div>`).join("")}
+      <h2>Comptes Alpaca</h2>${(o.alpaca||[]).map(l=>`<div class="note">${esc(l)}</div>`).join("")||'<div class="note">Clés Alpaca absentes de ce run.</div>'}</div>
+  </div>
+  <div class="grid half" style="margin-top:12px">
+    <div class="card"><h2 style="margin-top:0">Répartition par classe d'actifs</h2><div id="ov-class"></div></div>
+    <div class="card"><h2 style="margin-top:0">Répartition par secteur (hors cash)</h2><div id="ov-sector"></div></div>
+  </div>
+  <h2>Positions principales</h2><div id="ov-pos"></div>`;
+  const c=D.curve||[], spyMap=Object.fromEntries((o.spy_curve||[]));
+  lineChart($("#ov-curve",el),{x:c.map(r=>r[0]),series:[{name:"Fonds",data:c.map(r=>r[1]),color:"#5eb1ff",fill:true,w:2},
+    {name:"S&P 500 (même départ)",data:c.map(r=>spyMap[r[0]]??null),color:"#8b98a7",dash:true}],fmt:v=>nf(v,0)});
+  const cl=Object.entries(o.by_class||{}).filter(([,v])=>v>0), tot=cl.reduce((s,[,v])=>s+v,0)||1;
+  $("#ov-class",el).innerHTML=`<div class="stack">${cl.map(([k,v],i)=>`<i title="${esc(k)}" style="width:${v/tot*100}%;background:${COLORS[i%COLORS.length]}"></i>`).join("")}</div>
+    <div class="legend">${cl.map(([k,v],i)=>`<span style="--c:${COLORS[i%COLORS.length]}">${esc(k)} ${nf(v/tot*100,1)} %</span>`).join("")}</div>`;
+  const se=Object.entries(o.by_sector||{}), st=se.reduce((s,[,v])=>s+v,0);
+  $("#ov-sector",el).innerHTML= se.length ? bars(se, st, v=>nf(v/st*100,1)+" %") : '<p class="note">Aucune position : 100 % cash.</p>';
+  posTable($("#ov-pos",el), (D.positions||[]).slice(0,6));
+},
+positions(el){
+  el.innerHTML=`<h2>Fonds principal (stratégies testées : tendance, retour à la moyenne, cassure)</h2><div id="ps-f"></div>
+   <p class="note">Risque = perte si le stop est touché. Cliquer une ligne ouvre le détail de l'actif.</p>
+   <h2>Poche IA (options, ventes à découvert, cryptos, idées presse)</h2><div id="ps-a"></div>`;
+  posTable($("#ps-f",el), D.positions||[]);
+  table($("#ps-a",el),[
+    {t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span> ${r.niche?'<span class="tag niche">niche</span>':""}${r.source?'<span class="tag">presse</span>':""}`},
+    {t:"Stratégie",k:"strategy",f:r=>`<span class="tag ai">${esc(r.strategy)}</span>`},
+    {t:"Ouvert",k:"opened"},{t:"Échéance",k:"expiry",f:r=>esc(r.expiry||"—")},
+    {t:"Coût",k:"cost",n:1,f:r=>money(r.cost)},{t:"Perte max",k:"max_loss",n:1,f:r=>money(r.max_loss)},
+    {t:"Gain max",k:"max_gain",n:1,f:r=>r.max_gain==null?"illimité":money(r.max_gain)},
+    {t:"Δ $",k:"delta_usd",n:1,f:r=>money(r.delta_usd)},{t:"ν $/pt",k:"vega",n:1,f:r=>nf(r.vega)},{t:"Θ $/j",k:"theta_day",n:1,f:r=>nf(r.theta_day)},
+    {t:"Pourquoi (IA)",k:"reasoning",f:r=>`<span class="muted" style="white-space:normal">${esc((r.reasoning||"").slice(0,110))}</span>`}],
+    D.ai_positions||[], r=>openAsset(r.symbol));
+},
+risk(el){
+  const r=D.risk, o=D.overview;
+  el.innerHTML=`<h2>Combien le fonds peut perdre</h2><div class="grid kpis">
+    ${kpi("VaR 95 % (1 jour)", money(r.var95), "perte dépassée 1 jour sur 20", "down")}
+    ${kpi("CVaR 95 % (1 jour)", money(r.cvar95), "perte moyenne ces jours-là", "down")}
+    ${kpi("Volatilité annuelle", pct(isNum(r.vol)?r.vol*100:null,1,false), "du portefeuille actuel")}
+    ${kpi("Bêta vs S&P 500", nf(r.beta), "1 = bouge comme le marché")}
+    ${kpi("Risque jusqu'aux stops", money(r.used_risk_usd), pct(isNum(r.used_risk_usd)?r.used_risk_usd/o.nav*100:null,2,false)+" du fonds")}
+  </div><p class="note">Calcul sur les positions actuelles et leurs rendements des 12 derniers mois (simulation historique).</p>
+  <div class="grid half" style="margin-top:6px">
+   <div class="card"><h2 style="margin-top:0">Scénarios de crise</h2><div id="rk-stress"></div><p class="note">Chaque position réagit selon sa sensibilité passée (bêta) au facteur choqué.</p></div>
+   <div class="card"><h2 style="margin-top:0">Utilisation des limites</h2><div id="rk-lim"></div></div>
+  </div><h2>Corrélations (6 mois) — plus c'est rouge, plus les actifs bougent ensemble</h2><div class="card" id="rk-corr" style="overflow-x:auto"></div>`;
+  const mx=Math.max(...r.stress.map(s=>Math.abs(s.pnl||0)),1);
+  $("#rk-stress",el).innerHTML=r.stress.map(s=>`<div class="row"><span style="flex:1">${esc(s.name)}<div class="bar" style="margin-top:4px"><i style="width:${Math.abs(s.pnl||0)/mx*100}%;background:${(s.pnl||0)<0?"var(--down)":"var(--up)"}"></i></div></span><span class="num ${cls(s.pnl)}">${money(s.pnl)}<br><small>${pct(s.pct)}</small></span></div>`).join("");
+  $("#rk-lim",el).innerHTML=(r.limits||[]).map(l=>{ const u=isNum(l.used)&&l.max?l.used/l.max:0; const c=u>=1?"var(--down)":u>=.8?"var(--warn)":"var(--up)";
+    return `<div class="row"><span style="flex:1">${esc(l.name)}<div class="bar" style="margin-top:4px"><i style="width:${Math.min(u,1)*100}%;background:${c}"></i></div></span><span class="num">${nf(l.used,l.unit?2:0)}${l.unit} / ${nf(l.max,l.unit?2:0)}${l.unit}</span></div>`; }).join("");
+  const cm=r.corr||{symbols:[]};
+  if(cm.symbols.length<2){ $("#rk-corr",el).innerHTML='<p class="note">Pas assez de données.</p>'; return; }
+  const col=v=>{ if(!isNum(v)) return "#1c2632"; const a=Math.abs(v); return v>=0?`rgba(248,113,113,${.12+a*.75})`:`rgba(94,177,255,${.12+a*.75})`; };
+  $("#rk-corr",el).innerHTML=`<table class="heat"><tr><th></th>${cm.symbols.map(s=>`<th>${esc(s)}</th>`).join("")}</tr>${cm.matrix.map((row,i)=>`<tr><th>${esc(cm.symbols[i])}</th>${row.map(v=>`<td style="background:${col(v)}">${nf(v,2)}</td>`).join("")}</tr>`).join("")}</table>`;
+},
+greeks(el){
+  const g=D.ai_greeks||{}, t=g.total||{}, o=D.overview;
+  const spotDelta=(D.positions||[]).reduce((s,p)=>s+(p.value||0),0);
+  el.innerHTML=`<h2>Grecques du portefeuille (mises à jour à chaque cycle IA : ${esc((g.updated_at||"—").replace("T"," ").slice(0,16))})</h2>
+  <div class="grid kpis">
+   ${kpi("Delta $ total", money(spotDelta+(t.delta_usd||0)), `fonds ${money(spotDelta)} + options ${money(t.delta_usd)}`)}
+   ${kpi("Gamma (options)", nf(t.gamma_usd,2), "variation du delta $ pour +1 $")}
+   ${kpi("Vega (options)", money(t.vega,0), "gain si la vol monte d'1 pt")}
+   ${kpi("Theta (options)", money(t.theta_day,0), "gain/perte par jour qui passe", cls(t.theta_day))}
+   ${kpi("Rho (options)", money(t.rho,0), "gain si les taux montent d'1 pt")}
+  </div>
+  <h2>Grecques par position de la poche IA</h2><div id="gk-pos"></div>
+  <h2>Options à la monnaie, 30 jours — grecques de chaque actif (cliquer pour régler strike / durée / vol)</h2>
+  <div class="toolbar"><input type="search" id="gk-q" placeholder="Filtrer (ex. NVDA)"></div><div id="gk-all"></div>
+  <div class="card" style="margin-top:14px"><dl class="glossary">
+   <dt>Delta (Δ)</dt><dd>De combien l'option bouge quand l'action monte d'1 $. 0,5 = moitié moins que l'action.</dd>
+   <dt>Gamma (Γ)</dt><dd>De combien le delta change quand l'action bouge. Fort près de la monnaie et de l'échéance.</dd>
+   <dt>Vega (ν)</dt><dd>Gain ou perte si la volatilité (la « peur » sur cette action) monte d'1 point.</dd>
+   <dt>Theta (Θ)</dt><dd>Ce que l'option perd chaque jour qui passe, toutes choses égales par ailleurs.</dd>
+   <dt>Rho (ρ)</dt><dd>Effet d'une hausse des taux d'intérêt d'1 point.</dd></dl></div>`;
+  table($("#gk-pos",el),[{t:"Actif",k:"underlying",f:r=>`<span class="sym">${esc(r.underlying)}</span>`},{t:"Stratégie",k:"strategy"},
+    {t:"Spot",k:"spot",n:1,f:r=>px(r.spot)},{t:"Δ",k:"delta",n:1,f:r=>nf(r.delta)},{t:"Δ $",k:"delta_usd",n:1,f:r=>money(r.delta_usd)},
+    {t:"Γ $",k:"gamma_usd",n:1,f:r=>nf(r.gamma_usd,4)},{t:"ν $/pt",k:"vega",n:1,f:r=>nf(r.vega)},{t:"Θ $/j",k:"theta_day",n:1,f:r=>nf(r.theta_day)},{t:"ρ $/pt",k:"rho",n:1,f:r=>nf(r.rho)}],
+    g.positions||[], r=>openAsset(r.underlying.replace("/USD","-USD")));
+  const rows=(D.assets||[]).filter(a=>vol(a)).map(a=>{ const S=a.price, T=30/365, v=vol(a); const c=bs(S,S,T,D.risk_free,v,"call"), p=bs(S,S,T,D.risk_free,v,"put");
+    return {symbol:a.symbol, v, src:a.iv?"IV":"HV", call:c.price, put:p.price, dc:c.delta, dp:p.delta, gamma:c.gamma, vega:c.vega, theta:c.theta, move:(c.price+p.price)/S*100}; });
+  const draw=q=>table($("#gk-all",el),[{t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span>`},
+    {t:"Vol",k:"v",n:1,f:r=>`${nf(r.v*100,1)} % <span class="muted">${r.src}</span>`},{t:"Call",k:"call",n:1,f:r=>nf(r.call)},{t:"Put",k:"put",n:1,f:r=>nf(r.put)},
+    {t:"Δ call",k:"dc",n:1,f:r=>nf(r.dc)},{t:"Δ put",k:"dp",n:1,f:r=>nf(r.dp)},{t:"Γ",k:"gamma",n:1,f:r=>nf(r.gamma,4)},
+    {t:"ν /pt",k:"vega",n:1,f:r=>nf(r.vega)},{t:"Θ /j",k:"theta",n:1,f:r=>nf(r.theta)},{t:"Mouvement attendu",k:"move",n:1,f:r=>"± "+nf(r.move,1)+" %"}],
+    rows.filter(r=>!q||r.symbol.includes(q.toUpperCase())), r=>openAsset(r.symbol));
+  draw(""); $("#gk-q",el).oninput=e=>draw(e.target.value);
+},
+markets(el){
+  const groups=["Tous",...new Set((D.assets||[]).flatMap(a=>a.groups))];
+  el.innerHTML=`<h2>${(D.assets||[]).length} actifs suivis — cliquer pour le détail (graphique, signaux, options, news)</h2>
+   <div class="chips" id="mk-g">${groups.map((g,i)=>`<button class="${i?"":"on"}" data-g="${esc(g)}">${esc(g)}</button>`).join("")}</div>
+   <div class="toolbar"><input type="search" id="mk-q" placeholder="Rechercher un symbole ou un secteur"></div><div id="mk-t"></div>`;
+  let grp="Tous", q="";
+  const cols=[{t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span>${POS[r.symbol]?' <span class="tag buy">détenu</span>':""}${r.idea?` <span class="tag ${r.idea.niche?"niche":""}">presse</span>`:""}`},
+    {t:"Secteur",k:"sector",f:r=>`<span class="muted">${esc(r.name||r.sector)}</span>`},{t:"Prix",k:"price",n:1,f:r=>px(r.price)},
+    {t:"1 j",k:"chg_1d",n:1,f:r=>sp(r.chg_1d,1)},{t:"5 j",k:"chg_5d",n:1,f:r=>sp(r.chg_5d,1)},{t:"1 mois",k:"chg_1m",n:1,f:r=>sp(r.chg_1m,1)},
+    {t:"3 mois",k:"chg_3m",n:1,f:r=>sp(r.chg_3m,1)},{t:"RSI",k:"rsi",n:1,f:r=>`<span class="${r.rsi>=70?"down":r.rsi<=30?"up":""}">${nf(r.rsi,0)}</span>`},
+    {t:"Tendance",k:"trend",f:r=>`<span class="${r.trend==="haussière"?"up":r.trend==="baissière"?"down":"muted"}">${esc(r.trend)}</span>`},
+    {t:"Vol",k:"hv",n:1,sort:r=>vol(r),f:r=>`${nf(vol(r)*100,0)} %${r.iv?' <span class="muted">IV</span>':""}`},
+    {t:"Résultats",k:"earnings",n:1,f:r=>isNum(r.earnings)?`<span class="${r.earnings<=7?"warn":""}">${r.earnings} j</span>`:"—"},
+    {t:"Signaux fonds",k:"signals",sort:r=>(r.signals||[]).filter(s=>s.state==="ACHAT").length,f:r=>(r.signals||[]).filter(s=>s.state!=="—").map(s=>`<span class="tag ${s.state==="ACHAT"?"buy":s.state==="SORTIE"?"sell":""}">${esc(s.key)} ${esc(s.state)}</span>`).join("")||'<span class="muted">—</span>'}];
+  const draw=()=>table($("#mk-t",el),cols,(D.assets||[]).filter(a=>(grp==="Tous"||a.groups.includes(grp))&&(!q||(a.symbol+" "+a.sector+" "+a.name).toUpperCase().includes(q.toUpperCase()))),r=>openAsset(r.symbol));
+  el.querySelectorAll("#mk-g button").forEach(b=>b.onclick=()=>{ grp=b.dataset.g; el.querySelectorAll("#mk-g button").forEach(x=>x.classList.toggle("on",x===b)); draw(); });
+  $("#mk-q",el).oninput=e=>{q=e.target.value; draw();}; draw();
+},
+ideas(el){
+  const I=D.ideas||{}, list=I.ideas||[];
+  el.innerHTML=`<h2>Sociétés qui font parler la presse financière (${esc(I.source||"Benzinga via Alpaca")}) — mis à jour ${esc((I.updated_at||"—").replace("T"," ").slice(0,16))}</h2>
+  <p class="note">Filtrées : prix ≥ 5 $, au moins 10 M$ échangés par jour. « Niche » = moins de 50 M$/jour → la poche IA y met deux fois moins d'argent. Ce sont des pistes, pas des signaux testés.</p>
+  <div class="grid kpis" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">${list.map(i=>`<div class="card idea" data-s="${esc(i.symbol)}">
+    <h3>${esc(i.symbol)} ${i.niche?'<span class="tag niche">niche</span>':""}<span class="tag">${i.mentions} article${i.mentions>1?"s":""}</span><span class="spacer"></span><span class="num ${cls(i.chg_5d)}" style="font-size:13px">${pct(i.chg_5d,1)} 5 j</span></h3>
+    <div class="muted" style="font-size:12px">Score ${nf(i.score,1)} · ton ${nf(i.sentiment,2)} · ${px(i.price)} $ · ${nf((i.adv_usd||0)/1e6,0)} M$/j · tendance ${esc(i.trend)}</div>
+    ${i.why?`<p>${esc(i.why)}</p><p class="warn" style="font-size:12px">⚠ ${esc(i.risk||"")}</p>`:""}
+    <ul class="heads">${(i.headlines||[]).slice(0,3).map(h=>`<li>${esc(h)}</li>`).join("")}</ul></div>`).join("")||'<p class="note">Pas encore d\'idées : elles sont calculées par le cycle IA.</p>'}</div>`;
+  el.querySelectorAll(".idea").forEach(c=>c.onclick=()=>openAsset(c.dataset.s));
+},
+activity(el){
+  const a=D.activity||{};
+  el.innerHTML=`<h2>Activité réelle du compte papier</h2><div class="grid kpis">
+   ${kpi("Trades clôturés",a.trades??"—",`${nf(a.per_month,1)} par mois`)}${kpi("Taux de réussite",isNum(a.win_rate)?a.win_rate+" %":"—")}
+   ${kpi("Gain moyen",money(a.avg_win),"","up")}${kpi("Perte moyenne",money(a.avg_loss),"","down")}
+   ${kpi("Profit factor",nf(a.profit_factor),"gains ÷ pertes")}${kpi("Réalisé (fonds)",money(a.realized),"",cls(a.realized))}
+   ${kpi("Réalisé (poche IA)",money(a.ai_realized),isNum(a.ai_win_rate)?`réussite ${nf(a.ai_win_rate*100,0)} %`:"",cls(a.ai_realized))}</div>
+  <h2>Historique des trades du fonds</h2><div id="ac-f"></div><h2>Trades clôturés de la poche IA</h2><div id="ac-a"></div>`;
+  table($("#ac-f",el),[{t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span>`},{t:"Stratégie",k:"strategy"},{t:"Entrée",k:"entry_date"},{t:"Sortie",k:"exit_date"},
+    {t:"Prix entrée",k:"entry",n:1,f:r=>px(r.entry)},{t:"Prix sortie",k:"exit",n:1,f:r=>px(r.exit)},{t:"P&L",k:"pnl",n:1,f:r=>`<span class="${cls(r.pnl)}">${money(r.pnl)}</span>`},
+    {t:"%",k:"pnl_pct",n:1,f:r=>sp(r.pnl_pct)},{t:"Raison",k:"reason"}], a.history||[], r=>openAsset(r.symbol));
+  table($("#ac-a",el),[{t:"Actif",k:"underlying"},{t:"Stratégie",k:"strategy"},{t:"Ouvert",k:"opened_at",f:r=>esc(String(r.opened_at||"").slice(0,10))},
+    {t:"Fermé",k:"closed_at",f:r=>esc(String(r.closed_at||"").slice(0,10))},{t:"P&L",k:"pnl",n:1,f:r=>`<span class="${cls(r.pnl)}">${money(r.pnl)}</span>`},{t:"Raison",k:"close_reason"}], a.ai_closed||[]);
+},
+fact(el){
+  const f=D.factsheet||{}, b=D.backtest;
+  el.innerHTML=`<h2>Simulation de la stratégie sur données réelles (base 100)</h2><div class="card"><div id="fs-c"></div>
+   <p class="note">Brut = avant frais. Net = après ${nf((f.mgmt||0)*100,0)} % de frais de gestion et ${nf((f.perf||0)*100,0)} % de commission sur les gains (au-dessus du plus haut). ${esc(f.activity||"")}</p></div>
+   <div class="grid half" style="margin-top:12px"><div class="card"><h2 style="margin-top:0">Indicateurs</h2><div id="fs-t"></div></div>
+   <div class="card" style="overflow-x:auto"><h2 style="margin-top:0">Rendements mensuels nets (%)</h2><div class="mth">${D.monthly_html||""}</div></div></div>`;
+  if(b) lineChart($("#fs-c",el),{x:b.d,series:[{name:"Brut",data:b.gross,color:"#5eb1ff",w:2},{name:"Net de frais",data:b.net,color:"#34d399",w:2},...(b.spy?[{name:"S&P 500",data:b.spy,color:"#8b98a7",dash:true}]:[])],h:300,fmt:v=>nf(v,0)});
+  const g=f.gross_rows||[], n=f.net_rows||[];
+  $("#fs-t",el).innerHTML=`<div class="tbl"><table><tr><th>Indicateur</th><th class="n">Brut</th><th class="n">Net</th></tr>${g.map((r,i)=>`<tr><td>${esc(r[0])}</td><td class="n">${esc(r[1])}</td><td class="n">${esc((n[i]||[])[1])}</td></tr>`).join("")}</table></div>`;
+  el.querySelectorAll(".mth table").forEach(t=>{t.style.fontSize="12px"; t.querySelectorAll("td,th").forEach(c=>{c.style.padding="5px 7px"; if(c.textContent.trim()==="NaN") c.textContent=""; const v=parseFloat(c.textContent); if(c.tagName==="TD"&&isFinite(v)) c.className="n "+cls(v);});});
+},
+context(el){
+  const g=D.gauge||{};
+  el.innerHTML=`<h2>Climat de marché</h2><div class="grid kpis">
+   ${kpi("Risque (filtre VIX)", esc((g.level||"—").toUpperCase()), esc(g.note||""), g.level==="risk-off"?"down":g.level==="prudence"?"warn":"")}
+   ${kpi("VIX", nf(g.vix,1), isNum(g.vix_pct)?`${Math.round(g.vix_pct*100)}e percentile sur 2 ans`:"")}
+   ${kpi("Or sur 1 mois", pct(isNum(g.gold_1m)?g.gold_1m*100:null,1), "", cls(g.gold_1m))}
+   ${kpi("Pétrole sur 1 mois", pct(isNum(g.oil_1m)?g.oil_1m*100:null,1), "", cls(g.oil_1m))}</div>
+  <h2>Macro</h2><div class="grid kpis">${(D.macro||[]).map(m=>`<div class="card kpi"><div class="l">${esc(m.label)}</div><div class="v">${px(m.last)}</div>
+   <div class="s">${sp(m.chg_1d)} jour · ${sp(m.chg_1m,1)} mois</div>${spark(m.spark, (m.chg_1m||0)>=0?"#34d399":"#f87171")}</div>`).join("")}</div>
+  <h2>Derniers titres de la presse financière</h2><div class="card">${(D.headlines||[]).map(h=>`<div class="row"><span>${esc(h)}</span></div>`).join("")||'<p class="note">Indisponible dans ce run.</p>'}</div>`;
+},
+};
+
+function posTable(el, rows){
+  table(el,[{t:"Actif",k:"symbol",f:r=>`<span class="sym">${esc(r.symbol)}</span>`},{t:"Classe",k:"asset_class",f:r=>`<span class="muted">${esc(r.sector)}</span>`},
+    {t:"Stratégie",k:"strategy",f:r=>`<span class="tag">${esc(r.strategy)}</span>`},{t:"Poids",k:"weight",n:1,f:r=>pct(r.weight,1,false)},
+    {t:"Valeur",k:"value",n:1,f:r=>money(r.value)},{t:"Prix entrée",k:"entry",n:1,f:r=>px(r.entry)},{t:"Prix actuel",k:"price",n:1,f:r=>px(r.price)},
+    {t:"P&L",k:"pnl",n:1,f:r=>`<span class="${cls(r.pnl)}">${money(r.pnl)}</span>`},{t:"%",k:"pnl_pct",n:1,f:r=>sp(r.pnl_pct)},
+    {t:"Stop",k:"stop",n:1,f:r=>px(r.stop)},{t:"Distance stop",k:"to_stop_pct",n:1,f:r=>`<span class="${r.to_stop_pct>-2?"warn":""}">${pct(r.to_stop_pct)}</span>`},
+    {t:"Risque",k:"risk_usd",n:1,f:r=>money(r.risk_usd)},{t:"Jours",k:"days",n:1}], rows, r=>openAsset(r.symbol));
+}
+
+// ───────── fiche d'un actif ─────────
+function openAsset(sym){
+  const a=ASSETS[sym], p=POS[sym], box=$("#mbox");
+  if(!a){ box.innerHTML=`<div class="mhead"><h2>${esc(sym)}</h2><button class="x" onclick="closeM()">×</button></div><p class="note">Pas de données de marché pour cet actif dans ce run.</p>`; $("#modal").classList.add("on"); return; }
+  const v0=vol(a), crypto=a.asset_class==="Crypto";
+  box.innerHTML=`<div class="mhead"><div><h2>${esc(a.symbol)} <span class="num" style="font-size:18px">${px(a.price)}</span> ${sp(a.chg_1d)}</h2>
+     <div class="muted" style="margin-top:4px">${esc(a.name||a.sector)} · ${esc(a.asset_class)} ${a.groups.map(g=>`<span class="tag">${esc(g)}</span>`).join("")}</div></div><button class="x" onclick="closeM()" aria-label="Fermer">×</button></div>
+   <div class="card" style="margin-top:12px"><div id="m-chart"></div></div>
+   <div class="grid mgrid" style="margin-top:12px">
+    <div>
+     <div class="stats">
+      <div><small>5 jours</small><b class="${cls(a.chg_5d)}">${pct(a.chg_5d,1)}</b></div><div><small>1 mois</small><b class="${cls(a.chg_1m)}">${pct(a.chg_1m,1)}</b></div>
+      <div><small>3 mois</small><b class="${cls(a.chg_3m)}">${pct(a.chg_3m,1)}</b></div><div><small>1 an</small><b class="${cls(a.chg_1y)}">${pct(a.chg_1y,1)}</b></div>
+      <div><small>RSI 14</small><b>${nf(a.rsi,0)}</b></div><div><small>Tendance</small><b class="${a.trend==="haussière"?"up":a.trend==="baissière"?"down":""}">${esc(a.trend)}</b></div>
+      <div><small>Vol réalisée 20 j</small><b>${pct(a.hv*100,1,false)}</b></div><div><small>Vol réalisée 60 j</small><b>${pct((a.hv60||0)*100,1,false)}</b></div>
+      <div><small>Vol implicite</small><b>${a.iv?pct(a.iv*100,1,false):"—"}</b></div><div><small>IV / HV</small><b class="${a.iv&&a.iv/a.hv>1.3?"warn":""}">${a.iv?nf(a.iv/a.hv,2):"—"}</b></div>
+      <div><small>ATR (jour)</small><b>${pct(a.atr_pct,2,false)}</b></div><div><small>Vs plus haut 1 an</small><b class="${cls(a.from_high)}">${pct(a.from_high,1)}</b></div>
+      <div><small>Volume / jour</small><b>${isNum(a.adv_musd)?nf(a.adv_musd,0)+" M$":"—"}</b></div><div><small>Résultats</small><b class="${isNum(a.earnings)&&a.earnings<=7?"warn":""}">${isNum(a.earnings)?"dans "+a.earnings+" j":"—"}</b></div>
+     </div>
+     ${p?`<h2>Position du fonds</h2><div class="stats"><div><small>Valeur</small><b>${money(p.value)}</b></div><div><small>P&L</small><b class="${cls(p.pnl)}">${money(p.pnl)} (${pct(p.pnl_pct,1)})</b></div><div><small>Stop</small><b>${px(p.stop)} (${pct(p.to_stop_pct,1)})</b></div><div><small>Stratégie</small><b>${esc(p.strategy)}</b></div></div>`:""}
+     <h2>Ce que disent les stratégies du fonds</h2>
+     <div class="card">${(a.signals||[]).map(s=>`<div class="row"><span>${esc(s.name)}</span><span class="tag ${s.state==="ACHAT"?"buy":s.state==="SORTIE"?"sell":""}">${esc(s.state)}</span></div>`).join("")||'<p class="note">Historique trop court pour les signaux.</p>'}
+      <p class="note">ACHAT = signal d'entrée aujourd'hui. Le fonds n'achète que les actifs de son univers testé et si la limite de positions le permet.</p></div>
+     ${a.idea?`<h2>Idée presse</h2><div class="card"><div class="muted" style="font-size:12px">Score ${nf(a.idea.score,1)} · ${a.idea.mentions} articles · ton ${nf(a.idea.sentiment,2)} ${a.idea.niche?'<span class="tag niche">niche</span>':""}</div>${a.idea.why?`<p>${esc(a.idea.why)}</p><p class="warn" style="font-size:12px">⚠ ${esc(a.idea.risk||"")}</p>`:""}</div>`:""}
+     <h2>Actualité</h2><div class="card">${(a.news||[]).map(h=>`<div class="row"><span>${esc(h)}</span></div>`).join("")||'<p class="note">Pas de titre récent.</p>'}</div>
+    </div>
+    <div class="card calc"><h2 style="margin-top:0">Calculateur d'options (Black-Scholes)</h2>
+     ${crypto?'<p class="note">Pas d\'options crypto sur Alpaca : calcul théorique.</p>':""}
+     <label>Strike <span class="val" id="c-kv"></span></label><input type="range" id="c-k" min="70" max="130" step="1" value="100">
+     <label>Jours avant échéance <span class="val" id="c-tv"></span></label><input type="range" id="c-t" min="1" max="365" step="1" value="30">
+     <label>Volatilité <span class="val" id="c-vv"></span></label><input type="range" id="c-v" min="5" max="200" step="0.5" value="${(v0*100).toFixed(1)}">
+     <p class="note" style="margin-top:4px">Vol de départ : ${esc(a.vol_source)} (${pct(v0*100,1,false)}). Taux sans risque ${nf(D.risk_free*100,1)} %.</p>
+     <div id="c-out"></div></div>
+   </div>`;
+  const ch=a.chart, hl=[]; if(p){ hl.push({y:p.entry,label:"entrée",color:"#5eb1ff"}); if(p.stop) hl.push({y:p.stop,label:"stop",color:"#f87171"}); }
+  $("#modal").classList.add("on"); document.body.style.overflow="hidden";
+  lineChart($("#m-chart"),{x:ch.d,series:[{name:"Cours",data:ch.c,color:"#e6edf3",w:2,fill:true},{name:"Moyenne 20 j",data:ch.e20,color:"#5eb1ff"},{name:"Moyenne 50 j",data:ch.e50,color:"#fbbf24"}],hlines:hl,h:280,fmt:px});
+  const calc=()=>{ const S=a.price, K=S*(+$("#c-k").value)/100, days=+$("#c-t").value, v=+$("#c-v").value/100, T=days/365, r=D.risk_free;
+    $("#c-kv").textContent=`${px(K)} (${$("#c-k").value} %)`; $("#c-tv").textContent=days+" j"; $("#c-vv").textContent=nf(v*100,1)+" %";
+    const c=bs(S,K,T,r,v,"call"), q=bs(S,K,T,r,v,"put"), str=c.price+q.price;
+    const line=(l,x,y,d=2)=>`<tr><td>${l}</td><td class="n">${nf(x,d)}</td><td class="n">${nf(y,d)}</td></tr>`;
+    $("#c-out").innerHTML=`<div class="tbl" style="margin-top:10px"><table><tr><th></th><th class="n">Call</th><th class="n">Put</th></tr>
+      ${line("Prix (par action)",c.price,q.price)}${line("Prix d'un contrat (×100)",c.price*100,q.price*100,0)}
+      ${line("Delta",c.delta,q.delta,3)}${line("Gamma",c.gamma,q.gamma,4)}${line("Vega (par pt de vol)",c.vega,q.vega,3)}
+      ${line("Theta (par jour)",c.theta,q.theta,3)}${line("Rho (par pt de taux)",c.rho,q.rho,3)}${line("Proba. de finir gagnant au strike",c.itm*100,q.itm*100,0)}</table></div>
+      <div class="stats" style="margin-top:10px"><div><small>Straddle (call + put)</small><b>${px(str)} $</b></div>
+       <div><small>Points morts</small><b>${px(K-str)} / ${px(K+str)}</b></div><div><small>Mouvement attendu</small><b>± ${nf(str/S*100,1)} %</b></div>
+       <div><small>Parité C − P</small><b>${nf(c.price-q.price,2)}</b><small>= S − K·e^(−rT) = ${nf(S-K*Math.exp(-r*T),2)}</small></div></div>`; };
+  ["#c-k","#c-t","#c-v"].forEach(s=>$(s).oninput=calc); calc();
+}
+function closeM(){ $("#modal").classList.remove("on"); document.body.style.overflow=""; }
+$("#modal").addEventListener("click", e=>{ if(e.target.id==="modal") closeM(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeM(); });
+
+// ───────── démarrage ─────────
+$("#p-time").innerHTML=`Mis à jour <b>${esc(D.generated_at)}</b>`;
+$("#p-vix").innerHTML=`Risque <b class="${D.gauge.level==="risk-off"?"down":D.gauge.level==="prudence"?"warn":"up"}">${esc((D.gauge.level||"—").toUpperCase())}</b> · VIX ${nf(D.gauge.vix,1)}`;
+$("#p-cycle").innerHTML=`Dernier cycle <b>${esc((D.overview.last_cycle||"—").replace("T"," "))}</b>`;
+$("#tabs").innerHTML=TABS.map(([id,l])=>`<button data-t="${id}">${l}</button>`).join("");
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>show(b.dataset.t));
+let start=(location.hash||"").slice(1); try{ if(!RENDER[start]) start=localStorage.getItem("tab"); }catch(e){}
+show(RENDER[start]?start:"overview");
+</script>
+</body>
+</html>

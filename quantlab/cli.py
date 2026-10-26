@@ -17,7 +17,8 @@ Exemples :
   python -m quantlab live                      # cycle de trading papier (marché réel)
   python -m quantlab account                   # état du compte papier
   python -m quantlab fund --capital 100000     # simulation du fonds complet (entraînement)
-  python -m quantlab dashboard                 # tableau de bord HTML (état de l'argent)
+  python -m quantlab dashboard                 # terminal du gérant (docs/index.html) + page classique
+  python -m quantlab ideas                     # idées « niche » tirées de la presse (module 17)
   python -m quantlab live --broker alpaca      # idem + miroir des positions sur Alpaca
   python -m quantlab ai                        # module 14 : un cycle de la poche IA
   python -m quantlab alpaca                    # état des comptes Alpaca
@@ -149,6 +150,9 @@ def main(argv: list[str] | None = None) -> int:
                     help="alpaca : recopie aussi les positions sur le compte Alpaca")
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
     sub.add_parser("ai", help="Module 14 — un cycle de la poche IA (Alpaca + Groq)")
+    sp = sub.add_parser("ideas", help="Module 17 — idées « niche » tirées de la presse")
+    sp.add_argument("--hours", type=int, default=48, help="fenêtre d'actualité en heures")
+    sp.add_argument("--no-ai", action="store_true", help="sans résumé IA (Groq)")
     sub.add_parser("alpaca", help="État des comptes Alpaca (fonds et poche IA)")
     sp = sub.add_parser("factsheet", help="Fiche du fonds : VL, frais, risque, activité, profils")
     common(sp, symbol=False, symbols=True)
@@ -298,6 +302,21 @@ def main(argv: list[str] | None = None) -> int:
         report, _ = ai.main_cycle(fund_universe_if_shared=DEFAULT_UNIVERSE)
         print(report)
 
+    elif args.cmd == "ideas":
+        import os as _os
+        from . import ideas as ide
+        from .alpaca import Alpaca, load_env
+        load_env()
+        client = Alpaca.from_env("ALPACA_AI") or Alpaca.from_env("ALPACA")
+        if client is None:
+            print("Clés Alpaca absentes (ALPACA_API_KEY / ALPACA_SECRET_KEY).")
+            return 1
+        key = _os.environ.get("GROQ_API_KEY", "").strip()
+        rows = ide.build_ideas(client, hours=args.hours,
+                               summarize=None if args.no_ai or not key else ide.groq_summarizer(key))
+        ide.save(rows)
+        print(ide.report(rows))
+
     elif args.cmd == "alpaca":
         from .alpaca import Alpaca, account_line
         clients = [Alpaca.from_env("ALPACA", label="fonds"),
@@ -352,10 +371,39 @@ def main(argv: list[str] | None = None) -> int:
         import os as _os
         ai_sum = ai.summary() if (clients or _os.path.exists(ai.STATE_PATH)) else None
         fs = db.build_factsheet(res, prices["SPY"]["Close"] if "SPY" in prices else None)
-        path = db.save(res, account, prices_now, args.capital,
-                       benchmark=bench, gauge=gauge, screener=screened, ai=ai_sum,
-                       alpaca_lines=[account_line(c) for c in clients], factsheet=fs)
-        print(f"Tableau de bord généré : {path}")
+        alpaca_lines = [account_line(c) for c in clients]
+        classic = db.save(res, account, prices_now, args.capital,
+                          path=_os.path.join(_os.path.dirname(db.OUT_PATH), "classic.html"),
+                          benchmark=bench, gauge=gauge, screener=screened, ai=ai_sum,
+                          alpaca_lines=alpaca_lines, factsheet=fs)
+        print(f"Page classique : {classic}")
+        from . import ideas as ide
+        from . import terminal as term
+        idea_data = ide.load()
+        groups = {"Univers du fonds": list(args.symbols),
+                  "Actions screenées": list(screened or []),
+                  "Idées presse": [i["symbol"] for i in idea_data.get("ideas", [])],
+                  "Cryptos": [c.replace("/USD", "-USD") for c in ai.CRYPTOS],
+                  "Univers poche IA": [s for s in ai.STOCKS if s not in args.symbols]}
+        wanted = {s for g in groups.values() for s in g} | set(account.positions) | set(term.MACRO)
+        wanted |= {t["underlying"].replace("/USD", "-USD") for t in (ai_sum or {}).get("open", [])}
+        data = term.download(sorted(wanted - set(prices)))
+        data.update(prices)
+        client = clients[0] if clients else None
+        stock_syms = [s for s in groups["Actions screenées"] + groups["Idées presse"] + list(account.positions)
+                      if not s.endswith("-USD")][:50]
+        model = term.build_model(
+            account, data, prices_now, groups=groups, fund_res=res, factsheet=fs,
+            ideas=idea_data, ai=ai_sum, alpaca_lines=alpaca_lines, gauge=gauge, client=client,
+            earnings_fn=ai.days_to_earnings,
+            news=ai.stock_news(client, stock_syms) if client and stock_syms else None,
+            headlines=ai.market_headlines(client) if client else None,
+            sector_lookup=term.yf_sector,
+            limits={"max_positions": args.max_positions, "risk_pct": args.risk},
+            ai_limits={"max_trades": ai.MAX_OPEN_TRADES, "max_delta_pct": ai.MAX_DELTA_PCT,
+                       "max_vega_pct": ai.MAX_VEGA_PCT, "max_theta_pct": ai.MAX_THETA_PCT})
+        path = term.save(model)
+        print(f"Terminal du gérant généré : {path} ({len(model['assets'])} actifs)")
         if args.open:
             import webbrowser
             webbrowser.open(path)
