@@ -211,6 +211,25 @@ function show(id){ document.querySelectorAll("nav button").forEach(b=>b.classLis
   try{ localStorage.setItem("tab",id) }catch(e){} history.replaceState(null,"","#"+id); }
 const ASSETS = Object.fromEntries((D.assets||[]).map(a=>[a.symbol,a]));
 const POS = Object.fromEntries((D.positions||[]).map(p=>[p.symbol,p]));
+const AIPOS = {}; (D.ai_positions||[]).forEach(p=>{ (AIPOS[p.symbol]=AIPOS[p.symbol]||[]).push(p); });
+function aiBlock(list){ if(!list||!list.length) return "";
+  return list.map(r=>`<h2>Ce que la poche IA a mis en place</h2><div class="card" style="border-color:var(--accent2)">
+   <div class="row"><span class="tag ${r.kind==="options"?"ai":r.strategy==="SHORT_STOCK"?"sell":"buy"}">${esc(r.what||r.strategy)}</span><span class="muted">ouvert le ${esc(r.opened)}${r.expiry?` · échéance ${esc(r.expiry)}`:""}</span></div>
+   ${r.legs&&r.legs.length?`<div class="tbl" style="margin:8px 0"><table><tr><th>Jambe</th><th>Type</th><th class="n">Strike</th><th class="n">Quantité</th></tr>${r.legs.map(l=>`<tr><td>${l.side==="buy"?"Achat":"Vente"}</td><td>${l.type==="call"?"Call":"Put"}</td><td class="n">${px(l.strike)}</td><td class="n">${(l.ratio||1)*(r.qty||1)} contrat${(l.ratio||1)*(r.qty||1)>1?"s":""}</td></tr>`).join("")}</table></div>`:""}
+   <div class="stats" style="margin-top:8px">
+    <div><small>Montant engagé</small><b>${money(r.cost)}</b></div>
+    ${isNum(r.entry_price)?`<div><small>Prix d'entrée</small><b>${px(r.entry_price)} $</b></div>`:""}
+    ${isNum(r.price)?`<div><small>Prix actuel</small><b>${px(r.price)} $</b></div>`:""}
+    ${isNum(r.pnl)?`<div><small>Gain / perte</small><b class="${cls(r.pnl)}">${money(r.pnl)} (${pct(r.pnl_pct,1)})</b></div>`:""}
+    ${isNum(r.stop_price)?`<div><small>Stop (vente auto)</small><b class="down">${px(r.stop_price)} $</b></div>`:""}
+    ${isNum(r.target_price)?`<div><small>Objectif (vente auto)</small><b class="up">${px(r.target_price)} $</b></div>`:""}
+    <div><small>Perte max</small><b>${money(r.max_loss)}</b></div>
+    <div><small>${r.gain_is_target?"Gain visé":"Gain max"}</small><b>${r.max_gain==null?"illimité":money(r.max_gain)}</b></div>
+    ${isNum(r.delta_usd)?`<div><small>Delta $</small><b>${money(r.delta_usd)}</b></div>`:""}
+    ${isNum(r.confidence)?`<div><small>Confiance de l'IA</small><b>${nf(r.confidence*100,0)} %</b></div>`:""}
+   </div>
+   ${r.detail?`<p class="note">${esc(r.detail)}</p>`:""}
+   <p style="margin:8px 0 0;font-size:13px"><b>Pourquoi :</b> ${esc(r.reasoning||"")}</p></div>`).join(""); }
 const vol = a => a.iv || a.hv;
 
 const RENDER = {
@@ -429,13 +448,15 @@ function openAsset(sym){
       <div><small>Volume / jour</small><b>${isNum(a.adv_musd)?nf(a.adv_musd,0)+" M$":"—"}</b></div><div><small>Résultats</small><b class="${isNum(a.earnings)&&a.earnings<=7?"warn":""}">${isNum(a.earnings)?"dans "+a.earnings+" j":"—"}</b></div>
      </div>
      ${p?`<h2>Position du fonds</h2><div class="stats"><div><small>Valeur</small><b>${money(p.value)}</b></div><div><small>P&L</small><b class="${cls(p.pnl)}">${money(p.pnl)} (${pct(p.pnl_pct,1)})</b></div><div><small>Stop</small><b>${px(p.stop)} (${pct(p.to_stop_pct,1)})</b></div><div><small>Stratégie</small><b>${esc(p.strategy)}</b></div></div>`:""}
-     <h2>Ce que disent les stratégies du fonds</h2>
+     ${aiBlock(AIPOS[a.symbol])}
+     <h2>Ce que disent les stratégies du fonds principal</h2>
      <div class="card">${(a.signals||[]).map(s=>`<div class="row"><span>${esc(s.name)}</span><span class="tag ${s.state==="ACHAT"?"buy":s.state==="SORTIE"?"sell":""}">${esc(s.state)}</span></div>`).join("")||'<p class="note">Historique trop court pour les signaux.</p>'}
-      <p class="note">ACHAT = signal d'entrée aujourd'hui. Le fonds n'achète que les actifs de son univers testé et si la limite de positions le permet.</p></div>
+      <p class="note">Signaux du fonds principal (pas de la poche IA). ACHAT = signal d'entrée aujourd'hui ; SORTIE = le fonds sortirait s'il détenait l'actif. Le fonds n'achète que les actifs de son univers testé et si la limite de positions le permet.</p></div>
      ${a.idea?`<h2>Idée presse</h2><div class="card"><div class="muted" style="font-size:12px">Score ${nf(a.idea.score,1)} · ${a.idea.mentions} articles · ton ${nf(a.idea.sentiment,2)} ${a.idea.niche?'<span class="tag niche">niche</span>':""}</div>${a.idea.why?`<p>${esc(a.idea.why)}</p><p class="warn" style="font-size:12px">⚠ ${esc(a.idea.risk||"")}</p>`:""}</div>`:""}
      <h2>Actualité</h2><div class="card">${(a.news||[]).map(h=>`<div class="row"><span>${esc(h)}</span></div>`).join("")||'<p class="note">Pas de titre récent.</p>'}</div>
     </div>
     <div class="card calc"><h2 style="margin-top:0">Calculateur d'options (Black-Scholes)</h2>
+     <p class="note" style="margin-top:0">Simulation pour comprendre les prix et les grecques : rien n'est acheté ici.</p>
      ${crypto?'<p class="note">Pas d\'options crypto sur Alpaca : calcul théorique.</p>':""}
      <label>Strike <span class="val" id="c-kv"></span></label><input type="range" id="c-k" min="70" max="130" step="1" value="100">
      <label>Jours avant échéance <span class="val" id="c-tv"></span></label><input type="range" id="c-t" min="1" max="365" step="1" value="30">
@@ -457,6 +478,10 @@ function openAsset(sym){
       <div class="stats" style="margin-top:10px"><div><small>Straddle (call + put)</small><b>${px(str)} $</b></div>
        <div><small>Points morts</small><b>${px(K-str)} / ${px(K+str)}</b></div><div><small>Mouvement attendu</small><b>± ${nf(str/S*100,1)} %</b></div>
        <div><small>Parité C − P</small><b>${nf(c.price-q.price,2)}</b><small>= S − K·e^(−rT) = ${nf(S-K*Math.exp(-r*T),2)}</small></div></div>`; };
+  const opt=(AIPOS[a.symbol]||[]).find(r=>r.legs&&r.legs.length);   // trade réel → calculateur pré-réglé
+  if(opt){ const k=Math.round(opt.legs[0].strike/a.price*100); $("#c-k").value=Math.max(70,Math.min(130,k));
+    if(opt.expiry){ const d=Math.round((new Date(opt.expiry)-new Date())/864e5); $("#c-t").value=Math.max(1,Math.min(365,d)); }
+    $("#c-kv").parentElement.insertAdjacentHTML("beforebegin",`<p class="note warn" style="margin:0">Réglé sur la 1re jambe du trade réel (${opt.legs[0].type} ${px(opt.legs[0].strike)}, échéance ${esc(opt.expiry||"")}).</p>`); }
   ["#c-k","#c-t","#c-v"].forEach(s=>$(s).oninput=calc); calc();
 }
 function closeM(){ $("#modal").classList.remove("on"); document.body.style.overflow=""; }

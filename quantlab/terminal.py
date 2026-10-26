@@ -345,7 +345,7 @@ def describe_ai_trade(t: dict) -> tuple[str, str]:
     return kind, ""
 
 
-def ai_positions(ai: dict | None) -> list[dict]:
+def ai_positions(ai: dict | None, prices: dict | None = None) -> list[dict]:
     if not ai:
         return []
     greeks = {g["id"]: g for g in ((ai.get("greeks") or {}).get("positions") or [])}
@@ -354,6 +354,19 @@ def ai_positions(ai: dict | None) -> list[dict]:
         g = greeks.get(t["id"], {})
         und = t["underlying"].replace("/USD", "-USD")
         what, detail = describe_ai_trade(t)
+        cur = (prices or {}).get(und)
+        entry = t.get("entry_price")
+        short = t.get("kind") == "short"
+        live = {}
+        if t.get("kind") != "options" and entry and t.get("sl_pct") and t.get("tp_pct"):
+            live = {"entry_price": entry,
+                    "stop_price": round(entry * (1 + t["sl_pct"]) if short else entry * (1 - t["sl_pct"]), 4),
+                    "target_price": round(entry * (1 - t["tp_pct"]) if short else entry * (1 + t["tp_pct"]), 4)}
+            if cur:
+                ret = (entry / cur - 1) if short else (cur / entry - 1)
+                live.update(price=cur, pnl=round(t["cost"] * ret, 2), pnl_pct=round(ret * 100, 2))
+        elif t.get("kind") == "options" and cur:
+            live = {"price": cur, "spot_at_entry": t.get("spot_at_entry")}
         if not g and t.get("kind") in ("stock", "crypto", "short") and t.get("cost"):
             g = {"delta_usd": -t["cost"] if t["kind"] == "short" else t["cost"]}   # action : Δ = 1
         spot = t.get("kind") != "options"
@@ -362,7 +375,8 @@ def ai_positions(ai: dict | None) -> list[dict]:
         max_gain = t.get("max_gain") if not spot else (
             round(t["cost"] * t["tp_pct"], 2) if t.get("cost") and t.get("tp_pct") else None)
         rows.append({"symbol": und, "book": "Poche IA", "strategy": t["strategy"],
-                     "what": what, "detail": detail,
+                     "what": what, "detail": detail, **live,
+                     "confidence": t.get("confidence"), "qty": t.get("qty"),
                      "kind": t["kind"], "cost": t.get("cost"), "max_loss": max_loss,
                      "max_gain": max_gain, "gain_is_target": spot, "expiry": t.get("expiry"),
                      "opened": str(t.get("opened_at", ""))[:10], "niche": t.get("niche"),
@@ -405,7 +419,7 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
     nav = account.equity(prices_now)
     spy = data["SPY"]["Close"] if "SPY" in data else None
     pos = fund_positions(account, data, prices_now, nav, sector_lookup)
-    aip = ai_positions(ai)
+    aip = ai_positions(ai, {s_: float(d_["Close"].iloc[-1]) for s_, d_ in data.items()})
     invested = sum(r["value"] or 0 for r in pos)
     weights = {r["symbol"]: (r["value"] or 0) / nav for r in pos}
     tre_rows = []
