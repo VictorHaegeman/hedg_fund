@@ -126,10 +126,42 @@ def _screener_panel(candidates: list[str] | None) -> str:
             f'<div class="panel">{body}</div>')
 
 
+def _ai_panel(ai: dict | None, alpaca_lines: list[str] | None) -> str:
+    """Section Alpaca + poche IA (module 14). Vide si rien n'est configuré."""
+    if not ai and not alpaca_lines:
+        return ""
+    out = ['<h2>Courtier Alpaca &amp; poche IA (module 14 — expérimental)</h2>']
+    if alpaca_lines:
+        out.append('<div class="panel">' + "<br>".join(html.escape(l) for l in alpaca_lines)
+                   + "</div>")
+    if ai and ai.get("trades"):
+        wr = ai.get("win_rate")
+        out.append('<div class="cards">'
+                   + _card("PnL réalisé poche IA", f"{ai['realized']:+,.2f} $", "",
+                           _pos_color(ai["realized"]))
+                   + _card("Trades fermés", f"{len(ai['closed'])}",
+                           "" if wr is None else f"win rate {wr * 100:.0f} %")
+                   + _card("Positions ouvertes", f"{len(ai['open'])}") + "</div>")
+        rows = [{"Ouvert": t.get("opened_at", "")[:16].replace("T", " "),
+                 "Stratégie": t.get("strategy"), "Actif": t.get("underlying"),
+                 "Coût $": t.get("cost"), "Statut": t.get("status"),
+                 "PnL $": t.get("pnl"), "Raison IA": (t.get("reasoning") or "")[:90]}
+                for t in ai["trades"][-12:][::-1]]
+        out.append(f'<div class="panel">{_table(pd.DataFrame(rows))}</div>')
+    elif ai is not None:
+        out.append("<p class='muted'>La poche IA n'a encore ouvert aucun trade "
+                   "(HOLD est la décision la plus fréquente).</p>")
+    out.append('<p class="warn" style="margin-top:6px">ℹ Décisions prises par un LLM : '
+               "non backtestables. Elles sont mesurées en conditions réelles pour être "
+               "comparées au fonds, pas mélangées avec lui.</p>")
+    return "".join(out)
+
+
 def render_html(fund_res: BacktestResult, account: Account,
                 prices_now: dict[str, float], capital_sim: float,
                 benchmark: dict | None = None, gauge: dict | None = None,
-                screener: list[str] | None = None) -> str:
+                screener: list[str] | None = None,
+                ai: dict | None = None, alpaca_lines: list[str] | None = None) -> str:
     m = fund_res.metrics
     eq_live = account.equity(prices_now)
     pnl_live = eq_live - account.initial_capital
@@ -256,6 +288,8 @@ def render_html(fund_res: BacktestResult, account: Account,
 
 {_screener_panel(screener)}
 
+{_ai_panel(ai, alpaca_lines)}
+
 {_gauge_panel(gauge)}
 
 <h2>Entraînement — simulation du fonds sur {m['years']:.0f} ans ({capital_sim:,.0f} $ de départ)</h2>
@@ -298,9 +332,10 @@ def spy_benchmark(account: Account, spy_df: pd.DataFrame) -> dict | None:
 def save(fund_res: BacktestResult, account: Account, prices_now: dict[str, float],
          capital_sim: float, path: str = OUT_PATH,
          benchmark: dict | None = None, gauge: dict | None = None,
-         screener: list[str] | None = None) -> str:
+         screener: list[str] | None = None,
+         ai: dict | None = None, alpaca_lines: list[str] | None = None) -> str:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(render_html(fund_res, account, prices_now, capital_sim,
-                            benchmark, gauge, screener))
+                            benchmark, gauge, screener, ai, alpaca_lines))
     return path

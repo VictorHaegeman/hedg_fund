@@ -1,0 +1,49 @@
+name: Poche IA (module 14) — Alpaca paper + Groq
+
+# Pendant la séance US (13h-21h UTC couvre été/hiver) : toutes les 30 min.
+# Le reste du temps : toutes les 3 h, crypto uniquement (le code le gère seul).
+# Clés : Settings → Secrets and variables → Actions (jamais dans le code).
+on:
+  schedule:
+    - cron: "*/30 13-21 * * 1-5"
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Cycle de la poche IA
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_AI_API_KEY: ${{ secrets.ALPACA_AI_API_KEY }}
+          ALPACA_AI_SECRET_KEY: ${{ secrets.ALPACA_AI_SECRET_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python -m quantlab ai | tee ai_cycle.txt
+          cat ai_cycle.txt >> "$GITHUB_STEP_SUMMARY"
+          # on ne journalise que les cycles où il s'est passé quelque chose
+          if grep -qE "OUVERT|FERME|refusé|\[!\]" ai_cycle.txt; then
+            mkdir -p ai_logs && cat ai_cycle.txt >> "ai_logs/$(date -u +%F).txt"
+          fi
+      - name: Committer le journal de la poche IA
+        run: |
+          git config user.name "quantlab-bot"
+          git config user.email "actions@github.com"
+          git add ai_trades.json 2>/dev/null || true
+          git add ai_logs 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "ai: cycle du $(date -u '+%F %H:%M')"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done

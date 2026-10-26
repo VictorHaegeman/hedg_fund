@@ -501,3 +501,342 @@ def test_cli_smoke(monkeypatch, capsys):
     assert cli.main(["alpha", "--symbol", "X"]) == 0
     out = capsys.readouterr().out
     assert "MODULE 4" in out and "MODULE 11" in out and "MODULE 12" in out
+
+
+# ── Alpaca : miroir du fonds & poche IA (module 14) — hors-ligne, client factice ──
+
+class FakeAlpaca:
+    """Client Alpaca simulé : enregistre les ordres, positions pilotables."""
+
+    def __init__(self, equity=100_000.0, market_open=True, positions=None):
+        self.eq, self.open_ = equity, market_open
+        self.pos = positions or {}
+        self.orders, self.closed = [], []
+        self.paper, self.label = True, "test"
+
+    def account(self):
+        return {"equity": str(self.eq), "last_equity": str(self.eq), "cash": str(self.eq),
+                "non_marginable_buying_power": str(self.eq)}
+
+    def clock(self):
+        return {"is_open": self.open_}
+
+    def positions(self):
+        return [{"symbol": s, **v} for s, v in self.pos.items()]
+
+    def open_orders(self):
+        return []
+
+    def asset(self, s):
+        return {"shortable": True, "easy_to_borrow": True}
+
+    def submit_order(self, body):
+        self.orders.append(body)
+        if body.get("order_class") == "mleg":          # comme le vrai courtier : les
+            for leg in body["legs"]:                    # jambes deviennent des positions
+                if leg["position_intent"].endswith("_open"):
+                    self.pos[leg["symbol"]] = {"unrealized_pl": "0"}
+                else:
+                    self.pos.pop(leg["symbol"], None)
+        else:
+            self.pos.setdefault(body["symbol"].replace("/", ""),
+                                {"unrealized_pl": "0", "cost_basis": "1000"})
+        return {"id": str(len(self.orders))}
+
+    def wait_fill(self, oid, timeout=15, sleep=None):
+        return {"status": "filled", "filled_avg_price": "0"}
+
+    def close_position(self, s):
+        self.closed.append(s)
+        self.pos.pop(s.replace("/", ""), None)
+        return {}
+
+    def data(self, path, params=None):
+        closes = [100 + i * 0.5 for i in range(80)]
+        syms = (params or {}).get("symbols", "").split(",")
+        if path.endswith("/bars"):
+            return {"bars": {s: [{"c": c} for c in closes] for s in syms}}
+        if path == "/v2/stocks/snapshots":
+            return {s: {"latestTrade": {"p": 140.0}} for s in syms}
+        if "latest/trades" in path:
+            return {"trades": {s: {"p": 140.0} for s in syms}}
+        if path.startswith("/v1beta1/options/snapshots/"):
+            und = path.rsplit("/", 1)[1]
+            exp = (pd.Timestamp.today() + pd.Timedelta(days=30)).strftime("%y%m%d")
+            snaps = {}
+            for k in range(115, 166, 5):
+                for cp in "CP":
+                    intr = max(140 - k, 0) if cp == "C" else max(k - 140, 0)
+                    mid = intr + 3 * float(np.exp(-abs(k - 140) / 20))  # valeur temps max à la monnaie
+                    snaps[f"{und}{exp}{cp}{k * 1000:08d}"] = {
+                        "latestQuote": {"bp": round(mid - 0.05, 2), "ap": round(mid + 0.05, 2)},
+                        "impliedVolatility": 0.3}
+            return {"snapshots": snaps}
+        if path == "/v1beta1/news":
+            return {"news": [{"headline": "Nvidia beats estimates", "symbols": ["NVDA"]}]}
+        return {}
+
+
+def test_alpaca_symbols_and_env(tmp_path, monkeypatch):
+    from quantlab import alpaca as ap
+    assert ap.to_alpaca_symbol("BTC-USD") == "BTC/USD" and ap.position_symbol("BTC-USD") == "BTCUSD"
+    assert ap.to_alpaca_symbol("SPY") == "SPY" and ap.is_crypto("ETH/USD")
+    env = tmp_path / ".env"   # fichier sauvé en UTF-16 avec espaces/guillemets (cas Windows)
+    env.write_text('ALPACA_API_KEY = "PK1"\nALPACA_SECRET_KEY=s2\nGROQ_API_KEY=COLLE_ICI\n',
+                   encoding="utf-16")
+    for k in ("ALPACA_API_KEY", "ALPACA_SECRET_KEY", "GROQ_API_KEY"):
+        monkeypatch.delenv(k, raising=False)
+    assert ap.load_env(str(env))
+    import os
+    assert os.environ["ALPACA_API_KEY"] == "PK1" and os.environ["ALPACA_SECRET_KEY"] == "s2"
+    assert "GROQ_API_KEY" not in os.environ   # placeholder ignoré
+
+
+def test_mirror_plan_reconciles(tmp_path):
+    from quantlab import broker as bk
+    from quantlab import mirror as mr
+    acc = bk.load_account(str(tmp_path / "a.json"), capital=10_000)
+    bk.buy(acc, "SPY", 100.0, 95.0, 110.0, "trend", "2026-01-02")          # 20 parts
+    bk.buy(acc, "BTC-USD", 50_000.0, 48_000.0, None, "trend", "2026-01-02")
+    prices = {"SPY": 100.0, "BTC-USD": 50_000.0}
+    eq = acc.equity(prices)
+    # Alpaca a 2x l'équité du papier, détient déjà un QQQ que le fonds n'a plus
+    plan = mr.plan_mirror(acc, prices, ["SPY", "QQQ", "BTC-USD"],
+                          {"QQQ": 3.0}, alpaca_equity=2 * eq)
+    by = {a["symbol"]: a for a in plan}
+    assert by["SPY"]["action"] == "buy" and abs(by["SPY"]["qty"] - 40.0) < 1e-6
+    assert by["BTC-USD"]["action"] == "buy"
+    assert by["QQQ"]["action"] == "close"
+    # idempotent : une fois aligné, plus aucun ordre
+    held = {"SPY": 40.0, "BTCUSD": acc.positions["BTC-USD"]["shares"] * 2}
+    assert mr.plan_mirror(acc, prices, ["SPY", "QQQ", "BTC-USD"], held, 2 * eq) == []
+    # un ordre déjà en attente n'est jamais doublé
+    assert all(a["symbol"] != "SPY" for a in
+               mr.plan_mirror(acc, prices, ["SPY"], {}, 2 * eq, pending={"SPY"}))
+    # n'ouvre ni ne ferme rien hors univers du fonds (poche IA sur le même compte)
+    assert all(a["symbol"] in {"SPY", "BTC-USD"} for a in
+               mr.plan_mirror(acc, prices, ["SPY", "BTC-USD"], {"NVDA": 5.0}, 2 * eq))
+
+
+def test_live_cycle_mirrors_to_alpaca(tmp_path):
+    from quantlab import live as lv
+    from quantlab import mirror as mr
+    path = str(tmp_path / "account.json")
+    fake_load = lambda sym, years=2, fresh=False, **k: (
+        synthetic_ohlcv(sym, years=3, seed=abs(hash(sym)) % 1000), "yahoo")
+    client = FakeAlpaca(positions={"XLE": {"qty": "2"}})
+    out = lv.run_cycle(["AAA", "XLE"], capital=10_000, state_path=path, loader=fake_load,
+                       after=lambda acc, px: mr.mirror_report(client, acc, px, ["AAA", "XLE"]))
+    assert "MIROIR ALPACA" in out and "COMPTE PAPIER" in out
+    assert "XLE" in client.closed            # le fonds ne détient pas XLE → fermé
+    out2 = lv.run_cycle(["AAA"], capital=10_000, state_path=path, loader=fake_load,
+                        after=lambda acc, px: mr.mirror_report(None, acc, px, ["AAA"]))
+    assert "Clés Alpaca absentes" in out2    # sans clés : fail-safe
+
+
+def test_ai_option_strategies():
+    from quantlab import ai_trader as ai
+    chain = ai.option_chain(FakeAlpaca(), "NVDA", 140.0)
+    assert chain and all(c["underlying"] == "NVDA" for c in chain)
+    for strat in ai.OPTION_STRATEGIES:
+        plan, why = ai.build_option_trade(strat, chain, 140.0)
+        assert plan, (strat, why)
+        assert plan["max_loss"] > 0
+    p, _ = ai.build_option_trade("BULL_CALL_SPREAD", chain, 140.0)
+    assert [l["strike"] for l in p["legs"]] == [140.0, 145.0] and p["width"] == 5.0
+    p, _ = ai.build_option_trade("LONG_STRADDLE", chain, 140.0)
+    assert p["legs"][0]["strike"] == p["legs"][1]["strike"] == 140.0 and p["max_gain"] is None
+    illiquid = [dict(c, bid=0.5, ask=2.0) for c in chain]
+    assert ai.build_option_trade("LONG_STRADDLE", illiquid, 140.0)[0] is None
+    close = ai.mleg_order(p["legs"], 2, opening=False)
+    assert [l["side"] for l in close["legs"]] == ["sell", "sell"]
+    assert close["legs"][0]["position_intent"] == "sell_to_close"
+
+
+def test_ai_cycle_open_manage_and_guards(tmp_path):
+    from quantlab import ai_trader as ai
+    state = str(tmp_path / "ai.json")
+    client = FakeAlpaca()
+    kw = dict(earnings=lambda s: 5 if s == "NVDA" else None, crypto_news=lambda: [],
+              fng=lambda: "50/100 (Neutral)", sleep=lambda s: None)
+    seen = []
+    def decide(prompt):
+        seen.append(prompt)
+        return {"action": "OPEN", "strategy": "BULL_CALL_SPREAD", "underlying": "NVDA",
+                "confidence": 0.7, "reasoning": "test"}
+    out, d = ai.run_cycle(client, decide, state_path=state, **kw)
+    assert "OUVERT BULL_CALL_SPREAD NVDA" in out, out
+    assert "RESULTATS dans 5 j" in seen[0]
+    assert client.orders[-1]["order_class"] == "mleg"
+    t = ai.load_trades(state)[0]
+    assert t["cost"] <= 100_000 * ai.OPTION_MAX_RISK_PCT
+    # déjà en position → refusé
+    out, d = ai.run_cycle(client, decide, state_path=state, **kw)
+    assert "Deja en position" in out
+    # take-profit atteint → fermeture par ordre multi-jambes inverse
+    client.pos = {l["symbol"]: {"unrealized_pl": str(t["tp_amount"])} for l in t["legs"]}
+    out, _ = ai.run_cycle(client, lambda p: {"action": "HOLD", "reasoning": "x"},
+                          state_path=state, **kw)
+    assert "Take-profit" in out and ai.load_trades(state)[0]["status"] == "CLOSED"
+    # bourse fermée : options refusées
+    client.open_ = False
+    out, _ = ai.run_cycle(client, decide, state_path=state, **kw)
+    assert "ferme" in out.lower()
+
+
+def test_ai_short_and_shared_universe(tmp_path):
+    from quantlab import ai_trader as ai
+    stocks, cryptos = ai.universe(["SPY", "QQQ", "BTC-USD"])
+    assert "SPY" not in stocks and "BTC/USD" not in cryptos and "NVDA" in stocks
+    client = FakeAlpaca()
+    kw = dict(earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "-",
+              sleep=lambda s: None)
+    short = lambda p: {"action": "OPEN", "strategy": "SHORT_STOCK", "underlying": "TSLA",
+                       "confidence": 0.8, "stop_loss_pct": 0.9, "reasoning": "x"}
+    out, _ = ai.run_cycle(client, short, state_path=str(tmp_path / "s.json"), **kw)
+    o = client.orders[-1]
+    assert o["side"] == "sell" and o["qty"] == str(int(10_000 // 140)) and "notional" not in o
+    t = ai.load_trades(str(tmp_path / "s.json"))[0]
+    assert t["sl_pct"] == 0.05                       # stop borné à 5 %
+    # la poche ne peut pas trader un actif du fonds quand le compte est partagé
+    spy = lambda p: {"action": "OPEN", "strategy": "BUY_STOCK", "underlying": "SPY",
+                     "confidence": 0.9, "reasoning": "x"}
+    out, _ = ai.run_cycle(client, spy, state_path=str(tmp_path / "x.json"),
+                          fund_universe=["SPY"], **kw)
+    assert "n'est pas une action de la poche" in out
+
+
+def test_ai_missing_keys_is_failsafe(monkeypatch):
+    from quantlab import ai_trader as ai
+    from quantlab import alpaca as ap
+    monkeypatch.setattr(ap, "load_env", lambda path=None: False)
+    monkeypatch.setattr(ai, "load_env", lambda path=None: False)
+    for k in ("ALPACA_API_KEY", "ALPACA_SECRET_KEY", "ALPACA_AI_API_KEY",
+              "ALPACA_AI_SECRET_KEY", "GROQ_API_KEY"):
+        monkeypatch.delenv(k, raising=False)
+    out, d = ai.main_cycle(["SPY"])
+    assert "non lancée" in out and d == {}
+
+
+def test_dashboard_ai_section(tmp_path, prices):
+    from quantlab import dashboard as db
+    from quantlab import fund as fd
+    from quantlab.broker import load_account
+    res = fd.run_fund(prices, capital=100_000)
+    account = load_account(str(tmp_path / "acc.json"), capital=100_000)
+    ai = {"trades": [{"opened_at": "2026-10-26T15:40:00", "strategy": "LONG_STRADDLE",
+                      "underlying": "NVDA", "cost": 820.0, "status": "CLOSED", "pnl": 150.0,
+                      "reasoning": "<b>resultats</b>"}],
+          "open": [], "closed": [{"pnl": 150.0}], "realized": 150.0, "win_rate": 1.0}
+    path = db.save(res, account, {}, 100_000, str(tmp_path / "d.html"), ai=ai,
+                   alpaca_lines=["Alpaca [fonds, paper] équité 100,000.00 $"])
+    content = open(path, encoding="utf-8").read()
+    assert "poche IA" in content and "LONG_STRADDLE" in content
+    assert "<b>resultats</b>" not in content          # texte du LLM échappé
+
+
+# ── Module 15 — formules du cours EFREI (pricing.py) ──
+
+def test_pricing_black_scholes_identities():
+    from quantlab import pricing as pr
+    S, K, T, r, sig = 100.0, 105.0, 0.5, 0.03, 0.25
+    c, p = pr.bs_price(S, K, T, r, sig), pr.bs_price(S, K, T, r, sig, "put")
+    assert abs(pr.parity_gap(c, p, S, K, T, r)) < 1e-10                 # parité call-put
+    lo, hi = pr.call_bounds(S, K, T, r)
+    assert lo <= c <= hi                                                # bornes d'arbitrage
+    assert abs(pr.digital_price(S, K, T, r, sig) - np.exp(-r * T) * pr.prob_itm(S, K, T, r, sig)) < 1e-12
+    # valeur de référence classique : S=K=100, T=1, r=5 %, σ=20 % → call 10,4506
+    assert abs(pr.bs_price(100, 100, 1, 0.05, 0.2) - 10.4506) < 1e-3
+    # Bachelier ≈ Black-Scholes à la monnaie pour σ_abs = σ S
+    assert abs(pr.bachelier_price(100, 100, 0.25, 20.0) - pr.bs_price(100, 100, 0.25, 0, 0.2)) < 0.05
+
+
+def test_pricing_greeks_match_finite_differences():
+    from quantlab import pricing as pr
+    S, K, T, r, sig, h = 100.0, 95.0, 0.75, 0.02, 0.3, 1e-4
+    for kind in ("call", "put"):
+        g = pr.greeks(S, K, T, r, sig, kind)
+        f = lambda **kw: pr.bs_price(**{"S": S, "K": K, "T": T, "r": r, "sigma": sig,
+                                         "kind": kind, **kw})
+        assert abs(g.delta - (f(S=S + h) - f(S=S - h)) / (2 * h)) < 1e-5
+        assert abs(g.gamma - (f(S=S + 1e-2) - 2 * f() + f(S=S - 1e-2)) / 1e-4) < 1e-4
+        assert abs(g.vega - (f(sigma=sig + h) - f(sigma=sig - h)) / (2 * h)) < 1e-3
+        assert abs(g.rho - (f(r=r + h) - f(r=r - h)) / (2 * h)) < 1e-3
+        assert abs(g.theta - (f(T=T - h) - f(T=T + h)) / (2 * h)) < 1e-3   # Θ = ∂V/∂t
+        # relation de l'EDP : Θ = -½σ²S²Γ - rSΔ + rV
+        assert abs(g.theta - pr.theta_from_pde(S, r, sig, f(), g)) < 1e-8
+
+
+def test_pricing_implied_and_realized_vol():
+    from quantlab import pricing as pr
+    price = pr.bs_price(50, 55, 0.4, 0.01, 0.37, "put")
+    assert abs(pr.implied_vol(price, 50, 55, 0.4, 0.01, "put") - 0.37) < 1e-6
+    assert pr.implied_vol(60.0, 50, 55, 0.4, 0.01, "call") is None    # viole C ≤ S
+    rng = np.random.default_rng(3)
+    close = pd.Series(100 * np.exp(np.cumsum(rng.normal(0, 0.01, 2000))))
+    assert abs(pr.realized_vol(close, n=None) - 0.01 * np.sqrt(252)) < 0.01
+    # gamma P&L : long gamma gagne si vol réalisée > implicite, perd sinon
+    assert pr.gamma_pnl(0.02, 100, 0.3, 0.2, 1 / 252) > 0 > pr.gamma_pnl(0.02, 100, 0.2, 0.3, 1 / 252)
+
+
+def test_pricing_monte_carlo_and_variance_reduction():
+    from quantlab import pricing as pr
+    bs = pr.bs_price(100, 100, 1, 0.05, 0.2)
+    plain = pr.mc_european(100, 100, 1, 0.05, 0.2, n=40_000, seed=1)
+    anti = pr.mc_european(100, 100, 1, 0.05, 0.2, n=40_000, seed=1, antithetic=True)
+    cv = pr.mc_european(100, 100, 1, 0.05, 0.2, n=40_000, seed=1, control_variate=True)
+    for m in (plain, anti, cv):
+        assert abs(m.price - bs) < 4 * m.std_error + 1e-9
+    assert anti.std_error < plain.std_error and cv.std_error < plain.std_error / 2
+    asian = pr.mc_path_option(pr.asian_call_payoff(100), 100, 1, 0.05, 0.2, 50, 5000)
+    assert asian.price < bs                                  # asiatique < européenne
+    barrier = pr.mc_path_option(pr.up_and_out_call_payoff(100, 120), 100, 1, 0.05, 0.2, 50, 5000)
+    assert barrier.price < bs
+    # Heston avec vol de vol ~0 et v0 = θ = σ² → retrouve Black-Scholes
+    h = pr.heston_mc(100, 100, 1, 0.05, 0.04, 2.0, 0.04, 1e-6, 0.0, n_paths=20_000)
+    assert abs(h.price - bs) < 4 * h.std_error + 0.05
+
+
+def test_pricing_course_strategies():
+    from quantlab import pricing as pr
+    S, T, r, sig = 100.0, 0.25, 0.0, 0.2
+    bull = pr.analyze_strategy("bull_spread", pr.make_strategy("bull_spread", S, K1=100, K2=110),
+                               S, T, r, sig)
+    p = bull.net_premium
+    assert abs(bull.max_loss - p) < 1e-6 and abs(bull.max_gain - (10 - p)) < 1e-6
+    assert abs(bull.breakevens[0] - (100 + p)) < 1e-3
+    strad = pr.analyze_strategy("straddle", pr.make_strategy("straddle", S), S, T, r, sig)
+    assert np.isinf(strad.max_gain) and abs(strad.greeks.delta) < 0.1 and strad.greeks.vega > 0
+    assert len(strad.breakevens) == 2
+    fly = pr.analyze_strategy("butterfly", pr.make_strategy("butterfly", S, K1=95, K2=100, K3=105),
+                              S, T, r, sig)
+    assert fly.net_premium > 0 and abs(fly.max_gain - (5 - fly.net_premium)) < 1e-3
+    assert pr.strategy_payoff(fly.legs, [90, 100, 110]).tolist() == [0, 5, 0]
+    rr = pr.make_strategy("risk_reversal", S, K1=95, K2=105)
+    assert pr.strategy_payoff(rr, [80, 100, 120]).tolist() == [-15, 0, 15]
+    st = pr.return_stats(pd.Series(100 * np.exp(np.cumsum(np.random.default_rng(0).normal(0, .01, 600)))))
+    assert {"skew", "excess_kurtosis", "shapiro_p", "realized_vol"} <= set(st)
+
+
+def test_ai_butterfly_and_vol_edge(tmp_path):
+    from quantlab import ai_trader as ai
+    chain = ai.option_chain(FakeAlpaca(), "NVDA", 140.0)
+    plan, why = ai.build_option_trade("LONG_CALL_BUTTERFLY", chain, 140.0)
+    assert plan, why
+    assert [l["strike"] for l in plan["legs"]] == [135.0, 140.0, 145.0]
+    assert [l["ratio"] for l in plan["legs"]] == [1, 2, 1]
+    assert ai.mleg_order(plan["legs"], 1, True)["legs"][1]["ratio_qty"] == "2"
+    a = ai.course_analysis(plan, 140.0, 0.3)
+    assert a["breakevens"] and 0 <= a["prob_profit"] <= 1
+    # long vol refusé si la vol réalisée est très inférieure à l'implicite payée
+    strad, _ = ai.build_option_trade("LONG_STRADDLE", chain, 140.0)
+    assert ai.course_analysis(strad, 140.0, 0.05)["vol_edge"] > ai.VOL_EDGE_MAX
+
+
+def test_mirror_protects_ai_positions():
+    from quantlab import broker as bk
+    from quantlab import mirror as mr
+    acc = bk.Account(cash=10_000, initial_capital=10_000,
+                     history=[{"symbol": "NVDA"}, {"symbol": "AMD"}])
+    uni = mr.managed_universe(acc, ["SPY"], protected={"NVDA"})
+    assert "AMD" in uni and "SPY" in uni and "NVDA" not in uni

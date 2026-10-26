@@ -24,15 +24,23 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Exécuter le cycle live
+      - name: Exécuter le cycle live (+ miroir Alpaca si les Secrets sont définis)
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
         run: |
           mkdir -p live_logs
-          python -m quantlab live --capital 100000 --max-positions 8 | tee "live_logs/$(date -u +%F).txt"
+          python -m quantlab live --capital 100000 --max-positions 8 --broker alpaca | tee "live_logs/$(date -u +%F).txt"
       - name: Pouls de marché (actualité + contexte géopolitique)
         run: |
           mkdir -p news_logs
           python -m quantlab pulse | tee "news_logs/$(date -u +%F).txt" || true
       - name: Régénérer le tableau de bord
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_AI_API_KEY: ${{ secrets.ALPACA_AI_API_KEY }}
+          ALPACA_AI_SECRET_KEY: ${{ secrets.ALPACA_AI_SECRET_KEY }}
         run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8 --screen-limit 15
       - name: Committer l'état du compte
         run: |
@@ -40,5 +48,4 @@ jobs:
           git config user.email "actions@github.com"
           git add paper_account.json live_logs/ news_logs/ docs/
           git diff --cached --quiet || git commit -m "live: cycle du $(date -u +%F)"
-          git pull --rebase origin main
-          git push
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done

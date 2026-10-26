@@ -18,6 +18,10 @@ Exemples :
   python -m quantlab account                   # état du compte papier
   python -m quantlab fund --capital 100000     # simulation du fonds complet (entraînement)
   python -m quantlab dashboard                 # tableau de bord HTML (état de l'argent)
+  python -m quantlab live --broker alpaca      # idem + miroir des positions sur Alpaca
+  python -m quantlab ai                        # module 14 : un cycle de la poche IA
+  python -m quantlab alpaca                    # état des comptes Alpaca
+  python -m quantlab options --symbol SPY      # module 15 : pricing, grecques, stratégies
 """
 
 from __future__ import annotations
@@ -136,7 +140,17 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--screen-limit", type=int, default=15)
     sp.add_argument("--crypto", action="store_true",
                     help="screene les cryptos les plus liquides au lieu des actions")
+    sp.add_argument("--broker", default="paper", choices=["paper", "alpaca"],
+                    help="alpaca : recopie aussi les positions sur le compte Alpaca")
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
+    sub.add_parser("ai", help="Module 14 — un cycle de la poche IA (Alpaca + Groq)")
+    sub.add_parser("alpaca", help="État des comptes Alpaca (fonds et poche IA)")
+    sp = sub.add_parser("options", help="Module 15 — pricing d'options & stratégies (cours EFREI)")
+    sp.add_argument("--symbol", default="SPY")
+    sp.add_argument("--days", type=int, default=30, help="échéance en jours")
+    sp.add_argument("--rate", type=float, default=0.04, help="taux sans risque annuel")
+    sp.add_argument("--iv", type=float, default=None,
+                    help="vol implicite (ex. 0.22) ; défaut : vol réalisée 20 j")
     common(sub.add_parser("pulse", help="Module 13 — pouls de marché (actu + géopolitique)"),
            symbol=False, symbols=True)
     sp = sub.add_parser("fund", help="Simulation du fonds complet (entraînement)")
@@ -220,13 +234,40 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Compte papier réinitialisé à ${args.capital:,.0f}.")
         screener = ((lambda: scr.candidates(limit=args.screen_limit))
                     if args.screener else None)
+        after = None
+        if args.broker == "alpaca":
+            from . import ai_trader as ai
+            from .alpaca import Alpaca, position_symbol
+            from .mirror import mirror_report
+            client = Alpaca.from_env("ALPACA", label="fonds")
+            # positions de la poche IA (si elle partage le compte) : jamais touchées
+            protected = {t.get("position_symbol") or position_symbol(t["underlying"])
+                         for t in ai.load_trades() if t["status"] == "OPEN"}
+            after = lambda acc, px: mirror_report(client, acc, px, args.symbols, protected)
         print(lv.run_cycle(args.symbols, args.capital, args.risk,
                            max_positions=args.max_positions, screener=screener,
-                           vol_target=args.vol_target, trail=args.trail))
+                           vol_target=args.vol_target, trail=args.trail, after=after))
 
     elif args.cmd == "screen":
         print(scr.report(market=args.market, limit=args.screen_limit,
                          crypto=args.crypto))
+
+    elif args.cmd == "options":
+        from . import pricing as pr
+        df, src = load(args.symbol, 2)
+        print(pr.report(df, args.symbol, src, args.days, args.rate, args.iv))
+
+    elif args.cmd == "ai":
+        from . import ai_trader as ai
+        report, _ = ai.main_cycle(fund_universe_if_shared=DEFAULT_UNIVERSE)
+        print(report)
+
+    elif args.cmd == "alpaca":
+        from .alpaca import Alpaca, account_line
+        clients = [Alpaca.from_env("ALPACA", label="fonds"),
+                   Alpaca.from_env("ALPACA_AI", label="poche IA")]
+        shown = [account_line(c) for c in clients if c is not None]
+        print("\n".join(shown) or "Aucune clé Alpaca trouvée (.env ou Secrets GitHub).")
 
     elif args.cmd == "account":
         print(lv.account_report())
@@ -268,8 +309,14 @@ def main(argv: list[str] | None = None) -> int:
         bench = db.spy_benchmark(account, prices["SPY"]) if "SPY" in prices else None
         gauge = nw.risk_gauge(load)
         screened = scr.candidates(limit=args.screen_limit)
+        from . import ai_trader as ai
+        from .alpaca import Alpaca, account_line
+        clients = [c for c in (Alpaca.from_env("ALPACA", label="fonds"),
+                               Alpaca.from_env("ALPACA_AI", label="poche IA")) if c]
+        ai_sum = ai.summary() if (clients or ai.load_trades()) else None
         path = db.save(res, account, prices_now, args.capital,
-                       benchmark=bench, gauge=gauge, screener=screened)
+                       benchmark=bench, gauge=gauge, screener=screened, ai=ai_sum,
+                       alpaca_lines=[account_line(c) for c in clients])
         print(f"Tableau de bord généré : {path}")
         if args.open:
             import webbrowser

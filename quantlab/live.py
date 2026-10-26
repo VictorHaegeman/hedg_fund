@@ -34,7 +34,9 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
               risk_pct: float = 1.0, state_path: str = DEFAULT_STATE,
               loader=load, max_positions: int = 3, screener=None,
               vol_target: float | None = None, vol_window: int = 20,
-              trail: bool = False) -> str:
+              trail: bool = False, after=None) -> str:
+    """`after(account, last_prices) -> str` : action optionnelle en fin de cycle
+    (ex. miroir des positions sur Alpaca). N'influence jamais les décisions."""
     account = load_account(state_path, capital)
     # Univers : si un screener FORWARD est fourni (ex. screener.candidates), on
     # trade ses candidats ∪ les positions ouvertes. Fail-safe : screener vide →
@@ -155,6 +157,8 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
     lines += ["", account_summary(account, last_prices)]
     if abs(eq - equity_before) > 0.005:
         lines.append(f"Variation du cycle : {eq - equity_before:+,.2f} $")
+    if after is not None:
+        lines.append(after(account, last_prices))
     return "\n".join(lines)
 
 

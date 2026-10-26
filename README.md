@@ -118,6 +118,49 @@ ajouter délibérément) :
 > pas de backtest — incompatible avec un fonds headless. Rien ici n'est un conseil
 > en investissement.
 
+## Courtier réel Alpaca & poche IA (module 14)
+
+### Miroir du fonds sur Alpaca
+
+```powershell
+python -m quantlab live --broker alpaca   # cycle normal + recopie des positions sur Alpaca
+python -m quantlab alpaca                 # état des comptes Alpaca
+```
+
+Le compte papier (`paper_account.json`) reste la **source de vérité** : la logique
+backtestée décide, puis `mirror.py` **réconcilie** le compte Alpaca sur ce
+portefeuille (mis à l'échelle de l'équité Alpaca). Idempotent : un ordre raté est
+rattrapé au cycle suivant, un ordre en attente n'est jamais doublé, seuls les
+actifs de l'univers du fonds sont touchés. Sans clés, le miroir est ignoré.
+
+### Poche IA (expérimentale, séparée du fonds)
+
+```powershell
+python -m quantlab ai                     # un cycle : gestion des positions + décision IA
+```
+
+Un LLM (Groq) choisit au plus un trade par cycle parmi : bull call spread, bear put
+spread, straddle, strangle (perte max = coût payé), achat d'action, vente à découvert,
+achat crypto. Le code garde la main sur le risque : pré-tri de ~50 actions/ETF vers
+12 candidats, strikes choisis dans la vraie chaîne d'options, filtre de risque
+(confiance ≥ 0,65, max 5 positions, 5 % de risque max par trade options, stop 2–5 %),
+sorties automatiques (take-profit, stop-loss, fermeture 5 jours avant l'échéance).
+Ses décisions ne sont **pas backtestables** : elles sont mesurées en réel et
+comparées au fonds sur le tableau de bord, jamais mélangées avec lui.
+
+Workflow : [ai-cycle.yml](.github/workflows/ai-cycle.yml) — toutes les 30 min pendant la
+séance US, toutes les 3 h sinon (crypto). Journal : `ai_trades.json`, `ai_logs/`.
+
+### Clés (jamais dans le code)
+
+| Où | Comment |
+|----|---------|
+| GitHub Actions | Settings → Secrets and variables → Actions : `ALPACA_API_KEY`, `ALPACA_SECRET_KEY`, `GROQ_API_KEY` (+ optionnel `ALPACA_AI_API_KEY`, `ALPACA_AI_SECRET_KEY` pour un 2ᵉ compte paper dédié à la poche IA) |
+| En local | fichier `.env` à la racine (ignoré par git), mêmes noms |
+
+Sans compte dédié, la poche IA partage le compte du fonds avec un univers disjoint
+(elle ne touche jamais SPY, QQQ, GLD, TLT, les ETF sectoriels ni BTC).
+
 ## Simulation du fonds & tableau de bord
 
 ```powershell
@@ -195,6 +238,9 @@ quantlab/
   broker.py       # courtier papier persistant (paper_account.json)
   live.py         # cycle de trading sur le marché réel
   screener.py     # screener TradingView — univers FORWARD pour le live (fail-safe)
+  alpaca.py       # connecteur courtier Alpaca (REST, clés via env)
+  mirror.py       # miroir du compte papier sur Alpaca (réconciliation)
+  ai_trader.py    # Module 14 — poche IA (options, short, news, Groq)
   cli.py          # point d'entrée argparse
 tests/test_all.py # 19 tests (déterministes, hors-ligne) dont absence de look-ahead
 .github/workflows # CI pytest + cycle live quotidien automatisé
