@@ -27,6 +27,10 @@ import numpy as np
 import pandas as pd
 
 TRADING_DAYS = 252
+# Frais moyens de l'industrie (HFR, T4 2025) : 1,33 % de gestion, 15,83 % de performance.
+# (le « 2/20 » historique reste possible via --mgmt-fee 0.02 --perf-fee 0.20)
+MGMT_FEE = 0.0133
+PERF_FEE = 0.1583
 RISK_PROFILES = {"Prudent": 0.5, "Équilibré": 1.0, "Dynamique": 1.5}
 
 
@@ -35,7 +39,7 @@ def nav(equity: pd.Series, base: float = 100.0) -> pd.Series:
     return equity / float(equity.iloc[0]) * base
 
 
-def apply_fees(gross_nav: pd.Series, mgmt: float = 0.02, perf: float = 0.20) -> pd.Series:
+def apply_fees(gross_nav: pd.Series, mgmt: float = MGMT_FEE, perf: float = PERF_FEE) -> pd.Series:
     """VL nette de frais de gestion (quotidiens) et de performance (high-water mark,
     cristallisée au dernier jour de chaque année civile)."""
     rets = gross_nav.pct_change().fillna(0.0).to_numpy()
@@ -165,7 +169,7 @@ def summary_rows(m: dict) -> list[tuple[str, str]]:
 
 
 def report(fund_equity: pd.Series, bench: pd.Series | None, live_curve: list | None = None,
-           mgmt: float = 0.02, perf: float = 0.20, profiles: dict | None = None,
+           mgmt: float = MGMT_FEE, perf: float = PERF_FEE, profiles: dict | None = None,
            trades=None) -> str:
     gross = nav(fund_equity)
     net = apply_fees(gross, mgmt, perf)
@@ -173,7 +177,7 @@ def report(fund_equity: pd.Series, bench: pd.Series | None, live_curve: list | N
     lines = ["=" * 78, "FICHE DU FONDS (factsheet) — simulation sur données réelles", "=" * 78,
              f"Période : {gross.index[0]:%Y-%m-%d} → {gross.index[-1]:%Y-%m-%d} | VL base 100 → "
              f"brute {gross.iloc[-1]:,.1f} | nette {net.iloc[-1]:,.1f} "
-             f"(frais {mgmt:.0%} gestion + {perf:.0%} performance, high-water mark)", "",
+             f"(frais {mgmt * 100:.2f} % gestion + {perf * 100:.2f} % performance, high-water mark)", "",
              f"  {'Indicateur':<32}{'Brut':>14}{'Net de frais':>16}"]
     for (k, vg), (_, vn) in zip(summary_rows(mg), summary_rows(mn)):
         lines.append(f"  {k:<32}{vg:>14}{vn:>16}")

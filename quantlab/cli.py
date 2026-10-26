@@ -188,8 +188,10 @@ def main(argv: list[str] | None = None) -> int:
     sp = sub.add_parser("factsheet", help="Fiche du fonds : VL, frais, risque, activité, profils")
     common(sp, symbol=False, symbols=True)
     sp.add_argument("--max-positions", type=int, default=8)
-    sp.add_argument("--mgmt-fee", type=float, default=0.02)
-    sp.add_argument("--perf-fee", type=float, default=0.20)
+    sp.add_argument("--mgmt-fee", type=float, default=0.0133,
+                    help="frais de gestion annuels (défaut : moyenne HFR 1,33 %%)")
+    sp.add_argument("--perf-fee", type=float, default=0.1583,
+                    help="commission de performance (défaut : moyenne HFR 15,83 %%)")
     sp.add_argument("--profiles", action="store_true", help="compare prudent/équilibré/dynamique")
     treasury_args(sp)
     sp = sub.add_parser("bonds", help="Module 16 — obligations, duration, forwards (cours EFREI)")

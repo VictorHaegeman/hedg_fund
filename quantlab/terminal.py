@@ -499,8 +499,8 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
         try:
             from . import factsheet as fsh
             gross = fsh.nav(fund_res.equity)
-            net = fsh.apply_fees(gross, factsheet.get("mgmt", 0.02) if factsheet else 0.02,
-                                 factsheet.get("perf", 0.20) if factsheet else 0.20)
+            net = fsh.apply_fees(gross, (factsheet or {}).get("mgmt", fsh.MGMT_FEE),
+                                 (factsheet or {}).get("perf", fsh.PERF_FEE))
             step = max(len(gross) // 400, 1)
             sp = None
             if spy is not None:

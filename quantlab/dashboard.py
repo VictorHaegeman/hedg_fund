@@ -127,10 +127,12 @@ def _screener_panel(candidates: list[str] | None) -> str:
 
 
 def build_factsheet(fund_res: BacktestResult, spy_close: pd.Series | None,
-                    mgmt: float = 0.02, perf: float = 0.20) -> dict | None:
+                    mgmt: float | None = None, perf: float | None = None) -> dict | None:
     """Données de la fiche du fonds pour le tableau de bord (fail-safe)."""
     try:
         from . import factsheet as fsh
+        mgmt = fsh.MGMT_FEE if mgmt is None else mgmt
+        perf = fsh.PERF_FEE if perf is None else perf
         gross = fsh.nav(fund_res.equity)
         net = fsh.apply_fees(gross, mgmt, perf)
         return {"gross_rows": fsh.summary_rows(fsh.metrics(gross, spy_close)),
@@ -202,7 +204,7 @@ def _factsheet_panel(fs: dict | None) -> str:
                    for (k, vg), (_, vn) in zip(fs["gross_rows"], fs["net_rows"]))
     return ("<h2>Fiche du fonds (factsheet) — simulation sur données réelles</h2>"
             f'<p class="gen">VL base 100 → brute {fs["nav_gross"]:,.1f} · nette {fs["nav_net"]:,.1f} '
-            f'(frais {fs["mgmt"]:.0%} gestion + {fs["perf"]:.0%} performance au-dessus du plus haut '
+            f'(frais {fs["mgmt"] * 100:.2f} % gestion + {fs["perf"] * 100:.2f} % performance au-dessus du plus haut '
             "historique). Indice de référence : S&amp;P 500 (SPY).</p>"
             f'<div class="panel"><table class="tbl"><tr><th>Indicateur</th><th>Brut</th>'
             f"<th>Net de frais</th></tr>{rows}</table></div>"

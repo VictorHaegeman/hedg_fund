@@ -939,7 +939,7 @@ def test_factsheet_nav_fees_metrics(prices):
     eq = pd.Series(np.linspace(100_000, 133_100, len(idx)), index=idx)
     gross = fs.nav(eq)
     assert gross.iloc[0] == 100
-    net = fs.apply_fees(gross, mgmt=0.02, perf=0.20)
+    net = fs.apply_fees(gross, mgmt=0.02, perf=0.20)   # 2/20 historique (défaut : moyenne HFR)
     assert net.iloc[-1] < gross.iloc[-1]                          # les frais coûtent
     flat = fs.apply_fees(pd.Series(100.0, index=idx), 0.0, 0.20)
     assert abs(flat.iloc[-1] - 100) < 1e-9                       # pas de gain → pas de commission

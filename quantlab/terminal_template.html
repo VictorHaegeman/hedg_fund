@@ -377,7 +377,7 @@ activity(el){
 fact(el){
   const f=D.factsheet||{}, b=D.backtest;
   el.innerHTML=`<h2>Simulation de la stratégie sur données réelles (base 100)</h2><div class="card"><div id="fs-c"></div>
-   <p class="note">Brut = avant frais. Net = après ${nf((f.mgmt||0)*100,0)} % de frais de gestion et ${nf((f.perf||0)*100,0)} % de commission sur les gains (au-dessus du plus haut). ${esc(f.activity||"")}</p></div>
+   <p class="note">Brut = avant frais. Net = après ${nf((f.mgmt||0)*100,2)} % de frais de gestion et ${nf((f.perf||0)*100,2)} % de commission sur les gains au-dessus du plus haut (moyenne des hedge funds, HFR fin 2025). Sans frais si c'est ton propre argent. ${esc(f.activity||"")}</p></div>
    <div class="grid half" style="margin-top:12px"><div class="card"><h2 style="margin-top:0">Indicateurs</h2><div id="fs-t"></div></div>
    <div class="card" style="overflow-x:auto"><h2 style="margin-top:0">Rendements mensuels nets (%)</h2><div class="mth">${D.monthly_html||""}</div></div></div>`;
   if(b) lineChart($("#fs-c",el),{x:b.d,series:[{name:"Brut",data:b.gross,color:"#5eb1ff",w:2},{name:"Net de frais",data:b.net,color:"#34d399",w:2},...(b.spy?[{name:"S&P 500",data:b.spy,color:"#8b98a7",dash:true}]:[])],h:300,fmt:v=>nf(v,0)});
