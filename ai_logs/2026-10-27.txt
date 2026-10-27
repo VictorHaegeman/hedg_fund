@@ -7,3 +7,12 @@ Exécuté : 2026-10-27T15:08:15 | équité 99,977.11 $ (-0.22 % jour) | bourse U
   Candidats envoyés à l'IA : BA, XNCR, ESQ, GOOGL, UPS, COIN, KNF, CTSH, UBER, CMS, AMZN, PLTR, SOL/USD, LINK/USD, BCH/USD, DOT/USD, ADA/USD
   IA : HOLD | confiance 0.58 | Aucune opportunité convaincante : les titres en tendance haussière sont soit déjà détenus, soit peu liquides, et les options sont trop chères ou proches de résultats. Le meilleur choix est de rester en position neutre.
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-10-27T18:29:23 | équité 100,043.92 $ (-0.15 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +20,040 $ | Γ +0.00 | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : XNCR*, CAI, KNF*, AGYS*, CX, CTSH, CMS, OVV  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : XNCR, BA, CAI, GOOGL, KNF, COIN, OVV, QCOM, CTSH, PLTR, UBER, CMS, XRP/USD, LINK/USD, BCH/USD, DOT/USD, ADA/USD
+  IA : HOLD | confiance 0.58 | Aucune opportunité claire avec un niveau de confiance supérieur à 0.65 ; les tendances sont mitigées et les conditions de volatilité rendent les stratégies d'options trop coûteuses.
+  Idées presse : 15 idées rafraîchies
