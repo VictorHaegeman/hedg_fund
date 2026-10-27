@@ -1,51 +1,29 @@
 {
-  "updated_at": "2026-10-26T23:01:38",
+  "updated_at": "2026-10-27T08:39:29",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
-      "symbol": "BAH",
+      "symbol": "HWKN",
       "mentions": 4,
       "headlines": [
-        "UBS Adjusts Booz Allen Hamilton Price Target to $86",
-        "Citigroup Maintains Neutral on Booz Allen Hamilton, Raises Price Target to $88",
-        "BNP Paribas Maintains Neutral on Booz Allen Hamilton, Raises Price Target to $85",
-        "TD Cowen Upgrades Booz Allen Hamilton to Buy, Raises Price Target to $95"
-      ],
-      "last_at": "2026-10-26T18:02:29Z",
-      "sentiment": 0.75,
-      "price": 83.36,
-      "adv_usd": 132955551.07821885,
-      "chg_5d": 12.6,
-      "chg_20d": 18.7,
-      "rsi": 73.3,
-      "trend": "haussiere",
-      "hv": 0.41365095214745184,
-      "niche": false,
-      "score": 7.469,
-      "why": "Les analystes d'UBS, Citigroup et BNP Paribas ont relevé leurs objectifs de cours, signalant un consensus haussier sur Booz Allen Hamilton.",
-      "risk": "Le risque réside dans une possible déception des résultats futurs qui pourrait entraîner une révision à la baisse des objectifs."
-    },
-    {
-      "symbol": "HWKN",
-      "mentions": 3,
-      "headlines": [
+        "Hawkins (HWKN) Shares Rise 12% After-Hours: Here's Why",
         "Hawkins, Inc. Declares Quarterly Cash Dividend",
         "Hawkins, Inc. Reports Second Quarter Fiscal 2027 Financial Results",
         "Hawkins Q2 EPS $1.34 Beats $1.19 Estimate, Sales $313.817M Beat $302.702M Estimate"
       ],
-      "last_at": "2026-10-26T22:02:12Z",
+      "last_at": "2026-10-27T07:08:51Z",
       "sentiment": 1.0,
       "price": 135.44,
-      "adv_usd": 18194529.725886535,
+      "adv_usd": 18196331.077919006,
       "chg_5d": 3.1,
       "chg_20d": 6.0,
       "rsi": 65.0,
       "trend": "haussiere",
       "hv": 0.231409976108555,
       "niche": true,
-      "score": 7.393,
-      "why": "Hawkins, Inc. a annoncé un dividende trimestriel et des résultats du deuxième trimestre supérieurs aux estimations, renforçant l'optimisme.",
-      "risk": "Le principal risque est la capacité de l'entreprise à maintenir ces performances face à d'éventuelles pressions sur les marges."
+      "score": 7.839,
+      "why": "Les titres annoncent une hausse de 12 % après les heures de marché, un dividende trimestriel et de bons résultats du deuxième trimestre, ce qui attire l’attention.",
+      "risk": "Le risque principal réside dans la dépendance aux résultats futurs et à la capacité de maintenir le dividende."
     },
     {
       "symbol": "AGYS",
@@ -57,7 +35,7 @@
       "last_at": "2026-10-26T20:07:46Z",
       "sentiment": 1.0,
       "price": 123.45,
-      "adv_usd": 33311582.936750792,
+      "adv_usd": 33370332.790298462,
       "chg_5d": 10.0,
       "chg_20d": 27.1,
       "rsi": 74.4,
@@ -65,53 +43,8 @@
       "hv": 0.34405149535447926,
       "niche": true,
       "score": 7.197,
-      "why": "Agilysys a relevé ses prévisions de ventes pour 2027 et a dépassé les estimations d'EBITDA et de chiffre d'affaires au deuxième trimestre, soutenant la dynamique haussière.",
-      "risk": "Le risque demeure une éventuelle sous‑performance des ventes si la demande du secteur hôtelier ralentit."
-    },
-    {
-      "symbol": "AZO",
-      "mentions": 4,
-      "headlines": [
-        "Bank of America Resumes O’Reilly Automotive Coverage at Buy, Cites Professional Sales",
-        "Advance Auto Parts Turnaround Gains Traction, but Analysts Still See Execution Risks",
-        "AutoZone Stock Is Undervalued, Analyst Says",
-        "FedEx Taps AutoZone Veteran as New Finance Chief"
-      ],
-      "last_at": "2026-10-26T18:43:36Z",
-      "sentiment": 0.6666666666666667,
-      "price": 3190.07,
-      "adv_usd": 636335490.8800415,
-      "chg_5d": 3.0,
-      "chg_20d": 9.5,
-      "rsi": 65.0,
-      "trend": "haussiere",
-      "hv": 0.3127073522087072,
-      "niche": false,
-      "score": 6.819,
-      "why": "Les analystes de Bank of America et d'autres ont repris la couverture d'O'Reilly Automotive avec une recommandation d'achat, soulignant la solidité des ventes professionnelles.",
-      "risk": "Le risque principal provient des incertitudes liées à la chaîne d'approvisionnement et à la concurrence dans le secteur automobile."
-    },
-    {
-      "symbol": "ROP",
-      "mentions": 3,
-      "headlines": [
-        "Roche Announces $2 Billion Manufacturing Facility in North Carolina",
-        "Roper Technologies Analyst Turns Bullish After Q3 Print",
-        "JP Morgan Upgrades Roper Technologies to Neutral, Raises Price Target to $490"
-      ],
-      "last_at": "2026-10-26T21:01:33Z",
-      "sentiment": 0.6666666666666666,
-      "price": 441.65,
-      "adv_usd": 321336289.71671295,
-      "chg_5d": 15.2,
-      "chg_20d": 25.1,
-      "rsi": 82.0,
-      "trend": "haussiere",
-      "hv": 0.39000063723426004,
-      "niche": false,
-      "score": 6.773,
-      "why": "Roche a annoncé un investissement de 2 milliards de dollars en Caroline du Nord et les analystes de Roper Technologies sont devenus plus optimistes après les résultats du troisième trimestre.",
-      "risk": "Le risque réside dans l'exécution du nouveau site de production et la dépendance aux cycles économiques du secteur technologique."
+      "why": "Les titres signalent une hausse de l’orientation des ventes pour 2027 et un bénéfice par action supérieur aux prévisions, stimulant l’intérêt.",
+      "risk": "Le risque principal est que les prévisions de ventes plus élevées ne se traduisent pas en résultats réels."
     },
     {
       "symbol": "PDM",
@@ -125,7 +58,7 @@
       "last_at": "2026-10-26T21:32:16Z",
       "sentiment": 0.75,
       "price": 9.61,
-      "adv_usd": 12655487.70875001,
+      "adv_usd": 12655493.955249786,
       "chg_5d": 7.5,
       "chg_20d": 5.6,
       "rsi": 60.3,
@@ -133,8 +66,8 @@
       "hv": 0.28502308162314405,
       "niche": true,
       "score": 6.469,
-      "why": "Piedmont Realty Trust a publié ses résultats du troisième trimestre 2026 et a relevé ses prévisions de FFO, indiquant une amélioration de la performance immobilière.",
-      "risk": "Le risque principal reste la sensibilité aux taux d'intérêt et aux conditions du marché immobilier commercial."
+      "why": "Les titres mettent en avant la publication des résultats du troisième trimestre 2026 et une révision à la hausse des prévisions de FFO, ce qui capte l’attention.",
+      "risk": "Le risque principal est que la hausse des prévisions de FFO ne soit pas atteinte si le marché immobilier se détériore."
     },
     {
       "symbol": "PRK",
@@ -147,7 +80,7 @@
       "last_at": "2026-10-26T22:02:10Z",
       "sentiment": 1.0,
       "price": 183.32,
-      "adv_usd": 14527697.852127075,
+      "adv_usd": 14528119.48814392,
       "chg_5d": 3.2,
       "chg_20d": 1.0,
       "rsi": 58.1,
@@ -155,8 +88,8 @@
       "hv": 0.19555837280480687,
       "niche": true,
       "score": 6.413,
-      "why": "Park National a présenté de bons résultats du troisième trimestre 2026, dépassant les estimations d'EBITDA et déclarant un dividende spécial, ce qui attire l'attention.",
-      "risk": "Le risque est lié à la capacité de la banque à soutenir sa rentabilité face à d'éventuelles tensions de crédit."
+      "why": "Les titres annoncent les résultats du troisième trimestre 2026, un dividende spécial et un bénéfice par action supérieur aux estimations, attirant les investisseurs.",
+      "risk": "Le risque principal provient d’une possible volatilité des revenus bancaires et de la capacité à soutenir le dividende spécial."
     },
     {
       "symbol": "CDNS",
@@ -170,7 +103,7 @@
       "last_at": "2026-10-26T22:14:31Z",
       "sentiment": 0.6,
       "price": 322.17,
-      "adv_usd": 769966283.373079,
+      "adv_usd": 770782291.6915894,
       "chg_5d": -1.1,
       "chg_20d": -1.4,
       "rsi": 48.6,
@@ -178,8 +111,8 @@
       "hv": 0.40130503459115696,
       "niche": false,
       "score": 6.376,
-      "why": "Cadence Design Systems a publié des résultats du troisième trimestre 2026 supérieurs aux attentes et a présenté son portefeuille Maestro AI pour la conception de puces autonomes.",
-      "risk": "Le risque réside dans la concurrence intense dans le secteur des logiciels de conception et l'incertitude quant à l'adoption rapide de l'IA."
+      "why": "Les titres rapportent des résultats du troisième trimestre 2026 supérieurs aux attentes et le lancement d’une offre IA pour la conception de puces, suscitant l’intérêt.",
+      "risk": "Le risque principal est lié à l’incertitude autour de l’adoption commerciale de la nouvelle technologie IA."
     },
     {
       "symbol": "BRX",
@@ -192,7 +125,7 @@
       "last_at": "2026-10-26T22:01:50Z",
       "sentiment": 1.0,
       "price": 28.12,
-      "adv_usd": 81397272.05963488,
+      "adv_usd": 81397267.84163475,
       "chg_5d": 2.7,
       "chg_20d": 1.6,
       "rsi": 54.6,
@@ -200,12 +133,12 @@
       "hv": 0.19150055595407744,
       "niche": false,
       "score": 6.313,
-      "why": "Brixmor Property Group a relevé ses prévisions de FFO et a annoncé une hausse du dividende après des résultats du troisième trimestre supérieurs aux attentes.",
-      "risk": "Le risque principal provient de la dépendance aux loyers commerciaux et aux fluctuations du marché immobilier."
+      "why": "Les titres indiquent des résultats du troisième trimestre 2026, une hausse du dividende et une légère amélioration des prévisions de FFO, ce qui attire l’attention.",
+      "risk": "Le risque principal réside dans la sensibilité du secteur immobilier aux conditions économiques et aux taux d’intérêt."
     },
     {
       "symbol": "SSD",
-      "mentions": 6,
+      "mentions": 5,
       "headlines": [
         "Simpson Manufacturing Introduces New Share Repurchase Plan",
         "Simpson Manufacturing Co., Inc. Announces 2026 Third Quarter Financial Results and Updates 2026 Guidance",
@@ -213,18 +146,64 @@
         "Simpson Manufacturing Announces $1B Buyback Plan"
       ],
       "last_at": "2026-10-26T22:02:15Z",
-      "sentiment": 0.5,
+      "sentiment": 0.6,
       "price": 181.99,
-      "adv_usd": 58580481.573430635,
+      "adv_usd": 58727975.37338257,
       "chg_5d": 3.0,
       "chg_20d": 4.3,
       "rsi": 59.0,
       "trend": "neutre",
       "hv": 0.23516357099209784,
       "niche": false,
-      "score": 5.992,
-      "why": "Simpson Manufacturing a lancé un nouveau plan de rachat d'actions et a présenté des résultats du troisième trimestre 2026, soutenant l'intérêt des investisseurs.",
-      "risk": "Le risque réside dans la dépendance aux cycles industriels et aux dépenses d'équipement des entreprises."
+      "score": 5.984,
+      "why": "Les titres annoncent un nouveau plan de rachat d’actions et la publication des résultats du troisième trimestre 2026, ce qui capte l’intérêt.",
+      "risk": "Le risque principal est que le rachat d’actions ne compense pas une éventuelle faiblesse des performances opérationnelles."
+    },
+    {
+      "symbol": "TXN",
+      "mentions": 4,
+      "headlines": [
+        "Reported Earlier, Texas Instruments Prices $2.0B Notes In Four $500M Series: 5.000% 2028, 5.350% 2031, 5.500% 2033, 5.750% 2036; Proceeds To",
+        "Texas Instruments Prices $2.0 Billion in Senior Unsecured Notes",
+        "Texas Instruments Q3 2026 Earnings Call Transcript (CORRECTED)",
+        "Texas Instruments CEO Sees No Slowdown in Data Center Demand: 'Actually Growing Demand' (CORRECTED)"
+      ],
+      "last_at": "2026-10-27T05:51:34Z",
+      "sentiment": 0.25,
+      "price": 298.12,
+      "adv_usd": 1805086146.2765503,
+      "chg_5d": 8.0,
+      "chg_20d": 7.1,
+      "rsi": 64.6,
+      "trend": "haussiere",
+      "hv": 0.31891674690137095,
+      "niche": false,
+      "score": 5.969,
+      "why": "Les titres mettent en avant le placement de 2 milliards de dollars d’obligations à plusieurs échéances, ce qui attire l’attention des investisseurs obligataires.",
+      "risk": "Le risque principal est lié à la hausse éventuelle des taux d’intérêt qui pourrait affecter le coût du financement."
+    },
+    {
+      "symbol": "AZN",
+      "mentions": 4,
+      "headlines": [
+        "AstraZeneca and Daiichi Sankyo's Enhertu Approved in EU for HER2-positive Early Breast Cancer",
+        "Daiichi Sankyo Gets $75M Milestone From AstraZeneca After EU Approves Enhertu For Adjuvant HER2 Positive Early Breast Cancer; DESTINY-Breast",
+        "AstraZeneca Updates PACIFIC-9 Phase 3 Trial Data Readout Timeline",
+        "Innate Pharma Notes AstraZeneca’s Updated Timing For PACIFIC-9 Phase 3 NSCLC Trial Readout: First Half 2027, Not Second Half 2026; Enrollmen"
+      ],
+      "last_at": "2026-10-27T08:01:19Z",
+      "sentiment": 0.25,
+      "price": 172.06,
+      "adv_usd": 491294010.1963043,
+      "chg_5d": 4.9,
+      "chg_20d": 3.6,
+      "rsi": 63.9,
+      "trend": "haussiere",
+      "hv": 0.2710063358049048,
+      "niche": false,
+      "score": 5.949,
+      "why": "Les titres signalent l’approbation européenne d’Enhertu pour le cancer du sein HER2‑positif et un jalon de 75 M$ lié à ce traitement, suscitant l’intérêt.",
+      "risk": "Le risque principal est que les ventes réelles du médicament n’atteignent pas les attentes du marché."
     },
     {
       "symbol": "ORLY",
@@ -238,7 +217,7 @@
       "last_at": "2026-10-26T18:43:36Z",
       "sentiment": 0.4166666666666667,
       "price": 91.05,
-      "adv_usd": 442631325.73694384,
+      "adv_usd": 442631512.3894501,
       "chg_5d": 2.2,
       "chg_20d": 5.2,
       "rsi": 62.1,
@@ -246,8 +225,8 @@
       "hv": 0.20340830394127563,
       "niche": false,
       "score": 5.909,
-      "why": "Bank of America a repris la couverture d'O'Reilly Automotive avec une recommandation d'achat, et d'autres analystes maintiennent des notes positives, reflétant une dynamique haussière.",
-      "risk": "Le risque principal demeure les incertitudes liées aux coûts d'approvisionnement et à la concurrence dans le secteur automobile."
+      "why": "Les titres montrent la reprise de la couverture analyste avec une recommandation d’achat et des perspectives de redressement, ce qui attire l’attention.",
+      "risk": "Le risque principal demeure les incertitudes d’exécution dans le redressement opérationnel."
     },
     {
       "symbol": "CART",
@@ -261,7 +240,7 @@
       "last_at": "2026-10-26T22:02:17Z",
       "sentiment": 0.0,
       "price": 60.88,
-      "adv_usd": 277108061.1824816,
+      "adv_usd": 277277185.63619614,
       "chg_5d": 22.0,
       "chg_20d": 40.5,
       "rsi": 82.9,
@@ -269,8 +248,8 @@
       "hv": 0.45009099574003986,
       "niche": false,
       "score": 5.892,
-      "why": "DoorDash est en pourparlers avancés pour acquérir Instacart, tandis qu'Instacart prévoit de fermer ses opérations Caper Cart, créant un potentiel de synergies et de charges importantes.",
-      "risk": "Le risque majeur est l'incertitude autour de l'intégration et des coûts associés à la fermeture de Caper Cart."
+      "why": "Les titres rapportent des discussions avancées d’acquisition de Instacart par DoorDash et la cessation d’activités de Caper Cart, créant un fort intérêt.",
+      "risk": "Le risque principal est l’incertitude quant à la réalisation de l’acquisition et aux coûts de la restructuration."
     },
     {
       "symbol": "KFRC",
@@ -284,7 +263,7 @@
       "last_at": "2026-10-26T21:57:58Z",
       "sentiment": 0.4,
       "price": 58.42,
-      "adv_usd": 10383962.524185944,
+      "adv_usd": 10384175.75717926,
       "chg_5d": 15.7,
       "chg_20d": 13.9,
       "rsi": 71.4,
@@ -292,30 +271,8 @@
       "hv": 0.4145894289313462,
       "niche": true,
       "score": 5.784,
-      "why": "Kforce a publié des résultats du troisième trimestre 2026 supérieurs aux estimations, renforçant la confiance des analystes.",
-      "risk": "Le risque demeure la dépendance aux marchés de services professionnels qui peuvent être affectés par des ralentissements économiques."
-    },
-    {
-      "symbol": "DKNG",
-      "mentions": 3,
-      "headlines": [
-        "NBA Expands Partnership with DraftKings to Include Prediction Markets",
-        "Stifel Maintains Buy on DraftKings, Lowers Price Target to $32",
-        "'NBA Announces Partnership With Prediction Markets Kalshi, Polymarket' - NY Times/ The Athletic"
-      ],
-      "last_at": "2026-10-26T18:03:03Z",
-      "sentiment": 0.6666666666666666,
-      "price": 21.22,
-      "adv_usd": 279212512.3658455,
-      "chg_5d": 7.3,
-      "chg_20d": 0.3,
-      "rsi": 54.7,
-      "trend": "neutre",
-      "hv": 0.5257523370457786,
-      "niche": false,
-      "score": 5.773,
-      "why": "DraftKings a élargi son partenariat avec la NBA et a reçu le soutien d'un analyste qui maintient une recommandation d'achat, stimulant l'intérêt du marché.",
-      "risk": "Le risque principal est la volatilité de la demande de jeux en ligne et les régulations potentielles."
+      "why": "Les titres annoncent des résultats du troisième trimestre 2026 avec un bénéfice par action supérieur aux estimations, ce qui attire l’attention.",
+      "risk": "Le risque principal est que la croissance des ventes ne se maintienne pas à ce niveau."
     },
     {
       "symbol": "NE",
@@ -328,7 +285,7 @@
       "last_at": "2026-10-26T22:01:51Z",
       "sentiment": 0.3333333333333333,
       "price": 47.81,
-      "adv_usd": 51093618.04794407,
+      "adv_usd": 51146063.2289505,
       "chg_5d": 8.6,
       "chg_20d": 12.2,
       "rsi": 65.2,
@@ -336,8 +293,50 @@
       "hv": 0.42139140288764626,
       "niche": false,
       "score": 5.773,
-      "why": "Noble Corporation a publié ses résultats du troisième trimestre 2026, a dépassé les estimations de ventes et a relevé ses prévisions de chiffre d'affaires pour 2026, attirant l'attention.",
-      "risk": "Le risque principal reste lié aux fluctuations des prix du pétrole et aux risques opérationnels dans le secteur offshore."
+      "why": "Les titres indiquent des résultats du troisième trimestre 2026, une hausse des prévisions de ventes et un bénéfice par action supérieur aux attentes, suscitant l’intérêt.",
+      "risk": "Le risque principal réside dans la volatilité du secteur pétrolier et gazier qui peut affecter les résultats futurs."
+    },
+    {
+      "symbol": "AWK",
+      "mentions": 2,
+      "headlines": [
+        "Pennsylvania American Water Issues Additional PFAS Settlement Credits to Customers",
+        "Pennsylvania American Water Receives Regulatory Approval for PFAS Litigation Credit Rider"
+      ],
+      "last_at": "2026-10-26T22:02:08Z",
+      "sentiment": 0.5,
+      "price": 141.7,
+      "adv_usd": 253674412.85865784,
+      "chg_5d": 6.1,
+      "chg_20d": 9.9,
+      "rsi": 67.5,
+      "trend": "haussiere",
+      "hv": 0.26443060279422703,
+      "niche": false,
+      "score": 5.697,
+      "why": "Les titres soulignent l’émission de crédits de règlement PFAS aux clients et l’approbation réglementaire d’un dispositif de crédit, ce qui attire l’attention.",
+      "risk": "Le risque principal est lié à d’éventuelles nouvelles obligations réglementaires ou litiges supplémentaires."
+    },
+    {
+      "symbol": "BAH",
+      "mentions": 2,
+      "headlines": [
+        "UBS Adjusts Booz Allen Hamilton Price Target to $86",
+        "Citigroup Maintains Neutral on Booz Allen Hamilton, Raises Price Target to $88"
+      ],
+      "last_at": "2026-10-26T18:02:29Z",
+      "sentiment": 0.5,
+      "price": 83.36,
+      "adv_usd": 132955538.57421875,
+      "chg_5d": 12.6,
+      "chg_20d": 18.7,
+      "rsi": 73.3,
+      "trend": "haussiere",
+      "hv": 0.41365095214745184,
+      "niche": false,
+      "score": 5.697,
+      "why": "Les titres rapportent une révision à la hausse des objectifs de cours par UBS et Citi, ce qui capte l’intérêt des investisseurs.",
+      "risk": "Le risque principal demeure l’incertitude quant à la capacité de l’entreprise à atteindre les performances attendues."
     }
   ]
 }
