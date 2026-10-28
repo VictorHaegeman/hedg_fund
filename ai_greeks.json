@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T20:04:27",
+  "updated_at": "2026-10-28T21:08:12",
   "positions": [
     {
       "id": "464c6aacc5",
@@ -7,6 +7,8 @@
       "underlying": "BAH",
       "spot": 83.49,
       "delta": 122.16,
+      "option_delta": null,
+      "hedge_shares": 0,
       "delta_usd": 10199.11,
       "gamma_usd": 0.0,
       "vega": 0.0,
@@ -19,6 +21,8 @@
       "underlying": "XOM",
       "spot": 182.08,
       "delta": 54.37,
+      "option_delta": null,
+      "hedge_shares": 0,
       "delta_usd": 9900.43,
       "gamma_usd": 0.0,
       "vega": 0.0,
@@ -31,6 +35,8 @@
       "underlying": "AMD",
       "spot": 578.43,
       "delta": 17.45,
+      "option_delta": null,
+      "hedge_shares": 0,
       "delta_usd": 10092.56,
       "gamma_usd": 0.0,
       "vega": 0.0,
