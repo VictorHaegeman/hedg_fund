@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T21:50:18",
+  "updated_at": "2026-10-28T04:00:45",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -14,7 +14,7 @@
       "last_at": "2026-10-27T20:31:40Z",
       "sentiment": 1.0,
       "price": 96.01,
-      "adv_usd": 272903220.0584801,
+      "adv_usd": 273333949.73106384,
       "chg_5d": 3.4,
       "chg_20d": 10.5,
       "rsi": 62.8,
@@ -22,8 +22,8 @@
       "hv": 0.23262233272085286,
       "niche": false,
       "score": 7.899,
-      "why": "Les résultats du troisième trimestre 2026 supérieurs aux prévisions et la hausse des prévisions de bénéfice par action attirent l'attention.",
-      "risk": "Le risque réside dans la dépendance aux volumes de ventes de gaz naturel, qui peuvent être volatils."
+      "why": "Résultats du T3 supérieurs aux prévisions et relèvement des prévisions de bénéfice attirent l'attention.",
+      "risk": "Le risque réside dans la dépendance aux volumes de ventes de gaz naturel, sensibles aux prix du marché."
     },
     {
       "symbol": "BKR",
@@ -37,7 +37,7 @@
       "last_at": "2026-10-27T21:31:55Z",
       "sentiment": 0.625,
       "price": 59.0,
-      "adv_usd": 355206911.3203621,
+      "adv_usd": 355644765.0703621,
       "chg_5d": 6.0,
       "chg_20d": 5.5,
       "rsi": 58.7,
@@ -45,71 +45,31 @@
       "hv": 0.3630388377034411,
       "niche": false,
       "score": 7.269,
-      "why": "Baker Hughes a relevé ses prévisions de ventes pour 2026 et indique des ventes solides au quatrième trimestre, ce qui soutient l'optimisme.",
-      "risk": "Le secteur des services pétroliers reste sensible aux fluctuations des prix du pétrole et aux ralentissements de l'activité industrielle."
+      "why": "Hausse des prévisions de ventes pour FY2026 montre une dynamique positive.",
+      "risk": "L'activité de services pétroliers reste exposée aux cycles de l'énergie et aux dépenses d'exploration volatiles."
     },
     {
-      "symbol": "BBNX",
-      "mentions": 2,
+      "symbol": "SLDE",
+      "mentions": 5,
       "headlines": [
-        "Beta Bionics Raises FY2026 Sales Guidance from $121.000M-$126.000M to $124.000M-$126.000M vs $126.626M Est",
-        "Beta Bionics Q3 EPS $(0.52) Beats $(0.53) Estimate, Sales $35.505M Beat $34.722M Estimate"
+        "Slide Insurance Declares Quarterly and One-Time Special Dividend",
+        "Slide Insurance Holdings, Inc. Reports Third Quarter 2026 Financial Results",
+        "Slide Insurance Holdings, Inc. Enters Into New $1.07 Billion Credit Facility",
+        "Slide Insurance Holdings Q3 EPS $1.09 Beats $0.59 Estimate, Sales $361.100M Miss $390.663M Estimate"
       ],
-      "last_at": "2026-10-27T20:03:27Z",
-      "sentiment": 1.0,
-      "price": 21.39,
-      "adv_usd": 19205630.49669075,
-      "chg_5d": 20.6,
-      "chg_20d": 10.2,
-      "rsi": 64.7,
+      "last_at": "2026-10-27T22:02:30Z",
+      "sentiment": 0.6,
+      "price": 28.39,
+      "adv_usd": 33074434.39007759,
+      "chg_5d": 3.8,
+      "chg_20d": 26.2,
+      "rsi": 70.7,
       "trend": "haussiere",
-      "hv": 0.5530837872837744,
+      "hv": 0.307846482679443,
       "niche": true,
-      "score": 7.197,
-      "why": "Beta Bionics a légèrement augmenté ses prévisions de ventes 2026 tout en affichant un bénéfice par action meilleur que prévu.",
-      "risk": "L'entreprise reste déficitaire et dépend fortement de l'adoption de ses dispositifs médicaux, ce qui expose à des incertitudes réglementaires."
-    },
-    {
-      "symbol": "CAI",
-      "mentions": 2,
-      "headlines": [
-        "BTIG Maintains Buy Rating and Raises Price Target for Caris Life Sciences",
-        "BTIG Maintains Buy on Caris Life Sciences, Raises Price Target to $38"
-      ],
-      "last_at": "2026-10-27T18:02:10Z",
-      "sentiment": 1.0,
-      "price": 33.67,
-      "adv_usd": 106558918.34730569,
-      "chg_5d": 8.2,
-      "chg_20d": 6.7,
-      "rsi": 66.4,
-      "trend": "haussiere",
-      "hv": 0.6963426210478039,
-      "niche": false,
-      "score": 7.197,
-      "why": "BTIG maintient une recommandation d'achat et relève l'objectif de cours, renforçant la perspective positive sur Caris Life Sciences.",
-      "risk": "Le risque principal provient de la réussite des essais cliniques et de l'approbation réglementaire de ses thérapies."
-    },
-    {
-      "symbol": "CDNS",
-      "mentions": 2,
-      "headlines": [
-        "Rosenblatt Maintains Buy on Cadence Design Systems, Raises Price Target to $425",
-        "JP Morgan Maintains Overweight on Cadence Design Systems, Raises Price Target to $420"
-      ],
-      "last_at": "2026-10-27T19:56:15Z",
-      "sentiment": 1.0,
-      "price": 343.08,
-      "adv_usd": 807672742.5961075,
-      "chg_5d": 7.3,
-      "chg_20d": 5.8,
-      "rsi": 57.4,
-      "trend": "haussiere",
-      "hv": 0.4590097312340396,
-      "niche": false,
-      "score": 7.197,
-      "why": "Les analystes Rosenblatt et JP Morgan confirment leurs recommandations d'achat et augmentent leurs objectifs de cours, soutenant la dynamique haussière.",
-      "risk": "La société est exposée à la concurrence intense dans le secteur des logiciels de conception de puces, ce qui pourrait freiner la croissance."
+      "score": 7.144,
+      "why": "Dividende spécial et nouvelle facilité de crédit de 1,07 Md$ renforcent l'attrait pour les actionnaires.",
+      "risk": "Le risque de crédit lié à l'augmentation de l'endettement et à la dépendance aux sinistres d'assurance."
     },
     {
       "symbol": "NXPI",
@@ -123,7 +83,7 @@
       "last_at": "2026-10-27T21:29:14Z",
       "sentiment": 0.2857142857142857,
       "price": 253.5,
-      "adv_usd": 820875125.3809143,
+      "adv_usd": 822139177.7809143,
       "chg_5d": 6.7,
       "chg_20d": 7.2,
       "rsi": 62.6,
@@ -131,8 +91,52 @@
       "hv": 0.3661887173319205,
       "niche": false,
       "score": 7.016,
-      "why": "Les résultats du troisième trimestre 2026 de NXP Semiconductors sont largement commentés, suscitant un fort intérêt des investisseurs.",
-      "risk": "Le titre a connu une pression à la baisse après les résultats, reflétant les inquiétudes sur la marge et la demande cyclique du marché des semi-conducteurs."
+      "why": "Résultats du T3 publiés, mais le titre chute, suscitant l'intérêt des analystes.",
+      "risk": "La concurrence accrue dans les semi-conducteurs et les marges sous pression peuvent freiner la performance."
+    },
+    {
+      "symbol": "EXLS",
+      "mentions": 3,
+      "headlines": [
+        "ExlService Holdings, Inc. Reports Q3 2026 Financial Results and Raises Full-Year Guidance",
+        "ExlService Holdings Q3 Adj. EPS $0.62 Beats $0.56 Estimate, Sales $634.000M Beat $615.431M Estimate",
+        "ExlService Hldgs Raises FY2026 Adj EPS Guidance from $2.25-$2.29 to $2.34-$2.36 vs $2.29 Est; Raises FY2026 Sales Guidance from $2.390B-$2.4"
+      ],
+      "last_at": "2026-10-27T22:01:58Z",
+      "sentiment": 1.0,
+      "price": 40.93,
+      "adv_usd": 91328076.50629044,
+      "chg_5d": 0.2,
+      "chg_20d": 18.4,
+      "rsi": 67.8,
+      "trend": "haussiere",
+      "hv": 0.3665800018497155,
+      "niche": false,
+      "score": 6.813,
+      "why": "Bénéfice ajusté supérieur aux attentes et relèvement des prévisions annuelles.",
+      "risk": "La croissance dépend fortement aux contrats de services technologiques, sensibles aux ralentissements économiques."
+    },
+    {
+      "symbol": "BBNX",
+      "mentions": 3,
+      "headlines": [
+        "Beta Bionics Q3 2026 Earnings Call Transcript",
+        "Beta Bionics Raises FY2026 Sales Guidance from $121.000M-$126.000M to $124.000M-$126.000M vs $126.626M Est",
+        "Beta Bionics Q3 EPS $(0.52) Beats $(0.53) Estimate, Sales $35.505M Beat $34.722M Estimate"
+      ],
+      "last_at": "2026-10-27T21:47:59Z",
+      "sentiment": 0.6666666666666666,
+      "price": 21.39,
+      "adv_usd": 19221695.455732346,
+      "chg_5d": 20.6,
+      "chg_20d": 10.2,
+      "rsi": 64.7,
+      "trend": "haussiere",
+      "hv": 0.5530837872837744,
+      "niche": true,
+      "score": 6.773,
+      "why": "Amélioration des prévisions de ventes et bénéfice supérieur aux estimations malgré un EPS négatif.",
+      "risk": "Le modèle commercial encore déficitaire expose l'entreprise à des besoins de financement supplémentaires."
     },
     {
       "symbol": "WCN",
@@ -145,7 +149,7 @@
       "last_at": "2026-10-27T21:30:17Z",
       "sentiment": 0.6666666666666666,
       "price": 181.97,
-      "adv_usd": 360648259.5275024,
+      "adv_usd": 360742811.1401367,
       "chg_5d": 7.4,
       "chg_20d": 17.0,
       "rsi": 71.6,
@@ -153,164 +157,166 @@
       "hv": 0.42863525326480617,
       "niche": false,
       "score": 6.773,
-      "why": "UBS a relevé son objectif de cours à 215 $, soulignant la performance historique de l'action sur 15 ans.",
-      "risk": "Le risque réside dans la sensibilité aux cycles économiques du secteur des services de gestion des déchets."
-    },
-    {
-      "symbol": "OVV",
-      "mentions": 3,
-      "headlines": [
-        "Goldman Sachs Upgrades Ovintiv Price Target",
-        "Stephens & Co. Maintains Equal-Weight on Ovintiv, Raises Price Target to $77",
-        "Goldman Sachs Maintains Buy on Ovintiv, Raises Price Target to $72"
-      ],
-      "last_at": "2026-10-27T18:02:15Z",
-      "sentiment": 0.6666666666666666,
-      "price": 71.13,
-      "adv_usd": 213625435.99107552,
-      "chg_5d": 1.2,
-      "chg_20d": 20.9,
-      "rsi": 68.0,
-      "trend": "haussiere",
-      "hv": 0.29808848614910444,
-      "niche": false,
-      "score": 6.013,
-      "why": "Goldman Sachs et Stephens & Co. ont relevé leurs objectifs de cours, indiquant une confiance accrue dans les perspectives d'Ovintiv.",
-      "risk": "L'entreprise est exposée aux fluctuations des prix de l'énergie et aux risques liés à la transition énergétique."
+      "why": "Analyse UBS qui maintient le conseil d'achat et augmente le prix cible, renforçant la confiance.",
+      "risk": "Le secteur des services de gestion des déchets peut être affecté par des régulations environnementales plus strictes."
     },
     {
       "symbol": "FFIV",
-      "mentions": 5,
+      "mentions": 6,
       "headlines": [
+        "F5, Inc. Reports Q4 Financial Results and Announces $1.5 Billion Share Repurchase Authorization",
         "F5 Q4 2026 Earnings Call Transcript",
         "F5 Sees FY2027 Adj EPS $18.00-$18.30 vs $18.08 Est; Sees Sales $3.690B-$3.724B vs $3.643B Est",
-        "F5 Authorizes $1.5B Stock Buyback Program, Incremental To The $322M Remaining In Its Existing Program",
-        "F5 Sees Q1 Adj EPS $4.25-$4.37 vs $4.36 Est; Sees Sales $875.000M-$895.000M vs $871.452M Est"
+        "F5 Authorizes $1.5B Stock Buyback Program, Incremental To The $322M Remaining In Its Existing Program"
       ],
-      "last_at": "2026-10-27T21:47:45Z",
-      "sentiment": 0.4,
+      "last_at": "2026-10-27T22:01:38Z",
+      "sentiment": 0.3333333333333333,
       "price": 459.36,
-      "adv_usd": 268904226.9800598,
+      "adv_usd": 268987623.7854004,
       "chg_5d": 0.6,
       "chg_20d": 4.9,
       "rsi": 53.9,
       "trend": "haussiere",
       "hv": 0.3092425446755285,
       "niche": false,
-      "score": 5.904,
-      "why": "F5 prévoit un bénéfice ajusté solide pour 2027 et a autorisé un important programme de rachat d'actions, ce qui attire les investisseurs.",
-      "risk": "Le principal risque est la concurrence accrue dans le secteur de la cybersécurité et la dépendance aux dépenses informatiques des entreprises."
+      "score": 6.012,
+      "why": "Annonce d'un programme de rachat d'actions de 1,5 Md$ et résultats du T4 solides.",
+      "risk": "Le risque réside dans la concurrence sur les solutions de cybersécurité et la dépendance aux dépenses IT des entreprises."
     },
     {
-      "symbol": "MANH",
-      "mentions": 4,
+      "symbol": "MIR",
+      "mentions": 3,
       "headlines": [
-        "Manhattan Associates Q3 2026 Earnings Call Transcript",
-        "Manhattan Associates Narrows FY2026 GAAP EPS Guidance from $3.59-$3.65 to $3.62-$3.64 vs $3.63 Est",
-        "Manhattan Associates Raises FY2026 Adj EPS Guidance from $5.44-$5.50 to $5.54-$5.56 vs $5.48 Est; Raises FY2026 Sales Guidance from $1.160B-",
-        "Manhattan Associates Q3 Adj. EPS $1.55 Beats $1.46 Estimate, Sales $306.187M Beat $297.062M Estimate"
+        "Mirion Announces Third Quarter 2026 Financial Results",
+        "Mirion Technologies Narrows FY2026 Adj EPS Guidance from $0.48-$0.55 to $0.50-$0.54 vs $0.54 Est; Raises FY2026 Sales Guidance from $1.129B-",
+        "Mirion Technologies Q3 Adj. EPS $0.12, Inline, Sales $277.800M Beat $274.726M Estimate"
       ],
-      "last_at": "2026-10-27T21:24:08Z",
-      "sentiment": 0.5,
-      "price": 233.98,
-      "adv_usd": 143577880.30938643,
-      "chg_5d": 0.5,
-      "chg_20d": 16.9,
-      "rsi": 66.3,
-      "trend": "haussiere",
-      "hv": 0.34106237680273804,
-      "niche": false,
-      "score": 5.819,
-      "why": "Manhattan Associates a affiné ses prévisions de bénéfice et relevé ses prévisions de ventes, montrant une amélioration de la visibilité financière.",
-      "risk": "Le risque provient de la dépendance aux cycles d'investissement des entreprises en logistique et de la concurrence technologique."
-    },
-    {
-      "symbol": "BXP",
-      "mentions": 2,
-      "headlines": [
-        "BXP Raises FY2026 FFO Guidance from $6.99-$7.05 to $7.06-$7.08 vs $7.01 Est",
-        "Boston Props Q3 FFO $1.89 Beats $1.80 Estimate, Sales $911.431M Beat $896.101M Estimate"
-      ],
-      "last_at": "2026-10-27T20:08:28Z",
+      "last_at": "2026-10-27T22:02:45Z",
       "sentiment": 1.0,
-      "price": 60.89,
-      "adv_usd": 80770464.08143616,
-      "chg_5d": 3.1,
-      "chg_20d": -0.2,
-      "rsi": 50.9,
+      "price": 15.41,
+      "adv_usd": 65133713.99719238,
+      "chg_5d": 1.1,
+      "chg_20d": 7.5,
+      "rsi": 46.9,
       "trend": "neutre",
-      "hv": 0.3102105268943038,
+      "hv": 0.4459148375479073,
       "niche": false,
-      "score": 5.817,
-      "why": "Boston Properties a relevé ses prévisions de FFO pour 2026 et a dépassé les estimations de FFO et de revenus au troisième trimestre.",
-      "risk": "Le risque principal est lié à la santé du marché immobilier de bureaux, sensible aux taux d'intérêt et aux tendances de travail à distance."
-    },
-    {
-      "symbol": "SNOW",
-      "mentions": 3,
-      "headlines": [
-        "Jade Global Launches JadeOrbit OmniLens AI on Snowflake Marketplace",
-        "Oracle Expands Native AI and Data Services on OCI with Snowflake",
-        "Oracle And Snowflake Partner To Offer Snowflake AI Data Cloud As A Native First-Party Service On Oracle Cloud Infrastructure"
-      ],
-      "last_at": "2026-10-27T19:01:55Z",
-      "sentiment": 0.3333333333333333,
-      "price": 337.42,
-      "adv_usd": 1427684009.879184,
-      "chg_5d": 5.6,
-      "chg_20d": 2.2,
-      "rsi": 53.4,
-      "trend": "haussiere",
-      "hv": 0.5605631694973546,
-      "niche": false,
-      "score": 5.773,
-      "why": "Snowflake bénéficie d'annonces de partenariats IA avec Oracle et de nouvelles offres sur son marketplace, renforçant son attractivité.",
-      "risk": "Le risque réside dans la concurrence croissante des grands fournisseurs de cloud et la nécessité de monétiser rapidement les nouvelles fonctionnalités IA."
-    },
-    {
-      "symbol": "EQT",
-      "mentions": 3,
-      "headlines": [
-        "UBS Maintains Buy on EQT, Lowers Price Target to $75",
-        "EQT Q3 Adj. EPS $0.42 Beats $0.38 Estimate, Sales $1.586B Miss $1.813B Estimate",
-        "Stephens & Co. Maintains Overweight on EQT, Raises Price Target to $75"
-      ],
-      "last_at": "2026-10-27T21:02:43Z",
-      "sentiment": 0.3333333333333333,
-      "price": 56.27,
-      "adv_usd": 449969891.7551634,
-      "chg_5d": 2.6,
-      "chg_20d": 15.1,
-      "rsi": 64.5,
-      "trend": "haussiere",
-      "hv": 0.2702703623480782,
-      "niche": false,
-      "score": 5.293,
-      "why": "EQT a battu les estimations d'EPS au troisième trimestre, même si les ventes sont en dessous des prévisions, ce qui maintient l'intérêt des analystes.",
-      "risk": "Le principal risque est la dépendance aux performances des projets d'infrastructure et aux conditions de financement du marché."
+      "score": 5.993,
+      "why": "Résultats du T3 en ligne et ajustement à la hausse des prévisions de ventes et d'EPS.",
+      "risk": "Les marges peuvent être comprimées par des coûts de production et des exigences réglementaires en matière de sécurité."
     },
     {
       "symbol": "CSGP",
-      "mentions": 6,
+      "mentions": 8,
       "headlines": [
+        "CoStar Group Reports Q3 Results and Updates 2026 Guidance",
+        "CoStar Group Agrees to Acquire Vexcel Group",
         "CoStar Group To Acquire Survey-Grade Aerial Imagery Provider Vexcel Group For ~$730M In Cash",
-        "CoStar Group Sees Q4 Adj EPS $0.46-$0.50 vs $0.49 Est; Sees Sales $976.000M-$996.000M vs $985.089M Est",
-        "CoStar Group Raises FY2026 Adj EPS Guidance from $1.32-$1.39 to $1.38-$1.41 vs $1.37 Est; Raises FY2026 Sales Guidance from $3.715B-$3.755B ",
-        "CoStar Group Sees Q4 GAAP EPS $0.24-$0.27 vs $0.30 Est"
+        "CoStar Group Sees Q4 Adj EPS $0.46-$0.50 vs $0.49 Est; Sees Sales $976.000M-$996.000M vs $985.089M Est"
       ],
-      "last_at": "2026-10-27T20:14:11Z",
-      "sentiment": 0.3333333333333333,
+      "last_at": "2026-10-27T22:02:16Z",
+      "sentiment": 0.375,
       "price": 32.01,
-      "adv_usd": 169523814.10828838,
+      "adv_usd": 169672905.47697067,
       "chg_5d": -3.1,
       "chg_20d": 18.8,
       "rsi": 54.1,
       "trend": "haussiere",
       "hv": 0.538282614221718,
       "niche": false,
-      "score": 5.272,
-      "why": "CoStar Group a annoncé l'acquisition de Vexcel et a relevé ses prévisions d'EPS et de ventes, stimulant l'optimisme.",
-      "risk": "Le risque provient de l'intégration de l'acquisition et de la sensibilité aux cycles du marché immobilier commercial."
+      "score": 5.899,
+      "why": "Acquisition de Vexcel Group annoncée, élargissant l'offre de données géospatiales.",
+      "risk": "L'intégration de l'acquisition et la dépendance aux cycles du marché immobilier commercial représentent des incertitudes."
+    },
+    {
+      "symbol": "MANH",
+      "mentions": 5,
+      "headlines": [
+        "Manhattan Associates Reports Third Quarter 2026 Financial Results",
+        "Manhattan Associates Q3 2026 Earnings Call Transcript",
+        "Manhattan Associates Narrows FY2026 GAAP EPS Guidance from $3.59-$3.65 to $3.62-$3.64 vs $3.63 Est",
+        "Manhattan Associates Raises FY2026 Adj EPS Guidance from $5.44-$5.50 to $5.54-$5.56 vs $5.48 Est; Raises FY2026 Sales Guidance from $1.160B-"
+      ],
+      "last_at": "2026-10-27T22:02:32Z",
+      "sentiment": 0.4,
+      "price": 233.98,
+      "adv_usd": 143637978.07128906,
+      "chg_5d": 0.5,
+      "chg_20d": 16.9,
+      "rsi": 66.3,
+      "trend": "haussiere",
+      "hv": 0.34106237680273804,
+      "niche": false,
+      "score": 5.884,
+      "why": "Résultats du T3 solides et légère hausse des prévisions d'EPS.",
+      "risk": "La concurrence dans les solutions logistiques et les marges liées aux investissements technologiques sont des facteurs de risque."
+    },
+    {
+      "symbol": "SKHY",
+      "mentions": 6,
+      "headlines": [
+        "Jim Cramer Says Micron Shouldn't Follow 'Whatever' SK Hynix Does As MU Shares Jump After Hours: 'I'm Hoping The Linkage Ends One Day'",
+        "SK Hynix Shares Spike in Seoul as Q3 Profit Jumps More Than 7-Fold: Memory Giant Plans $75 Billion in Shareholder Returns",
+        "SK Hynix, Boeing, SoFi, Seagate and Robinhood: Why These 5 Stocks Are on Investors' Radars Today",
+        "SK Hynix Announced Special Dividend Of KRW 10K Per Share Related To Kioxia Investment"
+      ],
+      "last_at": "2026-10-28T03:26:17Z",
+      "sentiment": 0.6666666666666666,
+      "price": 145.36,
+      "adv_usd": 3069971025.7431793,
+      "chg_5d": 4.0,
+      "chg_20d": -22.1,
+      "rsi": 41.0,
+      "trend": "baissiere",
+      "hv": 0.6485439058554294,
+      "niche": false,
+      "score": 5.692,
+      "why": "Profit du T3 multiplié par 7 et annonce de 75 Md$ de retours aux actionnaires attirent l'attention.",
+      "risk": "Le secteur de la mémoire est très cyclique et sensible aux fluctuations de la demande des PC et serveurs."
+    },
+    {
+      "symbol": "PPG",
+      "mentions": 3,
+      "headlines": [
+        "PPG Industries, Inc. Reports Q3 2026 Financial Results",
+        "PPG Indus Raises FY2026 Adj EPS Guidance from $7.70-$8.10 to $7.90-$8.10 vs $7.88 Est",
+        "PPG Indus Q3 Adj. EPS $2.25 Beats $2.12 Estimate, Sales $4.353B Beat $4.284B Estimate"
+      ],
+      "last_at": "2026-10-27T22:01:43Z",
+      "sentiment": 0.6666666666666666,
+      "price": 113.44,
+      "adv_usd": 190514286.1405182,
+      "chg_5d": 4.4,
+      "chg_20d": 7.0,
+      "rsi": 61.8,
+      "trend": "neutre",
+      "hv": 0.2300231476597021,
+      "niche": false,
+      "score": 5.653,
+      "why": "Bénéfice ajusté supérieur aux attentes et relèvement des prévisions d'EPS pour FY2026.",
+      "risk": "L'exposition aux cycles de la construction et aux prix des matières premières peut affecter les marges."
+    },
+    {
+      "symbol": "BXP",
+      "mentions": 3,
+      "headlines": [
+        "BXP, Inc. Reports Third Quarter 2026 Financial Results",
+        "BXP Raises FY2026 FFO Guidance from $6.99-$7.05 to $7.06-$7.08 vs $7.01 Est",
+        "Boston Props Q3 FFO $1.89 Beats $1.80 Estimate, Sales $911.431M Beat $896.101M Estimate"
+      ],
+      "last_at": "2026-10-27T22:01:45Z",
+      "sentiment": 0.6666666666666666,
+      "price": 60.89,
+      "adv_usd": 80770509.7489357,
+      "chg_5d": 3.1,
+      "chg_20d": -0.2,
+      "rsi": 50.9,
+      "trend": "neutre",
+      "hv": 0.3102105268943038,
+      "niche": false,
+      "score": 5.393,
+      "why": "Hausse du guidance FFO et résultats du T3 supérieurs aux prévisions renforcent l'optimisme.",
+      "risk": "Le secteur immobilier commercial est sensible aux taux d'intérêt et aux conditions économiques générales."
     },
     {
       "symbol": "LOGI",
@@ -323,7 +329,7 @@
       "last_at": "2026-10-27T20:58:04Z",
       "sentiment": 0.3333333333333333,
       "price": 111.82,
-      "adv_usd": 104184004.5650444,
+      "adv_usd": 104202510.7749939,
       "chg_5d": 2.3,
       "chg_20d": 11.1,
       "rsi": 61.7,
@@ -331,8 +337,8 @@
       "hv": 0.33331678724629965,
       "niche": false,
       "score": 5.233,
-      "why": "Logitech a présenté des prévisions de ventes stables et a dépassé les estimations d'EPS, ce qui attire l'attention des investisseurs.",
-      "risk": "Le risque principal est la concurrence intense dans le secteur des périphériques informatiques et la dépendance aux dépenses des consommateurs."
+      "why": "Guidance de ventes pour le T3 légèrement négative mais le titre montre des résultats d'EPS supérieurs aux attentes.",
+      "risk": "La dépendance aux ventes de périphériques et aux tendances de consommation technologique crée une incertitude de la demande."
     }
   ]
 }
