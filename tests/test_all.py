@@ -888,10 +888,11 @@ def test_ai_live_greeks_and_limits(tmp_path):
     client.data_iv = 0.3
     ai.run_cycle(client, straddle, state_path=st, greeks_path=gp, **kw)
     t = ai.load_trades(st)
-    if not t:          # refusé par le filtre d'avantage de vol : on force l'ouverture pour le test
-        ai.VOL_EDGE_MAX, old = 99, ai.VOL_EDGE_MAX
+    if not t:          # refusé par les filtres de vol (vol réalisée factice ≈ 0) : on force
+        old = ai.VOL_EDGE_MAX, ai.LONG_VOL_MAX_IV_HV
+        ai.VOL_EDGE_MAX = ai.LONG_VOL_MAX_IV_HV = 1e9
         ai.run_cycle(client, straddle, state_path=st, greeks_path=gp, **kw)
-        ai.VOL_EDGE_MAX = old
+        ai.VOL_EDGE_MAX, ai.LONG_VOL_MAX_IV_HV = old
         t = ai.load_trades(st)
     assert t and t[0]["strategy"] == "LONG_STRADDLE"
     out, _ = ai.run_cycle(client, lambda p: {"action": "HOLD", "reasoning": "x"},
@@ -901,6 +902,9 @@ def test_ai_live_greeks_and_limits(tmp_path):
     tot = g["total"]
     assert tot["vega"] > 0 and tot["theta_day"] < 0 and tot["gamma_usd"] > 0   # long straddle
     assert abs(tot["delta_usd"]) < 0.3 * 140 * 100 * t[0]["qty"]               # ~ delta-neutre
+    assert "gamma_1pct" in tot and tot["gamma_1pct"] > 0
+    tr = ai.load_trades(st)[0]
+    assert tr.get("attr_prev") and set(tr["attr"]) == {"delta", "gamma", "theta", "vega"}
     ok, why = ai.greek_limits_ok({"total": {"delta_usd": 80_000, "vega": 0, "theta_day": 0}}, 100_000)
     assert not ok and "delta" in why
     ok, _ = ai.greek_limits_ok(g, 100_000)
@@ -1240,3 +1244,70 @@ def test_ai_covered_call_on_held_shares(tmp_path):
     assert client.orders[n]["position_intent"] == "buy_to_close" and "BAH" in client.closed
     st = {t["id"]: t["status"] for t in ai.load_trades(state)}
     assert st["s1"] == "CLOSED" and st[cc["id"]] == "CLOSED"
+
+
+def test_ai_limit_orders_mid_then_market_only_if_urgent():
+    from quantlab import ai_trader as ai
+    legs = [{"symbol": "A", "side": "buy", "ratio": 1}, {"symbol": "B", "side": "sell", "ratio": 1}]
+    q = {"A": (2.00, 2.20), "B": (1.00, 1.10)}
+    mid, half = ai.net_mid(legs, q, True)
+    assert abs(mid - 1.05) < 1e-9 and abs(half - 0.15) < 1e-9          # débit 2,10 − 1,05
+    cmid, _ = ai.net_mid(legs, q, False)
+    assert abs(cmid + 1.05) < 1e-9                                       # clôture = crédit
+    body = ai.option_order(legs, 2, True, mid)
+    assert body["type"] == "limit" and body["limit_price"] == "1.05" and body["order_class"] == "mleg"
+    credit = ai.option_order([{"symbol": "C", "side": "sell", "ratio": 1}], 1, True, -3.12)
+    assert credit["limit_price"] == "3.10" and credit["side"] == "sell"    # tick de 0,05 au-dessus de 3 $
+
+    class NoFill(FakeAlpaca):
+        def wait_fill(self, oid, timeout=15, sleep=None):
+            return None if self.orders[-1].get("type") == "limit" else {"status": "filled"}
+    c = NoFill()
+    assert ai.execute_options(c, legs, 1, True, quotes=q, sleep=lambda s: None) is None
+    assert [o["type"] for o in c.orders] == ["limit", "limit"]           # milieu puis plus agressif
+    assert float(c.orders[1]["limit_price"]) > float(c.orders[0]["limit_price"])
+    c = NoFill()
+    assert ai.execute_options(c, legs, 1, False, urgent=True, quotes=q, sleep=lambda s: None)
+    assert [o["type"] for o in c.orders] == ["limit", "limit", "market"]  # stop : au marché à la fin
+
+
+def test_ai_early_assignment_and_gamma_limit(tmp_path):
+    from quantlab import ai_trader as ai
+    state = str(tmp_path / "ai.json")
+    t = {"id": "o1", "status": "OPEN", "kind": "options", "strategy": "BULL_PUT_SPREAD",
+         "underlying": "NVDA", "qty": 1, "expiry": "2099-01-01", "tp_amount": 60, "sl_amount": 120,
+         "hedge_shares": 0, "hedge_cash": 0.0,
+         "legs": [{"symbol": "NVDA990101P00130000", "side": "buy", "type": "put", "strike": 130.0, "ratio": 1},
+                  {"symbol": "NVDA990101P00135000", "side": "sell", "type": "put", "strike": 135.0, "ratio": 1}]}
+    ai.save_trades([t], state)
+    client = FakeAlpaca()
+    # le put vendu a été exercé : il a disparu et 100 actions NVDA ont été livrées
+    client.pos = {"NVDA990101P00130000": {"unrealized_pl": "-50"},
+                  "NVDA": {"qty": "100", "unrealized_pl": "-200"}}
+    lines = ai.manage_positions(client, ai.load_trades(state), True, sleep=lambda s: None)
+    assert any("Exercice anticipé" in l for l in lines), lines
+    assert any(o.get("symbol") == "NVDA" and o["side"] == "sell" and o["qty"] == "100"
+               for o in client.orders)                                   # actions reçues revendues
+    ok, why = ai.greek_limits_ok({"total": {"gamma_1pct": -9_000}}, 100_000)
+    assert not ok and "gamma" in why
+    ctx = {"stocks": ["NVDA"], "cryptos": [], "market_open": True, "open_underlyings": [],
+           "equity": 100_000, "iv_hv": {"NVDA": 1.8}}
+    ok, why = ai.validate({"strategy": "LONG_STRADDLE", "underlying": "NVDA", "confidence": 0.8}, ctx)
+    assert not ok and "gonflée" in why
+
+
+def test_ai_pnl_attribution_formula():
+    from datetime import datetime, timedelta
+    from quantlab import ai_trader as ai
+    from quantlab import pricing as pr
+    t0 = datetime(2026, 10, 1, 15, 0)
+    g = pr.greeks(100, 100, 30 / 365, 0.04, 0.3, "call").scale(100)
+    t = {}
+    ai.attribute_pnl(t, 100.0, 0.30, g, now=t0)
+    acc = ai.attribute_pnl(t, 102.0, 0.32, g, now=t0 + timedelta(days=1))
+    assert abs(acc["delta"] - g.delta * 2) < 0.01 and abs(acc["gamma"] - 0.5 * g.gamma * 4) < 0.01
+    assert abs(acc["theta"] - g.theta / 365) < 0.01 and abs(acc["vega"] - g.vega / 100 * 2) < 0.01
+    # la somme approche la vraie variation de prix Black-Scholes (Taylor ordre 2)
+    v0 = pr.bs_price(100, 100, 30 / 365, 0.04, 0.30, "call") * 100
+    v1 = pr.bs_price(102, 100, 29 / 365, 0.04, 0.32, "call") * 100
+    assert abs(sum(acc.values()) - (v1 - v0)) < 0.1 * abs(v1 - v0)

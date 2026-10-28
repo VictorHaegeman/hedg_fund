@@ -99,6 +99,11 @@ SELL_NO_EARNINGS_DAYS = 45     # pas de vente d'options si des résultats tomben
 # Delta hedging : stratégies « neutres » rendues delta-neutres avec des actions
 DELTA_NEUTRAL = {"LONG_STRADDLE", "LONG_STRANGLE", "IRON_CONDOR", "LONG_CALL_BUTTERFLY"}
 HEDGE_BAND_PCT = 0.005         # on recouvre quand |delta $| d'un trade dépasse 0,5 % de l'équité
+MAX_GAMMA_PCT = 0.05           # gamma négatif : variation du delta $ pour 1 % ≤ 5 % de l'équité
+LONG_VOL_MAX_IV_HV = 1.3       # pas d'achat de straddle/strangle si la vol implicite est déjà gonflée
+# Exécution : ordres à cours limité au prix du milieu (le cours : l'écart achat/vente est un coût)
+LIMIT_STEPS = (0.0, 0.5)       # 1er essai au milieu, 2e en cédant la moitié du demi-écart
+LIMIT_WAIT_S = 20
 RISK_FREE = 0.04               # taux sans risque annuel pour Black-Scholes
 VOL_EDGE_MAX = 1.15            # long vol refusé si prix payé > 1,15 × valeur BS à la vol réalisée
 MAX_DELTA_PCT = 0.50           # |delta $ du portefeuille| ≤ 50 % de l'équité, sinon pas de nouveau trade
@@ -621,7 +626,8 @@ def build_option_trade(strategy: str, chain: list[dict], spot: float):
     debit = (sum(q * c["ask"] for (c, s), q in zip(legs, ratio) if s == "buy")
              - sum(q * c["bid"] for (c, s), q in zip(legs, ratio) if s == "sell"))
     out_legs = [{"symbol": c["symbol"], "side": s, "strike": c["strike"],
-                 "type": c["type"], "ratio": q, "iv": c.get("iv")}
+                 "type": c["type"], "ratio": q, "iv": c.get("iv"),
+                 "bid": c.get("bid"), "ask": c.get("ask")}
                 for (c, s), q in zip(legs, ratio)]
     if strategy in CREDIT or strategy == "COVERED_CALL":
         credit = -debit
@@ -683,16 +689,76 @@ def course_analysis(plan: dict, spot: float, hv: float | None) -> dict:
         return {}
 
 
-def option_order(legs: list[dict], qty: int, opening: bool) -> dict:
-    """Ordre Alpaca : simple pour une seule jambe (covered call), multi-jambes sinon."""
+def _tick(p: float, single: bool) -> float:
+    step = 0.05 if single and p >= 3 else 0.01
+    return round(round(p / step) * step, 2)
+
+
+def option_order(legs: list[dict], qty: int, opening: bool, limit_net: float | None = None) -> dict:
+    """Ordre Alpaca : simple pour une seule jambe (covered call), multi-jambes sinon.
+    limit_net = débit net maximal par action (négatif = crédit minimal), convention Alpaca."""
     if len(legs) == 1:
         l = legs[0]
         side = l["side"] if opening else ("sell" if l["side"] == "buy" else "buy")
         intent = ((("buy" if side == "buy" else "sell") + "_to_open") if opening
                   else ("sell_to_close" if l["side"] == "buy" else "buy_to_close"))
-        return {"symbol": l["symbol"], "qty": str(qty * l.get("ratio", 1)), "side": side,
+        body = {"symbol": l["symbol"], "qty": str(qty * l.get("ratio", 1)), "side": side,
                 "type": "market", "time_in_force": "day", "position_intent": intent}
-    return mleg_order(legs, qty, opening)
+        if limit_net is not None and abs(limit_net) > 0:
+            body.update(type="limit", limit_price=f"{_tick(abs(limit_net), True):.2f}")
+        return body
+    body = mleg_order(legs, qty, opening)
+    if limit_net is not None:
+        body.update(type="limit", limit_price=f"{_tick(limit_net, False):.2f}")
+    return body
+
+
+def leg_quotes(client: Alpaca, symbols: list[str]) -> dict:
+    """Derniers prix achat/vente de chaque contrat (fail-safe)."""
+    try:
+        snaps = (client.data("/v1beta1/options/snapshots",
+                             {"symbols": ",".join(symbols), "feed": "indicative"}).get("snapshots") or {})
+    except Exception:
+        return {}
+    out = {}
+    for sym, sn in snaps.items():
+        q = (sn or {}).get("latestQuote") or {}
+        if _num(q.get("bp"), 0) > 0 and _num(q.get("ap"), 0) > 0:
+            out[sym] = (float(q["bp"]), float(q["ap"]))
+    return out
+
+
+def net_mid(legs: list[dict], quotes: dict, opening: bool):
+    """(débit net au milieu, demi-écart net) de l'ordre, ou (None, None) sans cotations."""
+    mid = half = 0.0
+    for l in legs:
+        q = quotes.get(l["symbol"])
+        if not q:
+            return None, None
+        side = l["side"] if opening else ("sell" if l["side"] == "buy" else "buy")
+        m, h = (q[0] + q[1]) / 2, (q[1] - q[0]) / 2
+        r = l.get("ratio", 1)
+        mid += r * m if side == "buy" else -r * m
+        half += r * h
+    return mid, half
+
+
+def execute_options(client: Alpaca, legs: list[dict], qty: int, opening: bool,
+                    urgent: bool = False, quotes: dict | None = None, sleep=time.sleep):
+    """Ordre à cours limité au prix du milieu, puis un peu plus agressif ; au marché
+    seulement si c'est urgent (stop, échéance, exercice) ou sans cotations."""
+    if quotes is None:
+        quotes = leg_quotes(client, [l["symbol"] for l in legs])
+    mid, half = net_mid(legs, quotes, opening)
+    if mid is not None:
+        for f in LIMIT_STEPS:
+            o = client.submit_order(option_order(legs, qty, opening, mid + f * half))
+            filled = client.wait_fill(o["id"], timeout=LIMIT_WAIT_S, sleep=sleep)
+            if filled:
+                return filled
+        if not urgent:
+            return None
+    return client.wait_fill(client.submit_order(option_order(legs, qty, opening))["id"], sleep=sleep)
 
 
 def mleg_order(legs: list[dict], qty: int, opening: bool) -> dict:
@@ -723,7 +789,8 @@ def live_greeks(client: Alpaca, trades: list[dict]) -> dict:
     """
     open_t = [t for t in trades if t["status"] == "OPEN"]
     out = {"updated_at": now_iso(), "positions": [],
-           "total": {"delta_usd": 0.0, "gamma_usd": 0.0, "vega": 0.0, "theta_day": 0.0, "rho": 0.0}}
+           "total": {"delta_usd": 0.0, "gamma_usd": 0.0, "gamma_1pct": 0.0, "vega": 0.0,
+                     "theta_day": 0.0, "rho": 0.0}}
     if not open_t:
         return out
     opt_syms = [l["symbol"] for t in open_t if t["kind"] == "options" for l in t["legs"]]
@@ -750,14 +817,17 @@ def live_greeks(client: Alpaca, trades: list[dict]) -> dict:
         g = pr.Greeks(0, 0, 0, 0, 0)
         if t["kind"] == "options":
             T = max((date.fromisoformat(t["expiry"]) - date.today()).days, 1) / 365
+            ivs = []
             for l in t["legs"]:
                 snap = snaps.get(l["symbol"]) or {}
                 iv = _num(snap.get("impliedVolatility"), 0.0) or _num(l.get("iv"), 0.0) \
                     or _num((t.get("analysis") or {}).get("iv"), 0.3)
+                ivs.append(iv)
                 sign = 1 if l["side"] == "buy" else -1
                 n_units = sign * l.get("ratio", 1) * t["qty"] * 100
                 g = g + pr.greeks(S, l["strike"], T, RISK_FREE, iv, l["type"]).scale(n_units)
             opt_delta = g.delta
+            attribute_pnl(t, S, sum(ivs) / len(ivs), g)
             g = g + pr.Greeks(_num(t.get("hedge_shares"), 0.0), 0, 0, 0, 0)
         else:
             qty = held.get(t["position_symbol"], 0.0)
@@ -767,12 +837,33 @@ def live_greeks(client: Alpaca, trades: list[dict]) -> dict:
                "option_delta": round(opt_delta, 2) if t["kind"] == "options" else None,
                "hedge_shares": t.get("hedge_shares") or 0,
                "delta_usd": round(g.delta * S, 2), "gamma_usd": round(g.gamma * S, 4),
+               "gamma_1pct": round(g.gamma * S * S * 0.01, 2),
                "vega": round(g.vega / 100, 2), "theta_day": round(g.theta / 365, 2),
                "rho": round(g.rho / 100, 2)}
         out["positions"].append(row)
         for k in tot:
             tot[k] = round(tot[k] + row[k], 2)
     return out
+
+
+def attribute_pnl(t: dict, S: float, iv: float, g, now: datetime | None = None) -> dict:
+    """Décomposition du P&L d'un trade d'options entre deux cycles (formule du cours,
+    Taylor à l'ordre 2) : dV ≈ Δ·dS + ½·Γ·dS² + Θ·dt + ν·dσ. Cumulée dans t["attr"].
+    Les grecques utilisées sont celles du cycle précédent (début de l'intervalle)."""
+    now = now or datetime.now()
+    prev = t.get("attr_prev")
+    acc = t.setdefault("attr", {"delta": 0.0, "gamma": 0.0, "theta": 0.0, "vega": 0.0})
+    if prev:
+        dS = S - prev["S"]
+        days = max((now - datetime.fromisoformat(prev["at"])).total_seconds() / 86400, 0.0)
+        acc["delta"] = round(acc["delta"] + prev["delta"] * dS, 2)
+        acc["gamma"] = round(acc["gamma"] + 0.5 * prev["gamma"] * dS * dS, 2)
+        acc["theta"] = round(acc["theta"] + prev["theta_day"] * days, 2)
+        acc["vega"] = round(acc["vega"] + prev["vega_pt"] * (iv - prev["iv"]) * 100, 2)
+    t["attr_prev"] = {"at": now.isoformat(timespec="seconds"), "S": S, "iv": iv,
+                      "delta": g.delta, "gamma": g.gamma, "theta_day": g.theta / 365,
+                      "vega_pt": g.vega / 100}
+    return acc
 
 
 def save_greeks(greeks: dict, path: str = GREEKS_PATH) -> None:
@@ -786,6 +877,9 @@ def greek_limits_ok(greeks: dict, equity: float) -> tuple[bool, str]:
         return False, f"Exposition delta trop forte ({t['delta_usd']:,.0f} $)"
     if abs(t.get("vega", 0)) > MAX_VEGA_PCT * equity:
         return False, f"Exposition vega trop forte ({t['vega']:,.0f} $/pt de vol)"
+    if t.get("gamma_1pct", 0) < -MAX_GAMMA_PCT * equity:   # gamma négatif = options vendues
+        return False, (f"Risque gamma trop fort (options vendues) : un mouvement de 1 % "
+                       f"déplacerait le delta de {t['gamma_1pct']:,.0f} $ contre nous")
     if -t.get("theta_day", 0) > MAX_THETA_PCT * equity:
         return False, f"Érosion theta trop forte ({t['theta_day']:,.0f} $/jour)"
     return True, "OK"
@@ -811,6 +905,11 @@ def validate(d: dict, ctx: dict) -> tuple[bool, str]:
         return False, f"{und} n'est pas une crypto de la poche"
     if strat != "BUY_CRYPTO" and und not in ctx["stocks"]:
         return False, f"{und} n'est pas une action de la poche"
+    if strat in LONG_VOL:
+        ivhv = (ctx.get("iv_hv") or {}).get(und)
+        if ivhv is not None and ivhv > LONG_VOL_MAX_IV_HV:
+            return False, (f"Vol implicite déjà gonflée sur {und} (IV/HV {ivhv}) : acheter un "
+                           "straddle/strangle maintenant, c'est payer la chute de vol d'après résultats")
     if strat in CREDIT:
         e = (ctx.get("earnings") or {}).get(und)
         if e is not None and e <= SELL_NO_EARNINGS_DAYS:
@@ -865,10 +964,11 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
         qty = min(MAX_CONTRACTS, int(budget // plan["max_loss"]))
         if qty < 1:
             return None, f"1 contrat risque {plan['max_loss']:.0f}$, max autorise {budget:.0f}$"
-    filled = client.wait_fill(client.submit_order(option_order(plan["legs"], qty, True))["id"],
-                              sleep=sleep)
+    quotes = {l["symbol"]: (l["bid"], l["ask"]) for l in plan["legs"]
+              if _num(l.get("bid"), 0) > 0 and _num(l.get("ask"), 0) > 0}
+    filled = execute_options(client, plan["legs"], qty, True, quotes=quotes or None, sleep=sleep)
     if not filled:
-        return None, "Ordre options non rempli, annule"
+        return None, "Ordre options non rempli au prix juste (milieu de fourchette), annulé"
     fp = abs(_num(filled.get("filled_avg_price"), 0.0))
     covers = None
     if selling:
@@ -1026,18 +1126,39 @@ def delta_hedge(client: Alpaca, trades: list[dict], greeks: dict, equity: float,
     return lines
 
 
+URGENT_REASONS = ("Stop-loss", "Echeance proche", "Action vendue", "Exercice", "Avant résultats")
+
+
+def _close_legs_one_by_one(client: Alpaca, legs: list[dict], qty: int, sleep) -> bool:
+    """Repli si Alpaca refuse l'ordre multi-jambes de clôture : on rachète d'abord les
+    jambes vendues (jamais de position vendue non couverte), puis on revend les autres."""
+    ok = True
+    for l in sorted(legs, key=lambda x: x["side"] != "sell"):
+        o = client.submit_order(option_order([l], qty, False))
+        ok = bool(client.wait_fill(o["id"], sleep=sleep)) and ok
+    return ok
+
+
 def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
-                     sleep=time.sleep) -> list[str]:
+                     sleep=time.sleep, earnings=None) -> list[str]:
     lines = []
     open_trades = [t for t in trades if t["status"] == "OPEN"]
     if not open_trades:
         return lines
     positions = {p["symbol"]: p for p in client.positions()}
 
-    def close_option(t, pnl, reason) -> bool:
-        """Rachète / revend les jambes, puis remet la couverture delta à zéro."""
-        o = client.submit_order(option_order(t["legs"], t["qty"], False))
-        if not client.wait_fill(o["id"], sleep=sleep):
+    def close_option(t, pnl, reason, legs=None) -> bool:
+        """Rachète / revend les jambes (au milieu de fourchette, au marché si urgent),
+        puis remet la couverture delta à zéro."""
+        legs = legs or t["legs"]
+        urgent = reason.startswith(URGENT_REASONS)
+        try:
+            filled = execute_options(client, legs, t["qty"], False, urgent=urgent, sleep=sleep)
+        except AlpacaError:
+            filled = _close_legs_one_by_one(client, legs, t["qty"], sleep) if len(legs) > 1 else None
+        if not filled:
+            lines.append(f"  {t['strategy']} {t['underlying']} : clôture ({reason}) non exécutée au "
+                         "prix juste, nouvel essai au prochain cycle")
             return False
         lines.extend(flatten_hedge(client, t, positions, sleep))
         _close_record(trades, t["id"], pnl, reason)
@@ -1051,15 +1172,41 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
             if t["kind"] == "options":
                 legs = [positions.get(l["symbol"]) for l in t["legs"]]
                 if not any(legs):
-                    _close_record(trades, t["id"], None, "Position introuvable chez Alpaca")
-                    lines.append(f"  {t['underlying']} : position introuvable, marquee fermee")
+                    why = ("Call exercé : actions livrées au strike (gain plafonné atteint)"
+                           if t["strategy"] == "COVERED_CALL" else "Position introuvable chez Alpaca")
+                    _close_record(trades, t["id"], None, why)
+                    lines.append(f"  {t['underlying']} : {why}, marquee fermee")
                     continue
                 pnl = sum(_num(p["unrealized_pl"], 0.0) for p in legs if p) + hedge_pnl(t, positions)
+                if not all(legs):
+                    # Options américaines : une jambe vendue a été exercée avant l'échéance.
+                    # On solde les jambes restantes et les actions reçues/livrées.
+                    if not market_open:
+                        continue
+                    rest = [l for l, p in zip(t["legs"], legs) if p]
+                    stock = positions.get(t["underlying"]) or {}
+                    extra = int(round(_num(stock.get("qty"), 0.0) - _num(t.get("hedge_shares"), 0)))
+                    pnl += _num(stock.get("unrealized_pl"), 0.0) if extra else 0.0
+                    if close_option(t, pnl, "Exercice anticipé d'une jambe vendue", legs=rest) and extra:
+                        o = client.submit_order({"symbol": t["underlying"], "qty": str(abs(extra)),
+                                                 "side": "sell" if extra > 0 else "buy",
+                                                 "type": "market", "time_in_force": "day"})
+                        client.wait_fill(o["id"], sleep=sleep)
+                        lines.append(f"  Actions issues de l'exercice soldées : {extra:+d} {t['underlying']}")
+                    continue
                 days_left = (date.fromisoformat(t["expiry"]) - date.today()).days
                 sl = t.get("sl_amount")
+                e = None
+                if t["strategy"] in LONG_VOL and earnings:
+                    try:
+                        e = earnings(t["underlying"])
+                    except Exception:
+                        e = None
                 reason = ("Take-profit" if pnl >= t["tp_amount"] else
                           "Stop-loss" if sl is not None and pnl <= -sl else
-                          "Echeance proche" if days_left <= CLOSE_BEFORE_EXPIRY_DAYS else None)
+                          "Echeance proche" if days_left <= CLOSE_BEFORE_EXPIRY_DAYS else
+                          "Avant résultats (la vol implicite s'effondre juste après)"
+                          if e is not None and e <= 1 else None)
                 if reason and market_open:
                     close_option(t, pnl, reason)
             else:
@@ -1189,10 +1336,12 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
              "=" * 78]
 
     trades = load_trades(state_path)
-    lines += manage_positions(client, trades, market_open, sleep)
+    lines += manage_positions(client, trades, market_open, sleep,
+                              earnings=snapshot_kw.get("earnings", days_to_earnings))
     save_trades(trades, state_path)
 
     greeks = live_greeks(client, trades)
+    save_trades(trades, state_path)          # décomposition du P&L mise à jour
     hedge_lines = delta_hedge(client, trades, greeks, equity, market_open, sleep)
     if hedge_lines:
         lines += hedge_lines
@@ -1200,7 +1349,8 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
         greeks = live_greeks(client, trades)
     if greeks["positions"]:
         g = greeks["total"]
-        lines.append(f"  Grecques du portefeuille : Δ {g['delta_usd']:+,.0f} $ | Γ {g['gamma_usd']:+,.2f} | "
+        lines.append(f"  Grecques du portefeuille : Δ {g['delta_usd']:+,.0f} $ | Γ {g['gamma_usd']:+,.2f} "
+                     f"(Δ$ {g.get('gamma_1pct', 0):+,.0f} pour 1 %) | "
                      f"ν {g['vega']:+,.0f} $/pt | Θ {g['theta_day']:+,.0f} $/j | ρ {g['rho']:+,.0f} $/pt")
     if greeks_path:
         save_greeks(greeks, greeks_path)
@@ -1230,6 +1380,7 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
                            if fund_universe else None),
            "niche": {i["symbol"] for i in ideas if i.get("niche")}}
     ctx["earnings"] = {r["symbol"]: r.get("earnings") for r in snap["rows"]}
+    ctx["iv_hv"] = {r["symbol"]: r.get("iv_hv") for r in snap["rows"]}
     ctx["covered"] = covered_candidates(client, trades, snap, market_open,
                                         snapshot_kw.get("earnings", days_to_earnings))
     lines.append(f"  Candidats envoyés à l'IA : {', '.join(r['symbol'] for r in snap['rows']) or 'aucun'}"
