@@ -421,6 +421,16 @@ def main(argv: list[str] | None = None) -> int:
         ai_sum = ai.summary() if (clients or _os.path.exists(ai.STATE_PATH)) else None
         fs = db.build_factsheet(res, prices["SPY"]["Close"] if "SPY" in prices else None)
         alpaca_lines = [account_line(c) for c in clients]
+        alpaca_accounts = []
+        for c in clients:
+            try:
+                a = c.account()
+                eq, last = float(a["equity"]), float(a.get("last_equity") or a["equity"])
+                alpaca_accounts.append({"label": c.label, "paper": c.paper, "equity": eq,
+                                        "cash": float(a.get("cash") or 0),
+                                        "day_pct": (eq / last - 1) * 100 if last else 0.0})
+            except Exception:
+                pass
         classic = db.save(res, account, prices_now, args.capital,
                           path=_os.path.join(_os.path.dirname(db.OUT_PATH), "classic.html"),
                           benchmark=bench, gauge=gauge, screener=screened, ai=ai_sum,
@@ -446,7 +456,8 @@ def main(argv: list[str] | None = None) -> int:
                       if not s.endswith("-USD")][:50]
         model = term.build_model(
             account, data, prices_now, groups=groups, fund_res=res, factsheet=fs,
-            ideas=idea_data, ai=ai_sum, alpaca_lines=alpaca_lines, gauge=gauge, client=client,
+            ideas=idea_data, ai=ai_sum, alpaca_lines=alpaca_lines, alpaca_accounts=alpaca_accounts,
+            gauge=gauge, client=client,
             earnings_fn=ai.days_to_earnings,
             news=ai.stock_news(client, stock_syms) if client and stock_syms else None,
             headlines=ai.market_headlines(client) if client else None,

@@ -498,7 +498,8 @@ REGLES:
 
 Reponds avec ce JSON:
 {{"action": "OPEN" ou "HOLD", "strategy": "...", "underlying": "NVDA", "confidence": 0.7,
-  "stop_loss_pct": 0.03, "take_profit_pct": 0.06, "reasoning": "une phrase en francais"}}
+  "stop_loss_pct": 0.03, "take_profit_pct": 0.06, "reasoning": "une phrase en francais",
+  "reasoning_en": "the same sentence in English"}}
 stop_loss_pct / take_profit_pct : seulement pour BUY_STOCK, SHORT_STOCK, BUY_CRYPTO."""
 
 
@@ -1006,6 +1007,7 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
             "source": "presse" if und in ctx.get("ideas", ()) else None,
             "niche": und in ctx.get("niche", ()),
             "confidence": d.get("confidence"), "reasoning": d.get("reasoning"),
+            "reasoning_en": d.get("reasoning_en"),
             "pnl": None}, "OK"
 
 
@@ -1049,6 +1051,7 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
             "source": "presse" if und in ctx.get("ideas", ()) else None,
             "niche": und in ctx.get("niche", ()),
             "confidence": d.get("confidence"), "reasoning": d.get("reasoning"),
+            "reasoning_en": d.get("reasoning_en"),
             "pnl": None}, "OK"
 
 

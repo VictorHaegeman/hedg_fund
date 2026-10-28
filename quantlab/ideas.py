@@ -151,8 +151,9 @@ def build_ideas(client, exclude: set[str] | None = None, top: int = 15,
         try:
             notes = summarize(rows)
             for r in rows:
-                r["why"] = (notes.get(r["symbol"]) or {}).get("why", "")
-                r["risk"] = (notes.get(r["symbol"]) or {}).get("risk", "")
+                n = notes.get(r["symbol"]) or {}
+                for k in ("why", "risk", "why_en", "risk_en"):
+                    r[k] = n.get(k, "")
         except Exception:
             pass
     return rows
@@ -167,11 +168,13 @@ def groq_summarizer(api_key: str):
                  f"5j {r['chg_5d']:+}% | tendance {r['trend']} | titres: " + " / ".join(r["headlines"][:3])
                  for r in rows]
         prompt = ("Pour chaque action ci-dessous, à partir UNIQUEMENT des titres de presse "
-                  "fournis, écris en français une phrase courte expliquant pourquoi elle attire "
-                  "l'attention et une phrase sur le principal risque. N'invente aucun chiffre.\n\n"
+                  "fournis, écris une phrase courte expliquant pourquoi elle attire l'attention "
+                  "et une phrase sur le principal risque, en français ET en anglais. "
+                  "N'invente aucun chiffre.\n\n"
                   + "\n".join(lines)
-                  + '\n\nRéponds en JSON : {"TICKER": {"why": "...", "risk": "..."}, ...}')
-        d = groq_decide(prompt, api_key, max_tokens=3000,
+                  + '\n\nRéponds en JSON : {"TICKER": {"why": "...", "risk": "...", '
+                    '"why_en": "...", "risk_en": "..."}, ...}')
+        d = groq_decide(prompt, api_key, max_tokens=6000,
                         system="Tu es analyste actions. Factuel, prudent, en francais. "
                                "Tu reponds uniquement en JSON valide.")
         return {k: v for k, v in d.items() if isinstance(v, dict)}

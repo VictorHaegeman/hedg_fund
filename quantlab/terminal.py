@@ -388,6 +388,9 @@ def ai_positions(ai: dict | None, prices: dict | None = None) -> list[dict]:
                      "max_gain": max_gain, "gain_is_target": spot, "expiry": t.get("expiry"),
                      "opened": str(t.get("opened_at", ""))[:10], "niche": t.get("niche"),
                      "source": t.get("source"), "reasoning": t.get("reasoning"),
+                     "reasoning_en": t.get("reasoning_en"),
+                     "analysis": {k: (t.get("analysis") or {}).get(k) for k in ("breakevens", "prob_profit")},
+                     "attr": t.get("attr"), "hedge_pnl_cash": t.get("hedge_cash"),
                      "delta_usd": g.get("delta_usd"), "gamma_usd": g.get("gamma_usd"),
                      "vega": g.get("vega"), "theta_day": g.get("theta_day"), "rho": g.get("rho"),
                      "legs": [{"type": l["type"], "side": l["side"], "strike": l["strike"],
@@ -418,6 +421,7 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
                 groups: dict[str, list[str]], fund_res=None, factsheet: dict | None = None,
                 ideas: dict | None = None, ai: dict | None = None,
                 alpaca_lines: list[str] | None = None, gauge: dict | None = None,
+                alpaca_accounts: list[dict] | None = None,
                 client=None, earnings_fn=None, news: dict | None = None,
                 headlines: list[str] | None = None, sector_lookup=None,
                 limits: dict | None = None, ai_limits: dict | None = None,
@@ -577,10 +581,14 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
                 gi = pd.to_datetime(gross.index).tz_localize(None).normalize()
                 s2 = s2.reindex(gi, method="ffill")
                 sp = (s2 / s2.dropna().iloc[0] * 100).to_numpy()
+            mt = fsh.monthly_table(net)
+            monthly = {"years": [int(y) for y in mt.index],
+                       "values": [[_f(v, 1) for v in row] for row in mt.to_numpy()]}
             backtest = {"d": [d.strftime("%Y-%m-%d") for d in gross.index[::step]],
                         "gross": [_f(v) for v in gross.to_numpy()[::step]],
                         "net": [_f(v) for v in net.to_numpy()[::step]],
-                        "spy": [_f(v) for v in sp[::step]] if sp is not None else None}
+                        "spy": [_f(v) for v in sp[::step]] if sp is not None else None,
+                        "monthly": monthly}
         except Exception:
             backtest = None
 
@@ -608,7 +616,7 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
                      "last_cycle": str(getattr(account, "last_cycle", ""))[:16],
                      "by_class": {k: _f(v) for k, v in by_class.items()},
                      "by_sector": {k: _f(v) for k, v in sorted(by_sector.items(), key=lambda x: -x[1])},
-                     "alpaca": alpaca_lines or [], **cs},
+                     "alpaca": alpaca_lines or [], "accounts": alpaca_accounts or [], **cs},
         "curve": curve,
         "positions": pos, "ai_positions": aip, "treasury": tre_rows,
         "ai_greeks": g, "risk": risk, "assets": assets,
