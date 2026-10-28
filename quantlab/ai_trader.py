@@ -69,6 +69,7 @@ GROQ_MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.8-27b"]
 MIN_CONFIDENCE = 0.65
 MAX_OPEN_TRADES = 5
 SHARED_RESERVE = 0.25          # compte partagé : le miroir du fonds laisse 25 % libres à l'IA
+MIN_TRADE_PCT = 0.02           # sous 2 % de l'équité de budget restant : pas de nouveau trade
 DAILY_LOSS_CAP = 0.03          # -3 % sur la journée → pas de nouvelle entrée
 OPTION_MAX_RISK_PCT = 0.05     # perte max d'un trade options = 5 % de l'équité
 SPOT_MAX_PCT = 0.10            # achat / vente à découvert = 10 % de l'équité max
@@ -410,6 +411,8 @@ SYSTEM_PROMPT = ("Tu es un gerant de portefeuille prudent et discipline. Tu choi
 
 
 def build_prompt(snap: dict, ctx: dict) -> str:
+    bl = ctx.get("budget_left")
+    budget_txt = "" if bl is None else f" | budget IA restant: ${max(bl, 0):.0f}"
     lines = []
     for r in snap["rows"]:
         parts = [f"{r['symbol']} ({r['kind']})", f"prix {r['price']}", f"5j {r['chg_5d']:+}%",
@@ -424,7 +427,7 @@ def build_prompt(snap: dict, ctx: dict) -> str:
         lines.append(" | ".join(parts))
     return f"""DATE: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 MARCHE ACTIONS US: {"OUVERT" if ctx['market_open'] else "FERME (seulement BUY_CRYPTO ou HOLD)"}
-CAPITAL: ${ctx['equity']:.0f} | P&L du jour: {ctx['daily_pnl_pct']:+.2f}%
+CAPITAL: ${ctx['equity']:.0f} | P&L du jour: {ctx['daily_pnl_pct']:+.2f}%{budget_txt}
 DEJA EN POSITION SUR: {", ".join(ctx['open_underlyings']) or "rien"}
 
 CONTEXTE:
@@ -451,6 +454,10 @@ REGLES:
 - Pas de trade sur un sous-jacent deja en position.
 - Options, BUY_STOCK et SHORT_STOCK uniquement si le marche actions est OUVERT.
 - SHORT_STOCK jamais juste avant des resultats : prefere BEAR_PUT_SPREAD.
+- Options bon marche (IV/HV <= 1.0) + vue directionnelle claire sur une action :
+  BULL_CALL_SPREAD (ou BEAR_PUT_SPREAD) est souvent meilleur que BUY_STOCK (ou SHORT_STOCK) :
+  perte max connue d'avance et moins de capital. Si IV/HV > 1.0 ou inconnu, prefere l'action :
+  ne paie jamais des options cheres juste pour utiliser des options.
 - "idee presse" = societe tres citee dans la presse financiere ces derniers jours (souvent
   une petite valeur). Exige une tendance qui confirme les news ; "niche" = peu liquide,
   la position sera automatiquement deux fois plus petite.
@@ -719,6 +726,10 @@ def validate(d: dict, ctx: dict) -> tuple[bool, str]:
         return False, f"Deja en position sur {und}"
     if len(ctx["open_underlyings"]) >= MAX_OPEN_TRADES:
         return False, "Nombre max de positions atteint"
+    bl = ctx.get("budget_left")
+    if bl is not None and bl < MIN_TRADE_PCT * ctx["equity"]:
+        return False, (f"Part du compte réservée à l'IA déjà utilisée ({max(bl, 0):,.0f} $ "
+                       f"restants sur {SHARED_RESERVE:.0%})")
     if ctx.get("greeks"):
         ok, why = greek_limits_ok(ctx["greeks"], ctx["equity"])
         if not ok:
@@ -743,6 +754,8 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
         return None, (f"Vol trop chère : débit {plan['debit']:.2f} = {analysis['vol_edge']:.2f}× "
                       f"la valeur Black-Scholes à la vol réalisée (max {VOL_EDGE_MAX})")
     budget = ctx["equity"] * OPTION_MAX_RISK_PCT * (NICHE_SIZE if und in ctx.get("niche", ()) else 1)
+    if ctx.get("budget_left") is not None:
+        budget = min(budget, ctx["budget_left"])
     qty = min(MAX_CONTRACTS, int(budget // plan["max_loss"]))
     if qty < 1:
         return None, f"1 contrat risque {plan['max_loss']:.0f}$, max autorise {budget:.0f}$"
@@ -786,7 +799,10 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
         price = snap["prices"].get(und)
         if not price:
             return None, f"Prix de {und} indisponible"
-        qty = int(ctx["equity"] * size // price)
+        cap = ctx["equity"] * size
+        if ctx.get("budget_left") is not None:
+            cap = min(cap, ctx["budget_left"])
+        qty = int(cap // price)
         if qty < 1:
             return None, f"Capital trop petit pour vendre 1 {und}"
         notional = qty * price
@@ -794,6 +810,8 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
                 "time_in_force": "day"}
     else:
         notional = min(ctx["equity"] * size, ctx["cash"] * 0.95)
+        if ctx.get("budget_left") is not None:
+            notional = min(notional, ctx["budget_left"])
         if notional < 10:
             return None, "Pas assez de cash disponible"
         body = {"symbol": und, "notional": f"{notional:.2f}", "side": "buy",
@@ -952,6 +970,10 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
            "daily_pnl_pct": daily, "market_open": market_open,
            "open_underlyings": open_und, "stocks": stocks, "cryptos": cryptos,
            "greeks": greeks, "ideas": {i["symbol"] for i in ideas},
+           # compte partagé avec le fonds : la poche IA reste dans sa part (pas d'emprunt)
+           "budget_left": (SHARED_RESERVE * equity - sum(_num(t.get("cost"), 0.0) for t in trades
+                                                         if t["status"] == "OPEN")
+                           if fund_universe else None),
            "niche": {i["symbol"] for i in ideas if i.get("niche")}}
     lines.append(f"  Candidats envoyés à l'IA : {', '.join(r['symbol'] for r in snap['rows']) or 'aucun'}")
 

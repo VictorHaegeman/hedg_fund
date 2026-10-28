@@ -1142,3 +1142,28 @@ def test_mirror_includes_treasury_and_reserve(tmp_path):
     plan = mr.plan_mirror(acc, {"SPY": 500.0, "BIL": 91.5}, ["SPY"], {}, 100_000, reserve=0.25)
     q = {a["symbol"]: a["qty"] for a in plan}
     assert abs(q["SPY"] - 45.0) < 0.1 and abs(q["BIL"] - 655.7 * 0.75) < 0.5
+
+
+def test_ai_shared_account_stays_in_its_budget(tmp_path):
+    from quantlab import ai_trader as ai
+    state = str(tmp_path / "ai.json")
+    ai.save_trades([{"id": str(i), "status": "OPEN", "kind": "stock", "strategy": "BUY_STOCK",
+                     "underlying": u, "position_symbol": u, "cost": 10_000.0}
+                    for i, u in enumerate(["AAPL", "MSFT"])], state)
+    seen = []
+    def decide(p):
+        seen.append(p)
+        return {"action": "OPEN", "strategy": "BUY_STOCK", "underlying": "NVDA",
+                "confidence": 0.8, "reasoning": "x"}
+    kw = dict(earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "-",
+              sleep=lambda s: None)
+    client = FakeAlpaca()
+    client.pos = {"AAPL": {"unrealized_pl": "0"}, "MSFT": {"unrealized_pl": "0"}}
+    out, _ = ai.run_cycle(client, decide, state_path=state, fund_universe=["SPY"], **kw)
+    assert "budget IA restant: $5000" in seen[0]
+    t = [x for x in ai.load_trades(state) if x["underlying"] == "NVDA"][0]
+    assert t["cost"] <= 5_000 + 1                       # 25 % − 20 000 $ déjà engagés
+    out, _ = ai.run_cycle(client, lambda p: {**decide(p), "underlying": "AMD"},
+                          state_path=state, fund_universe=["SPY"], **kw)
+    assert "Part du compte réservée à l'IA déjà utilisée" in out
+    assert "IV/HV <= 1.0" in seen[0]                    # spreads préférés si options bon marché
