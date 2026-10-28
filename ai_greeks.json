@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-10-28T18:35:30",
+  "updated_at": "2026-10-28T20:04:27",
   "positions": [
     {
       "id": "464c6aacc5",
       "strategy": "BUY_STOCK",
       "underlying": "BAH",
-      "spot": 82.61,
+      "spot": 83.49,
       "delta": 122.16,
-      "delta_usd": 10091.0,
+      "delta_usd": 10199.11,
       "gamma_usd": 0.0,
       "vega": 0.0,
       "theta_day": 0.0,
@@ -17,9 +17,21 @@
       "id": "371ce3ea37",
       "strategy": "BUY_STOCK",
       "underlying": "XOM",
-      "spot": 182.25,
+      "spot": 182.08,
       "delta": 54.37,
-      "delta_usd": 9909.67,
+      "delta_usd": 9900.43,
+      "gamma_usd": 0.0,
+      "vega": 0.0,
+      "theta_day": 0.0,
+      "rho": 0.0
+    },
+    {
+      "id": "655e8dce1a",
+      "strategy": "BUY_STOCK",
+      "underlying": "AMD",
+      "spot": 578.43,
+      "delta": 17.45,
+      "delta_usd": 10092.56,
       "gamma_usd": 0.0,
       "vega": 0.0,
       "theta_day": 0.0,
@@ -27,7 +39,7 @@
     }
   ],
   "total": {
-    "delta_usd": 20000.67,
+    "delta_usd": 30192.1,
     "gamma_usd": 0.0,
     "vega": 0.0,
     "theta_day": 0.0,
