@@ -173,6 +173,8 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--broker", default="paper", choices=["paper", "alpaca"],
                     help="alpaca : recopie aussi les positions sur le compte Alpaca")
     treasury_args(sp)
+    sp.add_argument("--vix-filter", action="store_true",
+                    help="bloque les entrées quand le VIX est extrême (testé défavorable, désactivé)")
     sp = sub.add_parser("screen",
                         help="Screener TradingView — univers de candidats (live)")
     sp.add_argument("--market", default="america")
@@ -309,7 +311,8 @@ def main(argv: list[str] | None = None) -> int:
         print(lv.run_cycle(args.symbols, args.capital, args.risk,
                            max_positions=args.max_positions, screener=screener,
                            vol_target=args.vol_target, trail=args.trail, after=after,
-                           core_pct=args.core_pct, sweep=_sweep(args), **stock_kw))
+                           core_pct=args.core_pct, sweep=_sweep(args),
+                           vix_filter=args.vix_filter, **stock_kw))
 
     elif args.cmd == "screen":
         print(scr.report(market=args.market, limit=args.screen_limit,

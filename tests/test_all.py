@@ -420,9 +420,13 @@ def test_live_blocks_entries_when_risk_off(tmp_path, monkeypatch):
     monkeypatch.setattr(nw, "risk_gauge", lambda loader: {
         "level": "risk-off", "vix": 55.0, "vix_pct": 0.99, "note": "test"})
     out = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=path,
-                       loader=fake_load)
+                       loader=fake_load, vix_filter=True)
     assert "bloquées" in out
     assert not load_account(path).positions
+    # par défaut (testé défavorable) : le VIX est seulement affiché, rien n'est bloqué
+    out = lv.run_cycle(["AAA", "BBB"], capital=10_000, state_path=str(tmp_path / "b.json"),
+                       loader=fake_load)
+    assert "information seulement" in out
 
 
 def test_screener_symbol_mapping():

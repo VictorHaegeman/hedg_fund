@@ -54,7 +54,8 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
              vol_target: float | None = None, vol_window: int = 20,
              trail: bool = False, core_pct: float = 0.0,
              treasury_prices: dict[str, pd.DataFrame] | None = None,
-             sweep: str | None = None) -> BacktestResult:
+             sweep: str | None = None, risk_off: pd.Series | None = None,
+             risk_off_core: bool = True) -> BacktestResult:
     """Fonds multi-stratégies. core_pct / sweep : trésorerie (voir treasury.py) — le cash non utilisé va
     jusqu'à core_pct dans le socle SPY, le reste en bons du Trésor (`sweep`, ex. BIL).
     Les entrées de stratégie revendent d'abord la trésorerie. `treasury_prices` :
@@ -67,6 +68,14 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
     t_open = {s_: df_["Open"] for s_, df_ in tp.items()} if use_tre else {}
     t_close = {s_: df_["Close"] for s_, df_ in tp.items()} if use_tre else {}
     tre: dict[str, float] = {}           # symbole -> parts
+    # Filtre de risque (ex. VIX extrême, stress du crédit) : signal connu à la clôture J-1 →
+    # pas de nouvelle entrée et socle S&P 500 vendu (tout en bons du Trésor) le jour J.
+    ro = {}
+    if risk_off is not None:
+        _r = risk_off.copy()
+        _r.index = pd.to_datetime(_r.index).tz_localize(None).normalize()
+        ro = {k: bool(v) for k, v in _r.items()}
+    blocked = False
     tre_last: dict[str, float] = {}
 
     # Pré-calculs par actif : arrays OHLC + signaux de chaque stratégie
@@ -155,7 +164,7 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
                 pending_exit.discard(sym)
             if sym in pending_entry and sym not in positions and i > 0:
                 key = pending_entry.pop(sym)
-                if len(positions) < max_positions:
+                if len(positions) < max_positions and not blocked:
                     sg = d["sig"][key]
                     j = i - 1
                     stop_dist = d["c"][j] - sg["stop"][j]
@@ -210,7 +219,7 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
             strat_val = sum(p["shares"] * last_close.get(s, p["entry"]) for s, p in positions.items())
             eq_t = cash + tre_value() + strat_val
             avail = max(cash + tre_value() - trz.BUFFER_PCT * eq_t, 0.0)
-            tgt = {core_sym: min(core_pct * eq_t, avail)}
+            tgt = {core_sym: 0.0 if (blocked and risk_off_core) else min(core_pct * eq_t, avail)}
             if sweep and sweep in t_close:
                 tgt[sweep] = max(avail - tgt[core_sym], 0.0)
             for s_ in sorted(tgt, key=lambda k: tgt[k] - tre.get(k, 0) * tre_last.get(k, 0)):
@@ -230,6 +239,10 @@ def run_fund(prices: dict[str, pd.DataFrame], capital: float = 100_000.0,
                     tre[s_] -= q
                     cash += q * px * (1 - fee)
         equity_vals.append(mark_equity())
+        if ro:
+            blocked = ro.get(pd.Timestamp(t).tz_localize(None).normalize()
+                             if getattr(pd.Timestamp(t), "tzinfo", None) else pd.Timestamp(t).normalize(),
+                             blocked)
 
     # Clôture forcée des positions restantes au dernier cours connu
     final_date = calendar[-1]

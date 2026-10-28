@@ -243,6 +243,20 @@ Les autres stratégies de hedge funds testées (tendance multi-actifs façon CTA
 sectorielle, parité de risque, vente de puts) réduisent le risque mais rapportent moins
 sur la période : non retenues pour l'instant.
 
+### Idées du cours testées et écartées (2007 → 2026, fonds avec trésorerie, avant frais)
+
+| Idée | Gain / an | Pire baisse | Bat le S&P (13 départs) | Verdict |
+|---|---|---|---|---|
+| Fonds actuel | 11,7 % | −27,6 % | 4/13 | référence |
+| Filtre VIX (bloquer les entrées en peur extrême) | 10,4 % | −29,4 % | 0/13 | **désactivé** (`--vix-filter` pour le réactiver) |
+| Filtre crédit (obligations risquées HYG vs État IEF) | 8,2 à 9,3 % | −25 à −31 % | 0/13 | non retenu |
+| Assurance : puts S&P 500 −10 %, 3 mois, toujours | 10,5 à 11,0 % | −22 à −24 % | 0/13 | non retenu (coûte trop) |
+| Assurance : puts seulement quand le VIX est bas | 11,2 à 12,0 % | −27,6 % | 4 à 7/13 | non retenu : le gain disparaît avec des prix de puts réalistes (vol × 1,4) |
+| Smile / skew de volatilité | — | — | — | non testable sans historique de prix d'options (payant) |
+
+Prix des puts estimés par Black-Scholes avec le VIX (pas d'historique d'options gratuit) : résultats
+indicatifs. Les meilleures entrées arrivent souvent pendant la peur, d'où l'échec des filtres.
+
 ## Améliorations du modèle (overlays optionnels)
 
 Deux surcouches robustes, **désactivées par défaut** (opt-in), pour améliorer le

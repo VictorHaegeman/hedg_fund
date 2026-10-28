@@ -62,7 +62,7 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
               trail: bool = False, after=None, screener_mode: str = "replace",
               max_screened_positions: int | None = None, earnings_guard=None,
               earnings_days: int = 5, core_pct: float = 0.0,
-              sweep: str | None = None) -> str:
+              sweep: str | None = None, vix_filter: bool = False) -> str:
     """`after(account, last_prices) -> str` : action optionnelle en fin de cycle
     (ex. miroir des positions sur Alpaca). N'influence jamais les décisions."""
     account = load_account(state_path, capital)
@@ -166,12 +166,16 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
     # ---- 2) Nouvelles entrées (sauf filtre de risque géopolitique) ----
     from . import news as nw
     gauge = nw.risk_gauge(loader)
-    risk_block = nw.blocks_new_entries(gauge)
+    # Filtre VIX : désactivé par défaut. Testé sur 2007→2026 (README), bloquer les entrées
+    # quand le VIX est extrême fait PERDRE du rendement (10,4 %/an contre 11,7 %) et
+    # n'améliore pas la pire baisse : les meilleures entrées arrivent souvent dans la peur.
+    risk_block = vix_filter and nw.blocks_new_entries(gauge)
     if gauge["vix"] is not None:
         lines.append(f"  Contexte risque : VIX {gauge['vix']} "
                      f"({int(gauge['vix_pct'] * 100)}e pct) → {gauge['level'].upper()}"
-                     + ("  ⛔ nouvelles entrées bloquées (peur extrême)"
-                        if risk_block else ""))
+                     + ("  ⛔ nouvelles entrées bloquées (peur extrême)" if risk_block else
+                        "  (information seulement : filtre VIX désactivé, testé défavorable)"
+                        if nw.blocks_new_entries(gauge) else ""))
     # Vol-targeting : module le risque par trade selon la vol réalisée du compte.
     scale = vol_scale([v for _, v in account.equity_curve], vol_target, vol_window)
     eff_risk = risk_pct * scale
