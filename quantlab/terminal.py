@@ -254,6 +254,88 @@ def correlation(data: dict[str, pd.DataFrame], syms: list[str]) -> dict:
     return {"symbols": syms, "matrix": [[_f(v, 2) for v in row] for row in m.to_numpy()]}
 
 
+# ── semaines ────────────────────────────────────────────────────────────────
+def weekly_report(curve: list, spy: pd.Series | None, history: list | None = None,
+                  positions: dict | None = None, ai_trades: list | None = None,
+                  sim_equity: pd.Series | None = None) -> dict:
+    """Rendements semaine par semaine (vendredi → vendredi) du fonds vs S&P 500, avec
+    l'activité de chaque semaine et des comparaisons avec les semaines précédentes."""
+    out = {"weeks": [], "summary": {}, "sim": {}}
+    if curve and len(curve) >= 2:
+        s = pd.Series([v for _, v in curve], index=pd.to_datetime([d for d, _ in curve])).sort_index()
+        s = s[~s.index.duplicated(keep="last")]
+        wk = s.resample("W-FRI").last().dropna()
+        prev = float(s.iloc[0])
+        sp = None
+        if spy is not None and len(spy):
+            sp = spy.copy()
+            sp.index = pd.to_datetime(sp.index).tz_localize(None).normalize()
+            sp = sp.sort_index()
+        hist = history or []
+        opened = [str(h.get("entry_date"))[:10] for h in hist] + \
+                 [str(p.get("entry_date"))[:10] for p in (positions or {}).values()]
+        start0 = s.index[0]
+        cum_f = cum_s = 1.0
+        for end, val in wk.items():
+            begin = max(start0, end - pd.Timedelta(days=6))
+            in_wk = lambda d: begin.strftime("%Y-%m-%d") <= d <= end.strftime("%Y-%m-%d")
+            f = val / prev - 1
+            row = {"week": end.strftime("%Y-%m-%d"), "from": begin.strftime("%Y-%m-%d"),
+                   "current": end.date() >= date.today(),
+                   "fund": _f(f * 100, 2), "pnl": _f(val - prev), "nav": _f(val)}
+            if sp is not None:
+                base_day = start0 if begin == start0 else begin - pd.Timedelta(days=1)
+                a = sp[sp.index <= max(base_day, sp.index[0])]
+                b = sp[sp.index <= end]
+                if len(a) and len(b):
+                    sr = float(b.iloc[-1]) / float(a.iloc[-1]) - 1
+                    row["spy"] = _f(sr * 100, 2)
+                    row["diff"] = _f((f - sr) * 100, 2)
+                    cum_s *= 1 + sr
+            cum_f *= 1 + f
+            row["cum_fund"], row["cum_spy"] = _f((cum_f - 1) * 100, 2), _f((cum_s - 1) * 100, 2)
+            closed = [h for h in hist if in_wk(str(h.get("exit_date"))[:10])]
+            row["opened"] = sum(1 for d in opened if in_wk(d))
+            row["closed"] = len(closed)
+            row["realized"] = _f(sum(h.get("pnl") or 0 for h in closed))
+            row["wins"] = sum(1 for h in closed if (h.get("pnl") or 0) > 0)
+            ai = ai_trades or []
+            row["ai_opened"] = sum(1 for t in ai if in_wk(str(t.get("opened_at"))[:10]))
+            row["ai_closed"] = sum(1 for t in ai if in_wk(str(t.get("closed_at") or "")[:10]))
+            out["weeks"].append(row)
+            prev = val
+        w = [r for r in out["weeks"] if r["fund"] is not None]
+        if w:
+            rets = [r["fund"] for r in w]
+            cur = w[-1]
+            last = w[-2] if len(w) > 1 else None
+            streak, sign = 0, (rets[-1] > 0)
+            for x in reversed(rets):
+                if (x > 0) == sign and x != 0:
+                    streak += 1
+                else:
+                    break
+            beat = [r for r in w if r.get("diff") is not None]
+            out["summary"] = {
+                "this": cur["fund"], "this_spy": cur.get("spy"), "last": last["fund"] if last else None,
+                "last_spy": last.get("spy") if last else None,
+                "avg4": _f(np.mean(rets[-5:-1]), 2) if len(rets) > 1 else None,
+                "avg_all": _f(np.mean(rets), 2), "best": max(w, key=lambda r: r["fund"]),
+                "worst": min(w, key=lambda r: r["fund"]), "n": len(w),
+                "pos_pct": _f(sum(1 for x in rets if x > 0) / len(rets) * 100, 0),
+                "beat_pct": _f(sum(1 for r in beat if r["diff"] > 0) / len(beat) * 100, 0) if beat else None,
+                "rank": 1 + sum(1 for x in rets if x > cur["fund"]),
+                "streak": streak * (1 if sign else -1)}
+    if sim_equity is not None and len(sim_equity) > 60:
+        e = sim_equity.copy()
+        e.index = pd.to_datetime(e.index).tz_localize(None).normalize()
+        wr = e.resample("W-FRI").last().pct_change().dropna() * 100
+        out["sim"] = {"pos_pct": _f((wr > 0).mean() * 100, 0), "avg": _f(wr.mean(), 2),
+                      "median": _f(wr.median(), 2), "p10": _f(wr.quantile(0.10), 2),
+                      "p90": _f(wr.quantile(0.90), 2), "years": _f(len(wr) / 52, 0)}
+    return out
+
+
 # ── modèle complet ──────────────────────────────────────────────────────────
 def _curve_stats(curve: list, spy: pd.Series | None) -> dict:
     if not curve or len(curve) < 2:
@@ -618,6 +700,9 @@ def build_model(account, data: dict[str, pd.DataFrame], prices_now: dict[str, fl
                      "by_sector": {k: _f(v) for k, v in sorted(by_sector.items(), key=lambda x: -x[1])},
                      "alpaca": alpaca_lines or [], "accounts": alpaca_accounts or [], **cs},
         "curve": curve,
+        "weekly": weekly_report(account.equity_curve, spy, list(account.history), account.positions,
+                                (ai or {}).get("trades") or ((ai or {}).get("open", []) + (ai or {}).get("closed", [])),
+                                fund_res.equity if fund_res is not None else None),
         "positions": pos, "ai_positions": aip, "treasury": tre_rows,
         "ai_greeks": g, "risk": risk, "assets": assets,
         "ideas": (ideas or {}), "activity": activity,

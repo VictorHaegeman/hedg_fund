@@ -1315,3 +1315,23 @@ def test_ai_pnl_attribution_formula():
     v0 = pr.bs_price(100, 100, 30 / 365, 0.04, 0.30, "call") * 100
     v1 = pr.bs_price(102, 100, 29 / 365, 0.04, 0.32, "call") * 100
     assert abs(sum(acc.values()) - (v1 - v0)) < 0.1 * abs(v1 - v0)
+
+
+def test_terminal_weekly_report():
+    from quantlab import terminal as term
+    days = pd.bdate_range("2026-09-01", "2026-10-28")
+    curve = [[d.strftime("%Y-%m-%d"), 100_000 * (1 + 0.001 * i)] for i, d in enumerate(days)]
+    spy = pd.Series(np.linspace(500, 520, len(days)), index=days)
+    hist = [{"symbol": "AAA", "entry_date": "2026-09-02", "exit_date": "2026-09-09", "pnl": 120.0},
+            {"symbol": "BBB", "entry_date": "2026-09-08", "exit_date": "2026-09-10", "pnl": -50.0}]
+    w = term.weekly_report(curve, spy, hist, {}, [{"opened_at": "2026-09-09T15:00", "closed_at": None}])
+    weeks = w["weeks"]
+    assert len(weeks) == 9 and all(r["fund"] > 0 for r in weeks)
+    wk2 = weeks[1]                                   # semaine du 2026-09-05 au 2026-09-11
+    assert wk2["closed"] == 2 and wk2["wins"] == 1 and wk2["realized"] == 70 and wk2["opened"] == 1
+    assert wk2["ai_opened"] == 1 and wk2["spy"] is not None and wk2["diff"] is not None
+    sm = w["summary"]
+    assert sm["n"] == 9 and sm["pos_pct"] == 100 and sm["streak"] == 9 and 1 <= sm["rank"] <= 9
+    total = np.prod([1 + r["fund"] / 100 for r in weeks]) - 1
+    assert abs(total * 100 - weeks[-1]["cum_fund"]) < 0.05
+    assert term.weekly_report([], None)["weeks"] == []
