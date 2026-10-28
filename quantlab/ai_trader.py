@@ -88,6 +88,17 @@ VOL_SL_OF_COST = 0.40
 OPTION_STRATEGIES = {"BULL_CALL_SPREAD", "BEAR_PUT_SPREAD", "LONG_STRADDLE", "LONG_STRANGLE",
                      "LONG_CALL_BUTTERFLY"}
 LONG_VOL = {"LONG_STRADDLE", "LONG_STRANGLE"}
+# Vente d'options (on encaisse la prime) : seulement quand les options sont CHÈRES
+CREDIT = {"BULL_PUT_SPREAD", "BEAR_CALL_SPREAD", "IRON_CONDOR"}
+OPTION_STRATEGIES |= CREDIT | {"COVERED_CALL"}
+SELL_EDGE_MIN = 1.05           # vente refusée si prime < 1,05 × valeur BS à la vol réalisée
+CREDIT_MIN_OF_WIDTH = 0.20     # spread à crédit : prime ≥ 20 % de la largeur (pas de primes « à 1 centime »)
+CREDIT_TP_OF_CREDIT = 0.50     # on rachète quand 50 % de la prime est gagnée
+CREDIT_SL_OF_CREDIT = 1.00     # on coupe si la perte atteint 1 × la prime encaissée
+SELL_NO_EARNINGS_DAYS = 45     # pas de vente d'options si des résultats tombent avant l'échéance
+# Delta hedging : stratégies « neutres » rendues delta-neutres avec des actions
+DELTA_NEUTRAL = {"LONG_STRADDLE", "LONG_STRANGLE", "IRON_CONDOR", "LONG_CALL_BUTTERFLY"}
+HEDGE_BAND_PCT = 0.005         # on recouvre quand |delta $| d'un trade dépasse 0,5 % de l'équité
 RISK_FREE = 0.04               # taux sans risque annuel pour Black-Scholes
 VOL_EDGE_MAX = 1.15            # long vol refusé si prix payé > 1,15 × valeur BS à la vol réalisée
 MAX_DELTA_PCT = 0.50           # |delta $ du portefeuille| ≤ 50 % de l'équité, sinon pas de nouveau trade
@@ -413,6 +424,11 @@ SYSTEM_PROMPT = ("Tu es un gerant de portefeuille prudent et discipline. Tu choi
 def build_prompt(snap: dict, ctx: dict) -> str:
     bl = ctx.get("budget_left")
     budget_txt = "" if bl is None else f" | budget IA restant: ${max(bl, 0):.0f}"
+    cov = ctx.get("covered") or {}
+    covered_txt = "\n".join(
+        f"{u} : {c['shares']:.0f} actions | prix {c.get('price')} | IV/HV {c.get('iv_hv')}"
+        + (f" | RESULTATS dans {c['earnings']} j" if c.get("earnings") is not None else "")
+        for u, c in cov.items()) or "aucune"
     lines = []
     for r in snap["rows"]:
         parts = [f"{r['symbol']} ({r['kind']})", f"prix {r['price']}", f"5j {r['chg_5d']:+}%",
@@ -436,12 +452,24 @@ CONTEXTE:
 MARCHES SURVEILLES (pre-tries par le code):
 {chr(10).join(lines) or "aucun"}
 
+ACTIONS DETENUES ELIGIBLES AU COVERED CALL (100 actions ou plus):
+{covered_txt}
+
 STRATEGIES POSSIBLES:
 - BULL_CALL_SPREAD : action, vue haussiere moderee (perte max = cout)
 - BEAR_PUT_SPREAD : action, vue baissiere moderee (perte max = cout)
 - LONG_STRADDLE : gros mouvement attendu dans un sens inconnu (resultats proches), seulement si IV/HV < 1.3
 - LONG_STRANGLE : comme le straddle, moins cher mais demande un mouvement plus fort
 - LONG_CALL_BUTTERFLY : action, le prix devrait rester proche du cours actuel (perte max = cout)
+VENTE D'OPTIONS (on encaisse une prime) - seulement si les options sont CHERES (IV/HV >= 1.1),
+jamais si des RESULTATS tombent dans les {SELL_NO_EARNINGS_DAYS} jours :
+- BULL_PUT_SPREAD : vue haussiere ou neutre ; gagne si l'action ne baisse pas trop
+- BEAR_CALL_SPREAD : vue baissiere ou neutre ; gagne si l'action ne monte pas trop
+- IRON_CONDOR : le prix devrait rester dans une fourchette (+/- 5 %) jusqu'a l'echeance
+- COVERED_CALL : vendre un call sur des actions DEJA detenues par la poche (liste ci-dessous) :
+  revenu en plus, mais gain plafonne si l'action monte fort
+Les strategies neutres (straddle, strangle, iron condor, butterfly) sont couvertes en delta
+automatiquement (delta hedging avec l'action).
 - BUY_STOCK : achat d'une action en tendance haussiere claire
 - SHORT_STOCK : vente a decouvert d'une action en tendance baissiere claire
 - BUY_CRYPTO : achat d'une crypto en tendance haussiere claire
@@ -451,7 +479,7 @@ REGLES:
 - Jamais de straddle/strangle si IV/HV > 1.5 : options deja cheres. Principe : une position
   long gamma gagne 1/2*Gamma*S^2*(vol_realisee^2 - vol_implicite^2) : acheter de la vol
   n'a de sens que si la vol realisee attendue depasse la vol implicite payee.
-- Pas de trade sur un sous-jacent deja en position.
+- Pas de trade sur un sous-jacent deja en position (sauf COVERED_CALL sur les actions detenues).
 - Options, BUY_STOCK et SHORT_STOCK uniquement si le marche actions est OUVERT.
 - SHORT_STOCK jamais juste avant des resultats : prefere BEAR_PUT_SPREAD.
 - Options bon marche (IV/HV <= 1.0) + vue directionnelle claire sur une action :
@@ -559,6 +587,23 @@ def build_option_trade(strategy: str, chain: list[dict], spot: float):
         call = nearest([c for c in calls if c["strike"] > spot], spot * (1 + OTM_PCT))
         put = nearest([p for p in puts if p["strike"] < spot], spot * (1 - OTM_PCT))
         legs = [(call, "buy"), (put, "buy")]
+    elif strategy == "BULL_PUT_SPREAD":        # vend un put sous le cours, achète plus bas
+        sell = nearest([p for p in puts if p["strike"] < spot], spot * (1 - OTM_PCT / 2))
+        buy = nearest([p for p in puts if sell and p["strike"] < sell["strike"]], spot * (1 - 1.5 * OTM_PCT))
+        legs = [(buy, "buy"), (sell, "sell")]
+    elif strategy == "BEAR_CALL_SPREAD":       # vend un call au-dessus du cours, achète plus haut
+        sell = nearest([c for c in calls if c["strike"] > spot], spot * (1 + OTM_PCT / 2))
+        buy = nearest([c for c in calls if sell and c["strike"] > sell["strike"]], spot * (1 + 1.5 * OTM_PCT))
+        legs = [(sell, "sell"), (buy, "buy")]
+    elif strategy == "IRON_CONDOR":            # bull put spread + bear call spread
+        ps = nearest([p for p in puts if p["strike"] < spot], spot * (1 - OTM_PCT))
+        pb = nearest([p for p in puts if ps and p["strike"] < ps["strike"]], spot * (1 - 2 * OTM_PCT))
+        cs = nearest([c for c in calls if c["strike"] > spot], spot * (1 + OTM_PCT))
+        cb = nearest([c for c in calls if cs and c["strike"] > cs["strike"]], spot * (1 + 2 * OTM_PCT))
+        legs = [(pb, "buy"), (ps, "sell"), (cs, "sell"), (cb, "buy")]
+    elif strategy == "COVERED_CALL":           # vend un call ~5 % au-dessus d'actions détenues
+        sell = nearest([c for c in calls if c["strike"] > spot], spot * (1 + OTM_PCT))
+        legs = [(sell, "sell")]
     elif strategy == "LONG_CALL_BUTTERFLY":    # (S-K1)+ - 2(S-K2)+ + (S-K3)+
         mid = nearest(calls, spot)
         low = nearest([c for c in calls if mid and c["strike"] < mid["strike"]], spot * (1 - OTM_PCT))
@@ -575,6 +620,28 @@ def build_option_trade(strategy: str, chain: list[dict], spot: float):
     ratio = [2 if (strategy == "LONG_CALL_BUTTERFLY" and s == "sell") else 1 for _, s in legs]
     debit = (sum(q * c["ask"] for (c, s), q in zip(legs, ratio) if s == "buy")
              - sum(q * c["bid"] for (c, s), q in zip(legs, ratio) if s == "sell"))
+    out_legs = [{"symbol": c["symbol"], "side": s, "strike": c["strike"],
+                 "type": c["type"], "ratio": q, "iv": c.get("iv")}
+                for (c, s), q in zip(legs, ratio)]
+    if strategy in CREDIT or strategy == "COVERED_CALL":
+        credit = -debit
+        if credit <= 0:
+            return None, "Prime encaissée nulle ou négative"
+        if strategy == "COVERED_CALL":     # risque = celui des actions déjà détenues
+            width, max_loss = None, 0.0
+        else:
+            if strategy == "IRON_CONDOR":
+                width = max(legs[1][0]["strike"] - legs[0][0]["strike"],
+                            legs[3][0]["strike"] - legs[2][0]["strike"])
+            else:
+                width = abs(legs[0][0]["strike"] - legs[1][0]["strike"])
+            if credit < CREDIT_MIN_OF_WIDTH * width:
+                return None, (f"Prime trop faible : {credit:.2f} $ pour un écart de {width:g} $ "
+                              f"(min {CREDIT_MIN_OF_WIDTH:.0%})")
+            max_loss = (width - credit) * 100
+        return {"strategy": strategy, "expiry": exp.isoformat(), "legs": out_legs,
+                "debit": round(debit, 2), "credit": round(credit, 2), "width": width,
+                "max_loss": round(max_loss, 2), "max_gain": round(credit * 100, 2)}, "OK"
     if debit <= 0:
         return None, "Prix incoherent"
     if "SPREAD" in strategy:
@@ -583,11 +650,8 @@ def build_option_trade(strategy: str, chain: list[dict], spot: float):
         width = legs[1][0]["strike"] - legs[0][0]["strike"]   # gain max = K2 - K1 - débit
     else:
         width = None
-    return {"strategy": strategy, "expiry": exp.isoformat(),
-            "legs": [{"symbol": c["symbol"], "side": s, "strike": c["strike"],
-                      "type": c["type"], "ratio": q, "iv": c.get("iv")}
-                     for (c, s), q in zip(legs, ratio)],
-            "debit": round(debit, 2), "width": width,
+    return {"strategy": strategy, "expiry": exp.isoformat(), "legs": out_legs,
+            "debit": round(debit, 2), "credit": 0.0, "width": width,
             "max_loss": round(debit * 100, 2),
             "max_gain": None if width is None else round((width - debit) * 100, 2)}, "OK"
 
@@ -611,10 +675,24 @@ def course_analysis(plan: dict, spot: float, hv: float | None) -> dict:
                 "delta": round(g.delta * 100, 2), "gamma": round(g.gamma * 100, 4),
                 "vega_per_pt": round(g.vega, 2), "theta_per_day": round(g.theta / 365 * 100, 2),
                 "breakevens": rep.breakevens, "prob_profit": round(rep.prob_profit, 3),
+                # débit payé (ou prime encaissée) ÷ valeur BS à la vol réalisée :
+                # > 1 = options chères (bon pour vendre, mauvais pour acheter)
                 "vol_edge": (round(plan["debit"] / theo_real, 3)
-                             if theo_real and theo_real > 0 else None)}
+                             if theo_real and abs(theo_real) > 1e-6 else None)}
     except Exception:
         return {}
+
+
+def option_order(legs: list[dict], qty: int, opening: bool) -> dict:
+    """Ordre Alpaca : simple pour une seule jambe (covered call), multi-jambes sinon."""
+    if len(legs) == 1:
+        l = legs[0]
+        side = l["side"] if opening else ("sell" if l["side"] == "buy" else "buy")
+        intent = ((("buy" if side == "buy" else "sell") + "_to_open") if opening
+                  else ("sell_to_close" if l["side"] == "buy" else "buy_to_close"))
+        return {"symbol": l["symbol"], "qty": str(qty * l.get("ratio", 1)), "side": side,
+                "type": "market", "time_in_force": "day", "position_intent": intent}
+    return mleg_order(legs, qty, opening)
 
 
 def mleg_order(legs: list[dict], qty: int, opening: bool) -> dict:
@@ -679,11 +757,15 @@ def live_greeks(client: Alpaca, trades: list[dict]) -> dict:
                 sign = 1 if l["side"] == "buy" else -1
                 n_units = sign * l.get("ratio", 1) * t["qty"] * 100
                 g = g + pr.greeks(S, l["strike"], T, RISK_FREE, iv, l["type"]).scale(n_units)
+            opt_delta = g.delta
+            g = g + pr.Greeks(_num(t.get("hedge_shares"), 0.0), 0, 0, 0, 0)
         else:
             qty = held.get(t["position_symbol"], 0.0)
             g = pr.Greeks(qty, 0, 0, 0, 0)
         row = {"id": t["id"], "strategy": t["strategy"], "underlying": t["underlying"],
                "spot": round(S, 2), "delta": round(g.delta, 2),
+               "option_delta": round(opt_delta, 2) if t["kind"] == "options" else None,
+               "hedge_shares": t.get("hedge_shares") or 0,
                "delta_usd": round(g.delta * S, 2), "gamma_usd": round(g.gamma * S, 4),
                "vega": round(g.vega / 100, 2), "theta_day": round(g.theta / 365, 2),
                "rho": round(g.rho / 100, 2)}
@@ -714,17 +796,32 @@ def validate(d: dict, ctx: dict) -> tuple[bool, str]:
     strat, und = d.get("strategy"), d.get("underlying")
     if strat not in OPTION_STRATEGIES | SPOT_STRATEGIES:
         return False, f"Strategie inconnue: {strat}"
+    if strat == "COVERED_CALL":
+        if und not in ctx.get("covered", {}):
+            return False, f"Covered call impossible : la poche IA ne détient pas 100 actions {und}"
+        if not ctx["market_open"]:
+            return False, "Marche actions ferme"
+        if _num(d.get("confidence"), 0.0) < MIN_CONFIDENCE:
+            return False, f"Confiance trop faible ({d.get('confidence')})"
+        e = ctx["covered"][und].get("earnings")
+        if e is not None and e <= SELL_NO_EARNINGS_DAYS:
+            return False, f"Résultats de {und} dans {e} j : pas de vente d'options avant"
+        return True, "OK"
     if strat == "BUY_CRYPTO" and und not in ctx["cryptos"]:
         return False, f"{und} n'est pas une crypto de la poche"
     if strat != "BUY_CRYPTO" and und not in ctx["stocks"]:
         return False, f"{und} n'est pas une action de la poche"
+    if strat in CREDIT:
+        e = (ctx.get("earnings") or {}).get(und)
+        if e is not None and e <= SELL_NO_EARNINGS_DAYS:
+            return False, f"Résultats de {und} dans {e} j : pas de vente d'options avant l'échéance"
     if _num(d.get("confidence"), 0.0) < MIN_CONFIDENCE:
         return False, f"Confiance trop faible ({d.get('confidence')})"
     if strat != "BUY_CRYPTO" and not ctx["market_open"]:
         return False, "Marche actions ferme"
     if und in ctx["open_underlyings"]:
         return False, f"Deja en position sur {und}"
-    if len(ctx["open_underlyings"]) >= MAX_OPEN_TRADES:
+    if len(set(ctx["open_underlyings"])) >= MAX_OPEN_TRADES:
         return False, "Nombre max de positions atteint"
     bl = ctx.get("budget_left")
     if bl is not None and bl < MIN_TRADE_PCT * ctx["equity"]:
@@ -747,38 +844,64 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
     plan, why = build_option_trade(strat, chain, spot)
     if not plan:
         return None, why
-    if plan["max_gain"] is not None and plan["max_gain"] < plan["max_loss"]:
+    selling = strat in CREDIT or strat == "COVERED_CALL"
+    if not selling and plan["max_gain"] is not None and plan["max_gain"] < plan["max_loss"]:
         return None, f"Gain max ({plan['max_gain']}$) < perte max ({plan['max_loss']}$)"
     analysis = course_analysis(plan, spot, snap.get("hv", {}).get(und))
     if strat in LONG_VOL and analysis.get("vol_edge") and analysis["vol_edge"] > VOL_EDGE_MAX:
         return None, (f"Vol trop chère : débit {plan['debit']:.2f} = {analysis['vol_edge']:.2f}× "
                       f"la valeur Black-Scholes à la vol réalisée (max {VOL_EDGE_MAX})")
-    budget = ctx["equity"] * OPTION_MAX_RISK_PCT * (NICHE_SIZE if und in ctx.get("niche", ()) else 1)
-    if ctx.get("budget_left") is not None:
-        budget = min(budget, ctx["budget_left"])
-    qty = min(MAX_CONTRACTS, int(budget // plan["max_loss"]))
-    if qty < 1:
-        return None, f"1 contrat risque {plan['max_loss']:.0f}$, max autorise {budget:.0f}$"
-    filled = client.wait_fill(client.submit_order(mleg_order(plan["legs"], qty, True))["id"],
+    if selling and analysis.get("vol_edge") is not None and analysis["vol_edge"] < SELL_EDGE_MIN:
+        return None, (f"Options pas assez chères pour les vendre : prime = {analysis['vol_edge']:.2f}× "
+                      f"leur valeur Black-Scholes à la vol réalisée (min {SELL_EDGE_MIN})")
+    if strat == "COVERED_CALL":
+        qty = min(MAX_CONTRACTS, int(ctx["covered"][und]["shares"] // 100))
+        if qty < 1:
+            return None, f"Moins de 100 actions {und} : pas de covered call"
+    else:
+        budget = ctx["equity"] * OPTION_MAX_RISK_PCT * (NICHE_SIZE if und in ctx.get("niche", ()) else 1)
+        if ctx.get("budget_left") is not None:
+            budget = min(budget, ctx["budget_left"])
+        qty = min(MAX_CONTRACTS, int(budget // plan["max_loss"]))
+        if qty < 1:
+            return None, f"1 contrat risque {plan['max_loss']:.0f}$, max autorise {budget:.0f}$"
+    filled = client.wait_fill(client.submit_order(option_order(plan["legs"], qty, True))["id"],
                               sleep=sleep)
     if not filled:
         return None, "Ordre options non rempli, annule"
-    debit = plan["debit"]
     fp = abs(_num(filled.get("filled_avg_price"), 0.0))
-    if 0 < fp < plan["debit"] * 3:
-        debit = fp
-    max_loss = debit * 100 * qty
-    if plan["width"]:
-        max_gain = (plan["width"] - debit) * 100 * qty
-        tp, sl = SPREAD_TP_OF_MAX_GAIN * max_gain, SPREAD_SL_OF_COST * max_loss
+    covers = None
+    if selling:
+        credit = plan["credit"]
+        if 0 < fp < max(plan["credit"] * 3, 0.01):
+            credit = fp
+        max_gain = credit * 100 * qty
+        if strat == "COVERED_CALL":
+            max_loss, sl = 0.0, None       # le risque est celui des actions (stop de l'action)
+            covers = ctx["covered"][und]["trade_id"]
+        else:
+            max_loss = (plan["width"] - credit) * 100 * qty
+            sl = CREDIT_SL_OF_CREDIT * max_gain
+        tp = CREDIT_TP_OF_CREDIT * max_gain
     else:
-        max_gain, tp, sl = None, VOL_TP_OF_COST * max_loss, VOL_SL_OF_COST * max_loss
+        debit = plan["debit"]
+        if 0 < fp < plan["debit"] * 3:
+            debit = fp
+        max_loss = debit * 100 * qty
+        if plan["width"]:
+            max_gain = (plan["width"] - debit) * 100 * qty
+            tp, sl = SPREAD_TP_OF_MAX_GAIN * max_gain, SPREAD_SL_OF_COST * max_loss
+        else:
+            max_gain, tp, sl = None, VOL_TP_OF_COST * max_loss, VOL_SL_OF_COST * max_loss
     return {"id": uuid.uuid4().hex[:10], "opened_at": now_iso(), "status": "OPEN",
             "kind": "options", "strategy": strat, "underlying": und, "qty": qty,
             "expiry": plan["expiry"], "legs": plan["legs"], "cost": round(max_loss, 2),
             "max_loss": round(max_loss, 2),
             "max_gain": None if max_gain is None else round(max_gain, 2),
-            "tp_amount": round(tp, 2), "sl_amount": round(sl, 2), "spot_at_entry": spot,
+            "credit": round(plan.get("credit", 0.0) * 100 * qty, 2) if selling else 0.0,
+            "tp_amount": round(tp, 2), "sl_amount": None if sl is None else round(sl, 2),
+            "spot_at_entry": spot, "covers": covers,
+            "delta_hedged": strat in DELTA_NEUTRAL, "hedge_shares": 0, "hedge_cash": 0.0,
             "analysis": analysis,
             "source": "presse" if und in ctx.get("ideas", ()) else None,
             "niche": und in ctx.get("niche", ()),
@@ -830,6 +953,79 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
 
 
 # ── sorties automatiques ────────────────────────────────────────────────────
+# ── delta hedging (stratégies neutres) ──────────────────────────────────────
+def hedge_pnl(t: dict, positions: dict) -> float:
+    """Gain/perte de la couverture en actions : valeur des actions + cash dépensé/encaissé."""
+    sh = _num(t.get("hedge_shares"), 0.0)
+    if not sh:
+        return _num(t.get("hedge_cash"), 0.0) if t.get("hedge_cash") else 0.0
+    p = positions.get(t["underlying"]) or {}
+    px = _num(p.get("current_price"), 0.0) or _num(t.get("spot_at_entry"), 0.0)
+    return sh * px + _num(t.get("hedge_cash"), 0.0)
+
+
+def _hedge_trade(client: Alpaca, t: dict, qty: int, price: float, sleep) -> str | None:
+    side = "buy" if qty > 0 else "sell"
+    o = client.submit_order({"symbol": t["underlying"], "qty": str(abs(qty)), "side": side,
+                             "type": "market", "time_in_force": "day"})
+    f = client.wait_fill(o["id"], sleep=sleep)
+    if not f:
+        return None
+    px = _num(f.get("filled_avg_price"), 0.0) or price
+    t["hedge_shares"] = int(_num(t.get("hedge_shares"), 0)) + qty
+    t["hedge_cash"] = round(_num(t.get("hedge_cash"), 0.0) - qty * px, 2)
+    t.setdefault("hedge_log", []).append({"at": now_iso(), "qty": qty, "price": round(px, 4)})
+    return f"{'achat' if qty > 0 else 'vente'} {abs(qty)} {t['underlying']} @ {px:,.2f}"
+
+
+def flatten_hedge(client: Alpaca, t: dict, positions: dict, sleep=time.sleep) -> list[str]:
+    sh = int(_num(t.get("hedge_shares"), 0))
+    if not sh:
+        return []
+    px = _num((positions.get(t["underlying"]) or {}).get("current_price"), 0.0)
+    done = _hedge_trade(client, t, -sh, px, sleep)
+    return [f"  Couverture delta soldée : {done}"] if done else [
+        f"  [!] couverture delta {t['underlying']} non soldée (réessai au prochain cycle)"]
+
+
+def delta_hedge(client: Alpaca, trades: list[dict], greeks: dict, equity: float,
+                market_open: bool, sleep=time.sleep) -> list[str]:
+    """Rend delta-neutres les stratégies « neutres » (straddle, strangle, iron condor,
+    butterfly) en achetant/vendant l'action sous-jacente — comme un teneur de marché.
+    Sur un straddle (long gamma), recouvrir le delta encaisse ½·Γ·S²·(σ_réalisée² − σ_implicite²)
+    au fil des mouvements (« gamma scalping », cours EFREI)."""
+    if not market_open:
+        return []
+    rows = {r["id"]: r for r in greeks.get("positions", [])}
+    lines = []
+    for t in trades:
+        if t["status"] != "OPEN" or not t.get("delta_hedged") or t["id"] not in rows:
+            continue
+        r = rows[t["id"]]
+        S, opt_delta = r["spot"], r.get("option_delta", r["delta"])
+        net = opt_delta + _num(t.get("hedge_shares"), 0)
+        if abs(net) * S < HEDGE_BAND_PCT * equity:
+            continue
+        target = -int(round(opt_delta))
+        diff = target - int(_num(t.get("hedge_shares"), 0))
+        if diff == 0:
+            continue
+        if target < 0 and diff < 0:      # couverture vendeuse = vente à découvert
+            a = client.asset(t["underlying"])
+            if not (a.get("shortable") and a.get("easy_to_borrow")):
+                lines.append(f"  Couverture delta {t['underlying']} impossible (vente à découvert refusée)")
+                continue
+        try:
+            done = _hedge_trade(client, t, diff, S, sleep)
+        except AlpacaError as e:
+            lines.append(f"  [!] couverture delta {t['underlying']} : {str(e)[:100]}")
+            continue
+        if done:
+            lines.append(f"  Couverture delta {t['strategy']} {t['underlying']} : {done} "
+                         f"(delta options {opt_delta:+.1f} → net {opt_delta + t['hedge_shares']:+.1f} actions)")
+    return lines
+
+
 def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
                      sleep=time.sleep) -> list[str]:
     lines = []
@@ -837,7 +1033,20 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
     if not open_trades:
         return lines
     positions = {p["symbol"]: p for p in client.positions()}
+
+    def close_option(t, pnl, reason) -> bool:
+        """Rachète / revend les jambes, puis remet la couverture delta à zéro."""
+        o = client.submit_order(option_order(t["legs"], t["qty"], False))
+        if not client.wait_fill(o["id"], sleep=sleep):
+            return False
+        lines.extend(flatten_hedge(client, t, positions, sleep))
+        _close_record(trades, t["id"], pnl, reason)
+        lines.append(f"  FERME {t['strategy']} {t['underlying']} ({reason}) PnL {pnl:+,.2f} $")
+        return True
+
     for t in open_trades:
+        if t["status"] != "OPEN":          # déjà fermé plus haut (covered call d'une action vendue)
+            continue
         try:
             if t["kind"] == "options":
                 legs = [positions.get(l["symbol"]) for l in t["legs"]]
@@ -845,17 +1054,14 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
                     _close_record(trades, t["id"], None, "Position introuvable chez Alpaca")
                     lines.append(f"  {t['underlying']} : position introuvable, marquee fermee")
                     continue
-                pnl = sum(_num(p["unrealized_pl"], 0.0) for p in legs if p)
+                pnl = sum(_num(p["unrealized_pl"], 0.0) for p in legs if p) + hedge_pnl(t, positions)
                 days_left = (date.fromisoformat(t["expiry"]) - date.today()).days
+                sl = t.get("sl_amount")
                 reason = ("Take-profit" if pnl >= t["tp_amount"] else
-                          "Stop-loss" if pnl <= -t["sl_amount"] else
+                          "Stop-loss" if sl is not None and pnl <= -sl else
                           "Echeance proche" if days_left <= CLOSE_BEFORE_EXPIRY_DAYS else None)
                 if reason and market_open:
-                    o = client.submit_order(mleg_order(t["legs"], t["qty"], False))
-                    if client.wait_fill(o["id"], sleep=sleep):
-                        _close_record(trades, t["id"], pnl, reason)
-                        lines.append(f"  FERME {t['strategy']} {t['underlying']} "
-                                     f"({reason}) PnL {pnl:+,.2f} $")
+                    close_option(t, pnl, reason)
             else:
                 p = positions.get(t["position_symbol"])
                 if not p:
@@ -870,6 +1076,14 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
                 reason = ("Take-profit" if plpc >= t["tp_pct"] else
                           "Stop-loss" if plpc <= -t["sl_pct"] else None)
                 if reason:
+                    # covered call sur cette action : on rachète le call AVANT de vendre
+                    # les actions (sinon le call vendu ne serait plus couvert)
+                    for c in trades:
+                        if c["status"] == "OPEN" and c.get("covers") == t["id"]:
+                            cl = [positions.get(l["symbol"]) for l in c["legs"]]
+                            cpnl = sum(_num(x["unrealized_pl"], 0.0) for x in cl if x)
+                            if not close_option(c, cpnl, f"Action vendue ({reason})"):
+                                raise AlpacaError("rachat du covered call non exécuté")
                     client.close_position(t["underlying"])
                     _close_record(trades, t["id"], pnl, reason)
                     lines.append(f"  FERME {t['strategy']} {t['underlying']} "
@@ -877,6 +1091,41 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
         except Exception as e:
             lines.append(f"  [!] gestion {t['underlying']} : {str(e)[:120]}")
     return lines
+
+
+def covered_candidates(client: Alpaca, trades: list[dict], snap: dict, market_open: bool,
+                       earnings=days_to_earnings, max_n: int = 3) -> dict:
+    """Actions achetées par la poche IA (≥ 100 titres, sans covered call ouvert) :
+    chaîne d'options, vol implicite / réalisée et résultats, pour un éventuel covered call."""
+    if not market_open:
+        return {}
+    try:
+        held = {p["symbol"]: _num(p.get("qty"), 0.0) for p in client.positions()}
+    except Exception:
+        return {}
+    covered_ids = {t.get("covers") for t in trades if t["status"] == "OPEN" and t.get("covers")}
+    out = {}
+    for t in trades:
+        if (t["status"] != "OPEN" or t["kind"] != "stock" or t["id"] in covered_ids
+                or held.get(t["position_symbol"], 0) < 100 or len(out) >= max_n):
+            continue
+        und = t["underlying"]
+        try:
+            closes = daily_closes(client, [und]).get(und) or []
+            spot = last_prices(client, [und]).get(und) or (closes[-1] if closes else None)
+            if not spot or len(closes) < 25:
+                continue
+            hv = metrics(closes, spot)["hv"] if len(closes) >= 55 else None
+            chain = option_chain(client, und, spot)
+            iv = atm_iv(chain, spot)
+        except Exception:
+            continue
+        snap["chains"][und], snap["prices"][und] = chain, spot
+        if hv:
+            snap.setdefault("hv", {})[und] = hv
+        out[und] = {"shares": held[t["position_symbol"]], "trade_id": t["id"], "price": round(spot, 2),
+                    "iv_hv": round(iv / hv, 2) if iv and hv else None, "earnings": earnings(und)}
+    return out
 
 
 # ── idées presse (module 17) ────────────────────────────────────────────────
@@ -944,6 +1193,11 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
     save_trades(trades, state_path)
 
     greeks = live_greeks(client, trades)
+    hedge_lines = delta_hedge(client, trades, greeks, equity, market_open, sleep)
+    if hedge_lines:
+        lines += hedge_lines
+        save_trades(trades, state_path)
+        greeks = live_greeks(client, trades)
     if greeks["positions"]:
         g = greeks["total"]
         lines.append(f"  Grecques du portefeuille : Δ {g['delta_usd']:+,.0f} $ | Γ {g['gamma_usd']:+,.2f} | "
@@ -975,7 +1229,11 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
                                                          if t["status"] == "OPEN")
                            if fund_universe else None),
            "niche": {i["symbol"] for i in ideas if i.get("niche")}}
-    lines.append(f"  Candidats envoyés à l'IA : {', '.join(r['symbol'] for r in snap['rows']) or 'aucun'}")
+    ctx["earnings"] = {r["symbol"]: r.get("earnings") for r in snap["rows"]}
+    ctx["covered"] = covered_candidates(client, trades, snap, market_open,
+                                        snapshot_kw.get("earnings", days_to_earnings))
+    lines.append(f"  Candidats envoyés à l'IA : {', '.join(r['symbol'] for r in snap['rows']) or 'aucun'}"
+                 + (f" | covered call possible sur : {', '.join(ctx['covered'])}" if ctx["covered"] else ""))
 
     decision = decide(build_prompt(snap, ctx))
     what = (f"{decision.get('strategy')} {decision.get('underlying')}"

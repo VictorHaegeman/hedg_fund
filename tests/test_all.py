@@ -575,10 +575,10 @@ class FakeAlpaca:
             snaps = {}
             for k in range(115, 166, 5):
                 for cp in "CP":
-                    intr = max(140 - k, 0) if cp == "C" else max(k - 140, 0)
-                    mid = intr + 3 * float(np.exp(-abs(k - 140) / 20))  # valeur temps max à la monnaie
+                    from quantlab.pricing import bs_price      # prix réalistes (vol 30 %, 30 j)
+                    mid = max(bs_price(140.0, k, 30 / 365, 0.04, 0.30, "call" if cp == "C" else "put"), 0.06)
                     snaps[f"{und}{exp}{cp}{k * 1000:08d}"] = {
-                        "latestQuote": {"bp": round(mid - 0.05, 2), "ap": round(mid + 0.05, 2)},
+                        "latestQuote": {"bp": round(mid * 0.98, 2), "ap": round(mid * 1.02, 2)},
                         "impliedVolatility": 0.3}
             return {"snapshots": snaps}
         if path == "/v1beta1/news":
@@ -650,7 +650,7 @@ def test_ai_option_strategies():
     for strat in ai.OPTION_STRATEGIES:
         plan, why = ai.build_option_trade(strat, chain, 140.0)
         assert plan, (strat, why)
-        assert plan["max_loss"] > 0
+        assert plan["max_loss"] > 0 or strat == "COVERED_CALL"
     p, _ = ai.build_option_trade("BULL_CALL_SPREAD", chain, 140.0)
     assert [l["strike"] for l in p["legs"]] == [140.0, 145.0] and p["width"] == 5.0
     p, _ = ai.build_option_trade("LONG_STRADDLE", chain, 140.0)
@@ -1167,3 +1167,76 @@ def test_ai_shared_account_stays_in_its_budget(tmp_path):
                           state_path=state, fund_universe=["SPY"], **kw)
     assert "Part du compte réservée à l'IA déjà utilisée" in out
     assert "IV/HV <= 1.0" in seen[0]                    # spreads préférés si options bon marché
+
+
+def test_ai_credit_strategies_structure():
+    from quantlab import ai_trader as ai
+    chain = ai.option_chain(FakeAlpaca(), "NVDA", 140.0)
+    bps, _ = ai.build_option_trade("BULL_PUT_SPREAD", chain, 140.0)
+    assert [(l["side"], l["type"]) for l in bps["legs"]] == [("buy", "put"), ("sell", "put")]
+    assert bps["legs"][0]["strike"] < bps["legs"][1]["strike"] < 140 and bps["credit"] > 0
+    assert bps["max_gain"] == round(bps["credit"] * 100, 2)
+    assert abs(bps["max_loss"] - (bps["width"] - bps["credit"]) * 100) < 0.01
+    bcs, _ = ai.build_option_trade("BEAR_CALL_SPREAD", chain, 140.0)
+    assert 140 < bcs["legs"][0]["strike"] < bcs["legs"][1]["strike"] and bcs["legs"][0]["side"] == "sell"
+    ic, _ = ai.build_option_trade("IRON_CONDOR", chain, 140.0)
+    k = [l["strike"] for l in ic["legs"]]
+    assert k == sorted(k) and [l["side"] for l in ic["legs"]] == ["buy", "sell", "sell", "buy"]
+    cc, _ = ai.build_option_trade("COVERED_CALL", chain, 140.0)
+    assert len(cc["legs"]) == 1 and cc["legs"][0]["side"] == "sell" and cc["legs"][0]["strike"] > 140
+    single = ai.option_order(cc["legs"], 1, True)
+    assert single["position_intent"] == "sell_to_open" and "order_class" not in single
+    assert ai.option_order(cc["legs"], 1, False)["position_intent"] == "buy_to_close"
+    # pas de vente d'options juste avant des résultats
+    ctx = {"stocks": ["NVDA"], "cryptos": [], "market_open": True, "open_underlyings": [],
+           "equity": 100_000, "earnings": {"NVDA": 10}}
+    ok, why = ai.validate({"strategy": "IRON_CONDOR", "underlying": "NVDA", "confidence": 0.8}, ctx)
+    assert not ok and "Résultats" in why
+
+
+def test_ai_delta_hedging_neutral_strategies():
+    from quantlab import ai_trader as ai
+    client = FakeAlpaca()
+    t = {"id": "h1", "status": "OPEN", "delta_hedged": True, "underlying": "NVDA",
+         "strategy": "LONG_STRADDLE", "hedge_shares": 0, "hedge_cash": 0.0, "spot_at_entry": 140.0}
+    g = {"positions": [{"id": "h1", "spot": 140.0, "delta": 60.0, "option_delta": 60.0}]}
+    assert ai.delta_hedge(client, [t], g, 100_000, market_open=False) == []
+    lines = ai.delta_hedge(client, [t], g, 100_000, market_open=True, sleep=lambda s: None)
+    assert t["hedge_shares"] == -60 and t["hedge_cash"] == 8_400 and "vente 60 NVDA" in lines[0]
+    assert client.orders[-1] == {"symbol": "NVDA", "qty": "60", "side": "sell", "type": "market",
+                                 "time_in_force": "day"}
+    g["positions"][0].update(delta=1.0, option_delta=61.0)       # écart < bande → rien
+    assert ai.delta_hedge(client, [t], g, 100_000, True, sleep=lambda s: None) == []
+    assert ai.hedge_pnl(t, {"NVDA": {"current_price": "130"}}) == -60 * 130 + 8_400   # +600 $
+    ai.flatten_hedge(client, t, {"NVDA": {"current_price": "140"}}, sleep=lambda s: None)
+    assert t["hedge_shares"] == 0 and client.orders[-1]["side"] == "buy"
+
+
+def test_ai_covered_call_on_held_shares(tmp_path):
+    from quantlab import ai_trader as ai
+    state = str(tmp_path / "ai.json")
+    stock = {"id": "s1", "status": "OPEN", "kind": "stock", "strategy": "BUY_STOCK",
+             "underlying": "BAH", "position_symbol": "BAH", "cost": 17_000.0,
+             "sl_pct": 0.03, "tp_pct": 0.06}
+    ai.save_trades([stock], state)
+    client = FakeAlpaca()
+    client.pos = {"BAH": {"qty": "122", "unrealized_pl": "0", "cost_basis": "17000"}}
+    seen = []
+    def decide(p):
+        seen.append(p)
+        return {"action": "OPEN", "strategy": "COVERED_CALL", "underlying": "BAH",
+                "confidence": 0.8, "reasoning": "options chères, on encaisse la prime"}
+    kw = dict(earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "-",
+              sleep=lambda s: None)
+    out, _ = ai.run_cycle(client, decide, state_path=state, **kw)
+    assert "BAH : 122 actions" in seen[0] and "OUVERT COVERED_CALL BAH" in out, out
+    cc = [t for t in ai.load_trades(state) if t["strategy"] == "COVERED_CALL"][0]
+    assert cc["qty"] == 1 and cc["covers"] == "s1" and cc["max_gain"] > 0 and cc["cost"] == 0
+    assert client.orders[-1]["position_intent"] == "sell_to_open"
+    # l'action touche son stop : le call est racheté AVANT la vente des actions
+    client.pos["BAH"]["unrealized_pl"] = "-700"
+    n = len(client.orders)
+    out, _ = ai.run_cycle(client, lambda p: {"action": "HOLD"}, state_path=state, **kw)
+    assert client.orders[n]["position_intent"] == "buy_to_close" and "BAH" in client.closed
+    st = {t["id"]: t["status"] for t in ai.load_trades(state)}
+    assert st["s1"] == "CLOSED" and st[cc["id"]] == "CLOSED"

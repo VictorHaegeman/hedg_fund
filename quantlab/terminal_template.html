@@ -227,6 +227,8 @@ function aiBlock(list){ if(!list||!list.length) return "";
     <div><small>${r.gain_is_target?"Gain visé":"Gain max"}</small><b>${r.max_gain==null?"illimité":money(r.max_gain)}</b></div>
     ${isNum(r.delta_usd)?`<div><small>Delta $</small><b>${money(r.delta_usd)}</b></div>`:""}
     ${isNum(r.confidence)?`<div><small>Confiance de l'IA</small><b>${nf(r.confidence*100,0)} %</b></div>`:""}
+    ${r.credit>0?`<div><small>Prime encaissée</small><b class="up">${money(r.credit)}</b></div>`:""}
+    ${r.delta_hedged?`<div><small>Couverture delta</small><b>${r.hedge_shares>0?"+":""}${r.hedge_shares} actions</b><small>${r.hedge_trades} ajustement${r.hedge_trades>1?"s":""}</small></div>`:""}
    </div>
    ${r.detail?`<p class="note">${esc(r.detail)}</p>`:""}
    <p style="margin:8px 0 0;font-size:13px"><b>Pourquoi :</b> ${esc(r.reasoning||"")}</p></div>`).join(""); }

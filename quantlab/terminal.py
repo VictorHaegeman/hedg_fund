@@ -315,6 +315,10 @@ AI_KIND_FR = {
     "LONG_STRADDLE": "Option : straddle (gros mouvement, sens inconnu)",
     "LONG_STRANGLE": "Option : strangle (gros mouvement, sens inconnu)",
     "LONG_CALL_BUTTERFLY": "Option : butterfly (le prix reste stable)",
+    "BULL_PUT_SPREAD": "Vente d'options : bull put spread (prime encaissée, vue haussière)",
+    "BEAR_CALL_SPREAD": "Vente d'options : bear call spread (prime encaissée, vue baissière)",
+    "IRON_CONDOR": "Vente d'options : iron condor (le prix reste dans une fourchette)",
+    "COVERED_CALL": "Vente d'options : covered call (revenu sur des actions détenues)",
 }
 
 
@@ -377,6 +381,9 @@ def ai_positions(ai: dict | None, prices: dict | None = None) -> list[dict]:
         rows.append({"symbol": und, "book": "Poche IA", "strategy": t["strategy"],
                      "what": what, "detail": detail, **live,
                      "confidence": t.get("confidence"), "qty": t.get("qty"),
+                     "credit": t.get("credit"), "delta_hedged": t.get("delta_hedged"),
+                     "hedge_shares": t.get("hedge_shares") or 0,
+                     "hedge_trades": len(t.get("hedge_log") or []),
                      "kind": t["kind"], "cost": t.get("cost"), "max_loss": max_loss,
                      "max_gain": max_gain, "gain_is_target": spot, "expiry": t.get("expiry"),
                      "opened": str(t.get("opened_at", ""))[:10], "niche": t.get("niche"),

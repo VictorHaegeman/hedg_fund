@@ -151,6 +151,21 @@ comparées au fonds sur le tableau de bord, jamais mélangées avec lui.
 Workflow : [ai-cycle.yml](.github/workflows/ai-cycle.yml) — toutes les 30 min pendant la
 séance US, toutes les 3 h sinon (crypto). Journal : `ai_trades.json`, `ai_logs/`.
 
+### Vente d'options et delta hedging (poche IA)
+
+Comme les gérants : on **achète** des options quand elles sont bon marché (IV/HV ≤ 1 → bull call
+spread / bear put spread de préférence à l'action), on les **vend** quand elles sont chères :
+`BULL_PUT_SPREAD`, `BEAR_CALL_SPREAD`, `IRON_CONDOR` (perte max connue) et `COVERED_CALL` (call
+vendu sur ≥ 100 actions détenues par la poche). Garde-fous : prime ≥ 1,05 × sa valeur
+Black-Scholes à la vol réalisée, prime ≥ 20 % de la largeur du spread, jamais de vente si des
+résultats tombent dans les 45 jours, rachat à 50 % de la prime gagnée, stop à 1 × la prime.
+Un covered call est toujours racheté avant la vente des actions qu'il couvre.
+
+**Delta hedging** : les stratégies neutres (straddle, strangle, iron condor, butterfly) sont
+rendues delta-neutres à chaque cycle en achetant / vendant l'action (dès que |Δ $| dépasse
+0,5 % de l'équité) ; la couverture est soldée à la fermeture et comptée dans le P&L. Sur un
+straddle, c'est du « gamma scalping » : gain ≈ ½·Γ·S²·(σ_réalisée² − σ_implicite²).
+
 ### Clés (jamais dans le code)
 
 | Où | Comment |
