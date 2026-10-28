@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T21:08:12",
+  "updated_at": "2026-10-28T22:55:57",
   "positions": [
     {
       "id": "464c6aacc5",
@@ -11,6 +11,7 @@
       "hedge_shares": 0,
       "delta_usd": 10199.11,
       "gamma_usd": 0.0,
+      "gamma_1pct": 0.0,
       "vega": 0.0,
       "theta_day": 0.0,
       "rho": 0.0
@@ -25,6 +26,7 @@
       "hedge_shares": 0,
       "delta_usd": 9900.43,
       "gamma_usd": 0.0,
+      "gamma_1pct": 0.0,
       "vega": 0.0,
       "theta_day": 0.0,
       "rho": 0.0
@@ -39,6 +41,7 @@
       "hedge_shares": 0,
       "delta_usd": 10092.56,
       "gamma_usd": 0.0,
+      "gamma_1pct": 0.0,
       "vega": 0.0,
       "theta_day": 0.0,
       "rho": 0.0
@@ -47,6 +50,7 @@
   "total": {
     "delta_usd": 30192.1,
     "gamma_usd": 0.0,
+    "gamma_1pct": 0.0,
     "vega": 0.0,
     "theta_day": 0.0,
     "rho": 0.0
