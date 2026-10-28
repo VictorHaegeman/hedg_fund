@@ -34,5 +34,23 @@
     "confidence": 0.72,
     "reasoning": "XOM montre une tendance haussière forte (RSI 77.5, +3.4% sur 5 jours) avec un volume implicite raisonnable et aucune annonce de résultats imminente, ce qui justifie un achat prudent.",
     "pnl": null
+  },
+  {
+    "id": "655e8dce1a",
+    "opened_at": "2026-10-28T18:35:42",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "AMD",
+    "position_symbol": "AMD",
+    "cost": 10028.55,
+    "entry_price": 574.66,
+    "sl_pct": 0.03,
+    "tp_pct": 0.06,
+    "source": null,
+    "niche": false,
+    "confidence": 0.72,
+    "reasoning": "AMD montre une tendance haussière claire (+4% sur 5j), un RSI modéré (52.4), un volume historique élevé et des nouvelles positives sur l'activité technologique, ce qui justifie un achat prudent avec un bon ratio risque/rendement.",
+    "pnl": null
   }
 ]

@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-10-28T12:07:59",
+  "updated_at": "2026-10-28T18:35:30",
   "positions": [
     {
       "id": "464c6aacc5",
       "strategy": "BUY_STOCK",
       "underlying": "BAH",
-      "spot": 83.39,
+      "spot": 82.61,
       "delta": 122.16,
-      "delta_usd": 10186.89,
+      "delta_usd": 10091.0,
       "gamma_usd": 0.0,
       "vega": 0.0,
       "theta_day": 0.0,
@@ -17,9 +17,9 @@
       "id": "371ce3ea37",
       "strategy": "BUY_STOCK",
       "underlying": "XOM",
-      "spot": 179.88,
+      "spot": 182.25,
       "delta": 54.37,
-      "delta_usd": 9780.81,
+      "delta_usd": 9909.67,
       "gamma_usd": 0.0,
       "vega": 0.0,
       "theta_day": 0.0,
@@ -27,7 +27,7 @@
     }
   ],
   "total": {
-    "delta_usd": 19967.7,
+    "delta_usd": 20000.67,
     "gamma_usd": 0.0,
     "vega": 0.0,
     "theta_day": 0.0,

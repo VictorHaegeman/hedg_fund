@@ -1,0 +1,10 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-10-28T18:35:30 | équité 100,285.49 $ (+0.30 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +20,001 $ | Γ +0.00 | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : CVLT, UPS, NXPI, GEHC, EXE, SKHY, DDOG, SOFI  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : GEHC, GOOGL, COIN, BA, DDOG, AMD, NFLX, UBER, MRK, CAT, AAPL, MSFT, DOT/USD, ADA/USD, AAVE/USD, SOL/USD, XRP/USD
+  IA : BUY_STOCK AMD | confiance 0.72 | AMD montre une tendance haussière claire (+4% sur 5j), un RSI modéré (52.4), un volume historique élevé et des nouvelles positives sur l'activité technologique, ce qui justifie un achat prudent avec un bon ratio risque/rendement.
+  OUVERT BUY_STOCK AMD | coût 10,029 $
+  Idées presse : 15 idées rafraîchies
