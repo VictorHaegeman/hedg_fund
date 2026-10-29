@@ -1,0 +1,9 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-10-29T18:02:13 | équité 100,660.69 $ (+0.19 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +30,142 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ETSY, TENB, EBAY, ICLR, LNG, BIIB, ENSG, AER  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : LNG, CAT, LLY, ICLR, AER, TENB, UBER, GOOGL, INTC, QCOM, COIN, NFLX, DOT/USD, BCH/USD, UNI/USD, SOL/USD, LINK/USD | covered call possible sur : BAH
+  IA : HOLD | confiance 0.58 | Aucune opportunité claire avec un niveau de confiance suffisant (>=0.65) n'est identifiée parmi les titres ou cryptos surveillés, et les règles imposent de rester en HOLD dans ce cas.
+  Idées presse : 15 idées rafraîchies
