@@ -2,7 +2,7 @@
   {
     "id": "464c6aacc5",
     "opened_at": "2026-10-26T13:41:30",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "stock",
     "strategy": "BUY_STOCK",
     "underlying": "BAH",
@@ -15,7 +15,9 @@
     "niche": false,
     "confidence": 0.72,
     "reasoning": "BAH montre une forte tendance haussière (+10,4% sur 5 jours), un RSI élevé (71,7) et un IV/HV raisonnable (1,09), ce qui indique un potentiel de continuation sans risque excessif.",
-    "pnl": null
+    "pnl": 880.77,
+    "closed_at": "2026-10-30T17:43:10",
+    "close_reason": "Take-profit"
   },
   {
     "id": "371ce3ea37",
@@ -38,7 +40,7 @@
   {
     "id": "655e8dce1a",
     "opened_at": "2026-10-28T18:35:42",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "stock",
     "strategy": "BUY_STOCK",
     "underlying": "AMD",
@@ -51,6 +53,8 @@
     "niche": false,
     "confidence": 0.72,
     "reasoning": "AMD montre une tendance haussière claire (+4% sur 5j), un RSI modéré (52.4), un volume historique élevé et des nouvelles positives sur l'activité technologique, ce qui justifie un achat prudent avec un bon ratio risque/rendement.",
-    "pnl": null
+    "pnl": -1302.42,
+    "closed_at": "2026-10-30T17:43:10",
+    "close_reason": "Stop-loss"
   }
 ]

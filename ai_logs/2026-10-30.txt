@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-10-30T17:43:10 | équité 99,780.28 $ (-1.03 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  FERME BUY_STOCK BAH (Take-profit) PnL +880.77 $
+  FERME BUY_STOCK AMD (Stop-loss) PnL -1,302.42 $
+  Grecques du portefeuille : Δ +10,155 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : PTEN, GILD, ENTG, EXEL, LGND, LNG, LTH, INCY  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : GILD, EXEL, CVX, LNG, GOOGL, INTC, LLY, CAT, QCOM, ENTG, LTH, AAPL, ETH/USD, SOL/USD, AVAX/USD, DOT/USD, ADA/USD
+  IA : HOLD | confiance 0.58 | Aucune opportunité claire avec un risque maîtrisé ne se dégage parmi les titres surveillés, les options sont trop chères ou les résultats imminents limitent les stratégies, donc il vaut mieux rester en position neutre.
+  Idées presse : 15 idées rafraîchies
