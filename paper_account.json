@@ -1,5 +1,5 @@
 {
-  "cash": 1200.6027962309345,
+  "cash": 0.0,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -41,6 +41,26 @@
       "strategy": "breakout",
       "entry_date": "2026-10-29",
       "risk_amount": 1010.16
+    },
+    "SPY": {
+      "symbol": "SPY",
+      "shares": 43.4998537803476,
+      "entry": 755.719970703125,
+      "stop": 732.5674625168327,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-10-30",
+      "risk_amount": 1007.13
+    },
+    "QQQ": {
+      "symbol": "QQQ",
+      "shares": 0.7265671568434943,
+      "entry": 690.489990234375,
+      "stop": 652.3331952296405,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-10-30",
+      "risk_amount": 1006.81
     }
   },
   "history": [
@@ -421,7 +441,7 @@
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-10-30T02:05:33",
+  "last_cycle": "2026-10-31T01:44:21",
   "equity_curve": [
     [
       "2026-06-11",
@@ -810,18 +830,11 @@
     [
       "2026-10-30",
       100998.91
+    ],
+    [
+      "2026-10-31",
+      100680.28
     ]
   ],
-  "treasury": {
-    "SPY": {
-      "shares": 39.134679478364355,
-      "cost": 29952.509441268423,
-      "last": 769.3599853515625
-    },
-    "BIL": {
-      "shares": 28.71020202778952,
-      "cost": 2631.002896303314,
-      "last": 91.66999816894531
-    }
-  }
+  "treasury": {}
 }
