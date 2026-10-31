@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T16:50:47",
+  "updated_at": "2026-10-31T20:59:11",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -22,10 +22,10 @@
       "hv": 0.29276342258272253,
       "niche": false,
       "score": 7.284,
-      "why": "Les analystes maintiennent une position surpondérée et augmentent leurs objectifs de cours, ce qui attire l'attention.",
-      "risk": "Le risque principal est que les attentes de hausse de cours ne se concrétisent pas si les résultats opérationnels stagnent.",
-      "why_en": "Analysts keep an overweight rating and raise price targets, drawing attention.",
-      "risk_en": "The main risk is that the expected price appreciation may not materialize if operating results disappoint."
+      "why": "Les analystes augmentent leurs objectifs de cours, signalant un potentiel de hausse.",
+      "risk": "Le maintien d'une notation neutre indique une incertitude sur la performance future.",
+      "why_en": "Analysts are raising price targets, indicating upside potential.",
+      "risk_en": "The neutral rating suggests uncertainty about future performance."
     },
     {
       "symbol": "GDYN",
@@ -45,33 +45,10 @@
       "hv": 1.2579754287595968,
       "niche": true,
       "score": 7.197,
-      "why": "Après les résultats du troisième trimestre, les analystes ajustent à la hausse leurs objectifs de cours, signalant un fort intérêt.",
-      "risk": "Le risque réside dans la volatilité liée aux performances futures de l'entreprise dans un secteur technologique cyclique.",
-      "why_en": "Following Q3 results, analysts raise price targets, indicating strong interest.",
-      "risk_en": "The risk lies in volatility tied to the company's future performance in a cyclical tech sector."
-    },
-    {
-      "symbol": "LDOS",
-      "mentions": 2,
-      "headlines": [
-        "Leidos Holdings, Inc. Declares Quarterly Cash Dividend Increase",
-        "Leidos Holdings Raises Its Quarterly Cash Dividend From $0.43 To $0.45"
-      ],
-      "last_at": "2026-10-30T22:01:44Z",
-      "sentiment": 1.0,
-      "price": 142.98,
-      "adv_usd": 126889788.92662048,
-      "chg_5d": 5.1,
-      "chg_20d": 21.4,
-      "rsi": 75.6,
-      "trend": "haussiere",
-      "hv": 0.3006705428287962,
-      "niche": false,
-      "score": 7.197,
-      "why": "Leidos annonce une hausse de son dividende trimestriel, ce qui attire les investisseurs à la recherche de revenu.",
-      "risk": "Le risque principal est que la hausse du dividende ne soit pas soutenable si les marges se resserrent.",
-      "why_en": "Leidos announces an increase in its quarterly dividend, attracting income‑seeking investors.",
-      "risk_en": "The main risk is that the dividend increase may not be sustainable if margins tighten."
+      "why": "Les ajustements à la hausse des objectifs de cours après les résultats du troisième trimestre attirent l'attention.",
+      "risk": "La forte hausse récente du cours peut refléter une volatilité accrue.",
+      "why_en": "Upward price target adjustments after Q3 results draw attention.",
+      "risk_en": "The recent sharp price gain may reflect heightened volatility."
     },
     {
       "symbol": "MO",
@@ -91,35 +68,33 @@
       "hv": 0.27411362384439886,
       "niche": false,
       "score": 7.197,
-      "why": "Les banques augmentent leurs objectifs de cours pour Altria, reflétant une perception positive du secteur du tabac.",
-      "risk": "Le risque principal provient de la pression réglementaire et des changements de consommation qui pourraient affecter les ventes.",
-      "why_en": "Banks raise price targets for Altria, reflecting a positive view of the tobacco sector.",
-      "risk_en": "The main risk stems from regulatory pressure and shifting consumer habits that could impact sales."
+      "why": "Les banques augmentent leurs objectifs de cours, soutenant une perspective positive pour Altria.",
+      "risk": "Le maintien d'une note neutre de Citigroup indique un risque de stagnation.",
+      "why_en": "Banks are raising price targets, supporting a positive outlook for Altria.",
+      "risk_en": "Citigroup's neutral stance signals a risk of flat performance."
     },
     {
-      "symbol": "PWR",
-      "mentions": 5,
+      "symbol": "OSPN",
+      "mentions": 2,
       "headlines": [
-        "Captiva Verde Wellness Corp. Insider Filing",
-        "Citigroup Maintains Buy Rating and Raises Price Target for Quanta Services",
-        "TD Cowen Maintains Buy Rating and Raises Price Target for Quanta Services",
-        "Citigroup Maintains Buy on Quanta Services, Raises Price Target to $882"
+        "DA Davidson Raises Price Target on OneSpan to $22",
+        "B. Riley Raises Price Target on OneSpan"
       ],
-      "last_at": "2026-10-31T13:06:23Z",
-      "sentiment": 0.8,
-      "price": 620.73,
-      "adv_usd": 800682965.7705688,
-      "chg_5d": 13.6,
-      "chg_20d": -8.3,
-      "rsi": 49.2,
-      "trend": "neutre",
-      "hv": 0.5556844476510335,
-      "niche": false,
-      "score": 6.984,
-      "why": "Des analystes maintiennent des notes d'achat et relèvent les objectifs de cours pour Quanta Services, soulignant un intérêt sectoriel.",
-      "risk": "Le risque principal est l'exposition aux cycles économiques qui peuvent réduire la demande de services d'infrastructure.",
-      "why_en": "Analysts keep buy ratings and raise price targets for Quanta Services, highlighting sector interest.",
-      "risk_en": "The main risk is exposure to economic cycles that could dampen demand for infrastructure services."
+      "last_at": "2026-10-31T13:03:47Z",
+      "sentiment": 1.0,
+      "price": 25.66,
+      "adv_usd": 16412074.540510178,
+      "chg_5d": 27.1,
+      "chg_20d": 41.6,
+      "rsi": 85.6,
+      "trend": "haussiere",
+      "hv": 0.9145703071267364,
+      "niche": true,
+      "score": 7.197,
+      "why": "Des hausses d'objectifs de cours par plusieurs analystes renforcent l'optimisme autour de OneSpan.",
+      "risk": "L'augmentation rapide du cours peut être fragile si les résultats ne suivent pas.",
+      "why_en": "Multiple analysts raising price targets boost optimism for OneSpan.",
+      "risk_en": "Rapid price appreciation may be fragile if results do not keep pace."
     },
     {
       "symbol": "APG",
@@ -140,10 +115,10 @@
       "hv": 0.3833620222508432,
       "niche": false,
       "score": 6.773,
-      "why": "JP Morgan et d’autres augmentent leurs objectifs de cours pour APi Group, indiquant une confiance accrue.",
-      "risk": "Le risque principal est la dépendance aux marchés de construction, sensibles aux ralentissements économiques.",
-      "why_en": "JP Morgan and others raise price targets for APi Group, indicating increased confidence.",
-      "risk_en": "The main risk is reliance on construction markets, which are sensitive to economic slowdowns."
+      "why": "Des analystes majeurs maintiennent des positions favorables et relèvent les objectifs de cours pour APi Group.",
+      "risk": "Des divergences dans les objectifs de cours peuvent créer de l'incertitude.",
+      "why_en": "Major analysts maintain favorable stances and raise price targets for APi Group.",
+      "risk_en": "Differences in price targets may create uncertainty."
     },
     {
       "symbol": "TDOC",
@@ -164,33 +139,35 @@
       "hv": 0.969889776062962,
       "niche": true,
       "score": 6.773,
-      "why": "Les analystes relèvent les objectifs de cours de Teladoc, reflétant l'espoir d'une reprise de la demande de santé numérique.",
-      "risk": "Le risque principal est la concurrence accrue et la possible décélération de la croissance post‑pandémique.",
-      "why_en": "Analysts raise Teladoc's price targets, reflecting hope for a rebound in digital health demand.",
-      "risk_en": "The main risk is heightened competition and a possible slowdown in post‑pandemic growth."
+      "why": "Les mises à jour de notation et d'objectifs de cours indiquent un regain d'intérêt pour Teladoc Health.",
+      "risk": "Les ajustements modestes suggèrent que les défis de croissance persistent.",
+      "why_en": "Rating and price target updates signal renewed interest in Teladoc Health.",
+      "risk_en": "Modest adjustments suggest ongoing growth challenges."
     },
     {
-      "symbol": "ETR",
-      "mentions": 2,
+      "symbol": "PWR",
+      "mentions": 4,
       "headlines": [
-        "Entergy Corporation Increases Quarterly Dividend",
-        "Entergy Raises Quarterly Dividend From $0.64 To $0.68 Per Share"
+        "Captiva Verde Wellness Corp. Insider Filing",
+        "Citigroup Maintains Buy Rating and Raises Price Target for Quanta Services",
+        "TD Cowen Maintains Buy Rating and Raises Price Target for Quanta Services",
+        "Citigroup Maintains Buy on Quanta Services, Raises Price Target to $882"
       ],
-      "last_at": "2026-10-30T21:32:08Z",
-      "sentiment": 1.0,
-      "price": 110.11,
-      "adv_usd": 271985889.34986115,
-      "chg_5d": 2.6,
-      "chg_20d": 9.1,
-      "rsi": 69.2,
-      "trend": "haussiere",
-      "hv": 0.1605448528255291,
+      "last_at": "2026-10-31T13:06:23Z",
+      "sentiment": 0.75,
+      "price": 620.73,
+      "adv_usd": 800682965.7705688,
+      "chg_5d": 13.6,
+      "chg_20d": -8.3,
+      "rsi": 49.2,
+      "trend": "neutre",
+      "hv": 0.5556844476510335,
       "niche": false,
-      "score": 6.717,
-      "why": "Entergy augmente son dividende trimestriel, ce qui attire les investisseurs à la recherche de rendement stable.",
-      "risk": "Le risque principal est la sensibilité aux prix de l'énergie et aux régulations environnementales.",
-      "why_en": "Entergy raises its quarterly dividend, attracting investors seeking stable yield.",
-      "risk_en": "The main risk is sensitivity to energy prices and environmental regulations."
+      "score": 6.469,
+      "why": "Des hausses d'objectifs de cours pour Quanta Services reflètent une perception positive du secteur énergétique.",
+      "risk": "L'absence de nouvelles fondamentales spécifiques à PWR rend le mouvement incertain.",
+      "why_en": "Price target hikes for Quanta Services reflect a positive view of the energy sector.",
+      "risk_en": "Lack of specific fundamentals for PWR makes the move uncertain."
     },
     {
       "symbol": "EBAY",
@@ -210,10 +187,33 @@
       "hv": 0.2845573280343845,
       "niche": false,
       "score": 6.237,
-      "why": "eBay publie un rapport sur les side‑hustles au Royaume‑Uni, mettant en avant son rôle dans le commerce en ligne.",
-      "risk": "Le risque principal est la concurrence croissante des plateformes de commerce électronique plus agressives.",
-      "why_en": "eBay releases a report on UK side‑hustles, highlighting its role in online commerce.",
-      "risk_en": "The main risk is growing competition from more aggressive e‑commerce platforms."
+      "why": "Le rapport sur les side hustles au Royaume-Uni et la hausse de l'objectif de cours attirent l'attention sur eBay.",
+      "risk": "Le léger mouvement du cours indique une dynamique limitée.",
+      "why_en": "The UK side‑hustle report and raised price target draw focus to eBay.",
+      "risk_en": "The modest price movement indicates limited momentum."
+    },
+    {
+      "symbol": "OWL",
+      "mentions": 2,
+      "headlines": [
+        "Keefe, Bruyette & Woods Maintains Blue Owl Capital at Market Perform, Raises Price Target",
+        "Evercore ISI Group Maintains Blue Owl Capital at Outperform, Raises Price Target"
+      ],
+      "last_at": "2026-10-30T22:02:11Z",
+      "sentiment": 1.0,
+      "price": 10.33,
+      "adv_usd": 195892177.1345806,
+      "chg_5d": 10.4,
+      "chg_20d": 13.8,
+      "rsi": 63.8,
+      "trend": "neutre",
+      "hv": 0.47039142651950366,
+      "niche": false,
+      "score": 6.197,
+      "why": "Les analystes maintiennent des notes positives et relèvent les objectifs de cours, soutenant Blue Owl Capital.",
+      "risk": "Le maintien de la notation « Market Perform » montre une perspective prudente.",
+      "why_en": "Analysts keep positive ratings and raise price targets, supporting Blue Owl Capital.",
+      "risk_en": "Maintaining a Market Perform rating shows a cautious outlook."
     },
     {
       "symbol": "LMT",
@@ -234,10 +234,10 @@
       "hv": 0.36608834909876936,
       "niche": false,
       "score": 5.773,
-      "why": "Lockheed Martin obtient une importante commande de missiles Patriot pour l'Ukraine, renforçant son profil de défense.",
-      "risk": "Le risque principal est le retard potentiel des livraisons qui pourrait affecter les revenus attendus.",
-      "why_en": "Lockheed Martin secures a large Patriot missile sale to Ukraine, boosting its defense profile.",
-      "risk_en": "The main risk is possible delivery delays that could impact expected revenue."
+      "why": "Les ventes d'armes à l'Ukraine et les projets de défense renforcent la visibilité de Lockheed Martin.",
+      "risk": "Les retards de livraison et les incertitudes géopolitiques peuvent affecter les revenus.",
+      "why_en": "Arms sales to Ukraine and defense projects boost Lockheed Martin's visibility.",
+      "risk_en": "Delivery delays and geopolitical uncertainties could impact revenues."
     },
     {
       "symbol": "CROX",
@@ -257,10 +257,10 @@
       "hv": 0.8722525505428161,
       "niche": false,
       "score": 5.697,
-      "why": "Les analystes augmentent les objectifs de cours de Crocs, reflétant une perception positive de la reprise de la mode décontractée.",
-      "risk": "Le risque principal est la dépendance aux tendances de consommation qui peuvent changer rapidement.",
-      "why_en": "Analysts raise Crocs' price targets, reflecting a positive view of casual‑wear recovery.",
-      "risk_en": "The main risk is reliance on consumer trends that can shift quickly."
+      "why": "Les hausses d'objectifs de cours par UBS et Barclays indiquent un optimisme sur Crocs.",
+      "risk": "Le maintien d'une note neutre chez UBS souligne une possible volatilité du marché.",
+      "why_en": "Price target hikes by UBS and Barclays signal optimism on Crocs.",
+      "risk_en": "UBS's neutral rating underscores potential market volatility."
     },
     {
       "symbol": "ENTG",
@@ -280,10 +280,10 @@
       "hv": 0.7806987013371944,
       "niche": false,
       "score": 5.697,
-      "why": "Les banques relèvent les objectifs de cours d'Entegris, soulignant la demande croissante pour les matériaux de haute technologie.",
-      "risk": "Le risque principal est la concentration sur quelques grands clients industriels, exposant l'entreprise à leurs cycles.",
-      "why_en": "Banks raise Entegris' price targets, highlighting growing demand for high‑tech materials.",
-      "risk_en": "The main risk is concentration on a few large industrial customers, exposing the firm to their cycles."
+      "why": "Les relevés d'objectifs de cours par BMO et UBS montrent une confiance accrue dans Entegris.",
+      "risk": "Des objectifs élevés peuvent être sensibles à des ralentissements de la demande industrielle.",
+      "why_en": "Raised price targets by BMO and UBS show increased confidence in Entegris.",
+      "risk_en": "High targets may be vulnerable to industrial demand slowdowns."
     },
     {
       "symbol": "GILD",
@@ -303,10 +303,10 @@
       "hv": 0.2980521206308691,
       "niche": false,
       "score": 5.697,
-      "why": "Gilead participe à des conférences investisseurs, ce qui augmente sa visibilité auprès des analystes.",
-      "risk": "Le risque principal est la dépendance aux résultats des essais cliniques qui peuvent affecter les perspectives de croissance.",
-      "why_en": "Gilead participates in investor conferences, increasing its visibility with analysts.",
-      "risk_en": "The main risk is reliance on clinical trial outcomes that could affect growth prospects."
+      "why": "La participation de Gilead à des conférences d'investisseurs et le surpoids de JPMorgan attirent l'attention.",
+      "risk": "Le secteur pharmaceutique reste exposé aux incertitudes réglementaires.",
+      "why_en": "Gilead's investor conference participation and JPMorgan overweight draw attention.",
+      "risk_en": "The pharma sector remains exposed to regulatory uncertainties."
     },
     {
       "symbol": "H",
@@ -327,22 +327,21 @@
       "hv": 0.351264154878501,
       "niche": false,
       "score": 5.693,
-      "why": "Hyatt voit ses objectifs de cours ajustés par plusieurs banques, indiquant un intérêt soutenu du secteur hôtelier.",
-      "risk": "Le risque principal est la sensibilité aux ralentissements du tourisme et aux pressions inflationnistes.",
-      "why_en": "Hyatt's price targets are adjusted by several banks, indicating sustained interest in the hotel sector.",
-      "risk_en": "The main risk is sensitivity to tourism slowdowns and inflationary pressures."
+      "why": "Des analystes maintiennent des notes élevées et ajustent légèrement les objectifs de cours pour Hyatt Hotels.",
+      "risk": "La réduction du target par JPMorgan indique une possible pression sur les marges.",
+      "why_en": "Analysts keep high ratings and slightly adjust price targets for Hyatt Hotels.",
+      "risk_en": "JPMorgan's target reduction hints at possible margin pressure."
     },
     {
       "symbol": "SAIA",
-      "mentions": 4,
+      "mentions": 3,
       "headlines": [
         "JP Morgan Maintains Overweight on Saia, Raises Price Target to $468",
         "Analysts Update Ratings and Price Targets for Saia, Inc.",
-        "Citigroup Maintains Buy on Saia, Raises Price Target to $434",
-        "TD Cowen Maintains Hold on Saia, Lowers Price Target to $393"
+        "Citigroup Maintains Buy on Saia, Raises Price Target to $434"
       ],
       "last_at": "2026-10-30T23:01:10Z",
-      "sentiment": 0.5,
+      "sentiment": 0.6666666666666666,
       "price": 344.61,
       "adv_usd": 124254832.4899292,
       "chg_5d": 3.8,
@@ -351,11 +350,11 @@
       "trend": "neutre",
       "hv": 0.3937800535924083,
       "niche": false,
-      "score": 5.479,
-      "why": "JP Morgan et d’autres maintiennent une note surpondérée et augmentent les objectifs de cours, soulignant la confiance dans le transport ferroviaire.",
-      "risk": "Le risque principal est l'exposition aux fluctuations des coûts de carburant et aux régulations du transport.",
-      "why_en": "JP Morgan and others keep an overweight rating and raise price targets, underscoring confidence in rail transport.",
-      "risk_en": "The main risk is exposure to fuel cost volatility and transport regulations."
+      "score": 5.533,
+      "why": "Les hausses d'objectifs de cours et le maintien de positions surpondérées soulignent l'intérêt pour Saia.",
+      "risk": "Le marché neutre suggère que la performance pourrait rester stable sans surprise.",
+      "why_en": "Raised price targets and sustained overweight positions highlight interest in Saia.",
+      "risk_en": "The neutral market trend suggests performance may stay flat without surprises."
     }
   ]
 }
