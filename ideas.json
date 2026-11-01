@@ -1,32 +1,7 @@
 {
-  "updated_at": "2026-11-01T00:00:34",
+  "updated_at": "2026-11-01T05:49:24",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
-    {
-      "symbol": "XPO",
-      "mentions": 5,
-      "headlines": [
-        "JP Morgan Maintains Overweight on XPO, Raises Price Target to $207",
-        "Raymond James Raises Price Target on XPO to $210 From $205",
-        "Evercore ISI Group Maintains XPO at Outperform and Raises Price Target",
-        "Citigroup Maintains Buy on XPO, Raises Price Target to $229"
-      ],
-      "last_at": "2026-10-30T23:28:53Z",
-      "sentiment": 1.0,
-      "price": 189.57,
-      "adv_usd": 226005090.14816284,
-      "chg_5d": 3.5,
-      "chg_20d": 1.9,
-      "rsi": 55.8,
-      "trend": "neutre",
-      "hv": 0.29276342258272253,
-      "niche": false,
-      "score": 7.284,
-      "why": "Les analystes augmentent leurs objectifs de cours, signalant un optimisme renouvelé.",
-      "risk": "Le maintien d'une position Overweight peut masquer une volatilité sectorielle.",
-      "why_en": "Analysts are raising price targets, indicating renewed optimism.",
-      "risk_en": "Maintaining an Overweight stance may hide sector volatility."
-    },
     {
       "symbol": "GDYN",
       "mentions": 2,
@@ -45,33 +20,10 @@
       "hv": 1.2579754287595968,
       "niche": true,
       "score": 7.197,
-      "why": "Les ajustements à la hausse des objectifs de cours après les résultats du T3 suscitent l'intérêt.",
-      "risk": "Une forte hausse récente peut être fragile si les résultats futurs déçoivent.",
-      "why_en": "Upward price target adjustments after Q3 results draw attention.",
-      "risk_en": "Recent strong gains may be fragile if future results disappoint."
-    },
-    {
-      "symbol": "MO",
-      "mentions": 2,
-      "headlines": [
-        "Citigroup Maintains Neutral on Altria Group, Raises Price Target to $72",
-        "Morgan Stanley Raises Altria Group Price Target to $77"
-      ],
-      "last_at": "2026-10-30T22:02:07Z",
-      "sentiment": 1.0,
-      "price": 78.03,
-      "adv_usd": 624274873.3792877,
-      "chg_5d": 5.0,
-      "chg_20d": 15.9,
-      "rsi": 70.4,
-      "trend": "haussiere",
-      "hv": 0.27411362384439886,
-      "niche": false,
-      "score": 7.197,
-      "why": "Les banques augmentent leurs objectifs de cours, reflétant une perspective positive sur le groupe.",
-      "risk": "Le maintien d'une note neutre de Citigroup indique une incertitude persistante.",
-      "why_en": "Banks are raising price targets, reflecting a positive outlook on the group.",
-      "risk_en": "Citigroup's neutral rating signals lingering uncertainty."
+      "why": "Les analystes relèvent leurs objectifs de cours après les résultats du troisième trimestre, ce qui soutient la dynamique haussière.",
+      "risk": "Le risque principal réside dans la possible déviation des résultats futurs par rapport aux attentes élevées.",
+      "why_en": "Analysts have raised price targets following Q3 results, supporting the upward trend.",
+      "risk_en": "The main risk is that future results may fall short of the heightened expectations."
     },
     {
       "symbol": "OSPN",
@@ -91,10 +43,33 @@
       "hv": 0.9145703071267364,
       "niche": true,
       "score": 7.197,
-      "why": "Les hausses d'objectifs de cours par deux analystes renforcent l'attrait de l'action.",
-      "risk": "Le prix cible élevé peut être difficile à atteindre si la croissance ralentit.",
-      "why_en": "Price target hikes by two analysts boost the stock's appeal.",
-      "risk_en": "High price targets may be hard to meet if growth slows."
+      "why": "Des hausses d'objectifs de cours par DA Davidson et B. Riley renforcent l'optimisme autour de OneSpan.",
+      "risk": "Un ralentissement de la demande pour les solutions de cybersécurité pourrait freiner la progression.",
+      "why_en": "Price target increases by DA Davidson and B. Riley boost optimism around OneSpan.",
+      "risk_en": "A slowdown in demand for cybersecurity solutions could hinder its progress."
+    },
+    {
+      "symbol": "STGW",
+      "mentions": 2,
+      "headlines": [
+        "Rosenblatt Maintains Buy on Stagwell, Raises Price Target to $13",
+        "Analysts Raise Price Targets on Stagwell Following Q3 Earnings"
+      ],
+      "last_at": "2026-10-31T01:01:33Z",
+      "sentiment": 1.0,
+      "price": 10.47,
+      "adv_usd": 17562710.16919613,
+      "chg_5d": 16.6,
+      "chg_20d": 25.2,
+      "rsi": 76.1,
+      "trend": "haussiere",
+      "hv": 0.5375750092757354,
+      "niche": true,
+      "score": 7.197,
+      "why": "Rosenblatt et d'autres analystes ont relevé leurs objectifs après les résultats du troisième trimestre, alimentant la tendance haussière.",
+      "risk": "Une performance post‑trimestre inférieure aux prévisions pourrait entraîner une révision à la baisse des cibles.",
+      "why_en": "Rosenblatt and other analysts raised targets after Q3 earnings, fueling the bullish trend.",
+      "risk_en": "Post‑quarter performance below forecasts could trigger a downgrade of targets."
     },
     {
       "symbol": "APG",
@@ -115,10 +90,10 @@
       "hv": 0.3833620222508432,
       "niche": false,
       "score": 6.773,
-      "why": "Plusieurs analystes maintiennent ou augmentent leurs objectifs, soutenant la dynamique haussière.",
-      "risk": "Des objectifs divergents entre banques peuvent créer de la confusion pour les investisseurs.",
-      "why_en": "Multiple analysts maintaining or raising targets support the upward momentum.",
-      "risk_en": "Divergent targets among banks may create confusion for investors."
+      "why": "Plusieurs banques majeures, dont JP Morgan et Citigroup, ont relevé leurs objectifs de cours, soutenant l’élan positif.",
+      "risk": "Une dépendance accrue aux marchés de construction pourrait exposer le groupe à des cycles économiques défavorables.",
+      "why_en": "Several major banks, including JP Morgan and Citigroup, raised price targets, supporting the positive momentum.",
+      "risk_en": "Increased reliance on construction markets could expose the group to adverse economic cycles."
     },
     {
       "symbol": "TDOC",
@@ -139,10 +114,34 @@
       "hv": 0.969889776062962,
       "niche": true,
       "score": 6.773,
-      "why": "Les révisions à la hausse des objectifs de cours par plusieurs banques relancent l'intérêt.",
-      "risk": "Le maintien d'une note neutre de JP Morgan indique des doutes sur la reprise durable.",
-      "why_en": "Upward price target revisions by several banks revive interest.",
-      "risk_en": "JP Morgan's neutral rating signals doubts about a sustainable rebound."
+      "why": "Les mises à jour de notation et les hausses d'objectifs de JP Morgan et Deutsche Bank renforcent la confiance des investisseurs.",
+      "risk": "Les incertitudes réglementaires et la concurrence dans la télémédecine restent des facteurs de risque.",
+      "why_en": "Rating updates and target price hikes by JP Morgan and Deutsche Bank reinforce investor confidence.",
+      "risk_en": "Regulatory uncertainties and competition in telehealth remain risk factors."
+    },
+    {
+      "symbol": "XPO",
+      "mentions": 3,
+      "headlines": [
+        "JP Morgan Maintains Overweight on XPO, Raises Price Target to $207",
+        "Raymond James Raises Price Target on XPO to $210 From $205",
+        "Evercore ISI Group Maintains XPO at Outperform and Raises Price Target"
+      ],
+      "last_at": "2026-10-30T23:28:53Z",
+      "sentiment": 1.0,
+      "price": 189.57,
+      "adv_usd": 226005090.14816284,
+      "chg_5d": 3.5,
+      "chg_20d": 1.9,
+      "rsi": 55.8,
+      "trend": "neutre",
+      "hv": 0.29276342258272253,
+      "niche": false,
+      "score": 6.473,
+      "why": "Des hausses d'objectifs de prix par JP Morgan, Raymond James et Evercore soulignent une perception favorable du transport logistique.",
+      "risk": "Le secteur du transport est sensible aux fluctuations des coûts de carburant et aux tensions commerciales.",
+      "why_en": "Target price increases by JP Morgan, Raymond James and Evercore highlight a favorable view of logistics transport.",
+      "risk_en": "The transport sector is vulnerable to fuel cost volatility and trade tensions."
     },
     {
       "symbol": "PWR",
@@ -164,33 +163,10 @@
       "hv": 0.5556844476510335,
       "niche": false,
       "score": 6.469,
-      "why": "Des hausses d'objectifs de cours pour Quanta Services attirent l'attention sur le secteur de l'infrastructure.",
-      "risk": "L'absence de commentaires spécifiques sur PWR laisse incertain le réel impact sur l'action.",
-      "why_en": "Price target hikes for Quanta Services draw attention to the infrastructure sector.",
-      "risk_en": "Lack of specific commentary on PWR makes the actual impact on the stock uncertain."
-    },
-    {
-      "symbol": "EBAY",
-      "mentions": 2,
-      "headlines": [
-        "eBay and Small Business Britain Release Report on UK Side Hustles",
-        "Citigroup Maintains Buy on eBay, Raises Price Target to $145"
-      ],
-      "last_at": "2026-10-30T21:31:48Z",
-      "sentiment": 1.0,
-      "price": 121.64,
-      "adv_usd": 477510848.34545135,
-      "chg_5d": 0.2,
-      "chg_20d": 14.3,
-      "rsi": 62.4,
-      "trend": "haussiere",
-      "hv": 0.2845573280343845,
-      "niche": false,
-      "score": 6.237,
-      "why": "Le rapport sur les side hustles au Royaume‑Uni et la hausse du prix cible stimulent l'intérêt.",
-      "risk": "Le gain de prix cible marginal indique une perspective prudente malgré le rapport positif.",
-      "why_en": "The UK side‑hustle report and raised price target boost interest.",
-      "risk_en": "The marginal price target increase suggests a cautious outlook despite the positive report."
+      "why": "Les analystes maintiennent des notes d'achat et relèvent les objectifs pour Quanta Services, indiquant une perspective positive.",
+      "risk": "Une éventuelle réduction des dépenses d'infrastructure pourrait affecter la demande pour les services de l'entreprise.",
+      "why_en": "Analysts maintain buy ratings and raise targets for Quanta Services, indicating a positive outlook.",
+      "risk_en": "Potential cuts in infrastructure spending could impact demand for the company's services."
     },
     {
       "symbol": "OWL",
@@ -210,10 +186,10 @@
       "hv": 0.47039142651950366,
       "niche": false,
       "score": 6.197,
-      "why": "Les deux analystes conservent ou améliorent leurs recommandations, soutenant la stabilité de l'action.",
-      "risk": "Le maintien à un niveau de performance de marché reflète une attente de rendement limité.",
-      "why_en": "Both analysts maintain or improve recommendations, supporting stock stability.",
-      "risk_en": "Maintaining a market‑perform rating reflects expectations of limited upside."
+      "why": "Les maintiens de notation et les hausses d'objectifs par Keefe, Bruyette & Woods et Evercore renforcent la stabilité perçue de Blue Owl Capital.",
+      "risk": "La sensibilité aux performances des marchés de capitaux privés expose le fonds à une volatilité accrue.",
+      "why_en": "Rating maintenances and target hikes by Keefe, Bruyette & Woods and Evercore bolster perceived stability of Blue Owl Capital.",
+      "risk_en": "Sensitivity to private capital market performance exposes the fund to heightened volatility."
     },
     {
       "symbol": "LMT",
@@ -234,10 +210,57 @@
       "hv": 0.36608834909876936,
       "niche": false,
       "score": 5.773,
-      "why": "Les ventes d'armes à l'Ukraine et les projets de défense renforcent la visibilité de l'entreprise.",
-      "risk": "Les retards de livraison et les incertitudes géopolitiques peuvent affecter les revenus futurs.",
-      "why_en": "Arms sales to Ukraine and defense projects increase the company's visibility.",
-      "risk_en": "Delivery delays and geopolitical uncertainties could impact future revenues."
+      "why": "Le contrat de missiles Patriot de 2,1 Mds $ pour l'Ukraine et la visibilité du produit de protection radiologique renforcent l'intérêt pour Lockheed Martin.",
+      "risk": "Des retards de livraison ou des obstacles géopolitiques pourraient retarder les revenus attendus.",
+      "why_en": "The $2.1 bn Patriot missile contract for Ukraine and visibility of a radiation‑protection vest boost interest in Lockheed Martin.",
+      "risk_en": "Delivery delays or geopolitical hurdles could postpone expected revenues."
+    },
+    {
+      "symbol": "VMC",
+      "mentions": 3,
+      "headlines": [
+        "Vulcan Materials Receives Regulatory Safety Order for California Quarry",
+        "Wells Fargo Maintains Vulcan Materials at Underweight, Raises Price Target to $253 From $249",
+        "BNP Paribas Adjusts Vulcan Materials Price Target to $281 From $290"
+      ],
+      "last_at": "2026-11-01T01:02:09Z",
+      "sentiment": 0.3333333333333333,
+      "price": 281.25,
+      "adv_usd": 330689616.687088,
+      "chg_5d": 7.5,
+      "chg_20d": 15.7,
+      "rsi": 74.3,
+      "trend": "haussiere",
+      "hv": 0.29791508863235244,
+      "niche": false,
+      "score": 5.773,
+      "why": "Les ajustements d'objectifs par Wells Fargo et BNP Paribas, malgré un avis sous‑pondéré, montrent un suivi actif des perspectives de Vulcan Materials.",
+      "risk": "Des exigences réglementaires accrues, comme l'ordre de sécurité en Californie, peuvent augmenter les coûts opérationnels.",
+      "why_en": "Target adjustments by Wells Fargo and BNP Paribas, despite an underweight stance, indicate active monitoring of Vulcan Materials' outlook.",
+      "risk_en": "Increased regulatory requirements, such as the California safety order, could raise operational costs."
+    },
+    {
+      "symbol": "AIN",
+      "mentions": 2,
+      "headlines": [
+        "JP Morgan Adjusts Price Target for Albany International",
+        "JP Morgan Maintains Neutral on Albany International, Raises Price Target to $71"
+      ],
+      "last_at": "2026-11-01T01:03:38Z",
+      "sentiment": 0.5,
+      "price": 67.0,
+      "adv_usd": 15440451.927700043,
+      "chg_5d": 7.0,
+      "chg_20d": 10.1,
+      "rsi": 68.6,
+      "trend": "haussiere",
+      "hv": 0.3363975048861584,
+      "niche": true,
+      "score": 5.697,
+      "why": "JP Morgan a relevé son objectif de cours, signalant une confiance renouvelée dans Albany International.",
+      "risk": "La dépendance aux cycles industriels expose l'entreprise à des fluctuations de la demande.",
+      "why_en": "JP Morgan raised its price target, signaling renewed confidence in Albany International.",
+      "risk_en": "Reliance on industrial cycles exposes the company to demand fluctuations."
     },
     {
       "symbol": "CROX",
@@ -257,10 +280,33 @@
       "hv": 0.8722525505428161,
       "niche": false,
       "score": 5.697,
-      "why": "Les hausses d'objectifs de cours par UBS et Barclays indiquent un regain de confiance.",
-      "risk": "Le maintien d'une note neutre chez UBS montre que la reprise reste incertaine.",
-      "why_en": "Price target increases by UBS and Barclays signal renewed confidence.",
-      "risk_en": "UBS's neutral rating shows that the recovery remains uncertain."
+      "why": "Les hausses d'objectifs de UBS et Barclays, combinées à une notation favorable, soutiennent la dynamique haussière de Crocs.",
+      "risk": "Une saturation du marché des chaussures décontractées pourrait freiner la croissance des ventes.",
+      "why_en": "Target price hikes by UBS and Barclays, along with a favorable rating, support Crocs' bullish momentum.",
+      "risk_en": "Saturation of the casual footwear market could curb sales growth."
+    },
+    {
+      "symbol": "DIN",
+      "mentions": 2,
+      "headlines": [
+        "Centralized Supply Chain Services Names 2026 Supplier Partners of the Year",
+        "Mizuho Maintains Neutral Rating on Dine Brands Global and Lowers Price Target"
+      ],
+      "last_at": "2026-11-01T01:04:20Z",
+      "sentiment": 0.5,
+      "price": 35.51,
+      "adv_usd": 22536128.798685074,
+      "chg_5d": 14.2,
+      "chg_20d": 18.7,
+      "rsi": 70.3,
+      "trend": "haussiere",
+      "hv": 0.44092305013399613,
+      "niche": true,
+      "score": 5.697,
+      "why": "La reconnaissance comme fournisseur de l'année 2026 et le maintien de notation par Mizuho renforcent la visibilité de Dine Brands.",
+      "risk": "La baisse du trafic en restauration rapide ou les changements de préférence des consommateurs représentent un risque.",
+      "why_en": "Being named 2026 Supplier Partner of the Year and Mizuho's rating maintenance boost Dine Brands' visibility.",
+      "risk_en": "Reduced traffic in fast‑food venues or shifting consumer preferences pose a risk."
     },
     {
       "symbol": "ENTG",
@@ -280,10 +326,10 @@
       "hv": 0.7806987013371944,
       "niche": false,
       "score": 5.697,
-      "why": "Les révisions à la hausse des objectifs de cours par BMO et UBS soulignent une perspective positive.",
-      "risk": "Des objectifs déjà élevés laissent peu de marge pour de nouvelles hausses.",
-      "why_en": "Higher price targets by BMO and UBS highlight a positive outlook.",
-      "risk_en": "Already high targets leave little room for further upside."
+      "why": "Les hausses d'objectifs par BMO et UBS, avec des notations d'achat, soulignent la confiance dans la performance d'Entegris.",
+      "risk": "Une dépendance aux cycles de l'industrie des semi‑conducteurs peut entraîner une volatilité des revenus.",
+      "why_en": "Target price increases by BMO and UBS, along with buy ratings, underscore confidence in Entegris' performance.",
+      "risk_en": "Reliance on semiconductor industry cycles can cause revenue volatility."
     },
     {
       "symbol": "GILD",
@@ -303,58 +349,10 @@
       "hv": 0.2980521206308691,
       "niche": false,
       "score": 5.697,
-      "why": "La participation à des conférences d'investisseurs et le maintien d'un Overweight renforcent l'intérêt.",
-      "risk": "L'absence de nouvelles données financières rend la perspective dépendante de la perception du marché.",
-      "why_en": "Investor conference participation and Overweight status boost interest.",
-      "risk_en": "Lack of new financial data makes the outlook reliant on market perception."
-    },
-    {
-      "symbol": "H",
-      "mentions": 3,
-      "headlines": [
-        "Macquarie Maintains Outperform on Hyatt Hotels, Raises Price Target to $210",
-        "JP Morgan Maintains Overweight on Hyatt Hotels, Lowers Price Target to $206",
-        "Barclays Adjusts Hyatt Hotels Price Target to $207"
-      ],
-      "last_at": "2026-10-31T00:54:42Z",
-      "sentiment": 0.3333333333333333,
-      "price": 180.57,
-      "adv_usd": 145603602.8186798,
-      "chg_5d": 4.6,
-      "chg_20d": 13.6,
-      "rsi": 64.0,
-      "trend": "haussiere",
-      "hv": 0.351264154878501,
-      "niche": false,
-      "score": 5.693,
-      "why": "Des analystes maintiennent des notes élevées et ajustent légèrement les objectifs, montrant un soutien continu.",
-      "risk": "La baisse du prix cible par JP Morgan indique une possible réévaluation du risque de l'entreprise.",
-      "why_en": "Analysts maintain high ratings and slightly adjust targets, showing continued support.",
-      "risk_en": "JP Morgan's price target cut signals a possible reassessment of the company's risk."
-    },
-    {
-      "symbol": "SAIA",
-      "mentions": 3,
-      "headlines": [
-        "JP Morgan Maintains Overweight on Saia, Raises Price Target to $468",
-        "Analysts Update Ratings and Price Targets for Saia, Inc.",
-        "Citigroup Maintains Buy on Saia, Raises Price Target to $434"
-      ],
-      "last_at": "2026-10-30T23:01:10Z",
-      "sentiment": 0.6666666666666666,
-      "price": 344.61,
-      "adv_usd": 124254832.4899292,
-      "chg_5d": 3.8,
-      "chg_20d": -1.9,
-      "rsi": 53.9,
-      "trend": "neutre",
-      "hv": 0.3937800535924083,
-      "niche": false,
-      "score": 5.533,
-      "why": "Les hausses d'objectifs de cours par JP Morgan et Citigroup renforcent l'attrait de l'action.",
-      "risk": "Des mises à jour multiples peuvent refléter une incertitude sur la direction future du cours.",
-      "why_en": "Price target hikes by JP Morgan and Citigroup enhance the stock's appeal.",
-      "risk_en": "Multiple updates may reflect uncertainty about the future price direction."
+      "why": "La participation de Gilead à des conférences investisseurs et le maintien d'une notation overweight par JP Morgan renforcent son attractivité.",
+      "risk": "Le risque de concurrence accrue sur les traitements pharmaceutiques pourrait affecter les marges.",
+      "why_en": "Gilead's participation in investor conferences and JP Morgan's overweight rating enhance its appeal.",
+      "risk_en": "Increased competition in pharmaceutical treatments could pressure margins."
     }
   ]
 }
