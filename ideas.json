@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T20:59:11",
+  "updated_at": "2026-11-01T00:00:34",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -22,10 +22,10 @@
       "hv": 0.29276342258272253,
       "niche": false,
       "score": 7.284,
-      "why": "Les analystes augmentent leurs objectifs de cours, signalant un potentiel de hausse.",
-      "risk": "Le maintien d'une notation neutre indique une incertitude sur la performance future.",
-      "why_en": "Analysts are raising price targets, indicating upside potential.",
-      "risk_en": "The neutral rating suggests uncertainty about future performance."
+      "why": "Les analystes augmentent leurs objectifs de cours, signalant un optimisme renouvelé.",
+      "risk": "Le maintien d'une position Overweight peut masquer une volatilité sectorielle.",
+      "why_en": "Analysts are raising price targets, indicating renewed optimism.",
+      "risk_en": "Maintaining an Overweight stance may hide sector volatility."
     },
     {
       "symbol": "GDYN",
@@ -45,10 +45,10 @@
       "hv": 1.2579754287595968,
       "niche": true,
       "score": 7.197,
-      "why": "Les ajustements à la hausse des objectifs de cours après les résultats du troisième trimestre attirent l'attention.",
-      "risk": "La forte hausse récente du cours peut refléter une volatilité accrue.",
+      "why": "Les ajustements à la hausse des objectifs de cours après les résultats du T3 suscitent l'intérêt.",
+      "risk": "Une forte hausse récente peut être fragile si les résultats futurs déçoivent.",
       "why_en": "Upward price target adjustments after Q3 results draw attention.",
-      "risk_en": "The recent sharp price gain may reflect heightened volatility."
+      "risk_en": "Recent strong gains may be fragile if future results disappoint."
     },
     {
       "symbol": "MO",
@@ -68,10 +68,10 @@
       "hv": 0.27411362384439886,
       "niche": false,
       "score": 7.197,
-      "why": "Les banques augmentent leurs objectifs de cours, soutenant une perspective positive pour Altria.",
-      "risk": "Le maintien d'une note neutre de Citigroup indique un risque de stagnation.",
-      "why_en": "Banks are raising price targets, supporting a positive outlook for Altria.",
-      "risk_en": "Citigroup's neutral stance signals a risk of flat performance."
+      "why": "Les banques augmentent leurs objectifs de cours, reflétant une perspective positive sur le groupe.",
+      "risk": "Le maintien d'une note neutre de Citigroup indique une incertitude persistante.",
+      "why_en": "Banks are raising price targets, reflecting a positive outlook on the group.",
+      "risk_en": "Citigroup's neutral rating signals lingering uncertainty."
     },
     {
       "symbol": "OSPN",
@@ -91,10 +91,10 @@
       "hv": 0.9145703071267364,
       "niche": true,
       "score": 7.197,
-      "why": "Des hausses d'objectifs de cours par plusieurs analystes renforcent l'optimisme autour de OneSpan.",
-      "risk": "L'augmentation rapide du cours peut être fragile si les résultats ne suivent pas.",
-      "why_en": "Multiple analysts raising price targets boost optimism for OneSpan.",
-      "risk_en": "Rapid price appreciation may be fragile if results do not keep pace."
+      "why": "Les hausses d'objectifs de cours par deux analystes renforcent l'attrait de l'action.",
+      "risk": "Le prix cible élevé peut être difficile à atteindre si la croissance ralentit.",
+      "why_en": "Price target hikes by two analysts boost the stock's appeal.",
+      "risk_en": "High price targets may be hard to meet if growth slows."
     },
     {
       "symbol": "APG",
@@ -115,10 +115,10 @@
       "hv": 0.3833620222508432,
       "niche": false,
       "score": 6.773,
-      "why": "Des analystes majeurs maintiennent des positions favorables et relèvent les objectifs de cours pour APi Group.",
-      "risk": "Des divergences dans les objectifs de cours peuvent créer de l'incertitude.",
-      "why_en": "Major analysts maintain favorable stances and raise price targets for APi Group.",
-      "risk_en": "Differences in price targets may create uncertainty."
+      "why": "Plusieurs analystes maintiennent ou augmentent leurs objectifs, soutenant la dynamique haussière.",
+      "risk": "Des objectifs divergents entre banques peuvent créer de la confusion pour les investisseurs.",
+      "why_en": "Multiple analysts maintaining or raising targets support the upward momentum.",
+      "risk_en": "Divergent targets among banks may create confusion for investors."
     },
     {
       "symbol": "TDOC",
@@ -139,10 +139,10 @@
       "hv": 0.969889776062962,
       "niche": true,
       "score": 6.773,
-      "why": "Les mises à jour de notation et d'objectifs de cours indiquent un regain d'intérêt pour Teladoc Health.",
-      "risk": "Les ajustements modestes suggèrent que les défis de croissance persistent.",
-      "why_en": "Rating and price target updates signal renewed interest in Teladoc Health.",
-      "risk_en": "Modest adjustments suggest ongoing growth challenges."
+      "why": "Les révisions à la hausse des objectifs de cours par plusieurs banques relancent l'intérêt.",
+      "risk": "Le maintien d'une note neutre de JP Morgan indique des doutes sur la reprise durable.",
+      "why_en": "Upward price target revisions by several banks revive interest.",
+      "risk_en": "JP Morgan's neutral rating signals doubts about a sustainable rebound."
     },
     {
       "symbol": "PWR",
@@ -164,10 +164,10 @@
       "hv": 0.5556844476510335,
       "niche": false,
       "score": 6.469,
-      "why": "Des hausses d'objectifs de cours pour Quanta Services reflètent une perception positive du secteur énergétique.",
-      "risk": "L'absence de nouvelles fondamentales spécifiques à PWR rend le mouvement incertain.",
-      "why_en": "Price target hikes for Quanta Services reflect a positive view of the energy sector.",
-      "risk_en": "Lack of specific fundamentals for PWR makes the move uncertain."
+      "why": "Des hausses d'objectifs de cours pour Quanta Services attirent l'attention sur le secteur de l'infrastructure.",
+      "risk": "L'absence de commentaires spécifiques sur PWR laisse incertain le réel impact sur l'action.",
+      "why_en": "Price target hikes for Quanta Services draw attention to the infrastructure sector.",
+      "risk_en": "Lack of specific commentary on PWR makes the actual impact on the stock uncertain."
     },
     {
       "symbol": "EBAY",
@@ -187,10 +187,10 @@
       "hv": 0.2845573280343845,
       "niche": false,
       "score": 6.237,
-      "why": "Le rapport sur les side hustles au Royaume-Uni et la hausse de l'objectif de cours attirent l'attention sur eBay.",
-      "risk": "Le léger mouvement du cours indique une dynamique limitée.",
-      "why_en": "The UK side‑hustle report and raised price target draw focus to eBay.",
-      "risk_en": "The modest price movement indicates limited momentum."
+      "why": "Le rapport sur les side hustles au Royaume‑Uni et la hausse du prix cible stimulent l'intérêt.",
+      "risk": "Le gain de prix cible marginal indique une perspective prudente malgré le rapport positif.",
+      "why_en": "The UK side‑hustle report and raised price target boost interest.",
+      "risk_en": "The marginal price target increase suggests a cautious outlook despite the positive report."
     },
     {
       "symbol": "OWL",
@@ -210,10 +210,10 @@
       "hv": 0.47039142651950366,
       "niche": false,
       "score": 6.197,
-      "why": "Les analystes maintiennent des notes positives et relèvent les objectifs de cours, soutenant Blue Owl Capital.",
-      "risk": "Le maintien de la notation « Market Perform » montre une perspective prudente.",
-      "why_en": "Analysts keep positive ratings and raise price targets, supporting Blue Owl Capital.",
-      "risk_en": "Maintaining a Market Perform rating shows a cautious outlook."
+      "why": "Les deux analystes conservent ou améliorent leurs recommandations, soutenant la stabilité de l'action.",
+      "risk": "Le maintien à un niveau de performance de marché reflète une attente de rendement limité.",
+      "why_en": "Both analysts maintain or improve recommendations, supporting stock stability.",
+      "risk_en": "Maintaining a market‑perform rating reflects expectations of limited upside."
     },
     {
       "symbol": "LMT",
@@ -234,10 +234,10 @@
       "hv": 0.36608834909876936,
       "niche": false,
       "score": 5.773,
-      "why": "Les ventes d'armes à l'Ukraine et les projets de défense renforcent la visibilité de Lockheed Martin.",
-      "risk": "Les retards de livraison et les incertitudes géopolitiques peuvent affecter les revenus.",
-      "why_en": "Arms sales to Ukraine and defense projects boost Lockheed Martin's visibility.",
-      "risk_en": "Delivery delays and geopolitical uncertainties could impact revenues."
+      "why": "Les ventes d'armes à l'Ukraine et les projets de défense renforcent la visibilité de l'entreprise.",
+      "risk": "Les retards de livraison et les incertitudes géopolitiques peuvent affecter les revenus futurs.",
+      "why_en": "Arms sales to Ukraine and defense projects increase the company's visibility.",
+      "risk_en": "Delivery delays and geopolitical uncertainties could impact future revenues."
     },
     {
       "symbol": "CROX",
@@ -257,10 +257,10 @@
       "hv": 0.8722525505428161,
       "niche": false,
       "score": 5.697,
-      "why": "Les hausses d'objectifs de cours par UBS et Barclays indiquent un optimisme sur Crocs.",
-      "risk": "Le maintien d'une note neutre chez UBS souligne une possible volatilité du marché.",
-      "why_en": "Price target hikes by UBS and Barclays signal optimism on Crocs.",
-      "risk_en": "UBS's neutral rating underscores potential market volatility."
+      "why": "Les hausses d'objectifs de cours par UBS et Barclays indiquent un regain de confiance.",
+      "risk": "Le maintien d'une note neutre chez UBS montre que la reprise reste incertaine.",
+      "why_en": "Price target increases by UBS and Barclays signal renewed confidence.",
+      "risk_en": "UBS's neutral rating shows that the recovery remains uncertain."
     },
     {
       "symbol": "ENTG",
@@ -280,10 +280,10 @@
       "hv": 0.7806987013371944,
       "niche": false,
       "score": 5.697,
-      "why": "Les relevés d'objectifs de cours par BMO et UBS montrent une confiance accrue dans Entegris.",
-      "risk": "Des objectifs élevés peuvent être sensibles à des ralentissements de la demande industrielle.",
-      "why_en": "Raised price targets by BMO and UBS show increased confidence in Entegris.",
-      "risk_en": "High targets may be vulnerable to industrial demand slowdowns."
+      "why": "Les révisions à la hausse des objectifs de cours par BMO et UBS soulignent une perspective positive.",
+      "risk": "Des objectifs déjà élevés laissent peu de marge pour de nouvelles hausses.",
+      "why_en": "Higher price targets by BMO and UBS highlight a positive outlook.",
+      "risk_en": "Already high targets leave little room for further upside."
     },
     {
       "symbol": "GILD",
@@ -303,10 +303,10 @@
       "hv": 0.2980521206308691,
       "niche": false,
       "score": 5.697,
-      "why": "La participation de Gilead à des conférences d'investisseurs et le surpoids de JPMorgan attirent l'attention.",
-      "risk": "Le secteur pharmaceutique reste exposé aux incertitudes réglementaires.",
-      "why_en": "Gilead's investor conference participation and JPMorgan overweight draw attention.",
-      "risk_en": "The pharma sector remains exposed to regulatory uncertainties."
+      "why": "La participation à des conférences d'investisseurs et le maintien d'un Overweight renforcent l'intérêt.",
+      "risk": "L'absence de nouvelles données financières rend la perspective dépendante de la perception du marché.",
+      "why_en": "Investor conference participation and Overweight status boost interest.",
+      "risk_en": "Lack of new financial data makes the outlook reliant on market perception."
     },
     {
       "symbol": "H",
@@ -327,10 +327,10 @@
       "hv": 0.351264154878501,
       "niche": false,
       "score": 5.693,
-      "why": "Des analystes maintiennent des notes élevées et ajustent légèrement les objectifs de cours pour Hyatt Hotels.",
-      "risk": "La réduction du target par JPMorgan indique une possible pression sur les marges.",
-      "why_en": "Analysts keep high ratings and slightly adjust price targets for Hyatt Hotels.",
-      "risk_en": "JPMorgan's target reduction hints at possible margin pressure."
+      "why": "Des analystes maintiennent des notes élevées et ajustent légèrement les objectifs, montrant un soutien continu.",
+      "risk": "La baisse du prix cible par JP Morgan indique une possible réévaluation du risque de l'entreprise.",
+      "why_en": "Analysts maintain high ratings and slightly adjust targets, showing continued support.",
+      "risk_en": "JP Morgan's price target cut signals a possible reassessment of the company's risk."
     },
     {
       "symbol": "SAIA",
@@ -351,10 +351,10 @@
       "hv": 0.3937800535924083,
       "niche": false,
       "score": 5.533,
-      "why": "Les hausses d'objectifs de cours et le maintien de positions surpondérées soulignent l'intérêt pour Saia.",
-      "risk": "Le marché neutre suggère que la performance pourrait rester stable sans surprise.",
-      "why_en": "Raised price targets and sustained overweight positions highlight interest in Saia.",
-      "risk_en": "The neutral market trend suggests performance may stay flat without surprises."
+      "why": "Les hausses d'objectifs de cours par JP Morgan et Citigroup renforcent l'attrait de l'action.",
+      "risk": "Des mises à jour multiples peuvent refléter une incertitude sur la direction future du cours.",
+      "why_en": "Price target hikes by JP Morgan and Citigroup enhance the stock's appeal.",
+      "risk_en": "Multiple updates may reflect uncertainty about the future price direction."
     }
   ]
 }
