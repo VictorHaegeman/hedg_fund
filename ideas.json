@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T12:41:43",
+  "updated_at": "2026-11-01T19:22:22",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -20,33 +20,10 @@
       "hv": 1.2579754287595968,
       "niche": true,
       "score": 7.197,
-      "why": "Les analystes relèvent des objectifs de cours à la hausse après les résultats du troisième trimestre, ce qui attire l'attention.",
-      "risk": "Le risque principal réside dans la possible déception des résultats futurs si les attentes élevées ne sont pas atteintes.",
-      "why_en": "Analysts are raising price targets following strong Q3 results, drawing attention.",
-      "risk_en": "The main risk is potential disappointment in future results if high expectations are not met."
-    },
-    {
-      "symbol": "OSPN",
-      "mentions": 2,
-      "headlines": [
-        "DA Davidson Raises Price Target on OneSpan to $22",
-        "B. Riley Raises Price Target on OneSpan"
-      ],
-      "last_at": "2026-10-31T13:03:47Z",
-      "sentiment": 1.0,
-      "price": 25.66,
-      "adv_usd": 16412074.540510178,
-      "chg_5d": 27.1,
-      "chg_20d": 41.6,
-      "rsi": 85.6,
-      "trend": "haussiere",
-      "hv": 0.9145703071267364,
-      "niche": true,
-      "score": 7.197,
-      "why": "Des hausses d'objectifs de cours par plusieurs maisons de recherche renforcent l'intérêt pour OneSpan.",
-      "risk": "Le risque majeur est la dépendance à la croissance des solutions de cybersécurité, qui peut ralentir.",
-      "why_en": "Multiple research firms raising price targets boosts interest in OneSpan.",
-      "risk_en": "The key risk is reliance on cybersecurity growth, which could slow down."
+      "why": "Les analystes relèvent les résultats du T3 et augmentent leurs objectifs de cours, ce qui attire l'attention.",
+      "risk": "Le risque principal est que les prévisions de croissance ne se concrétisent pas et que le cours recule.",
+      "why_en": "Analysts highlight Q3 results and raise price targets, drawing attention.",
+      "risk_en": "The main risk is that growth expectations may not materialize, leading to a price decline."
     },
     {
       "symbol": "STGW",
@@ -66,57 +43,10 @@
       "hv": 0.5375750092757354,
       "niche": true,
       "score": 7.197,
-      "why": "Les analystes augmentent leurs objectifs de cours après des résultats trimestriels solides, soutenant la tendance haussière.",
-      "risk": "Un risque réside dans la capacité de Stagwell à maintenir sa croissance de revenus à ce rythme.",
-      "why_en": "Analysts lift price targets after solid quarterly results, supporting the uptrend.",
-      "risk_en": "A risk lies in Stagwell's ability to sustain revenue growth at this pace."
-    },
-    {
-      "symbol": "TDY",
-      "mentions": 2,
-      "headlines": [
-        "Teledyne Technologies Initiates Acquisition of Varex Imaging Corporation",
-        "Varex Imaging Shareholders Approve Teledyne Merger Agreement"
-      ],
-      "last_at": "2026-11-01T01:02:15Z",
-      "sentiment": 1.0,
-      "price": 658.23,
-      "adv_usd": 221516729.9282837,
-      "chg_5d": 5.2,
-      "chg_20d": 6.7,
-      "rsi": 63.5,
-      "trend": "haussiere",
-      "hv": 0.24654860899138026,
-      "niche": false,
-      "score": 7.197,
-      "why": "L'annonce d'une acquisition stratégique de Varex Imaging attire l'attention des investisseurs.",
-      "risk": "Le principal risque est l'intégration réussie de Varex et les éventuels retards ou coûts supplémentaires.",
-      "why_en": "The strategic acquisition of Varex Imaging draws investor attention.",
-      "risk_en": "The main risk is successful integration of Varex and potential delays or extra costs."
-    },
-    {
-      "symbol": "APG",
-      "mentions": 3,
-      "headlines": [
-        "JP Morgan Maintains Overweight on APi Group, Raises Price Target to $55",
-        "Truist Securities and Wells Fargo Adjust Price Targets for APi Group",
-        "Citigroup Maintains Buy on APi Group, Raises Price Target to $57"
-      ],
-      "last_at": "2026-10-30T22:21:05Z",
-      "sentiment": 0.6666666666666666,
-      "price": 44.34,
-      "adv_usd": 120428014.66339111,
-      "chg_5d": 12.4,
-      "chg_20d": 9.5,
-      "rsi": 70.5,
-      "trend": "haussiere",
-      "hv": 0.3833620222508432,
-      "niche": false,
-      "score": 6.773,
-      "why": "Des hausses d'objectifs de cours par plusieurs grands acteurs renforcent la perception positive d'APi Group.",
-      "risk": "Le risque principal est la sensibilité aux cycles de l'économie de services, qui peut affecter la demande.",
-      "why_en": "Price target hikes by major firms reinforce a positive view of APi Group.",
-      "risk_en": "The main risk is sensitivity to service‑sector cycles that could curb demand."
+      "why": "Les hausses d'objectifs de cours suite aux résultats du T3 renforcent l'intérêt pour l'action.",
+      "risk": "Un ralentissement des performances opérationnelles pourrait freiner la dynamique haussière.",
+      "why_en": "Raised price targets after Q3 earnings boost interest in the stock.",
+      "risk_en": "A slowdown in operational performance could curb the upward momentum."
     },
     {
       "symbol": "XPO",
@@ -137,35 +67,10 @@
       "hv": 0.29276342258272253,
       "niche": false,
       "score": 6.473,
-      "why": "Des hausses d'objectifs de cours par JP Morgan et Raymond James maintiennent l'intérêt malgré une tendance neutre.",
-      "risk": "Le risque principal provient de la volatilité du secteur logistique et des marges sous pression.",
-      "why_en": "Price target increases by JP Morgan and Raymond James keep interest alive despite a neutral trend.",
-      "risk_en": "The main risk stems from logistics sector volatility and pressured margins."
-    },
-    {
-      "symbol": "PWR",
-      "mentions": 4,
-      "headlines": [
-        "Captiva Verde Wellness Corp. Insider Filing",
-        "Citigroup Maintains Buy Rating and Raises Price Target for Quanta Services",
-        "TD Cowen Maintains Buy Rating and Raises Price Target for Quanta Services",
-        "Citigroup Maintains Buy on Quanta Services, Raises Price Target to $882"
-      ],
-      "last_at": "2026-10-31T13:06:23Z",
-      "sentiment": 0.75,
-      "price": 620.73,
-      "adv_usd": 800682965.7705688,
-      "chg_5d": 13.6,
-      "chg_20d": -8.3,
-      "rsi": 49.2,
-      "trend": "neutre",
-      "hv": 0.5556844476510335,
-      "niche": false,
-      "score": 6.469,
-      "why": "Des analystes maintiennent des notes d'achat et relèvent les objectifs de cours pour Quanta Services, soutenant l'action.",
-      "risk": "Le risque majeur est la dépendance aux dépenses d'infrastructure, qui peuvent fluctuer avec les politiques publiques.",
-      "why_en": "Analysts maintain buy ratings and raise price targets for Quanta Services, supporting the stock.",
-      "risk_en": "The key risk is reliance on infrastructure spending, which can vary with public policy."
+      "why": "Plusieurs analystes maintiennent ou augmentent leurs objectifs de cours, soutenant le cours actuel.",
+      "risk": "Une détérioration du trafic de fret ou des marges pourrait peser sur le titre.",
+      "why_en": "Multiple analysts maintain or raise price targets, supporting the current price.",
+      "risk_en": "A deterioration in freight volumes or margins could weigh on the stock."
     },
     {
       "symbol": "OWL",
@@ -185,10 +90,10 @@
       "hv": 0.47039142651950366,
       "niche": false,
       "score": 6.197,
-      "why": "Des notes de marché positif et des objectifs de cours relevés par plusieurs cabinets renforcent l'attractivité de Blue Owl Capital.",
-      "risk": "Le risque principal est la sensibilité aux conditions de marché du capital-investissement, qui peuvent se détériorer.",
-      "why_en": "Positive market notes and raised price targets by several firms boost Blue Owl Capital's appeal.",
-      "risk_en": "The main risk is sensitivity to private‑equity market conditions, which can deteriorate."
+      "why": "Les analystes conservent des recommandations positives et relèvent les objectifs de cours, ce qui maintient l'intérêt.",
+      "risk": "Des pressions réglementaires ou de liquidité pourraient affecter la performance.",
+      "why_en": "Analysts keep positive recommendations and raise price targets, maintaining interest.",
+      "risk_en": "Regulatory or liquidity pressures could impact performance."
     },
     {
       "symbol": "TW",
@@ -208,10 +113,10 @@
       "hv": 0.2719021876603519,
       "niche": false,
       "score": 6.197,
-      "why": "JP Morgan relève l'objectif de cours à 137 $, confirmant une perspective optimiste pour Tradeweb.",
-      "risk": "Le risque principal est la concurrence accrue dans les plateformes de trading électronique, qui peut réduire les marges.",
-      "why_en": "JP Morgan raises the price target to $137, confirming an optimistic outlook for Tradeweb.",
-      "risk_en": "The main risk is heightened competition in electronic trading platforms, potentially compressing margins."
+      "why": "JP Morgan augmente son objectif de cours à 137 $, renforçant la perception positive du titre.",
+      "risk": "Une volatilité du marché des services de négociation pourrait entraîner une correction.",
+      "why_en": "JP Morgan raises its price target to $137, reinforcing a positive view of the stock.",
+      "risk_en": "Volatility in the trading services market could trigger a correction."
     },
     {
       "symbol": "TXT",
@@ -231,10 +136,10 @@
       "hv": 0.45836402850317715,
       "niche": false,
       "score": 6.197,
-      "why": "L'obtention d'un important contrat naval et d'une commande médicale renforce la visibilité de Bell Textron.",
-      "risk": "Le risque principal réside dans la dépendance aux cycles de défense et aux budgets gouvernementaux, qui peuvent être incertains.",
-      "why_en": "Securing a major navy contract and a medical order boosts Bell Textron's visibility.",
-      "risk_en": "The key risk lies in dependence on defense cycles and government budgets, which can be uncertain."
+      "why": "L'obtention de contrats militaires et médicaux montre une diversification des revenus.",
+      "risk": "La dépendance à des contrats gouvernementaux expose l'entreprise à des retards ou annulations.",
+      "why_en": "Securing military and medical contracts demonstrates revenue diversification.",
+      "risk_en": "Reliance on government contracts exposes the company to delays or cancellations."
     },
     {
       "symbol": "LMT",
@@ -255,10 +160,34 @@
       "hv": 0.36608834909876936,
       "niche": false,
       "score": 5.773,
-      "why": "L'approbation de ventes d'armes majeures à l'Ukraine et des projets de prestige augmentent l'intérêt pour Lockheed Martin.",
-      "risk": "Le risque principal est l'exposition géopolitique et les retards de livraison qui pourraient affecter les revenus.",
-      "why_en": "Approval of major weapons sales to Ukraine and high‑profile projects raise interest in Lockheed Martin.",
-      "risk_en": "The main risk is geopolitical exposure and potential delivery delays that could impact revenue."
+      "why": "L'approbation de ventes d'armes majeures et la visibilité médiatique renforcent l'intérêt pour Lockheed Martin.",
+      "risk": "Des retards de livraison ou des contraintes géopolitiques pourraient nuire aux revenus attendus.",
+      "why_en": "Approval of major weapons sales and media visibility boost interest in Lockheed Martin.",
+      "risk_en": "Delivery delays or geopolitical constraints could hurt expected revenues."
+    },
+    {
+      "symbol": "PWR",
+      "mentions": 3,
+      "headlines": [
+        "Captiva Verde Wellness Corp. Insider Filing",
+        "Citigroup Maintains Buy Rating and Raises Price Target for Quanta Services",
+        "TD Cowen Maintains Buy Rating and Raises Price Target for Quanta Services"
+      ],
+      "last_at": "2026-10-31T13:06:23Z",
+      "sentiment": 0.6666666666666666,
+      "price": 620.73,
+      "adv_usd": 800682965.7705688,
+      "chg_5d": 13.6,
+      "chg_20d": -8.3,
+      "rsi": 49.2,
+      "trend": "neutre",
+      "hv": 0.5556844476510335,
+      "niche": false,
+      "score": 5.773,
+      "why": "Les analystes maintiennent des notes d'achat et augmentent leurs objectifs de cours, soutenant le titre.",
+      "risk": "Une moindre demande dans les secteurs desservis pourrait freiner la croissance.",
+      "why_en": "Analysts maintain buy ratings and raise price targets, supporting the stock.",
+      "risk_en": "Weaker demand in served sectors could slow growth."
     },
     {
       "symbol": "VMC",
@@ -279,10 +208,10 @@
       "hv": 0.29791508863235244,
       "niche": false,
       "score": 5.773,
-      "why": "Des ajustements d'objectifs de cours et une ordonnance de sécurité réglementaire attirent l'attention sur Vulcan Materials.",
-      "risk": "Le risque principal est la sensibilité aux cycles de construction et aux régulations environnementales qui peuvent limiter l'activité.",
-      "why_en": "Price target adjustments and a regulatory safety order draw attention to Vulcan Materials.",
-      "risk_en": "The key risk is sensitivity to construction cycles and environmental regulations that may curb activity."
+      "why": "Des ajustements d'objectifs de cours et une attention réglementaire soulignent l'activité de Vulcan Materials.",
+      "risk": "Les ordonnances de sécurité et les avis sous‑pondération indiquent des risques opérationnels et de marché.",
+      "why_en": "Price target adjustments and regulatory focus highlight Vulcan Materials' activity.",
+      "risk_en": "Safety orders and underweight opinions signal operational and market risks."
     },
     {
       "symbol": "AIN",
@@ -302,10 +231,33 @@
       "hv": 0.3363975048861584,
       "niche": true,
       "score": 5.697,
-      "why": "JP Morgan ajuste à la hausse l'objectif de cours, signalant une perception positive d'Albany International.",
-      "risk": "Le risque principal est la dépendance aux marchés industriels cycliques, qui peuvent affecter la demande de produits.",
-      "why_en": "JP Morgan raises the price target, signaling a positive view of Albany International.",
-      "risk_en": "The main risk is reliance on cyclical industrial markets, which can affect product demand."
+      "why": "JP Morgan relève son objectif de cours, ce qui attire l'attention sur Albany International.",
+      "risk": "Une sensibilité aux cycles industriels pourrait affecter la performance de l'action.",
+      "why_en": "JP Morgan raises its price target, drawing attention to Albany International.",
+      "risk_en": "Sensitivity to industrial cycles could affect the stock's performance."
+    },
+    {
+      "symbol": "APG",
+      "mentions": 2,
+      "headlines": [
+        "JP Morgan Maintains Overweight on APi Group, Raises Price Target to $55",
+        "Truist Securities and Wells Fargo Adjust Price Targets for APi Group"
+      ],
+      "last_at": "2026-10-30T22:21:05Z",
+      "sentiment": 0.5,
+      "price": 44.34,
+      "adv_usd": 120428014.66339111,
+      "chg_5d": 12.4,
+      "chg_20d": 9.5,
+      "rsi": 70.5,
+      "trend": "haussiere",
+      "hv": 0.3833620222508432,
+      "niche": false,
+      "score": 5.697,
+      "why": "Les analystes conservent des positions surpondérées et augmentent leurs objectifs, soutenant le titre.",
+      "risk": "Des incertitudes macroéconomiques pourraient ralentir la demande de services d'ingénierie.",
+      "why_en": "Analysts keep overweight positions and raise targets, supporting the stock.",
+      "risk_en": "Macroeconomic uncertainties could slow demand for engineering services."
     },
     {
       "symbol": "CROX",
@@ -325,33 +277,79 @@
       "hv": 0.8722525505428161,
       "niche": false,
       "score": 5.697,
-      "why": "Des hausses d'objectifs de cours par UBS et Barclays renforcent l'attrait de Crocs sur le marché.",
-      "risk": "Le risque principal est la dépendance aux tendances de la mode et aux coûts de production qui peuvent fluctuer.",
-      "why_en": "Price target hikes by UBS and Barclays enhance Crocs' market appeal.",
-      "risk_en": "The key risk is dependence on fashion trends and fluctuating production costs."
+      "why": "Les hausses d'objectifs de cours par UBS et Barclays renforcent l'attrait de Crocs.",
+      "risk": "Une dépendance à la mode et aux tendances de consommation expose le titre à des fluctuations.",
+      "why_en": "Price target hikes by UBS and Barclays increase Crocs' appeal.",
+      "risk_en": "Reliance on fashion trends and consumer preferences exposes the stock to fluctuations."
     },
     {
-      "symbol": "DIN",
+      "symbol": "GILD",
       "mentions": 2,
       "headlines": [
-        "Centralized Supply Chain Services Names 2026 Supplier Partners of the Year",
-        "Mizuho Maintains Neutral Rating on Dine Brands Global and Lowers Price Target"
+        "Gilead Sciences Announces Participation in Upcoming Investor Conferences",
+        "JP Morgan Maintains Overweight on Gilead Sciences, Raises Price Target to $190"
       ],
-      "last_at": "2026-11-01T01:04:20Z",
+      "last_at": "2026-10-30T23:01:37Z",
       "sentiment": 0.5,
-      "price": 35.51,
-      "adv_usd": 22536128.798685074,
-      "chg_5d": 14.2,
-      "chg_20d": 18.7,
-      "rsi": 70.3,
+      "price": 170.68,
+      "adv_usd": 976229239.1204071,
+      "chg_5d": 9.4,
+      "chg_20d": 17.9,
+      "rsi": 74.6,
       "trend": "haussiere",
-      "hv": 0.44092305013399613,
+      "hv": 0.2980521206308691,
+      "niche": false,
+      "score": 5.697,
+      "why": "La participation à des conférences d'investisseurs et le relèvement du target par JP Morgan augmentent la visibilité.",
+      "risk": "Des retards dans le développement de nouveaux traitements pourraient peser sur la valorisation.",
+      "why_en": "Investor conference participation and JP Morgan's target raise increase visibility.",
+      "risk_en": "Delays in new drug development could weigh on valuation."
+    },
+    {
+      "symbol": "TDOC",
+      "mentions": 2,
+      "headlines": [
+        "Analyst Rating and Price Target Updates for Teladoc Health",
+        "JP Morgan Maintains Neutral on Teladoc Health, Raises Price Target to $10"
+      ],
+      "last_at": "2026-10-31T13:03:35Z",
+      "sentiment": 0.5,
+      "price": 8.51,
+      "adv_usd": 33175097.582497597,
+      "chg_5d": 34.2,
+      "chg_20d": 54.2,
+      "rsi": 78.2,
+      "trend": "haussiere",
+      "hv": 0.969889776062962,
       "niche": true,
       "score": 5.697,
-      "why": "Des reconnaissances de partenaires fournisseurs et un ajustement de cible par Mizuho attirent l'attention sur Dine Brands.",
-      "risk": "Le risque principal est la sensibilité aux habitudes de consommation hors‑domicile, qui peuvent changer rapidement.",
-      "why_en": "Supplier partner awards and a target adjustment by Mizuho draw attention to Dine Brands.",
-      "risk_en": "The main risk is sensitivity to out‑of‑home dining habits, which can shift rapidly."
+      "why": "Les mises à jour d'analystes et la hausse du target à 10 $ renforcent l'intérêt pour Teladoc.",
+      "risk": "La concurrence accrue dans la télémédecine pourrait limiter la croissance des revenus.",
+      "why_en": "Analyst updates and a target raise to $10 boost interest in Teladoc.",
+      "risk_en": "Intensifying competition in telehealth could limit revenue growth."
+    },
+    {
+      "symbol": "H",
+      "mentions": 2,
+      "headlines": [
+        "Macquarie Maintains Outperform on Hyatt Hotels, Raises Price Target to $210",
+        "JP Morgan Maintains Overweight on Hyatt Hotels, Lowers Price Target to $206"
+      ],
+      "last_at": "2026-10-31T00:54:42Z",
+      "sentiment": 0.5,
+      "price": 180.57,
+      "adv_usd": 145603602.8186798,
+      "chg_5d": 4.6,
+      "chg_20d": 13.6,
+      "rsi": 64.0,
+      "trend": "haussiere",
+      "hv": 0.351264154878501,
+      "niche": false,
+      "score": 5.617,
+      "why": "Des recommandations positives de Macquarie et JP Morgan, malgré un léger ajustement du target, maintiennent l'attention.",
+      "risk": "Une baisse du tourisme ou des voyages d'affaires pourrait affecter les performances hôtelières.",
+      "why_en": "Positive recommendations from Macquarie and JP Morgan keep attention on Hyatt, despite a slight target tweak.",
+      "risk_en": "A decline in tourism or business travel could impact hotel performance."
     }
   ]
 }
