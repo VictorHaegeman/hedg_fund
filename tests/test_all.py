@@ -1335,3 +1335,39 @@ def test_terminal_weekly_report():
     total = np.prod([1 + r["fund"] / 100 for r in weeks]) - 1
     assert abs(total * 100 - weeks[-1]["cum_fund"]) < 0.05
     assert term.weekly_report([], None)["weeks"] == []
+
+
+def test_broker_risk_amount_is_actual_when_cash_caps_size(tmp_path):
+    """Revue 2026-11-01 : taille plafonnée par le cash → risque journalisé = risque réel."""
+    from quantlab import broker as bk
+    acc = bk.load_account(str(tmp_path / "a.json"), capital=10_000)
+    acc.cash = 500.0                       # presque plus de cash
+    pos = bk.buy(acc, "AAA", price=100.0, stop=95.0, target=None,
+                 strategy="meanrev", date="2026-01-02", risk_pct=1.0, equity=10_000)
+    assert pos is not None
+    assert pos["shares"] < 20              # visé : 20 u (100 $ de risque), plafonné par le cash
+    assert abs(pos["risk_amount"] - pos["shares"] * 5.0) < 0.01
+    assert pos["risk_amount"] < 100.0
+
+
+def test_alpaca_wait_fill_rechecks_after_cancel():
+    """Revue 2026-11-01 : ordre exécuté pendant l'annulation → renvoyé, pas perdu."""
+    from quantlab.alpaca import Alpaca, AlpacaError
+
+    class C(Alpaca):
+        def __init__(self, final):
+            super().__init__("k", "s")
+            self.final, self.cancelled = final, False
+
+        def get_order(self, oid):
+            return self.final if self.cancelled else {"status": "new", "filled_qty": "0"}
+
+        def cancel_order(self, oid):
+            self.cancelled = True
+            if self.final["status"] == "filled":
+                raise AlpacaError("422 order already filled")
+
+    assert C({"status": "filled", "filled_qty": "3"}).wait_fill("x", timeout=2, sleep=lambda s: None)["filled_qty"] == "3"
+    part = C({"status": "canceled", "filled_qty": "1"}).wait_fill("x", timeout=2, sleep=lambda s: None)
+    assert part is not None and part["filled_qty"] == "1"
+    assert C({"status": "canceled", "filled_qty": "0"}).wait_fill("x", timeout=2, sleep=lambda s: None) is None
