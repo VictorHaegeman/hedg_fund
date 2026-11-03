@@ -22,7 +22,7 @@
   {
     "id": "371ce3ea37",
     "opened_at": "2026-10-26T18:57:48",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "stock",
     "strategy": "BUY_STOCK",
     "underlying": "XOM",
@@ -35,7 +35,9 @@
     "niche": false,
     "confidence": 0.72,
     "reasoning": "XOM montre une tendance haussière forte (RSI 77.5, +3.4% sur 5 jours) avec un volume implicite raisonnable et aucune annonce de résultats imminente, ce qui justifie un achat prudent.",
-    "pnl": null
+    "pnl": -345.82,
+    "closed_at": "2026-11-03T19:54:26",
+    "close_reason": "Stop-loss"
   },
   {
     "id": "655e8dce1a",

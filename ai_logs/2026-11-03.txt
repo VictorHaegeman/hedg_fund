@@ -1,0 +1,9 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-03T19:54:26 | équité 99,115.45 $ (-0.01 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  FERME BUY_STOCK XOM (Stop-loss) PnL -345.82 $
+  Idées presse ajoutées : VRTX, MAR, HNGE, HII, IBTA*, VVX*, TEVA, LNG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : HII, AMD, MAR, IBTA, QCOM, GOOGL, INTC, V, MCD, CAT, HNGE, SHOP, UNI/USD, AAVE/USD, XRP/USD, AVAX/USD, LINK/USD
+  IA : HOLD | confiance 0.58 | Aucune opportunité claire avec un risque maîtrisé ne se dégage parmi les titres surveillés, les IV sont élevées ou les résultats imminents rendent les stratégies d'options inappropriées.
+  Idées presse : 15 idées rafraîchies
