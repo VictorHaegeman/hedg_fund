@@ -7,3 +7,11 @@ Exécuté : 2026-11-03T19:54:26 | équité 99,115.45 $ (-0.01 % jour) | bourse U
   Candidats envoyés à l'IA : HII, AMD, MAR, IBTA, QCOM, GOOGL, INTC, V, MCD, CAT, HNGE, SHOP, UNI/USD, AAVE/USD, XRP/USD, AVAX/USD, LINK/USD
   IA : HOLD | confiance 0.58 | Aucune opportunité claire avec un risque maîtrisé ne se dégage parmi les titres surveillés, les IV sont élevées ou les résultats imminents rendent les stratégies d'options inappropriées.
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-03T20:46:03 | équité 98,965.20 $ (-0.16 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Idées presse ajoutées : VRTX, MAR, HNGE, HII, IBTA*, VVX*, TEVA, LNG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : HII, IBTA, QCOM, MAR, AMD, LLY, MCD, CAT, GOOGL, VVX, INTC, UBER, UNI/USD, AAVE/USD, XRP/USD, AVAX/USD, LINK/USD
+  IA : HOLD | confiance 0.58 | Aucune opportunité claire avec un risque acceptable ne se démarque parmi les titres et crypto surveillés, le marché montre une peur élevée et les options sont soit chères soit peu liquides.
+  Idées presse : à jour (il y a 0.9 h, 15 idées)
