@@ -6,3 +6,11 @@ Exécuté : 2026-11-04T19:23:06 | équité 100,895.42 $ (+2.06 % jour) | bourse 
   Candidats envoyés à l'IA : MCD, AMGN, FISV, YUM, BR, QCOM, INTC, UBER, MA, LLY, CAT, XMTR, UNI/USD, ETH/USD, SOL/USD, XRP/USD, DOGE/USD
   IA : HOLD | confiance 0.58 | Aucune opportunité claire avec une tendance forte, un IV/HV raisonnable et un risque acceptable ne se dégage parmi les titres surveillés, donc il vaut mieux rester en position neutre.
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-04T20:09:52 | équité 100,816.65 $ (+1.98 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Idées presse ajoutées : AMGN, XMTR, CNK, FISV, YUM, MIRM, ATRC*, BR  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MCD, AMGN, FISV, YUM, BR, INTC, QCOM, UBER, MA, LLY, DIS, XMTR, UNI/USD, ETH/USD, XRP/USD, AVAX/USD, SOL/USD
+  IA : HOLD | confiance 0.58 | Aucun signal clair avec une tendance haussière modérée, des IV élevés et des résultats imminents, il vaut mieux rester en attente.
+  Idées presse : à jour (il y a 0.8 h, 15 idées)
