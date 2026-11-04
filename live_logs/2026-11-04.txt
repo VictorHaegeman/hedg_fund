@@ -1,0 +1,31 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-04T02:34:47 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, NVDA, AAPL, MSFT, GOOGL, GOOG, GOOGN, GOOGM, AMZN, SPCX, TSM, META, AVGO, TSLA, METAM, LLY, JPM
+==============================================================================
+  [!] SPCX : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOG, GOOGN, GOOGM
+  Contexte risque : VIX 20.8 (82e pct) → PRUDENCE
+  Aucun ordre ce cycle (positions inchangées, pas de signal).
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-04T02:34:59
+  Équité : 100,424.86 $ (+0.42% depuis le départ) | Cash : 0.00 $
+  Positions ouvertes :
+    JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +498.42 $
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +508.96 $
+    BTC-USD  0.1570 u @ 76,390.71 [meanrev] | stop 69,953.90 | latent +40.77 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent +423.83 $
+    SPY      43.4999 u @ 755.72 [meanrev] | stop 732.57 | latent -59.59 $
+    QQQ      0.7266 u @ 690.49 [meanrev] | stop 652.33 | latent -3.79 $
+  Trades clôturés : 25 | win rate 64% | PnL réalisé total : -506.68 $
+  5 derniers trades :
+    2026-10-07 XLV      [meanrev] 166.20 → 168.81 (signal) PnL +337.74 $
+    2026-10-14 XLK      [breakout] 197.81 → 191.45 (stop) PnL -1,044.12 $
+    2026-10-23 BTC-USD  [breakout] 85,879.10 → 81,071.81 (stop) PnL -1,041.52 $
+    2026-10-21 QQQ      [meanrev] 728.95 → 725.20 (signal) PnL -157.89 $
+    2026-10-21 XLK      [meanrev] 190.43 → 188.54 (signal) PnL -213.23 $
+
+— MIROIR ALPACA —
+  Alpaca déjà aligné sur le fonds.
+  Équité Alpaca : 98,800.18 $ | cash 22,021.48 $
