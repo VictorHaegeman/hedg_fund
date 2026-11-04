@@ -1,0 +1,8 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-04T19:23:06 | équité 100,895.42 $ (+2.06 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Idées presse ajoutées : AMGN, XMTR, CNK, FISV, YUM, MIRM, ATRC*, BR  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MCD, AMGN, FISV, YUM, BR, QCOM, INTC, UBER, MA, LLY, CAT, XMTR, UNI/USD, ETH/USD, SOL/USD, XRP/USD, DOGE/USD
+  IA : HOLD | confiance 0.58 | Aucune opportunité claire avec une tendance forte, un IV/HV raisonnable et un risque acceptable ne se dégage parmi les titres surveillés, donc il vaut mieux rester en position neutre.
+  Idées presse : 15 idées rafraîchies
