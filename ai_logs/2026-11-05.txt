@@ -87,3 +87,9 @@ Exécuté : 2026-11-05T19:30:00 | équité 96,249.42 $ (-4.66 % jour) | bourse U
 ==============================================================================
   ⛔ Pause : perte du jour -4.66 % ≤ -3%
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-05T20:00:00 | équité 96,407.86 $ (-4.51 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  ⛔ Pause : perte du jour -4.51 % ≤ -3%
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
