@@ -232,7 +232,11 @@ def run_cycle(symbols: list[str] = DEFAULT_UNIVERSE, capital: float = 10_000.0,
     account.last_cycle = datetime.now().isoformat(timespec="seconds")
     eq = account.equity(last_prices)
     # date de marché du cycle (dernière barre dispo), sinon date du jour
-    mkt_date = (max(str(d.index[-1].date()) for d in data.values())
+    # (actions seulement : la crypto a déjà une barre « aujourd'hui » après minuit UTC, ce qui
+    # datait la clôture de la veille au lendemain et la comparait au S&P du jour suivant)
+    stock_dates = [str(d.index[-1].date()) for s, d in data.items() if not s.endswith("-USD")]
+    mkt_date = (max(stock_dates) if stock_dates else
+                max(str(d.index[-1].date()) for d in data.values())
                 if data else datetime.now().strftime("%Y-%m-%d"))
     account.record_equity(mkt_date, eq)
     save_account(account, state_path)

@@ -286,7 +286,7 @@ def weekly_report(curve: list, spy: pd.Series | None, history: list | None = Non
             if sp is not None:
                 base_day = start0 if begin == start0 else begin - pd.Timedelta(days=1)
                 a = sp[sp.index <= max(base_day, sp.index[0])]
-                b = sp[sp.index <= end]
+                b = sp[sp.index <= min(end, s.index[-1])]   # même date que le dernier point du fonds
                 if len(a) and len(b):
                     sr = float(b.iloc[-1]) / float(a.iloc[-1]) - 1
                     row["spy"] = _f(sr * 100, 2)
