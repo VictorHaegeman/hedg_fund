@@ -129,6 +129,12 @@ class Alpaca:
     def open_orders(self) -> list[dict]:
         return self.request("GET", "/v2/orders", params={"status": "open", "limit": 500})
 
+    def order_history(self, status: str = "closed", after: str | None = None, limit: int = 500) -> list[dict]:
+        params = {"status": status, "limit": limit}
+        if after:
+            params["after"] = after
+        return self.request("GET", "/v2/orders", params=params)
+
     def asset(self, symbol: str) -> dict:
         return self.request("GET", f"/v2/assets/{urllib.parse.quote(symbol, safe='')}")
 

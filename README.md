@@ -302,6 +302,26 @@ python -m quantlab live --vol-target 0.12 --trail            # live avec overlay
 > automatisé les laisse désactivés tant que `fund --compare` sur données réelles
 > ne montre pas un gain net. Ne pas sur-ajuster les paramètres (piège classique).
 
+### Vrais ordres stop chez Alpaca (nov. 2026)
+
+Le compte papier vend au prix du stop dès qu'il est touché dans la journée, mais le miroir
+Alpaca ne passait ses ordres qu'à 23h30 : un stop touché n'était vendu que le lendemain à
+l'ouverture. Test 2007 → 2026 (13 dates de départ) :
+
+| Exécution | Gain/an | Pire baisse |
+|---|---|---|
+| Alpaca avant : stops et objectifs vendus le lendemain matin | 11,1 % | −27,3 % |
+| **Vrais stops chez Alpaca** (objectifs toujours le soir) | **12,5 %** | −27,5 % |
+| Idem mais sans stop le jour de l'achat | 11,6 % | −27,5 % |
+| Achat/vente le jour même à la clôture (passage à 21h50) | 10,4 % | −31,2 % |
+
+Donc : chaque soir le miroir annule puis repose un **stop GTC** (parts entières) sur chaque
+position actions du fonds, et chaque nouvel achat part avec son **stop attaché (ordre OTO)**
+pour être protégé dès le premier jour. Le socle de trésorerie (SPY/BIL) et la crypto n'ont pas
+de stop. Si un vrai stop Alpaca vend alors que le compte papier garde la position (données
+de prix un peu différentes), le miroir ne rachète pas. Le fonds reste à un passage par jour :
+acheter le jour même à la clôture rapporte moins (10,4 %).
+
 ### Test historique des idées presse (nov. 2026, `research/press_backtest.md`)
 
 Rejeu de 2 ans de presse Benzinga (486 752 articles, 500 jours, 2024-11 → 2026-11), même

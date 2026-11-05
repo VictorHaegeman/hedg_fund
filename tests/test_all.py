@@ -535,7 +535,14 @@ class FakeAlpaca:
         return [{"symbol": s, **v} for s, v in self.pos.items()]
 
     def open_orders(self):
-        return []
+        return list(getattr(self, "open_list", []))
+
+    def order_history(self, status="closed", after=None, limit=500):
+        return list(getattr(self, "closed_orders", []))
+
+    def cancel_order(self, oid):
+        self.cancelled = getattr(self, "cancelled", []) + [oid]
+        self.open_list = [o for o in getattr(self, "open_list", []) if o["id"] != oid]
 
     def asset(self, s):
         return {"shortable": True, "easy_to_borrow": True}
@@ -1482,3 +1489,44 @@ def test_alpaca_wait_fill_rechecks_after_cancel():
     part = C({"status": "canceled", "filled_qty": "1"}).wait_fill("x", timeout=2, sleep=lambda s: None)
     assert part is not None and part["filled_qty"] == "1"
     assert C({"status": "canceled", "filled_qty": "0"}).wait_fill("x", timeout=2, sleep=lambda s: None) is None
+
+
+
+def test_mirror_places_real_stops_at_alpaca(tmp_path):
+    """Vrais stops chez Alpaca : stop GTC sur les positions détenues (annulé puis reposé
+    chaque soir), achat neuf avec stop attaché (OTO), pas de rachat après un vrai stop."""
+    from quantlab import broker as bk
+    from quantlab import mirror as mr
+    acc = bk.load_account(str(tmp_path / "a.json"), capital=100_000)
+    bk.buy(acc, "AAA", 100.0, 95.0, None, "trend", "2026-11-02", risk_pct=1.0, equity=100_000)
+    bk.buy(acc, "BBB", 50.0, 48.0, None, "breakout", "2026-11-05", risk_pct=1.0, equity=100_000)
+    bk.buy(acc, "CCC", 20.0, 19.0, None, "trend", "2026-11-03", risk_pct=1.0, equity=100_000)
+    prices = {"AAA": 100.0, "BBB": 50.0, "CCC": 20.0}
+    eq = acc.equity(prices)
+    c = FakeAlpaca(equity=eq)
+    c.pos = {"AAA": {"qty": str(acc.positions["AAA"]["shares"] + 0.4)}}
+    c.open_list = [{"id": "old", "type": "stop", "side": "sell", "symbol": "AAA"},
+                   {"id": "ia", "type": "stop", "side": "sell", "symbol": "NVDA"}]
+    c.closed_orders = [{"type": "stop", "side": "sell", "status": "filled", "symbol": "CCC",
+                        "filled_at": "2026-11-04T15:00:00Z"}]
+    out = mr.mirror_report(c, acc, prices, ["AAA", "BBB", "CCC"], protected={"NVDA"},
+                           sleep=lambda s: None)
+    assert c.cancelled == ["old"]                       # l'ordre IA (NVDA) n'est pas touché
+    oto = [o for o in c.orders if o.get("order_class") == "oto"]
+    assert len(oto) == 1 and oto[0]["symbol"] == "BBB" and oto[0]["stop_loss"]["stop_price"] == "48.00"
+    assert float(oto[0]["qty"]).is_integer()
+    stops = [o for o in c.orders if o.get("type") == "stop"]
+    assert len(stops) == 1 and stops[0]["symbol"] == "AAA" and stops[0]["time_in_force"] == "gtc"
+    assert stops[0]["qty"] == str(int(acc.positions["AAA"]["shares"] + 0.4))
+    assert stops[0]["stop_price"] == "95.00" and stops[0]["client_order_id"].startswith("ql-stop")
+    assert not any(o.get("symbol") == "CCC" for o in c.orders)     # pas de rachat
+    assert "vrai stop Alpaca, pas de rachat : CCC" in out
+    # stop déjà dépassé (prix sous le stop) : pas d'ordre stop absurde
+    assert mr._valid_stop(acc, "AAA", {"AAA": 94.0}) is None
+    assert mr._valid_stop(acc, "BTC-USD", {}) is None
+    # socle de trésorerie SPY + position stratégie SPY : le stop ne couvre que la stratégie
+    acc.treasury["SPY"] = {"shares": 50.0, "cost": 25_000, "last": 500.0}
+    acc.positions["SPY"] = {"shares": 10.0, "stop": 480.0, "entry": 500.0, "entry_date": "2026-11-01"}
+    c2 = FakeAlpaca()
+    mr.place_stops(c2, acc, {"SPY": 500.0}, {"SPY": 60.0}, [], scale=1.0)
+    assert [o["qty"] for o in c2.orders if o["symbol"] == "SPY"] == ["10"]
