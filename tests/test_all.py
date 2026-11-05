@@ -714,7 +714,9 @@ def test_ai_short_and_shared_universe(tmp_path):
     short = lambda p: {"action": "OPEN", "strategy": "SHORT_STOCK", "underlying": "TSLA",
                        "confidence": 0.8, "stop_loss_pct": 0.9, "reasoning": "x"}
     out, _ = ai.run_cycle(client, short, state_path=str(tmp_path / "s.json"), **kw)
-    o = client.orders[-1]
+    o = [x for x in client.orders if x.get("type") == "market"][-1]
+    stop = client.orders[-1]                         # vrai stop de rachat posé chez Alpaca
+    assert stop["type"] == "stop" and stop["side"] == "buy" and stop["time_in_force"] == "gtc"
     # stop demandé 90 % → plafonné à 15 % ; taille réduite pour garder 0,3 % de perte au stop
     assert o["side"] == "sell" and o["qty"] == str(int(100_000 * 0.003 / 0.15 // 140))
     assert "notional" not in o
@@ -1053,7 +1055,8 @@ def test_ai_cycle_trades_press_idea_at_half_size(tmp_path):
     assert "pas le volume" in seen[0]
     t = ai.load_trades(str(tmp_path / "ai.json"))[0]
     assert t["niche"] and t["source"] == "presse"
-    assert t["cost"] == 100_000 * ai.SPOT_MAX_PCT * ai.NICHE_SIZE     # taille divisée par 2
+    half = 100_000 * ai.SPOT_MAX_PCT * ai.NICHE_SIZE                  # taille divisée par 2
+    assert half - 140 < t["cost"] <= half                             # en parts entières
     crypto_rows = [l for l in seen[0].splitlines() if "(crypto)" in l]
     assert 0 < len(crypto_rows) <= ai.TOP_CRYPTOS                        # pré-tri crypto
     # idées trop anciennes → ignorées
@@ -1546,3 +1549,55 @@ def test_ai_chain_wait_never_stops():
     morning = dict(closed, next_open="2026-11-05T09:30:00-05:00")
     assert ai.chain_wait(morning, utc(12, 30)) == 2 * 3600 + 120
     assert ai.chain_wait(morning, utc(13, 0)) == 90 * 60 + 120
+
+
+
+def test_ai_real_stop_orders_and_crypto_cap(tmp_path):
+    """Trades spot de l'IA : vrai stop chez Alpaca à l'ouverture, détection du stop exécuté,
+    annulation avant une sortie normale, et au plus 2 cryptos ouvertes."""
+    from quantlab import ai_trader as ai
+    # corps des ordres stop
+    b = ai.ai_stop_body({"kind": "crypto", "underlying": "ETH/USD", "entry_price": 3000.0,
+                         "sl_pct": 0.05, "qty": 3.1})
+    assert b["type"] == "stop_limit" and b["stop_price"] == "2850.00" and b["limit_price"] == "2764.50"
+    assert b["symbol"] == "ETH/USD" and b["time_in_force"] == "gtc"
+    b = ai.ai_stop_body({"kind": "stock", "underlying": "AMD", "entry_price": 200.0,
+                         "sl_pct": 0.04, "qty": 50})
+    assert (b["type"], b["side"], b["qty"], b["stop_price"]) == ("stop", "sell", "50", "192.00")
+    assert ai.ai_stop_body({"kind": "stock", "underlying": "X", "entry_price": 0, "sl_pct": .1, "qty": 3}) is None
+
+    class C(FakeAlpaca):
+        def __init__(self):
+            super().__init__()
+            self.status, self.cancelled = {}, []
+        def submit_order(self, body):
+            r = super().submit_order(body)
+            self.status[r["id"]] = {"status": "new"}
+            return r
+        def wait_fill(self, oid, timeout=15, sleep=None):
+            return {"status": "filled", "filled_avg_price": "140", "filled_qty": "71"}
+        def get_order(self, oid):
+            return self.status[oid]
+        def cancel_order(self, oid):
+            self.cancelled.append(oid)
+
+    c = C()
+    kw = dict(earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "-", sleep=lambda s: None)
+    state = str(tmp_path / "ai.json")
+    buy = lambda p: {"action": "OPEN", "strategy": "BUY_STOCK", "underlying": "NVDA",
+                     "confidence": 0.8, "stop_loss_pct": 0.03, "reasoning": "x"}
+    ai.run_cycle(c, buy, state_path=state, **kw)
+    t = ai.load_trades(state)[0]
+    assert c.orders[0]["qty"] == str(int(c.orders[0]["qty"]))        # parts entières
+    assert c.orders[-1]["type"] == "stop" and t["stop_order_id"] == str(len(c.orders))
+    # le vrai stop a été exécuté chez Alpaca : position disparue → trade fermé avec son P&L
+    c.status[t["stop_order_id"]] = {"status": "filled", "filled_avg_price": "130", "filled_qty": "71"}
+    c.pos.pop("NVDA")
+    out, _ = ai.run_cycle(c, lambda p: {"action": "HOLD"}, state_path=state, **kw)
+    t = ai.load_trades(state)[0]
+    assert t["status"] == "CLOSED" and t["pnl"] == -710.0 and "vrai ordre Alpaca" in out
+    # au plus 2 cryptos ouvertes
+    ctx = {"stocks": [], "cryptos": ["ETH/USD"], "market_open": True, "open_underlyings": [],
+           "equity": 100_000, "crypto_open": 2}
+    ok, why = ai.validate({"strategy": "BUY_CRYPTO", "underlying": "ETH/USD", "confidence": 0.9}, ctx)
+    assert not ok and "2 cryptos" in why

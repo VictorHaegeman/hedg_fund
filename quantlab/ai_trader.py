@@ -76,6 +76,8 @@ SPOT_MAX_PCT = 0.10            # achat / vente à découvert = 10 % de l'équit�
 SPOT_RISK_PCT = 0.003          # perte au stop d'un achat/short = 0,3 % de l'équité (10 % × stop 3 %)
 STOP_VOL_MULT = 1.5            # stop au moins 1,5 × le mouvement quotidien habituel de l'actif
 SPOT_SL_MIN, SPOT_SL_MAX = 0.02, 0.15
+MAX_CRYPTO_OPEN = 2            # cryptos très corrélées : au plus 2 ouvertes en même temps
+CRYPTO_STOP_SLIP = 0.03        # stop crypto = stop-limit, limite 3 % sous le déclenchement
 MAX_CONTRACTS = 10
 
 DTE_MIN, DTE_MAX, DTE_TARGET = 14, 45, 30
@@ -554,6 +556,7 @@ REGLES:
   long gamma gagne 1/2*Gamma*S^2*(vol_realisee^2 - vol_implicite^2) : acheter de la vol
   n'a de sens que si la vol realisee attendue depasse la vol implicite payee.
 - Pas de trade sur un sous-jacent deja en position (sauf COVERED_CALL sur les actions detenues).
+- Au plus {MAX_CRYPTO_OPEN} cryptos ouvertes en meme temps : elles bougent ensemble.
 - Options, BUY_STOCK et SHORT_STOCK uniquement si le marche actions est OUVERT.
 - SHORT_STOCK jamais juste avant des resultats : prefere BEAR_PUT_SPREAD.
 - Options bon marche (IV/HV <= 1.0) + vue directionnelle claire sur une action :
@@ -987,6 +990,9 @@ def validate(d: dict, ctx: dict) -> tuple[bool, str]:
         return True, "OK"
     if strat == "BUY_CRYPTO" and und not in ctx["cryptos"]:
         return False, f"{und} n'est pas une crypto de la poche"
+    if strat == "BUY_CRYPTO" and ctx.get("crypto_open", 0) >= MAX_CRYPTO_OPEN:
+        return False, (f"Déjà {ctx['crypto_open']} cryptos ouvertes (max {MAX_CRYPTO_OPEN}) : "
+                       "elles montent et baissent ensemble, ce serait un seul gros pari")
     if strat != "BUY_CRYPTO" and und not in ctx["stocks"]:
         return False, f"{und} n'est pas une action de la poche"
     if strat in LONG_VOL:
@@ -1050,6 +1056,12 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
             return None, f"1 contrat risque {plan['max_loss']:.0f}$, max autorise {budget:.0f}$"
     quotes = {l["symbol"]: (l["bid"], l["ask"]) for l in plan["legs"]
               if _num(l.get("bid"), 0) > 0 and _num(l.get("ask"), 0) > 0}
+    if strat == "COVERED_CALL":
+        # les actions doivent être libres pour couvrir le call : on retire leur ordre stop
+        # (la sortie de l'action reste surveillée à chaque cycle)
+        for t in ctx.get("trades", []):
+            if t["status"] == "OPEN" and t["kind"] == "stock" and t["underlying"] == und:
+                cancel_ai_stop(client, t)
     filled = execute_options(client, plan["legs"], qty, True, quotes=quotes or None, sleep=sleep)
     if not filled:
         return None, "Ordre options non rempli au prix juste (milieu de fourchette), annulé"
@@ -1190,18 +1202,99 @@ def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.s
             return None, "Pas assez de cash disponible"
         body = {"symbol": und, "notional": f"{notional:.2f}", "side": "buy",
                 "type": "market", "time_in_force": "gtc" if is_crypto else "day"}
-    if not client.wait_fill(client.submit_order(body)["id"], sleep=sleep):
+        price = snap["prices"].get(und)
+        if not is_crypto and price and notional // price >= 1:
+            # parts entières : le vrai stop chez Alpaca couvre toute la position
+            qty = int(notional // price)
+            notional = qty * price
+            body = {"symbol": und, "qty": str(qty), "side": "buy", "type": "market",
+                    "time_in_force": "day"}
+    fill = client.wait_fill(client.submit_order(body)["id"], sleep=sleep)
+    if not fill:
         return None, "Ordre non rempli, annule"
-    return {"id": uuid.uuid4().hex[:10], "opened_at": now_iso(), "status": "OPEN",
+    entry = _num(fill.get("filled_avg_price"), 0.0) or snap["prices"].get(und)
+    fqty = _num(fill.get("filled_qty"), 0.0) or (notional / entry if entry else 0.0)
+    if is_crypto:
+        # Alpaca prélève les frais crypto sur l'actif reçu : la position réelle est un peu
+        # plus petite que la quantité achetée → le stop porte sur la position réelle
+        try:
+            held = {p["symbol"]: _num(p.get("qty"), 0.0) for p in client.positions()}
+            if held.get(position_symbol(und)):
+                fqty = min(fqty, held[position_symbol(und)]) if fqty else held[position_symbol(und)]
+        except Exception:
+            pass
+    rec = {"id": uuid.uuid4().hex[:10], "opened_at": now_iso(), "status": "OPEN",
             "kind": "crypto" if is_crypto else "short" if is_short else "stock",
             "strategy": strat, "underlying": und, "position_symbol": position_symbol(und),
-            "cost": round(notional, 2), "entry_price": snap["prices"].get(und),
+            "cost": round(notional, 2), "entry_price": entry, "qty": fqty,
             "sl_pct": round(sl, 4), "tp_pct": round(tp, 4),
             "source": "presse" if und in ctx.get("ideas", ()) else None,
             "niche": und in ctx.get("niche", ()),
             "confidence": d.get("confidence"), "reasoning": d.get("reasoning"),
             "reasoning_en": d.get("reasoning_en"),
-            "pnl": None}, "OK"
+            "pnl": None}
+    rec["stop_note"] = place_ai_stop(client, rec)
+    return rec, "OK"
+
+
+def ai_stop_body(t: dict) -> dict | None:
+    """Vrai ordre stop chez Alpaca pour un trade spot de la poche IA (GTC) : il part tout
+    seul dans la journée même si aucun cycle ne tourne (le 5/11, 5 h sans cycle : stops de
+    3 % dépassés jusqu'à −10 %). Crypto : stop-limit (seul type de stop accepté)."""
+    entry, sl, qty = _num(t.get("entry_price"), 0.0), _num(t.get("sl_pct"), 0.0), _num(t.get("qty"), 0.0)
+    if entry <= 0 or sl <= 0 or qty <= 0:
+        return None
+    fmt = lambda p: f"{p:.2f}" if p >= 1 else f"{p:.6f}"
+    sym = to_alpaca_symbol(t["underlying"])
+    if t["kind"] == "crypto":
+        stop = entry * (1 - sl)
+        return {"symbol": sym, "side": "sell", "type": "stop_limit", "qty": f"{qty:.9f}".rstrip("0").rstrip("."),
+                "stop_price": fmt(stop), "limit_price": fmt(stop * (1 - CRYPTO_STOP_SLIP)),
+                "time_in_force": "gtc"}
+    whole = int(qty)
+    if whole < 1:
+        return None
+    if t["kind"] == "short":
+        stop = math.ceil(entry * (1 + sl) * 100) / 100
+        return {"symbol": sym, "side": "buy", "type": "stop", "qty": str(whole),
+                "stop_price": fmt(stop), "time_in_force": "gtc"}
+    stop = math.floor(entry * (1 - sl) * 100) / 100
+    return {"symbol": sym, "side": "sell", "type": "stop", "qty": str(whole),
+            "stop_price": fmt(stop), "time_in_force": "gtc"}
+
+
+def place_ai_stop(client: Alpaca, t: dict) -> str:
+    body = ai_stop_body(t)
+    if body is None:
+        return "pas de vrai stop (quantité ou prix inconnus)"
+    try:
+        o = client.submit_order(body)
+        t["stop_order_id"], t["stop_price"] = o.get("id"), float(body["stop_price"])
+        return f"vrai stop Alpaca à {body['stop_price']}"
+    except AlpacaError as e:
+        return f"vrai stop refusé ({str(e)[:80]}) : surveillé à chaque cycle"
+
+
+def cancel_ai_stop(client: Alpaca, t: dict) -> None:
+    oid = t.get("stop_order_id")
+    if not oid:
+        return
+    try:
+        client.cancel_order(oid)
+    except AlpacaError:
+        pass
+    t["stop_order_id"] = None
+
+
+def stop_fill(client: Alpaca, t: dict) -> dict | None:
+    """L'ordre stop Alpaca de ce trade a-t-il été exécuté ? (renvoie l'ordre, sinon None)"""
+    if not t.get("stop_order_id"):
+        return None
+    try:
+        o = client.get_order(t["stop_order_id"])
+    except AlpacaError:
+        return None
+    return o if o.get("status") == "filled" else None
 
 
 # ── sorties automatiques ────────────────────────────────────────────────────
@@ -1363,6 +1456,15 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
                     close_option(t, pnl, reason)
             else:
                 p = positions.get(t["position_symbol"])
+                f = stop_fill(client, t) if not p else None
+                if f:
+                    px, q = _num(f.get("filled_avg_price"), 0.0), _num(f.get("filled_qty"), 0.0)
+                    entry = _num(t.get("entry_price"), 0.0)
+                    pnl = round((entry - px if t["kind"] == "short" else px - entry) * q, 2)
+                    _close_record(trades, t["id"], pnl, "Stop-loss (vrai ordre Alpaca)")
+                    lines.append(f"  FERME {t['strategy']} {t['underlying']} (Stop-loss, vrai ordre "
+                                 f"Alpaca à {px:,.4g}) PnL {pnl:+,.2f} $")
+                    continue
                 if not p:
                     _close_record(trades, t["id"], None, "Position introuvable chez Alpaca")
                     lines.append(f"  {t['underlying']} : position introuvable, marquee fermee")
@@ -1383,6 +1485,7 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
                             cpnl = sum(_num(x["unrealized_pl"], 0.0) for x in cl if x)
                             if not close_option(c, cpnl, f"Action vendue ({reason})"):
                                 raise AlpacaError("rachat du covered call non exécuté")
+                    cancel_ai_stop(client, t)          # sinon les actions restent bloquées
                     client.close_position(t["underlying"])
                     _close_record(trades, t["id"], pnl, reason)
                     lines.append(f"  FERME {t['strategy']} {t['underlying']} "
@@ -1530,7 +1633,9 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
            "budget_left": (SHARED_RESERVE * equity - sum(_num(t.get("cost"), 0.0) for t in trades
                                                          if t["status"] == "OPEN")
                            if fund_universe else None),
-           "niche": {i["symbol"] for i in ideas if i.get("niche")}}
+           "niche": {i["symbol"] for i in ideas if i.get("niche")},
+           "trades": trades,
+           "crypto_open": sum(1 for t in trades if t["status"] == "OPEN" and t["kind"] == "crypto")}
     ctx["earnings"] = {r["symbol"]: r.get("earnings") for r in snap["rows"]}
     ctx["iv_hv"] = {r["symbol"]: r.get("iv_hv") for r in snap["rows"]}
     ctx["covered"] = covered_candidates(client, trades, snap, market_open,

@@ -178,6 +178,13 @@ quotidien habituel (vol annuelle / √252, √365 en crypto), entre 2 % et 15 %.
 quand le stop s'élargit : la perte au stop reste ≈ 0,3 % de l'équité (un stop de 3 % sur une
 crypto qui bouge de 4 %/jour sautait sur du simple bruit).
 
+**Vrais stops pour la poche IA aussi** : chaque achat d'action (en parts entières), short ou
+crypto part avec un ordre stop GTC chez Alpaca (crypto : stop-limit, limite 3 % sous le
+déclenchement). Le 5/11, sans cycle pendant 5 h, des stops de 3 % sur UNI/ETH/XRP ont été
+dépassés jusqu'à −10 %. Le stop est annulé avant une sortie normale (objectif atteint) et
+retiré si un covered call est vendu sur l'action. **Au plus 2 cryptos ouvertes** en même
+temps (elles montent et baissent ensemble).
+
 **Fréquence** : GitHub saute ou retarde énormément les crons de ce dépôt (le 5/11, aucun cron
 de 13h/14h UTC n'a démarré). Le run de la poche IA tourne donc **en continu** : un cycle toutes
 les 30 min pendant la séance US (dernier 5 min avant la clôture), un cycle crypto toutes les 3 h
