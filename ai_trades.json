@@ -58,5 +58,24 @@
     "pnl": -1302.42,
     "closed_at": "2026-10-30T17:43:10",
     "close_reason": "Stop-loss"
+  },
+  {
+    "id": "87166748b9",
+    "opened_at": "2026-11-05T08:41:40",
+    "status": "OPEN",
+    "kind": "crypto",
+    "strategy": "BUY_CRYPTO",
+    "underlying": "UNI/USD",
+    "position_symbol": "UNIUSD",
+    "cost": 10128.6,
+    "entry_price": 7.6208,
+    "sl_pct": 0.03,
+    "tp_pct": 0.06,
+    "source": null,
+    "niche": false,
+    "confidence": 0.72,
+    "reasoning": "UNI montre une forte hausse de 7.8% sur 5 jours, RSI modéré et un volume historique très élevé, ce qui indique une dynamique haussière soutenue dans un marché crypto neutre.",
+    "reasoning_en": "UNI shows a strong 7.8% rise over 5 days, moderate RSI and very high historical volume, indicating sustained bullish momentum in a neutral crypto market.",
+    "pnl": null
   }
 ]

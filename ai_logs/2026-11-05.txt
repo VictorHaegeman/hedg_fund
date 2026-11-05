@@ -1,0 +1,10 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-05T08:41:37 | équité 101,285.99 $ (+0.33 % jour) | bourse US FERMÉE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Idées presse ajoutées : AMGN, CDRE*, RELY, EXPE, EXPD, ARQT, CAH, CPAY  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : UNI/USD, XRP/USD, ETH/USD, ADA/USD, SOL/USD
+  Notes IA : UNI/USD BUY_CRYPTO 0.72 · XRP/USD BUY_CRYPTO 0.66 · ETH/USD BUY_CRYPTO 0.65
+  IA : BUY_CRYPTO UNI/USD | confiance 0.72 | UNI montre une forte hausse de 7.8% sur 5 jours, RSI modéré et un volume historique très élevé, ce qui indique une dynamique haussière soutenue dans un marché crypto neutre.
+  OUVERT BUY_CRYPTO UNI/USD | coût 10,129 $
+  Idées presse : 15 idées rafraîchies
