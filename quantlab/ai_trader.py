@@ -174,8 +174,8 @@ def interest_score(r: dict) -> float:
         score += 2
     if r["trend"] != "neutre":
         score += 1
-    if r.get("idea"):
-        score += 1.5
+    # Pas de bonus pour les idées presse : sur 2 ans (research/press_backtest.md), acheter les
+    # bonnes nouvelles a fait −0,4 pt vs S&P à 5 j. La presse reste un contexte, pas un signal.
     return score + min(len(r.get("news", [])), 2) * 0.5
 
 
@@ -560,8 +560,11 @@ REGLES:
   BULL_CALL_SPREAD (ou BEAR_PUT_SPREAD) est souvent meilleur que BUY_STOCK (ou SHORT_STOCK) :
   perte max connue d'avance et moins de capital. Si IV/HV > 1.0 ou inconnu, prefere l'action :
   ne paie jamais des options cheres juste pour utiliser des options.
-- "idee presse" = societe tres citee dans la presse financiere ces derniers jours (souvent
-  une petite valeur). Exige une tendance qui confirme les news ; "niche" = peu liquide,
+- "idee presse" = societe tres citee dans la presse financiere ces derniers jours. ATTENTION :
+  teste sur 2 ans, acheter apres de bonnes nouvelles (ou shorter apres de mauvaises) a fait
+  MOINS bien que le S&P 500 : la nouvelle est deja dans le prix. Une news n'est donc jamais
+  une raison suffisante ; ne compte-la pas comme un element favorable dans ta note, la
+  decision doit tenir sur les chiffres (tendance, RSI, IV/HV). "niche" = peu liquide,
   la position sera automatiquement deux fois plus petite.
 
 NOTATION (obligatoire, meme si tu choisis HOLD) :
