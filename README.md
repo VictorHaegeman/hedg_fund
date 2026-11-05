@@ -173,6 +173,16 @@ redemandée une fois. Le code liste aussi les **ventes de prime possibles** (IV/
 résultats dans les 45 jours, structure selon la tendance) ; les ETF de la poche sont toujours
 inclus car ils n'ont pas de résultats. Les garde-fous de vente ci-dessus restent inchangés.
 
+**Stop adapté à chaque actif** (achats d'actions, shorts, cryptos) : stop ≥ 1,5 × le mouvement
+quotidien habituel (vol annuelle / √252, √365 en crypto), entre 2 % et 15 %. La taille baisse
+quand le stop s'élargit : la perte au stop reste ≈ 0,3 % de l'équité (un stop de 3 % sur une
+crypto qui bouge de 4 %/jour sautait sur du simple bruit).
+
+**Fréquence** : pendant la séance US, un run GitHub reste allumé et fait un cycle toutes les
+30 min (dernier 5 min avant la clôture) ; des crons relais (13h, 14h, 17h, 19h UTC) reprennent
+la boucle si GitHub en saute un. Hors séance : cryptos toutes les 3 h. Le fonds principal reste
+quotidien (22h30 UTC) : ses signaux sont calculés sur la clôture du jour, comme dans les backtests.
+
 ### Clés (jamais dans le code)
 
 | Où | Comment |

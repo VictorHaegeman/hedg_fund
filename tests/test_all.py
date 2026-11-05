@@ -708,9 +708,11 @@ def test_ai_short_and_shared_universe(tmp_path):
                        "confidence": 0.8, "stop_loss_pct": 0.9, "reasoning": "x"}
     out, _ = ai.run_cycle(client, short, state_path=str(tmp_path / "s.json"), **kw)
     o = client.orders[-1]
-    assert o["side"] == "sell" and o["qty"] == str(int(10_000 // 140)) and "notional" not in o
+    # stop demandé 90 % → plafonné à 15 % ; taille réduite pour garder 0,3 % de perte au stop
+    assert o["side"] == "sell" and o["qty"] == str(int(100_000 * 0.003 / 0.15 // 140))
+    assert "notional" not in o
     t = ai.load_trades(str(tmp_path / "s.json"))[0]
-    assert t["sl_pct"] == 0.05                       # stop borné à 5 %
+    assert t["sl_pct"] == ai.SPOT_SL_MAX
     # la poche ne peut pas trader un actif du fonds quand le compte est partagé
     spy = lambda p: {"action": "OPEN", "strategy": "BUY_STOCK", "underlying": "SPY",
                      "confidence": 0.9, "reasoning": "x"}
@@ -1379,3 +1381,29 @@ def test_ai_premium_selling_and_default_answer_retry(tmp_path):
     ai.run_cycle(client, lambda p: seen.append(p) or {"action": "HOLD", "scores": good},
                  state_path=str(tmp_path / "ai2.json"), **kw)
     assert len(seen) == 1
+
+
+def test_ai_volatility_stop_and_session_loop():
+    from datetime import datetime, timezone
+    from quantlab import ai_trader as ai
+    # UNI : vol annuelle 79 % → ~4,1 %/jour → stop ≈ 6,2 %, taille ≈ 4,8 % de l'équité
+    sl, size = ai.spot_stop_and_size({"stop_loss_pct": 0.03}, 0.79, crypto=True)
+    assert abs(sl - 1.5 * 0.79 / 365 ** 0.5) < 1e-9 and abs(size - 0.003 / sl) < 1e-9
+    assert abs(size * sl - ai.SPOT_RISK_PCT) < 1e-9          # même perte au stop
+    # action calme : le stop de l'IA (3 %) suffit → taille max inchangée
+    sl, size = ai.spot_stop_and_size({"stop_loss_pct": 0.03}, 0.15, crypto=False)
+    assert sl == 0.03 and size == ai.SPOT_MAX_PCT
+    # très volatil : plafonné à 15 % ; idée de niche : taille ÷ 2
+    sl, size = ai.spot_stop_and_size({}, 3.0, crypto=False, niche=True)
+    assert sl == ai.SPOT_SL_MAX and abs(size - 0.003 / 0.15 * ai.NICHE_SIZE) < 1e-9
+    # boucle de séance
+    clk = {"is_open": True, "next_close": "2026-11-05T16:00:00-05:00",
+           "next_open": "2026-11-06T09:30:00-05:00"}
+    utc = lambda h, m, s=0: datetime(2026, 11, 5, h, m, s, tzinfo=timezone.utc)
+    assert ai.next_cycle_wait(clk, utc(15, 10)) == 20 * 60          # → 15:30
+    assert ai.next_cycle_wait(clk, utc(20, 40)) == 15 * 60          # dernier cycle 20:55
+    assert ai.next_cycle_wait(clk, utc(20, 56)) is None             # séance finie
+    closed = dict(clk, is_open=False, next_open="2026-11-05T09:30:00-05:00")
+    assert ai.next_cycle_wait(closed, utc(13, 30)) == 60 * 60 + 120 # ouverture dans 1 h
+    assert ai.next_cycle_wait(closed, utc(9, 0)) is None            # trop tôt : stop
+    assert ai.next_cycle_wait({}, utc(15, 0)) is None

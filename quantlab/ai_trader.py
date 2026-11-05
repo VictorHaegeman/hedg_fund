@@ -73,6 +73,9 @@ MIN_TRADE_PCT = 0.02           # sous 2 % de l'équité de budget restant : pas 
 DAILY_LOSS_CAP = 0.03          # -3 % sur la journée → pas de nouvelle entrée
 OPTION_MAX_RISK_PCT = 0.05     # perte max d'un trade options = 5 % de l'équité
 SPOT_MAX_PCT = 0.10            # achat / vente à découvert = 10 % de l'équité max
+SPOT_RISK_PCT = 0.003          # perte au stop d'un achat/short = 0,3 % de l'équité (10 % × stop 3 %)
+STOP_VOL_MULT = 1.5            # stop au moins 1,5 × le mouvement quotidien habituel de l'actif
+SPOT_SL_MIN, SPOT_SL_MAX = 0.02, 0.15
 MAX_CONTRACTS = 10
 
 DTE_MIN, DTE_MAX, DTE_TARGET = 14, 45, 30
@@ -1080,12 +1083,58 @@ def open_option_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time
             "pnl": None}, "OK"
 
 
+def spot_stop_and_size(d: dict, hv: float | None, crypto: bool, niche: bool = False):
+    """Stop adapté à l'actif : au moins 1,5 × son mouvement quotidien habituel (vol annuelle
+    / √252, ou √365 en crypto), entre 2 % et 15 %. La taille baisse quand le stop s'élargit,
+    pour que la perte au stop reste ≈ 0,3 % de l'équité. Renvoie (stop, part de l'équité)."""
+    sl = min(max(_num(d.get("stop_loss_pct"), 0.03), SPOT_SL_MIN), SPOT_SL_MAX)
+    if hv and hv > 0:
+        daily = hv / math.sqrt(365 if crypto else 252)
+        sl = min(max(sl, STOP_VOL_MULT * daily), SPOT_SL_MAX)
+    size = min(SPOT_MAX_PCT, SPOT_RISK_PCT / sl) * (NICHE_SIZE if niche else 1)
+    return sl, size
+
+
+def next_cycle_wait(clock: dict, now: datetime | None = None, every_min: int = 30,
+                    pre_open_min: int = 90) -> int | None:
+    """Pendant la séance US : secondes avant le prochain cycle (à :00 / :30, dernier cycle
+    5 min avant la clôture). Avant l'ouverture (≤ 90 min) : attendre l'ouverture + 2 min.
+    Sinon None (fin de la boucle ; les cryptos sont gérées par le cycle toutes les 3 h)."""
+    now = now or datetime.now(timezone.utc)
+    try:
+        nxt_close = datetime.fromisoformat(str(clock["next_close"]))
+        nxt_open = datetime.fromisoformat(str(clock["next_open"]))
+    except (KeyError, ValueError):
+        return None
+    if clock.get("is_open"):
+        last = nxt_close - timedelta(minutes=5)
+        slot = now.replace(second=0, microsecond=0)
+        slot += timedelta(minutes=every_min - slot.minute % every_min)
+        if slot >= last:
+            slot = last
+        wait = (slot - now).total_seconds()
+        return int(wait) if wait >= 60 else None
+    wait = (nxt_open - now).total_seconds()
+    return int(wait) + 120 if 0 < wait <= pre_open_min * 60 else None
+
+
+def session_wait() -> str:
+    """CLI (`ai-wait`) : nombre de secondes à attendre, ou 'stop'."""
+    load_env()
+    try:
+        client = Alpaca.from_env("ALPACA_AI", label="poche IA") or Alpaca.from_env("ALPACA", label="fonds")
+        w = next_cycle_wait(client.clock()) if client else None
+    except Exception:
+        w = None
+    return "stop" if w is None else str(w)
+
+
 def open_spot_trade(client: Alpaca, d: dict, ctx: dict, snap: dict, sleep=time.sleep):
     und, strat = d["underlying"], d["strategy"]
     is_crypto, is_short = strat == "BUY_CRYPTO", strat == "SHORT_STOCK"
-    sl = min(max(_num(d.get("stop_loss_pct"), 0.03), 0.02), 0.05)
+    sl, size = spot_stop_and_size(d, snap.get("hv", {}).get(und), is_crypto,
+                                  niche=und in ctx.get("niche", ()))
     tp = max(_num(d.get("take_profit_pct"), 0.0), sl * 1.5)
-    size = SPOT_MAX_PCT * (NICHE_SIZE if und in ctx.get("niche", ()) else 1)
     if is_short:
         asset = client.asset(und)
         if not (asset.get("shortable") and asset.get("easy_to_borrow")):

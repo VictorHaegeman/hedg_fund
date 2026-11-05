@@ -1,11 +1,17 @@
 name: Poche IA (module 14) — Alpaca paper + Groq
 
-# Pendant la séance US (13h-21h UTC couvre été/hiver) : toutes les 30 min.
-# Le reste du temps : toutes les 3 h, crypto uniquement (le code le gère seul).
+# Pendant la séance US, UN run reste allumé et fait un cycle toutes les 30 min (à :00 et :30,
+# dernier cycle 5 min avant la clôture), jusqu'à ~5 h 40. GitHub saute ou retarde souvent les
+# crons courts : les crons de 13h, 14h, 17h et 19h UTC servent de relais (un seul run à la fois,
+# le suivant attend son tour et reprend la boucle si la bourse est encore ouverte).
+# Hors séance : un cycle toutes les 3 h, cryptos uniquement (le code le gère seul).
 # Clés : Settings → Secrets and variables → Actions (jamais dans le code).
 on:
   schedule:
-    - cron: "*/30 13-21 * * 1-5"
+    - cron: "7 13 * * 1-5"
+    - cron: "7 14 * * 1-5"
+    - cron: "7 17 * * 1-5"
+    - cron: "7 19 * * 1-5"
     - cron: "0 */3 * * *"
   workflow_dispatch:
 
@@ -19,13 +25,14 @@ concurrency:
 jobs:
   cycle:
     runs-on: ubuntu-latest
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Cycle de la poche IA
+      - name: Cycles de la poche IA (boucle pendant la séance)
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
@@ -33,24 +40,25 @@ jobs:
           ALPACA_AI_SECRET_KEY: ${{ secrets.ALPACA_AI_SECRET_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          python -m quantlab ai | tee ai_cycle.txt
-          cat ai_cycle.txt >> "$GITHUB_STEP_SUMMARY"
-          # on ne journalise que les cycles où il s'est passé quelque chose
-          if grep -qE "OUVERT|FERME|refusé|\[!\]" ai_cycle.txt; then
-            mkdir -p ai_logs && cat ai_cycle.txt >> "ai_logs/$(date -u +%F).txt"
-          fi
-      - name: Terminal du gérant (grecques, positions et idées à jour)
-        env:
-          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
-          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-          ALPACA_AI_API_KEY: ${{ secrets.ALPACA_AI_API_KEY }}
-          ALPACA_AI_SECRET_KEY: ${{ secrets.ALPACA_AI_SECRET_KEY }}
-        run: python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8 --screen-limit 15 || echo "dashboard ignoré"
-      - name: Committer le journal de la poche IA
-        run: |
           git config user.name "quantlab-bot"
           git config user.email "actions@github.com"
-          for f in ai_trades.json ai_greeks.json ideas.json docs; do git add "$f" 2>/dev/null || true; done
-          git add ai_logs 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "ai: cycle du $(date -u '+%F %H:%M')"
-          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 5; done
+          deadline=$(( $(date +%s) + 340*60 ))
+          while :; do
+            git pull -q --rebase --autostash -X theirs origin main || true
+            python -m quantlab ai | tee ai_cycle.txt
+            cat ai_cycle.txt >> "$GITHUB_STEP_SUMMARY"
+            # on ne journalise que les cycles où il s'est passé quelque chose
+            if grep -qE "OUVERT|FERME|refusé|\[!\]" ai_cycle.txt; then
+              mkdir -p ai_logs && cat ai_cycle.txt >> "ai_logs/$(date -u +%F).txt"
+            fi
+            # Terminal du gérant (grecques, positions et idées à jour)
+            python -m quantlab dashboard --capital 100000 --years 10 --max-positions 8 --screen-limit 15 || echo "dashboard ignoré"
+            for f in ai_trades.json ai_greeks.json ideas.json docs ai_logs; do git add "$f" 2>/dev/null || true; done
+            git diff --cached --quiet || git commit -q -m "ai: cycle du $(date -u '+%F %H:%M')"
+            for i in 1 2 3; do git pull -q --rebase --autostash -X theirs origin main && git push -q && break; sleep 5; done
+            wait_s=$(python -m quantlab ai-wait || echo stop)
+            echo "Prochain cycle : $wait_s"
+            [ "$wait_s" = "stop" ] && break
+            [ $(( $(date +%s) + wait_s )) -gt "$deadline" ] && { echo "Fin de ce run, un relais prend la suite"; break; }
+            sleep "$wait_s"
+          done
