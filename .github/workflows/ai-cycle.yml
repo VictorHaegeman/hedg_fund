@@ -1,10 +1,13 @@
 name: Poche IA (module 14) — Alpaca paper + Groq
 
-# Pendant la séance US, UN run reste allumé et fait un cycle toutes les 30 min (à :00 et :30,
-# dernier cycle 5 min avant la clôture), jusqu'à ~5 h 40. GitHub saute ou retarde souvent les
-# crons courts : les crons de 13h, 14h, 17h et 19h UTC servent de relais (un seul run à la fois,
-# le suivant attend son tour et reprend la boucle si la bourse est encore ouverte).
-# Hors séance : un cycle toutes les 3 h, cryptos uniquement (le code le gère seul).
+# GitHub saute ou retarde énormément les crons de ce dépôt (le 5/11 : aucun des crons de
+# 13h et 14h UTC n'a démarré). Le run tourne donc EN CONTINU et se relance lui-même :
+#   - séance US : un cycle toutes les 30 min (dernier 5 min avant la clôture) ;
+#   - hors séance : un cycle crypto toutes les 3 h (0h, 3h, 6h… UTC) ;
+#   - avant la limite de 6 h d'un job GitHub, il relance un nouveau run (workflow_dispatch,
+#     autorisé avec le GITHUB_TOKEN) puis s'arrête ; le nouveau prend le relais.
+# Les crons restent en secours pour redémarrer la chaîne si elle casse (un seul run à la
+# fois grâce au groupe de concurrence ; un run en trop attend puis reprend la chaîne).
 # Clés : Settings → Secrets and variables → Actions (jamais dans le code).
 on:
   schedule:
@@ -17,6 +20,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: ai-cycle
@@ -32,17 +36,18 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Cycles de la poche IA (boucle pendant la séance)
+      - name: Cycles de la poche IA (en continu, relance automatique)
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           ALPACA_AI_API_KEY: ${{ secrets.ALPACA_AI_API_KEY }}
           ALPACA_AI_SECRET_KEY: ${{ secrets.ALPACA_AI_SECRET_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "quantlab-bot"
           git config user.email "actions@github.com"
-          deadline=$(( $(date +%s) + 340*60 ))
+          deadline=$(( $(date +%s) + 330*60 ))
           while :; do
             git pull -q --rebase --autostash -X theirs origin main || true
             python -m quantlab ai | tee ai_cycle.txt
@@ -56,9 +61,15 @@ jobs:
             for f in ai_trades.json ai_greeks.json ideas.json docs ai_logs; do git add "$f" 2>/dev/null || true; done
             git diff --cached --quiet || git commit -q -m "ai: cycle du $(date -u '+%F %H:%M')"
             for i in 1 2 3; do git pull -q --rebase --autostash -X theirs origin main && git push -q && break; sleep 5; done
-            wait_s=$(python -m quantlab ai-wait || echo stop)
-            echo "Prochain cycle : $wait_s"
-            [ "$wait_s" = "stop" ] && break
-            [ $(( $(date +%s) + wait_s )) -gt "$deadline" ] && { echo "Fin de ce run, un relais prend la suite"; break; }
+            wait_s=$(python -m quantlab ai-wait --chain || echo 1800)
+            [ "$wait_s" = "stop" ] && wait_s=1800
+            echo "Prochain cycle dans $wait_s s"
+            if [ $(( $(date +%s) + wait_s )) -gt "$deadline" ]; then
+              # attendre au plus près de la limite, puis passer le relais à un nouveau run
+              rest=$(( deadline - $(date +%s) )); [ "$rest" -gt 0 ] && sleep "$rest"
+              gh api -X POST "repos/${{ github.repository }}/actions/workflows/ai-cycle.yml/dispatches" -f ref=main \
+                && echo "Relais : nouveau run lancé" || echo "[!] relais impossible, les crons de secours prendront le relais"
+              break
+            fi
             sleep "$wait_s"
           done

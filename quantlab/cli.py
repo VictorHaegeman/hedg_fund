@@ -184,7 +184,8 @@ def main(argv: list[str] | None = None) -> int:
                     help="screene les cryptos les plus liquides au lieu des actions")
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
     sub.add_parser("ai", help="Module 14 — un cycle de la poche IA (Alpaca + Groq)")
-    sub.add_parser("ai-wait", help="secondes avant le prochain cycle IA de la séance, ou 'stop'")
+    sp = sub.add_parser("ai-wait", help="secondes avant le prochain cycle IA de la séance, ou 'stop'")
+    sp.add_argument("--chain", action="store_true", help="mode continu : jamais 'stop'")
     sp = sub.add_parser("press-test", help="test historique des idées presse (achat et vente à découvert)")
     sp.add_argument("--years", type=float, default=float(os.environ.get("PRESS_YEARS") or 2))
     sp = sub.add_parser("ideas", help="Module 17 — idées « niche » tirées de la presse")
@@ -356,7 +357,7 @@ def main(argv: list[str] | None = None) -> int:
 
     elif args.cmd == "ai-wait":
         from . import ai_trader as ai
-        print(ai.session_wait())
+        print(ai.session_wait(chain=args.chain))
 
     elif args.cmd == "ideas":
         import os as _os

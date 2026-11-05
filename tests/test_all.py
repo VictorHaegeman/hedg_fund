@@ -1530,3 +1530,19 @@ def test_mirror_places_real_stops_at_alpaca(tmp_path):
     c2 = FakeAlpaca()
     mr.place_stops(c2, acc, {"SPY": 500.0}, {"SPY": 60.0}, [], scale=1.0)
     assert [o["qty"] for o in c2.orders if o["symbol"] == "SPY"] == ["10"]
+
+
+def test_ai_chain_wait_never_stops():
+    from datetime import datetime, timezone
+    from quantlab import ai_trader as ai
+    utc = lambda h, m: datetime(2026, 11, 5, h, m, tzinfo=timezone.utc)
+    openc = {"is_open": True, "next_close": "2026-11-05T16:00:00-05:00",
+             "next_open": "2026-11-06T09:30:00-05:00"}
+    assert ai.chain_wait(openc, utc(15, 10)) == 20 * 60                  # séance : :30
+    # après la clôture : prochain cycle crypto à 0h UTC (+1 min)
+    closed = dict(openc, is_open=False)
+    assert ai.chain_wait(closed, utc(21, 10)) == (2 * 60 + 50) * 60 + 60
+    # le matin : ouverture 14h30 UTC plus proche que le cycle crypto de 15h
+    morning = dict(closed, next_open="2026-11-05T09:30:00-05:00")
+    assert ai.chain_wait(morning, utc(12, 30)) == 2 * 3600 + 120
+    assert ai.chain_wait(morning, utc(13, 0)) == 90 * 60 + 120

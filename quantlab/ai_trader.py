@@ -1129,14 +1129,34 @@ def next_cycle_wait(clock: dict, now: datetime | None = None, every_min: int = 3
     return int(wait) + 120 if 0 < wait <= pre_open_min * 60 else None
 
 
-def session_wait() -> str:
+CRYPTO_EVERY_H = 3
+
+
+def chain_wait(clock: dict, now: datetime | None = None) -> int:
+    """Mode « chaîne » (le run tourne en continu et se relance lui-même) : jamais de fin.
+    Séance ouverte → prochain cycle à :00/:30 ; sinon le plus proche entre l'ouverture
+    (+2 min) et le prochain cycle crypto (toutes les 3 h, à 0h, 3h, 6h… UTC)."""
+    now = now or datetime.now(timezone.utc)
+    w = next_cycle_wait(clock, now, pre_open_min=24 * 60)
+    base = now.replace(minute=0, second=0, microsecond=0)
+    nxt = base + timedelta(hours=CRYPTO_EVERY_H - base.hour % CRYPTO_EVERY_H)
+    crypto = int((nxt - now).total_seconds()) + 60
+    if clock.get("is_open") and w is not None:
+        return w
+    return max(60, min(w, crypto) if w is not None else crypto)
+
+
+def session_wait(chain: bool = False) -> str:
     """CLI (`ai-wait`) : nombre de secondes à attendre, ou 'stop'."""
     load_env()
     try:
         client = Alpaca.from_env("ALPACA_AI", label="poche IA") or Alpaca.from_env("ALPACA", label="fonds")
-        w = next_cycle_wait(client.clock()) if client else None
+        clk = client.clock() if client else None
+        w = (chain_wait(clk) if chain else next_cycle_wait(clk)) if clk else None
     except Exception:
         w = None
+    if w is None and chain:
+        w = 1800
     return "stop" if w is None else str(w)
 
 

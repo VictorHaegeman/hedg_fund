@@ -178,9 +178,11 @@ quotidien habituel (vol annuelle / √252, √365 en crypto), entre 2 % et 15 %.
 quand le stop s'élargit : la perte au stop reste ≈ 0,3 % de l'équité (un stop de 3 % sur une
 crypto qui bouge de 4 %/jour sautait sur du simple bruit).
 
-**Fréquence** : pendant la séance US, un run GitHub reste allumé et fait un cycle toutes les
-30 min (dernier 5 min avant la clôture) ; des crons relais (13h, 14h, 17h, 19h UTC) reprennent
-la boucle si GitHub en saute un. Hors séance : cryptos toutes les 3 h. Le fonds principal reste
+**Fréquence** : GitHub saute ou retarde énormément les crons de ce dépôt (le 5/11, aucun cron
+de 13h/14h UTC n'a démarré). Le run de la poche IA tourne donc **en continu** : un cycle toutes
+les 30 min pendant la séance US (dernier 5 min avant la clôture), un cycle crypto toutes les 3 h
+hors séance, et juste avant la limite de 6 h d'un job il **se relance lui-même**
+(`workflow_dispatch` avec le `GITHUB_TOKEN`). Les crons restent en secours si la chaîne casse. Le fonds principal reste
 quotidien (22h30 UTC) : ses signaux sont calculés sur la clôture du jour, comme dans les backtests.
 
 ### Clés (jamais dans le code)
