@@ -387,6 +387,8 @@ def build_snapshot(client: Alpaca, market_open: bool, stocks: list[str],
                           "earnings": earnings(s),
                           "news": news.get(s) or (idea or {}).get("headlines", [])[:3],
                           "idea": bool(idea), "niche": bool(idea and idea.get("niche")),
+                          "press": ({k: idea.get(k) for k in ("mentions", "sentiment", "why", "risk")}
+                                    if idea else None),
                           "iv": None, "iv_hv": None})
         cands.sort(key=interest_score, reverse=True)
         picked = cands[:TOP_CANDIDATES]
@@ -490,13 +492,19 @@ def build_prompt(snap: dict, ctx: dict) -> str:
     for r in snap["rows"]:
         parts = [f"{r['symbol']} ({r['kind']})", f"prix {r['price']}", f"5j {r['chg_5d']:+}%",
                  f"RSI {r['rsi']}", f"tendance {r['trend']}",
-                 f"vol. historique {r['hv'] * 100:.1f}%"]
+                 f"volatilite 20j {r['hv'] * 100:.1f}% (amplitude des prix, pas le volume)"]
         if r.get("iv"):
             parts.append(f"vol. implicite {r['iv']}% (IV/HV {r['iv_hv']})")
         if r.get("earnings") is not None:
             parts.append(f"RESULTATS dans {r['earnings']} j")
         if r.get("news"):
             parts.append("news: " + " / ".join(r["news"]))
+        pr_ = r.get("press")
+        if pr_:
+            parts.append(f"presse: {pr_.get('mentions')} articles, sentiment "
+                         f"{_num(pr_.get('sentiment'), 0.0):+.1f}"
+                         + (f", pourquoi: {pr_['why']}" if pr_.get("why") else "")
+                         + (f", risque: {pr_['risk']}" if pr_.get("risk") else ""))
         lines.append(" | ".join(parts))
     prem = premium_candidates(snap["rows"])
     prem_txt = "\n".join(f"{c['symbol']} : IV/HV {c['iv_hv']} | tendance {c['trend']} -> "

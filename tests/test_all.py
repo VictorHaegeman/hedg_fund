@@ -1026,7 +1026,8 @@ def test_ai_cycle_trades_press_idea_at_half_size(tmp_path):
     from quantlab import ai_trader as ai
     from quantlab import ideas as ide
     ideas_path = str(tmp_path / "ideas.json")
-    ide.save([{"symbol": "NICH", "score": 5.0, "niche": True, "headlines": ["NICH upgraded"]},
+    ide.save([{"symbol": "NICH", "score": 5.0, "niche": True, "headlines": ["NICH upgraded"],
+               "mentions": 3, "sentiment": 0.5, "why": "contrat geant signe", "risk": "dilution"},
               {"symbol": "NVDA", "score": 4.0, "niche": False, "headlines": []}], ideas_path)
     assert [i["symbol"] for i in ai.fresh_ideas(ideas_path, exclude={"NVDA"})] == ["NICH"]
     seen = []
@@ -1040,6 +1041,9 @@ def test_ai_cycle_trades_press_idea_at_half_size(tmp_path):
                           earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "-")
     assert "Idées presse ajoutées : NICH*" in out and "OUVERT BUY_STOCK NICH" in out, out
     assert "NICH (idee presse, niche)" in seen[0]
+    # le résumé de la presse (pourquoi / risque) est donné à l'IA, pas seulement les titres
+    assert "presse: 3 articles, sentiment +0.5, pourquoi: contrat geant signe, risque: dilution" in seen[0]
+    assert "pas le volume" in seen[0]
     t = ai.load_trades(str(tmp_path / "ai.json"))[0]
     assert t["niche"] and t["source"] == "presse"
     assert t["cost"] == 100_000 * ai.SPOT_MAX_PCT * ai.NICHE_SIZE     # taille divisée par 2
