@@ -39,3 +39,9 @@ Exécuté : 2026-11-05T15:48:43 | équité 97,522.83 $ (-3.40 % jour) | bourse U
   FERME BUY_CRYPTO XRP/USD (Stop-loss) PnL -296.68 $
   ⛔ Pause : perte du jour -3.40 % ≤ -3%
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-05T16:00:01 | équité 97,229.93 $ (-3.69 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  ⛔ Pause : perte du jour -3.69 % ≤ -3%
+  Idées presse : à jour (il y a 0.2 h, 15 idées)
