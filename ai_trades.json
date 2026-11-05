@@ -96,5 +96,24 @@
     "reasoning": "ETH montre la meilleure combinaison de hausse de prix, RSI neutre et volume soutenu, soutenue par un contexte de marché crypto neutre.",
     "reasoning_en": "ETH shows the best combination of price increase, neutral RSI and solid volume, supported by a neutral crypto market context.",
     "pnl": null
+  },
+  {
+    "id": "127c8b041b",
+    "opened_at": "2026-11-05T10:21:34",
+    "status": "OPEN",
+    "kind": "crypto",
+    "strategy": "BUY_CRYPTO",
+    "underlying": "XRP/USD",
+    "position_symbol": "XRPUSD",
+    "cost": 5833.5,
+    "entry_price": 1.3145,
+    "sl_pct": 0.0337,
+    "tp_pct": 0.07,
+    "source": null,
+    "niche": false,
+    "confidence": 0.71,
+    "reasoning": "XRP montre une hausse solide de 5.2% sur 5 jours, un RSI neutre et une actualité positive (correction d'un bug du ledger), ce qui justifie un trade BUY_CRYPTO avec un bon ratio risque/rendement.",
+    "reasoning_en": "XRP shows a solid 5.2% gain over 5 days, a neutral RSI, and positive news (ledger bug fix), justifying a BUY_CRYPTO trade with a favorable risk/reward ratio.",
+    "pnl": null
   }
 ]
