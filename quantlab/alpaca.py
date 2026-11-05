@@ -158,7 +158,17 @@ class Alpaca:
             self.cancel_order(order_id)
         except AlpacaError:
             pass
-        return o if o.get("status") == "partially_filled" else None
+        # L'ordre a pu être exécuté entre la dernière lecture et l'annulation :
+        # on relit son état, sinon une position réelle resterait non suivie.
+        try:
+            o = self.get_order(order_id) or o
+        except AlpacaError:
+            pass
+        if o.get("status") == "filled":
+            return o
+        if o.get("status") in ("partially_filled", "canceled") and float(o.get("filled_qty") or 0) > 0:
+            return o
+        return None
 
 
 def account_line(client: Alpaca) -> str:

@@ -94,6 +94,9 @@ def buy(account: Account, symbol: str, price: float, stop: float, target: float 
         return None
     cost = shares * price * (1 + fee)
     account.cash -= cost
+    # Risque RÉELLEMENT engagé : si le cash a plafonné la taille, il est plus petit
+    # que le risque visé (sinon le journal et les R-multiples seraient faux).
+    risk_amount = shares * (price - stop)
     pos = {"symbol": symbol, "shares": shares, "entry": price, "stop": stop,
            "target": target, "strategy": strategy, "entry_date": date,
            "risk_amount": round(risk_amount, 2)}
