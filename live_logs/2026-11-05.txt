@@ -1,0 +1,43 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-05T02:40:37 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, AAPL, NVDA, MSFT, GOOG, GOOGL, GOOGM, AMZN, SPCX, TSM, META, METAM, AVGO, TSLA, LLY, BRK-B, JPM
+==============================================================================
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOGL, GOOGM
+  VENTE BTC-USD @ 80,534.55 (signal de sortie) — PnL +638.07 $ (+5.4%)
+  VENTE SPY @ 766.81 (signal de sortie) — PnL +449.30 $ (+1.5%)
+  Contexte risque : VIX 16.6 (43e pct) → NEUTRE
+  ACHAT XLE @ 63.52 [meanrev] — 210.3198 u | stop 58.62 | target suiveur | risque 1,031.11 $
+  ACHAT MSFT @ 555.80 [breakout] — 34.7435 u | stop 526.12 | target suiveur | risque 1,031.04 $
+  ACHAT TSLA @ 385.19 [meanrev] — 24.3919 u | stop 342.92 | target suiveur | risque 1,030.94 $
+  BRK-B : résultats dans 2 j → pas d'entrée
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-05T02:40:50
+  Équité : 103,089.48 $ (+3.09% depuis le départ) | Cash : 3,886.75 $
+  Positions ouvertes :
+    JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +1,528.04 $
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +929.24 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent +526.11 $
+    QQQ      0.7266 u @ 690.49 [meanrev] | stop 652.33 | latent +1.06 $
+    XLE      210.3198 u @ 63.52 [meanrev] | stop 58.62 | latent +0.00 $
+    MSFT     34.7435 u @ 555.80 [breakout] | stop 526.12 | latent +0.00 $
+    TSLA     24.3919 u @ 385.19 [meanrev] | stop 342.92 | latent +0.00 $
+  Trades clôturés : 27 | win rate 67% | PnL réalisé total : +580.69 $
+  5 derniers trades :
+    2026-10-23 BTC-USD  [breakout] 85,879.10 → 81,071.81 (stop) PnL -1,041.52 $
+    2026-10-21 QQQ      [meanrev] 728.95 → 725.20 (signal) PnL -157.89 $
+    2026-10-21 XLK      [meanrev] 190.43 → 188.54 (signal) PnL -213.23 $
+    2026-11-05 BTC-USD  [meanrev] 76,390.71 → 80,534.55 (signal) PnL +638.07 $
+    2026-11-04 SPY      [meanrev] 755.72 → 766.81 (signal) PnL +449.30 $
+Variation du cycle : -44.03 $
+
+— MIROIR ALPACA —
+  ALPACA ferme BTC-USD (position fermée par le fonds)
+  ALPACA vend 1.2002 JPM (rééquilibrage)
+  ALPACA achète 25.5675 MSFT (nouvelle position)
+  ALPACA ferme SPY (position fermée par le fonds)
+  ALPACA achète 17.9498 TSLA (nouvelle position)
+  ALPACA achète 154.7730 XLE (nouvelle position)
+  ALPACA vend 1.2274 XLV (rééquilibrage)
+  Équité Alpaca : 101,150.51 $ | cash 22,021.27 $

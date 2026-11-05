@@ -1,5 +1,5 @@
 {
-  "cash": 0.0,
+  "cash": 3886.7501375346037,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -22,16 +22,6 @@
       "entry_date": "2026-10-15",
       "risk_amount": 999.3
     },
-    "BTC-USD": {
-      "symbol": "BTC-USD",
-      "shares": 0.1569525467169292,
-      "entry": 76390.7109375,
-      "stop": 69953.9024169088,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-10-30",
-      "risk_amount": 1010.27
-    },
     "LLY": {
       "symbol": "LLY",
       "shares": 11.878698911010392,
@@ -42,16 +32,6 @@
       "entry_date": "2026-10-29",
       "risk_amount": 1010.16
     },
-    "SPY": {
-      "symbol": "SPY",
-      "shares": 43.4998537803476,
-      "entry": 755.719970703125,
-      "stop": 732.5674625168327,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-10-30",
-      "risk_amount": 1007.13
-    },
     "QQQ": {
       "symbol": "QQQ",
       "shares": 0.7265671568434943,
@@ -61,6 +41,36 @@
       "strategy": "meanrev",
       "entry_date": "2026-10-30",
       "risk_amount": 1006.81
+    },
+    "XLE": {
+      "symbol": "XLE",
+      "shares": 210.31981062559692,
+      "entry": 63.52000045776367,
+      "stop": 58.617442285061244,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-11-04",
+      "risk_amount": 1031.11
+    },
+    "MSFT": {
+      "symbol": "MSFT",
+      "shares": 34.74345452594095,
+      "entry": 555.7999877929688,
+      "stop": 526.1242309357572,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-11-04",
+      "risk_amount": 1031.04
+    },
+    "TSLA": {
+      "symbol": "TSLA",
+      "shares": 24.391905038068238,
+      "entry": 385.19000244140625,
+      "stop": 342.924268984982,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-11-04",
+      "risk_amount": 1030.94
     }
   },
   "history": [
@@ -438,10 +448,40 @@
       "reason": "signal",
       "pnl": -213.23,
       "pnl_pct": -0.99
+    },
+    {
+      "symbol": "BTC-USD",
+      "shares": 0.1569525467169292,
+      "entry": 76390.7109375,
+      "stop": 69953.9024169088,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-10-30",
+      "risk_amount": 1010.27,
+      "exit": 80534.546875,
+      "exit_date": "2026-11-05",
+      "reason": "signal",
+      "pnl": 638.07,
+      "pnl_pct": 5.42
+    },
+    {
+      "symbol": "SPY",
+      "shares": 43.4998537803476,
+      "entry": 755.719970703125,
+      "stop": 732.5674625168327,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-10-30",
+      "risk_amount": 1007.13,
+      "exit": 766.8099975585938,
+      "exit_date": "2026-11-04",
+      "reason": "signal",
+      "pnl": 449.3,
+      "pnl_pct": 1.47
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-11-04T02:34:59",
+  "last_cycle": "2026-11-05T02:40:50",
   "equity_curve": [
     [
       "2026-06-11",
@@ -842,6 +882,10 @@
     [
       "2026-11-04",
       100424.86
+    ],
+    [
+      "2026-11-05",
+      103089.48
     ]
   ],
   "treasury": {}
