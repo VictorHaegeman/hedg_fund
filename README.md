@@ -302,6 +302,16 @@ python -m quantlab live --vol-target 0.12 --trail            # live avec overlay
 > automatisé les laisse désactivés tant que `fund --compare` sur données réelles
 > ne montre pas un gain net. Ne pas sur-ajuster les paramètres (piège classique).
 
+### Test historique des idées presse (nov. 2026, `research/press_backtest.md`)
+
+Rejeu de 2 ans de presse Benzinga (486 752 articles, 500 jours, 2024-11 → 2026-11), même
+classement que le live, frais déduits. **Résultat négatif dans les deux sens** : acheter les 8
+meilleures « bonnes nouvelles » fait −0,39 pt vs S&P 500 à 5 jours (44 % de gagnants) et vendre
+à découvert les « mauvaises nouvelles » −0,46 pt. Aucune variante robuste (résultats, niche,
+liquides, après grosse hausse). Les +2,5 pts observés sur les 10 premiers jours du live étaient
+de la chance (saison des résultats). → Pas de poche presse automatique ; les idées restent un
+contexte pour l'IA, pas un signal d'achat.
+
 ## Fonds d'investissement : fiche, frais, risque, actions (modules 16 & factsheet)
 
 ```powershell
