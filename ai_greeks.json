@@ -1,39 +1,8 @@
 {
-  "updated_at": "2026-11-05T10:21:30",
-  "positions": [
-    {
-      "id": "87166748b9",
-      "strategy": "BUY_CRYPTO",
-      "underlying": "UNI/USD",
-      "spot": 7.58,
-      "delta": 1295.2,
-      "option_delta": null,
-      "hedge_shares": 0,
-      "delta_usd": 9817.1,
-      "gamma_usd": 0.0,
-      "gamma_1pct": 0.0,
-      "vega": 0.0,
-      "theta_day": 0.0,
-      "rho": 0.0
-    },
-    {
-      "id": "5dac5d15ba",
-      "strategy": "BUY_CRYPTO",
-      "underlying": "ETH/USD",
-      "spot": 2416.68,
-      "delta": 3.77,
-      "option_delta": null,
-      "hedge_shares": 0,
-      "delta_usd": 9107.96,
-      "gamma_usd": 0.0,
-      "gamma_1pct": 0.0,
-      "vega": 0.0,
-      "theta_day": 0.0,
-      "rho": 0.0
-    }
-  ],
+  "updated_at": "2026-11-05T15:48:44",
+  "positions": [],
   "total": {
-    "delta_usd": 18925.06,
+    "delta_usd": 0.0,
     "gamma_usd": 0.0,
     "gamma_1pct": 0.0,
     "vega": 0.0,

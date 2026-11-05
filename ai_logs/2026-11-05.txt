@@ -30,3 +30,12 @@ Exécuté : 2026-11-05T10:21:30 | équité 101,136.69 $ (+0.18 % jour) | bourse 
   IA : BUY_CRYPTO XRP/USD | confiance 0.71 | XRP montre une hausse solide de 5.2% sur 5 jours, un RSI neutre et une actualité positive (correction d'un bug du ledger), ce qui justifie un trade BUY_CRYPTO avec un bon ratio risque/rendement.
   OUVERT BUY_CRYPTO XRP/USD | coût 5,834 $
   Idées presse : à jour (il y a 1.7 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-05T15:48:43 | équité 97,522.83 $ (-3.40 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  FERME BUY_CRYPTO UNI/USD (Stop-loss) PnL -1,046.61 $
+  FERME BUY_CRYPTO ETH/USD (Stop-loss) PnL -564.45 $
+  FERME BUY_CRYPTO XRP/USD (Stop-loss) PnL -296.68 $
+  ⛔ Pause : perte du jour -3.40 % ≤ -3%
+  Idées presse : 15 idées rafraîchies

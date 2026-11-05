@@ -62,7 +62,7 @@
   {
     "id": "87166748b9",
     "opened_at": "2026-11-05T08:41:40",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "crypto",
     "strategy": "BUY_CRYPTO",
     "underlying": "UNI/USD",
@@ -76,12 +76,14 @@
     "confidence": 0.72,
     "reasoning": "UNI montre une forte hausse de 7.8% sur 5 jours, RSI modéré et un volume historique très élevé, ce qui indique une dynamique haussière soutenue dans un marché crypto neutre.",
     "reasoning_en": "UNI shows a strong 7.8% rise over 5 days, moderate RSI and very high historical volume, indicating sustained bullish momentum in a neutral crypto market.",
-    "pnl": null
+    "pnl": -1046.61,
+    "closed_at": "2026-11-05T15:48:43",
+    "close_reason": "Stop-loss"
   },
   {
     "id": "5dac5d15ba",
     "opened_at": "2026-11-05T08:50:26",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "crypto",
     "strategy": "BUY_CRYPTO",
     "underlying": "ETH/USD",
@@ -95,12 +97,14 @@
     "confidence": 0.78,
     "reasoning": "ETH montre la meilleure combinaison de hausse de prix, RSI neutre et volume soutenu, soutenue par un contexte de marché crypto neutre.",
     "reasoning_en": "ETH shows the best combination of price increase, neutral RSI and solid volume, supported by a neutral crypto market context.",
-    "pnl": null
+    "pnl": -564.45,
+    "closed_at": "2026-11-05T15:48:43",
+    "close_reason": "Stop-loss"
   },
   {
     "id": "127c8b041b",
     "opened_at": "2026-11-05T10:21:34",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "crypto",
     "strategy": "BUY_CRYPTO",
     "underlying": "XRP/USD",
@@ -114,6 +118,8 @@
     "confidence": 0.71,
     "reasoning": "XRP montre une hausse solide de 5.2% sur 5 jours, un RSI neutre et une actualité positive (correction d'un bug du ledger), ce qui justifie un trade BUY_CRYPTO avec un bon ratio risque/rendement.",
     "reasoning_en": "XRP shows a solid 5.2% gain over 5 days, a neutral RSI, and positive news (ledger bug fix), justifying a BUY_CRYPTO trade with a favorable risk/reward ratio.",
-    "pnl": null
+    "pnl": -296.68,
+    "closed_at": "2026-11-05T15:48:44",
+    "close_reason": "Stop-loss"
   }
 ]
