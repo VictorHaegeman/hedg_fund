@@ -166,6 +166,13 @@ rendues delta-neutres à chaque cycle en achetant / vendant l'action (dès que |
 0,5 % de l'équité) ; la couverture est soldée à la fermeture et comptée dans le P&L. Sur un
 straddle, c'est du « gamma scalping » : gain ≈ ½·Γ·S²·(σ_réalisée² − σ_implicite²).
 
+**Décision de l'IA notée, pas « par défaut »** : à chaque cycle l'IA note ses 3 meilleurs
+candidats (note + arguments chiffrés pour / contre) et la confiance = la note du candidat choisi.
+Une réponse HOLD sans notes chiffrées (ou avec la même note partout, ex. toujours 0,58) est
+redemandée une fois. Le code liste aussi les **ventes de prime possibles** (IV/HV ≥ 1,1, pas de
+résultats dans les 45 jours, structure selon la tendance) ; les ETF de la poche sont toujours
+inclus car ils n'ont pas de résultats. Les garde-fous de vente ci-dessus restent inchangés.
+
 ### Clés (jamais dans le code)
 
 | Où | Comment |

@@ -101,6 +101,8 @@ DELTA_NEUTRAL = {"LONG_STRADDLE", "LONG_STRANGLE", "IRON_CONDOR", "LONG_CALL_BUT
 HEDGE_BAND_PCT = 0.005         # on recouvre quand |delta $| d'un trade dépasse 0,5 % de l'équité
 MAX_GAMMA_PCT = 0.05           # gamma négatif : variation du delta $ pour 1 % ≤ 5 % de l'équité
 LONG_VOL_MAX_IV_HV = 1.3       # pas d'achat de straddle/strangle si la vol implicite est déjà gonflée
+SELL_SIGNAL_IV_HV = 1.1        # options « chères » : la vente de prime est mise en avant à l'IA
+EXTRA_ETF_CHAINS = 4           # ETF ajoutés aux candidats options (pas de résultats → vente de prime)
 # Exécution : ordres à cours limité au prix du milieu (le cours : l'écart achat/vente est un coût)
 LIMIT_STEPS = (0.0, 0.5)       # 1er essai au milieu, 2e en cédant la moitié du demi-écart
 LIMIT_WAIT_S = 20
@@ -384,7 +386,9 @@ def build_snapshot(client: Alpaca, market_open: bool, stocks: list[str],
                           "idea": bool(idea), "niche": bool(idea and idea.get("niche")),
                           "iv": None, "iv_hv": None})
         cands.sort(key=interest_score, reverse=True)
-        for r in cands[:TOP_CANDIDATES]:
+        picked = cands[:TOP_CANDIDATES]
+        picked += [r for r in cands[TOP_CANDIDATES:] if r["symbol"] in ETFS][:EXTRA_ETF_CHAINS]
+        for r in picked:
             try:
                 chain = option_chain(client, r["symbol"], r["price"])
                 chains[r["symbol"]] = chain
@@ -422,8 +426,53 @@ def build_snapshot(client: Alpaca, market_open: bool, stocks: list[str],
 
 # ── LLM ─────────────────────────────────────────────────────────────────────
 SYSTEM_PROMPT = ("Tu es un gerant de portefeuille prudent et discipline. Tu choisis AU PLUS "
-                 "un trade par cycle, et HOLD est souvent la meilleure reponse. "
+                 "un trade par cycle. Tu notes chaque candidat honnetement a partir des "
+                 "chiffres fournis, puis tu choisis HOLD si aucun n'atteint le seuil. "
                  "Tu reponds uniquement en JSON valide.")
+
+
+def premium_candidates(rows: list[dict]) -> list[dict]:
+    """Actions/ETF où VENDRE des options est intéressant : options chères (IV/HV ≥ 1,1) et
+    pas de résultats avant l'échéance. Structure suggérée selon la tendance."""
+    out = []
+    for r in rows:
+        ivhv, e = r.get("iv_hv"), r.get("earnings")
+        if r.get("kind") == "crypto" or ivhv is None or ivhv < SELL_SIGNAL_IV_HV:
+            continue
+        if e is not None and e <= SELL_NO_EARNINGS_DAYS:
+            continue
+        sug = {"haussiere": "BULL_PUT_SPREAD", "baissiere": "BEAR_CALL_SPREAD"}.get(
+            r.get("trend"), "IRON_CONDOR")
+        out.append({"symbol": r["symbol"], "iv_hv": ivhv, "trend": r.get("trend"),
+                    "suggested": sug})
+    return sorted(out, key=lambda c: -c["iv_hv"])
+
+
+def default_answer(d: dict, snap: dict) -> bool:
+    """Réponse « par défaut » : HOLD sans notes chiffrées par candidat (ex. toujours 0,58).
+    On redemande alors une fois au modèle d'évaluer vraiment les candidats."""
+    if d.get("action") == "OPEN" or not snap.get("rows") or "IA indisponible" in str(d.get("reasoning")):
+        return False
+    sc = d.get("scores")
+    if not isinstance(sc, list) or not sc:
+        return True
+    vals = [_num(x.get("score"), -1.0) for x in sc if isinstance(x, dict)]
+    if not vals or min(vals) < 0:
+        return True
+    if len(vals) >= 2 and len(set(vals)) == 1:
+        return True
+    txt = " ".join(str(x.get("pour", "")) + str(x.get("contre", "")) for x in sc if isinstance(x, dict))
+    return not any(ch.isdigit() for ch in txt)
+
+
+RETRY_NOTE = ("\n\nATTENTION : ta reponse precedente ne notait pas vraiment les candidats "
+              "(note identique ou sans chiffres). Note chacun des 3 meilleurs candidats avec les "
+              "chiffres du tableau (tendance, RSI, IV/HV, resultats, news), puis decide.")
+
+
+def scores_line(d: dict) -> str:
+    sc = [x for x in (d.get("scores") or []) if isinstance(x, dict)]
+    return " · ".join(f"{x.get('symbol')} {x.get('strategy')} {x.get('score')}" for x in sc[:5])
 
 
 def build_prompt(snap: dict, ctx: dict) -> str:
@@ -446,6 +495,9 @@ def build_prompt(snap: dict, ctx: dict) -> str:
         if r.get("news"):
             parts.append("news: " + " / ".join(r["news"]))
         lines.append(" | ".join(parts))
+    prem = premium_candidates(snap["rows"])
+    prem_txt = "\n".join(f"{c['symbol']} : IV/HV {c['iv_hv']} | tendance {c['trend']} -> "
+                         f"{c['suggested']} conseille" for c in prem) or "aucune"
     return f"""DATE: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 MARCHE ACTIONS US: {"OUVERT" if ctx['market_open'] else "FERME (seulement BUY_CRYPTO ou HOLD)"}
 CAPITAL: ${ctx['equity']:.0f} | P&L du jour: {ctx['daily_pnl_pct']:+.2f}%{budget_txt}
@@ -456,6 +508,12 @@ CONTEXTE:
 
 MARCHES SURVEILLES (pre-tries par le code):
 {chr(10).join(lines) or "aucun"}
+
+VENTE DE PRIME POSSIBLE (options cheres, pas de resultats avant l'echeance) :
+{prem_txt}
+Quand les options sont cheres, les VENDRE (spread a credit, risque plafonne) est ce que font
+les fonds d'options : la vol implicite depasse en moyenne la vol realisee. Le code verifie
+ensuite que la prime vaut au moins {SELL_EDGE_MIN} x sa valeur theorique, sinon il refuse.
 
 ACTIONS DETENUES ELIGIBLES AU COVERED CALL (100 actions ou plus):
 {covered_txt}
@@ -494,17 +552,28 @@ REGLES:
 - "idee presse" = societe tres citee dans la presse financiere ces derniers jours (souvent
   une petite valeur). Exige une tendance qui confirme les news ; "niche" = peu liquide,
   la position sera automatiquement deux fois plus petite.
-- confidence entre 0 et 1, sois honnete. Sous {MIN_CONFIDENCE}, choisis HOLD.
+
+NOTATION (obligatoire, meme si tu choisis HOLD) :
+- Note les 3 meilleurs candidats (la meilleure strategie pour chacun ; s'il y a une
+  "vente de prime possible", au moins un d'eux doit etre note en vente de prime).
+- Echelle : 0.40 = rien de favorable ; 0.50 = pas d'avantage (pile ou face) ;
+  0.65 = au moins 2 elements chiffres concordants (ex. tendance haussiere + IV/HV 1.3 pour
+  un BULL_PUT_SPREAD, ou tendance + news) et aucun contre majeur ; 0.80 = 3 elements ou plus.
+- Chaque note doit decouler des chiffres du tableau. Interdit de mettre la meme note par
+  defaut a tout le monde : "pour" et "contre" citent des chiffres.
+- confidence = la note du candidat choisi. Si aucune note n'atteint {MIN_CONFIDENCE}, choisis HOLD.
 
 Reponds avec ce JSON:
-{{"action": "OPEN" ou "HOLD", "strategy": "...", "underlying": "NVDA", "confidence": 0.7,
+{{"scores": [{{"symbol": "NVDA", "strategy": "BULL_PUT_SPREAD", "score": 0.68,
+              "pour": "tendance haussiere, IV/HV 1.35", "contre": "RSI 69 proche de 70"}}],
+  "action": "OPEN" ou "HOLD", "strategy": "...", "underlying": "NVDA", "confidence": 0.68,
   "stop_loss_pct": 0.03, "take_profit_pct": 0.06, "reasoning": "une phrase en francais",
   "reasoning_en": "the same sentence in English"}}
 stop_loss_pct / take_profit_pct : seulement pour BUY_STOCK, SHORT_STOCK, BUY_CRYPTO."""
 
 
 def groq_decide(prompt: str, api_key: str, timeout: int = 60, system: str | None = None,
-                max_tokens: int = 1500) -> dict:
+                max_tokens: int = 2000) -> dict:
     """Appelle Groq (API compatible OpenAI) ; bascule sur le petit modèle si quota."""
     last = ""
     custom = os.environ.get("GROQ_MODEL", "").strip()
@@ -1389,7 +1458,18 @@ def run_cycle(client: Alpaca, decide, state_path: str = STATE_PATH,
     lines.append(f"  Candidats envoyés à l'IA : {', '.join(r['symbol'] for r in snap['rows']) or 'aucun'}"
                  + (f" | covered call possible sur : {', '.join(ctx['covered'])}" if ctx["covered"] else ""))
 
-    decision = decide(build_prompt(snap, ctx))
+    prem = premium_candidates(snap["rows"])
+    if prem:
+        lines.append("  Vente de prime possible : " + ", ".join(
+            f"{c['symbol']} (IV/HV {c['iv_hv']}, {c['suggested']})" for c in prem))
+    prompt = build_prompt(snap, ctx)
+    decision = decide(prompt)
+    if default_answer(decision, snap):
+        lines.append(f"  Réponse « par défaut » de l'IA (confiance {decision.get('confidence')}, "
+                     "sans notes chiffrées) → on lui redemande une vraie évaluation")
+        decision = decide(prompt + RETRY_NOTE)
+    if decision.get("scores"):
+        lines.append(f"  Notes IA : {scores_line(decision)}")
     what = (f"{decision.get('strategy')} {decision.get('underlying')}"
             if decision.get("action") == "OPEN" else "HOLD")
     lines.append(f"  IA : {what} | confiance {decision.get('confidence')} | "

@@ -1335,3 +1335,47 @@ def test_terminal_weekly_report():
     total = np.prod([1 + r["fund"] / 100 for r in weeks]) - 1
     assert abs(total * 100 - weeks[-1]["cum_fund"]) < 0.05
     assert term.weekly_report([], None)["weeks"] == []
+
+
+def test_ai_premium_selling_and_default_answer_retry(tmp_path):
+    from quantlab import ai_trader as ai
+    rows = [{"symbol": "AAA", "kind": "action", "iv_hv": 1.4, "trend": "haussiere", "earnings": 60},
+            {"symbol": "BBB", "kind": "action", "iv_hv": 1.5, "trend": "neutre", "earnings": 10},
+            {"symbol": "CCC", "kind": "action", "iv_hv": 0.9, "trend": "haussiere", "earnings": None},
+            {"symbol": "XLE", "kind": "ETF", "iv_hv": 1.2, "trend": "baissiere", "earnings": None},
+            {"symbol": "SOL/USD", "kind": "crypto", "iv_hv": None, "trend": "neutre", "earnings": None}]
+    prem = ai.premium_candidates(rows)
+    # options chères + pas de résultats proches seulement ; structure selon la tendance
+    assert [(c["symbol"], c["suggested"]) for c in prem] == [("AAA", "BULL_PUT_SPREAD"),
+                                                             ("XLE", "BEAR_CALL_SPREAD")]
+    snap = {"rows": rows}
+    assert ai.default_answer({"action": "HOLD", "confidence": 0.58}, snap)
+    same = [{"symbol": s, "strategy": "HOLD", "score": 0.58, "pour": "x", "contre": "y"} for s in "AB"]
+    assert ai.default_answer({"action": "HOLD", "scores": same}, snap)
+    good = [{"symbol": "AAA", "strategy": "BULL_PUT_SPREAD", "score": 0.6, "pour": "IV/HV 1.4",
+             "contre": "RSI 68"}, {"symbol": "XLE", "strategy": "BEAR_CALL_SPREAD", "score": 0.5,
+                                   "pour": "IV/HV 1.2", "contre": "tendance faible"}]
+    assert not ai.default_answer({"action": "HOLD", "scores": good}, snap)
+    assert not ai.default_answer({"action": "HOLD", "reasoning": "IA indisponible (x)"}, snap)
+    assert not ai.default_answer({"action": "HOLD"}, {"rows": []})
+
+    # cycle complet : HOLD « par défaut » → une seule relance, avec la consigne de noter
+    client = FakeAlpaca()
+    kw = dict(earnings=lambda s: None, crypto_news=lambda: [], fng=lambda: "50/100 (Neutral)",
+              sleep=lambda s: None)
+    seen = []
+    def decide(prompt):
+        seen.append(prompt)
+        if len(seen) == 1:
+            return {"action": "HOLD", "confidence": 0.58, "reasoning": "rien"}
+        return {"action": "HOLD", "confidence": 0.6, "reasoning": "rien d'assez sur",
+                "scores": good}
+    out, d = ai.run_cycle(client, decide, state_path=str(tmp_path / "ai.json"), **kw)
+    assert len(seen) == 2 and "ATTENTION" in seen[1] and "NOTATION" in seen[0]
+    assert "VENTE DE PRIME POSSIBLE" in seen[0]
+    assert "par défaut" in out and "Notes IA : AAA BULL_PUT_SPREAD 0.6" in out
+    # une bonne réponse du premier coup → pas de relance
+    seen.clear()
+    ai.run_cycle(client, lambda p: seen.append(p) or {"action": "HOLD", "scores": good},
+                 state_path=str(tmp_path / "ai2.json"), **kw)
+    assert len(seen) == 1
