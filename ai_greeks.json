@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-11-05T08:41:37",
-  "positions": [],
+  "updated_at": "2026-11-05T08:50:22",
+  "positions": [
+    {
+      "id": "87166748b9",
+      "strategy": "BUY_CRYPTO",
+      "underlying": "UNI/USD",
+      "spot": 7.62,
+      "delta": 1295.2,
+      "option_delta": null,
+      "hedge_shares": 0,
+      "delta_usd": 9870.46,
+      "gamma_usd": 0.0,
+      "gamma_1pct": 0.0,
+      "vega": 0.0,
+      "theta_day": 0.0,
+      "rho": 0.0
+    }
+  ],
   "total": {
-    "delta_usd": 0.0,
+    "delta_usd": 9870.46,
     "gamma_usd": 0.0,
     "gamma_1pct": 0.0,
     "vega": 0.0,

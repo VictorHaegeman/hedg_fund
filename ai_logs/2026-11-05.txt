@@ -8,3 +8,14 @@ Exécuté : 2026-11-05T08:41:37 | équité 101,285.99 $ (+0.33 % jour) | bourse 
   IA : BUY_CRYPTO UNI/USD | confiance 0.72 | UNI montre une forte hausse de 7.8% sur 5 jours, RSI modéré et un volume historique très élevé, ce qui indique une dynamique haussière soutenue dans un marché crypto neutre.
   OUVERT BUY_CRYPTO UNI/USD | coût 10,129 $
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-05T08:50:21 | équité 101,177.01 $ (+0.22 % jour) | bourse US FERMÉE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +9,870 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : AMGN, CDRE*, RELY, EXPE, EXPD, ARQT, CAH, CPAY  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : XRP/USD, ETH/USD, ADA/USD, SOL/USD, DOGE/USD
+  Notes IA : ETH/USD BUY_CRYPTO 0.78 · XRP/USD BUY_CRYPTO 0.75 · ADA/USD HOLD 0.45
+  IA : BUY_CRYPTO ETH/USD | confiance 0.78 | ETH montre la meilleure combinaison de hausse de prix, RSI neutre et volume soutenu, soutenue par un contexte de marché crypto neutre.
+  OUVERT BUY_CRYPTO ETH/USD | coût 9,322 $
+  Idées presse : à jour (il y a 0.1 h, 15 idées)
