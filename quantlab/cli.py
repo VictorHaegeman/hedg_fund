@@ -30,6 +30,7 @@ Exemples :
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 
 from . import alpha as al
@@ -184,6 +185,8 @@ def main(argv: list[str] | None = None) -> int:
     common(sub.add_parser("account", help="État du compte papier"), symbol=False)
     sub.add_parser("ai", help="Module 14 — un cycle de la poche IA (Alpaca + Groq)")
     sub.add_parser("ai-wait", help="secondes avant le prochain cycle IA de la séance, ou 'stop'")
+    sp = sub.add_parser("press-test", help="test historique des idées presse (achat et vente à découvert)")
+    sp.add_argument("--years", type=float, default=float(os.environ.get("PRESS_YEARS") or 2))
     sp = sub.add_parser("ideas", help="Module 17 — idées « niche » tirées de la presse")
     sp.add_argument("--hours", type=int, default=48, help="fenêtre d'actualité en heures")
     sp.add_argument("--no-ai", action="store_true", help="sans résumé IA (Groq)")
@@ -346,6 +349,10 @@ def main(argv: list[str] | None = None) -> int:
         from . import ai_trader as ai
         report, _ = ai.main_cycle(fund_universe_if_shared=DEFAULT_UNIVERSE)
         print(report)
+
+    elif args.cmd == "press-test":
+        from . import press_backtest as pb
+        print(pb.main(args.years))
 
     elif args.cmd == "ai-wait":
         from . import ai_trader as ai

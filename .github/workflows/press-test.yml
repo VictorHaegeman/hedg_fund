@@ -1,0 +1,39 @@
+name: Test historique des idées presse
+
+# Lancement manuel uniquement. Rejoue 2 ans de presse Benzinga (via Alpaca) jour par jour :
+# achat des bonnes nouvelles, vente à découvert des mauvaises. Résultats dans research/.
+on:
+  workflow_dispatch:
+    inputs:
+      years:
+        description: "Années d'historique"
+        default: "2"
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Test
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          PRESS_YEARS: ${{ github.event.inputs.years || '2' }}
+        run: |
+          python -m quantlab press-test | tee press.txt
+          cat research/press_backtest.md >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Publier les résultats
+        run: |
+          git config user.name "quantlab-bot"
+          git config user.email "actions@github.com"
+          git add research 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "research: test historique des idées presse"
+          for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 5; done

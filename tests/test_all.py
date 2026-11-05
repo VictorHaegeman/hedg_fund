@@ -1411,3 +1411,38 @@ def test_ai_volatility_stop_and_session_loop():
     assert ai.next_cycle_wait(closed, utc(13, 30)) == 60 * 60 + 120 # ouverture dans 1 h
     assert ai.next_cycle_wait(closed, utc(9, 0)) is None            # trop tôt : stop
     assert ai.next_cycle_wait({}, utc(15, 0)) is None
+
+
+def test_press_backtest_both_sides():
+    """Rejeu des idées presse sur des données factices : GOOD (bonnes news, monte), BAD
+    (mauvaises news, baisse) → l'achat de GOOD et le short de BAD battent le SPY."""
+    from datetime import date, timedelta
+    import pandas as pd
+    from quantlab import press_backtest as pb
+    end = date(2026, 6, 30)
+    days = pd.bdate_range(end - timedelta(days=400), end)
+
+    def bars(drift, base):
+        rng = np.random.default_rng(int(base))
+        c = base * np.exp(np.cumsum(drift + rng.normal(0, 0.005, len(days))))
+        return [{"t": f"{d.date()}T04:00:00Z", "o": float(x / (1 + drift)), "h": float(x * 1.01),
+                 "l": float(x * 0.99), "c": float(x), "v": 2_000_000} for d, x in zip(days, c)]
+    B = {"GOOD": bars(0.004, 50.0), "BAD": bars(-0.004, 80.0), "SPY": bars(0.0, 400.0)}
+
+    class Fake:
+        def data(self, path, params):
+            if path == "/v1beta1/news":
+                day = params["start"][:10]
+                return {"news": [
+                    {"created_at": f"{day}T10:00:00Z", "headline": "GOOD beats estimates, raises guidance, strong growth",
+                     "symbols": ["GOOD"]},
+                    {"created_at": f"{day}T11:00:00Z", "headline": "BAD misses estimates, cuts guidance, weak demand",
+                     "symbols": ["BAD"]}]}
+            if path == "/v2/stocks/bars":
+                return {"bars": {s: B[s] for s in params["symbols"].split(",") if s in B}}
+            return {}
+    md, res = pb.run(Fake(), end - timedelta(days=120), end, sleep=lambda s: None, pause=0,
+                     log=lambda *a: None)
+    g = res["global"]
+    assert g["long_5j"]["vs_spy_moy_pct"] > 0 and g["short_5j"]["vs_spy_moy_pct"] > 0, md
+    assert "VENTE À DÉCOUVERT" in md and "Stabilité par année" in md
