@@ -9,3 +9,14 @@ Exécuté : 2026-11-06T14:32:01 | équité 95,288.03 $ (-0.64 % jour) | bourse U
   IA : BULL_PUT_SPREAD EW | confiance 0.8 | Le spread BULL_PUT_SPREAD sur EW offre une prime élevée grâce à un IV/HV de 1.15, la tendance haussière et le sentiment positif renforcent la probabilité que le cours ne baisse pas fortement.
   Trade refusé : Options pas assez liquides (ecart achat/vente trop grand)
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T15:00:01 | équité 96,024.27 $ (+0.12 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Idées presse ajoutées : GXO, AVNT*, FDX, EW, MRNA, ADUS*, CHYM, ELAN  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MRNA, ELAN, INTC, GXO, EW, CAT, NVDA, AMZN, AMD, AVGO, ORCL, MU, IWM, XRP/USD, SOL/USD, DOGE/USD, AVAX/USD, LINK/USD
+  Vente de prime possible : EW (IV/HV 1.13, BULL_PUT_SPREAD)
+  Notes IA : MRNA BUY_STOCK 0.8 · EW BULL_PUT_SPREAD 0.7 · GXO BUY_STOCK 0.68
+  IA : BUY_STOCK MRNA | confiance 0.8 | Modèle haussier clair avec RSI modéré, volatilité élevée mais options bon marché, aucune annonce de résultats imminente.
+  OUVERT BUY_STOCK MRNA | coût 2,844 $
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
