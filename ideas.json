@@ -1,40 +1,16 @@
 {
-  "updated_at": "2026-11-06T06:01:14",
+  "updated_at": "2026-11-06T12:01:15",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
-    {
-      "symbol": "CPAY",
-      "mentions": 3,
-      "headlines": [
-        "UBS Maintains Neutral on Corpay, Raises Price Target to $465",
-        "Corpay Reports Strong Third-Quarter 2026 Results and Raises Full-Year Guidance",
-        "JP Morgan Maintains Overweight on Corpay, Raises Price Target to $500"
-      ],
-      "last_at": "2026-11-06T00:22:48Z",
-      "sentiment": 1.0,
-      "price": 447.0,
-      "adv_usd": 211278376.84249878,
-      "chg_5d": 12.3,
-      "chg_20d": 11.2,
-      "rsi": 73.2,
-      "trend": "haussiere",
-      "hv": 0.3298194100390985,
-      "niche": false,
-      "score": 7.773,
-      "why": "Les analystes UBS et JP Morgan augmentent leurs objectifs de cours, soulignant de solides résultats trimestriels.",
-      "risk": "Le titre reste sensible aux révisions de prévisions et à la volatilité du secteur des paiements.",
-      "why_en": "UBS and JP Morgan raise price targets, highlighting strong quarterly results.",
-      "risk_en": "The stock is vulnerable to earnings guidance revisions and payment‑sector volatility."
-    },
     {
       "symbol": "GXO",
       "mentions": 3,
       "headlines": [
+        "Goldman Sachs Maintains Buy on GXO Logistics, Raises Price Target to $66",
         "UBS Maintains Buy on GXO Logistics, Raises Price Target to $69",
-        "Analysts Update Price Targets for GXO Logistics",
-        "JP Morgan Maintains Overweight on GXO Logistics, Raises Price Target to $73"
+        "Analysts Update Price Targets for GXO Logistics"
       ],
-      "last_at": "2026-11-06T00:26:47Z",
+      "last_at": "2026-11-06T09:38:05Z",
       "sentiment": 1.0,
       "price": 55.18,
       "adv_usd": 70290065.21644592,
@@ -45,34 +21,10 @@
       "hv": 0.3807545673607467,
       "niche": false,
       "score": 7.773,
-      "why": "UBS et JP Morgan renforcent leurs objectifs de cours, indiquant une perspective positive pour la logistique.",
-      "risk": "Les performances dépendent fortement de la chaîne d'approvisionnement mondiale, source d'incertitude.",
-      "why_en": "UBS and JP Morgan raise price targets, indicating a positive outlook for logistics.",
-      "risk_en": "Performance is heavily tied to global supply‑chain conditions, creating uncertainty."
-    },
-    {
-      "symbol": "MSI",
-      "mentions": 3,
-      "headlines": [
-        "Analysts Adjust Price Targets for Motorola Solutions Following Q3 Results",
-        "UBS Maintains Buy on Motorola Solutions, Raises Price Target to $570",
-        "JP Morgan Maintains Overweight on Motorola Solutions, Raises Price Target to $570"
-      ],
-      "last_at": "2026-11-06T03:02:11Z",
-      "sentiment": 1.0,
-      "price": 517.01,
-      "adv_usd": 532855195.2371216,
-      "chg_5d": 5.1,
-      "chg_20d": 15.6,
-      "rsi": 79.0,
-      "trend": "haussiere",
-      "hv": 0.18009984268123225,
-      "niche": false,
-      "score": 7.773,
-      "why": "Les analystes maintiennent des notes d'achat et augmentent les objectifs de cours après les résultats du troisième trimestre.",
-      "risk": "Une éventuelle décélération de la demande en solutions de communication pourrait freiner la croissance.",
-      "why_en": "Analysts keep buy ratings and raise price targets after Q3 results.",
-      "risk_en": "A slowdown in demand for communication solutions could curb growth."
+      "why": "Les analystes maintiennent un avis d'achat et augmentent leurs objectifs de cours, soutenant la tendance haussière.",
+      "risk": "Une révision à la baisse des prévisions de revenus ou une détérioration du trafic logistique pourrait freiner la hausse.",
+      "why_en": "Analysts maintain a buy rating and raise price targets, supporting the upward trend.",
+      "risk_en": "A downgrade in revenue forecasts or a slowdown in logistics demand could curb the rally."
     },
     {
       "symbol": "AVNT",
@@ -92,10 +44,33 @@
       "hv": 0.5511067207529061,
       "niche": true,
       "score": 7.197,
-      "why": "Truist et Barclays conservent des recommandations d'achat ou d'égalité de poids, augmentant les objectifs de cours.",
-      "risk": "Le secteur des matériaux avancés reste exposé aux cycles économiques et aux fluctuations de la demande industrielle.",
-      "why_en": "Truist and Barclays maintain buy or equal‑weight ratings, raising price targets.",
-      "risk_en": "The advanced materials sector is exposed to economic cycles and industrial demand swings."
+      "why": "Les deux maisons de recherche confirment un avis d'achat et relèvent leurs objectifs, renforçant l'optimisme.",
+      "risk": "Une dégradation du sentiment du marché ou des résultats financiers inférieurs aux attentes pourrait entraîner une correction.",
+      "why_en": "Both research firms reaffirm a buy rating and raise targets, reinforcing optimism.",
+      "risk_en": "Weaker market sentiment or earnings below expectations could trigger a pullback."
+    },
+    {
+      "symbol": "FDX",
+      "mentions": 2,
+      "headlines": [
+        "Harbinger Raises $240 Million in Series D Funding to Expand EV Platform",
+        "FedEx Launches AI-Enabled Post-Purchase Suite and Authenticated Delivery Service"
+      ],
+      "last_at": "2026-11-06T03:02:07Z",
+      "sentiment": 1.0,
+      "price": 316.8,
+      "adv_usd": 444682700.46203613,
+      "chg_5d": 2.9,
+      "chg_20d": 8.6,
+      "rsi": 60.3,
+      "trend": "haussiere",
+      "hv": 0.25472318501992675,
+      "niche": false,
+      "score": 6.777,
+      "why": "FedEx lance de nouvelles offres technologiques, dont une plateforme EV et des services d'IA, stimulant l'intérêt des investisseurs.",
+      "risk": "Des retards d'implémentation ou des coûts supérieurs aux prévisions pour ces initiatives pourraient peser sur la valorisation.",
+      "why_en": "FedEx introduces new tech offerings, including an EV platform and AI services, sparking investor interest.",
+      "risk_en": "Implementation delays or higher-than-expected costs for these initiatives could weigh on valuation."
     },
     {
       "symbol": "EW",
@@ -116,10 +91,35 @@
       "hv": 0.2563652280533167,
       "niche": false,
       "score": 6.773,
-      "why": "UBS et JP Morgan augmentent leurs objectifs de cours, reflétant un optimisme sur les dispositifs médicaux d'EW.",
-      "risk": "Le risque de retards réglementaires ou de concurrence accrue sur les technologies cardiaques persiste.",
-      "why_en": "UBS and JP Morgan raise price targets, reflecting optimism on EW's medical devices.",
-      "risk_en": "Regulatory delays or heightened competition in cardiac technologies remain a risk."
+      "why": "Plusieurs institutions financières augmentent leurs objectifs de cours, confirmant une perspective positive pour Edwards Lifesciences.",
+      "risk": "Une pression sur les marges ou des retards dans le lancement de nouveaux dispositifs médicaux pourraient freiner la progression.",
+      "why_en": "Multiple financial institutions raise price targets, confirming a positive outlook for Edwards Lifesciences.",
+      "risk_en": "Margin pressure or delays in new medical device launches could hinder the advance."
+    },
+    {
+      "symbol": "MRNA",
+      "mentions": 4,
+      "headlines": [
+        "Moderna Raises FY2026 Sales Guidance from $2.138B to $2.236B-$2.430B vs $2.102B Est",
+        "Moderna Q3 EPS $0.38 Beats $(1.26) Estimate, Sales $1.313B Beat $885.051M Estimate",
+        "Moderna Gears Up For Q3 Print; Here Are The Recent Forecast Changes From Wall Street's Most Accurate Analysts",
+        "Stock Market: Will S&P 500 Open Up or Down Today?"
+      ],
+      "last_at": "2026-11-06T11:46:26Z",
+      "sentiment": 0.5,
+      "price": 241.46,
+      "adv_usd": 3810236939.625168,
+      "chg_5d": 8.4,
+      "chg_20d": 22.6,
+      "rsi": 60.6,
+      "trend": "haussiere",
+      "hv": 1.1395052592575339,
+      "niche": false,
+      "score": 6.719,
+      "why": "Moderna relève ses prévisions de ventes et d'EPS, et dépasse les estimations du dernier trimestre, alimentant l'enthousiasme du marché.",
+      "risk": "Des incertitudes réglementaires ou des retards de production de vaccins pourraient affecter la performance future.",
+      "why_en": "Moderna raises sales and EPS guidance and beats the latest quarter estimates, fueling market enthusiasm.",
+      "risk_en": "Regulatory uncertainties or vaccine production delays could impact future performance."
     },
     {
       "symbol": "ADUS",
@@ -139,59 +139,10 @@
       "hv": 0.19771078269264916,
       "niche": true,
       "score": 6.597,
-      "why": "UBS et TD Cowen augmentent leurs objectifs de cours, soulignant la croissance du secteur des soins à domicile.",
-      "risk": "La dépendance aux politiques de remboursement public peut affecter les marges.",
-      "why_en": "UBS and TD Cowen raise price targets, highlighting growth in home‑care services.",
-      "risk_en": "Reliance on public reimbursement policies could pressure margins."
-    },
-    {
-      "symbol": "WK",
-      "mentions": 6,
-      "headlines": [
-        "Workiva Q3 2026 Earnings Call Transcript",
-        "Workiva Inc. Reports Q3 2026 Financial Results and Provides Guidance",
-        "Workiva Lowers FY2026 Adj EPS Guidance from $3.38-$3.39 to $2.80-$2.83 vs $3.37 Est; Raises FY2026 Sales Guidance from $1.040B-$1.044B to $1",
-        "Workiva Raises FY2026 GAAP EPS Guidance from $1.21-$1.22 to $1.31-$1.34 vs $1.23 Est"
-      ],
-      "last_at": "2026-11-05T23:19:56Z",
-      "sentiment": 0.3333333333333333,
-      "price": 85.5,
-      "adv_usd": 62534441.26167297,
-      "chg_5d": 3.5,
-      "chg_20d": 16.0,
-      "rsi": 66.9,
-      "trend": "haussiere",
-      "hv": 0.36255718472897347,
-      "niche": false,
-      "score": 6.592,
-      "why": "Workiva publie ses résultats du troisième trimestre 2026 avec une hausse du chiffre d'affaires guidé.",
-      "risk": "Le recentrage de ses prévisions d'EPS à la baisse indique une pression sur la rentabilité.",
-      "why_en": "Workiva releases Q3 2026 results with raised revenue guidance.",
-      "risk_en": "The downward revision of EPS guidance signals pressure on profitability."
-    },
-    {
-      "symbol": "AMPH",
-      "mentions": 3,
-      "headlines": [
-        "Amphastar Pharmaceuticals' Board Authorizes A $50M Increase To The Company's Share Buyback Program",
-        "Amphastar Pharmaceuticals Reports Q3 2026 Financial Results",
-        "Amphastar Pharmaceuticals Increases Share Buyback Authorization"
-      ],
-      "last_at": "2026-11-05T22:50:01Z",
-      "sentiment": 0.6666666666666666,
-      "price": 27.66,
-      "adv_usd": 11082604.108800888,
-      "chg_5d": 2.7,
-      "chg_20d": 7.2,
-      "rsi": 62.9,
-      "trend": "haussiere",
-      "hv": 0.3233866268063458,
-      "niche": true,
-      "score": 6.313,
-      "why": "Amphastar annonce une augmentation du programme de rachat d'actions, signalant confiance de la direction.",
-      "risk": "Les résultats financiers du trimestre peuvent être affectés par la concurrence dans le secteur pharmaceutique.",
-      "why_en": "Amphastar announces a larger share‑buyback program, signaling management confidence.",
-      "risk_en": "Quarterly financial results may be pressured by competition in the pharma market."
+      "why": "Les analystes maintiennent un avis d'achat et augmentent leurs objectifs de cours, soutenant la dynamique haussière.",
+      "risk": "Une hausse des coûts de main‑d’œuvre ou des pressions concurrentielles dans le secteur des soins à domicile pourrait réduire les marges.",
+      "why_en": "Analysts keep a buy rating and raise price targets, supporting the upward momentum.",
+      "risk_en": "Rising labor costs or competitive pressures in home‑care services could compress margins."
     },
     {
       "symbol": "CHYM",
@@ -213,10 +164,59 @@
       "hv": 0.3901178678974955,
       "niche": false,
       "score": 6.284,
-      "why": "UBS et JP Morgan relèvent leurs objectifs de cours, montrant un intérêt pour la fintech de Chime.",
-      "risk": "Le modèle bancaire numérique reste exposé aux régulations et à la concurrence des grands acteurs.",
-      "why_en": "UBS and JP Morgan raise price targets, showing interest in Chime's fintech model.",
-      "risk_en": "The digital banking model is exposed to regulatory scrutiny and competition from large incumbents."
+      "why": "Les analystes maintiennent ou augmentent leurs objectifs de cours, indiquant un intérêt stable malgré une tendance neutre.",
+      "risk": "Le modèle de revenus basé sur les frais de transaction peut être sensible à une baisse de l'activité de paiement numérique.",
+      "why_en": "Analysts maintain or raise price targets, indicating stable interest despite a neutral trend.",
+      "risk_en": "The transaction‑fee revenue model may be vulnerable to a slowdown in digital payment activity."
+    },
+    {
+      "symbol": "ELAN",
+      "mentions": 3,
+      "headlines": [
+        "Elanco Animal Health Sees Q4 Adj EPS $0.16-$0.19 vs $0.18 Est; Sees Sales $1.190B-$1.215B vs $1.193B Est",
+        "Elanco Animal Health Raises FY2026 Adj EPS Guidance from $1.10-$1.16 to $1.17-$1.20 vs $1.13 Est; Raises FY2026 Sales Guidance from $5.090B-",
+        "Elanco Animal Health Q3 Adj. EPS $0.27 Beats $0.20 Estimate, Sales $1.265B Beat $1.208B Estimate"
+      ],
+      "last_at": "2026-11-06T11:29:55Z",
+      "sentiment": 0.6666666666666666,
+      "price": 23.68,
+      "adv_usd": 116532449.00961876,
+      "chg_5d": 1.9,
+      "chg_20d": 5.1,
+      "rsi": 51.5,
+      "trend": "haussiere",
+      "hv": 0.4082361400242333,
+      "niche": false,
+      "score": 6.153,
+      "why": "Elanco relève ses prévisions de ventes et d'EPS, et dépasse les estimations du dernier trimestre, ce qui attire l'attention des investisseurs.",
+      "risk": "Des pressions sur les coûts des matières premières ou des problèmes de santé animale pourraient affecter la rentabilité.",
+      "why_en": "Elanco raises sales and EPS forecasts and beats the latest quarter estimates, drawing investor attention.",
+      "risk_en": "Rising commodity costs or animal health issues could impact profitability."
+    },
+    {
+      "symbol": "BLMN",
+      "mentions": 5,
+      "headlines": [
+        "Bloomin Brands Raises FY2026 GAAP EPS Guidance from $0.85-$0.95 to $1.06-$1.11 vs $0.95 Est",
+        "Bloomin Brands Raises FY2026 Adj EPS Guidance from $0.90-$1.00 to $0.97-$1.02 vs $0.97 Est",
+        "Bloomin Brands Sees Q4 GAAP EPS $0.07-$0.12 vs $0.15 Est",
+        "Bloomin Brands Sees Q4 Adj EPS $0.07-$0.12 vs $0.14 Est"
+      ],
+      "last_at": "2026-11-06T11:32:20Z",
+      "sentiment": 0.6,
+      "price": 10.47,
+      "adv_usd": 27148343.994841576,
+      "chg_5d": -2.1,
+      "chg_20d": 23.5,
+      "rsi": 57.1,
+      "trend": "haussiere",
+      "hv": 0.7761202788938202,
+      "niche": true,
+      "score": 5.964,
+      "why": "Bloomin Brands augmente ses prévisions d'EPS pour 2026, montrant une amélioration attendue de la rentabilité.",
+      "risk": "Une demande plus faible que prévu dans le secteur de la restauration rapide pourrait réduire les revenus.",
+      "why_en": "Bloomin Brands raises its 2026 EPS outlook, indicating expected profitability improvement.",
+      "risk_en": "Weaker-than-expected demand in the fast‑casual restaurant sector could curb revenue."
     },
     {
       "symbol": "FLUT",
@@ -238,58 +238,10 @@
       "hv": 0.46308174272805813,
       "niche": false,
       "score": 5.852,
-      "why": "UBS maintient un avis d'achat malgré une révision à la baisse du target, indiquant une confiance relative.",
-      "risk": "La baisse du target price reflète des incertitudes sur la croissance des jeux en ligne.",
-      "why_en": "UBS keeps a buy rating despite a lower target, indicating relative confidence.",
-      "risk_en": "The reduced target reflects uncertainties around online‑gaming growth."
-    },
-    {
-      "symbol": "CARG",
-      "mentions": 3,
-      "headlines": [
-        "CarGurus Q3 2026 Earnings Call Transcript",
-        "CarGurus Announces Third Quarter 2026 Financial Results",
-        "CarGurus Announces $250M Buyback Plan"
-      ],
-      "last_at": "2026-11-05T23:24:33Z",
-      "sentiment": 0.6666666666666666,
-      "price": 36.15,
-      "adv_usd": 43410374.774599075,
-      "chg_5d": 11.2,
-      "chg_20d": 23.6,
-      "rsi": 70.6,
-      "trend": "neutre",
-      "hv": 0.4493267113690256,
-      "niche": true,
-      "score": 5.773,
-      "why": "CarGurus publie ses résultats du troisième trimestre 2026 et lance un programme de rachat de 250 M$.",
-      "risk": "Le marché de l'automobile en ligne peut être affecté par les fluctuations économiques et les taux d'intérêt.",
-      "why_en": "CarGurus releases Q3 2026 results and announces a $250 M buyback program.",
-      "risk_en": "The online auto market may be impacted by economic swings and interest‑rate changes."
-    },
-    {
-      "symbol": "MRNA",
-      "mentions": 3,
-      "headlines": [
-        "Stock Market: Will S&P 500 Open Up or Down Today?",
-        "Moderna Receives Canadian Authorization for Seasonal Influenza and Combination Vaccines",
-        "Moderna Says Health Canada Authorizes mFLUSIVA And mCOFLU For Adults 50 Years Of Age And Older"
-      ],
-      "last_at": "2026-11-06T05:56:08Z",
-      "sentiment": 0.3333333333333333,
-      "price": 241.46,
-      "adv_usd": 3810236939.625168,
-      "chg_5d": 8.4,
-      "chg_20d": 22.6,
-      "rsi": 60.6,
-      "trend": "haussiere",
-      "hv": 1.1395052592575339,
-      "niche": false,
-      "score": 5.773,
-      "why": "Moderna obtient l'autorisation canadienne pour de nouveaux vaccins contre la grippe, élargissant son portefeuille.",
-      "risk": "Le succès commercial dépendra de l'acceptation du marché et de la concurrence vaccinale.",
-      "why_en": "Moderna receives Canadian approval for new flu vaccines, expanding its portfolio.",
-      "risk_en": "Commercial success will depend on market uptake and vaccine competition."
+      "why": "Les analystes maintiennent un avis d'achat tout en ajustant les objectifs de cours, reflétant un consensus prudent mais positif.",
+      "risk": "Une volatilité accrue du marché du jeu ou des régulations plus strictes pourraient peser sur la valorisation.",
+      "why_en": "Analysts keep a buy rating while adjusting price targets, reflecting a cautious yet positive consensus.",
+      "risk_en": "Increased volatility in the gaming market or stricter regulations could weigh on valuation."
     },
     {
       "symbol": "ACHC",
@@ -309,10 +261,81 @@
       "hv": 0.5294806635899512,
       "niche": false,
       "score": 5.697,
-      "why": "Barclays et BofA augmentent leurs objectifs de cours, reflétant une perspective positive pour les services de santé mentale.",
-      "risk": "Le secteur de la santé mentale reste sensible aux changements de remboursement et aux politiques publiques.",
-      "why_en": "Barclays and BofA raise price targets, reflecting a positive outlook for mental‑health services.",
-      "risk_en": "The mental‑health sector is sensitive to reimbursement changes and public policy shifts."
+      "why": "Les analystes relèvent leurs objectifs de cours pour Acadia Healthcare, soutenant la forte hausse récente du titre.",
+      "risk": "Des changements de politique de santé ou des pressions sur les remboursements pourraient affecter les marges.",
+      "why_en": "Analysts raise price targets for Acadia Healthcare, supporting the recent strong stock rally.",
+      "risk_en": "Health policy changes or reimbursement pressures could impact margins."
+    },
+    {
+      "symbol": "ASTH",
+      "mentions": 2,
+      "headlines": [
+        "Needham Maintains Buy on Astrana Health, Raises Price Target to $45",
+        "Astrana Health Q3 2026 Earnings Call Transcript"
+      ],
+      "last_at": "2026-11-06T11:14:09Z",
+      "sentiment": 0.5,
+      "price": 39.01,
+      "adv_usd": 11234549.933605194,
+      "chg_5d": 6.5,
+      "chg_20d": 8.8,
+      "rsi": 60.1,
+      "trend": "haussiere",
+      "hv": 0.4250859674368177,
+      "niche": true,
+      "score": 5.697,
+      "why": "Needham maintient un avis d'achat et augmente son objectif, tandis que le call Q3 montre un intérêt soutenu des investisseurs.",
+      "risk": "Des résultats financiers inférieurs aux attentes ou des retards dans le développement de produits pourraient freiner la progression.",
+      "why_en": "Needham maintains a buy rating and raises its target, and the Q3 call shows continued investor interest.",
+      "risk_en": "Financial results below expectations or product development delays could stall the advance."
+    },
+    {
+      "symbol": "CWK",
+      "mentions": 2,
+      "headlines": [
+        "Cushman & Wakefield Facilitates Semperis Office Expansion in Hoboken",
+        "Cushman & Wakefield Advises on $115 Million Sale of Chicago Property"
+      ],
+      "last_at": "2026-11-05T23:02:57Z",
+      "sentiment": 0.5,
+      "price": 14.18,
+      "adv_usd": 44814571.231598854,
+      "chg_5d": 8.2,
+      "chg_20d": 19.9,
+      "rsi": 62.7,
+      "trend": "haussiere",
+      "hv": 0.6414459220120075,
+      "niche": true,
+      "score": 5.697,
+      "why": "Cushman & Wakefield participe à des transactions immobilières majeures, soulignant l'activité dynamique du secteur.",
+      "risk": "Un ralentissement du marché immobilier commercial ou des difficultés à conclure des ventes importantes pourrait réduire les revenus.",
+      "why_en": "Cushman & Wakefield is involved in major real‑estate transactions, highlighting sector dynamism.",
+      "risk_en": "A slowdown in the commercial real‑estate market or challenges closing large deals could cut revenue."
+    },
+    {
+      "symbol": "ABNB",
+      "mentions": 5,
+      "headlines": [
+        "Nasdaq’s 5.5% Wipeout And AI's Next Reality Check—IRS' New Tax Brackets",
+        "Airbnb Enters $7.1 Million Intellectual Property and Sales Agreement with AI Lab",
+        "Airbnb Reports Q3 Earnings Beat and Announces $12 Billion Share Buyback",
+        "Airbnb, Charter Communications and 3 Stocks to Watch Heading Into Friday"
+      ],
+      "last_at": "2026-11-06T11:38:52Z",
+      "sentiment": 0.2,
+      "price": 170.13,
+      "adv_usd": 647166880.9720612,
+      "chg_5d": 2.2,
+      "chg_20d": 4.2,
+      "rsi": 54.3,
+      "trend": "haussiere",
+      "hv": 0.3765678533972402,
+      "niche": false,
+      "score": 5.624,
+      "why": "Airbnb annonce un rachat d'actions de 12 milliards de dollars et un accord de propriété intellectuelle lié à l'IA, renforçant la confiance des actionnaires.",
+      "risk": "Des pressions réglementaires sur les locations de courte durée ou une concurrence accrue pourraient limiter la croissance.",
+      "why_en": "Airbnb announces a $12 billion share buyback and an AI‑related IP agreement, boosting shareholder confidence.",
+      "risk_en": "Regulatory pressures on short‑term rentals or heightened competition could limit growth."
     },
     {
       "symbol": "CPK",
@@ -332,33 +355,10 @@
       "hv": 0.20268246793336844,
       "niche": true,
       "score": 5.597,
-      "why": "Chesapeake Utilities déclare un dividende trimestriel, attirant les investisseurs à revenu fixe.",
-      "risk": "Les performances peuvent être affectées par la régulation des services publics et les prix de l'énergie.",
-      "why_en": "Chesapeake Utilities announces a quarterly cash dividend, attracting income investors.",
-      "risk_en": "Performance may be impacted by utility regulation and energy price fluctuations."
-    },
-    {
-      "symbol": "CDW",
-      "mentions": 2,
-      "headlines": [
-        "UBS Maintains Buy on CDW, Raises Price Target to $195",
-        "JP Morgan Maintains Overweight on CDW, Raises Price Target to $195"
-      ],
-      "last_at": "2026-11-06T00:18:22Z",
-      "sentiment": 1.0,
-      "price": 158.39,
-      "adv_usd": 274774904.1405487,
-      "chg_5d": -4.1,
-      "chg_20d": 13.2,
-      "rsi": 53.4,
-      "trend": "haussiere",
-      "hv": 0.6421858249106813,
-      "niche": false,
-      "score": 5.377,
-      "why": "UBS et JP Morgan augmentent leurs objectifs de cours, soulignant la solidité du modèle de distribution de technologies.",
-      "risk": "Une baisse récente du cours indique une possible pression sur les marges ou la demande du secteur IT.",
-      "why_en": "UBS and JP Morgan raise price targets, highlighting the strength of the tech‑distribution model.",
-      "risk_en": "A recent price decline suggests potential margin pressure or weaker IT demand."
+      "why": "Chesapeake Utilities déclare un dividende trimestriel et publie des résultats solides, attirant les investisseurs à la recherche de revenu stable.",
+      "risk": "Une hausse des coûts de l'énergie ou des régulations environnementales plus strictes pourrait affecter la rentabilité.",
+      "why_en": "Chesapeake Utilities declares a quarterly dividend and reports solid results, attracting income‑seeking investors.",
+      "risk_en": "Rising energy costs or stricter environmental regulations could impact profitability."
     }
   ]
 }
