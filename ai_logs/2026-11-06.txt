@@ -56,3 +56,15 @@ Exécuté : 2026-11-06T16:30:01 | équité 96,147.74 $ (+0.25 % jour) | bourse U
   IA : BUY_STOCK ACHC | confiance 0.82 | ACHC montre une forte hausse récente, un RSI élevé indiquant un momentum positif et des options bon marché (IV/HV 0.77), ce qui justifie un achat direct avec un risque limité.
   OUVERT BUY_STOCK ACHC | coût 5,569 $
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T17:00:01 | équité 96,451.00 $ (+0.57 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +18,069 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ABNB, ACHC, ENOV*, BDX, CELH, SG*, ICUI*, FROG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ENOV, BDX, INTC, SG, CAT, NVDA, AMZN, AMD, AVGO, ORCL, MU, ABNB, IWM, SOL/USD, XRP/USD, DOGE/USD, AVAX/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : BDX (IV/HV 2.77, BULL_PUT_SPREAD), SG (IV/HV 1.18, BULL_PUT_SPREAD)
+  Notes IA : ENOV BUY_STOCK 0.8 · BDX BULL_PUT_SPREAD 0.7 · SG BULL_PUT_SPREAD 0.68
+  IA : BUY_STOCK ENOV | confiance 0.8 | ENOV montre une forte hausse récente, un RSI favorable et des options bon marché, ce qui justifie un achat direct avec un risque limité.
+  OUVERT BUY_STOCK ENOV | coût 1,488 $
+  Idées presse : à jour (il y a 1.5 h, 15 idées)

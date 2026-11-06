@@ -190,5 +190,28 @@
     "stop_order_id": "9907b786-95c3-4a09-b67b-dee63fb6904d",
     "stop_price": 34.56,
     "stop_note": "vrai stop Alpaca à 34.56"
+  },
+  {
+    "id": "b97d917039",
+    "opened_at": "2026-11-06T17:00:34",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "ENOV",
+    "position_symbol": "ENOV",
+    "cost": 1488.24,
+    "entry_price": 27.6,
+    "qty": 54.0,
+    "sl_pct": 0.0955,
+    "tp_pct": 0.1432,
+    "source": "presse",
+    "niche": true,
+    "confidence": 0.8,
+    "reasoning": "ENOV montre une forte hausse récente, un RSI favorable et des options bon marché, ce qui justifie un achat direct avec un risque limité.",
+    "reasoning_en": "ENOV shows strong recent upside, a favorable RSI, and cheap options, justifying a direct buy with limited risk.",
+    "pnl": null,
+    "stop_order_id": "1ab53c6a-b9a9-4d48-ad82-4f238ef914ff",
+    "stop_price": 24.96,
+    "stop_note": "vrai stop Alpaca à 24.96"
   }
 ]
