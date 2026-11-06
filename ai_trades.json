@@ -167,5 +167,28 @@
     "stop_order_id": "b0b999cd-1061-4b31-b18e-ee1918c8d4d6",
     "stop_price": 269.66,
     "stop_note": "vrai stop Alpaca à 269.66"
+  },
+  {
+    "id": "673b09aedd",
+    "opened_at": "2026-11-06T16:30:35",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "ACHC",
+    "position_symbol": "ACHC",
+    "cost": 5569.2,
+    "entry_price": 36.45,
+    "qty": 153.0,
+    "sl_pct": 0.0517,
+    "tp_pct": 0.0776,
+    "source": "presse",
+    "niche": false,
+    "confidence": 0.82,
+    "reasoning": "ACHC montre une forte hausse récente, un RSI élevé indiquant un momentum positif et des options bon marché (IV/HV 0.77), ce qui justifie un achat direct avec un risque limité.",
+    "reasoning_en": "ACHC displays strong recent upside, high RSI indicating positive momentum, and cheap options (IV/HV 0.77), supporting a direct stock purchase with limited risk.",
+    "pnl": null,
+    "stop_order_id": "9907b786-95c3-4a09-b67b-dee63fb6904d",
+    "stop_price": 34.56,
+    "stop_note": "vrai stop Alpaca à 34.56"
   }
 ]
