@@ -1,0 +1,41 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-06T02:43:46 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, AAPL, NVDA, MSFT, GOOGN, GOOGM, GOOG, GOOGL, AMZN, TSM, SPCX, METAM, META, AVGO, TSLA, LLY, JPM
+==============================================================================
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOGM, GOOG, GOOGL
+  VENTE QQQ @ 652.33 (STOP) — PnL -28.21 $ (-5.5%)
+  VENTE TSLA @ 342.92 (STOP) — PnL -1,039.82 $ (-11.0%)
+  Contexte risque : VIX 28.2 (96e pct) → RISK-OFF  (information seulement : filtre VIX désactivé, testé défavorable)
+  Trésorerie : achat 11,732 $ de SPY (socle S&P 500)
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-06T02:43:54
+  Équité : 98,868.73 $ (-1.13% depuis le départ) | Cash : 982.88 $
+  Positions ouvertes :
+    JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +451.78 $
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +575.28 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent -106.55 $
+    XLE      210.3198 u @ 63.52 [meanrev] | stop 58.62 | latent -397.50 $
+    MSFT     34.7435 u @ 555.80 [breakout] | stop 526.12 | latent -690.35 $
+  Trésorerie placée : SPY 11,732 $ (-0 $)
+  Trades clôturés : 29 | win rate 62% | PnL réalisé total : -487.34 $
+  5 derniers trades :
+    2026-10-21 XLK      [meanrev] 190.43 → 188.54 (signal) PnL -213.23 $
+    2026-11-05 BTC-USD  [meanrev] 76,390.71 → 80,534.55 (signal) PnL +638.07 $
+    2026-11-04 SPY      [meanrev] 755.72 → 766.81 (signal) PnL +449.30 $
+    2026-11-05 QQQ      [meanrev] 690.49 → 652.33 (stop) PnL -28.21 $
+    2026-11-05 TSLA     [meanrev] 385.19 → 342.92 (stop) PnL -1,039.82 $
+Variation du cycle : -25.12 $
+
+— MIROIR ALPACA —
+  ALPACA vend 0.2050 LLY (rééquilibrage)
+  ALPACA ferme QQQ (position fermée par le fonds)
+  ALPACA achète 11.6334 SPY (nouvelle position)
+  ALPACA ferme TSLA (position fermée par le fonds)
+  ALPACA stop JPM : 52 parts à 317.41
+  ALPACA stop LLY : 8 parts à 1,288.66
+  ALPACA stop MSFT : 25 parts à 526.12
+  ALPACA stop XLE : 152 parts à 58.61
+  ALPACA stop XLV : 54 parts à 171.43
+  Équité Alpaca : 95,814.93 $ | cash 23,895.36 $

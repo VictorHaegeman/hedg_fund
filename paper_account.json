@@ -1,5 +1,5 @@
 {
-  "cash": 3886.7501375346037,
+  "cash": 982.8798961707726,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -32,16 +32,6 @@
       "entry_date": "2026-10-29",
       "risk_amount": 1010.16
     },
-    "QQQ": {
-      "symbol": "QQQ",
-      "shares": 0.7265671568434943,
-      "entry": 690.489990234375,
-      "stop": 652.3331952296405,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-10-30",
-      "risk_amount": 1006.81
-    },
     "XLE": {
       "symbol": "XLE",
       "shares": 210.31981062559692,
@@ -61,16 +51,6 @@
       "strategy": "breakout",
       "entry_date": "2026-11-04",
       "risk_amount": 1031.04
-    },
-    "TSLA": {
-      "symbol": "TSLA",
-      "shares": 24.391905038068238,
-      "entry": 385.19000244140625,
-      "stop": 342.924268984982,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-11-04",
-      "risk_amount": 1030.94
     }
   },
   "history": [
@@ -478,10 +458,40 @@
       "reason": "signal",
       "pnl": 449.3,
       "pnl_pct": 1.47
+    },
+    {
+      "symbol": "QQQ",
+      "shares": 0.7265671568434943,
+      "entry": 690.489990234375,
+      "stop": 652.3331952296405,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-10-30",
+      "risk_amount": 1006.81,
+      "exit": 652.3331952296405,
+      "exit_date": "2026-11-05",
+      "reason": "stop",
+      "pnl": -28.21,
+      "pnl_pct": -5.53
+    },
+    {
+      "symbol": "TSLA",
+      "shares": 24.391905038068238,
+      "entry": 385.19000244140625,
+      "stop": 342.924268984982,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-11-04",
+      "risk_amount": 1030.94,
+      "exit": 342.924268984982,
+      "exit_date": "2026-11-05",
+      "reason": "stop",
+      "pnl": -1039.82,
+      "pnl_pct": -10.97
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-11-05T02:40:50",
+  "last_cycle": "2026-11-06T02:43:54",
   "equity_curve": [
     [
       "2026-06-11",
@@ -878,7 +888,17 @@
     [
       "2026-11-04",
       103089.48
+    ],
+    [
+      "2026-11-05",
+      98868.73
     ]
   ],
-  "treasury": {}
+  "treasury": {
+    "SPY": {
+      "shares": 16.005627541791807,
+      "cost": 11732.124988133395,
+      "last": 733.0
+    }
+  }
 }
