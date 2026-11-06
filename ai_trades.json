@@ -213,5 +213,28 @@
     "stop_order_id": "1ab53c6a-b9a9-4d48-ad82-4f238ef914ff",
     "stop_price": 24.96,
     "stop_note": "vrai stop Alpaca à 24.96"
+  },
+  {
+    "id": "bdadeb4c34",
+    "opened_at": "2026-11-06T18:30:34",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "BDX",
+    "position_symbol": "BDX",
+    "cost": 4672.8,
+    "entry_price": 212.69,
+    "qty": 22.0,
+    "sl_pct": 0.03,
+    "tp_pct": 0.06,
+    "source": "presse",
+    "niche": false,
+    "confidence": 0.8,
+    "reasoning": "BDX montre une tendance haussière claire, un RSI très élevé (76) et des recommandations d'outperform avec hausse du price target, ce qui crée un alignement de trois facteurs favorables ; la volatilité n'est pas excessive et les options sont chères, donc l'achat direct d'actions est la meilleure approche.",
+    "reasoning_en": "BDX shows a clear uptrend, a very high RSI (76) and outperformance recommendations with a raised price target, providing three favorable factors; volatility is moderate and options are expensive, making a direct stock purchase the best approach.",
+    "pnl": null,
+    "stop_order_id": "5507dbc5-dcc0-4c75-920f-cfd6c06f2d68",
+    "stop_price": 206.3,
+    "stop_note": "vrai stop Alpaca à 206.30"
   }
 ]

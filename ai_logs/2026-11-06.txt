@@ -92,3 +92,15 @@ Exécuté : 2026-11-06T18:00:01 | équité 96,188.20 $ (+0.29 % jour) | bourse U
   IA : BULL_PUT_SPREAD SG | confiance 0.8 | Le spread BULL_PUT_SPREAD sur SG profite d'une prime élevée (IV/HV 1.22) dans un contexte haussier sans résultats imminents, offrant un bon ratio risque/récompense.
   Trade refusé : Options pas assez liquides (ecart achat/vente trop grand)
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T18:30:02 | équité 96,168.73 $ (+0.27 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +19,469 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ABNB, ACHC, ENOV*, BDX, CELH, SG*, ICUI*, FROG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BDX, SG, INTC, CAT, COST, NVDA, AMZN, AMD, AVGO, ORCL, MU, DIS, IWM, SOL/USD, XRP/USD, DOGE/USD, AVAX/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : SG (IV/HV 1.3, BULL_PUT_SPREAD)
+  Notes IA : BDX BUY_STOCK 0.8 · SG BUY_STOCK 0.68 · AMZN BUY_STOCK 0.65
+  IA : BUY_STOCK BDX | confiance 0.8 | BDX montre une tendance haussière claire, un RSI très élevé (76) et des recommandations d'outperform avec hausse du price target, ce qui crée un alignement de trois facteurs favorables ; la volatilité n'est pas excessive et les options sont chères, donc l'achat direct d'actions est la meilleure approche.
+  OUVERT BUY_STOCK BDX | coût 4,673 $
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
