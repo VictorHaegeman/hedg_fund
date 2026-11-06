@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T14:32:01 | équité 95,288.03 $ (-0.64 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Idées presse ajoutées : GXO, AVNT*, FDX, EW, MRNA, ADUS*, CHYM, ELAN  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MRNA, GXO, ELAN, INTC, CAT, PLTR, NVDA, AMZN, ORCL, MU, AVNT, EW, IWM, XRP/USD, SOL/USD, DOGE/USD, AVAX/USD, LINK/USD
+  Vente de prime possible : EW (IV/HV 1.15, BULL_PUT_SPREAD)
+  Notes IA : EW BULL_PUT_SPREAD 0.8 · MRNA BUY_STOCK 0.75 · AMZN BUY_STOCK 0.7
+  IA : BULL_PUT_SPREAD EW | confiance 0.8 | Le spread BULL_PUT_SPREAD sur EW offre une prime élevée grâce à un IV/HV de 1.15, la tendance haussière et le sentiment positif renforcent la probabilité que le cours ne baisse pas fortement.
+  Trade refusé : Options pas assez liquides (ecart achat/vente trop grand)
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
