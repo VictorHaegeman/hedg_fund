@@ -115,3 +115,14 @@ Exécuté : 2026-11-06T19:00:15 | équité 96,234.08 $ (+0.34 % jour) | bourse U
   IA : BUY_STOCK ABNB | confiance 0.82 | ABNB montre une forte dynamique haussière avec un RSI solide, une volatilité raisonnable et un IV/HV bas, ce qui en fait le meilleur candidat pour un achat direct.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T19:20:51 | équité 95,969.70 $ (+0.07 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,053 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ABNB, FROG, ONC, ACHC, EPAM, U, BDX, CAH  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : U, CAH, INTC, CAT, NVDA, AMZN, AMD, AVGO, ORCL, MU, ABNB, ONC, IWM, XRP/USD, SOL/USD, DOGE/USD, AVAX/USD, LINK/USD | covered call possible sur : ACHC
+  Notes IA : ABNB BUY_STOCK 0.82 · AMZN BUY_STOCK 0.71 · U BUY_STOCK 0.66
+  IA : BUY_STOCK ABNB | confiance 0.82 | ABNB montre une forte hausse récente, un RSI favorable et une volatilité implicite basse, ce qui en fait le meilleur candidat pour un achat d'action.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.3 h, 15 idées)
