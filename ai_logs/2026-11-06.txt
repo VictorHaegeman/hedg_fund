@@ -80,3 +80,15 @@ Exécuté : 2026-11-06T17:30:01 | équité 96,250.10 $ (+0.36 % jour) | bourse U
   IA : BULL_PUT_SPREAD BDX | confiance 0.78 | BDX montre une tendance haussiere forte, un IV/HV très élevé (2.77) qui rend la vente de put spread attractive, et la volatilité réalisée est bien inférieure, offrant un crédit intéressant malgré un RSI élevé.
   Trade refusé : Options pas assez liquides (ecart achat/vente trop grand)
   Idées presse : à jour (il y a 2.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T18:00:01 | équité 96,188.20 $ (+0.29 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +19,498 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ABNB, ACHC, ENOV*, BDX, CELH, SG*, ICUI*, FROG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BDX, SG, INTC, CAT, COST, NVDA, AMZN, AMD, AVGO, ORCL, MU, DIS, IWM, XRP/USD, SOL/USD, DOGE/USD, AVAX/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : BDX (IV/HV 2.77, BULL_PUT_SPREAD), SG (IV/HV 1.22, BULL_PUT_SPREAD)
+  Notes IA : SG BULL_PUT_SPREAD 0.8 · BDX BULL_PUT_SPREAD 0.75 · COST BUY_STOCK 0.65
+  IA : BULL_PUT_SPREAD SG | confiance 0.8 | Le spread BULL_PUT_SPREAD sur SG profite d'une prime élevée (IV/HV 1.22) dans un contexte haussier sans résultats imminents, offrant un bon ratio risque/récompense.
+  Trade refusé : Options pas assez liquides (ecart achat/vente trop grand)
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
