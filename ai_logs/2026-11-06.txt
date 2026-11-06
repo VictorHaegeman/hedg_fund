@@ -20,3 +20,15 @@ Exécuté : 2026-11-06T15:00:01 | équité 96,024.27 $ (+0.12 % jour) | bourse U
   IA : BUY_STOCK MRNA | confiance 0.8 | Modèle haussier clair avec RSI modéré, volatilité élevée mais options bon marché, aucune annonce de résultats imminente.
   OUVERT BUY_STOCK MRNA | coût 2,844 $
   Idées presse : à jour (il y a 3.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T15:30:15 | équité 96,110.23 $ (+0.21 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +2,861 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ABNB, ACHC, ENOV*, BDX, CELH, SG*, ICUI*, FROG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : INTC, ACHC, BDX, CAT, MCD, NVDA, AMZN, AMD, AVGO, MU, COIN, ABNB, IWM, XRP/USD, SOL/USD, DOGE/USD, AVAX/USD, LINK/USD
+  Vente de prime possible : BDX (IV/HV 2.77, BULL_PUT_SPREAD)
+  Notes IA : MCD BUY_STOCK 0.78 · ABNB BUY_STOCK 0.7 · BDX BULL_PUT_SPREAD 0.66
+  IA : BUY_STOCK MCD | confiance 0.78 | MCD montre une forte tendance haussière avec +7.7% sur 5 jours, un RSI élevé qui confirme le momentum, et des options bon marché (IV/HV 0.77), ce qui rend l'achat direct plus attractif que les stratégies d'options coûteuses.
+  OUVERT BUY_STOCK MCD | coût 9,449 $
+  Idées presse : 15 idées rafraîchies

@@ -144,5 +144,28 @@
     "stop_order_id": "6e958ebf-8f7c-4f51-87c3-316779a5a80f",
     "stop_price": 234.41,
     "stop_note": "vrai stop Alpaca à 234.41"
+  },
+  {
+    "id": "b31a6cb905",
+    "opened_at": "2026-11-06T15:30:57",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "MCD",
+    "position_symbol": "MCD",
+    "cost": 9448.6,
+    "entry_price": 278.002941,
+    "qty": 34.0,
+    "sl_pct": 0.03,
+    "tp_pct": 0.06,
+    "source": null,
+    "niche": false,
+    "confidence": 0.78,
+    "reasoning": "MCD montre une forte tendance haussière avec +7.7% sur 5 jours, un RSI élevé qui confirme le momentum, et des options bon marché (IV/HV 0.77), ce qui rend l'achat direct plus attractif que les stratégies d'options coûteuses.",
+    "reasoning_en": "MCD displays a strong upward trend with +7.7% over 5 days, a high RSI confirming momentum, and cheap options (IV/HV 0.77), making a direct stock purchase more attractive than costly option strategies.",
+    "pnl": null,
+    "stop_order_id": "b0b999cd-1061-4b31-b18e-ee1918c8d4d6",
+    "stop_price": 269.66,
+    "stop_note": "vrai stop Alpaca à 269.66"
   }
 ]
