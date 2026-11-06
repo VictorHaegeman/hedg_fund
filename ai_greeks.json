@@ -1,15 +1,30 @@
 {
-  "updated_at": "2026-11-06T15:30:15",
+  "updated_at": "2026-11-06T16:00:03",
   "positions": [
     {
       "id": "d59f30e488",
       "strategy": "BUY_STOCK",
       "underlying": "MRNA",
-      "spot": 260.11,
+      "spot": 259.33,
       "delta": 11.0,
       "option_delta": null,
       "hedge_shares": 0,
-      "delta_usd": 2861.16,
+      "delta_usd": 2852.63,
+      "gamma_usd": 0.0,
+      "gamma_1pct": 0.0,
+      "vega": 0.0,
+      "theta_day": 0.0,
+      "rho": 0.0
+    },
+    {
+      "id": "b31a6cb905",
+      "strategy": "BUY_STOCK",
+      "underlying": "MCD",
+      "spot": 277.36,
+      "delta": 34.0,
+      "option_delta": null,
+      "hedge_shares": 0,
+      "delta_usd": 9430.24,
       "gamma_usd": 0.0,
       "gamma_1pct": 0.0,
       "vega": 0.0,
@@ -18,7 +33,7 @@
     }
   ],
   "total": {
-    "delta_usd": 2861.16,
+    "delta_usd": 12282.87,
     "gamma_usd": 0.0,
     "gamma_1pct": 0.0,
     "vega": 0.0,
