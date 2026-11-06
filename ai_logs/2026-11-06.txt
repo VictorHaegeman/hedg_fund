@@ -137,3 +137,14 @@ Exécuté : 2026-11-06T19:30:01 | équité 95,987.87 $ (+0.09 % jour) | bourse U
   IA : BULL_CALL_SPREAD U | confiance 0.7 | Le titre Unity présente une forte tendance haussière avec une volatilité implicite faible, ce qui rend un bull call spread attractif.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-06T20:00:01 | équité 96,014.89 $ (+0.11 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,117 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ABNB, FROG, ONC, ACHC, EPAM, U, BDX, CAH  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : U, CAH, INTC, CAT, NVDA, AMZN, AMD, AVGO, ORCL, MU, ABNB, ONC, IWM, XRP/USD, SOL/USD, DOGE/USD, AVAX/USD, LINK/USD | covered call possible sur : ACHC
+  Notes IA : U BUY_STOCK 0.81 · ABNB BUY_STOCK 0.77 · ONC BUY_STOCK 0.73
+  IA : BUY_STOCK U | confiance 0.81 | Unity montre une forte tendance haussière, un RSI élevé mais pas suracheté, et une volatilité implicite très basse (IV/HV 0.69), ce qui rend l'achat direct plus avantageux que les stratégies d'options.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
