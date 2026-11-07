@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T06:01:14",
+  "updated_at": "2026-11-07T11:52:25",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -21,10 +21,10 @@
       "hv": 0.4102950362963763,
       "niche": true,
       "score": 7.773,
-      "why": "Les analystes Jefferies et Canaccord Genuity confirment un avis d'achat et augmentent leurs objectifs de cours, soutenant la dynamique haussière.",
-      "risk": "Le risque principal réside dans la dépendance aux prévisions de prix qui pourraient ne pas se concrétiser si la demande de parfums ralentit.",
-      "why_en": "Analysts Jefferies and Canaccord Genuity reaffirm a buy rating and raise price targets, supporting the upward trend.",
-      "risk_en": "The main risk lies in reliance on price forecasts that may not materialize if perfume demand weakens."
+      "why": "Les analystes Jefferies et Canaccord Genuity augmentent leurs objectifs de cours, soutenant une dynamique haussière.",
+      "risk": "Le risque principal réside dans la dépendance aux tendances de consommation de luxe, qui peuvent fluctuer.",
+      "why_en": "Analysts Jefferies and Canaccord Genuity raise price targets, supporting an upward momentum.",
+      "risk_en": "The main risk lies in reliance on luxury consumer trends, which can be volatile."
     },
     {
       "symbol": "ABNB",
@@ -46,85 +46,10 @@
       "hv": 0.5375693919662351,
       "niche": false,
       "score": 7.469,
-      "why": "JP Morgan et Citigroup maintiennent leurs avis d'achat et augmentent leurs objectifs, renforçant la hausse du titre.",
-      "risk": "Un risque majeur est la sensibilité aux régulations locales et aux changements de politique de location à court terme.",
-      "why_en": "JP Morgan and Citigroup maintain buy ratings and raise price targets, reinforcing the stock's rise.",
-      "risk_en": "A major risk is sensitivity to local regulations and short‑term changes in rental policy."
-    },
-    {
-      "symbol": "BSY",
-      "mentions": 4,
-      "headlines": [
-        "UBS Adjusts Bentley Systems Price Target to $50 From $40, Maintains Neutral Rating",
-        "RBC Raises Price Target on Bentley Systems to $52 From $48, Keeps Outperform Rating",
-        "Oppenheimer Adjusts Price Target on Bentley Systems to $52 From $43, Keeps Outperform Rating",
-        "RBC Capital Maintains Outperform on Bentley Systems, Raises Price Target to $52"
-      ],
-      "last_at": "2026-11-06T19:04:36Z",
-      "sentiment": 0.75,
-      "price": 44.65,
-      "adv_usd": 127704644.98523712,
-      "chg_5d": 9.2,
-      "chg_20d": 27.7,
-      "rsi": 80.3,
-      "trend": "haussiere",
-      "hv": 0.3036498201693076,
-      "niche": false,
-      "score": 7.469,
-      "why": "UBS, RBC et Oppenheimer relèvent leurs objectifs de cours, indiquant un optimisme partagé sur Bentley Systems.",
-      "risk": "Le risque principal provient de la dépendance aux projets technologiques qui peuvent être retardés ou annulés.",
-      "why_en": "UBS, RBC and Oppenheimer raise price targets, indicating shared optimism on Bentley Systems.",
-      "risk_en": "The main risk stems from reliance on technology projects that could be delayed or cancelled."
-    },
-    {
-      "symbol": "U",
-      "mentions": 4,
-      "headlines": [
-        "Freedom Capital Markets Maintains Buy on Unity Software, Raises Price Target to $62",
-        "Reports of Potential Acquisition Negotiations Involving Unity Software Inc.",
-        "Citigroup Maintains Buy on Unity Software, Raises Price Target to $59",
-        "Unity Software Just Did Something It Hasn't Done Since Its IPO — and Wall Street Wants More"
-      ],
-      "last_at": "2026-11-06T23:46:57Z",
-      "sentiment": 0.75,
-      "price": 51.49,
-      "adv_usd": 543938991.6401863,
-      "chg_5d": 36.6,
-      "chg_20d": 9.8,
-      "rsi": 72.1,
-      "trend": "haussiere",
-      "hv": 0.8260735585503547,
-      "niche": false,
-      "score": 7.469,
-      "why": "Freedom Capital Markets et Citigroup augmentent leurs objectifs de cours, et des rumeurs d'acquisition stimulent l'intérêt pour Unity Software.",
-      "risk": "Le risque réside dans l'incertitude autour d'une éventuelle acquisition qui pourrait ne jamais se concrétiser.",
-      "why_en": "Freedom Capital Markets and Citigroup raise price targets, and acquisition rumors boost interest in Unity Software.",
-      "risk_en": "The risk lies in uncertainty around a potential acquisition that may never materialize."
-    },
-    {
-      "symbol": "FROG",
-      "mentions": 4,
-      "headlines": [
-        "Canaccord Genuity Maintains Buy on JFrog, Raises Price Target to $110",
-        "Analysts Adjust Price Targets for JFrog Following Q3 Earnings",
-        "RBC Capital Maintains Outperform on JFrog, Raises Price Target to $121",
-        "Truist Securities Maintains Buy on JFrog, Raises Price Target to $120"
-      ],
-      "last_at": "2026-11-06T19:38:57Z",
-      "sentiment": 1.0,
-      "price": 100.98,
-      "adv_usd": 216942816.03336334,
-      "chg_5d": 7.0,
-      "chg_20d": -1.2,
-      "rsi": 55.4,
-      "trend": "neutre",
-      "hv": 1.4666157505090731,
-      "niche": false,
-      "score": 7.219,
-      "why": "Canaccord Genuity et RBC maintiennent des avis positifs et relèvent leurs objectifs après les résultats du troisième trimestre.",
-      "risk": "Le risque principal est la capacité de JFrog à transformer ses revenus récurrents en croissance durable.",
-      "why_en": "Canaccord Genuity and RBC keep positive ratings and raise targets after Q3 results.",
-      "risk_en": "The main risk is JFrog's ability to turn recurring revenue into sustainable growth."
+      "why": "JP Morgan et Citigroup renforcent leurs recommandations et objectifs de cours, stimulant l'intérêt pour Airbnb.",
+      "risk": "Un risque majeur est la sensibilité aux régulations locales et aux changements de comportement des voyageurs.",
+      "why_en": "JP Morgan and Citigroup upgrade their recommendations and price targets, boosting interest in Airbnb.",
+      "risk_en": "A key risk is sensitivity to local regulations and shifts in traveler behavior."
     },
     {
       "symbol": "ACHC",
@@ -144,10 +69,10 @@
       "hv": 0.5578028519472482,
       "niche": false,
       "score": 7.197,
-      "why": "Guggenheim et UBS augmentent leurs objectifs de cours, reflétant un sentiment favorable pour Acadia Healthcare.",
-      "risk": "Le risque majeur est la dépendance aux remboursements d'assurances et aux politiques de santé publique.",
-      "why_en": "Guggenheim and UBS raise price targets, reflecting a favorable sentiment for Acadia Healthcare.",
-      "risk_en": "The major risk is reliance on insurance reimbursements and public health policies."
+      "why": "Guggenheim et UBS augmentent leurs objectifs de cours, indiquant une perspective positive pour Acadia Healthcare.",
+      "risk": "Le secteur de la santé mentale peut être affecté par des changements de politique de remboursement.",
+      "why_en": "Guggenheim and UBS raise price targets, indicating a positive outlook for Acadia Healthcare.",
+      "risk_en": "The mental‑health sector may be impacted by changes in reimbursement policies."
     },
     {
       "symbol": "APPN",
@@ -167,10 +92,10 @@
       "hv": 0.7892139057399754,
       "niche": false,
       "score": 7.197,
-      "why": "Citigroup et DA Davidson confirment leurs avis d'achat et augmentent leurs objectifs, soutenant la dynamique d'Appian.",
-      "risk": "Le risque principal est la concurrence accrue dans le secteur du logiciel d'automatisation des processus.",
-      "why_en": "Citigroup and DA Davidson reaffirm buy ratings and raise targets, supporting Appian's momentum.",
-      "risk_en": "The main risk is heightened competition in the process‑automation software market."
+      "why": "Citigroup et DA Davidson relèvent leurs objectifs de cours, soutenant la progression d'Appian.",
+      "risk": "Le risque principal provient de la concurrence accrue dans le secteur du logiciel d'automatisation.",
+      "why_en": "Citigroup and DA Davidson lift price targets, supporting Appian's progression.",
+      "risk_en": "The main risk stems from heightened competition in the automation software market."
     },
     {
       "symbol": "ARDT",
@@ -190,80 +115,34 @@
       "hv": 0.8704142606045627,
       "niche": true,
       "score": 7.197,
-      "why": "RBC et Stephens & Co. relèvent leurs objectifs de cours, indiquant un fort optimisme pour Ardent Health.",
-      "risk": "Le risque réside dans les pressions réglementaires et les coûts liés aux soins de santé aux États‑Unis.",
-      "why_en": "RBC and Stephens & Co. raise price targets, indicating strong optimism for Ardent Health.",
-      "risk_en": "The risk lies in regulatory pressures and healthcare cost dynamics in the United States."
+      "why": "RBC et Stephens & Co. augmentent leurs objectifs de cours, reflétant un fort engouement pour Ardent Health.",
+      "risk": "Les marges peuvent être comprimées par des pressions réglementaires et des coûts d'exploitation élevés.",
+      "why_en": "RBC and Stephens & Co. raise price targets, reflecting strong enthusiasm for Ardent Health.",
+      "risk_en": "Margins could be squeezed by regulatory pressures and high operating costs."
     },
     {
-      "symbol": "CAH",
-      "mentions": 2,
-      "headlines": [
-        "UBS Adjusts Cardinal Health Price Target to $310 From $295",
-        "RBC Capital Maintains Outperform on Cardinal Health, Raises Price Target to $295"
-      ],
-      "last_at": "2026-11-06T19:02:36Z",
-      "sentiment": 1.0,
-      "price": 271.72,
-      "adv_usd": 476633013.17489624,
-      "chg_5d": 8.5,
-      "chg_20d": 14.4,
-      "rsi": 74.0,
-      "trend": "haussiere",
-      "hv": 0.26262951611586255,
-      "niche": false,
-      "score": 7.197,
-      "why": "UBS et RBC augmentent leurs objectifs de cours, soutenant la perspective positive pour Cardinal Health.",
-      "risk": "Le risque principal est la volatilité des marges dans le secteur de la distribution pharmaceutique.",
-      "why_en": "UBS and RBC raise price targets, supporting a positive outlook for Cardinal Health.",
-      "risk_en": "The main risk is margin volatility in the pharmaceutical distribution sector."
-    },
-    {
-      "symbol": "BKH",
-      "mentions": 2,
-      "headlines": [
-        "Black Hills Energy Partners with Google on Wyoming Data Center Project",
-        "Scotiabank Maintains Sector Outperform on Black Hills, Raises Price Target to $95"
-      ],
-      "last_at": "2026-11-06T23:01:57Z",
-      "sentiment": 1.0,
-      "price": 84.87,
-      "adv_usd": 108589625.45642853,
-      "chg_5d": 3.5,
-      "chg_20d": 11.6,
-      "rsi": 78.6,
-      "trend": "haussiere",
-      "hv": 0.14954080310821413,
-      "niche": false,
-      "score": 6.897,
-      "why": "Le partenariat avec Google pour un centre de données et le soutien de Scotiabank renforcent l'attrait de Black Hills.",
-      "risk": "Le risque majeur est la dépendance aux contrats énergétiques à long terme qui peuvent être révisés.",
-      "why_en": "The partnership with Google for a data center and Scotiabank's support boost Black Hills' appeal.",
-      "risk_en": "The major risk is reliance on long‑term energy contracts that could be renegotiated."
-    },
-    {
-      "symbol": "PLNT",
+      "symbol": "BSY",
       "mentions": 3,
       "headlines": [
-        "RBC Raises Price Target on Planet Fitness to $70 From $60",
-        "Deutsche Bank Adjusts Planet Fitness Price Target to $58",
-        "RBC Capital Maintains Outperform on Planet Fitness, Raises Price Target to $70"
+        "UBS Adjusts Bentley Systems Price Target to $50 From $40, Maintains Neutral Rating",
+        "RBC Raises Price Target on Bentley Systems to $52 From $48, Keeps Outperform Rating",
+        "Oppenheimer Adjusts Price Target on Bentley Systems to $52 From $43, Keeps Outperform Rating"
       ],
-      "last_at": "2026-11-06T19:02:55Z",
+      "last_at": "2026-11-06T19:04:36Z",
       "sentiment": 0.6666666666666666,
-      "price": 60.31,
-      "adv_usd": 96290119.77352142,
-      "chg_5d": 12.6,
-      "chg_20d": 25.7,
-      "rsi": 77.3,
+      "price": 44.65,
+      "adv_usd": 127704644.98523712,
+      "chg_5d": 9.2,
+      "chg_20d": 27.7,
+      "rsi": 80.3,
       "trend": "haussiere",
-      "hv": 0.36713445753611174,
+      "hv": 0.3036498201693076,
       "niche": false,
       "score": 6.773,
-      "why": "RBC et Deutsche Bank relèvent leurs objectifs, reflétant la confiance dans la croissance de Planet Fitness.",
-      "risk": "Le risque principal est la sensibilité aux fermetures de clubs liées aux restrictions sanitaires.",
-      "why_en": "RBC and Deutsche Bank raise targets, reflecting confidence in Planet Fitness' growth.",
-      "risk_en": "The main risk is sensitivity to club closures due to health restrictions."
+      "why": "UBS, RBC et Oppenheimer augmentent leurs objectifs de cours, indiquant une confiance croissante dans Bentley Systems.",
+      "risk": "Le risque réside dans la dépendance aux cycles d'investissement en infrastructure technologique.",
+      "why_en": "UBS, RBC and Oppenheimer raise price targets, indicating growing confidence in Bentley Systems.",
+      "risk_en": "The risk lies in dependence on cycles of technology infrastructure investment."
     },
     {
       "symbol": "SG",
@@ -284,42 +163,41 @@
       "hv": 0.5725272099367225,
       "niche": false,
       "score": 6.773,
-      "why": "Les analystes de Citigroup et DA Davidson augmentent leurs objectifs, soutenant la dynamique haussière de Sweetgreen.",
-      "risk": "Le risque réside dans la capacité de l'entreprise à gérer les coûts d'approvisionnement et la concurrence rapide.",
-      "why_en": "Analysts at Citigroup and DA Davidson raise targets, supporting Sweetgreen's upward momentum.",
-      "risk_en": "The risk lies in the company's ability to manage supply costs and fast‑moving competition."
+      "why": "Citigroup et DA Davidson relèvent leurs objectifs de cours, soutenant la dynamique haussière de Sweetgreen.",
+      "risk": "Le principal risque est la concurrence intense dans le secteur de la restauration rapide saine.",
+      "why_en": "Citigroup and DA Davidson lift price targets, supporting Sweetgreen's upward momentum.",
+      "risk_en": "The main risk is intense competition in the fast‑casual healthy‑food sector."
     },
     {
-      "symbol": "MAR",
+      "symbol": "U",
       "mentions": 3,
       "headlines": [
-        "Citigroup Maintains Neutral on Marriott International, Raises Price Target to $450",
-        "Citi Maintains Hold Rating on Marriott International and Raises Price Target",
-        "Marriott International Executive Sells Shares Worth Over $1 Million"
+        "Freedom Capital Markets Maintains Buy on Unity Software, Raises Price Target to $62",
+        "Reports of Potential Acquisition Negotiations Involving Unity Software Inc.",
+        "Citigroup Maintains Buy on Unity Software, Raises Price Target to $59"
       ],
-      "last_at": "2026-11-06T22:07:36Z",
+      "last_at": "2026-11-06T23:46:57Z",
       "sentiment": 0.6666666666666666,
-      "price": 416.47,
-      "adv_usd": 660102870.1805115,
-      "chg_5d": 4.3,
-      "chg_20d": 13.8,
-      "rsi": 69.1,
+      "price": 51.49,
+      "adv_usd": 543938991.6401863,
+      "chg_5d": 36.6,
+      "chg_20d": 9.8,
+      "rsi": 72.1,
       "trend": "haussiere",
-      "hv": 0.2532705926778689,
+      "hv": 0.8260735585503547,
       "niche": false,
-      "score": 6.633,
-      "why": "Citigroup maintient un avis neutre mais augmente son objectif, et le dirigeant vend des actions, attirant l'attention sur Marriott.",
-      "risk": "Le risque principal est la dépendance aux voyages d'affaires qui peuvent être affectés par des crises économiques.",
-      "why_en": "Citigroup keeps a neutral rating but raises its target, and an executive sale draws attention to Marriott.",
-      "risk_en": "The main risk is reliance on business travel, which can be impacted by economic crises."
+      "score": 6.773,
+      "why": "Freedom Capital Markets et Citigroup augmentent leurs objectifs de cours, et des rumeurs d'acquisition alimentent l'optimisme autour de Unity Software.",
+      "risk": "Un risque majeur est l'incertitude autour d'une éventuelle acquisition et son impact sur la valorisation.",
+      "why_en": "Freedom Capital Markets and Citigroup raise price targets, and acquisition rumors fuel optimism for Unity Software.",
+      "risk_en": "A major risk is uncertainty around a potential acquisition and its effect on valuation."
     },
     {
       "symbol": "DOCS",
-      "mentions": 3,
+      "mentions": 2,
       "headlines": [
         "Canaccord Genuity Maintains Buy on Doximity, Raises Price Target to $40",
-        "RBC Capital Markets Raises Price Target on Doximity",
-        "RBC Capital Maintains Outperform on Doximity, Raises Price Target to $34"
+        "RBC Capital Markets Raises Price Target on Doximity"
       ],
       "last_at": "2026-11-06T19:47:17Z",
       "sentiment": 1.0,
@@ -331,23 +209,22 @@
       "trend": "haussiere",
       "hv": 0.4493626667387239,
       "niche": false,
-      "score": 6.613,
-      "why": "Canaccord Genuity et RBC maintiennent des avis positifs et relèvent leurs objectifs, soutenant la hausse du titre.",
-      "risk": "Le risque principal est la concurrence croissante sur les plateformes de services médicaux en ligne.",
-      "why_en": "Canaccord Genuity and RBC keep positive ratings and raise targets, supporting the stock's rise.",
-      "risk_en": "The main risk is increasing competition on online medical service platforms."
+      "score": 6.037,
+      "why": "Canaccord Genuity et RBC relèvent leurs objectifs de cours, maintenant l'intérêt pour Doximity malgré une légère baisse récente.",
+      "risk": "Le risque principal est la dépendance aux revenus publicitaires et aux changements de politique de confidentialité.",
+      "why_en": "Canaccord Genuity and RBC lift price targets, maintaining interest in Doximity despite a slight recent dip.",
+      "risk_en": "The main risk is reliance on advertising revenue and changes in privacy regulations."
     },
     {
       "symbol": "HAE",
-      "mentions": 4,
+      "mentions": 3,
       "headlines": [
         "Citigroup and Barrington Research Update Analyst Ratings for Haemonetics",
         "Citigroup Maintains Buy on Haemonetics, Raises Price Target to $149",
-        "Barrington Research Maintains Outperform on Haemonetics, Raises Price Target to $145",
-        "Barrington Research Adjusts Haemonetics Price Target to $145"
+        "Barrington Research Maintains Outperform on Haemonetics, Raises Price Target to $145"
       ],
       "last_at": "2026-11-06T23:01:58Z",
-      "sentiment": 0.75,
+      "sentiment": 0.6666666666666666,
       "price": 119.93,
       "adv_usd": 84517914.0354538,
       "chg_5d": 0.2,
@@ -356,11 +233,127 @@
       "trend": "haussiere",
       "hv": 0.3188379784493155,
       "niche": false,
-      "score": 6.509,
-      "why": "Citigroup et Barrington Research maintiennent des avis favorables et augmentent leurs objectifs, renforçant la tendance haussière.",
-      "risk": "Le risque réside dans les incertitudes réglementaires autour des dispositifs médicaux et des dons sanguins.",
-      "why_en": "Citigroup and Barrington Research keep favorable ratings and raise targets, reinforcing the upward trend.",
-      "risk_en": "The risk lies in regulatory uncertainties surrounding medical devices and blood donation."
+      "score": 5.813,
+      "why": "Citigroup et Barrington Research augmentent leurs objectifs de cours, soutenant la performance d'Haemonetics.",
+      "risk": "Le risque provient de la dépendance aux dépenses hospitalières, qui peuvent être affectées par des contraintes budgétaires.",
+      "why_en": "Citigroup and Barrington Research raise price targets, supporting Haemonetics' performance.",
+      "risk_en": "The risk stems from reliance on hospital spending, which can be impacted by budget constraints."
+    },
+    {
+      "symbol": "TDAY",
+      "mentions": 3,
+      "headlines": [
+        "USA TODAY Co. Reports Third Quarter 2026 Financial Results and Announces Cost Reduction Program",
+        "Citigroup Upgrades USA TODAY Co. to Buy",
+        "Citigroup Upgrades USA Today Co to Buy, Raises Price Target to $8.95"
+      ],
+      "last_at": "2026-11-06T22:32:08Z",
+      "sentiment": 0.6666666666666666,
+      "price": 6.57,
+      "adv_usd": 18509200.944395065,
+      "chg_5d": 6.3,
+      "chg_20d": -3.7,
+      "rsi": 50.6,
+      "trend": "neutre",
+      "hv": 0.4986863827426057,
+      "niche": true,
+      "score": 5.773,
+      "why": "Citigroup passe à une recommandation d'achat et relève son objectif de cours, suite aux résultats financiers et au plan de réduction des coûts de USA TODAY.",
+      "risk": "Le risque principal est la pression continue sur les revenus publicitaires traditionnels du secteur de la presse.",
+      "why_en": "Citigroup upgrades to Buy and raises its price target following USA TODAY's financial results and cost‑reduction plan.",
+      "risk_en": "The main risk is ongoing pressure on traditional advertising revenues in the publishing sector."
+    },
+    {
+      "symbol": "FBIN",
+      "mentions": 2,
+      "headlines": [
+        "Fortune Brands Innovations to Participate in Baird's 2026 Global Industrial Conference",
+        "Citigroup Maintains Buy on Fortune Brands, Raises Price Target to $56"
+      ],
+      "last_at": "2026-11-06T23:02:12Z",
+      "sentiment": 0.5,
+      "price": 48.08,
+      "adv_usd": 122827409.8420906,
+      "chg_5d": 7.4,
+      "chg_20d": 23.3,
+      "rsi": 70.6,
+      "trend": "haussiere",
+      "hv": 0.3719248087687283,
+      "niche": false,
+      "score": 5.697,
+      "why": "Citigroup augmente son objectif de cours, reflétant l'intérêt pour Fortune Brands après sa participation à un grand congrès industriel.",
+      "risk": "Le risque réside dans la sensibilité aux cycles de consommation durable et aux coûts des matières premières.",
+      "why_en": "Citigroup raises its price target, reflecting interest in Fortune Brands after its participation in a major industrial conference.",
+      "risk_en": "The risk lies in sensitivity to durable‑goods consumption cycles and raw‑material costs."
+    },
+    {
+      "symbol": "FOUR",
+      "mentions": 2,
+      "headlines": [
+        "Analysts Adjust Price Targets for Shift4 Payments Following Q3 Earnings",
+        "RBC Capital Maintains Outperform on Shift4 Payments, Lowers Price Target to $49"
+      ],
+      "last_at": "2026-11-06T19:03:36Z",
+      "sentiment": 0.5,
+      "price": 43.96,
+      "adv_usd": 92464636.98997498,
+      "chg_5d": 9.8,
+      "chg_20d": 9.9,
+      "rsi": 62.2,
+      "trend": "haussiere",
+      "hv": 0.5132747266287165,
+      "niche": false,
+      "score": 5.697,
+      "why": "RBC maintient une recommandation Outperform mais ajuste à la baisse son objectif, reflétant une réévaluation post‑résultats de Shift4 Payments.",
+      "risk": "Le principal risque est la dépendance aux volumes de transactions électroniques, qui peuvent fluctuer.",
+      "why_en": "RBC maintains an Outperform rating but lowers its target, reflecting a post‑earnings reassessment of Shift4 Payments.",
+      "risk_en": "The main risk is reliance on electronic transaction volumes, which can fluctuate."
+    },
+    {
+      "symbol": "EXP",
+      "mentions": 2,
+      "headlines": [
+        "Citigroup Maintains Neutral on Eagle Materials, Raises Price Target to $214",
+        "Stephens & Co. Maintains Equal-Weight on Eagle Materials, Raises Price Target to $200"
+      ],
+      "last_at": "2026-11-06T21:33:18Z",
+      "sentiment": 1.0,
+      "price": 186.04,
+      "adv_usd": 83647048.57818604,
+      "chg_5d": 1.3,
+      "chg_20d": 13.0,
+      "rsi": 55.2,
+      "trend": "neutre",
+      "hv": 0.40857613719960756,
+      "niche": false,
+      "score": 5.457,
+      "why": "Citigroup et Stephens & Co. maintiennent leurs positions tout en relevant légèrement leurs objectifs, indiquant une stabilité pour Eagle Materials.",
+      "risk": "Le risque principal est l'exposition aux cycles de construction et aux variations des prix des matières premières.",
+      "why_en": "Citigroup and Stephens & Co. maintain their positions while slightly raising targets, indicating stability for Eagle Materials.",
+      "risk_en": "The main risk is exposure to construction cycles and raw‑material price fluctuations."
+    },
+    {
+      "symbol": "ASH",
+      "mentions": 2,
+      "headlines": [
+        "Evonik Cooling on Bid for Ashland, Bloomberg Reports",
+        "UBS Raises Ashland Price Target to $88 From $80, Maintains Buy Rating"
+      ],
+      "last_at": "2026-11-06T19:02:57Z",
+      "sentiment": 0.5,
+      "price": 76.62,
+      "adv_usd": 44056865.167160034,
+      "chg_5d": 2.6,
+      "chg_20d": 8.6,
+      "rsi": 66.7,
+      "trend": "haussiere",
+      "hv": 0.24104178717667843,
+      "niche": true,
+      "score": 5.217,
+      "why": "UBS relève son objectif de cours suite à la perspective d'une offre d'Acquisition d'Ashland, soutenue par un rapport Bloomberg.",
+      "risk": "Le risque réside dans l'incertitude de la conclusion de la transaction et son impact sur la valorisation.",
+      "why_en": "UBS raises its price target following the prospect of an Ashland acquisition, supported by a Bloomberg report.",
+      "risk_en": "The risk lies in the uncertainty of the deal's completion and its impact on valuation."
     }
   ]
 }
