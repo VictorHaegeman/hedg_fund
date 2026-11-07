@@ -1,0 +1,33 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-07T02:12:30 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, AAPL, NVDA, MSFT, GOOGM, GOOGN, GOOG, GOOGL, AMZN, SPCX, TSM, METAM, META, TSLA, AVGO, LLY, JPM
+==============================================================================
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOGN, GOOG, GOOGL
+  VENTE MSFT @ 525.69 (STOP) — PnL -1,064.91 $ (-5.4%)
+  Contexte risque : VIX 25.6 (94e pct) → RISK-OFF  (information seulement : filtre VIX désactivé, testé défavorable)
+  Trésorerie : achat 17,690 $ de SPY (socle S&P 500)
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-07T02:12:38
+  Équité : 98,186.20 $ (-1.81% depuis le départ) | Cash : 1,539.45 $
+  Positions ouvertes :
+    JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +244.11 $
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +567.08 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent -234.01 $
+    XLE      210.3198 u @ 63.52 [meanrev] | stop 58.62 | latent -399.61 $
+  Trésorerie placée : SPY 29,459 $ (+37 $)
+  Trades clôturés : 30 | win rate 60% | PnL réalisé total : -1,552.25 $
+  5 derniers trades :
+    2026-11-05 BTC-USD  [meanrev] 76,390.71 → 80,534.55 (signal) PnL +638.07 $
+    2026-11-04 SPY      [meanrev] 755.72 → 766.81 (signal) PnL +449.30 $
+    2026-11-05 QQQ      [meanrev] 690.49 → 652.33 (stop) PnL -28.21 $
+    2026-11-05 TSLA     [meanrev] 385.19 → 342.92 (stop) PnL -1,039.82 $
+    2026-11-06 MSFT     [breakout] 555.80 → 525.69 (stop) PnL -1,064.91 $
+Variation du cycle : -188.91 $
+
+— MIROIR ALPACA —
+  5 stop(s) Alpaca du fonds annulé(s) pour être reposés
+  ALPACA achète 17.6881 SPY (rééquilibrage)
+  Ordres en attente (exécution à l'ouverture) : ACHC, BDX, ENOV, JPM, LLY, MCD, MRNA, MSFT, XLE, XLV
+  Équité Alpaca : 95,812.75 $ | cash -1,799.49 $

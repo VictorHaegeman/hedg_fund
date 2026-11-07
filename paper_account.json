@@ -1,5 +1,5 @@
 {
-  "cash": 982.8798961707726,
+  "cash": 1539.4537584740756,
   "initial_capital": 100000.0,
   "positions": {
     "JPM": {
@@ -41,16 +41,6 @@
       "strategy": "meanrev",
       "entry_date": "2026-11-04",
       "risk_amount": 1031.11
-    },
-    "MSFT": {
-      "symbol": "MSFT",
-      "shares": 34.74345452594095,
-      "entry": 555.7999877929688,
-      "stop": 526.1242309357572,
-      "target": null,
-      "strategy": "breakout",
-      "entry_date": "2026-11-04",
-      "risk_amount": 1031.04
     }
   },
   "history": [
@@ -488,10 +478,25 @@
       "reason": "stop",
       "pnl": -1039.82,
       "pnl_pct": -10.97
+    },
+    {
+      "symbol": "MSFT",
+      "shares": 34.74345452594095,
+      "entry": 555.7999877929688,
+      "stop": 526.1242309357572,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-11-04",
+      "risk_amount": 1031.04,
+      "exit": 525.6900024414062,
+      "exit_date": "2026-11-06",
+      "reason": "stop",
+      "pnl": -1064.91,
+      "pnl_pct": -5.42
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-11-06T02:43:54",
+  "last_cycle": "2026-11-07T02:12:38",
   "equity_curve": [
     [
       "2026-06-11",
@@ -892,13 +897,17 @@
     [
       "2026-11-05",
       98868.73
+    ],
+    [
+      "2026-11-06",
+      98186.2
     ]
   ],
   "treasury": {
     "SPY": {
-      "shares": 16.005627541791807,
-      "cost": 11732.124988133395,
-      "last": 733.0
+      "shares": 40.06380370306931,
+      "cost": 29421.86080913709,
+      "last": 735.2899780273438
     }
   }
 }
