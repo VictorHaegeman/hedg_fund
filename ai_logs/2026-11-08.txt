@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-08T18:01:01 | équité 95,558.89 $ (-0.00 % jour) | bourse US FERMÉE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +23,986 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ARHS*, ABNB, WEN, BLK, EL, SPGI, VEEV, ARLO*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : SOL/USD, XRP/USD, DOGE/USD, BCH/USD, DOT/USD
+  Notes IA : SOL/USD BUY_CRYPTO 0.66 · XRP/USD BUY_CRYPTO 0.62 · DOGE/USD BUY_CRYPTO 0.6
+  IA : BUY_CRYPTO SOL/USD | confiance 0.66 | SOL montre un RSI très bas indiquant survente, une forte volatilité et une baisse récente qui peuvent précéder un rebond, justifiant un trade BUY_CRYPTO avec un risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
