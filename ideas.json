@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T15:01:15",
+  "updated_at": "2026-11-08T20:55:11",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -20,32 +20,10 @@
       "hv": 0.6955837841839018,
       "niche": true,
       "score": 7.197,
-      "why": "Hausse du cours suite à la hausse du prix cible à 14 $ par Telsey Advisory Group.",
-      "risk": "Le nouveau prix cible pourrait ne pas se concrétiser si les ventes stagnent.",
-      "why_en": "Stock rises after Telsey Advisory Group lifted the price target to $14.",
-      "risk_en": "The new target may not be met if sales growth stalls."
-    },
-    {
-      "symbol": "ABNB",
-      "mentions": 1,
-      "headlines": [
-        "Airbnb Plans Rollout of AI-Powered Travel Booking Agent for 2027"
-      ],
-      "last_at": "2026-11-08T02:01:58Z",
-      "sentiment": 1.0,
-      "price": 189.99,
-      "adv_usd": 751749311.8309021,
-      "chg_5d": 15.6,
-      "chg_20d": 14.5,
-      "rsi": 66.5,
-      "trend": "haussiere",
-      "hv": 0.5375693919662351,
-      "niche": false,
-      "score": 6.386,
-      "why": "Annonce d'un agent de réservation de voyages alimenté par l'IA pour 2027, suscitant l'intérêt technologique.",
-      "risk": "Le projet IA comporte des incertitudes de mise en œuvre et d'acceptation par les utilisateurs.",
-      "why_en": "Announcement of an AI-powered travel booking agent for 2027 draws tech interest.",
-      "risk_en": "The AI project faces implementation uncertainties and user adoption risks."
+      "why": "Les analystes Telsey augmentent le cours cible à 14$, ce qui soutient la hausse du titre.",
+      "risk": "Le prix cible reste limité et dépend de la capacité d'Arhaus à maintenir sa croissance.",
+      "why_en": "Analysts at Telsey raised the price target to $14, supporting the stock's rally.",
+      "risk_en": "The price target is modest and relies on Arhaus sustaining its growth."
     },
     {
       "symbol": "WEN",
@@ -65,10 +43,10 @@
       "hv": 0.634111126249594,
       "niche": false,
       "score": 5.697,
-      "why": "Hausse du cours après la révision à la hausse du prix cible à 8 $ par Stephens & Co.",
-      "risk": "Les prévisions de bénéfices pourraient être revues à la baisse si la demande ralentit.",
-      "why_en": "Stock climbs after Stephens & Co. raised the price target to $8.",
-      "risk_en": "Earnings forecasts could be cut if consumer demand weakens."
+      "why": "Les ajustements à la hausse des objectifs de prix renforcent la dynamique positive de Wendy's.",
+      "risk": "Toute détérioration de la demande de restauration rapide pourrait freiner la progression.",
+      "why_en": "Upward revisions of price targets boost Wendy's positive momentum.",
+      "risk_en": "A slowdown in fast‑food demand could curb the stock's advance."
     },
     {
       "symbol": "BLK",
@@ -89,10 +67,10 @@
       "hv": 0.3508685783531337,
       "niche": false,
       "score": 5.313,
-      "why": "Activité d'investissement notable avec la divulgation de positions dans Prologis, SEGRO et un rachat d'actions.",
-      "risk": "Les positions sectorielles exposent BlackRock aux fluctuations immobilières.",
-      "why_en": "Notable investment activity with disclosed stakes in Prologis, SEGRO and a share buyback.",
-      "risk_en": "Sectoral stakes expose BlackRock to real‑estate market volatility."
+      "why": "BlackRock révèle des participations stratégiques et un rachat d'actions, signalant confiance interne.",
+      "risk": "Les positions discrétionnaires exposent le fonds aux fluctuations du marché immobilier.",
+      "why_en": "BlackRock disclosed strategic stakes and a share buyback, signaling internal confidence.",
+      "risk_en": "Discretionary positions expose the firm to real‑estate market volatility."
     },
     {
       "symbol": "EL",
@@ -112,10 +90,10 @@
       "hv": 0.42446851136967556,
       "niche": false,
       "score": 4.857,
-      "why": "EssilorLuxottica annonce une expansion stratégique en Chine et des initiatives de gestion de la myopie.",
-      "risk": "L'expansion en Chine comporte des risques réglementaires et de concurrence locale.",
-      "why_en": "EssilorLuxottica announces strategic expansion in China and myopia‑management initiatives.",
-      "risk_en": "China expansion carries regulatory and local competition risks."
+      "why": "EssilorLuxottica annonce une expansion en Chine et le retour d'un produit culte, stimulant l'intérêt.",
+      "risk": "L'expansion en Chine comporte des incertitudes réglementaires et de concurrence locale.",
+      "why_en": "EssilorLuxottica announces Chinese expansion and a cult‑favorite product revival, sparking interest.",
+      "risk_en": "China expansion carries regulatory and local competition uncertainties."
     },
     {
       "symbol": "SPGI",
@@ -136,33 +114,10 @@
       "hv": 0.26212960403959246,
       "niche": false,
       "score": 4.833,
-      "why": "Publication d'un rapport sur l'impact de l'IA sur la robotique industrielle, renforçant le positionnement d'expert.",
-      "risk": "Les prévisions d'IA pourraient être trop optimistes et affecter les attentes du marché.",
-      "why_en": "Release of a report on AI's impact on industrial robotics reinforces its expert positioning.",
-      "risk_en": "AI forecasts may be overly optimistic, affecting market expectations."
-    },
-    {
-      "symbol": "VEEV",
-      "mentions": 2,
-      "headlines": [
-        "Jefferies Maintains Buy on Veeva Systems, Raises Price Target to $375",
-        "UBS Maintains Neutral on Veeva Systems, Raises Price Target to $325"
-      ],
-      "last_at": "2026-11-07T00:37:02Z",
-      "sentiment": 1.0,
-      "price": 303.73,
-      "adv_usd": 495710920.3085327,
-      "chg_5d": -2.9,
-      "chg_20d": 2.6,
-      "rsi": 51.2,
-      "trend": "neutre",
-      "hv": 0.2962643942821187,
-      "niche": false,
-      "score": 4.617,
-      "why": "Maintien des recommandations d'achat avec hausse du prix cible, soutenant le sentiment positif.",
-      "risk": "Le secteur des logiciels de santé reste sensible aux changements réglementaires.",
-      "why_en": "Buy recommendations maintained with higher price targets, supporting positive sentiment.",
-      "risk_en": "Health‑software sector remains vulnerable to regulatory shifts."
+      "why": "S&P Global publie des rapports et des changements d'indices, renforçant sa visibilité sectorielle.",
+      "risk": "Les nouvelles notations de crédit et les changements d'indices peuvent affecter la perception de risque.",
+      "why_en": "S&P Global releases reports and index changes, enhancing sector visibility.",
+      "risk_en": "New credit ratings and index adjustments may influence risk perception."
     },
     {
       "symbol": "ARLO",
@@ -182,10 +137,10 @@
       "hv": 0.9561070565162058,
       "niche": true,
       "score": 4.197,
-      "why": "Recommandations d'achat maintenues et hausse du prix cible, indiquant confiance des analystes.",
-      "risk": "Le marché de la sécurité domestique est très concurrentiel, pouvant freiner la croissance.",
-      "why_en": "Buy ratings maintained with raised price targets, indicating analyst confidence.",
-      "risk_en": "Home‑security market is highly competitive, potentially limiting growth."
+      "why": "Lake Street maintient un avis d'achat et relève le cours cible, soutenant le titre malgré la baisse récente.",
+      "risk": "La volatilité récente indique une sensibilité aux résultats financiers et à la concurrence technologique.",
+      "why_en": "Lake Street keeps a buy rating and raises the price target, supporting the stock despite recent decline.",
+      "risk_en": "Recent volatility shows sensitivity to earnings and tech competition."
     },
     {
       "symbol": "SIBN",
@@ -205,20 +160,44 @@
       "hv": 0.7199020428872479,
       "niche": true,
       "score": 4.197,
-      "why": "Ventes d'actions par des dirigeants, signalant un intérêt du marché pour la liquidité.",
+      "why": "Des ventes d'actions par les dirigeants attirent l'attention sur la liquidité du titre.",
       "risk": "Les ventes d'initiés peuvent être perçues comme un manque de confiance dans la société.",
-      "why_en": "Insider share sales signal market interest in liquidity.",
-      "risk_en": "Insider sales may be interpreted as reduced confidence in the company."
+      "why_en": "Insider sales draw attention to the stock's liquidity.",
+      "risk_en": "Insider sales may be seen as a lack of confidence in the company."
+    },
+    {
+      "symbol": "NVO",
+      "mentions": 2,
+      "headlines": [
+        "Novo Nordisk Upgrades Metabolic Health Service 'Lightweight Station' in China",
+        "Novo Nordisk Announces Post Hoc Analysis Results from Phase 3 ESSENCE Trial"
+      ],
+      "last_at": "2026-11-08T20:01:40Z",
+      "sentiment": 0.5,
+      "price": 40.31,
+      "adv_usd": 442638556.0965538,
+      "chg_5d": 0.8,
+      "chg_20d": 4.3,
+      "rsi": 53.2,
+      "trend": "neutre",
+      "hv": 0.31974000125237806,
+      "niche": false,
+      "score": 3.857,
+      "why": "Novo Nordisk développe de nouveaux services en Chine et publie des résultats d'essai, montrant une innovation continue.",
+      "risk": "Les résultats post‑hoc et les expansions géographiques comportent des incertitudes cliniques et réglementaires.",
+      "why_en": "Novo Nordisk rolls out new services in China and releases post‑hoc trial results, indicating ongoing innovation.",
+      "risk_en": "Post‑hoc results and geographic expansion carry clinical and regulatory uncertainties."
     },
     {
       "symbol": "BTC",
-      "mentions": 2,
+      "mentions": 3,
       "headlines": [
+        "Bitcoin, Ethereum, and Solana ETF Outflows Jump as Key Fear Gauge Drops After Midterms",
         "CoreWeave and IREN Stocks Face Pressure as Microsoft Reassesses Its Computing Deals",
         "Solana Price Loses Key Support as ETF Outflows Surge Following the Alpenglow Upgrade"
       ],
-      "last_at": "2026-11-07T20:50:06Z",
-      "sentiment": 0.5,
+      "last_at": "2026-11-08T19:30:07Z",
+      "sentiment": 0.3333333333333333,
       "price": 33.5,
       "adv_usd": 50932322.886543274,
       "chg_5d": -1.2,
@@ -227,11 +206,34 @@
       "trend": "neutre",
       "hv": 0.3480005344689201,
       "niche": false,
-      "score": 3.457,
-      "why": "Mouvements de prix liés aux décisions de Microsoft et aux flux d'ETF sur Solana attirent l'attention.",
-      "risk": "La volatilité des cryptomonnaies reste élevée, exposant les investisseurs à des pertes rapides.",
-      "why_en": "Price moves tied to Microsoft’s computing deals and Solana ETF flows draw attention.",
-      "risk_en": "Cryptocurrency volatility remains high, exposing investors to rapid losses."
+      "score": 3.533,
+      "why": "Les flux sortants d'ETF et les réévaluations de Microsoft créent un débat sur la stabilité des crypto‑actifs.",
+      "risk": "Les sorties d'ETF et les pressions sur les actions liées aux cryptos augmentent la volatilité du marché.",
+      "why_en": "ETF outflows and Microsoft's reassessment spark debate on crypto‑asset stability.",
+      "risk_en": "ETF outflows and pressure on crypto‑linked stocks heighten market volatility."
+    },
+    {
+      "symbol": "NVS",
+      "mentions": 2,
+      "headlines": [
+        "FDA Investigating Tumor Risks Linked to Novartis' Zolgensma Gene Therapy",
+        "Novartis Discontinues Development of Pelacarsen for Atherosclerotic Cardiovascular Disease"
+      ],
+      "last_at": "2026-11-08T20:01:33Z",
+      "sentiment": 0.0,
+      "price": 162.55,
+      "adv_usd": 326744400.4206085,
+      "chg_5d": 1.1,
+      "chg_20d": 13.1,
+      "rsi": 64.7,
+      "trend": "haussiere",
+      "hv": 0.2887532413736645,
+      "niche": false,
+      "score": 3.417,
+      "why": "Novartis fait face à une enquête FDA et arrête un programme, ce qui attire l'attention sur ses pipelines.",
+      "risk": "Les investigations et l'arrêt de développements peuvent retarder les revenus futurs.",
+      "why_en": "Novartis is under FDA scrutiny and halts a program, drawing focus to its pipelines.",
+      "risk_en": "Investigations and program termination may delay future revenues."
     },
     {
       "symbol": "FLY",
@@ -251,10 +253,10 @@
       "hv": 1.4857774015026504,
       "niche": false,
       "score": 3.197,
-      "why": "Firefly Aerospace devient fournisseur de la NASA pour un contrat de 10 milliards de dollars, renforçant sa crédibilité.",
-      "risk": "Le succès dépend de la capacité à livrer les missions lunaires dans les délais et budgets prévus.",
-      "why_en": "Firefly Aerospace wins a NASA vendor role on a $10 billion contract, boosting credibility.",
-      "risk_en": "Success hinges on delivering lunar missions on schedule and within budget."
+      "why": "Firefly Aerospace devient fournisseur de la NASA pour un contrat de 10 milliards $, renforçant sa crédibilité.",
+      "risk": "La dépendance à un seul gros contrat expose l'entreprise aux retards ou annulations gouvernementales.",
+      "why_en": "Firefly Aerospace secures a $10 billion NASA contract, boosting its credibility.",
+      "risk_en": "Reliance on a single large contract exposes the firm to governmental delays or cancellations."
     },
     {
       "symbol": "IONQ",
@@ -274,10 +276,10 @@
       "hv": 1.21925254731099,
       "niche": false,
       "score": 3.197,
-      "why": "Mises à jour d'analystes avec maintien du rating Buy, soulignant l'intérêt pour le quantum computing.",
-      "risk": "Le secteur du quantum reste embryonnaire, avec des incertitudes technologiques et commerciales.",
-      "why_en": "Analyst updates maintain a Buy rating, highlighting interest in quantum computing.",
-      "risk_en": "Quantum sector is still nascent, with technological and commercial uncertainties."
+      "why": "Les analystes mettent à jour leurs notes et maintiennent un avis d'achat, soutenant l'intérêt pour le quantum computing.",
+      "risk": "La réduction du cours cible reflète des attentes plus prudentes face à la commercialisation du quantum.",
+      "why_en": "Analysts update ratings and keep a buy recommendation, sustaining interest in quantum computing.",
+      "risk_en": "The lower price target reflects cautious expectations about quantum commercialization."
     },
     {
       "symbol": "QNT",
@@ -297,10 +299,10 @@
       "hv": 1.3416002206545863,
       "niche": false,
       "score": 3.197,
-      "why": "Ajustement du prix cible par JPMorgan et maintien du rating Buy, indiquant un soutien institutionnel.",
-      "risk": "Les attentes élevées peuvent être déçues si les projets quantiques n'atteignent pas les jalons.",
-      "why_en": "Price target adjustment by JPMorgan and maintained Buy rating signal institutional support.",
-      "risk_en": "High expectations may be disappointed if quantum projects miss milestones."
+      "why": "JPMorgan ajuste le cours cible et Jefferies maintient un avis d'achat, indiquant un soutien au secteur quantique.",
+      "risk": "Les baisses de cours cible soulignent les défis de monétisation de la technologie quantique.",
+      "why_en": "JPMorgan adjusts the price target and Jefferies keeps a buy rating, indicating support for the quantum sector.",
+      "risk_en": "Reduced price targets highlight monetization challenges for quantum technology."
     },
     {
       "symbol": "TKO",
@@ -320,33 +322,35 @@
       "hv": 0.288319731502489,
       "niche": false,
       "score": 3.197,
-      "why": "Couverture médiatique autour de Dana White et de déclarations publiques, augmentant la visibilité de l'entreprise.",
-      "risk": "L'exposition à des controverses publiques peut affecter la réputation et les partenariats.",
-      "why_en": "Media coverage of Dana White and public statements raises company visibility.",
-      "risk_en": "Exposure to public controversies may impact reputation and partnerships."
+      "why": "Les publications publiques de Dana White et de Donald Trump créent un buzz médiatique autour de l'entreprise.",
+      "risk": "L'association à des figures controversées peut entraîner des réactions négatives du marché.",
+      "why_en": "Public posts by Dana White and Donald Trump generate media buzz around the company.",
+      "risk_en": "Association with controversial figures may trigger negative market reactions."
     },
     {
-      "symbol": "WYNN",
-      "mentions": 2,
+      "symbol": "SPCX",
+      "mentions": 10,
       "headlines": [
-        "Citigroup Lowers Price Target on Wynn Resorts to $100",
-        "Barclays Maintains Overweight Rating on Wynn Resorts, Lowers Price Target"
+        "Anthropic IPO Reality Check: What Recent Listings Suggest for ANT Stock",
+        "Nvidia Stock Loses Key Support, Enters Bear Market as Earnings Loom",
+        "This Week in TSLA: Elon Musk Loses Big in Midterms, Cybertruck Ends Production and More",
+        "Impulse Space Selected for NASA VADR Task Order Utilizing SpaceX Falcon 9"
       ],
-      "last_at": "2026-11-06T23:02:16Z",
-      "sentiment": 0.0,
-      "price": 83.11,
-      "adv_usd": 190256204.6294403,
-      "chg_5d": 11.3,
-      "chg_20d": 10.6,
-      "rsi": 60.5,
-      "trend": "neutre",
-      "hv": 0.45832941038199104,
+      "last_at": "2026-11-08T20:30:07Z",
+      "sentiment": -0.2,
+      "price": 134.27,
+      "adv_usd": 15820352111.883926,
+      "chg_5d": -0.3,
+      "chg_20d": -17.4,
+      "rsi": 42.9,
+      "trend": "baissiere",
+      "hv": 0.7365519521062744,
       "niche": false,
-      "score": 3.197,
-      "why": "Révisions de prix cible par Citi et Barclays, reflétant un réexamen de la valorisation du casino.",
-      "risk": "Le secteur du jeu reste sensible aux changements réglementaires et à la conjoncture économique.",
-      "why_en": "Price target revisions by Citi and Barclays reflect a reassessment of casino valuation.",
-      "risk_en": "Gaming sector remains sensitive to regulatory changes and economic conditions."
+      "score": 3.136,
+      "why": "Le secteur technologique montre des pressions avec des IPOs et des baisses de soutien clé, attirant l'attention sur la faiblesse du marché.",
+      "risk": "La tendance baissière et la perte de support clé augmentent le risque de nouvelles pertes de valeur.",
+      "why_en": "The tech sector faces pressure from IPOs and loss of key support, highlighting market weakness.",
+      "risk_en": "The downtrend and loss of key support raise the risk of further value erosion."
     }
   ]
 }
