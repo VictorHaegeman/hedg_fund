@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T21:01:15",
+  "updated_at": "2026-11-08T03:01:12",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -20,10 +20,10 @@
       "hv": 0.6955837841839018,
       "niche": true,
       "score": 7.197,
-      "why": "Le titre attire l'attention car Telsey Advisory Group a relevé son objectif de cours à 14 $ et maintient une recommandation positive.",
-      "risk": "Le principal risque réside dans la dépendance aux prévisions de Telsey, qui pourraient être revues à la baisse si les ventes d'Arhaus stagnent.",
-      "why_en": "The stock draws attention because Telsey Advisory Group raised its price target to $14 and kept a positive rating.",
-      "risk_en": "The main risk is reliance on Telsey's forecasts, which could be cut if Arhaus sales falter."
+      "why": "Le prix cible relevé à 14 $ par Telsey Advisory Group attire l'attention.",
+      "risk": "Le risque principal est que la hausse du cours ne se matérialise pas malgré le nouveau target.",
+      "why_en": "The raised price target to $14 by Telsey Advisory Group draws attention.",
+      "risk_en": "The main risk is that the stock may not reach the higher target."
     },
     {
       "symbol": "IPAR",
@@ -43,55 +43,10 @@
       "hv": 0.4102950362963763,
       "niche": true,
       "score": 7.197,
-      "why": "Interparfums bénéficie d'une hausse d'intérêt suite aux relèvements d'objectifs de cours par Jefferies et Canaccord Genuity.",
-      "risk": "Le risque principal est la sensibilité du groupe aux tendances de consommation de produits de luxe, qui peuvent se détériorer.",
-      "why_en": "Interparfums gains attention due to price target increases from Jefferies and Canaccord Genuity.",
-      "risk_en": "The main risk is the company's exposure to luxury consumer trends, which could weaken."
-    },
-    {
-      "symbol": "WTRG",
-      "mentions": 2,
-      "headlines": [
-        "Illinois Commerce Commission Approves American Water and Essential Utilities Merger",
-        "UBS Downgrades Essential Utilities to Neutral, Raises Price Target to $49"
-      ],
-      "last_at": "2026-11-06T23:01:37Z",
-      "sentiment": 1.0,
-      "price": 45.45,
-      "adv_usd": 106959248.01916122,
-      "chg_5d": 4.4,
-      "chg_20d": 16.6,
-      "rsi": 70.3,
-      "trend": "haussiere",
-      "hv": 0.27600163436933156,
-      "niche": false,
-      "score": 7.077,
-      "why": "L'approbation de la fusion entre American Water et Essential Utilities par la commission de l'Illinois suscite l'intérêt des investisseurs.",
-      "risk": "Le risque provient de la dégradation de la note d'UBS pour Essential Utilities, qui indique des incertitudes financières post-fusion.",
-      "why_en": "The approval of the American Water–Essential Utilities merger by the Illinois commission draws investor interest.",
-      "risk_en": "The risk stems from UBS downgrading Essential Utilities, signaling post‑merger financial uncertainties."
-    },
-    {
-      "symbol": "ABNB",
-      "mentions": 1,
-      "headlines": [
-        "JP Morgan Maintains Neutral on Airbnb, Raises Price Target to $202"
-      ],
-      "last_at": "2026-11-06T22:51:09Z",
-      "sentiment": 1.0,
-      "price": 189.99,
-      "adv_usd": 751749311.8309021,
-      "chg_5d": 15.6,
-      "chg_20d": 14.5,
-      "rsi": 66.5,
-      "trend": "haussiere",
-      "hv": 0.5375693919662351,
-      "niche": false,
-      "score": 6.386,
-      "why": "Airbnb attire l'attention après que JP Morgan a relevé son objectif de cours à 202 $ tout en maintenant une position neutre.",
-      "risk": "Le risque principal est que la recommandation neutre de JP Morgan reflète des incertitudes sur la croissance future du modèle de location.",
-      "why_en": "Airbnb draws attention after JP Morgan raised its price target to $202 while keeping a neutral stance.",
-      "risk_en": "The main risk is that the neutral rating reflects uncertainty about the company's future growth."
+      "why": "Des analystes augmentent le prix cible à plus de 150 $ pour Interparfums.",
+      "risk": "Le risque réside dans la dépendance aux tendances de consommation de luxe qui peuvent s'essouffler.",
+      "why_en": "Analysts raising the price target above $150 for Interparfums catches the eye.",
+      "risk_en": "The risk lies in reliance on luxury consumer trends that could weaken."
     },
     {
       "symbol": "U",
@@ -111,20 +66,44 @@
       "hv": 0.8260735585503547,
       "niche": false,
       "score": 5.697,
-      "why": "Unity Software est sous les projecteurs suite à un nouveau prix cible de 62 $ et des rumeurs d'acquisition potentielle.",
-      "risk": "Le risque majeur réside dans la volatilité liée aux négociations d'acquisition, qui peuvent entraîner une forte variation du cours.",
-      "why_en": "Unity Software is in focus after a new $62 price target and rumors of a possible acquisition.",
-      "risk_en": "The key risk lies in acquisition‑related volatility that could cause sharp price swings."
+      "why": "Unity Software bénéficie d'un nouveau prix cible de 62 $ et de rumeurs d'acquisition.",
+      "risk": "Le principal risque est que les négociations d'acquisition n'aboutissent pas, affectant le cours.",
+      "why_en": "Unity Software gains attention from a new $62 price target and acquisition rumors.",
+      "risk_en": "The main risk is that acquisition talks may fall through, impacting the share price."
+    },
+    {
+      "symbol": "WEN",
+      "mentions": 2,
+      "headlines": [
+        "Analysts Adjust Price Targets for The Wendy's Company",
+        "Stephens & Co. Raises Wendy's Price Target to $8"
+      ],
+      "last_at": "2026-11-08T02:03:18Z",
+      "sentiment": 0.5,
+      "price": 8.15,
+      "adv_usd": 54919922.27041483,
+      "chg_5d": 13.0,
+      "chg_20d": 30.8,
+      "rsi": 73.2,
+      "trend": "haussiere",
+      "hv": 0.634111126249594,
+      "niche": false,
+      "score": 5.697,
+      "why": "Les analystes augmentent le prix cible de Wendy's, soutenant la dynamique haussière.",
+      "risk": "Un risque est la sensibilité du secteur de la restauration rapide aux fluctuations des coûts alimentaires.",
+      "why_en": "Analysts raising Wendy's price target supports the upward momentum.",
+      "risk_en": "A risk is the fast‑food sector's sensitivity to food‑cost volatility."
     },
     {
       "symbol": "BLK",
-      "mentions": 2,
+      "mentions": 3,
       "headlines": [
+        "BlackRock Discloses Discretionary Position in Prologis",
         "BlackRock Discloses Stake in SEGRO",
         "BlackRock Greater Europe Investment Trust plc Announces Share Buyback"
       ],
-      "last_at": "2026-11-07T14:01:40Z",
-      "sentiment": 0.5,
+      "last_at": "2026-11-08T02:02:23Z",
+      "sentiment": 0.3333333333333333,
       "price": 1178.87,
       "adv_usd": 872515315.0372314,
       "chg_5d": 2.7,
@@ -133,11 +112,11 @@
       "trend": "haussiere",
       "hv": 0.3508685783531337,
       "niche": false,
-      "score": 5.237,
-      "why": "BlackRock attire l'attention en dévoilant une participation dans SEGRO et en annonçant un rachat d'actions de son fonds européen.",
-      "risk": "Le risque principal est que ces mouvements stratégiques puissent être perçus comme un manque de nouvelles opportunités de croissance.",
-      "why_en": "BlackRock draws attention by disclosing a stake in SEGRO and announcing a share buyback for its European fund.",
-      "risk_en": "The main risk is that these strategic moves may be seen as a lack of fresh growth opportunities."
+      "score": 5.313,
+      "why": "BlackRock révèle des positions discrétionnaires dans des actifs immobiliers majeurs.",
+      "risk": "Le risque principal est l'exposition aux marchés immobiliers qui peuvent connaître des baisses.",
+      "why_en": "BlackRock discloses discretionary stakes in major real‑estate assets.",
+      "risk_en": "The main risk is exposure to real‑estate markets that could decline."
     },
     {
       "symbol": "VEEV",
@@ -157,10 +136,10 @@
       "hv": 0.2962643942821187,
       "niche": false,
       "score": 4.617,
-      "why": "Veeva Systems reste sous les projecteurs grâce à des relèvements d'objectifs de cours par Jefferies et UBS tout en maintenant des recommandations d'achat ou neutres.",
-      "risk": "Le risque est que les attentes élevées des analystes ne soient pas atteintes, ce qui pourrait entraîner une correction du cours.",
-      "why_en": "Veeva Systems stays in focus due to price target hikes from Jefferies and UBS while keeping buy/neutral ratings.",
-      "risk_en": "The risk is that analyst expectations may not be met, leading to a price correction."
+      "why": "Veeva Systems voit son prix cible relevé par Jefferies, indiquant confiance des analystes.",
+      "risk": "Le risque est une possible décélération de la croissance du logiciel cloud pour les sciences de la vie.",
+      "why_en": "Veeva Systems sees its price target raised by Jefferies, indicating analyst confidence.",
+      "risk_en": "The risk is a potential slowdown in growth of its cloud software for life sciences."
     },
     {
       "symbol": "SAP",
@@ -180,10 +159,33 @@
       "hv": 0.2897854557056116,
       "niche": false,
       "score": 4.557,
-      "why": "Saputo attire l'attention après la publication de ses résultats du troisième trimestre 2026 et le maintien d'une note Outperform par RBC.",
-      "risk": "Le risque principal est que les résultats trimestriels puissent décevoir les investisseurs, affectant la dynamique haussière.",
-      "why_en": "Saputo gains attention after releasing its Q3 2026 earnings and RBC maintaining an Outperform rating.",
-      "risk_en": "The main risk is that quarterly results could disappoint investors, dampening the upward momentum."
+      "why": "Saputo publie ses résultats du troisième trimestre 2026, soutenus par un nouveau prix cible.",
+      "risk": "Le risque provient d'une possible pression sur les marges due à l'augmentation des coûts des matières premières.",
+      "why_en": "Saputo reports its Q3 2026 earnings, backed by a new price target.",
+      "risk_en": "The risk stems from potential margin pressure from rising raw‑material costs."
+    },
+    {
+      "symbol": "CRUS",
+      "mentions": 2,
+      "headlines": [
+        "Cirrus Logic Reports Q2 Results and Increased Share Buyback Authorization",
+        "Wall Street Analysts Update Ratings for Cirrus Logic"
+      ],
+      "last_at": "2026-11-08T02:03:44Z",
+      "sentiment": 0.5,
+      "price": 113.58,
+      "adv_usd": 90749404.9230957,
+      "chg_5d": 3.4,
+      "chg_20d": 6.3,
+      "rsi": 50.6,
+      "trend": "neutre",
+      "hv": 0.3081559389716394,
+      "niche": false,
+      "score": 4.377,
+      "why": "Cirrus Logic annonce des résultats solides et une autorisation de rachat d'actions accrue.",
+      "risk": "Le risque est la dépendance aux cycles de demande dans le secteur des semi-conducteurs.",
+      "why_en": "Cirrus Logic reports solid results and an increased share‑buyback authorization.",
+      "risk_en": "The risk is reliance on cyclical demand in the semiconductor sector."
     },
     {
       "symbol": "ARLO",
@@ -203,33 +205,10 @@
       "hv": 0.9561070565162058,
       "niche": true,
       "score": 4.197,
-      "why": "Arlo Technologies attire l'attention grâce à deux relèvements d'objectif de cours par Lake Street, maintenant une recommandation d'achat.",
-      "risk": "Le risque réside dans la neutralité du titre, indiquant que le marché reste indécis quant à la trajectoire future.",
-      "why_en": "Arlo Technologies draws attention thanks to two price target increases by Lake Street, keeping a buy rating.",
-      "risk_en": "The risk lies in the stock's neutral stance, indicating market indecision about its future path."
-    },
-    {
-      "symbol": "CARS",
-      "mentions": 2,
-      "headlines": [
-        "UBS Adjusts Cars.com Price Target to $14",
-        "B. Riley Adjusts Cars.com Price Target to $15"
-      ],
-      "last_at": "2026-11-07T14:03:10Z",
-      "sentiment": 0.0,
-      "price": 13.35,
-      "adv_usd": 10145768.884778023,
-      "chg_5d": 18.8,
-      "chg_20d": 37.5,
-      "rsi": 74.6,
-      "trend": "haussiere",
-      "hv": 0.5180295446626628,
-      "niche": true,
-      "score": 4.197,
-      "why": "Cars.com bénéficie d'une attention accrue après les ajustements de prix cible à la hausse par UBS et B. Riley.",
-      "risk": "Le risque principal est que ces ajustements reflètent des attentes optimistes qui pourraient ne pas se concrétiser.",
-      "why_en": "Cars.com gains attention after UBS and B. Riley raised its price targets.",
-      "risk_en": "The main risk is that these upward adjustments reflect optimistic expectations that may not materialize."
+      "why": "Lake Street maintient un avis d'achat et relève le prix cible à 26 $ pour Arlo Technologies.",
+      "risk": "Le principal risque est la concurrence accrue dans le marché de la sécurité vidéo.",
+      "why_en": "Lake Street maintains a buy rating and raises the price target to $26 for Arlo Technologies.",
+      "risk_en": "The main risk is heightened competition in the video‑security market."
     },
     {
       "symbol": "SIBN",
@@ -249,10 +228,56 @@
       "hv": 0.7199020428872479,
       "niche": true,
       "score": 4.197,
-      "why": "SI‑BONE attire l'attention suite aux ventes d'actions importantes par son directeur juridique et son CEO, signalant un intérêt interne.",
-      "risk": "Le risque est que ces ventes puissent être interprétées comme un manque de confiance des dirigeants dans la valorisation actuelle.",
-      "why_en": "SI‑BONE draws attention after sizable share sales by its CLO and CEO, indicating insider activity.",
-      "risk_en": "The risk is that these sales may be seen as a lack of confidence by management in the current valuation."
+      "why": "Des dirigeants de SI‑BONE vendent d'importantes quantités d'actions, attirant l'attention.",
+      "risk": "Le risque est que ces ventes signalent un manque de confiance interne et pèsent sur le cours.",
+      "why_en": "SI‑BONE executives sell sizable share blocks, drawing attention.",
+      "risk_en": "The risk is that these sales may signal insider lack of confidence and weigh on the stock."
+    },
+    {
+      "symbol": "CCL",
+      "mentions": 2,
+      "headlines": [
+        "Carnival Corporation SVP Marie McKenzie Honored at Anchor Awards",
+        "Princess Cruises Launches Annual 'Blue Friday' Sale"
+      ],
+      "last_at": "2026-11-08T02:01:56Z",
+      "sentiment": 0.0,
+      "price": 29.58,
+      "adv_usd": 562820317.067976,
+      "chg_5d": 3.1,
+      "chg_20d": 12.8,
+      "rsi": 61.0,
+      "trend": "haussiere",
+      "hv": 0.47326784293699614,
+      "niche": false,
+      "score": 3.817,
+      "why": "Carnival met en avant des distinctions et des promotions, renforçant son image de marque.",
+      "risk": "Le risque principal reste l'incertitude liée aux restrictions de voyage post‑pandémie.",
+      "why_en": "Carnival highlights awards and promotions, strengthening its brand image.",
+      "risk_en": "The main risk remains uncertainty from post‑pandemic travel restrictions."
+    },
+    {
+      "symbol": "USFD",
+      "mentions": 2,
+      "headlines": [
+        "US Foods and Performance Food Group Explore Potential Merger",
+        "BTIG Maintains Buy Rating on US Foods"
+      ],
+      "last_at": "2026-11-08T02:02:20Z",
+      "sentiment": 0.0,
+      "price": 106.67,
+      "adv_usd": 255143706.17412567,
+      "chg_5d": 3.0,
+      "chg_20d": 9.5,
+      "rsi": 59.0,
+      "trend": "haussiere",
+      "hv": 0.4125271345659765,
+      "niche": false,
+      "score": 3.797,
+      "why": "US Foods explore une fusion potentielle avec Performance Food Group, créant des synergies.",
+      "risk": "Le risque est que l'opération ne se concrétise pas, laissant les deux sociétés exposées à la concurrence.",
+      "why_en": "US Foods explores a potential merger with Performance Food Group, creating synergies.",
+      "risk_en": "The risk is that the deal may not materialize, leaving both companies exposed to competition."
     },
     {
       "symbol": "WYNN",
@@ -273,10 +298,10 @@
       "hv": 0.45832941038199104,
       "niche": false,
       "score": 3.773,
-      "why": "Wynn Resorts est sous les projecteurs avec plusieurs banques qui ajustent leurs objectifs de cours à la baisse, tout en maintenant des notes positives.",
-      "risk": "Le risque principal est la baisse continue des objectifs de cours, qui pourrait précéder une pression vendeuse accrue.",
-      "why_en": "Wynn Resorts is in focus as several banks adjust price targets downward while keeping positive ratings.",
-      "risk_en": "The main risk is the continued lowering of price targets, which could precede increased selling pressure."
+      "why": "Wynn Resorts voit plusieurs banques ajuster leurs prix cibles, reflétant un intérêt analyste.",
+      "risk": "Le risque principal est la sensibilité du secteur du casino aux cycles économiques et aux réglementations.",
+      "why_en": "Wynn Resorts receives multiple analyst price‑target adjustments, reflecting analyst interest.",
+      "risk_en": "The main risk is the casino sector's sensitivity to economic cycles and regulation."
     },
     {
       "symbol": "MLI",
@@ -296,10 +321,10 @@
       "hv": 0.38208104545490396,
       "niche": false,
       "score": 3.617,
-      "why": "Mueller Industries attire l'attention grâce à l'annonce d'un dividende trimestriel et de nouvelles ambitions de croissance stratégique.",
-      "risk": "Le risque réside dans le fait que les ambitions de croissance annoncées pourraient ne pas se traduire en résultats concrets.",
-      "why_en": "Mueller Industries draws attention with its quarterly dividend announcement and strategic growth ambitions.",
-      "risk_en": "The risk lies in the announced growth ambitions potentially not translating into tangible results."
+      "why": "Mueller Industries annonce un dividende trimestriel et des ambitions de croissance stratégique.",
+      "risk": "Le risque réside dans la capacité à réaliser ces ambitions dans un environnement industriel incertain.",
+      "why_en": "Mueller Industries announces a quarterly dividend and strategic growth ambitions.",
+      "risk_en": "The risk lies in the ability to achieve these ambitions amid an uncertain industrial environment."
     },
     {
       "symbol": "BTC",
@@ -319,33 +344,10 @@
       "hv": 0.3480005344689201,
       "niche": false,
       "score": 3.457,
-      "why": "Le secteur crypto attire l'attention avec CoreWeave et IREN sous pression suite à la réévaluation de Microsoft et la perte de support clé du Solana après des sorties d'ETF.",
-      "risk": "Le risque principal est la volatilité accrue liée aux décisions de grands acteurs technologiques et aux flux de capitaux dans les ETF.",
-      "why_en": "The crypto sector draws attention as CoreWeave and IREN face pressure after Microsoft’s reassessment and Solana loses key support following ETF outflows.",
-      "risk_en": "The main risk is heightened volatility due to big tech decisions and ETF capital flows."
-    },
-    {
-      "symbol": "QNT",
-      "mentions": 2,
-      "headlines": [
-        "Jefferies Maintains Buy on Quantinuum, Lowers Price Target to $65",
-        "JP Morgan Maintains Overweight on Quantinuum, Lowers Price Target to $80"
-      ],
-      "last_at": "2026-11-07T00:23:10Z",
-      "sentiment": 0.0,
-      "price": 37.57,
-      "adv_usd": 87093842.82068253,
-      "chg_5d": 11.8,
-      "chg_20d": -9.0,
-      "rsi": 48.4,
-      "trend": "neutre",
-      "hv": 1.3416002206545863,
-      "niche": false,
-      "score": 3.197,
-      "why": "Quantinuum attire l'attention grâce aux maintiens d'achats par Jefferies et JP Morgan, malgré des baisses d'objectifs de cours.",
-      "risk": "Le risque est que la réduction des objectifs de cours reflète des attentes plus modestes sur la performance future.",
-      "why_en": "Quantinuum draws attention with buy recommendations from Jefferies and JP Morgan despite lowered price targets.",
-      "risk_en": "The risk is that the reduced price targets signal more modest expectations for future performance."
+      "why": "Des pressions sur CoreWeave et IREN liées aux réévaluations de Microsoft attirent l'attention sur le secteur crypto.",
+      "risk": "Le risque principal est la volatilité accrue des crypto‑actifs suite aux flux de capitaux hors des ETF.",
+      "why_en": "Pressure on CoreWeave and IREN from Microsoft re‑assessments draws attention to the crypto sector.",
+      "risk_en": "The main risk is heightened volatility of crypto assets due to capital outflows from ETFs."
     }
   ]
 }
