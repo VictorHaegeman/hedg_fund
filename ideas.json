@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T03:01:12",
+  "updated_at": "2026-11-08T09:01:14",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -21,9 +21,9 @@
       "niche": true,
       "score": 7.197,
       "why": "Le prix cible relevé à 14 $ par Telsey Advisory Group attire l'attention.",
-      "risk": "Le risque principal est que la hausse du cours ne se matérialise pas malgré le nouveau target.",
+      "risk": "Le risque réside dans la dépendance aux prévisions de Telsey qui peuvent être revues à la baisse.",
       "why_en": "The raised price target to $14 by Telsey Advisory Group draws attention.",
-      "risk_en": "The main risk is that the stock may not reach the higher target."
+      "risk_en": "The risk lies in reliance on Telsey's forecasts, which could be lowered."
     },
     {
       "symbol": "IPAR",
@@ -43,10 +43,32 @@
       "hv": 0.4102950362963763,
       "niche": true,
       "score": 7.197,
-      "why": "Des analystes augmentent le prix cible à plus de 150 $ pour Interparfums.",
-      "risk": "Le risque réside dans la dépendance aux tendances de consommation de luxe qui peuvent s'essouffler.",
-      "why_en": "Analysts raising the price target above $150 for Interparfums catches the eye.",
-      "risk_en": "The risk lies in reliance on luxury consumer trends that could weaken."
+      "why": "Des analystes maintiennent le Buy et augmentent le prix cible, soutenant la dynamique haussière.",
+      "risk": "Un revirement de sentiment des analystes pourrait entraîner une correction du cours.",
+      "why_en": "Analysts maintaining Buy and raising price targets support the upward momentum.",
+      "risk_en": "A shift in analyst sentiment could trigger a price correction."
+    },
+    {
+      "symbol": "ABNB",
+      "mentions": 1,
+      "headlines": [
+        "Airbnb Plans Rollout of AI-Powered Travel Booking Agent for 2027"
+      ],
+      "last_at": "2026-11-08T02:01:58Z",
+      "sentiment": 1.0,
+      "price": 189.99,
+      "adv_usd": 751749311.8309021,
+      "chg_5d": 15.6,
+      "chg_20d": 14.5,
+      "rsi": 66.5,
+      "trend": "haussiere",
+      "hv": 0.5375693919662351,
+      "niche": false,
+      "score": 6.386,
+      "why": "Airbnb prévoit de lancer un agent de réservation voyage alimenté par IA en 2027, ce qui suscite l'intérêt.",
+      "risk": "Le projet IA comporte des incertitudes technologiques et d'adoption par les utilisateurs.",
+      "why_en": "Airbnb plans to launch an AI‑powered travel booking agent in 2027, attracting interest.",
+      "risk_en": "The AI project carries technological and user‑adoption uncertainties."
     },
     {
       "symbol": "U",
@@ -66,10 +88,10 @@
       "hv": 0.8260735585503547,
       "niche": false,
       "score": 5.697,
-      "why": "Unity Software bénéficie d'un nouveau prix cible de 62 $ et de rumeurs d'acquisition.",
-      "risk": "Le principal risque est que les négociations d'acquisition n'aboutissent pas, affectant le cours.",
-      "why_en": "Unity Software gains attention from a new $62 price target and acquisition rumors.",
-      "risk_en": "The main risk is that acquisition talks may fall through, impacting the share price."
+      "why": "Unity bénéficie d'un nouveau prix cible plus élevé et de rumeurs d'acquisition, stimulant l'optimisme.",
+      "risk": "Les négociations d'acquisition peuvent échouer ou être mal perçues, affectant le cours.",
+      "why_en": "Unity sees a higher price target and acquisition rumors, boosting optimism.",
+      "risk_en": "Acquisition talks could fall through or be poorly received, impacting the share price."
     },
     {
       "symbol": "WEN",
@@ -89,10 +111,10 @@
       "hv": 0.634111126249594,
       "niche": false,
       "score": 5.697,
-      "why": "Les analystes augmentent le prix cible de Wendy's, soutenant la dynamique haussière.",
-      "risk": "Un risque est la sensibilité du secteur de la restauration rapide aux fluctuations des coûts alimentaires.",
-      "why_en": "Analysts raising Wendy's price target supports the upward momentum.",
-      "risk_en": "A risk is the fast‑food sector's sensitivity to food‑cost volatility."
+      "why": "Les analystes augmentent les prix cibles de Wendy's, indiquant une perspective positive.",
+      "risk": "Une révision à la baisse des prévisions de ventes rapides pourrait freiner la hausse.",
+      "why_en": "Analysts raising Wendy's price targets signal a positive outlook.",
+      "risk_en": "A downgrade in fast‑food sales forecasts could curb the rally."
     },
     {
       "symbol": "BLK",
@@ -113,10 +135,10 @@
       "hv": 0.3508685783531337,
       "niche": false,
       "score": 5.313,
-      "why": "BlackRock révèle des positions discrétionnaires dans des actifs immobiliers majeurs.",
-      "risk": "Le risque principal est l'exposition aux marchés immobiliers qui peuvent connaître des baisses.",
-      "why_en": "BlackRock discloses discretionary stakes in major real‑estate assets.",
-      "risk_en": "The main risk is exposure to real‑estate markets that could decline."
+      "why": "BlackRock dévoile plusieurs positions stratégiques et un rachat d'actions, ce qui attire l'attention.",
+      "risk": "Ces mouvements peuvent refléter une exposition accrue à des actifs volatils.",
+      "why_en": "BlackRock reveals strategic stakes and a share buyback, drawing attention.",
+      "risk_en": "These moves may increase exposure to volatile assets."
     },
     {
       "symbol": "VEEV",
@@ -136,10 +158,10 @@
       "hv": 0.2962643942821187,
       "niche": false,
       "score": 4.617,
-      "why": "Veeva Systems voit son prix cible relevé par Jefferies, indiquant confiance des analystes.",
-      "risk": "Le risque est une possible décélération de la croissance du logiciel cloud pour les sciences de la vie.",
-      "why_en": "Veeva Systems sees its price target raised by Jefferies, indicating analyst confidence.",
-      "risk_en": "The risk is a potential slowdown in growth of its cloud software for life sciences."
+      "why": "Les analystes maintiennent le Buy et relèvent les prix cibles, soutenant la valorisation.",
+      "risk": "Le secteur des logiciels de santé reste sensible aux régulations, pouvant affecter Veeva.",
+      "why_en": "Analysts maintain Buy and raise price targets, supporting valuation.",
+      "risk_en": "The health‑software sector remains sensitive to regulation, which could impact Veeva."
     },
     {
       "symbol": "SAP",
@@ -159,10 +181,10 @@
       "hv": 0.2897854557056116,
       "niche": false,
       "score": 4.557,
-      "why": "Saputo publie ses résultats du troisième trimestre 2026, soutenus par un nouveau prix cible.",
-      "risk": "Le risque provient d'une possible pression sur les marges due à l'augmentation des coûts des matières premières.",
-      "why_en": "Saputo reports its Q3 2026 earnings, backed by a new price target.",
-      "risk_en": "The risk stems from potential margin pressure from rising raw‑material costs."
+      "why": "Saputo publie ses résultats du troisième trimestre 2026, offrant une visibilité récente.",
+      "risk": "Une performance inférieure aux attentes pourrait peser sur le cours malgré le rating positif.",
+      "why_en": "Saputo reports its Q3 2026 earnings, providing recent visibility.",
+      "risk_en": "Performance below expectations could weigh on the stock despite the positive rating."
     },
     {
       "symbol": "CRUS",
@@ -182,10 +204,10 @@
       "hv": 0.3081559389716394,
       "niche": false,
       "score": 4.377,
-      "why": "Cirrus Logic annonce des résultats solides et une autorisation de rachat d'actions accrue.",
-      "risk": "Le risque est la dépendance aux cycles de demande dans le secteur des semi-conducteurs.",
-      "why_en": "Cirrus Logic reports solid results and an increased share‑buyback authorization.",
-      "risk_en": "The risk is reliance on cyclical demand in the semiconductor sector."
+      "why": "Cirrus Logic annonce des résultats solides et un programme de rachat d'actions, stimulant l'intérêt.",
+      "risk": "Le secteur des semi‑conducteurs reste cyclique, exposant le titre à des fluctuations.",
+      "why_en": "Cirrus Logic reports solid results and a share buyback program, sparking interest.",
+      "risk_en": "The semiconductor sector is cyclical, exposing the stock to fluctuations."
     },
     {
       "symbol": "ARLO",
@@ -205,10 +227,10 @@
       "hv": 0.9561070565162058,
       "niche": true,
       "score": 4.197,
-      "why": "Lake Street maintient un avis d'achat et relève le prix cible à 26 $ pour Arlo Technologies.",
-      "risk": "Le principal risque est la concurrence accrue dans le marché de la sécurité vidéo.",
-      "why_en": "Lake Street maintains a buy rating and raises the price target to $26 for Arlo Technologies.",
-      "risk_en": "The main risk is heightened competition in the video‑security market."
+      "why": "Lake Street maintient le Buy et augmente le prix cible, ce qui attire les investisseurs.",
+      "risk": "Le titre a déjà connu une forte baisse, indiquant une volatilité persistante.",
+      "why_en": "Lake Street maintains Buy and raises the price target, attracting investors.",
+      "risk_en": "The stock has already experienced a sharp decline, indicating ongoing volatility."
     },
     {
       "symbol": "SIBN",
@@ -228,56 +250,10 @@
       "hv": 0.7199020428872479,
       "niche": true,
       "score": 4.197,
-      "why": "Des dirigeants de SI‑BONE vendent d'importantes quantités d'actions, attirant l'attention.",
-      "risk": "Le risque est que ces ventes signalent un manque de confiance interne et pèsent sur le cours.",
-      "why_en": "SI‑BONE executives sell sizable share blocks, drawing attention.",
-      "risk_en": "The risk is that these sales may signal insider lack of confidence and weigh on the stock."
-    },
-    {
-      "symbol": "CCL",
-      "mentions": 2,
-      "headlines": [
-        "Carnival Corporation SVP Marie McKenzie Honored at Anchor Awards",
-        "Princess Cruises Launches Annual 'Blue Friday' Sale"
-      ],
-      "last_at": "2026-11-08T02:01:56Z",
-      "sentiment": 0.0,
-      "price": 29.58,
-      "adv_usd": 562820317.067976,
-      "chg_5d": 3.1,
-      "chg_20d": 12.8,
-      "rsi": 61.0,
-      "trend": "haussiere",
-      "hv": 0.47326784293699614,
-      "niche": false,
-      "score": 3.817,
-      "why": "Carnival met en avant des distinctions et des promotions, renforçant son image de marque.",
-      "risk": "Le risque principal reste l'incertitude liée aux restrictions de voyage post‑pandémie.",
-      "why_en": "Carnival highlights awards and promotions, strengthening its brand image.",
-      "risk_en": "The main risk remains uncertainty from post‑pandemic travel restrictions."
-    },
-    {
-      "symbol": "USFD",
-      "mentions": 2,
-      "headlines": [
-        "US Foods and Performance Food Group Explore Potential Merger",
-        "BTIG Maintains Buy Rating on US Foods"
-      ],
-      "last_at": "2026-11-08T02:02:20Z",
-      "sentiment": 0.0,
-      "price": 106.67,
-      "adv_usd": 255143706.17412567,
-      "chg_5d": 3.0,
-      "chg_20d": 9.5,
-      "rsi": 59.0,
-      "trend": "haussiere",
-      "hv": 0.4125271345659765,
-      "niche": false,
-      "score": 3.797,
-      "why": "US Foods explore une fusion potentielle avec Performance Food Group, créant des synergies.",
-      "risk": "Le risque est que l'opération ne se concrétise pas, laissant les deux sociétés exposées à la concurrence.",
-      "why_en": "US Foods explores a potential merger with Performance Food Group, creating synergies.",
-      "risk_en": "The risk is that the deal may not materialize, leaving both companies exposed to competition."
+      "why": "Des dirigeants de SI‑BONE vendent des actions, ce qui suscite l'attention du marché.",
+      "risk": "Ces ventes peuvent être perçues comme un manque de confiance interne et pousser le cours à la baisse.",
+      "why_en": "SI‑BONE executives selling shares draws market attention.",
+      "risk_en": "These sales may be seen as a lack of insider confidence, pressuring the share price."
     },
     {
       "symbol": "WYNN",
@@ -298,33 +274,10 @@
       "hv": 0.45832941038199104,
       "niche": false,
       "score": 3.773,
-      "why": "Wynn Resorts voit plusieurs banques ajuster leurs prix cibles, reflétant un intérêt analyste.",
-      "risk": "Le risque principal est la sensibilité du secteur du casino aux cycles économiques et aux réglementations.",
-      "why_en": "Wynn Resorts receives multiple analyst price‑target adjustments, reflecting analyst interest.",
-      "risk_en": "The main risk is the casino sector's sensitivity to economic cycles and regulation."
-    },
-    {
-      "symbol": "MLI",
-      "mentions": 2,
-      "headlines": [
-        "Mueller Industries Declares Quarterly Dividend",
-        "Mueller Industries Announces Strategic Growth Ambitions"
-      ],
-      "last_at": "2026-11-06T23:01:47Z",
-      "sentiment": 1.0,
-      "price": 52.96,
-      "adv_usd": 106386104.21113968,
-      "chg_5d": -2.9,
-      "chg_20d": -12.8,
-      "rsi": 32.1,
-      "trend": "baissiere",
-      "hv": 0.38208104545490396,
-      "niche": false,
-      "score": 3.617,
-      "why": "Mueller Industries annonce un dividende trimestriel et des ambitions de croissance stratégique.",
-      "risk": "Le risque réside dans la capacité à réaliser ces ambitions dans un environnement industriel incertain.",
-      "why_en": "Mueller Industries announces a quarterly dividend and strategic growth ambitions.",
-      "risk_en": "The risk lies in the ability to achieve these ambitions amid an uncertain industrial environment."
+      "why": "Wynn Resorts bénéficie d'un rating Overweight de Barclays malgré une baisse du prix cible, montrant un avis mitigé mais favorable.",
+      "risk": "La réduction des prix cibles par plusieurs banques indique une incertitude sur la reprise du secteur du jeu.",
+      "why_en": "Wynn Resorts holds an Overweight rating from Barclays despite a lower price target, showing a mixed but favorable view.",
+      "risk_en": "Reduced price targets by several banks signal uncertainty about the gaming sector's recovery."
     },
     {
       "symbol": "BTC",
@@ -344,10 +297,56 @@
       "hv": 0.3480005344689201,
       "niche": false,
       "score": 3.457,
-      "why": "Des pressions sur CoreWeave et IREN liées aux réévaluations de Microsoft attirent l'attention sur le secteur crypto.",
-      "risk": "Le risque principal est la volatilité accrue des crypto‑actifs suite aux flux de capitaux hors des ETF.",
-      "why_en": "Pressure on CoreWeave and IREN from Microsoft re‑assessments draws attention to the crypto sector.",
-      "risk_en": "The main risk is heightened volatility of crypto assets due to capital outflows from ETFs."
+      "why": "Les titres CoreWeave et IREN subissent une pression liée à la réévaluation de Microsoft, ce qui impacte le sentiment du marché crypto.",
+      "risk": "Les fluctuations du marché des cryptomonnaies et les sorties de capitaux peuvent accentuer la volatilité.",
+      "why_en": "CoreWeave and IREN stocks face pressure from Microsoft's reassessment, affecting crypto market sentiment.",
+      "risk_en": "Crypto market fluctuations and capital outflows can amplify volatility."
+    },
+    {
+      "symbol": "SPGI",
+      "mentions": 2,
+      "headlines": [
+        "S&P Global Ratings Assigns BB- Credit Rating to Andijan Region",
+        "S&P Dow Jones Indices Announces Index Constituent Change"
+      ],
+      "last_at": "2026-11-08T02:02:13Z",
+      "sentiment": 0.0,
+      "price": 467.8,
+      "adv_usd": 861906604.40094,
+      "chg_5d": 0.3,
+      "chg_20d": 14.7,
+      "rsi": 64.8,
+      "trend": "haussiere",
+      "hv": 0.26212960403959246,
+      "niche": false,
+      "score": 3.257,
+      "why": "S&P Global annonce un nouveau rating BB‑- pour la région d'Andijan et un changement d'indice, attirant l'attention des investisseurs obligataires.",
+      "risk": "Le rating BB‑- reflète un risque de crédit plus élevé, pouvant décourager les investisseurs prudents.",
+      "why_en": "S&P Global announces a new BB‑ rating for Andijan region and an index change, drawing bond investors' attention.",
+      "risk_en": "The BB‑ rating indicates higher credit risk, potentially deterring cautious investors."
+    },
+    {
+      "symbol": "FLY",
+      "mentions": 2,
+      "headlines": [
+        "Firefly Aerospace Onboarded as Vendor for NASA's $10 Billion CLPS 2 Contract",
+        "Firefly Aerospace Announced Saturday, Onboarding As Vendor Under NASA's $10B Commercial Lunar Payload Services 2 IDIQ Contract"
+      ],
+      "last_at": "2026-11-08T02:02:57Z",
+      "sentiment": 0.0,
+      "price": 20.76,
+      "adv_usd": 61057049.56983566,
+      "chg_5d": 15.8,
+      "chg_20d": 3.8,
+      "rsi": 55.6,
+      "trend": "neutre",
+      "hv": 1.4857774015026504,
+      "niche": false,
+      "score": 3.197,
+      "why": "Firefly Aerospace devient fournisseur de la NASA pour un contrat de 10 milliards de dollars, ce qui est très positif.",
+      "risk": "Le succès dépend de la capacité à livrer les missions lunaires dans les délais et budgets prévus.",
+      "why_en": "Firefly Aerospace is selected as a NASA vendor for a $10 billion contract, which is highly positive.",
+      "risk_en": "Success hinges on delivering lunar missions on schedule and within budget."
     }
   ]
 }
