@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-11-09T00:01:15",
+  "updated_at": "2026-11-09T06:01:14",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
-      "symbol": "ARHS",
+      "symbol": "BN",
       "mentions": 2,
       "headlines": [
-        "Telsey Advisory Group Raises Arhaus Price Target to $14",
-        "Telsey Advisory Group Maintains Market Perform on Arhaus, Raises Price Target to $14"
+        "Brookfield-owned Intellihub Acquires Taggle",
+        "Brookfield Partners with Drax and Radiant for AI Data Center Development"
       ],
-      "last_at": "2026-11-07T14:02:35Z",
+      "last_at": "2026-11-09T02:01:48Z",
       "sentiment": 1.0,
-      "price": 14.19,
-      "adv_usd": 25500712.4536705,
-      "chg_5d": 14.0,
-      "chg_20d": 46.4,
-      "rsi": 76.2,
+      "price": 41.38,
+      "adv_usd": 213866808.70113373,
+      "chg_5d": 5.3,
+      "chg_20d": 11.6,
+      "rsi": 62.9,
       "trend": "haussiere",
-      "hv": 0.6955837841839018,
-      "niche": true,
+      "hv": 0.36885101353069794,
+      "niche": false,
       "score": 7.197,
-      "why": "Le relèvement du cours cible à 14$ par Telsey Advisory Group suscite l'intérêt des investisseurs.",
-      "risk": "Le maintien du rating Market Perform indique une incertitude sur la performance future.",
-      "why_en": "The raise of the price target to $14 by Telsey Advisory Group draws investor attention.",
-      "risk_en": "Maintaining a Market Perform rating signals uncertainty about future performance."
+      "why": "Brookfield développe des projets d'IA et de data centers, renforçant son positionnement technologique.",
+      "risk": "L'expansion rapide dans l'IA expose Brookfield à des coûts d'investissement élevés et à la concurrence technologique.",
+      "why_en": "Brookfield is expanding AI and data center projects, strengthening its tech positioning.",
+      "risk_en": "Rapid AI expansion exposes Brookfield to high investment costs and tech competition."
     },
     {
       "symbol": "WEN",
@@ -43,10 +43,33 @@
       "hv": 0.634111126249594,
       "niche": false,
       "score": 5.697,
-      "why": "L'augmentation du cours cible à 8$ par Stephens & Co. attire l'attention sur Wendy's.",
-      "risk": "Des ajustements de cours cible peuvent refléter une volatilité des marges du secteur de la restauration rapide.",
-      "why_en": "The lift of the price target to $8 by Stephens & Co. draws focus to Wendy's.",
-      "risk_en": "Price target adjustments may reflect volatility in fast‑food margins."
+      "why": "Les analystes augmentent les objectifs de cours, signalant une confiance accrue sur les perspectives de Wendy's.",
+      "risk": "Une hausse des attentes peut être déçue si la croissance des ventes ne suit pas.",
+      "why_en": "Analysts raise price targets, indicating growing confidence in Wendy's outlook.",
+      "risk_en": "Higher expectations could be disappointed if sales growth stalls."
+    },
+    {
+      "symbol": "MSI",
+      "mentions": 2,
+      "headlines": [
+        "Motorola Signature 27 Ranked World's Best Smartphone Camera by DXOMARK",
+        "Benzinga's 'Stock Whisper' Index: Five Stocks Investors Secretly Monitor But Don't Talk About Yet"
+      ],
+      "last_at": "2026-11-09T02:01:53Z",
+      "sentiment": 0.5,
+      "price": 514.51,
+      "adv_usd": 557533653.3712769,
+      "chg_5d": 4.7,
+      "chg_20d": 15.8,
+      "rsi": 76.3,
+      "trend": "haussiere",
+      "hv": 0.17841307545005003,
+      "niche": false,
+      "score": 5.637,
+      "why": "Motorola obtient une reconnaissance mondiale pour la qualité de sa caméra, boostant son image de marque.",
+      "risk": "Le marché des smartphones reste très concurrentiel, limitant la capacité à convertir la notoriété en parts de marché.",
+      "why_en": "Motorola receives global recognition for its camera, boosting brand image.",
+      "risk_en": "The smartphone market remains highly competitive, limiting conversion of notoriety into market share."
     },
     {
       "symbol": "EL",
@@ -66,21 +89,44 @@
       "hv": 0.42446851136967556,
       "niche": false,
       "score": 4.857,
-      "why": "Le lancement d'un nouveau produit cosmétique et l'expansion d'EssilorLuxottica en Chine créent de l'engouement.",
-      "risk": "Ces initiatives peuvent être confrontées à des défis d'adoption et de concurrence locale.",
-      "why_en": "A new cosmetics product launch and EssilorLuxottica’s China expansion generate buzz.",
-      "risk_en": "These initiatives may face adoption hurdles and local competition."
+      "why": "EssilorLuxottica annonce une expansion stratégique en Chine, un marché à forte croissance de la myopie.",
+      "risk": "L'expansion en Chine expose l'entreprise aux risques réglementaires et à la volatilité de la demande locale.",
+      "why_en": "EssilorLuxottica announces strategic expansion in China, a high-growth myopia market.",
+      "risk_en": "Expansion in China exposes the company to regulatory risks and volatile local demand."
+    },
+    {
+      "symbol": "VIR",
+      "mentions": 3,
+      "headlines": [
+        "Vir Biotechnology Announces Positive Topline Results from Phase 3 ECLIPSE 1 Trial",
+        "Vir Biotechnology Announces Expanded Phase 2 SOLSTICE Trial Data",
+        "Vir Biotechnology Announced Sunday, Expanded Phase 2 SOLSTICE Data For Elebsiran, Tobevibart In Chronic Hepatitis Delta, With 100% (28/28) U"
+      ],
+      "last_at": "2026-11-09T02:02:47Z",
+      "sentiment": 0.0,
+      "price": 12.21,
+      "adv_usd": 18555283.198270798,
+      "chg_5d": 8.1,
+      "chg_20d": 4.4,
+      "rsi": 60.0,
+      "trend": "haussiere",
+      "hv": 0.6986922211480144,
+      "niche": true,
+      "score": 4.773,
+      "why": "Vir Biotechnology publie des résultats positifs en phase 3, renforçant les espoirs de traitements contre l'hépatite delta.",
+      "risk": "Le succès clinique ne garantit pas l'approbation réglementaire ni la commercialisation rapide.",
+      "why_en": "Vir Biotechnology releases positive Phase 3 results, boosting hopes for delta hepatitis treatments.",
+      "risk_en": "Clinical success does not guarantee regulatory approval or rapid commercialization."
     },
     {
       "symbol": "SPGI",
-      "mentions": 3,
+      "mentions": 2,
       "headlines": [
         "S&P Global Releases Report on AI's Impact on Industrial Robotics",
-        "S&P Global Ratings Assigns BB- Credit Rating to Andijan Region",
-        "S&P Dow Jones Indices Announces Index Constituent Change"
+        "S&P Global Ratings Assigns BB- Credit Rating to Andijan Region"
       ],
       "last_at": "2026-11-08T14:01:49Z",
-      "sentiment": 0.3333333333333333,
+      "sentiment": 0.5,
       "price": 467.8,
       "adv_usd": 861906604.40094,
       "chg_5d": 0.3,
@@ -89,34 +135,36 @@
       "trend": "haussiere",
       "hv": 0.26212960403959246,
       "niche": false,
-      "score": 4.833,
-      "why": "Les rapports sur l'IA et les changements d'indices renforcent l'intérêt pour S&P Global.",
-      "risk": "L'attribution d'une notation BB‑- pour une région expose la société à des risques géopolitiques.",
-      "why_en": "AI impact reports and index changes boost interest in S&P Global.",
-      "risk_en": "Assigning a BB‑ rating to a region exposes the firm to geopolitical risk."
+      "score": 4.757,
+      "why": "S&P Global publie un rapport sur l'impact de l'IA sur la robotique industrielle, positionnant l'entreprise comme source d'analyse clé.",
+      "risk": "Les prévisions d'IA peuvent être revues à la baisse si l'adoption industrielle ralentit.",
+      "why_en": "S&P Global releases a report on AI's impact on industrial robotics, positioning it as a key analysis source.",
+      "risk_en": "AI forecasts may be downgraded if industrial adoption slows."
     },
     {
-      "symbol": "ARLO",
-      "mentions": 2,
+      "symbol": "FXI",
+      "mentions": 4,
       "headlines": [
-        "Lake Street Maintains Buy Rating and Raises Price Target for Arlo Technologies",
-        "Lake Street Maintains Buy on Arlo Technologies, Raises Price Target to $26"
+        "Reported Earlier, China Producer Price Index (YoY) For October 5.7% Vs. 5.3% Est.; 5.0% Prior",
+        "Reported Earlier, China Consumer Price Index (YoY) For October 0.7% Vs. 0.8% Est.; 0.9% Prior",
+        "Reported Earlier, China Consumer Price Index (MoM) For October 0.0% Vs. 0.0% Est.; 0.2% Prior",
+        "The New York Times Reported Saturday, U.S. Commerce Department Cleared Nvidia H200 AI Chip Sales To ~Two Dozen Chinese Firms, Some Listing V"
       ],
-      "last_at": "2026-11-07T14:02:56Z",
-      "sentiment": 1.0,
-      "price": 12.34,
-      "adv_usd": 28934912.02210903,
-      "chg_5d": -14.7,
-      "chg_20d": -0.5,
-      "rsi": 43.7,
+      "last_at": "2026-11-09T05:17:44Z",
+      "sentiment": 0.0,
+      "price": 34.95,
+      "adv_usd": 717651680.3178787,
+      "chg_5d": 5.7,
+      "chg_20d": 2.1,
+      "rsi": 66.1,
       "trend": "neutre",
-      "hv": 0.9561070565162058,
-      "niche": true,
-      "score": 4.197,
-      "why": "Le maintien du rating Buy et le nouveau cours cible à 26$ stimulent l'intérêt pour Arlo.",
-      "risk": "La baisse de 14,7% du cours indique une pression vendeuse persistante.",
-      "why_en": "Maintaining a Buy rating and a new $26 price target spark interest in Arlo.",
-      "risk_en": "A 14.7% price drop signals ongoing selling pressure."
+      "hv": 0.2007485052173931,
+      "niche": false,
+      "score": 4.219,
+      "why": "Les derniers chiffres du CPI et du PPI chinois montrent une inflation proche des prévisions, stabilisant les attentes macroéconomiques.",
+      "risk": "Toute divergence future de l'inflation chinoise pourrait affecter les marchés émergents et la devise du yuan.",
+      "why_en": "Latest Chinese CPI and PPI figures show inflation near forecasts, stabilizing macro expectations.",
+      "risk_en": "Future divergence in Chinese inflation could impact emerging markets and the yuan."
     },
     {
       "symbol": "SIBN",
@@ -136,10 +184,35 @@
       "hv": 0.7199020428872479,
       "niche": true,
       "score": 4.197,
-      "why": "Les ventes d'actions par les dirigeants attirent l'attention sur la gouvernance de SI‑BONE.",
-      "risk": "Ces ventes peuvent être perçues comme un manque de confiance des insiders.",
-      "why_en": "Insider stock sales draw attention to SI‑BONE’s governance.",
-      "risk_en": "Such sales may be viewed as a lack of insider confidence."
+      "why": "Des dirigeants de SI-BONE vendent d'importantes quantités d'actions, attirant l'attention sur la gouvernance interne.",
+      "risk": "Les ventes d'initiés peuvent être perçues comme un manque de confiance et peser sur le cours de l'action.",
+      "why_en": "SI-BONE executives sell significant share amounts, drawing attention to internal governance.",
+      "risk_en": "Insider sales may be seen as a lack of confidence and weigh on the stock price."
+    },
+    {
+      "symbol": "SPCX",
+      "mentions": 12,
+      "headlines": [
+        "Elon Musk's SpaceX Could Gain More Power Over AI Computing Costs As Democrats Slow Data Center Expansion, Says Chamath Palihapitiya: 'The Ki",
+        "New Zealand Defence Force Completes Starshield Trial",
+        "SpaceX Schedules 15th Starship Test Flight",
+        "Anthropic IPO Reality Check: What Recent Listings Suggest for ANT Stock"
+      ],
+      "last_at": "2026-11-09T04:09:47Z",
+      "sentiment": 0.0,
+      "price": 134.27,
+      "adv_usd": 15820352111.883926,
+      "chg_5d": -0.3,
+      "chg_20d": -17.4,
+      "rsi": 42.9,
+      "trend": "baissiere",
+      "hv": 0.7365519521062744,
+      "niche": false,
+      "score": 4.07,
+      "why": "SpaceX est au cœur de débats politiques et technologiques autour du coût de l'IA et des essais militaires, augmentant sa visibilité médiatique.",
+      "risk": "Les pressions réglementaires et les débats politiques peuvent retarder les projets et affecter les revenus futurs.",
+      "why_en": "SpaceX is central to political and tech debates on AI costs and military trials, raising its media profile.",
+      "risk_en": "Regulatory pressures and political debates could delay projects and affect future revenues."
     },
     {
       "symbol": "NVO",
@@ -159,10 +232,10 @@
       "hv": 0.31974000125237806,
       "niche": false,
       "score": 3.857,
-      "why": "L'expansion du service de santé métabolique en Chine et les résultats de l'essai ESSENCE suscitent l'intérêt.",
-      "risk": "Les résultats post‑hoc peuvent ne pas se traduire en approbations réglementaires rapides.",
-      "why_en": "Expansion of the metabolic health service in China and ESSENCE trial results attract interest.",
-      "risk_en": "Post‑hoc results may not quickly lead to regulatory approvals."
+      "why": "Novo Nordisk renforce sa présence en Chine et publie des analyses post‑hoc d'un essai de phase 3, montrant un engagement continu dans la santé métabolique.",
+      "risk": "Les résultats post‑hoc ne garantissent pas de nouvelles autorisations et la concurrence dans le diabète reste forte.",
+      "why_en": "Novo Nordisk expands in China and releases Phase 3 post‑hoc analysis, showing continued metabolic health commitment.",
+      "risk_en": "Post‑hoc results do not guarantee new approvals and diabetes competition remains intense."
     },
     {
       "symbol": "BLK",
@@ -182,10 +255,10 @@
       "hv": 0.3508685783531337,
       "niche": false,
       "score": 3.737,
-      "why": "Les nouvelles positions discrétionnaires de BlackRock dans l'immobilier attirent l'attention.",
-      "risk": "Ces positions exposent le fonds aux fluctuations du marché immobilier commercial.",
-      "why_en": "BlackRock’s new discretionary stakes in real‑estate draw attention.",
-      "risk_en": "These positions expose the fund to commercial real‑estate market swings."
+      "why": "BlackRock révèle des positions discrétionnaires dans des actifs immobiliers logistiques, signalant une confiance dans le secteur logistique.",
+      "risk": "L'exposition accrue à l'immobilier logistique peut être affectée par des ralentissements économiques ou des taux d'intérêt en hausse.",
+      "why_en": "BlackRock discloses discretionary positions in logistics real estate, signaling confidence in the sector.",
+      "risk_en": "Increased exposure to logistics real estate could be hit by economic slowdowns or rising interest rates."
     },
     {
       "symbol": "BTC",
@@ -206,10 +279,10 @@
       "hv": 0.3480005344689201,
       "niche": false,
       "score": 3.533,
-      "why": "Les flux sortants d'ETF et les réévaluations de Microsoft créent de l'intérêt autour des crypto‑actifs.",
-      "risk": "Les sorties d'ETF indiquent une pression baissière sur les prix des cryptomonnaies.",
-      "why_en": "ETF outflows and Microsoft’s reassessments generate interest in crypto assets.",
-      "risk_en": "ETF outflows signal downward pressure on cryptocurrency prices."
+      "why": "Les flux sortants des ETF crypto augmentent après la baisse d'un indice de peur, indiquant une volatilité accrue du marché des cryptomonnaies.",
+      "risk": "Les sorties de capitaux et les incertitudes réglementaires peuvent accentuer la baisse des prix des actifs numériques.",
+      "why_en": "Crypto ETF outflows rise after a fear gauge drop, indicating heightened market volatility.",
+      "risk_en": "Capital outflows and regulatory uncertainty may deepen price declines of digital assets."
     },
     {
       "symbol": "NVS",
@@ -229,10 +302,10 @@
       "hv": 0.2887532413736645,
       "niche": false,
       "score": 3.417,
-      "why": "L’enquête FDA sur Zolgensma et l’arrêt du développement de Pelacarsen attirent l’attention sur Novartis.",
-      "risk": "Ces développements peuvent entraîner des coûts juridiques et de R&D supplémentaires.",
-      "why_en": "The FDA probe of Zolgensma and halting Pelacarsen development draw focus to Novartis.",
-      "risk_en": "These events may lead to additional legal and R&D expenses."
+      "why": "Novartis fait face à une enquête FDA et à l'arrêt d'un programme, ce qui attire l'attention sur ses risques de développement pharmaceutique.",
+      "risk": "Les investigations et l'abandon de projets peuvent entraîner des coûts de litige et affecter la confiance des investisseurs.",
+      "why_en": "Novartis faces an FDA investigation and a program halt, drawing attention to pharma development risks.",
+      "risk_en": "Investigations and program discontinuations can lead to litigation costs and erode investor confidence."
     },
     {
       "symbol": "FLY",
@@ -252,10 +325,10 @@
       "hv": 1.4857774015026504,
       "niche": false,
       "score": 3.197,
-      "why": "L’attribution d’un contrat NASA de 10 milliards de dollars place Firefly sous les projecteurs.",
-      "risk": "La dépendance à un seul gros contrat expose l’entreprise à des risques d’exécution et de financement.",
-      "why_en": "Winning a $10 billion NASA contract puts Firefly in the spotlight.",
-      "risk_en": "Reliance on a single large contract creates execution and financing risks."
+      "why": "Firefly Aerospace devient fournisseur de la NASA pour un contrat lunaire de 10 milliards de dollars, renforçant sa crédibilité spatiale.",
+      "risk": "La dépendance à un seul gros contrat gouvernemental expose l'entreprise aux retards ou aux annulations de missions.",
+      "why_en": "Firefly Aerospace becomes a NASA vendor for a $10 billion lunar contract, boosting its space credibility.",
+      "risk_en": "Reliance on a single large government contract exposes the company to mission delays or cancellations."
     },
     {
       "symbol": "TKO",
@@ -275,82 +348,10 @@
       "hv": 0.288319731502489,
       "niche": false,
       "score": 3.197,
-      "why": "Les déclarations publiques de Dana White et de Donald Trump créent un buzz médiatique autour de l'UFC.",
-      "risk": "Ces prises de position peuvent entraîner des controverses et affecter la réputation de la marque.",
-      "why_en": "Public statements by Dana White and Donald Trump generate media buzz around UFC.",
-      "risk_en": "Such statements may spark controversy and impact brand reputation."
-    },
-    {
-      "symbol": "SPCX",
-      "mentions": 10,
-      "headlines": [
-        "Anthropic IPO Reality Check: What Recent Listings Suggest for ANT Stock",
-        "Nvidia Stock Loses Key Support, Enters Bear Market as Earnings Loom",
-        "This Week in TSLA: Elon Musk Loses Big in Midterms, Cybertruck Ends Production and More",
-        "Impulse Space Selected for NASA VADR Task Order Utilizing SpaceX Falcon 9"
-      ],
-      "last_at": "2026-11-08T20:30:07Z",
-      "sentiment": -0.2,
-      "price": 134.27,
-      "adv_usd": 15820352111.883926,
-      "chg_5d": -0.3,
-      "chg_20d": -17.4,
-      "rsi": 42.9,
-      "trend": "baissiere",
-      "hv": 0.7365519521062744,
-      "niche": false,
-      "score": 3.136,
-      "why": "Les analyses d'IPO et la perte de support clé de Nvidia alimentent l'intérêt pour le secteur technologique.",
-      "risk": "La tendance baissière et les perspectives d earnings négatives augmentent la volatilité.",
-      "why_en": "IPO analyses and Nvidia losing key support fuel interest in tech stocks.",
-      "risk_en": "The downtrend and negative earnings outlook heighten volatility."
-    },
-    {
-      "symbol": "F",
-      "mentions": 3,
-      "headlines": [
-        "Ford Racing Introduces 2027 Mustang Dark Horse SC",
-        "Ford Motor Company Recalls 36,994 U.S. Vehicles Due to Seat Safety Issue",
-        "‘Another Failure For Tesla’: Ross Gerber Slams Elon Musk Amid Cybertruck Shutdown Plans, Gary Black Calls It a ‘Missed Opportunity’"
-      ],
-      "last_at": "2026-11-08T14:01:51Z",
-      "sentiment": 0.0,
-      "price": 12.44,
-      "adv_usd": 526509718.9478731,
-      "chg_5d": 1.6,
-      "chg_20d": 2.2,
-      "rsi": 51.7,
-      "trend": "neutre",
-      "hv": 0.2959970180539573,
-      "niche": false,
-      "score": 3.093,
-      "why": "Le lancement du Mustang Dark Horse et le rappel de véhicules créent un double focus sur Ford.",
-      "risk": "Les rappels de sécurité peuvent nuire à la confiance des consommateurs et augmenter les coûts.",
-      "why_en": "The Mustang Dark Horse launch and vehicle recall create dual focus on Ford.",
-      "risk_en": "Safety recalls can erode consumer confidence and raise costs."
-    },
-    {
-      "symbol": "FDS",
-      "mentions": 2,
-      "headlines": [
-        "Dow Jones and S&P 500 Outlook: Stock Market News To Watch This Week",
-        "S&P 500 Faces Double Top Risk as Rate Hike Bets Build and AI Fears Spread"
-      ],
-      "last_at": "2026-11-08T18:30:05Z",
-      "sentiment": -0.16666666666666666,
-      "price": 327.89,
-      "adv_usd": 239658928.75595093,
-      "chg_5d": -0.5,
-      "chg_20d": 14.2,
-      "rsi": 57.1,
-      "trend": "haussiere",
-      "hv": 0.4291820588513233,
-      "niche": false,
-      "score": 2.597,
-      "why": "Les perspectives du Dow Jones et les craintes liées à l'IA attirent l'attention sur le marché global.",
-      "risk": "Le risque de double top sur le S&P 500 indique une possible correction à venir.",
-      "why_en": "Dow Jones outlook and AI‑related fears draw attention to the broader market.",
-      "risk_en": "A double‑top risk on the S&P 500 signals a potential upcoming correction."
+      "why": "Des déclarations publiques de personnalités influentes (Dana White, Donald Trump) créent un buzz médiatique autour de la marque UFC.",
+      "risk": "Le lien avec des figures controversées peut entraîner des réactions négatives du public et des sponsors.",
+      "why_en": "Public statements by influential figures generate media buzz around the UFC brand.",
+      "risk_en": "Association with controversial personalities may trigger negative public and sponsor reactions."
     }
   ]
 }
