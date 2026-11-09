@@ -160,3 +160,14 @@ Exécuté : 2026-11-09T20:30:01 | équité 98,508.57 $ (+3.09 % jour) | bourse U
   IA : BEAR_PUT_SPREAD NVDA | confiance 0.8 | NVDA montre une forte tendance baissière avec un RSI très bas et une volatilité implicite supérieure à la volatilité réalisée, ce qui rend le BEAR_PUT_SPREAD pertinent malgré la proximité des résultats.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-09T20:55:01 | équité 98,298.27 $ (+2.87 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,737 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : BAM, BEN, HUM, AIZ, BILL, CLDX*, TS, NRG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, DIS, AIZ, BAM, WMT, AMZN, META, AMD, NRG, INTC, QCOM, BILL, IWM, SOL/USD, XRP/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Notes IA : AMZN BUY_STOCK 0.8 · DIS BUY_STOCK 0.65 · BILL BUY_STOCK 0.65
+  IA : BUY_STOCK AMZN | confiance 0.8 | AMZN montre une forte hausse récente, un RSI neutre et une volatilité implicite inférieure à la volatilité réalisée, ce qui en fait le meilleur candidat pour un achat direct.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
