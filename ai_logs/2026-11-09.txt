@@ -34,3 +34,14 @@ Exécuté : 2026-11-09T15:30:13 | équité 97,438.03 $ (+1.97 % jour) | bourse U
   IA : BULL_PUT_SPREAD ASH | confiance 0.78 | Vente d'un put spread sur ASH profite d'une prime élevée (IV/HV = 1.1) alors que l'action montre une forte tendance haussière, limitant le risque maximal au crédit reçu.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-09T16:00:01 | équité 97,637.22 $ (+2.17 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,537 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : SLVM*, ARRY, CE, ASH*, LINC*, ABNB, BNY, COAG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, COAG, DIS, LINC, WMT, ASH, MSFT, AMZN, META, AMD, MU, ARRY, IWM, XRP/USD, SOL/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Notes IA : MSFT BULL_CALL_SPREAD 0.82 · AMZN BULL_CALL_SPREAD 0.8 · NVDA BULL_PUT_SPREAD 0.65
+  IA : BULL_CALL_SPREAD MSFT | confiance 0.82 | MSFT montre une tendance haussière claire, un RSI modéré et des options sous-évaluées (IV/HV 0.75), ce qui rend le bull call spread attractif avec risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
