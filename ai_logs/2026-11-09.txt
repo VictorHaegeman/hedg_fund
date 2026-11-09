@@ -1,0 +1,12 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-09T14:32:01 | équité 96,594.28 $ (+1.08 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,184 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ABNB, BN, MTD, MSI, RDNT, ABG, FXI, EL  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, RDNT, DIS, MSI, INTC, CAT, BN, WMT, MSFT, GOOGL, AMZN, META, IWM, SOL/USD, XRP/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : MSI (IV/HV 1.2, BULL_PUT_SPREAD)
+  Notes IA : AMZN BUY_STOCK 0.8 · MSFT BUY_STOCK 0.78 · DIS BUY_STOCK 0.78
+  IA : BUY_STOCK AMZN | confiance 0.8 | AMZN montre une forte tendance haussière, un RSI raisonnable et une volatilité implicite basse, ce qui en fait le meilleur candidat pour un achat d'action.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
