@@ -137,3 +137,15 @@ Exécuté : 2026-11-09T19:30:01 | équité 98,270.85 $ (+2.84 % jour) | bourse U
   IA : BUY_STOCK AMZN | confiance 0.8 | Achat d'AMZN car la tendance haussière, un RSI modéré et une volatilité implicite basse indiquent un bon potentiel de hausse à court terme.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-09T20:00:00 | équité 98,463.87 $ (+3.04 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,852 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : BAM, BEN, HUM, AIZ, BILL, CLDX*, TS, NRG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, DIS, AIZ, BAM, NRG, AMZN, META, TSLA, AMD, WMT, HUM, BILL, IWM, SOL/USD, XRP/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : HUM (IV/HV 1.36, BULL_PUT_SPREAD)
+  Notes IA : AMZN BUY_STOCK 0.82 · BILL BUY_STOCK 0.71 · ACHC COVERED_CALL 0.68
+  IA : BUY_STOCK AMZN | confiance 0.82 | AMZN montre une forte hausse récente, un RSI neutre et une volatilité raisonnable, ce qui en fait le meilleur candidat pour un achat direct.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
