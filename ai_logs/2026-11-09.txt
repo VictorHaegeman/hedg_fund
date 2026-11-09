@@ -22,3 +22,15 @@ Exécuté : 2026-11-09T15:00:01 | équité 97,169.04 $ (+1.68 % jour) | bourse U
   IA : BULL_PUT_SPREAD DIS | confiance 0.7 | Vente d'un put spread sur DIS, action haussière avec une volatilité implicite élevée (IV/HV 1.49) et aucune annonce de résultats proche, ce qui permet de capter une prime importante tout en limitant le risque.
   Trade refusé : Résultats de DIS dans 8 j : pas de vente d'options avant l'échéance
   Idées presse : à jour (il y a 3.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-09T15:30:13 | équité 97,438.03 $ (+1.97 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,555 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : SLVM*, ARRY, CE, ASH*, LINC*, ABNB, BNY, COAG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, COAG, DIS, LINC, WMT, ASH, MSFT, AMZN, META, AMD, MU, ARRY, IWM, SOL/USD, XRP/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASH (IV/HV 1.1, BULL_PUT_SPREAD)
+  Notes IA : ASH BULL_PUT_SPREAD 0.78 · DIS BULL_PUT_SPREAD 0.7 · COAG BUY_STOCK 0.65
+  IA : BULL_PUT_SPREAD ASH | confiance 0.78 | Vente d'un put spread sur ASH profite d'une prime élevée (IV/HV = 1.1) alors que l'action montre une forte tendance haussière, limitant le risque maximal au crédit reçu.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
