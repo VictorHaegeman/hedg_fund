@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T20:55:11",
+  "updated_at": "2026-11-09T00:01:15",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -20,10 +20,10 @@
       "hv": 0.6955837841839018,
       "niche": true,
       "score": 7.197,
-      "why": "Les analystes Telsey augmentent le cours cible à 14$, ce qui soutient la hausse du titre.",
-      "risk": "Le prix cible reste limité et dépend de la capacité d'Arhaus à maintenir sa croissance.",
-      "why_en": "Analysts at Telsey raised the price target to $14, supporting the stock's rally.",
-      "risk_en": "The price target is modest and relies on Arhaus sustaining its growth."
+      "why": "Le relèvement du cours cible à 14$ par Telsey Advisory Group suscite l'intérêt des investisseurs.",
+      "risk": "Le maintien du rating Market Perform indique une incertitude sur la performance future.",
+      "why_en": "The raise of the price target to $14 by Telsey Advisory Group draws investor attention.",
+      "risk_en": "Maintaining a Market Perform rating signals uncertainty about future performance."
     },
     {
       "symbol": "WEN",
@@ -43,34 +43,10 @@
       "hv": 0.634111126249594,
       "niche": false,
       "score": 5.697,
-      "why": "Les ajustements à la hausse des objectifs de prix renforcent la dynamique positive de Wendy's.",
-      "risk": "Toute détérioration de la demande de restauration rapide pourrait freiner la progression.",
-      "why_en": "Upward revisions of price targets boost Wendy's positive momentum.",
-      "risk_en": "A slowdown in fast‑food demand could curb the stock's advance."
-    },
-    {
-      "symbol": "BLK",
-      "mentions": 3,
-      "headlines": [
-        "BlackRock Discloses Discretionary Position in Prologis",
-        "BlackRock Discloses Stake in SEGRO",
-        "BlackRock Greater Europe Investment Trust plc Announces Share Buyback"
-      ],
-      "last_at": "2026-11-08T02:02:23Z",
-      "sentiment": 0.3333333333333333,
-      "price": 1178.87,
-      "adv_usd": 872515315.0372314,
-      "chg_5d": 2.7,
-      "chg_20d": 8.9,
-      "rsi": 58.2,
-      "trend": "haussiere",
-      "hv": 0.3508685783531337,
-      "niche": false,
-      "score": 5.313,
-      "why": "BlackRock révèle des participations stratégiques et un rachat d'actions, signalant confiance interne.",
-      "risk": "Les positions discrétionnaires exposent le fonds aux fluctuations du marché immobilier.",
-      "why_en": "BlackRock disclosed strategic stakes and a share buyback, signaling internal confidence.",
-      "risk_en": "Discretionary positions expose the firm to real‑estate market volatility."
+      "why": "L'augmentation du cours cible à 8$ par Stephens & Co. attire l'attention sur Wendy's.",
+      "risk": "Des ajustements de cours cible peuvent refléter une volatilité des marges du secteur de la restauration rapide.",
+      "why_en": "The lift of the price target to $8 by Stephens & Co. draws focus to Wendy's.",
+      "risk_en": "Price target adjustments may reflect volatility in fast‑food margins."
     },
     {
       "symbol": "EL",
@@ -90,10 +66,10 @@
       "hv": 0.42446851136967556,
       "niche": false,
       "score": 4.857,
-      "why": "EssilorLuxottica annonce une expansion en Chine et le retour d'un produit culte, stimulant l'intérêt.",
-      "risk": "L'expansion en Chine comporte des incertitudes réglementaires et de concurrence locale.",
-      "why_en": "EssilorLuxottica announces Chinese expansion and a cult‑favorite product revival, sparking interest.",
-      "risk_en": "China expansion carries regulatory and local competition uncertainties."
+      "why": "Le lancement d'un nouveau produit cosmétique et l'expansion d'EssilorLuxottica en Chine créent de l'engouement.",
+      "risk": "Ces initiatives peuvent être confrontées à des défis d'adoption et de concurrence locale.",
+      "why_en": "A new cosmetics product launch and EssilorLuxottica’s China expansion generate buzz.",
+      "risk_en": "These initiatives may face adoption hurdles and local competition."
     },
     {
       "symbol": "SPGI",
@@ -114,10 +90,10 @@
       "hv": 0.26212960403959246,
       "niche": false,
       "score": 4.833,
-      "why": "S&P Global publie des rapports et des changements d'indices, renforçant sa visibilité sectorielle.",
-      "risk": "Les nouvelles notations de crédit et les changements d'indices peuvent affecter la perception de risque.",
-      "why_en": "S&P Global releases reports and index changes, enhancing sector visibility.",
-      "risk_en": "New credit ratings and index adjustments may influence risk perception."
+      "why": "Les rapports sur l'IA et les changements d'indices renforcent l'intérêt pour S&P Global.",
+      "risk": "L'attribution d'une notation BB‑- pour une région expose la société à des risques géopolitiques.",
+      "why_en": "AI impact reports and index changes boost interest in S&P Global.",
+      "risk_en": "Assigning a BB‑ rating to a region exposes the firm to geopolitical risk."
     },
     {
       "symbol": "ARLO",
@@ -137,10 +113,10 @@
       "hv": 0.9561070565162058,
       "niche": true,
       "score": 4.197,
-      "why": "Lake Street maintient un avis d'achat et relève le cours cible, soutenant le titre malgré la baisse récente.",
-      "risk": "La volatilité récente indique une sensibilité aux résultats financiers et à la concurrence technologique.",
-      "why_en": "Lake Street keeps a buy rating and raises the price target, supporting the stock despite recent decline.",
-      "risk_en": "Recent volatility shows sensitivity to earnings and tech competition."
+      "why": "Le maintien du rating Buy et le nouveau cours cible à 26$ stimulent l'intérêt pour Arlo.",
+      "risk": "La baisse de 14,7% du cours indique une pression vendeuse persistante.",
+      "why_en": "Maintaining a Buy rating and a new $26 price target spark interest in Arlo.",
+      "risk_en": "A 14.7% price drop signals ongoing selling pressure."
     },
     {
       "symbol": "SIBN",
@@ -160,10 +136,10 @@
       "hv": 0.7199020428872479,
       "niche": true,
       "score": 4.197,
-      "why": "Des ventes d'actions par les dirigeants attirent l'attention sur la liquidité du titre.",
-      "risk": "Les ventes d'initiés peuvent être perçues comme un manque de confiance dans la société.",
-      "why_en": "Insider sales draw attention to the stock's liquidity.",
-      "risk_en": "Insider sales may be seen as a lack of confidence in the company."
+      "why": "Les ventes d'actions par les dirigeants attirent l'attention sur la gouvernance de SI‑BONE.",
+      "risk": "Ces ventes peuvent être perçues comme un manque de confiance des insiders.",
+      "why_en": "Insider stock sales draw attention to SI‑BONE’s governance.",
+      "risk_en": "Such sales may be viewed as a lack of insider confidence."
     },
     {
       "symbol": "NVO",
@@ -183,10 +159,33 @@
       "hv": 0.31974000125237806,
       "niche": false,
       "score": 3.857,
-      "why": "Novo Nordisk développe de nouveaux services en Chine et publie des résultats d'essai, montrant une innovation continue.",
-      "risk": "Les résultats post‑hoc et les expansions géographiques comportent des incertitudes cliniques et réglementaires.",
-      "why_en": "Novo Nordisk rolls out new services in China and releases post‑hoc trial results, indicating ongoing innovation.",
-      "risk_en": "Post‑hoc results and geographic expansion carry clinical and regulatory uncertainties."
+      "why": "L'expansion du service de santé métabolique en Chine et les résultats de l'essai ESSENCE suscitent l'intérêt.",
+      "risk": "Les résultats post‑hoc peuvent ne pas se traduire en approbations réglementaires rapides.",
+      "why_en": "Expansion of the metabolic health service in China and ESSENCE trial results attract interest.",
+      "risk_en": "Post‑hoc results may not quickly lead to regulatory approvals."
+    },
+    {
+      "symbol": "BLK",
+      "mentions": 2,
+      "headlines": [
+        "BlackRock Discloses Discretionary Position in Prologis",
+        "BlackRock Discloses Stake in SEGRO"
+      ],
+      "last_at": "2026-11-08T02:02:23Z",
+      "sentiment": 0.0,
+      "price": 1178.87,
+      "adv_usd": 872515315.0372314,
+      "chg_5d": 2.7,
+      "chg_20d": 8.9,
+      "rsi": 58.2,
+      "trend": "haussiere",
+      "hv": 0.3508685783531337,
+      "niche": false,
+      "score": 3.737,
+      "why": "Les nouvelles positions discrétionnaires de BlackRock dans l'immobilier attirent l'attention.",
+      "risk": "Ces positions exposent le fonds aux fluctuations du marché immobilier commercial.",
+      "why_en": "BlackRock’s new discretionary stakes in real‑estate draw attention.",
+      "risk_en": "These positions expose the fund to commercial real‑estate market swings."
     },
     {
       "symbol": "BTC",
@@ -207,10 +206,10 @@
       "hv": 0.3480005344689201,
       "niche": false,
       "score": 3.533,
-      "why": "Les flux sortants d'ETF et les réévaluations de Microsoft créent un débat sur la stabilité des crypto‑actifs.",
-      "risk": "Les sorties d'ETF et les pressions sur les actions liées aux cryptos augmentent la volatilité du marché.",
-      "why_en": "ETF outflows and Microsoft's reassessment spark debate on crypto‑asset stability.",
-      "risk_en": "ETF outflows and pressure on crypto‑linked stocks heighten market volatility."
+      "why": "Les flux sortants d'ETF et les réévaluations de Microsoft créent de l'intérêt autour des crypto‑actifs.",
+      "risk": "Les sorties d'ETF indiquent une pression baissière sur les prix des cryptomonnaies.",
+      "why_en": "ETF outflows and Microsoft’s reassessments generate interest in crypto assets.",
+      "risk_en": "ETF outflows signal downward pressure on cryptocurrency prices."
     },
     {
       "symbol": "NVS",
@@ -230,10 +229,10 @@
       "hv": 0.2887532413736645,
       "niche": false,
       "score": 3.417,
-      "why": "Novartis fait face à une enquête FDA et arrête un programme, ce qui attire l'attention sur ses pipelines.",
-      "risk": "Les investigations et l'arrêt de développements peuvent retarder les revenus futurs.",
-      "why_en": "Novartis is under FDA scrutiny and halts a program, drawing focus to its pipelines.",
-      "risk_en": "Investigations and program termination may delay future revenues."
+      "why": "L’enquête FDA sur Zolgensma et l’arrêt du développement de Pelacarsen attirent l’attention sur Novartis.",
+      "risk": "Ces développements peuvent entraîner des coûts juridiques et de R&D supplémentaires.",
+      "why_en": "The FDA probe of Zolgensma and halting Pelacarsen development draw focus to Novartis.",
+      "risk_en": "These events may lead to additional legal and R&D expenses."
     },
     {
       "symbol": "FLY",
@@ -253,56 +252,10 @@
       "hv": 1.4857774015026504,
       "niche": false,
       "score": 3.197,
-      "why": "Firefly Aerospace devient fournisseur de la NASA pour un contrat de 10 milliards $, renforçant sa crédibilité.",
-      "risk": "La dépendance à un seul gros contrat expose l'entreprise aux retards ou annulations gouvernementales.",
-      "why_en": "Firefly Aerospace secures a $10 billion NASA contract, boosting its credibility.",
-      "risk_en": "Reliance on a single large contract exposes the firm to governmental delays or cancellations."
-    },
-    {
-      "symbol": "IONQ",
-      "mentions": 2,
-      "headlines": [
-        "Wall Street Analysts Update Ratings and Price Targets for IonQ",
-        "Jefferies Maintains Buy on IonQ, Lowers Price Target to $65"
-      ],
-      "last_at": "2026-11-08T02:02:22Z",
-      "sentiment": 0.0,
-      "price": 32.62,
-      "adv_usd": 782500879.8609066,
-      "chg_5d": 8.6,
-      "chg_20d": -18.2,
-      "rsi": 47.9,
-      "trend": "neutre",
-      "hv": 1.21925254731099,
-      "niche": false,
-      "score": 3.197,
-      "why": "Les analystes mettent à jour leurs notes et maintiennent un avis d'achat, soutenant l'intérêt pour le quantum computing.",
-      "risk": "La réduction du cours cible reflète des attentes plus prudentes face à la commercialisation du quantum.",
-      "why_en": "Analysts update ratings and keep a buy recommendation, sustaining interest in quantum computing.",
-      "risk_en": "The lower price target reflects cautious expectations about quantum commercialization."
-    },
-    {
-      "symbol": "QNT",
-      "mentions": 2,
-      "headlines": [
-        "JPMorgan Adjusts Price Target for Quantinuum Inc.",
-        "Jefferies Maintains Buy on Quantinuum, Lowers Price Target to $65"
-      ],
-      "last_at": "2026-11-08T14:02:20Z",
-      "sentiment": 0.0,
-      "price": 37.57,
-      "adv_usd": 87093842.82068253,
-      "chg_5d": 11.8,
-      "chg_20d": -9.0,
-      "rsi": 48.4,
-      "trend": "neutre",
-      "hv": 1.3416002206545863,
-      "niche": false,
-      "score": 3.197,
-      "why": "JPMorgan ajuste le cours cible et Jefferies maintient un avis d'achat, indiquant un soutien au secteur quantique.",
-      "risk": "Les baisses de cours cible soulignent les défis de monétisation de la technologie quantique.",
-      "why_en": "JPMorgan adjusts the price target and Jefferies keeps a buy rating, indicating support for the quantum sector.",
-      "risk_en": "Reduced price targets highlight monetization challenges for quantum technology."
+      "why": "L’attribution d’un contrat NASA de 10 milliards de dollars place Firefly sous les projecteurs.",
+      "risk": "La dépendance à un seul gros contrat expose l’entreprise à des risques d’exécution et de financement.",
+      "why_en": "Winning a $10 billion NASA contract puts Firefly in the spotlight.",
+      "risk_en": "Reliance on a single large contract creates execution and financing risks."
     },
     {
       "symbol": "TKO",
@@ -322,10 +275,10 @@
       "hv": 0.288319731502489,
       "niche": false,
       "score": 3.197,
-      "why": "Les publications publiques de Dana White et de Donald Trump créent un buzz médiatique autour de l'entreprise.",
-      "risk": "L'association à des figures controversées peut entraîner des réactions négatives du marché.",
-      "why_en": "Public posts by Dana White and Donald Trump generate media buzz around the company.",
-      "risk_en": "Association with controversial figures may trigger negative market reactions."
+      "why": "Les déclarations publiques de Dana White et de Donald Trump créent un buzz médiatique autour de l'UFC.",
+      "risk": "Ces prises de position peuvent entraîner des controverses et affecter la réputation de la marque.",
+      "why_en": "Public statements by Dana White and Donald Trump generate media buzz around UFC.",
+      "risk_en": "Such statements may spark controversy and impact brand reputation."
     },
     {
       "symbol": "SPCX",
@@ -347,10 +300,57 @@
       "hv": 0.7365519521062744,
       "niche": false,
       "score": 3.136,
-      "why": "Le secteur technologique montre des pressions avec des IPOs et des baisses de soutien clé, attirant l'attention sur la faiblesse du marché.",
-      "risk": "La tendance baissière et la perte de support clé augmentent le risque de nouvelles pertes de valeur.",
-      "why_en": "The tech sector faces pressure from IPOs and loss of key support, highlighting market weakness.",
-      "risk_en": "The downtrend and loss of key support raise the risk of further value erosion."
+      "why": "Les analyses d'IPO et la perte de support clé de Nvidia alimentent l'intérêt pour le secteur technologique.",
+      "risk": "La tendance baissière et les perspectives d earnings négatives augmentent la volatilité.",
+      "why_en": "IPO analyses and Nvidia losing key support fuel interest in tech stocks.",
+      "risk_en": "The downtrend and negative earnings outlook heighten volatility."
+    },
+    {
+      "symbol": "F",
+      "mentions": 3,
+      "headlines": [
+        "Ford Racing Introduces 2027 Mustang Dark Horse SC",
+        "Ford Motor Company Recalls 36,994 U.S. Vehicles Due to Seat Safety Issue",
+        "‘Another Failure For Tesla’: Ross Gerber Slams Elon Musk Amid Cybertruck Shutdown Plans, Gary Black Calls It a ‘Missed Opportunity’"
+      ],
+      "last_at": "2026-11-08T14:01:51Z",
+      "sentiment": 0.0,
+      "price": 12.44,
+      "adv_usd": 526509718.9478731,
+      "chg_5d": 1.6,
+      "chg_20d": 2.2,
+      "rsi": 51.7,
+      "trend": "neutre",
+      "hv": 0.2959970180539573,
+      "niche": false,
+      "score": 3.093,
+      "why": "Le lancement du Mustang Dark Horse et le rappel de véhicules créent un double focus sur Ford.",
+      "risk": "Les rappels de sécurité peuvent nuire à la confiance des consommateurs et augmenter les coûts.",
+      "why_en": "The Mustang Dark Horse launch and vehicle recall create dual focus on Ford.",
+      "risk_en": "Safety recalls can erode consumer confidence and raise costs."
+    },
+    {
+      "symbol": "FDS",
+      "mentions": 2,
+      "headlines": [
+        "Dow Jones and S&P 500 Outlook: Stock Market News To Watch This Week",
+        "S&P 500 Faces Double Top Risk as Rate Hike Bets Build and AI Fears Spread"
+      ],
+      "last_at": "2026-11-08T18:30:05Z",
+      "sentiment": -0.16666666666666666,
+      "price": 327.89,
+      "adv_usd": 239658928.75595093,
+      "chg_5d": -0.5,
+      "chg_20d": 14.2,
+      "rsi": 57.1,
+      "trend": "haussiere",
+      "hv": 0.4291820588513233,
+      "niche": false,
+      "score": 2.597,
+      "why": "Les perspectives du Dow Jones et les craintes liées à l'IA attirent l'attention sur le marché global.",
+      "risk": "Le risque de double top sur le S&P 500 indique une possible correction à venir.",
+      "why_en": "Dow Jones outlook and AI‑related fears draw attention to the broader market.",
+      "risk_en": "A double‑top risk on the S&P 500 signals a potential upcoming correction."
     }
   ]
 }
