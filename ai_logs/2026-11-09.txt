@@ -101,3 +101,15 @@ Exécuté : 2026-11-09T18:30:01 | équité 98,342.70 $ (+2.91 % jour) | bourse U
   IA : BUY_STOCK ARRY | confiance 0.8 | Array Technologies montre une forte hausse récente, un RSI modéré et une volatilité implicite basse, ce qui en fait le meilleur candidat pour un achat d'action.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 3.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-09T18:57:03 | équité 98,344.92 $ (+2.92 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,818 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : BAM, BEN, HUM, AIZ, BILL, CLDX*, TS, NRG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, DIS, BAM, AIZ, BILL, MSFT, AMZN, META, AMD, WMT, HUM, MU, IWM, SOL/USD, XRP/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : HUM (IV/HV 1.39, BULL_PUT_SPREAD)
+  Notes IA : HUM BULL_PUT_SPREAD 0.8 · AMZN BUY_STOCK 0.68 · DIS BUY_STOCK 0.65
+  IA : BULL_PUT_SPREAD HUM | confiance 0.8 | Le spread BULL_PUT sur HUM profite d'une forte tendance haussière, d'un IV/HV élevé qui rend la prime attractive (>1.05x) et ne contredit aucune donnée majeure.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
