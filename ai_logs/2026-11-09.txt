@@ -56,3 +56,15 @@ Exécuté : 2026-11-09T16:30:01 | équité 97,744.09 $ (+2.29 % jour) | bourse U
   IA : BUY_STOCK ABNB | confiance 0.8 | ABNB montre une forte hausse récente (+12.8%), un RSI favorable et un IV/HV bas, ce qui justifie un achat direct avec un bon ratio risque/rendement.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-09T17:00:01 | équité 97,951.70 $ (+2.50 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,768 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : SLVM*, ARRY, CE, ASH*, LINC*, ABNB, BNY, COAG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, COAG, DIS, LINC, WMT, ASH, AMZN, META, AMD, MU, ABNB, MSFT, IWM, SOL/USD, XRP/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASH (IV/HV 1.23, BULL_PUT_SPREAD)
+  Notes IA : ASH BULL_PUT_SPREAD 0.8 · ABNB BUY_STOCK 0.75 · COAG BUY_STOCK 0.7
+  IA : BULL_PUT_SPREAD ASH | confiance 0.8 | Vente d'un BULL_PUT_SPREAD sur ASH profite de la forte volatilité implicite (IV/HV 1.23) et d'une tendance haussière claire, tout en limitant le risque maximal au crédit reçu.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
