@@ -130,3 +130,14 @@ Exécuté : 2026-11-10T20:30:00 | équité 97,790.88 $ (-0.41 % jour) | bourse U
   IA : BUY_STOCK LOW | confiance 0.8 | LOW montre une tendance haussière claire, un RSI élevé mais encore sous le niveau de survente critique et un IV/HV raisonnable, ce qui en fait le meilleur candidat pour un achat direct.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-10T20:55:00 | équité 97,945.36 $ (-0.25 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,479 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : TTD, FERG, ZETA, VIA*, KKR, CVLT, LOW, AAON  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, LOW, DIS, FERG, VIA, INTC, TTD, WMT, ZETA, AAPL, ORCL, MU, IWM, XRP/USD, SOL/USD, DOT/USD, ETH/USD, DOGE/USD | covered call possible sur : ACHC
+  Notes IA : VIA BUY_STOCK 0.8 · LOW BUY_STOCK 0.73 · ZETA BUY_STOCK 0.68
+  IA : BUY_STOCK VIA | confiance 0.8 | VIA montre une forte tendance haussière avec un RSI très élevé, une volatilité implicite inférieure à la volatilité réalisée (IV/HV 0.99) et des analystes favorables, ce qui justifie un achat direct malgré la forte volatilité historique.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.9 h, 15 idées)
