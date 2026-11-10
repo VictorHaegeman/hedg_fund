@@ -98,3 +98,13 @@ Exécuté : 2026-11-10T19:00:01 | équité 97,680.23 $ (-0.52 % jour) | bourse U
   IA : BULL_CALL_SPREAD FERG | confiance 0.75 | FERG montre une tendance haussière claire, un RSI raisonnable et des options très bon marché (IV/HV 0.54), ce qui rend le BULL_CALL_SPREAD optimal.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-10T19:30:01 | équité 97,787.21 $ (-0.41 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,488 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : TTD, FERG, ZETA, VIA*, KKR, CVLT, LOW, AAON  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, LOW, DIS, VIA, TTD, INTC, WMT, AMD, ORCL, FERG, ZETA, AAPL, IWM, XRP/USD, ETH/USD, SOL/USD, BCH/USD, DOT/USD | covered call possible sur : ACHC
+  Notes IA : FERG BUY_STOCK 0.78
+  IA : HOLD | confiance None | 
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
