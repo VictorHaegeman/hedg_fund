@@ -119,3 +119,14 @@ Exécuté : 2026-11-10T20:00:00 | équité 97,885.79 $ (-0.31 % jour) | bourse U
   IA : BUY_STOCK LOW | confiance 0.72 | Le titre montre une forte tendance haussière, un RSI élevé mais encore sous le seuil de surachat critique, et une volatilité raisonnable avec des options bon marché, ce qui justifie un achat direct.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-10T20:30:00 | équité 97,790.88 $ (-0.41 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,447 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : TTD, FERG, ZETA, VIA*, KKR, CVLT, LOW, AAON  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, LOW, VIA, DIS, INTC, TTD, WMT, FERG, ZETA, AAPL, ORCL, MU, IWM, XRP/USD, ETH/USD, SOL/USD, DOT/USD, DOGE/USD | covered call possible sur : ACHC
+  Notes IA : LOW BUY_STOCK 0.8 · MU BEAR_PUT_SPREAD 0.68 · VIA BUY_STOCK 0.65
+  IA : BUY_STOCK LOW | confiance 0.8 | LOW montre une tendance haussière claire, un RSI élevé mais encore sous le niveau de survente critique et un IV/HV raisonnable, ce qui en fait le meilleur candidat pour un achat direct.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
