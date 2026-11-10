@@ -65,3 +65,14 @@ Exécuté : 2026-11-10T16:58:39 | équité 97,446.47 $ (-0.76 % jour) | bourse U
   IA : BUY_STOCK ATAT | confiance 0.8 | ATAT montre une tendance haussière claire, un IV/HV inférieur à 1 indiquant des options bon marché et un RSI modéré, ce qui en fait le meilleur candidat pour un achat d'action.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.4 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-10T18:01:16 | équité 97,622.93 $ (-0.58 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,501 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : TTD, FERG, ZETA, VIA*, KKR, CVLT, LOW, AAON  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, LOW, VIA, INTC, WMT, DIS, TTD, AMZN, AMD, ORCL, MU, FERG, IWM, ETH/USD, XRP/USD, SOL/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Notes IA : AMZN BUY_STOCK 0.85 · VIA BULL_CALL_SPREAD 0.71 · LOW BULL_CALL_SPREAD 0.68
+  IA : BUY_STOCK AMZN | confiance 0.85 | Amazon montre une tendance haussière claire, un RSI équilibré et une volatilité implicite inférieure à la réalisée, ce qui rend l'achat direct de l'action le plus judicieux.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
