@@ -10,3 +10,14 @@ Exécuté : 2026-11-10T06:01:01 | équité 98,362.34 $ (+2.93 % jour) | bourse U
   IA : BUY_CRYPTO AVAX/USD | confiance 0.68 | AVAX montre le meilleur profil parmi les cryptos surveillées : gain récent de +5.7% sur 5 jours, RSI modéré, et une actualité très favorable avec le partenariat NYSE, ce qui justifie un score >0.65.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.1 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-10T15:00:02 | équité 97,537.95 $ (-0.67 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,339 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : TTD, KKR, RKLB, CNH, ATAT*, DECK, ASO, GOOG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, ASO, ATAT, DIS, WMT, MU, CAT, AMZN, ORCL, COIN, JNJ, MSFT, IWM, XRP/USD, SOL/USD, ETH/USD, BCH/USD, DOT/USD | covered call possible sur : ACHC
+  Notes IA : JNJ BUY_STOCK 0.8 · AMZN BUY_STOCK 0.75 · DIS BUY_STOCK 0.7
+  IA : BUY_STOCK JNJ | confiance 0.8 | JNJ montre une tendance haussière solide, un RSI confortable et une faible volatilité, ce qui en fait le meilleur candidat pour un achat d'actions avec un bon ratio risque/rendement.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
