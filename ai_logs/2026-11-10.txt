@@ -21,3 +21,14 @@ Exécuté : 2026-11-10T15:00:02 | équité 97,537.95 $ (-0.67 % jour) | bourse U
   IA : BUY_STOCK JNJ | confiance 0.8 | JNJ montre une tendance haussière solide, un RSI confortable et une faible volatilité, ce qui en fait le meilleur candidat pour un achat d'actions avec un bon ratio risque/rendement.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-10T15:30:01 | équité 97,570.13 $ (-0.64 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,418 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : TTD, KKR, RKLB, CNH, ATAT*, DECK, ASO, GOOG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, ATAT, DIS, WMT, ORCL, INTC, MU, CAT, ASO, AMZN, COIN, JNJ, IWM, XRP/USD, SOL/USD, ETH/USD, BCH/USD, DOT/USD | covered call possible sur : ACHC
+  Notes IA : AMZN BUY_STOCK 0.8 · ATAT BUY_STOCK 0.78 · DIS BUY_STOCK 0.75
+  IA : BUY_STOCK AMZN | confiance 0.8 | AMZN montre une tendance haussière claire, un RSI raisonnable et une volatilité implicite inférieure à la volatilité réalisée, ce qui rend l'achat direct plus avantageux que les stratégies d'options coûteuses.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
