@@ -1,0 +1,12 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-10T06:01:01 | équité 98,362.34 $ (+2.93 % jour) | bourse US FERMÉE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,713 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ZETA, EQX, TTWO, SGRY, TTD, RKLB, DFTX, MLAB*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : XRP/USD, SOL/USD, AVAX/USD, ETH/USD, BCH/USD
+  Réponse « par défaut » de l'IA (confiance None, sans notes chiffrées) → on lui redemande une vraie évaluation
+  Notes IA : AVAX/USD BUY_CRYPTO 0.68 · XRP/USD BUY_CRYPTO 0.55 · SOL/USD BUY_CRYPTO 0.55
+  IA : BUY_CRYPTO AVAX/USD | confiance 0.68 | AVAX montre le meilleur profil parmi les cryptos surveillées : gain récent de +5.7% sur 5 jours, RSI modéré, et une actualité très favorable avec le partenariat NYSE, ce qui justifie un score >0.65.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.1 h, 15 idées)
