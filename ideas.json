@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T00:01:12",
+  "updated_at": "2026-11-10T05:57:54",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -14,7 +14,7 @@
       "last_at": "2026-11-09T23:01:59Z",
       "sentiment": 0.6666666666666666,
       "price": 32.42,
-      "adv_usd": 165885493.02220076,
+      "adv_usd": 168870779.94659424,
       "chg_5d": 6.2,
       "chg_20d": -3.3,
       "rsi": 52.7,
@@ -22,34 +22,10 @@
       "hv": 0.5572505500694932,
       "niche": false,
       "score": 7.892,
-      "why": "Les résultats du T3 2026 et la hausse des prévisions de bénéfice et de ventes attirent l'attention.",
-      "risk": "Le risque réside dans la capacité à atteindre ces nouvelles prévisions plus élevées.",
-      "why_en": "Q3 2026 results and the raised profit and sales guidance draw attention.",
-      "risk_en": "The risk lies in the ability to meet the higher guidance."
-    },
-    {
-      "symbol": "APLE",
-      "mentions": 3,
-      "headlines": [
-        "Analyst Price Target Adjustments for Apple Hospitality REIT",
-        "Ladenburg Thalmann Maintains Neutral on Apple Hospitality REIT, Raises Price Target to $19",
-        "JP Morgan Maintains Neutral on Apple Hospitality REIT, Raises Price Target to $18"
-      ],
-      "last_at": "2026-11-09T23:02:08Z",
-      "sentiment": 0.6666666666666666,
-      "price": 19.68,
-      "adv_usd": 51593452.95821228,
-      "chg_5d": 5.4,
-      "chg_20d": 21.8,
-      "rsi": 74.6,
-      "trend": "haussiere",
-      "hv": 0.2977595319482118,
-      "niche": false,
-      "score": 6.773,
-      "why": "Les analystes augmentent leurs objectifs de cours, signalant un optimisme sur le REIT.",
-      "risk": "Un ralentissement du marché immobilier commercial pourrait freiner la performance.",
-      "why_en": "Analysts raise price targets, indicating optimism on the REIT.",
-      "risk_en": "A slowdown in the commercial real‑estate market could curb performance."
+      "why": "Les résultats du troisième trimestre et la hausse des prévisions de bénéfice et de ventes attirent l'attention.",
+      "risk": "Le risque réside dans la capacité de l'entreprise à tenir ces nouvelles prévisions plus élevées.",
+      "why_en": "Q3 results and the raised full‑year earnings and sales guidance draw interest.",
+      "risk_en": "The risk lies in the company's ability to meet the higher guidance."
     },
     {
       "symbol": "EQX",
@@ -62,7 +38,7 @@
       "last_at": "2026-11-09T23:01:53Z",
       "sentiment": 1.0,
       "price": 12.09,
-      "adv_usd": 144791700.81382942,
+      "adv_usd": 144907290.28278828,
       "chg_5d": 19.9,
       "chg_20d": 7.9,
       "rsi": 62.7,
@@ -70,10 +46,10 @@
       "hv": 0.7055112891745463,
       "niche": false,
       "score": 6.773,
-      "why": "Le versement d'un dividende et des résultats financiers conformes aux attentes suscitent l'intérêt.",
-      "risk": "La dépendance aux prix des métaux précieux expose l'entreprise à la volatilité des cours.",
-      "why_en": "Dividend declaration and financial results in line with expectations attract interest.",
-      "risk_en": "Reliance on precious‑metal prices exposes the company to price volatility."
+      "why": "Le versement d'un dividende et des résultats financiers supérieurs aux estimations stimulent l'intérêt.",
+      "risk": "Le risque principal est la dépendance aux prix de l'or et aux coûts d'exploitation.",
+      "why_en": "Dividend declaration and financial results beating estimates generate interest.",
+      "risk_en": "The main risk is reliance on gold prices and operating costs."
     },
     {
       "symbol": "TTWO",
@@ -87,7 +63,7 @@
       "last_at": "2026-11-09T22:23:13Z",
       "sentiment": 0.2,
       "price": 207.4,
-      "adv_usd": 600457724.732283,
+      "adv_usd": 601668540.6900787,
       "chg_5d": 8.0,
       "chg_20d": -0.7,
       "rsi": 51.9,
@@ -95,10 +71,10 @@
       "hv": 0.406857860002426,
       "niche": false,
       "score": 6.396,
-      "why": "L'annonce imminente du lancement de GTA 6 et les fortes précommandes stimulent l'intérêt.",
-      "risk": "Des retards ou des problèmes de lancement pourraient affecter les revenus attendus.",
-      "why_en": "The upcoming GTA 6 launch and strong pre‑order levels boost interest.",
-      "risk_en": "Delays or launch issues could impact expected revenues."
+      "why": "L'annonce imminente du lancement de GTA 6 et les précommandes record suscitent l'attention.",
+      "risk": "Le risque est lié à d'éventuels retards de lancement ou à une réception du marché inférieure aux attentes.",
+      "why_en": "The upcoming GTA 6 launch and record pre‑orders attract attention.",
+      "risk_en": "Risk stems from possible launch delays or weaker market reception."
     },
     {
       "symbol": "SGRY",
@@ -112,7 +88,7 @@
       "last_at": "2026-11-09T23:03:10Z",
       "sentiment": 0.16666666666666666,
       "price": 26.45,
-      "adv_usd": 161187958.69596902,
+      "adv_usd": 161195254.92867947,
       "chg_5d": 14.4,
       "chg_20d": 85.7,
       "rsi": 89.7,
@@ -120,10 +96,10 @@
       "hv": 1.4319175690362005,
       "niche": false,
       "score": 6.392,
-      "why": "Les résultats d'EPS supérieurs aux prévisions et la perspective de fusion attirent les investisseurs.",
-      "risk": "L'incertitude autour de la fusion et le retrait de guidance augmentent le risque de volatilité.",
-      "why_en": "EPS beat and merger prospects attract investors.",
-      "risk_en": "Uncertainty around the merger and withdrawn guidance raise volatility risk."
+      "why": "Les résultats d'exploitation supérieurs aux prévisions de bénéfice et la perspective de fusion attirent les investisseurs.",
+      "risk": "Le risque majeur est l'incertitude autour de la clôture de la fusion et la perte de la prime de liquidité.",
+      "why_en": "Operating results beating EPS forecasts and a pending merger draw investor interest.",
+      "risk_en": "The main risk is uncertainty over merger completion and loss of liquidity premium."
     },
     {
       "symbol": "TTD",
@@ -137,7 +113,7 @@
       "last_at": "2026-11-09T23:10:11Z",
       "sentiment": 0.5,
       "price": 14.93,
-      "adv_usd": 239650277.34101963,
+      "adv_usd": 246824626.9661665,
       "chg_5d": 19.0,
       "chg_20d": 25.0,
       "rsi": 68.8,
@@ -145,10 +121,35 @@
       "hv": 0.7276857733080294,
       "niche": false,
       "score": 6.392,
-      "why": "Le programme de rachat d'actions de 1 milliard de dollars montre la confiance de la direction.",
-      "risk": "Une dépendance accrue aux dépenses publicitaires des clients pourrait limiter la croissance.",
-      "why_en": "The $1 billion share‑buyback program signals management confidence.",
-      "risk_en": "Increasing reliance on client advertising spend could limit growth."
+      "why": "Les résultats du troisième trimestre et l'annonce d'un programme de rachat d'actions de 1 milliard $ retiennent l'attention.",
+      "risk": "Le risque consiste en une possible pression sur la trésorerie si les performances futures ne soutiennent pas le rachat.",
+      "why_en": "Q3 results and a $1 billion share‑buyback program capture attention.",
+      "risk_en": "Risk lies in potential cash‑flow pressure if future performance cannot sustain the buyback."
+    },
+    {
+      "symbol": "RKLB",
+      "mentions": 9,
+      "headlines": [
+        "RKLB Stock Tumbles Over 8% Overnight as Neutron Delays Overshadow Record Revenue — but Analyst Sees Rocket Lab's Solar, Connectivity Advanta",
+        "Rocket Lab USA Q3 2026 Earnings Call Transcript",
+        "UPDATE: Rocket Lab USA Q3 Adj. EPS $(0.08) Misses $(0.07) Estimate, Sales $267.834M Beat $255.709M Estimate (Adj EPS Excludes Loss On Exting",
+        "Rocket Lab Announces Third Quarter 2026 Financial Results"
+      ],
+      "last_at": "2026-11-10T05:26:36Z",
+      "sentiment": 0.1851851851851852,
+      "price": 58.86,
+      "adv_usd": 1117297067.4100304,
+      "chg_5d": 13.0,
+      "chg_20d": -10.4,
+      "rsi": 51.4,
+      "trend": "neutre",
+      "hv": 1.0992510741801913,
+      "niche": false,
+      "score": 6.161,
+      "why": "Le record de revenus malgré le retard du lanceur Neutron crée de l'intérêt.",
+      "risk": "Le risque principal est la dépendance à la réussite du programme Neutron et aux retards qui pourraient affecter les revenus futurs.",
+      "why_en": "Record revenue despite Neutron launch delays generates interest.",
+      "risk_en": "The main risk is reliance on Neutron's success and delays that could hurt future revenue."
     },
     {
       "symbol": "DFTX",
@@ -162,7 +163,7 @@
       "last_at": "2026-11-09T23:02:06Z",
       "sentiment": 0.2857142857142857,
       "price": 35.39,
-      "adv_usd": 61261555.29199143,
+      "adv_usd": 61262482.50997543,
       "chg_5d": 9.0,
       "chg_20d": 0.5,
       "rsi": 49.0,
@@ -170,10 +171,10 @@
       "hv": 0.7775614522064125,
       "niche": false,
       "score": 6.016,
-      "why": "Les résultats positifs du traitement DT402 en phase 2a pour l'autisme suscitent l'intérêt clinique.",
-      "risk": "Le succès futur dépendra de la validation des essais cliniques ultérieurs.",
-      "why_en": "Positive Phase 2a results for DT402 in autism generate clinical interest.",
-      "risk_en": "Future success depends on validation in later‑stage trials."
+      "why": "Les résultats positifs du traitement de phase 2a du candidat DT402 pour l'autisme attirent l'attention.",
+      "risk": "Le risque réside dans le fait que les essais cliniques ultérieurs pourraient ne pas confirmer ces premiers résultats.",
+      "why_en": "Positive Phase 2a data for DT402 in autism draws attention.",
+      "risk_en": "Risk lies in later clinical trials potentially failing to confirm early results."
     },
     {
       "symbol": "MLAB",
@@ -187,7 +188,7 @@
       "last_at": "2026-11-09T22:37:39Z",
       "sentiment": 0.25,
       "price": 127.82,
-      "adv_usd": 11806751.299422454,
+      "adv_usd": 11807096.41342163,
       "chg_5d": 4.8,
       "chg_20d": -0.2,
       "rsi": 52.0,
@@ -195,35 +196,10 @@
       "hv": 0.47348728640173954,
       "niche": true,
       "score": 5.929,
-      "why": "Les prévisions de ventes pour l'exercice 2027 légèrement supérieures aux estimations renforcent l'optimisme.",
-      "risk": "Un écart persistant entre les ventes réelles et les prévisions pourrait décevoir le marché.",
-      "why_en": "FY2027 sales outlook slightly above estimates bolsters optimism.",
-      "risk_en": "A persistent gap between actual sales and guidance could disappoint the market."
-    },
-    {
-      "symbol": "RKLB",
-      "mentions": 9,
-      "headlines": [
-        "Rocket Lab USA Q3 2026 Earnings Call Transcript",
-        "UPDATE: Rocket Lab USA Q3 Adj. EPS $(0.08) Misses $(0.07) Estimate, Sales $267.834M Beat $255.709M Estimate (Adj EPS Excludes Loss On Exting",
-        "Rocket Lab Announces Third Quarter 2026 Financial Results",
-        "Rocket Lab Secures Over $515 Million in Neutron Launch Contracts"
-      ],
-      "last_at": "2026-11-09T23:43:02Z",
-      "sentiment": 0.07407407407407408,
-      "price": 58.86,
-      "adv_usd": 1114203815.425531,
-      "chg_5d": 13.0,
-      "chg_20d": -10.4,
-      "rsi": 51.4,
-      "trend": "neutre",
-      "hv": 1.0992510741801913,
-      "niche": false,
-      "score": 5.827,
-      "why": "Les ventes dépassent les estimations malgré un EPS légèrement inférieur, montrant une résilience opérationnelle.",
-      "risk": "L'EPS négatif indique une pression sur la rentabilité qui pourrait s'aggraver.",
-      "why_en": "Sales beat estimates while EPS is slightly below, showing operational resilience.",
-      "risk_en": "Negative EPS signals profit pressure that could worsen."
+      "why": "Les prévisions de ventes pour l'exercice 2027 légèrement supérieures aux estimations stimulent l'intérêt.",
+      "risk": "Le risque est que les ventes réelles n'atteignent pas les prévisions optimistes, affectant la rentabilité.",
+      "why_en": "FY2027 sales outlook modestly above estimates sparks interest.",
+      "risk_en": "Risk is that actual sales may fall short of the optimistic outlook, impacting profitability."
     },
     {
       "symbol": "AMRC",
@@ -237,7 +213,7 @@
       "last_at": "2026-11-09T22:38:24Z",
       "sentiment": 0.4,
       "price": 22.45,
-      "adv_usd": 12895990.26398163,
+      "adv_usd": 12897418.084030151,
       "chg_5d": 7.1,
       "chg_20d": 7.5,
       "rsi": 57.0,
@@ -245,10 +221,10 @@
       "hv": 0.8336530481244158,
       "niche": true,
       "score": 5.784,
-      "why": "La mise à jour de guidance pour le quatrième trimestre indique une amélioration attendue des marges.",
-      "risk": "Si les ventes réelles restent inférieures aux prévisions, la guidance pourrait être revus à la baisse.",
-      "why_en": "Updated Q4 guidance points to expected margin improvement.",
-      "risk_en": "If actual sales fall short, guidance may be cut."
+      "why": "Les prévisions de bénéfice et de ventes révisées à la hausse pour le quatrième trimestre suscitent l'attention.",
+      "risk": "Le risque principal est la capacité de l'entreprise à atteindre ces objectifs dans un environnement énergétique incertain.",
+      "why_en": "Revised up Q4 earnings and sales guidance draws attention.",
+      "risk_en": "The main risk is the company's ability to meet targets amid an uncertain energy environment."
     },
     {
       "symbol": "ABCL",
@@ -261,7 +237,7 @@
       "last_at": "2026-11-09T23:02:08Z",
       "sentiment": 0.3333333333333333,
       "price": 12.5,
-      "adv_usd": 41062148.05483341,
+      "adv_usd": 41097583.67983341,
       "chg_5d": 12.4,
       "chg_20d": -1.1,
       "rsi": 52.0,
@@ -269,10 +245,10 @@
       "hv": 0.919646938093826,
       "niche": true,
       "score": 5.773,
-      "why": "Les ventes supérieures aux prévisions et le dépassement de l'EPS renforcent la confiance des investisseurs.",
-      "risk": "La dépendance à des contrats de biotechnologie volatils expose l'entreprise à des fluctuations de revenus.",
-      "why_en": "Sales above forecasts and EPS beat boost investor confidence.",
-      "risk_en": "Reliance on volatile biotech contracts exposes the company to revenue swings."
+      "why": "Les résultats du troisième trimestre supérieurs aux prévisions de ventes et le beat d'EPS attirent l'attention.",
+      "risk": "Le risque est lié à la dépendance aux partenariats de découverte de médicaments, qui peuvent être volatils.",
+      "why_en": "Q3 sales beat and EPS beat draw interest.",
+      "risk_en": "Risk stems from reliance on drug discovery partnerships, which can be volatile."
     },
     {
       "symbol": "APPS",
@@ -286,7 +262,7 @@
       "last_at": "2026-11-09T22:32:11Z",
       "sentiment": 0.5,
       "price": 11.3,
-      "adv_usd": 29064805.7629251,
+      "adv_usd": 29338200.952506065,
       "chg_5d": 33.6,
       "chg_20d": 6.9,
       "rsi": 57.0,
@@ -294,10 +270,10 @@
       "hv": 1.1259585517242625,
       "niche": true,
       "score": 5.719,
-      "why": "La hausse de la guidance de ventes pour FY2027 reflète une dynamique de croissance forte.",
-      "risk": "Un écart entre la guidance révisée et les résultats réels pourrait entraîner une correction du cours.",
-      "why_en": "Raised FY2027 sales guidance reflects strong growth momentum.",
-      "risk_en": "A gap between revised guidance and actual results could trigger a price correction."
+      "why": "La forte hausse du cours après la publication des résultats du deuxième trimestre et la révision à la hausse des prévisions de ventes attirent l'attention.",
+      "risk": "Le risque réside dans la capacité de l'entreprise à soutenir cette croissance de revenus dans un marché concurrentiel.",
+      "why_en": "Sharp stock jump after Q2 results and raised sales guidance attract attention.",
+      "risk_en": "Risk lies in the company's ability to sustain revenue growth in a competitive market."
     },
     {
       "symbol": "CWST",
@@ -310,7 +286,7 @@
       "last_at": "2026-11-09T23:01:59Z",
       "sentiment": 0.3333333333333333,
       "price": 99.02,
-      "adv_usd": 68208233.19320984,
+      "adv_usd": 68224611.1006546,
       "chg_5d": 1.2,
       "chg_20d": 16.2,
       "rsi": 61.5,
@@ -318,10 +294,10 @@
       "hv": 0.5762975611768195,
       "niche": false,
       "score": 5.013,
-      "why": "Le léger ajustement à la hausse de la guidance de ventes montre une confiance dans la performance future.",
-      "risk": "Des résultats d'EPS inférieurs aux attentes peuvent peser sur la perception du marché.",
-      "why_en": "Small upward sales guidance adjustment signals confidence in future performance.",
-      "risk_en": "EPS below expectations may weigh on market perception."
+      "why": "La hausse des prévisions de ventes pour l'exercice 2026 attire l'attention malgré un EPS légèrement en dessous des attentes.",
+      "risk": "Le risque principal est la pression sur les marges si les coûts opérationnels restent supérieurs aux prévisions.",
+      "why_en": "Raised FY2026 sales guidance draws attention despite a slight EPS miss.",
+      "risk_en": "Main risk is margin pressure if operating costs stay above expectations."
     },
     {
       "symbol": "SKYD",
@@ -335,7 +311,7 @@
       "last_at": "2026-11-09T23:00:33Z",
       "sentiment": 0.25,
       "price": 8.7,
-      "adv_usd": 218917860.3751947,
+      "adv_usd": 218994693.11851025,
       "chg_5d": 7.8,
       "chg_20d": -5.0,
       "rsi": 54.8,
@@ -343,10 +319,10 @@
       "hv": 1.1669920168017196,
       "niche": false,
       "score": 4.969,
-      "why": "Les plans de réduction de coûts de 6 milliards et la convergence de plateformes indiquent une stratégie de rentabilité.",
-      "risk": "Les coupes budgétaires importantes pourraient affecter la qualité des productions et les revenus associés.",
-      "why_en": "$6 billion cost‑cut plan and platform convergence signal a profitability strategy.",
-      "risk_en": "Large cost cuts could impact production quality and related revenues."
+      "why": "Les projets de convergence de plateformes de streaming et la réduction de coûts de 6 milliards $ après la transaction Warner Bros. retiennent l'attention.",
+      "risk": "Le risque est que les économies prévues ne se matérialisent pas et que les performances des studios restent faibles.",
+      "why_en": "Streaming platform convergence plans and $6 billion cost cuts after the Warner Bros. deal attract attention.",
+      "risk_en": "Risk is that expected savings may not materialize and studio performance remains weak."
     },
     {
       "symbol": "QLYS",
@@ -360,7 +336,7 @@
       "last_at": "2026-11-09T23:23:17Z",
       "sentiment": 0.42857142857142855,
       "price": 202.46,
-      "adv_usd": 170197389.21013108,
+      "adv_usd": 170214223.75968933,
       "chg_5d": -2.5,
       "chg_20d": 2.9,
       "rsi": 50.1,
@@ -368,10 +344,35 @@
       "hv": 0.6611592412876415,
       "niche": false,
       "score": 4.945,
-      "why": "La hausse de la guidance EPS montre une amélioration attendue de la rentabilité.",
-      "risk": "Un léger recul du cours indique que le marché reste prudent face aux perspectives de croissance.",
-      "why_en": "Raised EPS guidance signals expected profitability improvement.",
-      "risk_en": "A modest price decline suggests market caution about growth outlook."
+      "why": "La hausse des prévisions de bénéfice GAAP pour l'exercice 2026 attire l'attention.",
+      "risk": "Le risque principal est la dépendance à la croissance des abonnements, qui peut ralentir.",
+      "why_en": "Raised FY2026 GAAP EPS guidance draws attention.",
+      "risk_en": "Main risk is reliance on subscription growth, which could slow."
+    },
+    {
+      "symbol": "EQPT",
+      "mentions": 4,
+      "headlines": [
+        "EquipmentShare Adds Telehandlers to Support Veterans Program",
+        "EquipmentShare Reports Third Quarter 2026 Financial Results",
+        "EquipmentShare.com Affirms FY2026 Sales Guidance of $5.808B-$6.045B vs $5.747B Est",
+        "EquipmentShare.com Q3 Adj. EPS $0.16 Beats $0.11 Estimate, Sales $1.468B Beat $1.308B Estimate"
+      ],
+      "last_at": "2026-11-09T23:02:21Z",
+      "sentiment": 0.5,
+      "price": 16.21,
+      "adv_usd": 49211356.32344723,
+      "chg_5d": 1.1,
+      "chg_20d": 9.8,
+      "rsi": 49.8,
+      "trend": "neutre",
+      "hv": 1.0556053345828658,
+      "niche": true,
+      "score": 4.939,
+      "why": "L'ajout de téléchargeurs pour soutenir le programme vétérans et les résultats financiers solides attirent l'attention.",
+      "risk": "Le risque réside dans la capacité à maintenir la demande pour le matériel lourd dans un contexte économique incertain.",
+      "why_en": "Addition of telehandlers for the veterans program and solid financial results attract attention.",
+      "risk_en": "Risk lies in maintaining demand for heavy equipment amid economic uncertainty."
     }
   ]
 }
