@@ -53,3 +53,14 @@ Exécuté : 2026-11-11T16:00:00 | équité 97,530.20 $ (-0.28 % jour) | bourse U
   IA : BEAR_PUT_SPREAD NVDA | confiance 0.7 | Le spread BEAR_PUT sur NVDA profite de la forte tendance baissière, du RSI très bas et d'une volatilité implicite inférieure à la volatilité réalisée, offrant un risque limité au coût de la position.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-11T16:30:01 | équité 97,803.01 $ (-0.00 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,130 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : CRWV, PEPG*, DTE, MRCY, RDW, ADP, ADT, BB  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, WMT, PEPG, COST, COIN, DIS, ADT, BB, INTC, AMD, AVGO, MU, IWM, SOL/USD, XRP/USD, ETH/USD, BCH/USD, DOT/USD | covered call possible sur : ACHC
+  Notes IA : INTC BEAR_PUT_SPREAD 0.8 · COIN BEAR_PUT_SPREAD 0.78 · WMT BUY_STOCK 0.65
+  IA : BEAR_PUT_SPREAD INTC | confiance 0.8 | INTC montre une forte tendance baissière, un RSI très bas et des options très bon marché (IV/HV 0.49), ce qui rend le BEAR_PUT_SPREAD optimal.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
