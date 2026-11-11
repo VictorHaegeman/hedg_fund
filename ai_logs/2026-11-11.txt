@@ -110,3 +110,15 @@ Exécuté : 2026-11-11T18:30:00 | équité 98,118.79 $ (+0.32 % jour) | bourse U
   IA : BULL_PUT_SPREAD ALH | confiance 0.8 | ALH montre une forte tendance haussière, un IV/HV très élevé indiquant une prime chère, et un sentiment positif dans la presse, ce qui en fait un bon candidat pour un bull put spread.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-11T19:00:01 | équité 98,160.07 $ (+0.36 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,287 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : CRWV, TDG, FLY, FSK*, FIVE, AHR, ALH*, HUM  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, DIS, AHR, WMT, INTC, COST, ALH, HUM, MSFT, ORCL, ADBE, MU, IWM, SOL/USD, XRP/USD, ETH/USD, BCH/USD, DOT/USD | covered call possible sur : ACHC
+  Vente de prime possible : ALH (IV/HV 1.38, BULL_PUT_SPREAD), HUM (IV/HV 1.25, BULL_PUT_SPREAD)
+  Notes IA : DIS BULL_PUT_SPREAD 0.7 · ALH BULL_PUT_SPREAD 0.68 · HUM BULL_PUT_SPREAD 0.68
+  IA : BULL_PUT_SPREAD DIS | confiance 0.7 | DIS montre une tendance haussière claire, un IV/HV de 1.39 indique une prime d'option chère, ce qui rend le BULL_PUT_SPREAD attractif malgré un RSI très élevé.
+  Trade refusé : Résultats de DIS dans 6 j : pas de vente d'options avant l'échéance
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
