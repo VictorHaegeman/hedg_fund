@@ -42,3 +42,14 @@ Exécuté : 2026-11-11T15:30:00 | équité 97,645.93 $ (-0.16 % jour) | bourse U
   IA : SHORT_STOCK INTC | confiance 0.72 | INTC montre une forte tendance baissière, un RSI très bas et aucune annonce de résultats imminente, ce qui en fait le meilleur candidat pour un short avec un risque limité.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-11T16:00:00 | équité 97,530.20 $ (-0.28 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,085 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : CRWV, PEPG*, DTE, MRCY, RDW, ADP, ADT, BB  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, PEPG, WMT, COST, COIN, DIS, ADT, INTC, BB, AMD, AVGO, CRWV, IWM, SOL/USD, XRP/USD, ETH/USD, DOGE/USD, LINK/USD | covered call possible sur : ACHC
+  Notes IA : NVDA BEAR_PUT_SPREAD 0.7 · COST BUY_STOCK 0.68 · PEPG BUY_STOCK 0.65
+  IA : BEAR_PUT_SPREAD NVDA | confiance 0.7 | Le spread BEAR_PUT sur NVDA profite de la forte tendance baissière, du RSI très bas et d'une volatilité implicite inférieure à la volatilité réalisée, offrant un risque limité au coût de la position.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
