@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-11T14:32:09 | équité 97,817.34 $ (+0.01 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,312 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : CRWV, PEPG*, DTE, MRCY, RDW, ADP, ADT, BB  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, PEPG, WMT, COST, DIS, CRWV, ADT, BB, INTC, AMD, CRM, ADBE, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Notes IA : NVDA BEAR_PUT_SPREAD 0.68 · INTC BEAR_PUT_SPREAD 0.66 · PEPG BUY_STOCK 0.65
+  IA : BEAR_PUT_SPREAD NVDA | confiance 0.68 | NVDA montre une forte pression baissière avec un RSI très bas et une volatilité élevée, ce qui rend un spread put baissier approprié malgré un IV/HV légèrement supérieur à 1.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
