@@ -55,3 +55,14 @@ Exécuté : 2026-11-12T16:00:01 | équité 97,833.52 $ (-0.30 % jour) | bourse U
   IA : BEAR_PUT_SPREAD NVDA | confiance 0.7 | NVDA montre une forte tendance baissière, un RSI très bas et une volatilité implicite supérieure à la réalisée, ce qui rend un BEAR_PUT_SPREAD approprié avec perte maximale limitée au coût.
   Trade refusé : Ordre options non rempli au prix juste (milieu de fourchette), annulé
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T16:30:01 | équité 97,961.59 $ (-0.16 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +21,413 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ATEX*, RSG, ALSN, LUNR, DPC, DD, EPC*, TEL  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, LUNR, DD, DPC, LLY, WMT, DIS, EPC, TSLA, MU, PLTR, COST, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Notes IA : LLY BUY_STOCK 0.78 · TSLA BUY_STOCK 0.7 · DD BULL_CALL_SPREAD 0.66
+  IA : BUY_STOCK LLY | confiance 0.78 | LLY montre une forte tendance haussière avec un RSI élevé mais encore sous le niveau critique, une volatilité modérée et un IV/HV bien inférieur à 1, ce qui rend l'achat direct attractif.
+  Trade refusé : Alpaca : POST /v2/orders → 403: {"code":40310000,"existing_order_id":"41ac1fba-066a-4557-b22b-196b3c750bf4","message":"potential wash trade detected.
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
