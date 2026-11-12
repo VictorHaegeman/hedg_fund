@@ -156,3 +156,15 @@ Exécuté : 2026-11-12T20:00:01 | équité 97,244.22 $ (-0.90 % jour) | bourse U
   IA : BULL_PUT_SPREAD HUM | confiance 0.68 | Vente de put spread sur HUM, profitant de la prime élevée (IV/HV 1.24) et de la tendance haussière détectée.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T20:30:01 | équité 97,252.11 $ (-0.89 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,660 $ | Γ +172.54 (Δ$ +283 pour 1 %) | ν +10 $/pt | Θ -4 $/j | ρ -13 $/pt
+  Idées presse ajoutées : MBGL, GD, ALSN, DD, HUM, GILD, CUBI*, GO*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MBGL, LLY, DIS, GOOGL, TSLA, INTC, WMT, DD, HUM, MU, PLTR, COST, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : HUM (IV/HV 1.23, BULL_PUT_SPREAD)
+  Notes IA : MBGL BULL_CALL_SPREAD 0.8 · LLY BUY_STOCK 0.75 · DIS BULL_PUT_SPREAD 0.7
+  IA : BULL_CALL_SPREAD MBGL | confiance 0.8 | MBGL montre une forte hausse de 15,5% sur 5 jours, un RSI très élevé et une volatilité implicite basse, ce qui rend un spread d'achat d'options (BULL_CALL_SPREAD) attractif avec un risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
