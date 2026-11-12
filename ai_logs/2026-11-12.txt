@@ -33,3 +33,14 @@ Exécuté : 2026-11-12T15:00:01 | équité 97,798.87 $ (-0.33 % jour) | bourse U
   IA : BULL_PUT_SPREAD CAE | confiance 0.8 | Le CAE montre une forte tendance haussière, une volatilité implicite élevée (IV/HV 1.19) qui rend les options chères, et aucun résultat prévu prochainement, ce qui justifie la vente d'un put spread pour encaisser la prime.
   Trade refusé : Strikes introuvables dans la chaine
   Idées presse : à jour (il y a 3.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T15:30:10 | équité 97,689.19 $ (-0.44 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +21,517 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ATEX*, RSG, ALSN, LUNR, DPC, DD, EPC*, TEL  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, LUNR, DPC, EPC, LLY, COST, WMT, DIS, ALSN, DD, TEL, TSLA, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Notes IA : LLY BUY_STOCK 0.78 · COST BUY_STOCK 0.71 · ACHC COVERED_CALL 0.66
+  IA : BUY_STOCK LLY | confiance 0.78 | LLY montre une forte tendance haussière avec un RSI élevé, une volatilité modérée et un IV/HV inférieur à 1, ce qui justifie un achat direct tout en limitant le risque.
+  Trade refusé : Alpaca : POST /v2/orders → 403: {"code":40310000,"existing_order_id":"41ac1fba-066a-4557-b22b-196b3c750bf4","message":"potential wash trade detected.
+  Idées presse : 15 idées rafraîchies
