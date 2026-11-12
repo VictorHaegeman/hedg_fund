@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T12:01:16 | équité 98,512.49 $ (+0.40 % jour) | bourse US FERMÉE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +24,276 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : AVEX*, RLI, OR*, AFL, CAE*, WWW*, CTRE, ABNB  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD
+  Notes IA : ETH/USD BUY_CRYPTO 0.66 · SOL/USD BUY_CRYPTO 0.65 · XRP/USD BUY_CRYPTO 0.64
+  IA : BUY_CRYPTO ETH/USD | confiance 0.66 | Le RSI très bas (28.4) indique un sur‑vente important alors que la volatilité élevée (56%) offre un bon potentiel de rebond malgré la tendance baissière actuelle.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
