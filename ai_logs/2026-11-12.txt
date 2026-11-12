@@ -88,3 +88,13 @@ Exécuté : 2026-11-12T17:30:00 | équité 97,754.10 $ (-0.38 % jour) | bourse U
   IA : BULL_CALL_SPREAD LLY | confiance 0.75 | LLY montre une forte tendance haussière avec un IV/HV inférieur à 1, ce qui rend les options bon marché ; un spread d'achat de call limite le risque tout en profitant du mouvement attendu.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T18:00:01 | équité 97,517.97 $ (-0.62 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,840 $ | Γ +120.95 (Δ$ +199 pour 1 %) | ν +11 $/pt | Θ -10 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ATEX*, RSG, ALSN, LUNR, DPC, DD, EPC*, TEL  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : DPC, DD, LUNR, LLY, DIS, EPC, WMT, INTC, MU, PLTR, RSG, ALSN, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Notes IA : DD BULL_CALL_SPREAD 0.62 · INTC SHORT_STOCK 0.6 · MU SHORT_STOCK 0.58
+  IA : HOLD | confiance 0.0 | Aucun des candidats n'atteint le seuil de 0.65 requis pour ouvrir une position prudente.
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
