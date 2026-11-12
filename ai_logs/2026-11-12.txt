@@ -120,3 +120,15 @@ Exécuté : 2026-11-12T19:00:11 | équité 97,313.54 $ (-0.82 % jour) | bourse U
   IA : BUY_STOCK MBGL | confiance 0.8 | MBGL montre une forte tendance haussière, un RSI élevé mais encore sous le niveau critique, et un IV/HV très bas (0.6) indiquant que les options sont bon marché, ce qui rend l'achat direct de l'action le plus prudent.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T19:21:42 | équité 97,341.60 $ (-0.80 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,948 $ | Γ +145.38 (Δ$ +240 pour 1 %) | ν +10 $/pt | Θ -7 $/j | ρ -13 $/pt
+  Idées presse ajoutées : MBGL, GD, ALSN, DD, HUM, GILD, CUBI*, GO*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MBGL, LLY, DIS, GOOGL, TSLA, WMT, DD, HUM, INTC, MU, PLTR, CAT, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : HUM (IV/HV 1.23, BULL_PUT_SPREAD)
+  Notes IA : INTC BEAR_PUT_SPREAD 0.78 · MBGL BULL_CALL_SPREAD 0.75 · HUM BULL_PUT_SPREAD 0.7
+  IA : BEAR_PUT_SPREAD INTC | confiance 0.78 | INTC montre une forte tendance baissière avec un RSI très bas, les options sont très bon marché (IV/HV 0.51) et la volatilité élevée rend le BEAR_PUT_SPREAD attractif pour profiter d'une éventuelle baisse tout en limitant le risque.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.4 h, 15 idées)
