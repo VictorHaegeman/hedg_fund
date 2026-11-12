@@ -168,3 +168,15 @@ Exécuté : 2026-11-12T20:30:01 | équité 97,252.11 $ (-0.89 % jour) | bourse U
   IA : BULL_CALL_SPREAD MBGL | confiance 0.8 | MBGL montre une forte hausse de 15,5% sur 5 jours, un RSI très élevé et une volatilité implicite basse, ce qui rend un spread d'achat d'options (BULL_CALL_SPREAD) attractif avec un risque limité.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T20:55:01 | équité 96,963.40 $ (-1.18 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,796 $ | Γ +157.87 (Δ$ +261 pour 1 %) | ν +11 $/pt | Θ -8 $/j | ρ -13 $/pt
+  Idées presse ajoutées : MBGL, GD, ALSN, DD, HUM, GILD, CUBI*, GO*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MBGL, LLY, DIS, GOOGL, TSLA, INTC, WMT, DD, HUM, MU, COST, ALSN, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : HUM (IV/HV 1.22, BULL_PUT_SPREAD)
+  Notes IA : TSLA BUY_STOCK 0.7 · MBGL BULL_CALL_SPREAD 0.65 · LLY BULL_CALL_SPREAD 0.65
+  IA : BUY_STOCK TSLA | confiance 0.7 | TSLA montre une forte tendance haussière, un RSI modéré et une volatilité implicite basse, ce qui en fait le meilleur candidat pour un achat direct.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.9 h, 15 idées)
