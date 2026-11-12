@@ -144,3 +144,15 @@ Exécuté : 2026-11-12T19:30:01 | équité 97,299.46 $ (-0.84 % jour) | bourse U
   IA : BULL_PUT_SPREAD HUM | confiance 0.68 | HUM montre une forte tendance haussière, un IV/HV de 1.23 indique des primes chères, et le RSI est modéré, ce qui rend le BULL_PUT_SPREAD approprié.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T20:00:01 | équité 97,244.22 $ (-0.90 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,721 $ | Γ +115.28 (Δ$ +189 pour 1 %) | ν +10 $/pt | Θ -9 $/j | ρ -13 $/pt
+  Idées presse ajoutées : MBGL, GD, ALSN, DD, HUM, GILD, CUBI*, GO*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MBGL, DIS, GOOGL, TSLA, WMT, DD, HUM, INTC, MU, PLTR, ALSN, AAPL, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : HUM (IV/HV 1.24, BULL_PUT_SPREAD)
+  Notes IA : HUM BULL_PUT_SPREAD 0.68 · INTC BEAR_PUT_SPREAD 0.75 · MBGL BULL_CALL_SPREAD 0.7
+  IA : BULL_PUT_SPREAD HUM | confiance 0.68 | Vente de put spread sur HUM, profitant de la prime élevée (IV/HV 1.24) et de la tendance haussière détectée.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
