@@ -77,3 +77,14 @@ Exécuté : 2026-11-12T17:00:01 | équité 97,841.61 $ (-0.29 % jour) | bourse U
   IA : BEAR_PUT_SPREAD NVDA | confiance 0.7 | NVDA montre une forte tendance baissière avec un RSI très bas et une volatilité implicite élevée, ce qui rend un bear put spread attractif malgré la proximité des résultats.
   OUVERT BEAR_PUT_SPREAD NVDA | coût 2,790 $ | points morts [160.4581] | P(gain) 45% | Θ -1.64 $/j
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T17:30:00 | équité 97,754.10 $ (-0.38 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,959 $ | Γ +132.86 (Δ$ +218 pour 1 %) | ν +9 $/pt | Θ -6 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ATEX*, RSG, ALSN, LUNR, DPC, DD, EPC*, TEL  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : DPC, LUNR, LLY, DIS, EPC, WMT, MU, COST, RSG, ALSN, DD, TSLA, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Notes IA : LLY BULL_CALL_SPREAD 0.75 · DIS BUY_STOCK 0.7 · MU SHORT_STOCK 0.66
+  IA : BULL_CALL_SPREAD LLY | confiance 0.75 | LLY montre une forte tendance haussière avec un IV/HV inférieur à 1, ce qui rend les options bon marché ; un spread d'achat de call limite le risque tout en profitant du mouvement attendu.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)

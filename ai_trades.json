@@ -299,6 +299,21 @@
     "confidence": 0.7,
     "reasoning": "NVDA montre une forte tendance baissière avec un RSI très bas et une volatilité implicite élevée, ce qui rend un bear put spread attractif malgré la proximité des résultats.",
     "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
-    "pnl": null
+    "pnl": null,
+    "attr": {
+      "delta": 0.0,
+      "gamma": 0.0,
+      "theta": 0.0,
+      "vega": 0.0
+    },
+    "attr_prev": {
+      "at": "2026-11-12T17:30:01",
+      "S": 163.935,
+      "iv": 0.62685,
+      "delta": -81.5348962617498,
+      "gamma": 0.8104252271464221,
+      "theta_day": -6.275806235245844,
+      "vega_pt": 9.14240362505634
+    }
   }
 ]
