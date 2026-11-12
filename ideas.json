@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T02:50:41",
+  "updated_at": "2026-11-12T06:01:14",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -22,10 +22,10 @@
       "hv": 1.3877941693632359,
       "niche": false,
       "score": 9.254,
-      "why": "Le financement de plusieurs milliards de dollars montre un fort appétit pour le secteur de l'IA.",
-      "risk": "Un endettement élevé pourrait peser sur la rentabilité si la demande d'IA ralentit.",
-      "why_en": "The multi‑billion‑dollar financing highlights strong appetite for AI exposure.",
-      "risk_en": "High leverage could hurt profitability if AI demand weakens."
+      "why": "Le financement de plusieurs milliards de dollars montre l'appétit pour l'IA et renforce la capacité de croissance de CoreWeave.",
+      "risk": "Un endettement élevé pourrait peser sur la trésorerie si la demande d'IA ralentit.",
+      "why_en": "The multi‑billion‑dollar financing highlights strong AI demand and expands CoreWeave's growth capacity.",
+      "risk_en": "High leverage could strain cash flow if AI demand weakens."
     },
     {
       "symbol": "RLI",
@@ -46,10 +46,10 @@
       "hv": 0.3173352365773296,
       "niche": false,
       "score": 6.713,
-      "why": "L'annonce d'un dividende spécial de 3 $ attire les investisseurs à la recherche de revenus.",
-      "risk": "Le versement de dividendes élevés peut réduire les liquidités disponibles pour la croissance.",
+      "why": "L'annonce d'un dividende spécial de 3 $ attire les investisseurs à la recherche de revenus élevés.",
+      "risk": "Le versement d'un dividende spécial peut réduire les liquidités disponibles pour d'autres investissements.",
       "why_en": "The special $3 dividend announcement attracts income‑seeking investors.",
-      "risk_en": "Large dividend payouts may limit cash available for growth."
+      "risk_en": "Paying a special dividend may deplete cash that could be used for other growth opportunities."
     },
     {
       "symbol": "OR",
@@ -70,9 +70,9 @@
       "hv": 0.5098133389069981,
       "niche": true,
       "score": 6.413,
-      "why": "Des résultats trimestriels supérieurs aux prévisions et un dividende renforcent l'optimisme.",
-      "risk": "La dépendance aux revenus de royalties expose l'entreprise aux fluctuations des prix des matières premières.",
-      "why_en": "Quarterly results beating estimates and a dividend boost optimism.",
+      "why": "Des résultats trimestriels supérieurs aux prévisions et un dividende renforcent l'attrait d'OR Royalties.",
+      "risk": "Une dépendance aux revenus de royalties expose l'entreprise aux fluctuations du marché des ressources naturelles.",
+      "why_en": "Beating earnings estimates and confirming a dividend boost OR Royalties' appeal.",
       "risk_en": "Reliance on royalty income makes the company vulnerable to commodity price swings."
     },
     {
@@ -94,10 +94,10 @@
       "hv": 0.5196775339114418,
       "niche": false,
       "score": 6.373,
-      "why": "Des analystes majeurs relèvent les objectifs de cours, signalant une perspective positive.",
-      "risk": "Des attentes de hausse de cours peuvent être revues à la baisse si la croissance des paiements numériques ralentit.",
-      "why_en": "Major analysts raising price targets signal a positive outlook.",
-      "risk_en": "Raised expectations could be cut if digital payments growth slows."
+      "why": "Des analystes majeurs relèvent les objectifs de cours, signalant une confiance accrue dans la performance de Fiserv.",
+      "risk": "Des attentes plus élevées augmentent la pression sur la société pour livrer une croissance soutenue.",
+      "why_en": "Key analysts raising price targets signal growing confidence in Fiserv.",
+      "risk_en": "Higher expectations put pressure on the company to sustain strong growth."
     },
     {
       "symbol": "TDG",
@@ -118,10 +118,10 @@
       "hv": 0.32488380929462074,
       "niche": false,
       "score": 6.233,
-      "why": "Des analystes maintiennent des recommandations d'achat avec des objectifs de cours plus élevés.",
-      "risk": "Le secteur aérospatial est cyclique et sensible aux ralentissements économiques.",
-      "why_en": "Analysts maintain buy ratings with higher price targets.",
-      "risk_en": "The aerospace sector is cyclical and sensitive to economic slowdowns."
+      "why": "Des hausses d'objectifs de cours par plusieurs banques renforcent le sentiment positif autour de TransDigm.",
+      "risk": "Le secteur aérospatial est cyclique et sensible aux ralentissements économiques qui pourraient affecter les commandes.",
+      "why_en": "Multiple banks raising price targets bolster positive sentiment for TransDigm.",
+      "risk_en": "The aerospace sector is cyclical and vulnerable to economic slowdowns that could curb orders."
     },
     {
       "symbol": "BRX",
@@ -141,10 +141,10 @@
       "hv": 0.21019885665526006,
       "niche": false,
       "score": 6.217,
-      "why": "UBS augmente son objectif de cours, soutenant la confiance dans le REIT immobilier.",
-      "risk": "Le secteur immobilier commercial reste exposé aux taux d'intérêt en hausse.",
-      "why_en": "UBS raises its price target, supporting confidence in the REIT.",
-      "risk_en": "Commercial real estate remains exposed to rising interest rates."
+      "why": "UBS augmente son objectif de cours, ce qui soutient la perception de valeur de Brixmor.",
+      "risk": "Le secteur immobilier commercial reste exposé aux taux d'intérêt élevés et à la demande locative incertaine.",
+      "why_en": "UBS raising its price target supports the perceived value of Brixmor.",
+      "risk_en": "Commercial real estate remains exposed to high interest rates and uncertain tenant demand."
     },
     {
       "symbol": "CTRE",
@@ -166,10 +166,10 @@
       "hv": 0.2857375341967349,
       "niche": false,
       "score": 6.059,
-      "why": "L'émission d'actions publiques indique une volonté de renforcer le capital et de financer la croissance.",
-      "risk": "L'augmentation du flottant peut diluer la valeur pour les actionnaires existants.",
-      "why_en": "The public offering signals a move to strengthen capital and fund growth.",
-      "risk_en": "Increasing the share float may dilute existing shareholders' value."
+      "why": "L'émission d'actions publiques et le relèvement de l'objectif de cours par UBS indiquent un soutien du marché à CareTrust REIT.",
+      "risk": "L'augmentation du capital peut diluer les actionnaires existants et la performance dépend du marché immobilier de santé.",
+      "why_en": "The public offering and UBS's higher target show market support for CareTrust REIT.",
+      "risk_en": "New share issuance may dilute existing shareholders and performance hinges on the health‑care real‑estate market."
     },
     {
       "symbol": "GO",
@@ -190,10 +190,10 @@
       "hv": 0.5772110416563079,
       "niche": true,
       "score": 5.933,
-      "why": "Des analystes ajustent les objectifs de cours, montrant un intérêt continu pour le discount retailer.",
-      "risk": "Le secteur de la distribution à prix discount est sensible aux pressions inflationnistes et à la concurrence.",
-      "why_en": "Analysts adjusting price targets show continued interest in the discount retailer.",
-      "risk_en": "The discount retail sector is vulnerable to inflationary pressure and competition."
+      "why": "Des analystes ajustent à la hausse les objectifs de cours, suggérant une amélioration perçue de la rentabilité de Grocery Outlet.",
+      "risk": "Le secteur de la distribution à prix discount reste sensible aux pressions inflationnistes et à la concurrence accrue.",
+      "why_en": "Analysts raising price targets suggest an improved outlook for Grocery Outlet's profitability.",
+      "risk_en": "Discount retail is vulnerable to inflation pressures and intensified competition."
     },
     {
       "symbol": "CAE",
@@ -214,10 +214,10 @@
       "hv": 0.2608286187754922,
       "niche": true,
       "score": 5.893,
-      "why": "Les résultats du deuxième trimestre dépassent les prévisions d'EPS, soutenant la confiance des investisseurs.",
-      "risk": "Les ventes inférieures aux attentes soulignent un risque de ralentissement de la demande en formation aéronautique.",
-      "why_en": "Q2 earnings beat EPS forecasts, bolstering investor confidence.",
-      "risk_en": "Sales below expectations highlight a risk of slowing demand in aviation training."
+      "why": "Les résultats du deuxième trimestre dépassent les prévisions d'EPS, renforçant la confiance dans les perspectives de CAE.",
+      "risk": "Les ventes inférieures aux attentes soulignent une possible faiblesse de la demande dans le secteur de l'aviation et de la défense.",
+      "why_en": "Q2 earnings beat EPS forecasts, bolstering confidence in CAE's outlook.",
+      "risk_en": "Sales missing estimates highlight potential weakness in aviation and defense demand."
     },
     {
       "symbol": "AVEX",
@@ -239,33 +239,33 @@
       "hv": 1.8870486995499325,
       "niche": true,
       "score": 5.784,
-      "why": "Les résultats du troisième trimestre et les perspectives optimistes font grimper le cours de l'action.",
-      "risk": "Une forte volatilité des résultats trimestriels peut entraîner des mouvements de prix imprévisibles.",
-      "why_en": "Q3 results and upbeat outlook lift the stock price.",
-      "risk_en": "High earnings volatility can lead to unpredictable price swings."
+      "why": "Les résultats du troisième trimestre et les perspectives optimistes ont fait grimper le cours d'AVEX.",
+      "risk": "Une forte dépendance aux performances trimestrielles expose le titre à une volatilité accrue si les résultats futurs déçoivent.",
+      "why_en": "Q3 results and a strong outlook lifted AVEX's share price.",
+      "risk_en": "Heavy reliance on quarterly performance makes the stock vulnerable to volatility if future results disappoint."
     },
     {
-      "symbol": "ALH",
+      "symbol": "FDS",
       "mentions": 2,
       "headlines": [
-        "Morgan Stanley Maintains Equal-Weight on Alliance Laundry Holdings, Raises Price Target to $29",
-        "JP Morgan Maintains Overweight on Alliance Laundry Holdings, Lowers Price Target to $31"
+        "UBS Maintains Buy on FactSet Research Systems, Raises Price Target to $375",
+        "Morgan Stanley Maintains Equal-Weight on FactSet Research Systems, Raises Price Target to $321"
       ],
-      "last_at": "2026-11-11T17:42:39Z",
-      "sentiment": 0.5,
-      "price": 24.2,
-      "adv_usd": 20923428.525562286,
-      "chg_5d": 5.4,
-      "chg_20d": 16.9,
-      "rsi": 65.1,
+      "last_at": "2026-11-11T21:23:44Z",
+      "sentiment": 1.0,
+      "price": 334.88,
+      "adv_usd": 250756979.79400635,
+      "chg_5d": -2.1,
+      "chg_20d": 15.6,
+      "rsi": 60.6,
       "trend": "haussiere",
-      "hv": 0.3819363864800336,
-      "niche": true,
-      "score": 5.697,
-      "why": "Des analystes maintiennent des recommandations positives avec des objectifs de cours légèrement supérieurs.",
-      "risk": "Des divergences d'opinion sur le prix cible reflètent une incertitude sur la croissance du secteur du lavage commercial.",
-      "why_en": "Analysts keep positive ratings with modestly higher price targets.",
-      "risk_en": "Differing price‑target views reflect uncertainty about commercial laundry growth."
+      "hv": 0.4365106185356081,
+      "niche": false,
+      "score": 5.777,
+      "why": "Les analystes maintiennent des notes d'achat et augmentent les objectifs de cours, soutenant le sentiment positif autour de FactSet.",
+      "risk": "Le modèle d'abonnement de FactSet peut être affecté par des coupes budgétaires chez les clients corporatifs.",
+      "why_en": "Analysts keeping buy ratings and raising targets support a positive sentiment for FactSet.",
+      "risk_en": "FactSet's subscription model could be hit by corporate budget cuts."
     },
     {
       "symbol": "COLD",
@@ -285,10 +285,10 @@
       "hv": 0.2859068426504068,
       "niche": false,
       "score": 5.697,
-      "why": "UBS relève son objectif de cours, indiquant une perspective favorable pour le REIT logistique.",
-      "risk": "Le secteur de l'immobilier logistique reste sensible aux fluctuations de la chaîne d'approvisionnement.",
-      "why_en": "UBS raises its price target, indicating a favorable outlook for the logistics REIT.",
-      "risk_en": "The logistics real‑estate sector remains sensitive to supply‑chain fluctuations."
+      "why": "UBS relève l'objectif de cours, reflétant une vision favorable du secteur de l'immobilier logistique.",
+      "risk": "Le marché de l'immobilier logistique reste sensible aux variations des taux d'intérêt et aux changements de la chaîne d'approvisionnement.",
+      "why_en": "UBS raising the target reflects a favorable view of the logistics real‑estate sector.",
+      "risk_en": "Logistics real estate is sensitive to interest‑rate fluctuations and supply‑chain shifts."
     },
     {
       "symbol": "VYLR",
@@ -309,33 +309,10 @@
       "hv": 0.3765373069329662,
       "niche": false,
       "score": 5.013,
-      "why": "Les résultats du troisième trimestre dépassent les prévisions de ventes, soutenant l'optimisme.",
-      "risk": "Un bénéfice par action négatif malgré la hausse des ventes montre une pression sur la rentabilité.",
-      "why_en": "Q3 sales beat estimates, supporting optimism.",
-      "risk_en": "Negative EPS despite higher sales indicates profitability pressure."
-    },
-    {
-      "symbol": "DK",
-      "mentions": 2,
-      "headlines": [
-        "Delek US Holdings Upgraded to Buy by Freedom Broker",
-        "This Apple Analyst Turns Bullish; Here Are Top 5 Upgrades For Wednesday"
-      ],
-      "last_at": "2026-11-11T19:02:20Z",
-      "sentiment": 1.0,
-      "price": 67.16,
-      "adv_usd": 114792934.5076561,
-      "chg_5d": 3.1,
-      "chg_20d": -14.6,
-      "rsi": 45.2,
-      "trend": "baissiere",
-      "hv": 0.6911815004341146,
-      "niche": false,
-      "score": 4.817,
-      "why": "Un upgrade à l'achat par un courtier signale un regain d'intérêt pour le producteur d'énergie.",
-      "risk": "Le secteur pétrolier est exposé aux fluctuations des prix du pétrole et aux pressions réglementaires.",
-      "why_en": "An upgrade to buy signals renewed interest in the energy producer.",
-      "risk_en": "The oil sector is exposed to volatile oil prices and regulatory pressures."
+      "why": "Les résultats du troisième trimestre montrent une amélioration du bénéfice ajusté, soutenant l'optimisme pour Vylor.",
+      "risk": "Le résultat net négatif indique que la rentabilité reste fragile et dépend fortement des performances futures.",
+      "why_en": "Q3 results show improved adjusted earnings, supporting optimism for Vylor.",
+      "risk_en": "The negative net income signals fragile profitability that hinges on future performance."
     },
     {
       "symbol": "CF",
@@ -356,10 +333,34 @@
       "hv": 0.386875893672586,
       "niche": false,
       "score": 4.773,
-      "why": "Des ajustements d'objectifs de cours par plusieurs analystes reflètent une attention accrue sur le fabricant d'engrais.",
-      "risk": "Le secteur des engrais reste sensible aux variations des prix des matières premières agricoles.",
-      "why_en": "Price‑target adjustments by analysts reflect heightened focus on the fertilizer maker.",
-      "risk_en": "The fertilizer sector remains sensitive to fluctuations in agricultural commodity prices."
+      "why": "Des ajustements d'objectifs de cours par plusieurs analystes maintiennent l'intérêt pour CF Industries.",
+      "risk": "La baisse de l'objectif de cours par certains analystes reflète les incertitudes liées aux prix des engrais et aux politiques environnementales.",
+      "why_en": "Target adjustments by analysts keep interest in CF Industries alive.",
+      "risk_en": "Lowered targets by some analysts reflect uncertainties around fertilizer prices and environmental regulations."
+    },
+    {
+      "symbol": "FUN",
+      "mentions": 3,
+      "headlines": [
+        "Six Flags Entertainment Corporation Appoints Adam Boal as Chief Procurement Officer",
+        "Why Is Six Flags Stock Gaining Wednesday?",
+        "Reported November 10, Six Flags Director Rehan Jaffer's H Partners Buys 1.45M Shares At Average Price Of $10.30/Share"
+      ],
+      "last_at": "2026-11-11T22:31:59Z",
+      "sentiment": 0.3333333333333333,
+      "price": 11.1,
+      "adv_usd": 57823971.91136122,
+      "chg_5d": 40.0,
+      "chg_20d": 24.2,
+      "rsi": 61.8,
+      "trend": "neutre",
+      "hv": 1.0705792392176017,
+      "niche": false,
+      "score": 4.773,
+      "why": "L'annonce d'un nouveau directeur des achats et l'intérêt d'investisseurs institutionnels stimulent l'action Six Flags.",
+      "risk": "Les performances du parc à thème sont cycliques et sensibles aux conditions économiques et aux variations de la fréquentation.",
+      "why_en": "The appointment of a new procurement chief and institutional buying boost Six Flags' stock.",
+      "risk_en": "Theme‑park performance is cyclical and sensitive to economic conditions and attendance fluctuations."
     }
   ]
 }
