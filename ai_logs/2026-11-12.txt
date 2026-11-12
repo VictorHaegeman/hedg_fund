@@ -66,3 +66,14 @@ Exécuté : 2026-11-12T16:30:01 | équité 97,961.59 $ (-0.16 % jour) | bourse U
   IA : BUY_STOCK LLY | confiance 0.78 | LLY montre une forte tendance haussière avec un RSI élevé mais encore sous le niveau critique, une volatilité modérée et un IV/HV bien inférieur à 1, ce qui rend l'achat direct attractif.
   Trade refusé : Alpaca : POST /v2/orders → 403: {"code":40310000,"existing_order_id":"41ac1fba-066a-4557-b22b-196b3c750bf4","message":"potential wash trade detected.
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-12T17:00:01 | équité 97,841.61 $ (-0.29 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +21,335 $ | Γ +0.00 (Δ$ +0 pour 1 %) | ν +0 $/pt | Θ +0 $/j | ρ +0 $/pt
+  Idées presse ajoutées : ATEX*, RSG, ALSN, LUNR, DPC, DD, EPC*, TEL  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, LUNR, DPC, LLY, DIS, EPC, WMT, MU, PLTR, COST, RSG, ALSN, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Notes IA : NVDA BEAR_PUT_SPREAD 0.7 · WMT BUY_STOCK 0.66 · LLY BUY_STOCK 0.65
+  IA : BEAR_PUT_SPREAD NVDA | confiance 0.7 | NVDA montre une forte tendance baissière avec un RSI très bas et une volatilité implicite élevée, ce qui rend un bear put spread attractif malgré la proximité des résultats.
+  OUVERT BEAR_PUT_SPREAD NVDA | coût 2,790 $ | points morts [160.4581] | P(gain) 45% | Θ -1.64 $/j
+  Idées presse : à jour (il y a 1.5 h, 15 idées)

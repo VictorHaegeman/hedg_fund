@@ -238,5 +238,67 @@
     "stop_order_id": "5507dbc5-dcc0-4c75-920f-cfd6c06f2d68",
     "stop_price": 206.3,
     "stop_note": "vrai stop Alpaca à 206.30"
+  },
+  {
+    "id": "15b2b460d1",
+    "opened_at": "2026-11-12T17:00:41",
+    "status": "OPEN",
+    "kind": "options",
+    "strategy": "BEAR_PUT_SPREAD",
+    "underlying": "NVDA",
+    "qty": 6,
+    "expiry": "2026-12-11",
+    "legs": [
+      {
+        "symbol": "NVDA261211P00165000",
+        "side": "buy",
+        "strike": 165.0,
+        "type": "put",
+        "ratio": 1,
+        "iv": 0.6162,
+        "bid": 10.88,
+        "ask": 11.34
+      },
+      {
+        "symbol": "NVDA261211P00155000",
+        "side": "sell",
+        "strike": 155.0,
+        "type": "put",
+        "ratio": 1,
+        "iv": 0.6205,
+        "bid": 6.47,
+        "ask": 6.81
+      }
+    ],
+    "cost": 2790.0,
+    "max_loss": 2790.0,
+    "max_gain": 3210.0,
+    "credit": 0.0,
+    "tp_amount": 1605.0,
+    "sl_amount": 1395.0,
+    "spot_at_entry": 165.1,
+    "covers": null,
+    "delta_hedged": false,
+    "hedge_shares": 0,
+    "hedge_cash": 0.0,
+    "analysis": {
+      "iv": 0.6183,
+      "hv": 0.5325,
+      "delta": -13.66,
+      "gamma": 0.1354,
+      "vega_per_pt": 1.81,
+      "theta_per_day": -1.64,
+      "breakevens": [
+        160.4581
+      ],
+      "prob_profit": 0.446,
+      "vol_edge": 1.115
+    },
+    "source": null,
+    "niche": false,
+    "confidence": 0.7,
+    "reasoning": "NVDA montre une forte tendance baissière avec un RSI très bas et une volatilité implicite élevée, ce qui rend un bear put spread attractif malgré la proximité des résultats.",
+    "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
+    "pnl": null
   }
 ]
