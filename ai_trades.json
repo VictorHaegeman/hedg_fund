@@ -125,7 +125,7 @@
   {
     "id": "d59f30e488",
     "opened_at": "2026-11-06T15:00:39",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "stock",
     "strategy": "BUY_STOCK",
     "underlying": "MRNA",
@@ -140,10 +140,12 @@
     "confidence": 0.8,
     "reasoning": "Modèle haussier clair avec RSI modéré, volatilité élevée mais options bon marché, aucune annonce de résultats imminente.",
     "reasoning_en": "Clear bullish pattern with moderate RSI, high volatility but cheap options, no imminent earnings announcement.",
-    "pnl": null,
+    "pnl": -291.1,
     "stop_order_id": "6e958ebf-8f7c-4f51-87c3-316779a5a80f",
     "stop_price": 234.41,
-    "stop_note": "vrai stop Alpaca à 234.41"
+    "stop_note": "vrai stop Alpaca à 234.41",
+    "closed_at": "2026-11-12T15:00:01",
+    "close_reason": "Stop-loss (vrai ordre Alpaca)"
   },
   {
     "id": "b31a6cb905",
