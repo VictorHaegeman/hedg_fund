@@ -301,19 +301,19 @@
     "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
     "pnl": null,
     "attr": {
-      "delta": -81.13,
-      "gamma": 0.4,
-      "theta": -0.13,
-      "vega": -2.83
+      "delta": -156.17,
+      "gamma": 0.71,
+      "theta": -0.35,
+      "vega": -8.38
     },
     "attr_prev": {
-      "at": "2026-11-12T18:00:03",
-      "S": 164.93,
-      "iv": 0.62375,
-      "delta": -81.56377275966821,
-      "gamma": 0.7333458860574664,
-      "theta_day": -10.341936606494311,
-      "vega_pt": 10.578722871965073
+      "at": "2026-11-12T18:30:01",
+      "S": 165.85,
+      "iv": 0.6185,
+      "delta": -80.8654036329927,
+      "gamma": 0.9862858098528369,
+      "theta_day": -8.987683269981101,
+      "vega_pt": 11.700296719744456
     }
   }
 ]
