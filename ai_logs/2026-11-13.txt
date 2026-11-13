@@ -45,3 +45,15 @@ Exécuté : 2026-11-13T16:00:01 | équité 97,295.49 $ (+0.39 % jour) | bourse U
   IA : BULL_PUT_SPREAD ASND | confiance 0.7 | Le spread de vente de put sur ASND profite d'une volatilité implicite très élevée (IV/HV 1.68) tout en étant aligné avec la tendance haussière et le momentum du titre, offrant un crédit d'option attractif avec un risque limité.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-13T16:30:01 | équité 97,289.76 $ (+0.39 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,084 $ | Γ +65.84 (Δ$ +105 pour 1 %) | ν +4 $/pt | Θ -2 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ASND, WWW*, COLB, AIN*, CMG, CRL, MAR, AME  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : COST, ASND, WMT, KO, DIS, TSLA, ORCL, WWW, AMD, MU, LLY, CAT, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.72, BULL_PUT_SPREAD)
+  Notes IA : COST BULL_PUT_SPREAD 0.78 · ASND BULL_PUT_SPREAD 0.73 · KO BUY_STOCK 0.66
+  IA : BULL_PUT_SPREAD COST | confiance 0.78 | COST montre une forte tendance haussière, un RSI très élevé et un IV/HV supérieur à 1, ce qui rend la vente d'un put spread attractive avec un risque limité.
+  Trade refusé : Résultats de COST dans 27 j : pas de vente d'options avant l'échéance
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
