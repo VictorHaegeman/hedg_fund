@@ -21,3 +21,15 @@ Exécuté : 2026-11-13T15:00:18 | équité 97,103.00 $ (+0.19 % jour) | bourse U
   IA : BULL_PUT_SPREAD NVDA | confiance 0.68 | Le prix de NVDA montre une tendance haussière soutenue, l’IV/HV est élevé ce qui rend la vente de prime attractive, mais le RSI proche de 70 indique un risque de correction.
   Trade refusé : Deja en position sur NVDA
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-13T15:30:01 | équité 97,011.64 $ (+0.10 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,639 $ | Γ +68.97 (Δ$ +111 pour 1 %) | ν +4 $/pt | Θ -2 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ASND, WWW*, COLB, AIN*, CMG, CRL, MAR, AME  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ASND, KO, ORCL, MU, LLY, WMT, COST, DIS, WWW, TSLA, COIN, GOOGL, IWM, ETH/USD, SOL/USD, XRP/USD, BCH/USD, DOGE/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.73, BULL_PUT_SPREAD)
+  Notes IA : ASND BULL_PUT_SPREAD 0.78 · WWW BUY_STOCK 0.75 · KO BUY_STOCK 0.7
+  IA : BULL_PUT_SPREAD ASND | confiance 0.78 | Le spread bull put sur ASND profite de la forte volatilité implicite (IV/HV 1.73) et de la tendance haussière, tout en limitant le risque maximal au crédit reçu.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
