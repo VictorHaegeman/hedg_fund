@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-11-13T12:01:01",
+  "updated_at": "2026-11-13T14:32:01",
   "positions": [
     {
       "id": "b31a6cb905",
       "strategy": "BUY_STOCK",
       "underlying": "MCD",
-      "spot": 273.68,
+      "spot": 274.84,
       "delta": 34.0,
       "option_delta": null,
       "hedge_shares": 0,
-      "delta_usd": 9305.12,
+      "delta_usd": 9344.56,
       "gamma_usd": 0.0,
       "gamma_1pct": 0.0,
       "vega": 0.0,
@@ -50,11 +50,11 @@
       "id": "bdadeb4c34",
       "strategy": "BUY_STOCK",
       "underlying": "BDX",
-      "spot": 215.74,
+      "spot": 217.66,
       "delta": 22.0,
       "option_delta": null,
       "hedge_shares": 0,
-      "delta_usd": 4746.17,
+      "delta_usd": 4788.41,
       "gamma_usd": 0.0,
       "gamma_1pct": 0.0,
       "vega": 0.0,
@@ -65,24 +65,24 @@
       "id": "15b2b460d1",
       "strategy": "BEAR_PUT_SPREAD",
       "underlying": "NVDA",
-      "spot": 167.1,
-      "delta": -73.33,
-      "option_delta": -73.33,
+      "spot": 167.41,
+      "delta": -83.69,
+      "option_delta": -83.69,
       "hedge_shares": 0,
-      "delta_usd": -12254.2,
-      "gamma_usd": 94.6219,
-      "gamma_1pct": 158.11,
-      "vega": 11.48,
-      "theta_day": -16.45,
-      "rho": -11.6
+      "delta_usd": -14011.15,
+      "gamma_usd": 196.045,
+      "gamma_1pct": 328.2,
+      "vega": 14.49,
+      "theta_day": -13.06,
+      "rho": -12.64
     }
   ],
   "total": {
-    "delta_usd": 9071.75,
-    "gamma_usd": 94.62,
-    "gamma_1pct": 158.11,
-    "vega": 11.48,
-    "theta_day": -16.45,
-    "rho": -11.6
+    "delta_usd": 7396.48,
+    "gamma_usd": 196.04,
+    "gamma_1pct": 328.2,
+    "vega": 14.49,
+    "theta_day": -13.06,
+    "rho": -12.64
   }
 }

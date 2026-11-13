@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-13T14:32:01 | équité 96,980.69 $ (+0.07 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,396 $ | Γ +196.04 (Δ$ +328 pour 1 %) | ν +14 $/pt | Θ -13 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ATI, STN*, RHHBY, ROST, SMFG*, SPCX, HAWK*, GO*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : STN, ROST, SMFG, TSLA, LLY, WMT, COST, KO, DIS, INTC, MU, PLTR, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, AAVE/USD | covered call possible sur : ACHC
+  Notes IA : TSLA BUY_STOCK 0.8 · STN BUY_STOCK 0.65 · MU SHORT_STOCK 0.65
+  IA : BUY_STOCK TSLA | confiance 0.8 | TSLA montre une tendance haussière claire, un RSI modéré et une volatilité implicite inférieure à la volatilité réalisée, ce qui rend l'achat direct plus avantageux que les stratégies d'options.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.6 h, 15 idées)
