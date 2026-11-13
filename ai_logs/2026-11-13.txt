@@ -153,3 +153,15 @@ Exécuté : 2026-11-13T20:00:01 | équité 97,115.74 $ (+0.21 % jour) | bourse U
   IA : BUY_STOCK LFTO | confiance 0.8 | LFTO montre une forte hausse de 31,8% sur 5 jours, un RSI très élevé et une volatilité implicite basse (IV/HV 0.68), ce qui rend l'achat direct plus avantageux que les options coûteuses.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-13T20:30:01 | équité 97,229.58 $ (+0.33 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,400 $ | Γ +94.59 (Δ$ +153 pour 1 %) | ν +7 $/pt | Θ -6 $/j | ρ -13 $/pt
+  Idées presse ajoutées : MBGL, LFTO*, ASND, DKS, AON, NVO, AMAT, ECO  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ASND, MBGL, LFTO, LLY, TSLA, WMT, COST, KO, DIS, CAT, AMAT, ECO, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.47, BULL_PUT_SPREAD)
+  Notes IA : ASND BULL_PUT_SPREAD 0.78 · MBGL BUY_STOCK 0.66 · LFTO BUY_STOCK 0.65
+  IA : BULL_PUT_SPREAD ASND | confiance 0.78 | ASND montre une forte tendance haussière avec un RSI élevé et des objectifs de cours très optimistes, l'IV/HV de 1.47 rend les options chères, ce qui justifie la vente d'un bull put spread pour capter la prime tout en limitant le risque.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
