@@ -105,3 +105,15 @@ Exécuté : 2026-11-13T18:00:01 | équité 97,174.65 $ (+0.27 % jour) | bourse U
   IA : BULL_PUT_SPREAD ASND | confiance 0.78 | Le spread BULL_PUT_SPREAD sur ASND profite d'une prime élevée (IV/HV 1.47) tout en limitant le risque, la tendance haussière et le RSI soutiennent la vue positive.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 3.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-13T18:30:11 | équité 97,248.67 $ (+0.34 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,845 $ | Γ +89.97 (Δ$ +145 pour 1 %) | ν +6 $/pt | Θ -3 $/j | ρ -13 $/pt
+  Idées presse ajoutées : MBGL, LFTO*, ASND, DKS, AON, NVO, AMAT, ECO  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : MBGL, ASND, LLY, COST, LFTO, WMT, DIS, TSLA, AMD, KO, CAT, AMAT, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.46, BULL_PUT_SPREAD)
+  Notes IA : MBGL BUY_STOCK 0.8 · ASND BULL_PUT_SPREAD 0.7 · LLY BUY_STOCK 0.75
+  IA : BUY_STOCK MBGL | confiance 0.8 | MBGL montre une forte tendance haussière avec un RSI élevé mais encore sous le seuil critique, une volatilité raisonnable et une prime d'option bon marché (IV/HV 0.63), ce qui en fait le meilleur candidat pour un achat d'action.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
