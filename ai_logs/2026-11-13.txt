@@ -9,3 +9,15 @@ Exécuté : 2026-11-13T14:32:01 | équité 96,980.69 $ (+0.07 % jour) | bourse U
   IA : BUY_STOCK TSLA | confiance 0.8 | TSLA montre une tendance haussière claire, un RSI modéré et une volatilité implicite inférieure à la volatilité réalisée, ce qui rend l'achat direct plus avantageux que les stratégies d'options.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.6 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-13T15:00:18 | équité 97,103.00 $ (+0.19 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,867 $ | Γ +89.32 (Δ$ +145 pour 1 %) | ν +7 $/pt | Θ -5 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ASND, WWW*, COLB, AIN*, CMG, CRL, MAR, AME  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : KO, ASND, ORCL, LLY, WMT, COST, DIS, WWW, MAR, AME, GOOGL, TSLA, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.75, BULL_PUT_SPREAD)
+  Notes IA : NVDA BULL_PUT_SPREAD 0.68
+  IA : BULL_PUT_SPREAD NVDA | confiance 0.68 | Le prix de NVDA montre une tendance haussière soutenue, l’IV/HV est élevé ce qui rend la vente de prime attractive, mais le RSI proche de 70 indique un risque de correction.
+  Trade refusé : Deja en position sur NVDA
+  Idées presse : 15 idées rafraîchies
