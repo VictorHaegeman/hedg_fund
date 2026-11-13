@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T00:01:18",
+  "updated_at": "2026-11-13T06:01:12",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -13,7 +13,7 @@
       "last_at": "2026-11-12T23:02:01Z",
       "sentiment": 1.0,
       "price": 59.92,
-      "adv_usd": 99150870.24339524,
+      "adv_usd": 99362780.31291962,
       "chg_5d": 15.3,
       "chg_20d": 17.7,
       "rsi": 63.5,
@@ -22,34 +22,34 @@
       "niche": false,
       "score": 7.773,
       "why": "Les résultats du troisième trimestre dépassent les prévisions de ventes et la société relève son objectif de chiffre d'affaires annuel, ce qui attire l'attention.",
-      "risk": "Le bénéfice ajusté reste négatif, indiquant une pression sur la rentabilité.",
-      "why_en": "Q3 results beat sales forecasts and the company raised its full‑year revenue guidance, drawing interest.",
-      "risk_en": "Adjusted EPS remains negative, highlighting profitability pressure."
+      "risk": "Le bénéfice ajusté reste négatif, indiquant une rentabilité encore fragile.",
+      "why_en": "Q3 results beat sales forecasts and the company raises its full‑year revenue guidance, drawing interest.",
+      "risk_en": "Adjusted EPS remains negative, indicating still‑fragile profitability."
     },
     {
       "symbol": "CSCO",
-      "mentions": 9,
+      "mentions": 10,
       "headlines": [
+        "Cerebras, Applied Materials, Cisco, Super Micro Computer and Nu Holdings: Why These 5 Stocks Are on Investors' Radars Today",
         "Cisco Systems Raises Fiscal 2027 Revenue Forecast",
         "Cisco Reports Fiscal 2027 First Quarter Financial Results",
-        "Cisco Tops Q1 Estimates, Raises FY27 Outlook During Multi-Year Networking 'Supercycle'",
-        "Cisco Systems Raises FY2027 GAAP EPS Guidance from $4.00-$4.06 to $4.38-$4.44 vs $4.15 Est"
+        "Cisco Tops Q1 Estimates, Raises FY27 Outlook During Multi-Year Networking 'Supercycle'"
       ],
-      "last_at": "2026-11-12T21:32:00Z",
-      "sentiment": 0.7777777777777778,
+      "last_at": "2026-11-13T01:14:56Z",
+      "sentiment": 0.7,
       "price": 102.01,
-      "adv_usd": 1999957923.239254,
+      "adv_usd": 2004202447.2171402,
       "chg_5d": 6.6,
       "chg_20d": -7.1,
       "rsi": 45.0,
       "trend": "baissiere",
       "hv": 0.4489415562065652,
       "niche": false,
-      "score": 6.939,
-      "why": "Cisco augmente ses prévisions de revenus pour 2027 et dépasse les estimations du premier trimestre, ce qui suscite l'intérêt.",
-      "risk": "Une hausse des prévisions peut refléter des attentes élevées qui, si non tenues, pourraient décevoir le marché.",
-      "why_en": "Cisco lifts its FY2027 revenue outlook and beats Q1 estimates, attracting attention.",
-      "risk_en": "Higher guidance may set lofty expectations that could disappoint if not met."
+      "score": 6.896,
+      "why": "Cisco annonce une hausse de ses prévisions de revenus pour l'exercice 2027, suscitant l'intérêt des investisseurs.",
+      "risk": "Les attentes élevées pourraient être difficiles à tenir si la demande du marché ralentit.",
+      "why_en": "Cisco lifts its FY2027 revenue forecast, attracting investor attention.",
+      "risk_en": "High expectations may be hard to meet if market demand slows."
     },
     {
       "symbol": "SR",
@@ -62,7 +62,7 @@
       "last_at": "2026-11-12T23:02:00Z",
       "sentiment": 1.0,
       "price": 88.14,
-      "adv_usd": 46023459.14910813,
+      "adv_usd": 46023313.71810913,
       "chg_5d": -1.2,
       "chg_20d": 9.2,
       "rsi": 62.3,
@@ -70,35 +70,35 @@
       "hv": 0.2158137110690464,
       "niche": true,
       "score": 6.533,
-      "why": "Spire annonce une hausse de son dividende trimestriel, signalant une politique de retour de cash attractive.",
-      "risk": "L'augmentation du dividende peut réduire les liquidités disponibles pour la croissance future.",
-      "why_en": "Spire raises its quarterly dividend, indicating an appealing cash‑return policy.",
-      "risk_en": "Higher dividends may limit cash for future growth initiatives."
+      "why": "Spire augmente son dividende annuel, ce qui attire les investisseurs à la recherche de revenus.",
+      "risk": "Une hausse du dividende peut réduire les liquidités disponibles pour la croissance future.",
+      "why_en": "Spire raises its annual dividend, appealing to income‑focused investors.",
+      "risk_en": "Higher dividends may limit cash available for future growth."
     },
     {
       "symbol": "AMAT",
-      "mentions": 12,
+      "mentions": 13,
       "headlines": [
+        "Cerebras, Applied Materials, Cisco, Super Micro Computer and Nu Holdings: Why These 5 Stocks Are on Investors' Radars Today",
         "Applied Materials Reports Q4 Earnings, Raises Guidance as AI Drives Strong Chip Demand (CORRECTED)",
         "CORRECTION: Applied Mat Q4 Adj. EPS $4.16 Beats $4.05 Estimate, Sales $10.410B Beat $10.299B Estimate",
-        "Applied Materials Reports Fourth Quarter and Fiscal Year 2026 Financial Results",
-        "Applied Mat Q1 Adj. EPS $4.16 Misses $4.26 Estimate, Sales $10.409B Miss $10.894B Estimate"
+        "Applied Materials Reports Fourth Quarter and Fiscal Year 2026 Financial Results"
       ],
-      "last_at": "2026-11-12T21:56:07Z",
-      "sentiment": 0.25,
+      "last_at": "2026-11-13T01:14:56Z",
+      "sentiment": 0.23076923076923078,
       "price": 380.95,
-      "adv_usd": 3158182534.40213,
+      "adv_usd": 3163200903.197937,
       "chg_5d": 19.3,
       "chg_20d": -11.4,
       "rsi": 44.0,
       "trend": "baissiere",
       "hv": 0.9065472394147733,
       "niche": false,
-      "score": 5.88,
-      "why": "Applied Materials signale une forte demande en puces IA et relève ses prévisions, ce qui capte l'attention.",
-      "risk": "La correction des résultats montre que les attentes du marché peuvent être volatiles.",
-      "why_en": "Applied Materials cites strong AI chip demand and raises guidance, drawing focus.",
-      "risk_en": "Result corrections indicate market expectations can be volatile."
+      "score": 5.97,
+      "why": "Applied Materials relève ses prévisions grâce à une forte demande de puces IA, ce qui capte l'attention du marché.",
+      "risk": "Une correction ou un ralentissement de la demande en IA pourrait affecter les résultats futurs.",
+      "why_en": "Applied Materials lifts guidance on strong AI chip demand, catching market focus.",
+      "risk_en": "A correction or slowdown in AI demand could hurt future results."
     },
     {
       "symbol": "HAWK",
@@ -112,7 +112,7 @@
       "last_at": "2026-11-12T22:32:06Z",
       "sentiment": 0.5,
       "price": 14.67,
-      "adv_usd": 22645677.400461674,
+      "adv_usd": 22648645.87497711,
       "chg_5d": 15.0,
       "chg_20d": 13.8,
       "rsi": 52.1,
@@ -120,10 +120,10 @@
       "hv": 0.8526095739267187,
       "niche": true,
       "score": 5.719,
-      "why": "HawkEye 360 obtient 135 M$ de nouveaux contrats mondiaux et dépasse les prévisions de ventes, ce qui est notable.",
-      "risk": "La dépendance à des contrats spécifiques expose l'entreprise à des fluctuations de revenus.",
-      "why_en": "HawkEye 360 secures $135 M in new global contracts and beats sales forecasts, noteworthy.",
-      "risk_en": "Reliance on specific contracts makes revenue vulnerable to fluctuations."
+      "why": "HawkEye 360 signe de nouveaux contrats globaux de 135 M$, renforçant sa visibilité commerciale.",
+      "risk": "La dépendance à des contrats ponctuels expose l'entreprise à des fluctuations de revenus.",
+      "why_en": "HawkEye 360 secures $135 M in new global contracts, boosting commercial visibility.",
+      "risk_en": "Reliance on one‑off contracts exposes the firm to revenue volatility."
     },
     {
       "symbol": "LFTO",
@@ -137,7 +137,7 @@
       "last_at": "2026-11-12T23:02:11Z",
       "sentiment": 0.5,
       "price": 18.71,
-      "adv_usd": 12321452.941060638,
+      "adv_usd": 12344628.08142662,
       "chg_5d": 9.1,
       "chg_20d": 10.4,
       "rsi": 63.7,
@@ -145,10 +145,10 @@
       "hv": 0.670403173996479,
       "niche": true,
       "score": 5.719,
-      "why": "Liftoff Mobile dépasse les estimations de ventes et relève son objectif de chiffre d'affaires, attirant l'attention.",
-      "risk": "Une croissance rapide peut être difficile à soutenir si le marché se contracte.",
-      "why_en": "Liftoff Mobile beats sales estimates and raises its FY2026 revenue target, attracting notice.",
-      "risk_en": "Rapid growth may be hard to sustain if the market contracts."
+      "why": "Liftoff Mobile dépasse les estimations de ventes et relève son objectif de chiffre d'affaires, ce qui attire l'attention.",
+      "risk": "Le marché mobile est très concurrentiel, ce qui pourrait limiter la capacité à maintenir ces performances.",
+      "why_en": "Liftoff Mobile beats sales estimates and raises its revenue outlook, drawing attention.",
+      "risk_en": "The mobile market is highly competitive, potentially limiting sustained performance."
     },
     {
       "symbol": "ARDT",
@@ -160,7 +160,7 @@
       "last_at": "2026-11-12T23:03:04Z",
       "sentiment": 0.5,
       "price": 17.68,
-      "adv_usd": 11883756.429590415,
+      "adv_usd": 11883742.285590172,
       "chg_5d": 11.2,
       "chg_20d": 44.9,
       "rsi": 80.1,
@@ -168,10 +168,10 @@
       "hv": 0.8940467748641565,
       "niche": true,
       "score": 5.697,
-      "why": "Ardent Health annonce l'acquisition de Boone Health pour 47 M$ en cash, ce qui suscite l'intérêt.",
-      "risk": "L'intégration d'une acquisition peut entraîner des coûts imprévus et des synergies limitées.",
-      "why_en": "Ardent Health announces a $47 M cash acquisition of Boone Health, drawing interest.",
-      "risk_en": "Integrating an acquisition may bring unexpected costs and limited synergies."
+      "why": "Ardent Health annonce l'acquisition de Boone Health, élargissant son portefeuille de services de santé.",
+      "risk": "L'intégration de Boone Health comporte des risques opérationnels et financiers.",
+      "why_en": "Ardent Health announces acquisition of Boone Health, expanding its service portfolio.",
+      "risk_en": "Integrating Boone Health entails operational and financial risks."
     },
     {
       "symbol": "BEN",
@@ -183,7 +183,7 @@
       "last_at": "2026-11-12T23:01:43Z",
       "sentiment": 0.5,
       "price": 35.86,
-      "adv_usd": 130347503.79775849,
+      "adv_usd": 130347570.13875961,
       "chg_5d": 11.3,
       "chg_20d": 14.3,
       "rsi": 66.1,
@@ -191,10 +191,10 @@
       "hv": 0.4037979312231102,
       "niche": false,
       "score": 5.697,
-      "why": "Franklin Templeton voit une hausse de ses programmes de dons 529, ce qui attire l'attention des investisseurs.",
-      "risk": "La vente d'actions par un initié peut être perçue comme un signal négatif.",
-      "why_en": "Franklin Templeton experiences growth in its 529 gifting programs, catching investors' eye.",
-      "risk_en": "Insider share sales may be interpreted as a negative signal."
+      "why": "Franklin Templeton voit une forte activité dans ses programmes de dons 529, signalant une dynamique positive.",
+      "risk": "La vente d'actions par un initié peut être perçue comme un manque de confiance à court terme.",
+      "why_en": "Franklin Templeton experiences strong activity in its 529 gifting programs, indicating positive momentum.",
+      "risk_en": "Insider share sales may be viewed as short‑term lack of confidence."
     },
     {
       "symbol": "STN",
@@ -207,7 +207,7 @@
       "last_at": "2026-11-12T23:01:49Z",
       "sentiment": 0.6666666666666666,
       "price": 75.13,
-      "adv_usd": 24850238.053059388,
+      "adv_usd": 25255158.68625641,
       "chg_5d": -0.9,
       "chg_20d": 8.6,
       "rsi": 57.5,
@@ -215,49 +215,72 @@
       "hv": 0.33172905453353563,
       "niche": true,
       "score": 5.593,
-      "why": "Stantec dépasse les prévisions de ventes du troisième trimestre et ajuste légèrement son EPS guidé à la hausse.",
-      "risk": "Le rétrécissement de la fourchette de prévisions de ventes indique une incertitude sur la demande future.",
-      "why_en": "Stantec beats Q3 sales estimates and nudges its EPS guidance upward.",
-      "risk_en": "Narrowing sales guidance range signals uncertainty about future demand."
+      "why": "Stantec dépasse les prévisions de ventes du troisième trimestre et ajuste légèrement à la hausse son EPS guidé.",
+      "risk": "Les marges pourraient être sous pression si les coûts de construction augmentent davantage.",
+      "why_en": "Stantec beats Q3 sales estimates and nudges up its guided EPS.",
+      "risk_en": "Margins could be pressured if construction costs continue to rise."
+    },
+    {
+      "symbol": "ICE",
+      "mentions": 2,
+      "headlines": [
+        "Donald Trump Jr. Leaves Kalshi as His Firm Backs Polymarket",
+        "NYSE Reports Listing Transfers and Record Message Volumes"
+      ],
+      "last_at": "2026-11-12T19:56:18Z",
+      "sentiment": 0.5,
+      "price": 177.86,
+      "adv_usd": 589880002.3108673,
+      "chg_5d": 2.2,
+      "chg_20d": 12.3,
+      "rsi": 66.8,
+      "trend": "haussiere",
+      "hv": 0.32956698982476873,
+      "niche": false,
+      "score": 5.137,
+      "why": "Kalshi bénéficie du soutien d'une figure politique, ce qui augmente sa visibilité médiatique.",
+      "risk": "Le soutien politique ne garantit pas la performance financière et peut créer des attentes irréalistes.",
+      "why_en": "Kalshi gains media visibility from political backing.",
+      "risk_en": "Political support does not guarantee financial performance and may raise unrealistic expectations."
     },
     {
       "symbol": "SPCX",
-      "mentions": 10,
+      "mentions": 12,
       "headlines": [
-        "From AI Chips to Rocket Ships: Will Jensen Huang Join Elon Musk?",
-        "Reports Emerge of Potential Merger Negotiations Between SpaceX and Tesla",
-        "Elon Musk's SpaceX Shares Soared 50% After IPO. Analysts Say Anthropic Could Be Next",
-        "QUICK SPARK: Tesla Stock Has Best 5-Day Rally in Over a Year as Elon Musk Pushes for SpaceX Merger by December"
+        "Elon Musk Warns Against Pushing Founders Out — Steve Jobs and Travis Kalanick Lessons Resurface as Jensen Huang Exits Nvidia",
+        "Tesla (TSLA) Stock Trends After Hours As SpaceX Merger Talks Heat Up, Elon Musk Extends Cybertruck Production",
+        "Michael Burry Hints At Bigger Nvidia Asia ‘Reveal’ As Jensen Huang’s ‘Deer In The Headlights’ Dig At Colette Kress Resurfaces",
+        "From AI Chips to Rocket Ships: Will Jensen Huang Join Elon Musk?"
       ],
-      "last_at": "2026-11-12T22:32:07Z",
-      "sentiment": 0.1,
+      "last_at": "2026-11-13T05:46:54Z",
+      "sentiment": 0.0,
       "price": 139.94,
-      "adv_usd": 16243741706.572353,
+      "adv_usd": 16245650124.361649,
       "chg_5d": 13.2,
       "chg_20d": -5.8,
       "rsi": 46.7,
       "trend": "baissiere",
       "hv": 0.7561929357711876,
       "niche": false,
-      "score": 5.096,
-      "why": "Les rumeurs de fusion entre SpaceX et Tesla et les liens avec Elon Musk créent un fort engouement médiatique.",
-      "risk": "Les spéculations non confirmées peuvent entraîner une volatilité excessive du cours.",
-      "why_en": "Merger rumors between SpaceX and Tesla and Elon Musk ties generate strong media buzz.",
-      "risk_en": "Unconfirmed speculation can cause excessive price volatility."
+      "score": 5.13,
+      "why": "Les commentaires d'Elon Musk et les rumeurs de fusion SpaceX créent un fort engouement autour du titre.",
+      "risk": "Les spéculations non confirmées peuvent entraîner une forte volatilité et des corrections rapides.",
+      "why_en": "Elon Musk's comments and SpaceX merger rumors generate strong hype around the stock.",
+      "risk_en": "Unconfirmed speculation can cause high volatility and swift corrections."
     },
     {
       "symbol": "CBRS",
       "mentions": 6,
       "headlines": [
+        "Cerebras, Applied Materials, Cisco, Super Micro Computer and Nu Holdings: Why These 5 Stocks Are on Investors' Radars Today",
         "Cerebras Systems Reports Third Quarter 2026 Financial Results",
         "Cerebras Stock Jumps on Q3 Cloud Revenue Up 265%, Despite Missed Guidance",
-        "Cerebras Systems Raises FY2026 Sales Guidance from $880.000M-$890.000M to $940.000M-$960.000M vs $887.040M Est",
-        "Cerebras Systems Sees Q4 Sales $310.000M-$330.000M vs $271.139M Est"
+        "Cerebras Systems Raises FY2026 Sales Guidance from $880.000M-$890.000M to $940.000M-$960.000M vs $887.040M Est"
       ],
-      "last_at": "2026-11-12T23:01:44Z",
+      "last_at": "2026-11-13T01:14:56Z",
       "sentiment": 0.3333333333333333,
       "price": 97.75,
-      "adv_usd": 1170106213.8343139,
+      "adv_usd": 1178896636.734314,
       "chg_5d": 19.6,
       "chg_20d": -31.2,
       "rsi": 36.2,
@@ -265,10 +288,10 @@
       "hv": 1.0771780757417706,
       "niche": false,
       "score": 4.892,
-      "why": "Cerebras voit son chiffre d'affaires cloud grimper de 265 % et relève ses prévisions, ce qui attire l'attention.",
-      "risk": "Le manquement aux objectifs de guidance malgré la forte croissance cloud peut inquiéter les investisseurs.",
-      "why_en": "Cerebras reports a 265 % surge in cloud revenue and raises guidance, drawing focus.",
-      "risk_en": "Missing guidance targets despite cloud growth may worry investors."
+      "why": "Cerebras affiche une hausse spectaculaire de ses revenus cloud, malgré un guidage inférieur aux attentes, attirant l'attention.",
+      "risk": "Le manque de respect du guidage pourrait décevoir les investisseurs et affecter le cours.",
+      "why_en": "Cerebras shows a dramatic cloud revenue jump, drawing attention despite missing guidance.",
+      "risk_en": "Missing guidance may disappoint investors and impact the share price."
     },
     {
       "symbol": "REGN",
@@ -281,7 +304,7 @@
       "last_at": "2026-11-12T22:31:38Z",
       "sentiment": 0.0,
       "price": 951.19,
-      "adv_usd": 872166697.1488037,
+      "adv_usd": 880824428.5510254,
       "chg_5d": 5.3,
       "chg_20d": 19.4,
       "rsi": 67.7,
@@ -289,10 +312,10 @@
       "hv": 0.5509261384007843,
       "niche": false,
       "score": 4.773,
-      "why": "Regeneron publie des résultats positifs d'un essai de phase 2 pour le traitement du POTS, suscitant l'intérêt.",
-      "risk": "Les résultats d'essais cliniques restent préliminaires et ne garantissent pas une approbation future.",
-      "why_en": "Regeneron releases positive Phase 2 trial results for a POTS treatment, sparking interest.",
-      "risk_en": "Clinical trial results are preliminary and do not guarantee future approval."
+      "why": "Regeneron publie des résultats prometteurs d'un essai de phase 2 pour le traitement du POTS, suscitant l'intérêt clinique.",
+      "risk": "Les résultats d'essais précoces ne garantissent pas l'approbation ou le succès commercial futur.",
+      "why_en": "Regeneron releases promising Phase 2 trial results for a POTS treatment, sparking clinical interest.",
+      "risk_en": "Early‑stage trial results do not guarantee regulatory approval or commercial success."
     },
     {
       "symbol": "GO",
@@ -304,7 +327,7 @@
       "last_at": "2026-11-12T22:32:14Z",
       "sentiment": 1.0,
       "price": 12.85,
-      "adv_usd": 33814034.20298376,
+      "adv_usd": 33814079.820485115,
       "chg_5d": -2.2,
       "chg_20d": -1.6,
       "rsi": 50.1,
@@ -312,56 +335,35 @@
       "hv": 0.5750215586087175,
       "niche": true,
       "score": 4.757,
-      "why": "Goldman Sachs maintient une recommandation de vente sur Grocery Outlet, tandis que Wells Fargo relève son objectif, créant un contraste notable.",
-      "risk": "Les divergences d'opinion entre analystes peuvent refléter une incertitude sur la trajectoire du titre.",
-      "why_en": "Goldman Sachs keeps a sell rating on Grocery Outlet while Wells Fargo raises its target, creating notable contrast.",
-      "risk_en": "Analyst disagreements may reflect uncertainty about the stock's direction."
+      "why": "Goldman Sachs maintient une recommandation de vente sur Grocery Outlet, tandis que Wells Fargo relève son objectif, créant un contraste d'opinions.",
+      "risk": "Les divergences d'analystes peuvent entraîner une incertitude sur la direction future du cours.",
+      "why_en": "Goldman Sachs maintains a sell rating on Grocery Outlet while Wells Fargo raises its target, creating a contrast of opinions.",
+      "risk_en": "Analyst disagreements may create uncertainty about the stock’s future direction."
     },
     {
-      "symbol": "ANDG",
-      "mentions": 2,
+      "symbol": "NU",
+      "mentions": 4,
       "headlines": [
-        "Andersen Group Q3 Adj. EPS $2.39 Beats $1.11 Estimate, Sales $337.318M Beat $333.636M Estimate",
-        "Andersen Group Sees FY2027 Sales $1.275B-$1.325B vs $1.175B Est"
+        "Cerebras, Applied Materials, Cisco, Super Micro Computer and Nu Holdings: Why These 5 Stocks Are on Investors' Radars Today",
+        "Nu Holdings Ltd. Reports Q3 2026 Financial Results",
+        "Nu Holdings Reports Strong Q3: EPS in Line, Revenue Above Estimates",
+        "Nu Holdings Q3 EPS $0.22, Inline, Sales $5.820B Beat $5.684B Estimate"
       ],
-      "last_at": "2026-11-12T21:37:40Z",
-      "sentiment": 0.5,
-      "price": 65.42,
-      "adv_usd": 32139378.73733902,
-      "chg_5d": -1.3,
-      "chg_20d": 11.0,
-      "rsi": 63.1,
-      "trend": "haussiere",
-      "hv": 0.271477546460273,
-      "niche": true,
-      "score": 4.437,
-      "why": "Andersen Group dépasse les estimations de bénéfice et de ventes du troisième trimestre, attirant l'attention.",
-      "risk": "Les prévisions de ventes pour FY2027 restent inférieures aux attentes antérieures, limitant l'enthousiasme.",
-      "why_en": "Andersen Group beats Q3 EPS and sales estimates, drawing attention.",
-      "risk_en": "FY2027 sales outlook remains below prior expectations, limiting enthusiasm."
-    },
-    {
-      "symbol": "HELE",
-      "mentions": 2,
-      "headlines": [
-        "Empower Brands Issues Open Letter to Helen of Troy Shareholders",
-        "Helen of Troy Says The Board Of Directors Unanimously Determined That Empower Brands’ Unsolicited, Non-binding Proposal To Acquire Helen Of "
-      ],
-      "last_at": "2026-11-12T22:32:21Z",
-      "sentiment": 0.5,
-      "price": 37.19,
-      "adv_usd": 20127018.93694687,
-      "chg_5d": -1.5,
-      "chg_20d": 25.9,
-      "rsi": 70.5,
-      "trend": "haussiere",
-      "hv": 0.8770493609622793,
-      "niche": true,
-      "score": 4.397,
-      "why": "Helen of Troy reçoit une proposition d'acquisition non sollicitée d'Empower Brands, ce qui suscite l'intérêt du marché.",
-      "risk": "Une offre non contraignante peut créer de l'incertitude sans aboutir à une transaction réelle.",
-      "why_en": "Helen of Troy gets an unsolicited acquisition proposal from Empower Brands, sparking market interest.",
-      "risk_en": "A non‑binding offer can create uncertainty without leading to an actual deal."
+      "last_at": "2026-11-13T01:14:56Z",
+      "sentiment": 0.75,
+      "price": 11.83,
+      "adv_usd": 1079852587.19203,
+      "chg_5d": 0.8,
+      "chg_20d": -19.7,
+      "rsi": 39.9,
+      "trend": "baissiere",
+      "hv": 0.7583181043436108,
+      "niche": false,
+      "score": 4.629,
+      "why": "Nu Holdings publie des résultats Q3 solides avec un revenu supérieur aux estimations, attirant l'attention des investisseurs latins.",
+      "risk": "La forte exposition aux marchés émergents expose l'entreprise aux risques macroéconomiques régionaux.",
+      "why_en": "Nu Holdings reports solid Q3 results with revenue above estimates, drawing investor attention in Latin markets.",
+      "risk_en": "Heavy exposure to emerging markets subjects the firm to regional macroeconomic risks."
     }
   ]
 }
