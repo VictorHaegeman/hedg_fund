@@ -141,3 +141,15 @@ Exécuté : 2026-11-13T19:30:01 | équité 97,183.72 $ (+0.28 % jour) | bourse U
   IA : BUY_STOCK MBGL | confiance 0.82 | MBGL montre une tendance haussière claire, un RSI élevé mais encore sous le seuil de surachat critique, et une volatilité implicite très basse (IV/HV 0.56) qui rend l'achat direct plus avantageux que les stratégies d'options coûteuses.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-13T20:00:01 | équité 97,115.74 $ (+0.21 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,617 $ | Γ +142.86 (Δ$ +233 pour 1 %) | ν +8 $/pt | Θ -4 $/j | ρ -13 $/pt
+  Idées presse ajoutées : MBGL, LFTO*, ASND, DKS, AON, NVO, AMAT, ECO  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : LFTO, MBGL, ASND, LLY, META, TSLA, WMT, COST, KO, DIS, CAT, AMAT, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, DOT/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.47, BULL_PUT_SPREAD)
+  Notes IA : LFTO BUY_STOCK 0.8 · ASND BULL_PUT_SPREAD 0.7 · TSLA BUY_STOCK 0.75
+  IA : BUY_STOCK LFTO | confiance 0.8 | LFTO montre une forte hausse de 31,8% sur 5 jours, un RSI très élevé et une volatilité implicite basse (IV/HV 0.68), ce qui rend l'achat direct plus avantageux que les options coûteuses.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
