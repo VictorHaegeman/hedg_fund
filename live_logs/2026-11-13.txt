@@ -1,0 +1,32 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-13T02:49:04 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, AAPL, NVDA, MSFT, GOOGL, GOOG, GOOGN, GOOGM, AMZN, SPCX, TSM, AVGO, METAM, META, TSLA, LLY, JPM
+==============================================================================
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOG, GOOGN, GOOGM
+  Contexte risque : VIX 18.7 (69e pct) → PRUDENCE
+  NVDA : résultats dans 4 j → pas d'entrée
+  Aucun ordre ce cycle (positions inchangées, pas de signal).
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-13T02:49:14
+  Équité : 100,362.87 $ (+0.36% depuis le départ) | Cash : 1,006.26 $
+  Positions ouvertes :
+    JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +851.10 $
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +792.87 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent +636.46 $
+    BTC-USD  0.1542 u @ 74,472.77 [meanrev] | stop 67,957.92 | latent -651.56 $
+  Trésorerie placée : SPY 30,265 $ (+574 $) | BIL 2,328 $ (+0 $)
+  Trades clôturés : 31 | win rate 58% | PnL réalisé total : -1,597.14 $
+  5 derniers trades :
+    2026-11-04 SPY      [meanrev] 755.72 → 766.81 (signal) PnL +449.30 $
+    2026-11-05 QQQ      [meanrev] 690.49 → 652.33 (stop) PnL -28.21 $
+    2026-11-05 TSLA     [meanrev] 385.19 → 342.92 (stop) PnL -1,039.82 $
+    2026-11-06 MSFT     [breakout] 555.80 → 525.69 (stop) PnL -1,064.91 $
+    2026-11-11 XLE      [meanrev] 63.52 → 63.37 (signal) PnL -44.89 $
+
+— MIROIR ALPACA —
+  3 stop(s) Alpaca du fonds annulé(s) pour être reposés
+  Alpaca déjà aligné sur le fonds.
+  Ordres en attente (exécution à l'ouverture) : ACHC, BDX, ENOV, JPM, LLY, MCD, XLV
+  Équité Alpaca : 96,782.39 $ | cash 438.46 $
