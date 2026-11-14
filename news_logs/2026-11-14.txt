@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 19.3 (74e percentile sur 2 ans)
+  Or sur 1 mois : -0.07 | Pétrole sur 1 mois : -0.1
+  NIVEAU : PRUDENCE — tension supérieure à la normale : tailles réduites conseillées
+  → Nouvelles entrées : autorisées
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : neutre   (score +0.00, 15 titres)
+           ex: « SPDR S&P 500 ETF (SPY) Buys $335.9 Million More Apple on Nov. 11 »
+  QQQ    : neutre   (score +0.07, 15 titres)
+           ex: « Exchange-Traded Funds Lower as US Equities Drop After Midday »
+  GLD    : positif  (score +0.20, 15 titres)
+           ex: « Defiance Goes Mad ‘Maxx’ on Single-Stock ETFs »
+  TLT    : neutre   (score +0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Which Long-Term Bond ETF Is the Better Buy: State Street’s SPLB or iSh »
+  XLK    : négatif  (score -0.20, 15 titres)
+           ex: « Where These 4 Sector ETFs Stand Heading Into Year-End »
+  XLF    : neutre   (score -0.07, 15 titres)
+           ex: « State Street Fin Sel Sector SPDR (XLF) Buys $49.1 Million More BRK.B o »
+  XLE    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Energy Stocks Edge Higher Pre-Bell Wednesday »
+  XLV    : neutre   (score +0.07, 15 titres)
+           ex: « Where These 4 Sector ETFs Stand Heading Into Year-End »
+  XLY    : neutre   (score +0.00, 15 titres)
+           ex: « Sector Update: Consumer Stocks Mixed in Afternoon Trading »
+  XLP    : négatif  (score -0.20, 15 titres)
+           ex: « Sector Update: Consumer Stocks Mixed in Afternoon Trading »
+  XLI    : neutre   (score -0.07, 15 titres)
+           ex: « What State Street Industrial Select SPDR (XLI) Bought: GE Leads on Nov »
+  XLU    : neutre   (score +0.00, 15 titres)
+           ex: « What Utilities Select Sector SPDR ETF (XLU) Sold: NextEra Leads on Nov »
+  XLB    : neutre   (score +0.13, 15 titres)
+           ex: « Should You Invest in the State Street Materials Select Sector SPDR ETF »
+  BTC-USD: neutre   (score -0.07, 15 titres)
+           ex: « Nakamoto Gets Extra Year on 60 Million USDT Kraken Loan; Derivatives C »
+
+Total mentions géopolitiques dans les titres : 1
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.

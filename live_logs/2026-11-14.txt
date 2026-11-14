@@ -1,0 +1,36 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-14T02:36:50 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, AAPL, NVDA, MSFT, GOOGN, GOOG, GOOGL, AMZN, SPCX, TSM, AVGO, META, METAM, TSLA, LLY, BRK-B, JPM
+==============================================================================
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOG, GOOGL
+  VENTE BTC-USD @ 67,957.92 (STOP) — PnL -1,015.53 $ (-8.8%)
+  Contexte risque : VIX 19.3 (74e pct) → PRUDENCE
+  NVDA : résultats dans 3 j → pas d'entrée
+  Trésorerie : achat 10,508 $ de BIL (bons du Trésor)
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-14T02:37:01
+  Équité : 100,404.47 $ (+0.40% depuis le départ) | Cash : 966.56 $
+  Positions ouvertes :
+    JPM      72.8680 u @ 331.14 [breakout] | stop 317.42 | latent +1,096.66 $
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +868.88 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent +829.13 $
+  Trésorerie placée : SPY 30,155 $ (+464 $) | BIL 12,837 $ (+1 $)
+  Trades clôturés : 32 | win rate 56% | PnL réalisé total : -2,612.67 $
+  5 derniers trades :
+    2026-11-05 QQQ      [meanrev] 690.49 → 652.33 (stop) PnL -28.21 $
+    2026-11-05 TSLA     [meanrev] 385.19 → 342.92 (stop) PnL -1,039.82 $
+    2026-11-06 MSFT     [breakout] 555.80 → 525.69 (stop) PnL -1,064.91 $
+    2026-11-11 XLE      [meanrev] 63.52 → 63.37 (signal) PnL -44.89 $
+    2026-11-14 BTC-USD  [meanrev] 74,472.77 → 67,957.92 (stop) PnL -1,015.53 $
+Variation du cycle : +89.86 $
+
+— MIROIR ALPACA —
+  ALPACA achète 83.1611 BIL (rééquilibrage)
+  ALPACA ferme BTC-USD (position fermée par le fonds)
+  ALPACA stop JPM : 52 parts à 317.41
+  ALPACA stop LLY : 8 parts à 1,288.66
+  ALPACA stop XLV : 54 parts à 171.43
+  Ordres en attente (exécution à l'ouverture) : ACHC, BDX, ENOV, MCD
+  Équité Alpaca : 97,041.27 $ | cash 437.89 $
