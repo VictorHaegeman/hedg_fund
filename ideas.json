@@ -1,15 +1,14 @@
 {
-  "updated_at": "2026-11-14T03:01:07",
+  "updated_at": "2026-11-14T09:01:12",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
       "symbol": "MBGL",
-      "mentions": 5,
+      "mentions": 3,
       "headlines": [
         "JP Morgan Maintains Neutral on Mobility Global, Raises Price Target to $25",
         "Baird Maintains Neutral on Mobility Global, Raises Price Target to $26",
-        "Wells Fargo Maintains Overweight on Mobility Global, Raises Price Target to $29",
-        "Barclays Maintains Equal-Weight on Mobility Global, Raises Price Target to $25"
+        "Wells Fargo Maintains Overweight on Mobility Global, Raises Price Target to $29"
       ],
       "last_at": "2026-11-13T20:04:04Z",
       "sentiment": 1.0,
@@ -21,15 +20,15 @@
       "trend": "haussiere",
       "hv": 0.5943107684035555,
       "niche": false,
-      "score": 8.584,
-      "why": "Les analystes majeurs maintiennent une opinion neutre mais augmentent leurs objectifs de cours, soutenant la tendance haussière.",
-      "risk": "Le consensus neutre indique une incertitude sur la performance future malgré les hausses de cible.",
+      "score": 7.773,
+      "why": "Les analystes majeurs maintiennent une opinion neutre mais augmentent leurs objectifs de cours, ce qui soutient la tendance haussière.",
+      "risk": "Le consensus neutre indique que la progression du cours reste incertaine et dépendra des résultats de l'entreprise.",
       "why_en": "Major analysts keep a neutral stance while raising price targets, supporting the upward trend.",
-      "risk_en": "The neutral consensus signals uncertainty about future performance despite higher targets."
+      "risk_en": "The neutral consensus suggests price upside is uncertain and hinges on company performance."
     },
     {
       "symbol": "LFTO",
-      "mentions": 6,
+      "mentions": 4,
       "headlines": [
         "Analyst Rating and Price Target Updates for Liftoff Mobile, Inc.",
         "Why Is Liftoff Mobile Stock Skyrocketing Friday?",
@@ -37,7 +36,7 @@
         "Piper Sandler Maintains Neutral on Liftoff Mobile, Raises Price Target to $24"
       ],
       "last_at": "2026-11-13T19:04:14Z",
-      "sentiment": 0.6666666666666666,
+      "sentiment": 0.75,
       "price": 24.44,
       "adv_usd": 23451844.525899887,
       "chg_5d": 34.8,
@@ -46,19 +45,18 @@
       "trend": "haussiere",
       "hv": 1.1365995544794567,
       "niche": true,
-      "score": 7.892,
-      "why": "Des mises à jour de notation et des hausses d'objectifs de cours par plusieurs analystes expliquent le fort rebond du titre.",
-      "risk": "Le fort rallye peut être volatil et dépendre de résultats trimestriels incertains.",
-      "why_en": "Rating upgrades and higher price targets from several analysts explain the strong stock rally.",
-      "risk_en": "The sharp rally may be volatile and hinges on uncertain quarterly results."
+      "score": 7.469,
+      "why": "Des hausses d'objectifs de cours et un avis \"overweight\" de Wells Fargo stimulent l'intérêt pour le titre.",
+      "risk": "La forte volatilité récente peut entraîner des corrections rapides si les attentes ne sont pas confirmées.",
+      "why_en": "Raised price targets and an overweight rating from Wells Fargo boost interest in the stock.",
+      "risk_en": "Recent high volatility could lead to sharp pullbacks if expectations are not met."
     },
     {
       "symbol": "ASND",
-      "mentions": 3,
+      "mentions": 2,
       "headlines": [
         "UBS Maintains Buy on Ascendis Pharma, Raises Price Target to $315",
-        "Wells Fargo Maintains Overweight on Ascendis Pharma, Raises Price Target to $330",
-        "RBC Capital Reiterates Outperform on Ascendis Pharma, Maintains $290 Price Target"
+        "Wells Fargo Maintains Overweight on Ascendis Pharma, Raises Price Target to $330"
       ],
       "last_at": "2026-11-13T16:42:40Z",
       "sentiment": 1.0,
@@ -70,34 +68,11 @@
       "trend": "haussiere",
       "hv": 0.22125141026441908,
       "niche": false,
-      "score": 7.773,
-      "why": "Des analystes de premier plan maintiennent des recommandations d'achat avec des objectifs de cours supérieurs, renforçant la dynamique positive.",
-      "risk": "Le prix cible élevé repose sur des hypothèses de croissance qui pourraient ne pas se réaliser.",
-      "why_en": "Top analysts maintain buy recommendations with higher price targets, reinforcing the positive momentum.",
-      "risk_en": "The high price target relies on growth assumptions that may not materialize."
-    },
-    {
-      "symbol": "APA",
-      "mentions": 2,
-      "headlines": [
-        "Barclays Maintains Hold Rating and Raises Price Target for APA Corporation",
-        "Barclays Maintains Equal-Weight on APA, Raises Price Target to $48"
-      ],
-      "last_at": "2026-11-13T23:01:45Z",
-      "sentiment": 1.0,
-      "price": 48.44,
-      "adv_usd": 283474616.7364502,
-      "chg_5d": 8.5,
-      "chg_20d": -0.9,
-      "rsi": 55.4,
-      "trend": "haussiere",
-      "hv": 0.49642920416845937,
-      "niche": false,
       "score": 7.197,
-      "why": "Barclays relève son objectif de cours tout en conservant une position neutre, ce qui attire l'attention sur le titre.",
-      "risk": "Le maintien du rating neutre indique que les perspectives restent mitigées malgré la hausse de cible.",
-      "why_en": "Barclays raises its price target while keeping a neutral rating, drawing attention to the stock.",
-      "risk_en": "The neutral rating suggests mixed outlook despite the higher target."
+      "why": "UBS et Wells Fargo confirment un avis d'achat et augmentent leurs objectifs, renforçant la dynamique positive.",
+      "risk": "Le secteur pharmaceutique reste sensible aux essais cliniques et aux décisions réglementaires.",
+      "why_en": "UBS and Wells Fargo reaffirm buy ratings and raise targets, reinforcing positive momentum.",
+      "risk_en": "The pharma sector remains vulnerable to clinical trial outcomes and regulatory decisions."
     },
     {
       "symbol": "CINF",
@@ -117,10 +92,10 @@
       "hv": 0.2173463667634661,
       "niche": false,
       "score": 6.637,
-      "why": "Annonce d'un dividende trimestriel régulier et hausse de l'objectif de cours par KBW, soutenant l'intérêt des investisseurs revenu.",
-      "risk": "Le rendement du dividende peut être limité si la rentabilité de l'assureur se détériore.",
-      "why_en": "Announcement of a regular quarterly dividend and a higher price target by KBW support income‑seeking investor interest.",
-      "risk_en": "The dividend yield could be constrained if the insurer's profitability weakens."
+      "why": "Le versement d'un dividende régulier et une hausse de l'objectif de cours par KBW attirent les investisseurs à revenu fixe.",
+      "risk": "Une hausse modeste du cours peut masquer une sensibilité aux sinistres majeurs ou à la conjoncture économique.",
+      "why_en": "Regular dividend payout and a raised price target by KBW attract income‑focused investors.",
+      "risk_en": "Modest price appreciation may hide exposure to large claims or broader economic conditions."
     },
     {
       "symbol": "CMS",
@@ -140,10 +115,10 @@
       "hv": 0.20795217105281694,
       "niche": false,
       "score": 6.537,
-      "why": "Déclaration de dividendes sur actions privilégiées, attirant les investisseurs à la recherche de revenus stables.",
-      "risk": "Les actions privilégiées peuvent être moins liquides et sensibles aux variations de taux d'intérêt.",
-      "why_en": "Declaration of preferred stock dividends, attracting investors seeking stable income.",
-      "risk_en": "Preferred shares can be less liquid and sensitive to interest‑rate fluctuations."
+      "why": "L'annonce de dividendes sur actions privilégiées indique une politique de distribution attractive pour les actionnaires.",
+      "risk": "Les rendements élevés des actions privilégiées peuvent être affectés par une hausse des taux d'intérêt.",
+      "why_en": "Dividend announcements on preferred shares signal an attractive payout policy for shareholders.",
+      "risk_en": "High yields on preferred stock can be pressured by rising interest rates."
     },
     {
       "symbol": "CNOB",
@@ -163,10 +138,10 @@
       "hv": 0.2931548888640107,
       "niche": true,
       "score": 6.417,
-      "why": "Ex‑dividende et déclaration de dividende trimestriel, renforçant l'attrait pour les revenus.",
-      "risk": "Le rendement dépend de la capacité de la banque à maintenir ses bénéfices dans un environnement bancaire incertain.",
-      "why_en": "Ex‑dividend date and quarterly dividend announcement, enhancing income appeal.",
-      "risk_en": "Yield depends on the bank's ability to sustain earnings amid uncertain banking conditions."
+      "why": "Le passage en ex‑dividende et la déclaration de dividende renforcent l'attrait pour les revenus.",
+      "risk": "Le rendement du dividende peut être remis en cause si la banque rencontre des difficultés de crédit.",
+      "why_en": "Ex‑dividend status and dividend declaration boost income appeal.",
+      "risk_en": "Dividend yield could be jeopardized if the bank faces credit challenges."
     },
     {
       "symbol": "CON",
@@ -186,10 +161,10 @@
       "hv": 0.37507414143887957,
       "niche": true,
       "score": 6.357,
-      "why": "Wells Fargo augmente son objectif de cours tout en maintenant une notation overweight, soutenant la dynamique haussière.",
-      "risk": "Une notation overweight ne garantit pas la performance si les marges du groupe se contractent.",
-      "why_en": "Wells Fargo raises its price target while keeping an overweight rating, supporting the upward momentum.",
-      "risk_en": "An overweight rating does not guarantee performance if the group's margins compress."
+      "why": "Wells Fargo maintient un avis \"overweight\" et augmente l'objectif, soutenant la perspective haussière.",
+      "risk": "Le secteur des services de santé contractuels peut être affecté par des changements réglementaires.",
+      "why_en": "Wells Fargo keeps an overweight rating and raises the target, supporting the bullish view.",
+      "risk_en": "The contract health‑services sector may be impacted by regulatory shifts."
     },
     {
       "symbol": "BLTE",
@@ -209,10 +184,10 @@
       "hv": 0.5830004734713049,
       "niche": true,
       "score": 6.197,
-      "why": "Les analystes maintiennent une recommandation outperform avec des objectifs de cours revus à la hausse, ce qui attire l'attention malgré une tendance neutre.",
-      "risk": "La neutralité de la tendance indique que le cours pourrait stagner sans catalyseur supplémentaire.",
-      "why_en": "Analysts keep an outperform recommendation with raised price targets, drawing attention despite a neutral trend.",
-      "risk_en": "The neutral trend suggests the stock could stall without an additional catalyst."
+      "why": "Les deux analystes confirment un avis \"outperform\" et relèvent légèrement leurs objectifs, indiquant une confiance modérée.",
+      "risk": "Le profil neutre du titre reflète une incertitude sur la capacité de la société à livrer une croissance durable.",
+      "why_en": "Both analysts maintain an outperform rating and modestly raise targets, indicating moderate confidence.",
+      "risk_en": "The neutral stance reflects uncertainty about the company's ability to sustain growth."
     },
     {
       "symbol": "AON",
@@ -233,10 +208,10 @@
       "hv": 0.32940143521963683,
       "niche": false,
       "score": 5.973,
-      "why": "Mizuho et KBW conservent des recommandations outperform et augmentent leurs objectifs, soutenant l'optimisme du marché.",
-      "risk": "Des hausses d'objectifs multiples peuvent refléter des attentes élevées qui, si non atteintes, entraîneront une correction.",
-      "why_en": "Mizuho and KBW maintain outperform recommendations and raise targets, supporting market optimism.",
-      "risk_en": "Multiple target raises may reflect high expectations that, if unmet, could trigger a pullback."
+      "why": "Des avis \"outperform\" et des objectifs de cours revus à la hausse par Mizuho et KBW soutiennent la dynamique positive.",
+      "risk": "Une exposition importante aux marchés d'assurance expose l'action aux sinistres majeurs ou aux changements de réglementation.",
+      "why_en": "Outperform ratings and raised price targets by Mizuho and KBW support the positive momentum.",
+      "risk_en": "Heavy exposure to insurance markets makes the stock vulnerable to large claims or regulatory changes."
     },
     {
       "symbol": "BJ",
@@ -257,10 +232,10 @@
       "hv": 0.2352426160585723,
       "niche": false,
       "score": 5.953,
-      "why": "Les analystes de JP Morgan et Wells Fargo relèvent leurs objectifs de cours, indiquant un potentiel de hausse.",
-      "risk": "Le secteur de la distribution de gros reste sensible aux pressions inflationnistes et aux changements de consommation.",
-      "why_en": "JP Morgan and Wells Fargo analysts raise price targets, indicating upside potential.",
-      "risk_en": "The wholesale retail sector remains vulnerable to inflationary pressure and shifting consumer behavior."
+      "why": "Les révisions à la hausse des objectifs de cours par JPMorgan et Wells Fargo renforcent l'optimisme des investisseurs.",
+      "risk": "Le secteur de la distribution de gros peut être sensible aux pressions sur les marges et à la concurrence en ligne.",
+      "why_en": "Higher price targets from JPMorgan and Wells Fargo boost investor optimism.",
+      "risk_en": "The wholesale retail sector is vulnerable to margin pressure and online competition."
     },
     {
       "symbol": "USPH",
@@ -281,10 +256,10 @@
       "hv": 0.4263687461032177,
       "niche": true,
       "score": 5.793,
-      "why": "Déclaration de dividende et maintien d'une recommandation outperform avec un objectif de cours relevé, attirant les investisseurs revenu.",
-      "risk": "Le secteur de la thérapie physique peut être affecté par des coupes budgétaires en santé publique.",
-      "why_en": "Dividend announcement and upkeep of an outperform rating with a higher target attract income investors.",
-      "risk_en": "The physical therapy sector may face headwinds from public health budget cuts."
+      "why": "Le maintien d'un avis \"outperform\" et une légère hausse de l'objectif de cours par Barrington Research soutiennent la tendance haussière.",
+      "risk": "Le secteur de la physiothérapie peut être affecté par des changements de remboursement ou de politique de santé.",
+      "why_en": "Outperform rating and modest target increase by Barrington Research support the upward trend.",
+      "risk_en": "Physical therapy services may be impacted by reimbursement or health‑policy changes."
     },
     {
       "symbol": "M",
@@ -305,35 +280,10 @@
       "hv": 0.5488334490705236,
       "niche": false,
       "score": 5.773,
-      "why": "Macy's bénéficie d'une visibilité médiatique forte grâce à la Parade de Thanksgiving et d'une hausse de cible de Morgan Stanley.",
-      "risk": "Le commerce de détail reste exposé aux fluctuations de la consommation et aux coûts d'exploitation élevés.",
-      "why_en": "Macy's gains strong media visibility from the Thanksgiving Parade and a higher Morgan Stanley target.",
-      "risk_en": "Retail remains exposed to consumer spending swings and high operating costs."
-    },
-    {
-      "symbol": "CRWD",
-      "mentions": 4,
-      "headlines": [
-        "Rosenblatt Maintains Buy on CrowdStrike Holdings, Raises Price Target to $275",
-        "Morgan Stanley Projects CrowdStrike to Exceed Annual Recurring Revenue Estimates",
-        "Microsoft Just Relived the CrowdStrike Nightmare. But There’s One Crucial Difference",
-        "Palo Alto, CrowdStrike Stocks Reverse Lower Despite Analyst Upgrade, Rosenblatt Price Target Hike"
-      ],
-      "last_at": "2026-11-13T21:31:50Z",
-      "sentiment": 0.75,
-      "price": 226.61,
-      "adv_usd": 2187569519.203949,
-      "chg_5d": 4.5,
-      "chg_20d": -0.3,
-      "rsi": 41.8,
-      "trend": "baissiere",
-      "hv": 0.6066244722667231,
-      "niche": false,
-      "score": 5.369,
-      "why": "Rosenblatt maintient un avis d'achat et augmente le target, tandis que Morgan Stanley prévoit une surperformance des revenus récurrents.",
-      "risk": "Des attentes élevées sur la croissance des revenus récurrents peuvent être difficiles à tenir, entraînant une pression baissière.",
-      "why_en": "Rosenblatt keeps a buy rating with a higher target, and Morgan Stanley forecasts recurring‑revenue outperformance.",
-      "risk_en": "High expectations on recurring‑revenue growth may be hard to meet, putting downward pressure on the stock."
+      "why": "Macy's bénéficie d'une visibilité médiatique accrue grâce à la parade de Thanksgiving et d'un avis d'achat renforcé par Morgan Stanley.",
+      "risk": "Le commerce de détail reste exposé aux fluctuations de la consommation et aux pressions sur les marges.",
+      "why_en": "Macy's gains media visibility from the Thanksgiving parade and a reinforced buy rating from Morgan Stanley.",
+      "risk_en": "Retail remains exposed to consumer spending swings and margin pressure."
     },
     {
       "symbol": "LOW",
@@ -355,10 +305,58 @@
       "hv": 0.40909504878266073,
       "niche": false,
       "score": 5.249,
-      "why": "Déclaration de dividende trimestriel et analyses récentes suscitent l'intérêt des investisseurs recherchant des rendements.",
-      "risk": "Le secteur de la construction et de l'amélioration de l'habitat peut être impacté par la hausse des coûts des matériaux.",
-      "why_en": "Quarterly dividend announcement and recent analyst coverage spark interest from yield‑seeking investors.",
-      "risk_en": "The home improvement sector may be affected by rising material costs."
+      "why": "Le dividende déclaré et les analyses récentes attirent les investisseurs recherchant des revenus stables.",
+      "risk": "Le secteur du bricolage peut subir des ralentissements économiques qui affectent les ventes.",
+      "why_en": "Declared dividend and recent analyst coverage attract income‑seeking investors.",
+      "risk_en": "The home‑improvement sector can face economic slowdowns that dampen sales."
+    },
+    {
+      "symbol": "AGL",
+      "mentions": 2,
+      "headlines": [
+        "Wells Fargo Maintains Overweight Rating on Agilon Health",
+        "Wells Fargo Maintains Overweight on Agilon Health, Raises Price Target to $170"
+      ],
+      "last_at": "2026-11-13T22:32:39Z",
+      "sentiment": 0.5,
+      "price": 115.66,
+      "adv_usd": 21822056.413841248,
+      "chg_5d": 2.0,
+      "chg_20d": 35.9,
+      "rsi": 72.6,
+      "trend": "haussiere",
+      "hv": 0.7543023502696183,
+      "niche": true,
+      "score": 5.097,
+      "why": "Wells Fargo maintient un avis \"overweight\" et augmente l'objectif, ce qui soutient la dynamique positive.",
+      "risk": "Le modèle économique d'Agilon Health, centré sur les services de santé à domicile, comporte des risques liés aux remboursements et à la réglementation.",
+      "why_en": "Wells Fargo keeps an overweight rating and raises the target, supporting the positive momentum.",
+      "risk_en": "Agilon Health's home‑care model carries reimbursement and regulatory risks."
+    },
+    {
+      "symbol": "UNP",
+      "mentions": 4,
+      "headlines": [
+        "Schneider National Supports Proposed Union Pacific-Norfolk Southern Merger",
+        "Here’s How Much You Would Have Made Owning Union Pacific Stock In The Last 20 Years",
+        "Agricultural Groups Formally Oppose Union Pacific-Norfolk Southern Merger",
+        "'Railroad CEO’s Loose Lips Threaten to Torpedo His $72 Billion Megadeal'-WSJ"
+      ],
+      "last_at": "2026-11-14T00:01:46Z",
+      "sentiment": 0.0,
+      "price": 302.44,
+      "adv_usd": 823957132.3379517,
+      "chg_5d": 4.2,
+      "chg_20d": 4.6,
+      "rsi": 57.9,
+      "trend": "haussiere",
+      "hv": 0.2646581206261928,
+      "niche": false,
+      "score": 5.059,
+      "why": "L'intérêt pour la fusion proposée avec Norfolk Southern et les performances historiques de l'action renforcent l'attrait du titre.",
+      "risk": "L'opposition des groupes agricoles et les risques de régulation antitrust peuvent retarder ou bloquer la fusion, affectant le cours.",
+      "why_en": "Merger interest and the stock's strong historical performance boost the ticker's appeal.",
+      "risk_en": "Opposition from agricultural groups and antitrust regulatory risks could delay or block the merger, impacting the price."
     }
   ]
 }
