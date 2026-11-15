@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T20:56:17",
+  "updated_at": "2026-11-15T00:01:07",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -20,10 +20,10 @@
       "hv": 0.20795217105281694,
       "niche": false,
       "score": 6.537,
-      "why": "Les dividendes trimestriels sur actions privilégiées attirent l'attention des investisseurs à revenu fixe.",
-      "risk": "Le risque principal est la sensibilité aux taux d'intérêt qui peut réduire la valeur des actions privilégiées.",
-      "why_en": "Quarterly dividends on preferred stock draw income‑focused investors.",
-      "risk_en": "The main risk is interest‑rate sensitivity that could depress preferred share values."
+      "why": "Annonce de dividendes trimestriels sur actions privilégiées, attirant les investisseurs à revenu fixe.",
+      "risk": "Le rendement dépend de la capacité de l'entreprise à maintenir ses flux de trésorerie.",
+      "why_en": "Quarterly dividend announcements on preferred shares attract income‑focused investors.",
+      "risk_en": "The payout relies on the company's ability to sustain cash flow."
     },
     {
       "symbol": "CNOB",
@@ -43,10 +43,10 @@
       "hv": 0.2931548888640107,
       "niche": true,
       "score": 6.417,
-      "why": "L'annonce d'un dividende et le passage en ex‑dividende suscitent l'intérêt des actionnaires.",
-      "risk": "Le risque réside dans la possible baisse du cours après le détachement du dividende.",
-      "why_en": "The dividend declaration and ex‑dividend date generate shareholder interest.",
-      "risk_en": "The risk lies in a potential price drop after the dividend detaches."
+      "why": "Déclaration de dividende trimestriel et passage en ex‑dividende, suscitant l'intérêt des actionnaires.",
+      "risk": "Le cours peut baisser après le jour ex‑dividende si le rendement n'est pas suffisant.",
+      "why_en": "Quarterly dividend declaration and ex‑dividend status draw shareholder attention.",
+      "risk_en": "The stock may decline after the ex‑dividend date if the yield is inadequate."
     },
     {
       "symbol": "BLTE",
@@ -66,10 +66,10 @@
       "hv": 0.5830004734713049,
       "niche": true,
       "score": 6.197,
-      "why": "Les relèvements de cours cible et le maintien d'une note Outperform indiquent un optimisme analyste.",
-      "risk": "Le risque principal est que les attentes de prix cible ne se matérialisent pas si la biotech ne délivre pas de résultats cliniques.",
-      "why_en": "Raised price targets and an Outperform rating signal analyst optimism.",
-      "risk_en": "The main risk is that price‑target expectations may not be met if the biotech fails to deliver clinical results."
+      "why": "Analystes maintiennent une recommandation \"Outperform\" et augmentent les objectifs de cours, soutenant la perspective positive.",
+      "risk": "Les attentes de prix élevés peuvent être déçues si les résultats cliniques ou commerciaux n'atteignent pas les prévisions.",
+      "why_en": "Analysts keep an \"Outperform\" rating and raise price targets, supporting a positive outlook.",
+      "risk_en": "High price expectations could be unmet if clinical or commercial results fall short."
     },
     {
       "symbol": "M",
@@ -90,10 +90,10 @@
       "hv": 0.5488334490705236,
       "niche": false,
       "score": 5.773,
-      "why": "Les annonces liées au 100e défilé de Thanksgiving et le soutien des analystes renforcent la visibilité de Macy's.",
-      "risk": "Le risque principal reste la faiblesse du commerce de détail et la dépendance aux ventes saisonnières.",
-      "why_en": "Thanksgiving Parade announcements and analyst support boost Macy's visibility.",
-      "risk_en": "The main risk remains retail weakness and reliance on seasonal sales."
+      "why": "Macy's bénéficie d'une couverture médiatique autour du 100e défilé de Thanksgiving et d'une note d'achat renforcée.",
+      "risk": "La dépendance aux ventes saisonnières et aux événements promotionnels expose le cours à une forte volatilité.",
+      "why_en": "Macy's receives media coverage for the 100th Thanksgiving Parade and an upgraded buy rating.",
+      "risk_en": "Reliance on seasonal sales and promotional events makes the stock vulnerable to volatility."
     },
     {
       "symbol": "ASC",
@@ -113,10 +113,10 @@
       "hv": 0.5556431559025217,
       "niche": true,
       "score": 5.697,
-      "why": "Le rachat de 90 M£ d'obligations convertibles et le surclassement en Buy soulignent la confiance des investisseurs.",
-      "risk": "Le risque est lié à la dilution potentielle si les obligations sont converties en actions.",
-      "why_en": "The £90 M convertible bond buyback and a Buy upgrade highlight investor confidence.",
-      "risk_en": "The risk stems from possible dilution if the convertible bonds are turned into equity."
+      "why": "Annonce de rachat d'obligations convertibles et surclassement à \"Buy\", indiquant confiance des analystes.",
+      "risk": "Le rachat de dette peut réduire la liquidité et augmenter le levier si les conditions de marché se détériorent.",
+      "why_en": "Convertible bond repurchase announcement and a buy upgrade signal analyst confidence.",
+      "risk_en": "Debt buybacks may reduce liquidity and raise leverage if market conditions worsen."
     },
     {
       "symbol": "CBRS",
@@ -136,10 +136,10 @@
       "hv": 1.105940241300327,
       "niche": false,
       "score": 5.197,
-      "why": "Le leadership de Cerebras dans le financement privé des puces IA et le rebond du cours attirent l'attention.",
-      "risk": "Le risque majeur est la forte concurrence et la dépendance aux cycles de dépenses en IA.",
-      "why_en": "Cerebras' lead in private AI‑chip funding and the stock rally draw attention.",
-      "risk_en": "The main risk is intense competition and reliance on AI spending cycles."
+      "why": "Cerebras attire l'attention avec des levées de fonds privées importantes et une forte hausse du revenu cloud.",
+      "risk": "Le modèle d'affaires dépend de la demande en IA; une concurrence accrue pourrait freiner la croissance.",
+      "why_en": "Cerebras draws attention with sizable private funding and a sharp cloud‑revenue jump.",
+      "risk_en": "The business model hinges on AI demand; intensified competition could curb growth."
     },
     {
       "symbol": "CCI",
@@ -159,10 +159,10 @@
       "hv": 0.4377655947817035,
       "niche": false,
       "score": 5.197,
-      "why": "Le partenariat avec SpaceX et le lancement de la bande C augmentent les perspectives de croissance des tours cellulaires.",
-      "risk": "Le risque réside dans les incertitudes réglementaires autour des nouvelles fréquences.",
-      "why_en": "The SpaceX partnership and C‑band auction boost tower‑operator growth prospects.",
-      "risk_en": "The risk lies in regulatory uncertainty surrounding the new spectrum."
+      "why": "Le partenariat avec SpaceX et le lancement d'enchères C‑Band créent des perspectives de revenus pour les tours cellulaires.",
+      "risk": "Les retards réglementaires ou techniques dans le déploiement du spectre pourraient limiter les gains attendus.",
+      "why_en": "SpaceX partnership and upcoming C‑Band auction offer revenue upside for tower operators.",
+      "risk_en": "Regulatory or technical delays in spectrum rollout could limit expected gains."
     },
     {
       "symbol": "CRWD",
@@ -182,10 +182,10 @@
       "hv": 0.6066244722667231,
       "niche": false,
       "score": 5.097,
-      "why": "Le maintien du rating Buy et la hausse du cours cible reflètent la confiance dans la croissance du revenu récurrent.",
-      "risk": "Le risque principal est la concurrence accrue dans la cybersécurité qui pourrait freiner la performance.",
-      "why_en": "Buy rating maintenance and a higher price target reflect confidence in recurring‑revenue growth.",
-      "risk_en": "The main risk is heightened cybersecurity competition that could curb performance."
+      "why": "Maintien d'une note d'achat et hausse des objectifs de cours, reflétant la confiance dans la croissance du revenu récurrent.",
+      "risk": "Une surévaluation potentielle si les prévisions de revenu récurrent ne sont pas atteintes.",
+      "why_en": "Buy rating maintained and price targets raised, reflecting confidence in recurring revenue growth.",
+      "risk_en": "Potential overvaluation if recurring revenue forecasts are not met."
     },
     {
       "symbol": "UNP",
@@ -207,10 +207,33 @@
       "hv": 0.2646581206261928,
       "niche": false,
       "score": 5.059,
-      "why": "Le projet de fusion avec Norfolk Southern et les analyses historiques de performance suscitent l'intérêt des investisseurs en transport ferroviaire.",
-      "risk": "Le risque majeur est l'opposition des groupes agricoles qui pourrait retarder ou bloquer la fusion.",
-      "why_en": "The proposed merger with Norfolk Southern and historical performance analysis attract railroad investors.",
-      "risk_en": "The main risk is agricultural group opposition that could delay or block the merger."
+      "why": "Discussion autour d'une fusion majeure avec Norfolk Southern suscite l'intérêt des investisseurs pour les synergies potentielles.",
+      "risk": "L'opposition des groupes agricoles et les incertitudes réglementaires peuvent retarder ou bloquer la fusion.",
+      "why_en": "Talk of a major merger with Norfolk Southern generates investor interest in potential synergies.",
+      "risk_en": "Opposition from agricultural groups and regulatory uncertainty could delay or block the merger."
+    },
+    {
+      "symbol": "LOW",
+      "mentions": 2,
+      "headlines": [
+        "Lowe's Declares Quarterly Cash Dividend",
+        "Analyst Actions Regarding Lowe's"
+      ],
+      "last_at": "2026-11-13T22:32:00Z",
+      "sentiment": 0.5,
+      "price": 227.73,
+      "adv_usd": 726235966.2434387,
+      "chg_5d": 1.4,
+      "chg_20d": 16.1,
+      "rsi": 66.6,
+      "trend": "haussiere",
+      "hv": 0.40909504878266073,
+      "niche": false,
+      "score": 4.977,
+      "why": "Déclaration de dividende trimestriel et actions d'analystes renforcent l'attrait pour les investisseurs à revenu.",
+      "risk": "Le secteur du bricolage peut être sensible aux cycles économiques, affectant les marges.",
+      "why_en": "Quarterly dividend announcement and analyst actions boost appeal for income investors.",
+      "risk_en": "The DIY sector is cyclical and may see margin pressure during economic downturns."
     },
     {
       "symbol": "BJ",
@@ -230,10 +253,10 @@
       "hv": 0.2352426160585723,
       "niche": false,
       "score": 4.877,
-      "why": "Le maintien d'un rating neutre et le nouveau cours cible indiquent une stabilité perçue du club de gros.",
-      "risk": "Le risque réside dans la sensibilité aux marges du secteur de la distribution à prix réduit.",
-      "why_en": "Neutral rating maintenance and a new price target suggest perceived stability for the wholesale club.",
-      "risk_en": "The risk lies in margin sensitivity within the discount retail sector."
+      "why": "JPMorgan maintient une position neutre mais ajuste le target à 113 $, indiquant une évaluation stable.",
+      "risk": "Le positionnement neutre reflète des incertitudes sur la croissance des ventes et la concurrence dans le secteur du gros.",
+      "why_en": "JPMorgan keeps a neutral stance while setting a target of $113, indicating a stable valuation.",
+      "risk_en": "Neutral stance reflects uncertainty about sales growth and competition in the wholesale sector."
     },
     {
       "symbol": "LHX",
@@ -254,10 +277,10 @@
       "hv": 0.4174569258073133,
       "niche": false,
       "score": 4.733,
-      "why": "Les problèmes techniques liés à L3Harris et leur impact sur le trafic aérien attirent l'attention des investisseurs en défense.",
-      "risk": "Le risque principal est la perte de confiance des clients gouvernementaux si les incidents persistent.",
-      "why_en": "Technical issues tied to L3Harris affecting air traffic draw investor focus on the defense sector.",
-      "risk_en": "The main risk is loss of government client confidence if incidents continue."
+      "why": "Couverture médiatique d'incidents liés à L3Harris et aux perturbations du trafic aérien, augmentant la visibilité du risque opérationnel.",
+      "risk": "Les problèmes techniques et les enquêtes réglementaires peuvent entraîner des coûts et une perte de confiance.",
+      "why_en": "Media coverage of L3Harris‑related FAA disruptions raises visibility of operational risk.",
+      "risk_en": "Technical issues and regulatory investigations could lead to costs and loss of confidence."
     },
     {
       "symbol": "HAWK",
@@ -277,10 +300,10 @@
       "hv": 1.109268892244497,
       "niche": true,
       "score": 4.697,
-      "why": "Les ajustements à la hausse des cours cibles reflètent l'optimisme autour des services de suivi par satellite.",
-      "risk": "Le risque principal est la dépendance aux contrats gouvernementaux qui peuvent être volatils.",
-      "why_en": "Higher price‑target adjustments reflect optimism about satellite‑tracking services.",
-      "risk_en": "The main risk is reliance on government contracts that can be volatile."
+      "why": "Révisions à la hausse des objectifs de cours par plusieurs analystes soulignent l'optimisme sur les services de suivi satellite.",
+      "risk": "Le modèle d'affaires dépend de la demande gouvernementale et commerciale pour les données spatiales, qui peut fluctuer.",
+      "why_en": "Analyst price‑target upgrades highlight optimism for satellite‑tracking services.",
+      "risk_en": "Business relies on government and commercial demand for space data, which can be volatile."
     },
     {
       "symbol": "SPCX",
@@ -302,10 +325,10 @@
       "hv": 0.7543450466133754,
       "niche": false,
       "score": 4.516,
-      "why": "Les discussions autour du départ de Jensen Huang et les problèmes de récupération de Starship suscitent un fort intérêt médiatique.",
-      "risk": "Le risque majeur est l'incertitude technologique et la possible perte de confiance des investisseurs dans le secteur spatial.",
-      "why_en": "Talk of Jensen Huang's exit and Starship recovery issues generate strong media interest.",
-      "risk_en": "The main risk is technological uncertainty and potential loss of investor confidence in the space sector."
+      "why": "Actualités autour du départ de Jensen Huang et des défis de SpaceX attirent l'attention sur le secteur technologique et spatial.",
+      "risk": "L'incertitude sur la direction stratégique de Nvidia et les retards de Starship augmentent la volatilité du titre.",
+      "why_en": "News about Jensen Huang's exit and SpaceX setbacks draw focus to tech and space sectors.",
+      "risk_en": "Uncertainty over Nvidia's strategic direction and Starship delays heighten stock volatility."
     },
     {
       "symbol": "CVNA",
@@ -325,33 +348,10 @@
       "hv": 0.7658227667560945,
       "niche": false,
       "score": 4.377,
-      "why": "Les indications de marge potentielle et le réajustement du cours cible attirent les investisseurs en véhicules d'occasion.",
-      "risk": "Le risque principal est la volatilité du marché de l'occasion qui peut affecter la rentabilité.",
-      "why_en": "Potential margin expansion hints and price‑target adjustment attract used‑car investors.",
-      "risk_en": "The main risk is used‑car market volatility that could impact profitability."
-    },
-    {
-      "symbol": "GH",
-      "mentions": 2,
-      "headlines": [
-        "Guardant Health Announces Inducement Grants Under Nasdaq Listing Rule 5635(c)(4)",
-        "Guardant Health Receives MOHW LDTS Approval in Taiwan"
-      ],
-      "last_at": "2026-11-13T23:01:49Z",
-      "sentiment": 1.0,
-      "price": 151.7,
-      "adv_usd": 371564585.1274872,
-      "chg_5d": 0.6,
-      "chg_20d": -4.4,
-      "rsi": 39.3,
-      "trend": "baissiere",
-      "hv": 0.5591661845585009,
-      "niche": false,
-      "score": 4.317,
-      "why": "Les annonces de subventions et d'approbation réglementaire à Taiwan augmentent la visibilité de Guardant Health.",
-      "risk": "Le risque réside dans la dépendance aux autorisations réglementaires qui peuvent retarder le lancement de produits.",
-      "why_en": "Grant announcements and Taiwanese regulatory approval raise Guardant Health's profile.",
-      "risk_en": "The risk lies in reliance on regulatory approvals that could delay product launches."
+      "why": "Indications de marge potentielle grâce à la tarification des ABS et ajustement du target price, stimulant l'intérêt des investisseurs.",
+      "risk": "Le marché de l'occasion automobile reste sensible aux taux d'intérêt et aux conditions de crédit, pouvant affecter la demande.",
+      "why_en": "Potential margin expansion from ABS pricing and target‑price adjustment spark investor interest.",
+      "risk_en": "Used‑car market is sensitive to interest rates and credit conditions, which may dampen demand."
     }
   ]
 }
