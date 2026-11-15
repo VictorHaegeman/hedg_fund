@@ -97,22 +97,31 @@ def _stop_body(sym: str, qty: int, stop: float) -> dict:
             "client_order_id": f"{STOP_TAG}-{sym}-{datetime.now(timezone.utc):%Y%m%d%H%M%S%f}"[:48]}
 
 
-def cancel_fund_stops(client: Alpaca, managed: set[str], sleep=time.sleep) -> int:
-    """Annule les ordres stop de vente du fonds encore ouverts (ils sont reposés après le
-    rééquilibrage, à la bonne quantité). Ne touche pas aux ordres de la poche IA."""
-    ids = [o["id"] for o in client.open_orders()
-           if o.get("type") == "stop" and o.get("side") == "sell"
-           and o.get("symbol", "").replace("/", "") in managed]
+def _is_fund_stop(o: dict, managed: set[str]) -> bool:
+    return (o.get("type") == "stop" and o.get("side") == "sell"
+            and o.get("symbol", "").replace("/", "") in managed)
+
+
+def cancel_fund_stops(client: Alpaca, managed: set[str], sleep=time.sleep,
+                      keep: set[str] = frozenset()) -> tuple[int, set[str]]:
+    """Annule les ordres stop de vente du fonds encore ouverts, sauf ceux de `keep` (ids
+    d'ordres déjà corrects, laissés en place). Ne touche pas aux ordres de la poche IA.
+    Renvoie (nombre annulé, symboles dont l'annulation n'est pas encore confirmée)."""
+    orders = [o for o in client.open_orders()
+              if _is_fund_stop(o, managed) and o["id"] not in keep]
+    ids = {o["id"] for o in orders}
     for oid in ids:
         try:
             client.cancel_order(oid)
         except AlpacaError:
             pass
+    still = ids
     for _ in range(10):                      # attendre que les annulations soient prises en compte
-        if not ids or not {o["id"] for o in client.open_orders()} & set(ids):
+        still = ids & {o["id"] for o in client.open_orders()} if ids else set()
+        if not still:
             break
         sleep(1)
-    return len(ids)
+    return len(ids), {o.get("symbol", "").replace("/", "") for o in orders if o["id"] in still}
 
 
 def stopped_out(client: Alpaca, account: Account) -> set[str]:
@@ -130,16 +139,16 @@ def stopped_out(client: Alpaca, account: Account) -> set[str]:
     return out
 
 
-def place_stops(client: Alpaca, account: Account, prices: dict[str, float],
-                held: dict[str, float], actions: list[dict], skip: set[str] = frozenset(),
-                scale: float = 1.0) -> list[str]:
-    """Pose un stop GTC (parts entières) sur chaque position actions du fonds détenue chez
-    Alpaca, moins ce qui part déjà à la vente ce soir."""
-    lines = []
+def desired_stops(account: Account, prices: dict[str, float], held: dict[str, float],
+                  actions: list[dict], skip: set[str] = frozenset(),
+                  scale: float = 1.0) -> dict[str, tuple[str, int, float]]:
+    """Stops voulus ce soir : {symbole de position: (symbole, parts entières, prix stop)}.
+    Chaque position actions du fonds détenue chez Alpaca, moins ce qui part à la vente."""
     leaving = {}
     for a in actions:
         if a["action"] in ("sell", "close"):
             leaving[a["symbol"]] = float("inf") if a["action"] == "close" else a["qty"]
+    out = {}
     for sym in sorted(account.positions):
         stop = _valid_stop(account, sym, prices)
         psym = position_symbol(sym)
@@ -148,14 +157,35 @@ def place_stops(client: Alpaca, account: Account, prices: dict[str, float],
         # jamais plus que la part « stratégie » (le socle de trésorerie SPY n'a pas de stop)
         qty = int(min(float(held.get(psym, 0.0)) - leaving.get(sym, 0.0),
                       account.positions[sym]["shares"] * scale))
-        if qty < 1:
-            continue
+        if qty >= 1:
+            out[psym] = (sym, qty, stop)
+    return out
+
+
+def place_stops(client: Alpaca, account: Account, prices: dict[str, float],
+                held: dict[str, float], actions: list[dict], skip: set[str] = frozenset(),
+                scale: float = 1.0) -> list[str]:
+    """Pose un stop GTC (parts entières) sur chaque position actions du fonds détenue chez
+    Alpaca, moins ce qui part déjà à la vente ce soir."""
+    lines = []
+    for sym, qty, stop in desired_stops(account, prices, held, actions, skip, scale).values():
         try:
             client.submit_order(_stop_body(sym, qty, stop))
             lines.append(f"  ALPACA stop {sym} : {qty} parts à {stop:,.2f}")
         except AlpacaError as e:
             lines.append(f"  [!] ALPACA stop {sym} refusé — {str(e)[:120]}")
     return lines
+
+
+def _same_stop(order: dict, want: tuple[str, int, float] | None) -> bool:
+    """L'ordre stop déjà ouvert chez Alpaca est-il exactement celui qu'on reposerait ?"""
+    if want is None:
+        return False
+    try:
+        return (int(float(order.get("qty"))) == want[1]
+                and abs(float(order.get("stop_price")) - want[2]) < 0.005)
+    except (TypeError, ValueError):
+        return False
 
 
 def _order_body(sym: str, side: str, qty: float) -> dict:
@@ -227,26 +257,48 @@ def mirror_report(client: Alpaca | None, account: Account, prices: dict[str, flo
         acct = client.account()
         positions = {p["symbol"]: float(p["qty"]) for p in client.positions()}
         managed = managed_universe(account, universe, protected)
-        try:
-            n = cancel_fund_stops(client, {position_symbol(s) for s in managed}, sleep=sleep)
-            if n:
-                lines.append(f"  {n} stop(s) Alpaca du fonds annulé(s) pour être reposés")
-        except AlpacaError as e:
-            lines.append(f"  [!] stops Alpaca non annulés : {str(e)[:100]}")
-        pending = {o["symbol"].replace("/", "") for o in client.open_orders()}
+        managed_ps = {position_symbol(s) for s in managed}
+        opened = client.open_orders()
+        fund_stops = [o for o in opened if _is_fund_stop(o, managed_ps)]
+        pending = {o["symbol"].replace("/", "") for o in opened if not _is_fund_stop(o, managed_ps)}
         try:
             out = stopped_out(client, account)
         except Exception:
             out = set()
         if out:
             lines.append(f"  Vendu(s) par un vrai stop Alpaca, pas de rachat : {', '.join(sorted(out))}")
-        actions = plan_mirror(account, prices, managed, positions, float(acct["equity"]),
-                              pending | out, reserve)
-        lines += execute_mirror(client, actions, account, prices) or ["  Alpaca déjà aligné sur le fonds."]
         fund_eq = account.equity(prices)
         scale = float(acct["equity"]) * (1 - reserve) / fund_eq if fund_eq > 0 else 1.0
-        lines += place_stops(client, account, prices, positions, actions, skip=pending | out,
-                             scale=scale)
+        actions = plan_mirror(account, prices, managed, positions, float(acct["equity"]),
+                              pending | out, reserve)
+        # Revue 2026-11-15 : un stop annulé le soir n'était souvent confirmé qu'à l'ouverture,
+        # donc jamais reposé → une séance sur deux sans stop. On garde désormais les stops
+        # déjà corrects (même quantité, même prix) et on n'annule que ceux à changer.
+        want = desired_stops(account, prices, positions, actions, pending | out, scale)
+        keep, kept_syms = set(), set()
+        for o in fund_stops:
+            psym = o.get("symbol", "").replace("/", "")
+            if psym not in kept_syms and _same_stop(o, want.get(psym)):
+                keep.add(o["id"])
+                kept_syms.add(psym)
+        try:
+            n, unconfirmed = cancel_fund_stops(client, managed_ps, sleep=sleep, keep=keep)
+            if n:
+                lines.append(f"  {n} stop(s) Alpaca du fonds annulé(s) pour être reposés")
+        except AlpacaError as e:
+            lines.append(f"  [!] stops Alpaca non annulés : {str(e)[:100]}")
+            unconfirmed = {o.get("symbol", "").replace("/", "") for o in fund_stops} - kept_syms
+        if kept_syms:
+            lines.append(f"  Stops Alpaca du fonds conservés (inchangés) : {', '.join(sorted(kept_syms))}")
+        if unconfirmed:
+            # parts encore bloquées par l'ancien stop : ni ordre ni nouveau stop ce soir
+            actions = [a for a in actions if position_symbol(a["symbol"]) not in unconfirmed]
+            lines.append(f"  [!] annulation de stop non confirmée ({', '.join(sorted(unconfirmed))}) : "
+                         "rien de reposé sur ce(s) symbole(s) ce soir")
+        lines += execute_mirror(client, actions, account, prices) or ["  Alpaca déjà aligné sur le fonds."]
+        lines += place_stops(client, account, prices, positions, actions,
+                             skip=pending | out | kept_syms | unconfirmed, scale=scale)
+        pending = pending | kept_syms | unconfirmed
         if pending:
             lines.append(f"  Ordres en attente (exécution à l'ouverture) : "
                          f"{', '.join(sorted(pending))}")
