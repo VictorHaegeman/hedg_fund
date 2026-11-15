@@ -1,30 +1,7 @@
 {
-  "updated_at": "2026-11-15T12:01:12",
+  "updated_at": "2026-11-15T18:01:08",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
-    {
-      "symbol": "CNOB",
-      "mentions": 2,
-      "headlines": [
-        "ConnectOne Bancorp, Inc. Depositary Shares Go Ex-Dividend",
-        "ConnectOne Bancorp, Inc. Declares Quarterly Dividend"
-      ],
-      "last_at": "2026-11-13T22:31:41Z",
-      "sentiment": 1.0,
-      "price": 32.57,
-      "adv_usd": 11810472.042455673,
-      "chg_5d": 1.1,
-      "chg_20d": 7.6,
-      "rsi": 57.0,
-      "trend": "haussiere",
-      "hv": 0.2931548888640107,
-      "niche": true,
-      "score": 6.417,
-      "why": "L'annonce du passage en ex-dividende attire l'attention des investisseurs recherchant des rendements.",
-      "risk": "Le risque principal est la perte de revenu de dividende qui peut décourager les actionnaires à revenu.",
-      "why_en": "The announcement of going ex-dividend catches investors' attention seeking yield.",
-      "risk_en": "The main risk is the loss of dividend income which may deter income-focused shareholders."
-    },
     {
       "symbol": "ASC",
       "mentions": 2,
@@ -43,19 +20,19 @@
       "hv": 0.5556431559025217,
       "niche": true,
       "score": 5.697,
-      "why": "Le rachat de obligations convertibles et la surperformance du rating suscitent l'intérêt pour la solidité financière d'ASOS.",
-      "risk": "Le risque réside dans la dilution potentielle et la dépendance aux performances de vente en ligne.",
-      "why_en": "The convertible bond buyback and upgraded rating generate interest in ASOS's financial strength.",
-      "risk_en": "The risk lies in potential dilution and reliance on online sales performance."
+      "why": "Le rachat de 90 M£ d'obligations convertibles 2028 et la surclassement en Buy suscitent l'intérêt.",
+      "risk": "Le financement du rachat pourrait peser sur la trésorerie si les performances se dégradent.",
+      "why_en": "The £90 million 2028 convertible bond buyback and the upgrade to Buy attract attention.",
+      "risk_en": "Funding the buyback could strain cash flow if performance deteriorates."
     },
     {
       "symbol": "CAPR",
       "mentions": 2,
       "headlines": [
-        "Roth Capital Raises Price Target for Capricor Therapeutics",
-        "Analysts Update Ratings and Price Targets for Capricor Therapeutics"
+        "Caprock Mining Corp. Enters into Investor Relations Agreement",
+        "Roth Capital Raises Price Target for Capricor Therapeutics"
       ],
-      "last_at": "2026-11-15T02:03:27Z",
+      "last_at": "2026-11-15T14:03:32Z",
       "sentiment": 0.5,
       "price": 9.53,
       "adv_usd": 33060389.45400238,
@@ -66,10 +43,10 @@
       "hv": 1.416796713744914,
       "niche": true,
       "score": 5.697,
-      "why": "L'augmentation du prix cible par Roth Capital signale une perspective optimiste pour Capricor Therapeutics.",
-      "risk": "Le principal risque est l'incertitude clinique et les résultats des essais qui peuvent affecter la valorisation.",
-      "why_en": "The raised price target by Roth Capital signals an optimistic outlook for Capricor Therapeutics.",
-      "risk_en": "The main risk is clinical uncertainty and trial outcomes that could impact valuation."
+      "why": "Un accord de relations investisseurs et une hausse du prix cible renforcent la visibilité de la société.",
+      "risk": "La petite capitalisation expose l'action à une forte volatilité en cas de résultats décevants.",
+      "why_en": "An investor relations agreement and a raised price target increase the company's visibility.",
+      "risk_en": "Small market cap makes the stock highly volatile if results disappoint."
     },
     {
       "symbol": "M",
@@ -89,10 +66,79 @@
       "hv": 0.5488334490705236,
       "niche": false,
       "score": 5.697,
-      "why": "L'annonce des participants au défilé du Thanksgiving et le maintien du rating par Morgan Stanley renforcent la visibilité de Macy's.",
-      "risk": "Le risque principal provient de la sensibilité aux dépenses de consommation et aux tendances du retail.",
-      "why_en": "The announcement of Thanksgiving Parade performers and Morgan Stanley's rating support Macy's visibility.",
-      "risk_en": "The main risk stems from consumer spending sensitivity and retail trends."
+      "why": "L'annonce du défilé du 100e Thanksgiving et le maintien du Buy avec un nouveau prix cible soutiennent l'optimisme.",
+      "risk": "La dépendance aux ventes physiques et aux saisons festives peut entraîner des fluctuations de revenus.",
+      "why_en": "The 100th Thanksgiving Parade announcement and maintained Buy with a higher target boost optimism.",
+      "risk_en": "Reliance on brick‑and‑mortar sales and holiday seasons can cause revenue swings."
+    },
+    {
+      "symbol": "TWM",
+      "mentions": 2,
+      "headlines": [
+        "RBC Raises Price Target for Tidewater Midstream and Infrastructure Ltd.",
+        "Tidewater Midstream and Infrastructure Ltd. Price Target Raised"
+      ],
+      "last_at": "2026-11-15T02:03:28Z",
+      "sentiment": 1.0,
+      "price": 24.11,
+      "adv_usd": 27264195.56107521,
+      "chg_5d": -3.1,
+      "chg_20d": -5.6,
+      "rsi": 51.6,
+      "trend": "haussiere",
+      "hv": 0.49373749493713837,
+      "niche": true,
+      "score": 5.577,
+      "why": "Deux hausses de prix cible par RBC renforcent la perspective haussière malgré la baisse récente.",
+      "risk": "Le secteur du transport de gaz naturel reste sensible aux régulations environnementales et aux prix du gaz.",
+      "why_en": "Two RBC price‑target upgrades reinforce a bullish view despite recent dip.",
+      "risk_en": "Midstream gas transport is vulnerable to environmental regulation and gas price volatility."
+    },
+    {
+      "symbol": "SGMT",
+      "mentions": 2,
+      "headlines": [
+        "Options Whale Alert: $950K Bullish Long Call Opened on Sagimet Biosciences",
+        "Sagimet Biosciences Maintained at Buy by Canaccord Genuity"
+      ],
+      "last_at": "2026-11-15T02:03:19Z",
+      "sentiment": 0.5,
+      "price": 10.22,
+      "adv_usd": 11560896.108131409,
+      "chg_5d": 3.8,
+      "chg_20d": 27.4,
+      "rsi": 51.5,
+      "trend": "haussiere",
+      "hv": 0.9127577599841711,
+      "niche": true,
+      "score": 5.457,
+      "why": "Un appel d'options long de 950 k$ et le maintien du Buy indiquent un fort intérêt des traders.",
+      "risk": "Le stade précoce de développement clinique expose l'action à des risques d'échec de tests.",
+      "why_en": "A $950k bullish long call and a maintained Buy show strong trader interest.",
+      "risk_en": "Early‑stage clinical development carries high risk of trial failure."
+    },
+    {
+      "symbol": "WMG",
+      "mentions": 2,
+      "headlines": [
+        "Wiz Khalifa Releases New Album 'COOL' Through 10K Projects Partnership",
+        "ADA Distributes 'Sounds of the Multiverse Vol. 2' for 360WE Music"
+      ],
+      "last_at": "2026-11-15T02:01:58Z",
+      "sentiment": 0.5,
+      "price": 32.3,
+      "adv_usd": 61866322.77700424,
+      "chg_5d": 3.2,
+      "chg_20d": 2.9,
+      "rsi": 64.5,
+      "trend": "haussiere",
+      "hv": 0.2908985665970338,
+      "niche": false,
+      "score": 5.337,
+      "why": "Le lancement d'un album par Wiz Khalifa et la distribution d'un nouveau projet musical élargissent la visibilité de la société.",
+      "risk": "Le succès commercial dépend fortement des tendances culturelles et des revenus de streaming volatils.",
+      "why_en": "Wiz Khalifa's new album release and a new music project distribution increase the company's visibility.",
+      "risk_en": "Commercial success heavily depends on cultural trends and volatile streaming revenues."
     },
     {
       "symbol": "MAR",
@@ -112,10 +158,55 @@
       "hv": 0.24746482542615683,
       "niche": false,
       "score": 5.017,
-      "why": "L'ouverture d'un hôtel net zéro et l'expansion d'une attraction saisonnière montrent l'engagement durable de Marriott.",
-      "risk": "Le risque est lié aux coûts d'investissement élevés et à la dépendance à la demande touristique.",
-      "why_en": "The launch of a net-zero hotel and expansion of a seasonal attraction highlight Marriott's sustainability push.",
-      "risk_en": "The risk relates to high investment costs and reliance on tourism demand."
+      "why": "L'ouverture d'un hôtel net‑zéro et l'extension d'une attraction saisonnière montrent l'engagement durable de Marriott.",
+      "risk": "Les investissements ESG peuvent ne pas générer les rendements attendus si la demande reste faible.",
+      "why_en": "Opening a net‑zero hotel and expanding a seasonal attraction demonstrate Marriott's sustainability push.",
+      "risk_en": "ESG investments may not deliver expected returns if demand stays low."
+    },
+    {
+      "symbol": "ABG",
+      "mentions": 1,
+      "headlines": [
+        "ABG Sundal Collier Raises Price Target for Wesports"
+      ],
+      "last_at": "2026-11-14T08:03:13Z",
+      "sentiment": 1.0,
+      "price": 197.17,
+      "adv_usd": 68288359.4820404,
+      "chg_5d": -2.7,
+      "chg_20d": 15.9,
+      "rsi": 52.8,
+      "trend": "haussiere",
+      "hv": 0.6377778028171855,
+      "niche": false,
+      "score": 4.846,
+      "why": "Le relèvement du prix cible par ABG Sundal Collier attire l'attention sur Wesports.",
+      "risk": "Le secteur du sport électronique est très concurrentiel et dépend des performances des équipes et des tournois.",
+      "why_en": "ABG Sundal Collier's price‑target raise draws attention to Wesports.",
+      "risk_en": "Esports is highly competitive and dependent on team performance and tournament outcomes."
+    },
+    {
+      "symbol": "USPH",
+      "mentions": 2,
+      "headlines": [
+        "U.S. Physical Therapy, Inc. Declares Dividend",
+        "Barrington Research Adjusts Price Target for U.S. Physical Therapy, Inc."
+      ],
+      "last_at": "2026-11-13T22:32:13Z",
+      "sentiment": 0.5,
+      "price": 99.6,
+      "adv_usd": 17070433.002052307,
+      "chg_5d": 0.1,
+      "chg_20d": 16.2,
+      "rsi": 71.0,
+      "trend": "haussiere",
+      "hv": 0.4263687461032177,
+      "niche": true,
+      "score": 4.717,
+      "why": "Le versement d'un dividende et l'ajustement du prix cible renforcent la perception de stabilité.",
+      "risk": "La croissance des revenus dépend de la capacité à gagner de nouveaux contrats de soins physiques.",
+      "why_en": "Dividend declaration and price‑target adjustment reinforce a perception of stability.",
+      "risk_en": "Revenue growth depends on securing new physical therapy contracts."
     },
     {
       "symbol": "HAWK",
@@ -135,22 +226,22 @@
       "hv": 1.109268892244497,
       "niche": true,
       "score": 4.697,
-      "why": "Les ajustements à la hausse des objectifs de prix par deux analystes renforcent l'optimisme autour de HawkEye 360.",
-      "risk": "Le risque principal est l'incertitude réglementaire autour des services de données spatiales.",
-      "why_en": "The upward price target adjustments by two analysts boost optimism around HawkEye 360.",
-      "risk_en": "The main risk is regulatory uncertainty surrounding space data services."
+      "why": "Deux analystes augmentent le prix cible, reflétant l'intérêt pour les données satellitaires de HawkEye 360.",
+      "risk": "Les revenus sont exposés aux cycles de défense et aux budgets gouvernementaux incertains.",
+      "why_en": "Two analysts raise the price target, reflecting interest in HawkEye 360's satellite data.",
+      "risk_en": "Revenue is exposed to defense cycles and uncertain government budgets."
     },
     {
       "symbol": "SPCX",
-      "mentions": 12,
+      "mentions": 13,
       "headlines": [
+        "SpaceX Starship Catch Could Cut Costs For Space-Based Data Centers And Military Logistics",
         "Starlink Speed Caps, GOP Data Center Moratorium Push, Trump’s Iran War Cost Claims and More: This Week in Politics",
         "SpaceX’s Starship Makes History With First-Ever Mechazilla Catch — Musk, Hegseth and Trump Jr. React",
-        "Elon Musk’s SpaceX Faces Fresh Zelenskyy Backlash Over 161 Kph Starshield Speed Cap",
-        "SpaceX Conducts 15th Starship Test Flight and Achieves First-Ever Upper Stage Catch"
+        "Elon Musk’s SpaceX Faces Fresh Zelenskyy Backlash Over 161 Kph Starshield Speed Cap"
       ],
-      "last_at": "2026-11-15T10:00:07Z",
-      "sentiment": -0.08333333333333333,
+      "last_at": "2026-11-15T16:01:07Z",
+      "sentiment": -0.15384615384615385,
       "price": 139.11,
       "adv_usd": 16141920543.614502,
       "chg_5d": 3.6,
@@ -159,11 +250,11 @@
       "trend": "baissiere",
       "hv": 0.7543450466133754,
       "niche": false,
-      "score": 4.6,
-      "why": "Les multiples titres couvrant les controverses politiques et technologiques autour de SpaceX maintiennent l'intérêt médiatique.",
-      "risk": "Le risque majeur est la volatilité liée aux décisions politiques et aux retards technologiques.",
-      "why_en": "Multiple headlines covering political and tech controversies around SpaceX keep media interest high.",
-      "risk_en": "The major risk is volatility from political decisions and potential technology delays."
+      "score": 4.537,
+      "why": "Les multiples articles sur SpaceX et Starship soulignent l'impact potentiel sur les coûts et la logistique spatiale.",
+      "risk": "Les retards ou échecs techniques de Starship pourraient affecter les attentes du marché et la valorisation.",
+      "why_en": "Numerous articles on SpaceX and Starship highlight potential impact on space‑based costs and logistics.",
+      "risk_en": "Technical delays or failures of Starship could dampen market expectations and valuation."
     },
     {
       "symbol": "LHX",
@@ -185,10 +276,10 @@
       "hv": 0.4174569258073133,
       "niche": false,
       "score": 4.344,
-      "why": "Les articles sur les perturbations du trafic aérien et les enquêtes potentielles gardent L3Harris sous les projecteurs.",
-      "risk": "Le risque principal est l'exposition aux problèmes opérationnels du secteur aérien et aux enquêtes réglementaires.",
-      "why_en": "Articles on air travel disruptions and potential investigations keep L3Harris in focus.",
-      "risk_en": "The main risk is exposure to airline operational issues and regulatory investigations."
+      "why": "Les turbulences aériennes et les enquêtes liées à la FAA maintiennent l'intérêt autour de L3Harris.",
+      "risk": "Une implication prolongée dans les problèmes de la FAA pourrait nuire à la réputation et aux contrats futurs.",
+      "why_en": "Air travel chaos and FAA investigations keep interest in L3Harris high.",
+      "risk_en": "Prolonged involvement in FAA issues could damage reputation and future contracts."
     },
     {
       "symbol": "WFC",
@@ -209,10 +300,10 @@
       "hv": 0.23056079248541747,
       "niche": false,
       "score": 4.273,
-      "why": "Les ajustements de prix cible pour AMD et Ross Stores montrent l'activité d'analyse de Wells Fargo sur divers secteurs.",
-      "risk": "Le risque réside dans la dépendance aux performances des entreprises ciblées, qui peuvent fluctuer.",
-      "why_en": "Price target adjustments for AMD and Ross Stores illustrate Wells Fargo's cross‑sector analysis activity.",
-      "risk_en": "The risk lies in reliance on the performance of the targeted companies, which can be volatile."
+      "why": "Des ajustements de prix cible sur AMD et Ross Stores montrent l'influence de Wells Fargo sur divers secteurs.",
+      "risk": "Les révisions de cible peuvent refléter des incertitudes macroéconomiques affectant les entreprises couvertes.",
+      "why_en": "Price‑target adjustments on AMD and Ross Stores illustrate Wells Fargo's influence across sectors.",
+      "risk_en": "Target revisions may reflect macroeconomic uncertainties impacting the covered companies."
     },
     {
       "symbol": "ATMU",
@@ -232,57 +323,10 @@
       "hv": 0.4912862265176206,
       "niche": true,
       "score": 4.197,
-      "why": "Le maintien du rating d'achat et l'ajustement de prix cible soulignent la confiance des analystes dans Atmus Filtration.",
-      "risk": "Le risque principal est la dépendance à la demande du marché de filtration et aux cycles réglementaires.",
-      "why_en": "Maintaining a buy rating and price target adjustment highlight analyst confidence in Atmus Filtration.",
-      "risk_en": "The main risk is reliance on filtration market demand and regulatory cycles."
-    },
-    {
-      "symbol": "CHYM",
-      "mentions": 2,
-      "headlines": [
-        "Chime Financial Set to Join S&P MidCap 400",
-        "Chime Financial To Replace Northwestern Energy Group In The S&P MidCap 400 Effective Prior To The Opening Of Trading On Wednesday, November "
-      ],
-      "last_at": "2026-11-14T14:01:51Z",
-      "sentiment": 0.0,
-      "price": 33.55,
-      "adv_usd": 121271793.42083931,
-      "chg_5d": 7.1,
-      "chg_20d": 13.1,
-      "rsi": 69.8,
-      "trend": "haussiere",
-      "hv": 0.36640824637647296,
-      "niche": false,
-      "score": 4.197,
-      "why": "L'inclusion prévue dans le S&P MidCap 400 attire l'attention sur la croissance de Chime Financial.",
-      "risk": "Le risque principal est la volatilité liée à l'intégration dans un indice plus large et aux attentes du marché.",
-      "why_en": "The upcoming inclusion in the S&P MidCap 400 draws attention to Chime Financial's growth.",
-      "risk_en": "The main risk is volatility from integration into a broader index and market expectations."
-    },
-    {
-      "symbol": "LOW",
-      "mentions": 3,
-      "headlines": [
-        "This Lowe's Analyst Turns Bearish; Here Are Top 5 Downgrades For Friday",
-        "Lowe's Declares Quarterly Cash Dividend",
-        "Analyst Actions Regarding Lowe's"
-      ],
-      "last_at": "2026-11-13T22:32:00Z",
-      "sentiment": 0.0,
-      "price": 227.73,
-      "adv_usd": 726235966.2434387,
-      "chg_5d": 1.4,
-      "chg_20d": 16.1,
-      "rsi": 66.6,
-      "trend": "haussiere",
-      "hv": 0.40909504878266073,
-      "niche": false,
-      "score": 4.053,
-      "why": "Le dividende trimestriel déclaré et les commentaires d'analystes suscitent l'intérêt des investisseurs en valeur.",
-      "risk": "Le risque réside dans les perspectives de baisse de la demande dans le secteur du bricolage.",
-      "why_en": "The declared quarterly dividend and analyst commentary generate interest from value investors.",
-      "risk_en": "The risk lies in potential weakening demand in the home improvement sector."
+      "why": "Le relèvement du prix cible et le maintien du Buy soulignent la confiance des analystes dans la technologie de filtration.",
+      "risk": "Le marché de la filtration industrielle est cyclique et sensible aux dépenses d'investissement des clients.",
+      "why_en": "Raised price target and maintained Buy highlight analyst confidence in filtration technology.",
+      "risk_en": "Industrial filtration market is cyclical and sensitive to client capital‑expenditure cycles."
     },
     {
       "symbol": "EVR",
@@ -302,57 +346,10 @@
       "hv": 0.5929458479975146,
       "niche": false,
       "score": 4.017,
-      "why": "Les conseils d'Evercore sur un investissement majeur et l'utilisation de la plateforme EVX Connect montrent l'activité de croissance d'EVR.",
-      "risk": "Le risque principal est la dépendance aux résultats des projets de forage et aux partenaires financiers.",
-      "why_en": "Evercore's advisory on a major investment and EVX Connect platform usage highlight EVR's growth activity.",
-      "risk_en": "The main risk is reliance on drilling project outcomes and financial partners."
-    },
-    {
-      "symbol": "HUM",
-      "mentions": 2,
-      "headlines": [
-        "Senators Launch Inquiry into Health Insurers' Prior Authorization Pledges",
-        "UHealth Adjusts Medicare Advantage Network for 2027"
-      ],
-      "last_at": "2026-11-14T14:01:25Z",
-      "sentiment": 0.0,
-      "price": 450.0,
-      "adv_usd": 669683801.9195557,
-      "chg_5d": 3.7,
-      "chg_20d": 9.1,
-      "rsi": 64.5,
-      "trend": "haussiere",
-      "hv": 0.2993039456897163,
-      "niche": false,
-      "score": 3.937,
-      "why": "L'enquête sénatoriale sur les autorisations préalables attire l'attention sur les pratiques des assureurs santé.",
-      "risk": "Le risque est une éventuelle réglementation accrue qui pourrait affecter la rentabilité.",
-      "why_en": "The senatorial inquiry into prior authorizations draws attention to health insurer practices.",
-      "risk_en": "The risk is potential increased regulation that could impact profitability."
-    },
-    {
-      "symbol": "WELL",
-      "mentions": 3,
-      "headlines": [
-        "Benzinga's 'Stock Whisper' Index: Five Stocks Investors Secretly Monitor But Don't Talk About Yet",
-        "Welltower Acquires Nine Nursing Homes in South Florida for $386 Million",
-        "Welltower to Divest $1.3 Billion in Integra-Related Nursing Home Assets"
-      ],
-      "last_at": "2026-11-14T12:17:41Z",
-      "sentiment": 0.0,
-      "price": 244.46,
-      "adv_usd": 714513204.394455,
-      "chg_5d": 0.1,
-      "chg_20d": 4.5,
-      "rsi": 59.0,
-      "trend": "haussiere",
-      "hv": 0.2989832945993695,
-      "niche": false,
-      "score": 3.793,
-      "why": "L'acquisition de résidences et la cession d'actifs importants renforcent la visibilité stratégique de Welltower.",
-      "risk": "Le risque principal est l'exposition aux changements de politique de soins de santé et aux taux d'occupation.",
-      "why_en": "The acquisition of nursing homes and divestiture of large assets boost Welltower's strategic visibility.",
-      "risk_en": "The main risk is exposure to healthcare policy changes and occupancy rate fluctuations."
+      "why": "Un investissement majoritaire de GI Partners et l'utilisation de la plateforme EVX Connect renforcent la visibilité d'Evercore.",
+      "risk": "La dépendance à des partenaires financiers externes peut créer des pressions sur la stratégie et la rentabilité.",
+      "why_en": "GI Partners' majority investment and EVX Connect usage boost Evercore's visibility.",
+      "risk_en": "Reliance on external financial partners may pressure strategy and profitability."
     }
   ]
 }
