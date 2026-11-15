@@ -102,6 +102,21 @@ def _treasury_kw(args, prices: dict) -> dict:
     return {"core_pct": core, "sweep": sweep if sweep in tp else None, "treasury_prices": tp}
 
 
+def ai_excluded_universe(account=None) -> list[str]:
+    """Revue 2026-11-15 : actifs interdits à la poche IA sur le compte partagé = tout ce que
+    le miroir du fonds gère (univers fixe + positions + trésorerie + actifs déjà tradés,
+    dont les actions screenées comme LLY ou JPM). Avant, seul l'univers fixe était exclu :
+    l'IA a tenté d'acheter LLY, détenue par le fonds (refus « wash trade » d'Alpaca)."""
+    from .mirror import managed_universe
+    try:
+        if account is None:
+            from .broker import load_account
+            account = load_account()
+        return managed_universe(account, list(DEFAULT_UNIVERSE))
+    except Exception:
+        return list(DEFAULT_UNIVERSE)
+
+
 def main(argv: list[str] | None = None) -> int:
     # Console Windows souvent en cp1252 : forcer UTF-8 pour les caractères → █ é
     for stream in (sys.stdout, sys.stderr):
@@ -348,7 +363,7 @@ def main(argv: list[str] | None = None) -> int:
 
     elif args.cmd == "ai":
         from . import ai_trader as ai
-        report, _ = ai.main_cycle(fund_universe_if_shared=DEFAULT_UNIVERSE)
+        report, _ = ai.main_cycle(fund_universe_if_shared=ai_excluded_universe())
         print(report)
 
     elif args.cmd == "press-test":

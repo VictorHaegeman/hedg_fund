@@ -1601,3 +1601,60 @@ def test_ai_real_stop_orders_and_crypto_cap(tmp_path):
            "equity": 100_000, "crypto_open": 2}
     ok, why = ai.validate({"strategy": "BUY_CRYPTO", "underlying": "ETH/USD", "confidence": 0.9}, ctx)
     assert not ok and "2 cryptos" in why
+
+
+def test_mirror_keeps_unchanged_stops_and_handles_slow_cancel(tmp_path):
+    """Revue 2026-11-15 : les stops annulés le soir n'étaient confirmés qu'à l'ouverture,
+    donc jamais reposés (une séance sur deux sans stop). Un stop déjà correct est gardé ;
+    un stop à changer dont l'annulation traîne bloque le symbole (pas de doublon)."""
+    from quantlab import broker as bk
+    from quantlab import mirror as mr
+    acc = bk.load_account(str(tmp_path / "a.json"), capital=100_000)
+    bk.buy(acc, "AAA", 100.0, 95.0, None, "trend", "2026-11-02", risk_pct=1.0, equity=100_000)
+    bk.buy(acc, "BBB", 50.0, 48.0, None, "breakout", "2026-11-03", risk_pct=1.0, equity=100_000)
+    prices = {"AAA": 100.0, "BBB": 50.0}
+    qa, qb = acc.positions["AAA"]["shares"], acc.positions["BBB"]["shares"]
+
+    class Slow(FakeAlpaca):                      # l'annulation reste « pending_cancel »
+        def cancel_order(self, oid):
+            self.cancelled = getattr(self, "cancelled", []) + [oid]
+
+    c = Slow(equity=acc.equity(prices))
+    c.pos = {"AAA": {"qty": str(qa)}, "BBB": {"qty": str(qb)}}
+    c.open_list = [
+        {"id": "a1", "type": "stop", "side": "sell", "symbol": "AAA",
+         "qty": str(int(qa)), "stop_price": "95.00"},                    # correct → gardé
+        {"id": "b1", "type": "stop", "side": "sell", "symbol": "BBB",
+         "qty": str(int(qb) - 3), "stop_price": "48.00"},                # mauvaise quantité
+        {"id": "ia", "type": "stop", "side": "sell", "symbol": "NVDA",
+         "qty": "5", "stop_price": "100.00"}]                            # poche IA
+    out = mr.mirror_report(c, acc, prices, ["AAA", "BBB"], protected={"NVDA"},
+                           sleep=lambda s: None)
+    assert c.cancelled == ["b1"]                         # ni le stop correct ni l'ordre IA
+    assert "conservés (inchangés) : AAA" in out
+    assert "annulation de stop non confirmée (BBB)" in out
+    assert not any(o.get("symbol") in ("AAA", "BBB") for o in c.orders)   # aucun doublon
+
+    # annulation immédiate (FakeAlpaca normal) : le stop à changer est bien reposé
+    c2 = FakeAlpaca(equity=acc.equity(prices))
+    c2.pos = dict(c.pos)
+    c2.open_list = [dict(o) for o in c.open_list]
+    mr.mirror_report(c2, acc, prices, ["AAA", "BBB"], protected={"NVDA"}, sleep=lambda s: None)
+    stops = [o for o in c2.orders if o.get("type") == "stop"]
+    assert c2.cancelled == ["b1"]
+    assert [(o["symbol"], o["qty"]) for o in stops] == [("BBB", str(int(qb)))]
+
+
+def test_ai_universe_excludes_fund_screened_stocks(tmp_path):
+    """Revue 2026-11-15 : la poche IA ne doit jamais trader une action que le fonds détient
+    ou a tradée (compte Alpaca partagé) — pas seulement l'univers fixe."""
+    from quantlab import broker as bk
+    from quantlab import ai_trader as ai
+    from quantlab.cli import ai_excluded_universe
+    acc = bk.load_account(str(tmp_path / "a.json"), capital=100_000)
+    bk.buy(acc, "LLY", 1000.0, 950.0, None, "breakout", "2026-11-02", risk_pct=1.0, equity=100_000)
+    acc.history.append({"symbol": "TSLA"})
+    ex = ai_excluded_universe(acc)
+    stocks, cryptos = ai.universe(ex)
+    assert "LLY" not in stocks and "TSLA" not in stocks and "SPY" not in stocks
+    assert "BTC/USD" not in cryptos and "MCD" in stocks
