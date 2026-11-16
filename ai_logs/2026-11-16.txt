@@ -22,3 +22,15 @@ Exécuté : 2026-11-16T15:00:00 | équité 97,381.80 $ (+0.30 % jour) | bourse U
   IA : BULL_PUT_SPREAD BILL | confiance 0.71 | BILL montre une forte tendance haussière, un sentiment presse très positif (+1.0) et une prime d'option chère (IV/HV 1.18), ce qui rend le BULL_PUT_SPREAD approprié pour encaisser un crédit tout en limitant le risque.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-16T15:30:00 | équité 97,330.62 $ (+0.25 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,155 $ | Γ +50.24 (Δ$ +80 pour 1 %) | ν +3 $/pt | Θ -2 $/j | ρ -11 $/pt
+  Idées presse ajoutées : VEON*, BILL, TSN, AFG, AZN, HAS, PERI*, ARMK  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : TSN, PERI, COIN, BILL, ARMK, LLY, WMT, COST, DIS, INTC, KO, META, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : BILL (IV/HV 1.22, BULL_PUT_SPREAD)
+  Notes IA : BILL BULL_PUT_SPREAD 0.8 · TSN BUY_STOCK 0.75 · COST BULL_PUT_SPREAD 0.7
+  IA : BULL_PUT_SPREAD BILL | confiance 0.8 | Vente d'un put spread sur BILL, car l'action montre une forte tendance haussière, un sentiment très positif et une volatilité implicite élevée (IV/HV 1.22) qui rend la prime attractive.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
