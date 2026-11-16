@@ -90,3 +90,15 @@ Exécuté : 2026-11-16T18:00:15 | équité 97,245.54 $ (+0.16 % jour) | bourse U
   IA : BULL_PUT_SPREAD ASND | confiance 0.8 | Vente d'un put spread sur ASND, profitant d'une volatilité implicite élevée (IV/HV 1.48) et d'une tendance haussière confirmée, tout en limitant le risque maximal au crédit reçu.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-16T18:30:01 | équité 97,058.16 $ (-0.04 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,478 $ | Γ +16.80 (Δ$ +26 pour 1 %) | ν -2 $/pt | Θ +10 $/j | ρ -11 $/pt
+  Idées presse ajoutées : KNTK, GWW, TW, CTRE, EW, HAS, OHI, ASND  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : INTC, COIN, GWW, KO, TW, ASND, WMT, COST, DIS, KNTK, EW, AVGO, IWM, SOL/USD, ETH/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.48, BULL_PUT_SPREAD), TW (IV/HV 1.21, BULL_PUT_SPREAD), EW (IV/HV 1.14, BULL_PUT_SPREAD)
+  Notes IA : GWW BUY_STOCK 0.78 · KNTK BUY_STOCK 0.75 · TW BULL_PUT_SPREAD 0.7
+  IA : BUY_STOCK GWW | confiance 0.78 | GWW montre une tendance haussière claire, un RSI favorable et une volatilité implicite basse, ce qui rend l'achat direct plus attractif que les stratégies d'options coûteuses.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
