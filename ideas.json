@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T18:01:08",
+  "updated_at": "2026-11-16T00:01:15",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -20,10 +20,10 @@
       "hv": 0.5556431559025217,
       "niche": true,
       "score": 5.697,
-      "why": "Le rachat de 90 M£ d'obligations convertibles 2028 et la surclassement en Buy suscitent l'intérêt.",
-      "risk": "Le financement du rachat pourrait peser sur la trésorerie si les performances se dégradent.",
-      "why_en": "The £90 million 2028 convertible bond buyback and the upgrade to Buy attract attention.",
-      "risk_en": "Funding the buyback could strain cash flow if performance deteriorates."
+      "why": "Le rachat de 90 M£ d'obligations convertibles 2028 et la surclassement en \"Buy\" suscitent l'intérêt.",
+      "risk": "Le risque principal est que le financement du rachat pèse sur la trésorerie et que la conversion dilue les actionnaires.",
+      "why_en": "The £90 million 2028 convertible bond buyback and the upgrade to a Buy rating attract attention.",
+      "risk_en": "The main risk is that funding the buyback strains cash and conversion could dilute shareholders."
     },
     {
       "symbol": "CAPR",
@@ -43,33 +43,32 @@
       "hv": 1.416796713744914,
       "niche": true,
       "score": 5.697,
-      "why": "Un accord de relations investisseurs et une hausse du prix cible renforcent la visibilité de la société.",
-      "risk": "La petite capitalisation expose l'action à une forte volatilité en cas de résultats décevants.",
-      "why_en": "An investor relations agreement and a raised price target increase the company's visibility.",
-      "risk_en": "Small market cap makes the stock highly volatile if results disappoint."
+      "why": "L'accord de relations investisseurs et la hausse du prix cible indiquent un regain d'intérêt pour Caprock Mining.",
+      "risk": "Le risque réside dans la volatilité du secteur minier et la dépendance aux prix des matières premières.",
+      "why_en": "The investor relations agreement and raised price target signal renewed interest in Caprock Mining.",
+      "risk_en": "The risk lies in mining sector volatility and dependence on commodity prices."
     },
     {
-      "symbol": "M",
-      "mentions": 2,
+      "symbol": "ADSK",
+      "mentions": 1,
       "headlines": [
-        "Macy's Announces Performers for 100th Thanksgiving Day Parade",
-        "Morgan Stanley Maintains Macy's Buy Rating and Raises Price Target"
+        "This Palo Alto Analyst Turns Bullish; Here Are Top 5 Upgrades For Friday"
       ],
-      "last_at": "2026-11-13T23:01:50Z",
-      "sentiment": 0.5,
-      "price": 24.7,
-      "adv_usd": 132934669.96172905,
-      "chg_5d": 7.0,
-      "chg_20d": 2.9,
-      "rsi": 54.5,
+      "last_at": "2026-11-13T22:01:00Z",
+      "sentiment": 1.0,
+      "price": 264.42,
+      "adv_usd": 473666709.08592224,
+      "chg_5d": 1.0,
+      "chg_20d": 10.2,
+      "rsi": 61.1,
       "trend": "haussiere",
-      "hv": 0.5488334490705236,
+      "hv": 0.38692834486326205,
       "niche": false,
-      "score": 5.697,
-      "why": "L'annonce du défilé du 100e Thanksgiving et le maintien du Buy avec un nouveau prix cible soutiennent l'optimisme.",
-      "risk": "La dépendance aux ventes physiques et aux saisons festives peut entraîner des fluctuations de revenus.",
-      "why_en": "The 100th Thanksgiving Parade announcement and maintained Buy with a higher target boost optimism.",
-      "risk_en": "Reliance on brick‑and‑mortar sales and holiday seasons can cause revenue swings."
+      "score": 5.586,
+      "why": "Un analyste de Palo Alto devient bullish et plusieurs upgrades renforcent la dynamique d'Autodesk.",
+      "risk": "Le principal risque est la sensibilité aux cycles de dépenses informatiques des entreprises.",
+      "why_en": "A Palo Alto analyst turns bullish and multiple upgrades boost Autodesk's momentum.",
+      "risk_en": "The main risk is sensitivity to corporate IT spending cycles."
     },
     {
       "symbol": "TWM",
@@ -89,10 +88,10 @@
       "hv": 0.49373749493713837,
       "niche": true,
       "score": 5.577,
-      "why": "Deux hausses de prix cible par RBC renforcent la perspective haussière malgré la baisse récente.",
-      "risk": "Le secteur du transport de gaz naturel reste sensible aux régulations environnementales et aux prix du gaz.",
-      "why_en": "Two RBC price‑target upgrades reinforce a bullish view despite recent dip.",
-      "risk_en": "Midstream gas transport is vulnerable to environmental regulation and gas price volatility."
+      "why": "Les deux hausses de prix cible de RBC soulignent une perception positive de Tidewater Midstream.",
+      "risk": "Le risque principal provient de l'exposition aux fluctuations des tarifs de transport d'énergie.",
+      "why_en": "Two RBC price target raises highlight a positive view of Tidewater Midstream.",
+      "risk_en": "The main risk stems from exposure to energy transport tariff fluctuations."
     },
     {
       "symbol": "SGMT",
@@ -112,10 +111,32 @@
       "hv": 0.9127577599841711,
       "niche": true,
       "score": 5.457,
-      "why": "Un appel d'options long de 950 k$ et le maintien du Buy indiquent un fort intérêt des traders.",
-      "risk": "Le stade précoce de développement clinique expose l'action à des risques d'échec de tests.",
-      "why_en": "A $950k bullish long call and a maintained Buy show strong trader interest.",
-      "risk_en": "Early‑stage clinical development carries high risk of trial failure."
+      "why": "Un appel d'option long de 950 k$ et le maintien du rating Buy par Canaccord Genuity attirent l'attention sur Sagimet.",
+      "risk": "Le risque majeur est l'incertitude clinique et réglementaire autour de ses produits biotechnologiques.",
+      "why_en": "A $950k bullish long call and a maintained Buy rating draw attention to Sagimet.",
+      "risk_en": "The major risk is clinical and regulatory uncertainty surrounding its biotech products."
+    },
+    {
+      "symbol": "ADI",
+      "mentions": 1,
+      "headlines": [
+        "This Analog Devices Analyst Begins Coverage On A Bullish Note; Here Are Top 5 Initiations For Friday"
+      ],
+      "last_at": "2026-11-13T21:21:00Z",
+      "sentiment": 1.0,
+      "price": 397.97,
+      "adv_usd": 1939723807.8305054,
+      "chg_5d": 9.5,
+      "chg_20d": 0.6,
+      "rsi": 49.2,
+      "trend": "neutre",
+      "hv": 0.661791244079958,
+      "niche": false,
+      "score": 5.386,
+      "why": "Le lancement d'une couverture analystique bullish signale un fort optimisme pour Analog Devices.",
+      "risk": "Le risque principal est la dépendance aux cycles de la demande en semi-conducteurs.",
+      "why_en": "The start of a bullish analyst coverage signals strong optimism for Analog Devices.",
+      "risk_en": "The main risk is dependence on semiconductor demand cycles."
     },
     {
       "symbol": "WMG",
@@ -135,10 +156,10 @@
       "hv": 0.2908985665970338,
       "niche": false,
       "score": 5.337,
-      "why": "Le lancement d'un album par Wiz Khalifa et la distribution d'un nouveau projet musical élargissent la visibilité de la société.",
-      "risk": "Le succès commercial dépend fortement des tendances culturelles et des revenus de streaming volatils.",
-      "why_en": "Wiz Khalifa's new album release and a new music project distribution increase the company's visibility.",
-      "risk_en": "Commercial success heavily depends on cultural trends and volatile streaming revenues."
+      "why": "Le partenariat musical de Wiz Khalifa et la distribution d'ADA montrent une diversification des revenus de Warner Music.",
+      "risk": "Le risque réside dans la volatilité du marché du streaming et la concurrence accrue.",
+      "why_en": "Wiz Khalifa's partnership and ADA distribution illustrate Warner Music's revenue diversification.",
+      "risk_en": "The risk lies in streaming market volatility and heightened competition."
     },
     {
       "symbol": "MAR",
@@ -158,10 +179,10 @@
       "hv": 0.24746482542615683,
       "niche": false,
       "score": 5.017,
-      "why": "L'ouverture d'un hôtel net‑zéro et l'extension d'une attraction saisonnière montrent l'engagement durable de Marriott.",
-      "risk": "Les investissements ESG peuvent ne pas générer les rendements attendus si la demande reste faible.",
-      "why_en": "Opening a net‑zero hotel and expanding a seasonal attraction demonstrate Marriott's sustainability push.",
-      "risk_en": "ESG investments may not deliver expected returns if demand stays low."
+      "why": "L'ouverture d'un hôtel net‑zéro et l'expansion de l'attraction 'ICE!' renforcent l'image durable de Marriott.",
+      "risk": "Le risque principal est la sensibilité aux ralentissements du tourisme et aux coûts d'investissement verts.",
+      "why_en": "The net‑zero hotel opening and ICE! expansion boost Marriott's sustainable image.",
+      "risk_en": "The main risk is sensitivity to tourism slowdowns and green investment costs."
     },
     {
       "symbol": "ABG",
@@ -180,33 +201,35 @@
       "hv": 0.6377778028171855,
       "niche": false,
       "score": 4.846,
-      "why": "Le relèvement du prix cible par ABG Sundal Collier attire l'attention sur Wesports.",
-      "risk": "Le secteur du sport électronique est très concurrentiel et dépend des performances des équipes et des tournois.",
-      "why_en": "ABG Sundal Collier's price‑target raise draws attention to Wesports.",
-      "risk_en": "Esports is highly competitive and dependent on team performance and tournament outcomes."
+      "why": "Le relèvement du prix cible par ABG Sundal Collier pour Wesports attire l'attention sur ce titre.",
+      "risk": "Le risque principal est la dépendance aux performances des jeux vidéo et aux tendances du marché e‑sport.",
+      "why_en": "ABG Sundal Collier's price target raise for Wesports draws attention to the stock.",
+      "risk_en": "The main risk is reliance on video‑game performance and e‑sports market trends."
     },
     {
-      "symbol": "USPH",
-      "mentions": 2,
+      "symbol": "SPCX",
+      "mentions": 14,
       "headlines": [
-        "U.S. Physical Therapy, Inc. Declares Dividend",
-        "Barrington Research Adjusts Price Target for U.S. Physical Therapy, Inc."
+        "Dow Jones, Nasdaq 100, and S&P 500 Outlooks: Key Stock Market News This Week",
+        "SpaceX Starship Catch Could Cut Costs For Space-Based Data Centers And Military Logistics",
+        "Starlink Speed Caps, GOP Data Center Moratorium Push, Trump’s Iran War Cost Claims and More: This Week in Politics",
+        "SpaceX’s Starship Makes History With First-Ever Mechazilla Catch — Musk, Hegseth and Trump Jr. React"
       ],
-      "last_at": "2026-11-13T22:32:13Z",
-      "sentiment": 0.5,
-      "price": 99.6,
-      "adv_usd": 17070433.002052307,
-      "chg_5d": 0.1,
-      "chg_20d": 16.2,
-      "rsi": 71.0,
-      "trend": "haussiere",
-      "hv": 0.4263687461032177,
-      "niche": true,
-      "score": 4.717,
-      "why": "Le versement d'un dividende et l'ajustement du prix cible renforcent la perception de stabilité.",
-      "risk": "La croissance des revenus dépend de la capacité à gagner de nouveaux contrats de soins physiques.",
-      "why_en": "Dividend declaration and price‑target adjustment reinforce a perception of stability.",
-      "risk_en": "Revenue growth depends on securing new physical therapy contracts."
+      "last_at": "2026-11-15T20:30:08Z",
+      "sentiment": -0.14285714285714285,
+      "price": 139.11,
+      "adv_usd": 16141920543.614502,
+      "chg_5d": 3.6,
+      "chg_20d": -4.7,
+      "rsi": 46.8,
+      "trend": "baissiere",
+      "hv": 0.7543450466133754,
+      "niche": false,
+      "score": 4.708,
+      "why": "Les multiples articles couvrant les perspectives macro, SpaceX et la régulation attirent l'intérêt pour le secteur spatial.",
+      "risk": "Le risque majeur est l'incertitude réglementaire et les coûts élevés de développement spatial.",
+      "why_en": "Multiple articles covering macro outlooks, SpaceX and regulation attract interest in the space sector.",
+      "risk_en": "The major risk is regulatory uncertainty and high space development costs."
     },
     {
       "symbol": "HAWK",
@@ -226,35 +249,10 @@
       "hv": 1.109268892244497,
       "niche": true,
       "score": 4.697,
-      "why": "Deux analystes augmentent le prix cible, reflétant l'intérêt pour les données satellitaires de HawkEye 360.",
-      "risk": "Les revenus sont exposés aux cycles de défense et aux budgets gouvernementaux incertains.",
-      "why_en": "Two analysts raise the price target, reflecting interest in HawkEye 360's satellite data.",
-      "risk_en": "Revenue is exposed to defense cycles and uncertain government budgets."
-    },
-    {
-      "symbol": "SPCX",
-      "mentions": 13,
-      "headlines": [
-        "SpaceX Starship Catch Could Cut Costs For Space-Based Data Centers And Military Logistics",
-        "Starlink Speed Caps, GOP Data Center Moratorium Push, Trump’s Iran War Cost Claims and More: This Week in Politics",
-        "SpaceX’s Starship Makes History With First-Ever Mechazilla Catch — Musk, Hegseth and Trump Jr. React",
-        "Elon Musk’s SpaceX Faces Fresh Zelenskyy Backlash Over 161 Kph Starshield Speed Cap"
-      ],
-      "last_at": "2026-11-15T16:01:07Z",
-      "sentiment": -0.15384615384615385,
-      "price": 139.11,
-      "adv_usd": 16141920543.614502,
-      "chg_5d": 3.6,
-      "chg_20d": -4.7,
-      "rsi": 46.8,
-      "trend": "baissiere",
-      "hv": 0.7543450466133754,
-      "niche": false,
-      "score": 4.537,
-      "why": "Les multiples articles sur SpaceX et Starship soulignent l'impact potentiel sur les coûts et la logistique spatiale.",
-      "risk": "Les retards ou échecs techniques de Starship pourraient affecter les attentes du marché et la valorisation.",
-      "why_en": "Numerous articles on SpaceX and Starship highlight potential impact on space‑based costs and logistics.",
-      "risk_en": "Technical delays or failures of Starship could dampen market expectations and valuation."
+      "why": "Les ajustements de prix cible par Raymond James et Piper Sandler indiquent un regain d'optimisme pour HawkEye 360.",
+      "risk": "Le risque principal est la dépendance aux contrats gouvernementaux et aux incertitudes géopolitiques.",
+      "why_en": "Price target adjustments by Raymond James and Piper Sandler signal renewed optimism for HawkEye 360.",
+      "risk_en": "The main risk is reliance on government contracts and geopolitical uncertainties."
     },
     {
       "symbol": "LHX",
@@ -276,10 +274,10 @@
       "hv": 0.4174569258073133,
       "niche": false,
       "score": 4.344,
-      "why": "Les turbulences aériennes et les enquêtes liées à la FAA maintiennent l'intérêt autour de L3Harris.",
-      "risk": "Une implication prolongée dans les problèmes de la FAA pourrait nuire à la réputation et aux contrats futurs.",
-      "why_en": "Air travel chaos and FAA investigations keep interest in L3Harris high.",
-      "risk_en": "Prolonged involvement in FAA issues could damage reputation and future contracts."
+      "why": "Les nombreux articles sur les perturbations du trafic aérien et les enquêtes FAA soulignent l'importance stratégique de L3Harris.",
+      "risk": "Le risque principal est l'exposition aux retards de projets liés aux régulations aériennes.",
+      "why_en": "Multiple articles on air travel disruptions and FAA investigations highlight L3Harris's strategic relevance.",
+      "risk_en": "The main risk is exposure to project delays tied to aviation regulations."
     },
     {
       "symbol": "WFC",
@@ -300,10 +298,34 @@
       "hv": 0.23056079248541747,
       "niche": false,
       "score": 4.273,
-      "why": "Des ajustements de prix cible sur AMD et Ross Stores montrent l'influence de Wells Fargo sur divers secteurs.",
-      "risk": "Les révisions de cible peuvent refléter des incertitudes macroéconomiques affectant les entreprises couvertes.",
-      "why_en": "Price‑target adjustments on AMD and Ross Stores illustrate Wells Fargo's influence across sectors.",
-      "risk_en": "Target revisions may reflect macroeconomic uncertainties impacting the covered companies."
+      "why": "Les ajustements de prix cible pour AMD et Ross Stores montrent l'intérêt de Wells Fargo pour ces secteurs.",
+      "risk": "Le risque principal est la dépendance aux performances sectorielles respectives et aux conditions de marché.",
+      "why_en": "Wells Fargo's price target adjustments for AMD and Ross Stores show interest in those sectors.",
+      "risk_en": "The main risk is reliance on the respective sector performance and market conditions."
+    },
+    {
+      "symbol": "YOU",
+      "mentions": 3,
+      "headlines": [
+        "YouGov Releases Survey Findings for National Skin Cancer Action Week",
+        "YouGov and Prospa Publish Research on Australian SME Operational Costs",
+        "YouGov Poll Shows Majority of British Public Supports Return of Parthenon Sculptures"
+      ],
+      "last_at": "2026-11-15T21:02:18Z",
+      "sentiment": 0.0,
+      "price": 57.21,
+      "adv_usd": 84338582.05324173,
+      "chg_5d": 2.5,
+      "chg_20d": 30.2,
+      "rsi": 72.6,
+      "trend": "haussiere",
+      "hv": 0.8003867918655881,
+      "niche": false,
+      "score": 4.273,
+      "why": "Les enquêtes YouGov sur la santé, les coûts des PME et le patrimoine culturel génèrent de la visibilité médiatique.",
+      "risk": "Le risque réside dans la dépendance aux contrats de recherche et aux variations de l'opinion publique.",
+      "why_en": "YouGov surveys on health, SME costs and cultural heritage generate media visibility.",
+      "risk_en": "The risk lies in reliance on research contracts and shifts in public opinion."
     },
     {
       "symbol": "ATMU",
@@ -323,33 +345,10 @@
       "hv": 0.4912862265176206,
       "niche": true,
       "score": 4.197,
-      "why": "Le relèvement du prix cible et le maintien du Buy soulignent la confiance des analystes dans la technologie de filtration.",
-      "risk": "Le marché de la filtration industrielle est cyclique et sensible aux dépenses d'investissement des clients.",
-      "why_en": "Raised price target and maintained Buy highlight analyst confidence in filtration technology.",
-      "risk_en": "Industrial filtration market is cyclical and sensitive to client capital‑expenditure cycles."
-    },
-    {
-      "symbol": "EVR",
-      "mentions": 2,
-      "headlines": [
-        "Evercore Advises Otodata in Majority Investment by GI Partners",
-        "Evolve Royalties' EVX Connect Platform Utilized in Majuba Hill Drilling Program"
-      ],
-      "last_at": "2026-11-15T02:02:04Z",
-      "sentiment": 0.0,
-      "price": 296.35,
-      "adv_usd": 159120870.20812988,
-      "chg_5d": 4.1,
-      "chg_20d": 16.6,
-      "rsi": 57.9,
-      "trend": "haussiere",
-      "hv": 0.5929458479975146,
-      "niche": false,
-      "score": 4.017,
-      "why": "Un investissement majoritaire de GI Partners et l'utilisation de la plateforme EVX Connect renforcent la visibilité d'Evercore.",
-      "risk": "La dépendance à des partenaires financiers externes peut créer des pressions sur la stratégie et la rentabilité.",
-      "why_en": "GI Partners' majority investment and EVX Connect usage boost Evercore's visibility.",
-      "risk_en": "Reliance on external financial partners may pressure strategy and profitability."
+      "why": "L'ajustement du prix cible par JPMorgan et le maintien du Buy par Northland soulignent l'attrait pour Atmus Filtration.",
+      "risk": "Le risque principal est la dépendance aux cycles d'investissement en technologies de filtration et aux régulations environnementales.",
+      "why_en": "JPMorgan's price target adjustment and Northland's Buy maintenance highlight Atmus Filtration's appeal.",
+      "risk_en": "The main risk is dependence on filtration technology investment cycles and environmental regulations."
     }
   ]
 }
