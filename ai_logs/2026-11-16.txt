@@ -138,3 +138,15 @@ Exécuté : 2026-11-16T20:00:00 | équité 96,892.22 $ (-0.21 % jour) | bourse U
   IA : BULL_PUT_SPREAD TW | confiance 0.71 | Le spread de vente de put sur TW offre une prime élevée (IV/HV >1) avec une tendance haussière claire, limitant le risque tout en profitant de la surévaluation des options.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-16T20:30:01 | équité 96,911.85 $ (-0.19 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,946 $ | Γ +18.64 (Δ$ +29 pour 1 %) | ν -2 $/pt | Θ +9 $/j | ρ -12 $/pt
+  Idées presse ajoutées : KNTK, GWW, TW, CTRE, EW, HAS, OHI, ASND  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : COIN, TW, GWW, ASND, WMT, COST, KO, DIS, KNTK, EW, PLTR, MSFT, IWM, SOL/USD, ETH/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.44, BULL_PUT_SPREAD), TW (IV/HV 1.22, BULL_PUT_SPREAD), EW (IV/HV 1.14, BULL_PUT_SPREAD)
+  Notes IA : TW BULL_PUT_SPREAD 0.78 · EW BULL_PUT_SPREAD 0.71 · KNTK BUY_STOCK 0.66
+  IA : BULL_PUT_SPREAD TW | confiance 0.78 | Trade recommandé sur Tradeweb (TW) avec BULL_PUT_SPREAD : tendance haussière claire, prime d'option chère (IV/HV 1.22) et RSI très élevé indiquant un risque de correction limité à la baisse.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
