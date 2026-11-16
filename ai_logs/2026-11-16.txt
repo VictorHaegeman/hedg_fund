@@ -10,3 +10,15 @@ Exécuté : 2026-11-16T14:32:14 | équité 97,503.01 $ (+0.42 % jour) | bourse U
   IA : BUY_STOCK KO | confiance 0.8 | KO montre une forte tendance haussière avec un RSI élevé, une volatilité modérée et un IV/HV inférieur à 1, ce qui en fait le meilleur candidat pour un achat direct.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-16T15:00:00 | équité 97,381.80 $ (+0.30 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,934 $ | Γ +41.33 (Δ$ +66 pour 1 %) | ν +4 $/pt | Θ -5 $/j | ρ -12 $/pt
+  Idées presse ajoutées : VEON*, BILL, TSN, AFG, AZN, HAS, PERI*, ARMK  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : TSN, PERI, ARMK, WMT, COST, LLY, DIS, BILL, KO, INTC, COIN, AVGO, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : BILL (IV/HV 1.18, BULL_PUT_SPREAD)
+  Notes IA : BILL BULL_PUT_SPREAD 0.71 · TSN BUY_STOCK 0.66 · KO BUY_STOCK 0.65
+  IA : BULL_PUT_SPREAD BILL | confiance 0.71 | BILL montre une forte tendance haussière, un sentiment presse très positif (+1.0) et une prime d'option chère (IV/HV 1.18), ce qui rend le BULL_PUT_SPREAD approprié pour encaisser un crédit tout en limitant le risque.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
