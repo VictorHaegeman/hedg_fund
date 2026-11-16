@@ -46,3 +46,14 @@ Exécuté : 2026-11-16T16:00:01 | équité 97,403.58 $ (+0.32 % jour) | bourse U
   IA : BULL_CALL_SPREAD TSN | confiance 0.8 | TSN montre une forte tendance haussière, un RSI élevé mais encore sous le seuil critique, et des options bon marché (IV/HV 0.73), ce qui rend le BULL_CALL_SPREAD attractif avec un risque limité.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-16T16:30:00 | équité 97,279.93 $ (+0.19 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,643 $ | Γ +82.78 (Δ$ +132 pour 1 %) | ν +3 $/pt | Θ +1 $/j | ρ -12 $/pt
+  Idées presse ajoutées : VEON*, BILL, TSN, AFG, AZN, HAS, PERI*, ARMK  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : TSN, PERI, COIN, BILL, LLY, WMT, ARMK, KO, DIS, COST, INTC, AVGO, IWM, SOL/USD, ETH/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Notes IA : TSN BULL_CALL_SPREAD 0.8 · BILL BUY_STOCK 0.66 · ARMK BEAR_PUT_SPREAD 0.6
+  IA : BULL_CALL_SPREAD TSN | confiance 0.8 | TSN montre une tendance haussière claire, un RSI élevé mais pas encore en survente, et des options sous-évaluées (IV/HV 0.75), ce qui rend le BULL_CALL_SPREAD attractif avec risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
