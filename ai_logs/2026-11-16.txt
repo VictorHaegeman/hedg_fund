@@ -150,3 +150,15 @@ Exécuté : 2026-11-16T20:30:01 | équité 96,911.85 $ (-0.19 % jour) | bourse U
   IA : BULL_PUT_SPREAD TW | confiance 0.78 | Trade recommandé sur Tradeweb (TW) avec BULL_PUT_SPREAD : tendance haussière claire, prime d'option chère (IV/HV 1.22) et RSI très élevé indiquant un risque de correction limité à la baisse.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-16T20:55:00 | équité 96,768.74 $ (-0.33 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,535 $ | Γ -44.97 (Δ$ -70 pour 1 %) | ν -1 $/pt | Θ +1 $/j | ρ -11 $/pt
+  Idées presse ajoutées : KNTK, GWW, TW, CTRE, EW, HAS, OHI, ASND  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : COIN, DIS, TW, ASND, KO, GWW, WMT, COST, KNTK, EW, PLTR, MSFT, IWM, SOL/USD, ETH/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : ASND (IV/HV 1.43, BULL_PUT_SPREAD), EW (IV/HV 1.11, BULL_PUT_SPREAD)
+  Notes IA : KO BUY_STOCK 0.78 · TW BUY_STOCK 0.71 · ASND BULL_PUT_SPREAD 0.66
+  IA : BUY_STOCK KO | confiance 0.78 | KO montre une forte tendance haussière avec un RSI élevé mais encore sous le seuil critique, une volatilité basse et aucune annonce de résultats imminente, ce qui en fait un bon candidat pour un achat prudent.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.9 h, 15 idées)
