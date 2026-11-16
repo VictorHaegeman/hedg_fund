@@ -68,3 +68,13 @@ Exécuté : 2026-11-16T16:59:55 | équité 97,136.18 $ (+0.04 % jour) | bourse U
   IA : BULL_CALL_SPREAD WMT | confiance 0.68 | WMT montre une tendance haussière claire avec un RSI modéré et une hausse récente, mais les options sont légèrement chères, donc un spread call est prudent.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-16T17:30:01 | équité 97,307.03 $ (+0.22 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,037 $ | Γ +44.15 (Δ$ +69 pour 1 %) | ν -0 $/pt | Θ +7 $/j | ρ -11 $/pt
+  Idées presse ajoutées : VEON*, BILL, TSN, AFG, AZN, HAS, PERI*, ARMK  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : TSN, PERI, COIN, BILL, WMT, KO, INTC, LLY, COST, DIS, ARMK, AVGO, IWM, SOL/USD, ETH/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Notes IA : BILL BUY_STOCK 0.8 · TSN BUY_STOCK 0.8 · PERI BUY_STOCK 0.65
+  IA : HOLD | confiance 0.8 | BILL montre une forte dynamique haussière avec un RSI élevé, un sentiment presse très positif et une volatilité raisonnable, ce qui en fait le meilleur candidat pour un achat d'action.
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
