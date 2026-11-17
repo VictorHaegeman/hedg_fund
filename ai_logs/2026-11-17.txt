@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T14:32:14 | équité 96,081.06 $ (-1.09 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,126 $ | Γ -6.59 (Δ$ -10 pour 1 %) | ν +0 $/pt | Θ +1 $/j | ρ -11 $/pt
+  Idées presse ajoutées : MDT, REGN, AIG, ALV, BLK, YOU, APPN, MFG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : INTC, COIN, DIS, MDT, WMT, COST, QCOM, NKE, REGN, APPN, META, NFLX, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Notes IA : COST BUY_STOCK 0.82 · DIS BUY_STOCK 0.71 · WMT BUY_STOCK 0.68
+  IA : BUY_STOCK COST | confiance 0.82 | COST montre une forte dynamique haussière, RSI très élevé et une volatilité implicite raisonnable, justifiant un achat avec un risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
