@@ -42,3 +42,15 @@ Exécuté : 2026-11-17T15:30:01 | équité 96,889.51 $ (-0.26 % jour) | bourse U
   IA : BUY_STOCK DIS | confiance 0.78 | DIS montre une forte dynamique haussière, un RSI élevé et une volatilité raisonnable, ce qui justifie un achat direct avec un stop loss serré et un objectif de profit raisonnable.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T16:00:01 | équité 96,106.59 $ (-1.07 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +9,253 $ | Γ -54.38 (Δ$ -84 pour 1 %) | ν -3 $/pt | Θ +6 $/j | ρ -11 $/pt
+  Idées presse ajoutées : MDT, REGN, AIG, ALV, BLK, YOU, APPN, MFG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : INTC, CRM, COIN, DIS, MDT, WMT, COST, QCOM, NFLX, MU, PLTR, JPM, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : COIN (IV/HV 1.12, BEAR_CALL_SPREAD)
+  Notes IA : COIN BEAR_CALL_SPREAD 0.72 · INTC BEAR_PUT_SPREAD 0.68 · MDT BUY_STOCK 0.66
+  IA : BEAR_CALL_SPREAD COIN | confiance 0.72 | Vente d'un BEAR_CALL_SPREAD sur COIN profite d'une prime élevée (IV/HV 1.12) dans un contexte de forte tendance baissière et RSI très bas, tout en respectant la règle de ne pas ouvrir de position sur un sous-jacent déjà détenu.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
