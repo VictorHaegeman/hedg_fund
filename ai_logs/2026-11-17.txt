@@ -102,3 +102,15 @@ Exécuté : 2026-11-17T18:00:15 | équité 96,001.18 $ (-1.17 % jour) | bourse U
   IA : BULL_PUT_SPREAD SPG | confiance 0.71 | Le spread bull put sur SPG offre un crédit immédiat avec un risque limité, la tendance haussière et un IV/HV >1.1 rendent la prime attractive, malgré un RSI élevé.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T18:30:01 | équité 96,035.06 $ (-1.14 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +9,007 $ | Γ -25.70 (Δ$ -40 pour 1 %) | ν -3 $/pt | Θ +8 $/j | ρ -11 $/pt
+  Idées presse ajoutées : SPG, BLK, G, CHD, MFG*, AAL, AEG*, GFF*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, INTC, COIN, WMT, GFF, DIS, COST, SPG, NFLX, AAL, QCOM, PLTR, IWM, SOL/USD, ETH/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : SPG (IV/HV 1.25, BULL_PUT_SPREAD), COIN (IV/HV 1.11, BEAR_CALL_SPREAD)
+  Notes IA : WMT BUY_STOCK 0.78 · SPG BULL_PUT_SPREAD 0.71 · DIS BUY_STOCK 0.73
+  IA : BUY_STOCK WMT | confiance 0.78 | WMT montre une tendance haussière claire, un RSI solide mais pas excessif, et une volatilité modérée avec une prime d'option raisonnable, ce qui en fait le meilleur candidat pour un achat d'actions.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
