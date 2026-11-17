@@ -159,3 +159,14 @@ Exécuté : 2026-11-17T20:30:01 | équité 95,704.68 $ (-1.48 % jour) | bourse U
   IA : BUY_STOCK WMT | confiance 0.71 | WMT montre une tendance haussière modérée, un RSI solide et une volatilité implicite élevée qui rend l'achat direct plus attractif que les stratégies d'options, malgré le risque de résultat imminent.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T20:32:21 | équité 95,871.44 $ (-1.31 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +9,205 $ | Γ -42.85 (Δ$ -66 pour 1 %) | ν -3 $/pt | Θ +7 $/j | ρ -10 $/pt
+  Idées presse ajoutées : SPG, BLK, G, CHD, MFG*, AAL, AEG*, GFF*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, COIN, INTC, GFF, WMT, DIS, COST, AAL, MSFT, NFLX, PLTR, JPM, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Notes IA : WMT BUY_STOCK 0.71 · ACHC COVERED_CALL 0.68 · INTC BEAR_PUT_SPREAD 0.66
+  IA : BUY_STOCK WMT | confiance 0.71 | WMT montre une tendance haussière claire, un RSI confortable et une volatilité implicite élevée qui rend l'achat direct plus attractif que les options chères, avec un bon ratio risque/rendement.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
