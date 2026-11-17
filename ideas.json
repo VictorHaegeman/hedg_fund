@@ -1,17 +1,39 @@
 {
-  "updated_at": "2026-11-17T03:01:14",
+  "updated_at": "2026-11-17T09:01:17",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
+      "symbol": "ROP",
+      "mentions": 2,
+      "headlines": [
+        "Roche Secures First U.S. Approval for New Breast-Cancer Pill",
+        "Roche Receives FDA De Novo Authorization for Mass Spectrometry Platform"
+      ],
+      "last_at": "2026-11-17T08:31:14Z",
+      "sentiment": 0.5,
+      "price": 483.72,
+      "adv_usd": 529102262.72613525,
+      "chg_5d": 2.6,
+      "chg_20d": 26.1,
+      "rsi": 72.9,
+      "trend": "haussiere",
+      "hv": 0.4187619704740584,
+      "niche": false,
+      "score": 5.217,
+      "why": "Roche obtient la première autorisation américaine pour un nouveau traitement du cancer du sein, renforçant son pipeline oncologique.",
+      "risk": "Le succès commercial dépendra de l'acceptation du médicament et des éventuels effets secondaires non anticipés.",
+      "why_en": "Roche secures its first U.S. approval for a new breast‑cancer pill, bolstering its oncology pipeline.",
+      "risk_en": "Commercial success hinges on market uptake and potential unforeseen side effects."
+    },
+    {
       "symbol": "ICE",
-      "mentions": 3,
+      "mentions": 2,
       "headlines": [
         "Intercontinental Exchange and Abra Announce Custody Partnership for Institutional Crypto",
-        "BofA Securities Adjusts Intercontinental Exchange Price Target to $245",
-        "Intercontinental Exchange Explores Potential Role as Solana Validator"
+        "BofA Securities Adjusts Intercontinental Exchange Price Target to $245"
       ],
       "last_at": "2026-11-16T19:01:50Z",
-      "sentiment": 0.3333333333333333,
+      "sentiment": 0.5,
       "price": 178.29,
       "adv_usd": 587607746.3789368,
       "chg_5d": 2.4,
@@ -20,34 +42,11 @@
       "trend": "haussiere",
       "hv": 0.3132239469255955,
       "niche": false,
-      "score": 5.253,
-      "why": "Le partenariat de garde avec Abra et l'exploration du rôle de validateur Solana renforcent l'exposition d'ICE aux crypto‑actifs.",
-      "risk": "La volatilité du marché crypto et les incertitudes réglementaires pourraient affecter ces initiatives.",
-      "why_en": "The custody partnership with Abra and exploring a Solana validator role expand ICE's exposure to crypto assets.",
-      "risk_en": "Crypto market volatility and regulatory uncertainty could impact these initiatives."
-    },
-    {
-      "symbol": "EW",
-      "mentions": 2,
-      "headlines": [
-        "Wells Fargo Adjusts Price Target on Edwards Lifesciences",
-        "Edwards Lifesciences Releases Survey on Caregiver Awareness of Heart Valve Failure"
-      ],
-      "last_at": "2026-11-16T16:02:19Z",
-      "sentiment": 0.5,
-      "price": 107.11,
-      "adv_usd": 480387657.94044495,
-      "chg_5d": 2.3,
-      "chg_20d": 22.8,
-      "rsi": 80.3,
-      "trend": "haussiere",
-      "hv": 0.24057773100553234,
-      "niche": false,
-      "score": 5.157,
-      "why": "L'augmentation du prix cible de BofA et le sondage sur la sensibilisation des soignants soulignent l'intérêt croissant pour Edwards Lifesciences.",
-      "risk": "Une dépendance aux remboursements et aux cycles de santé pourrait freiner la croissance.",
-      "why_en": "BofA's raised price target and the caregiver awareness survey highlight growing interest in Edwards Lifesciences.",
-      "risk_en": "Reliance on reimbursements and health‑care cycles could constrain growth."
+      "score": 5.177,
+      "why": "Intercontinental Exchange lance un partenariat de garde crypto pour les institutions, élargissant son offre numérique.",
+      "risk": "L'exposition accrue aux actifs numériques expose l'entreprise aux volatilités réglementaires et de marché.",
+      "why_en": "Intercontinental Exchange announces an institutional crypto custody partnership, expanding its digital services.",
+      "risk_en": "Increased exposure to digital assets subjects the firm to regulatory and market volatility risks."
     },
     {
       "symbol": "SHEL",
@@ -67,10 +66,10 @@
       "hv": 0.2440926129888625,
       "niche": false,
       "score": 5.117,
-      "why": "Les rachats d'actions et la mise à jour du litige fiscal en Australie montrent que Shell continue de gérer activement son capital et ses risques fiscaux.",
-      "risk": "Le litige fiscal pourrait entraîner des coûts imprévus ou des amendes.",
-      "why_en": "Share buybacks and the update on the Australian tax dispute indicate Shell is actively managing capital and tax risks.",
-      "risk_en": "The tax dispute could result in unexpected costs or penalties."
+      "why": "Shell réalise des rachats d'actions réguliers, signalant une confiance dans sa trésorerie.",
+      "risk": "Le litige fiscal en Australie pourrait entraîner des coûts imprévus ou des amendes.",
+      "why_en": "Shell conducts routine share buybacks, indicating confidence in its cash position.",
+      "risk_en": "The Australian tax dispute could result in unexpected costs or penalties."
     },
     {
       "symbol": "HCA",
@@ -91,10 +90,10 @@
       "hv": 0.4494103303142687,
       "niche": false,
       "score": 5.053,
-      "why": "L'expansion de 154 M$ en Floride et l'ouverture de nouvelles cliniques renforcent la position d'HCA dans les soins spécialisés.",
-      "risk": "Des dépassements de coûts ou des retards de construction pourraient affecter la rentabilité.",
-      "why_en": "The $154 M expansion in Florida and new clinic openings strengthen HCA's position in specialized care.",
-      "risk_en": "Cost overruns or construction delays could impact profitability."
+      "why": "HCA annonce une expansion de 154 M$ en Floride et l'ouverture de cliniques novatrices, renforçant sa présence clinique.",
+      "risk": "Les projets d'expansion exigent des capitaux importants et peuvent être affectés par des retards ou des dépassements de coûts.",
+      "why_en": "HCA announces a $154 million Florida expansion and new innovative clinics, strengthening its clinical footprint.",
+      "risk_en": "The expansion projects require substantial capital and may face delays or cost overruns."
     },
     {
       "symbol": "DTE",
@@ -115,10 +114,10 @@
       "hv": 0.19572251458074555,
       "niche": false,
       "score": 4.993,
-      "why": "Les ajustements de prix cible et le partenariat réseau avec DE‑CIX soulignent la confiance des analystes dans la stratégie de DTE.",
-      "risk": "Des retards dans la mise en œuvre du programme de rachat d'actions pourraient décevoir les investisseurs.",
-      "why_en": "Price target adjustments and the DE‑CIX network partnership highlight analyst confidence in DTE's strategy.",
-      "risk_en": "Delays in executing the share buy‑back program could disappoint investors."
+      "why": "DTE bénéficie d'ajustements à la hausse des objectifs de prix et de partenariats réseau, soutenant sa perspective de croissance.",
+      "risk": "Les programmes de rachat d'actions et les partenariats peuvent être limités par la régulation des services publics.",
+      "why_en": "DTE sees upward price‑target revisions and network partnership deals, supporting growth outlook.",
+      "risk_en": "Share‑buyback programs and partnerships may be constrained by utility regulation."
     },
     {
       "symbol": "RELX",
@@ -138,10 +137,34 @@
       "hv": 0.3027174638276156,
       "niche": false,
       "score": 4.897,
-      "why": "Le rachat d'actions et l'amélioration de ClinicalKey AI montrent l'engagement de RELX à créer de la valeur pour les actionnaires et à innover dans la santé numérique.",
-      "risk": "L'intégration de l'IA pourrait rencontrer des obstacles techniques ou de conformité.",
-      "why_en": "The share repurchase and ClinicalKey AI enhancements demonstrate RELX's commitment to shareholder value and digital‑health innovation.",
-      "risk_en": "AI integration may face technical or regulatory hurdles."
+      "why": "RELX lance un rachat d'actions et améliore l'IA d'Elsevier, montrant un engagement envers la création de valeur et l'innovation.",
+      "risk": "L'intégration de nouvelles fonctionnalités IA comporte des risques de bugs ou de mauvaise adoption par les utilisateurs.",
+      "why_en": "RELX announces a share‑repurchase transaction and upgrades Elsevier's ClinicalKey AI, signaling value creation and innovation.",
+      "risk_en": "Integrating new AI features carries risks of bugs or poor user adoption."
+    },
+    {
+      "symbol": "HUM",
+      "mentions": 3,
+      "headlines": [
+        "Humana Announces Final Results of Cash Tender Offers for Outstanding Debt Securities",
+        "Humana Announces Pricing Terms of Offers to Purchase for Cash Certain of its Outstanding Debt Securities",
+        "Bernstein Adjusts Price Target on Humana to $515 From $425"
+      ],
+      "last_at": "2026-11-17T03:02:01Z",
+      "sentiment": 0.0,
+      "price": 461.25,
+      "adv_usd": 671158632.1209717,
+      "chg_5d": 9.0,
+      "chg_20d": 11.4,
+      "rsi": 68.4,
+      "trend": "haussiere",
+      "hv": 0.30786980746159376,
+      "niche": false,
+      "score": 4.773,
+      "why": "Humana finalise des offres de rachat de dette, améliorant sa structure de capital et rassurant les investisseurs.",
+      "risk": "Le refinancement de la dette expose l'entreprise à des taux d'intérêt plus élevés ou à des conditions de marché défavorables.",
+      "why_en": "Humana completes cash tender offers for outstanding debt, improving its capital structure and reassuring investors.",
+      "risk_en": "Debt refinancing exposes the company to higher interest rates or adverse market conditions."
     },
     {
       "symbol": "DG",
@@ -162,10 +185,10 @@
       "hv": 0.5068085102387564,
       "niche": false,
       "score": 4.693,
-      "why": "Les programmes de rachat d'actions et les prévisions financières optimistes de Dollar General renforcent la perception d'une solide dynamique de croissance.",
-      "risk": "Une sur‑dépendance aux programmes de rachat pourrait limiter la flexibilité financière en cas de ralentissement économique.",
-      "why_en": "Share buyback programs and Dollar General's upbeat fiscal outlook reinforce a perception of strong growth momentum.",
-      "risk_en": "Overreliance on buybacks could limit financial flexibility if the economy slows."
+      "why": "Dollar General relève ses prévisions 2026 et lance un programme de rachat d'actions, indiquant une confiance dans la demande des consommateurs.",
+      "risk": "Une dépendance accrue aux ventes à bas prix pourrait être affectée par une inflation persistante ou des pressions sur les marges.",
+      "why_en": "Dollar General raises its FY2026 outlook and initiates a share‑repurchase plan, indicating confidence in consumer demand.",
+      "risk_en": "Reliance on low‑price sales could be hurt by persistent inflation or margin pressure."
     },
     {
       "symbol": "MET",
@@ -185,10 +208,10 @@
       "hv": 0.2907372964997206,
       "niche": false,
       "score": 4.657,
-      "why": "La reconnaissance du PDG et le versement du dividende privilégié renforcent la confiance des investisseurs dans MetLife.",
-      "risk": "Des pressions sur les résultats d'assurance pourraient affecter la capacité à maintenir les dividendes.",
-      "why_en": "The CEO's award and the preferred‑stock dividend payout boost investor confidence in MetLife.",
-      "risk_en": "Insurance underwriting pressures could affect the ability to sustain dividends."
+      "why": "MetLife voit son PDG honoré d'un prix de leadership mondial, renforçant la réputation de l'entreprise.",
+      "risk": "Le versement d'un dividende privilégié supplémentaire peut peser sur la liquidité si les résultats financiers se dégradent.",
+      "why_en": "MetLife's CEO receives a global leadership award, enhancing the firm’s reputation.",
+      "risk_en": "Paying an additional preferred dividend could strain liquidity if earnings weaken."
     },
     {
       "symbol": "ED",
@@ -209,56 +232,10 @@
       "hv": 0.23039753427823806,
       "niche": false,
       "score": 4.353,
-      "why": "L'offre publique d'actions et l'expansion du programme de centrale virtuelle indiquent une stratégie de financement et d'innovation énergétique.",
-      "risk": "L'émission d'actions supplémentaires pourrait diluer la participation des actionnaires existants.",
-      "why_en": "The public share offering and virtual power plant expansion signal a financing and energy‑innovation strategy.",
-      "risk_en": "Issuing additional shares could dilute existing shareholders' ownership."
-    },
-    {
-      "symbol": "CBOE",
-      "mentions": 2,
-      "headlines": [
-        "Tradr ETFs to List New Leveraged Anthropic ETFs on Cboe",
-        "BofA Adjusts Price Target on Cboe Global Markets to $350"
-      ],
-      "last_at": "2026-11-16T19:01:50Z",
-      "sentiment": 0.0,
-      "price": 377.5,
-      "adv_usd": 427136534.4920349,
-      "chg_5d": 7.0,
-      "chg_20d": 23.2,
-      "rsi": 75.1,
-      "trend": "haussiere",
-      "hv": 0.38127979062524153,
-      "niche": false,
-      "score": 4.197,
-      "why": "Le lancement d'ETF à effet de levier sur l'IA montre que Cboe capitalise sur la demande croissante pour des produits innovants.",
-      "risk": "Les ETF à effet de levier sont volatils et peuvent entraîner des pertes importantes pour les investisseurs non avertis.",
-      "why_en": "The launch of leveraged AI ETFs shows Cboe is tapping growing demand for innovative products.",
-      "risk_en": "Leveraged ETFs are volatile and can cause significant losses for uninformed investors."
-    },
-    {
-      "symbol": "HUM",
-      "mentions": 2,
-      "headlines": [
-        "Humana Announces Pricing Terms of Offers to Purchase for Cash Certain of its Outstanding Debt Securities",
-        "Bernstein Adjusts Price Target on Humana to $515 From $425"
-      ],
-      "last_at": "2026-11-16T22:31:33Z",
-      "sentiment": 0.0,
-      "price": 461.25,
-      "adv_usd": 671158632.1209717,
-      "chg_5d": 9.0,
-      "chg_20d": 11.4,
-      "rsi": 68.4,
-      "trend": "haussiere",
-      "hv": 0.30786980746159376,
-      "niche": false,
-      "score": 4.197,
-      "why": "L'annonce de l'achat de dette et la hausse du prix cible reflètent la confiance du marché dans la solidité financière d'Humana.",
-      "risk": "Le refinancement de la dette à des conditions défavorables pourrait peser sur la trésorerie.",
-      "why_en": "The debt purchase announcement and raised price target reflect market confidence in Humana's financial strength.",
-      "risk_en": "Refinancing debt under unfavorable terms could strain cash flow."
+      "why": "Consolidated Edison lance une offre publique d'actions et étend son programme de centrale virtuelle, soutenant la croissance de ses actifs renouvelables.",
+      "risk": "L'émission d'actions supplémentaires peut diluer les actionnaires existants si la demande n'est pas suffisante.",
+      "why_en": "Consolidated Edison announces a public offering of shares and expands its virtual power plant program, supporting renewable asset growth.",
+      "risk_en": "Issuing additional shares could dilute existing shareholders if demand falls short."
     },
     {
       "symbol": "ENR",
@@ -278,10 +255,10 @@
       "hv": 0.42491937953132475,
       "niche": true,
       "score": 4.117,
-      "why": "Le programme de rachat d'actions et la vente d'actions aux employés soulignent l'engagement de Siemens Energy envers ses actionnaires et son personnel.",
-      "risk": "La vente d'actions pourrait exercer une pression à la baisse sur le cours si la demande est insuffisante.",
-      "why_en": "The share buyback program and employee share sale highlight Siemens Energy's commitment to shareholders and staff.",
-      "risk_en": "The share sale could put downward pressure on the price if demand is weak."
+      "why": "Siemens Energy progresse dans son programme de rachat d'actions et ouvre une vente d'actions aux employés, montrant confiance interne.",
+      "risk": "La vente d'actions aux employés peut être perçue comme un besoin de liquidités face à des défis opérationnels.",
+      "why_en": "Siemens Energy advances its share‑buyback program and initiates an employee participation sale, indicating internal confidence.",
+      "risk_en": "Employee share sales may be viewed as a need for cash amid operational challenges."
     },
     {
       "symbol": "JKHY",
@@ -301,10 +278,10 @@
       "hv": 0.4604760892671227,
       "niche": false,
       "score": 4.097,
-      "why": "L'inclusion dans la liste Forbes et le nouveau prix cible renforcent la perception d'une entreprise en forte croissance.",
-      "risk": "Une croissance trop rapide pourrait entraîner des difficultés d'intégration ou de gestion.",
-      "why_en": "Forbes listing and the new price target reinforce the view of a high‑growth company.",
-      "risk_en": "Rapid growth could lead to integration or management challenges."
+      "why": "Jack Henry est reconnu par Forbes parmi les meilleures entreprises américaines, renforçant son image de marque.",
+      "risk": "Une valorisation accrue suite à l'ajustement de cible de prix pourrait être difficile à maintenir si la croissance ralentit.",
+      "why_en": "Jack Henry is named by Forbes to the 2027 Best Companies in America list, boosting its brand image.",
+      "risk_en": "Higher valuation after price‑target adjustments may be hard to sustain if growth slows."
     },
     {
       "symbol": "BN",
@@ -324,34 +301,56 @@
       "hv": 0.3898981717525991,
       "niche": false,
       "score": 3.697,
-      "why": "La nomination du président de Danone USA et le partenariat infrastructurel en Grèce montrent l'expansion stratégique de Brookfield.",
-      "risk": "Les projets d'infrastructure à l'étranger comportent des risques géopolitiques et de change.",
-      "why_en": "The Danone USA president appointment and Greek infrastructure partnership illustrate Brookfield's strategic expansion.",
-      "risk_en": "Overseas infrastructure projects carry geopolitical and currency risks."
+      "why": "Brookfield s'associe à Data4 pour investir dans les infrastructures grecques, élargissant son portefeuille européen.",
+      "risk": "L'investissement en Grèce comporte des risques géopolitiques et de change qui pourraient affecter les rendements.",
+      "why_en": "Brookfield partners with Data4 for infrastructure investment in Greece, expanding its European portfolio.",
+      "risk_en": "Investing in Greece carries geopolitical and currency risks that could impact returns."
     },
     {
-      "symbol": "IBM",
-      "mentions": 3,
+      "symbol": "HRL",
+      "mentions": 2,
       "headlines": [
-        "IBM Expands Impact Accelerator Program with New 2026 Cohort",
-        "IBM, Fermilab, and NVIDIA Announce New Quantum Computing Co-Design Platform",
-        "Quantum Startup Moth Sets Data Encoding Record Using IBM Hardware"
+        "Hormel Foods Completes Acquisition of Brakebush Brothers, LLC",
+        "Hormel Foods Appoints Patty Gonzalez as Vice President of Emerging Brands"
       ],
-      "last_at": "2026-11-16T22:31:37Z",
-      "sentiment": 0.3333333333333333,
-      "price": 242.51,
-      "adv_usd": 1210888254.319687,
-      "chg_5d": -0.8,
-      "chg_20d": 3.3,
-      "rsi": 49.8,
-      "trend": "neutre",
-      "hv": 0.2660727795572906,
+      "last_at": "2026-11-16T23:01:50Z",
+      "sentiment": 0.0,
+      "price": 22.71,
+      "adv_usd": 101531938.05347443,
+      "chg_5d": 2.0,
+      "chg_20d": 11.6,
+      "rsi": 65.8,
+      "trend": "haussiere",
+      "hv": 0.35178477286319493,
       "niche": false,
-      "score": 3.613,
-      "why": "L'expansion du programme d'accélération, le co‑design quantique avec NVIDIA et le record de codage montrent l'engagement d'IBM dans l'innovation technologique.",
-      "risk": "Les investissements massifs en quantum et IA pourraient ne pas générer de retours rapides.",
-      "why_en": "The accelerator program expansion, quantum co‑design with NVIDIA, and data‑encoding record highlight IBM's tech‑innovation push.",
-      "risk_en": "Heavy investment in quantum and AI may not yield quick returns."
+      "score": 3.597,
+      "why": "Hormel finalise l'acquisition de Brakebush Brothers et renforce son équipe de marques émergentes, soutenant la diversification.",
+      "risk": "L'intégration de la nouvelle acquisition pourrait entraîner des coûts d'intégration ou des synergies inférieures aux attentes.",
+      "why_en": "Hormel completes the acquisition of Brakebush Brothers and bolsters its emerging brands team, supporting diversification.",
+      "risk_en": "Integrating the acquisition may incur integration costs or deliver lower‑than‑expected synergies."
+    },
+    {
+      "symbol": "NYT",
+      "mentions": 2,
+      "headlines": [
+        "Brian Josephs Promoted to Senior Live Editor at The New York Times",
+        "Jeremy Peters Appointed as The New York Times South Asia Bureau Chief"
+      ],
+      "last_at": "2026-11-16T19:01:54Z",
+      "sentiment": 0.0,
+      "price": 73.5,
+      "adv_usd": 169916099.41379547,
+      "chg_5d": 1.8,
+      "chg_20d": 8.0,
+      "rsi": 64.0,
+      "trend": "haussiere",
+      "hv": 0.33377658626036855,
+      "niche": false,
+      "score": 3.557,
+      "why": "The New York Times promeut des cadres clés, assurant la continuité éditoriale et le leadership journalistique.",
+      "risk": "Des changements de direction peuvent entraîner des incertitudes stratégiques et affecter la performance financière.",
+      "why_en": "The New York Times promotes senior editors, ensuring editorial continuity and journalistic leadership.",
+      "risk_en": "Leadership changes can create strategic uncertainty and impact financial performance."
     }
   ]
 }
