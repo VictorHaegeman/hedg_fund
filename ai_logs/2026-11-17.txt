@@ -54,3 +54,15 @@ Exécuté : 2026-11-17T16:00:01 | équité 96,106.59 $ (-1.07 % jour) | bourse U
   IA : BEAR_CALL_SPREAD COIN | confiance 0.72 | Vente d'un BEAR_CALL_SPREAD sur COIN profite d'une prime élevée (IV/HV 1.12) dans un contexte de forte tendance baissière et RSI très bas, tout en respectant la règle de ne pas ouvrir de position sur un sous-jacent déjà détenu.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T16:30:01 | équité 95,981.96 $ (-1.19 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,811 $ | Γ -18.63 (Δ$ -29 pour 1 %) | ν -3 $/pt | Θ +8 $/j | ρ -11 $/pt
+  Idées presse ajoutées : MDT, REGN, AIG, ALV, BLK, YOU, APPN, MFG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, INTC, COIN, COST, NFLX, META, QCOM, MU, PLTR, GS, KO, BLK, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Vente de prime possible : CRM (IV/HV 1.39, BEAR_CALL_SPREAD), COST (IV/HV 1.21, BULL_PUT_SPREAD), COIN (IV/HV 1.1, BEAR_CALL_SPREAD)
+  Notes IA : COST BULL_PUT_SPREAD 0.8
+  IA : BULL_PUT_SPREAD COST | confiance 0.8 | COST montre une forte tendance haussière, un RSI très élevé et un IV/HV >1.1, ce qui rend la vente d'un put spread attractive pour encaisser une prime élevée.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
