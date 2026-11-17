@@ -31,3 +31,14 @@ Exécuté : 2026-11-17T15:01:59 | équité 96,496.82 $ (-0.66 % jour) | bourse U
   IA : BULL_CALL_SPREAD DIS | confiance 0.68 | DIS montre une tendance haussière claire, RSI élevé et une volatilité modérée ; le IV/HV légèrement supérieur à 1 rend le spread attractif avec risque limité.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T15:30:01 | équité 96,889.51 $ (-0.26 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,649 $ | Γ -19.87 (Δ$ -31 pour 1 %) | ν -4 $/pt | Θ +12 $/j | ρ -11 $/pt
+  Idées presse ajoutées : MDT, REGN, AIG, ALV, BLK, YOU, APPN, MFG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : DIS, INTC, COST, CRM, COIN, MDT, WMT, QCOM, PLTR, KO, REGN, NFLX, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Notes IA : DIS BUY_STOCK 0.78 · INTC BEAR_PUT_SPREAD 0.71 · REGN BUY_STOCK 0.66
+  IA : BUY_STOCK DIS | confiance 0.78 | DIS montre une forte dynamique haussière, un RSI élevé et une volatilité raisonnable, ce qui justifie un achat direct avec un stop loss serré et un objectif de profit raisonnable.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
