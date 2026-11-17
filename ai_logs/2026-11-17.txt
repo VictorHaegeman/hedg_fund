@@ -9,3 +9,14 @@ Exécuté : 2026-11-17T14:32:14 | équité 96,081.06 $ (-1.09 % jour) | bourse U
   IA : BUY_STOCK COST | confiance 0.82 | COST montre une forte dynamique haussière, RSI très élevé et une volatilité implicite raisonnable, justifiant un achat avec un risque limité.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T15:00:01 | équité 96,582.68 $ (-0.58 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +7,791 $ | Γ +6.67 (Δ$ +10 pour 1 %) | ν -2 $/pt | Θ +8 $/j | ρ -11 $/pt
+  Idées presse ajoutées : MDT, REGN, AIG, ALV, BLK, YOU, APPN, MFG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : DIS, INTC, COST, CRM, COIN, MDT, WMT, QCOM, PLTR, KO, CVX, REGN, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Notes IA : DIS BUY_STOCK 0.78 · COST BUY_STOCK 0.73 · INTC BEAR_PUT_SPREAD 0.68
+  IA : BUY_STOCK DIS | confiance 0.78 | DIS montre une forte tendance haussière avec +2.3% sur 5 jours, RSI élevé et une volatilité modérée, ce qui en fait le meilleur candidat pour un achat direct, tout en respectant la règle de ne pas utiliser d'options chères.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
