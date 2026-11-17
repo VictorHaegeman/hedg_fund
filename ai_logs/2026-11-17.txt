@@ -148,3 +148,14 @@ Exécuté : 2026-11-17T20:00:01 | équité 95,684.75 $ (-1.50 % jour) | bourse U
   IA : BEAR_PUT_SPREAD INTC | confiance 0.78 | Le spread BEAR_PUT sur INTC combine une forte tendance baissière (RSI 28.6), des options bon marché (IV/HV 0.61) et une volatilité réalisée très élevée, offrant un bon potentiel de profit avec perte maximale limitée au coût du spread.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-17T20:30:01 | équité 95,704.68 $ (-1.48 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,703 $ | Γ -29.48 (Δ$ -45 pour 1 %) | ν -4 $/pt | Θ +11 $/j | ρ -11 $/pt
+  Idées presse ajoutées : SPG, BLK, G, CHD, MFG*, AAL, AEG*, GFF*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, COIN, INTC, GFF, WMT, DIS, COST, AAL, MSFT, META, NFLX, PLTR, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, LTC/USD | covered call possible sur : ACHC
+  Notes IA : WMT BUY_STOCK 0.71 · DIS BUY_STOCK 0.66 · GFF BUY_STOCK 0.68
+  IA : BUY_STOCK WMT | confiance 0.71 | WMT montre une tendance haussière modérée, un RSI solide et une volatilité implicite élevée qui rend l'achat direct plus attractif que les stratégies d'options, malgré le risque de résultat imminent.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
