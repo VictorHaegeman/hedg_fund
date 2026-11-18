@@ -1,0 +1,12 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-18T14:32:00 | équité 94,940.07 $ (-1.75 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +4,662 $ | Γ +67.22 (Δ$ +107 pour 1 %) | ν +2 $/pt | Θ +2 $/j | ρ -12 $/pt
+  Idées presse ajoutées : DUK, PEG, GRND*, HAS, REGN, G, GSK, AEE  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, COIN, WMT, ORCL, INTC, QCOM, GS, COST, AMD, PLTR, NKE, NFLX, IWM, ETH/USD, SOL/USD, DOGE/USD, LTC/USD, DOT/USD | covered call possible sur : ACHC
+  Vente de prime possible : COIN (IV/HV 1.11, BEAR_CALL_SPREAD)
+  Notes IA : COIN BEAR_CALL_SPREAD 0.7 · INTC BEAR_PUT_SPREAD 0.66 · ORCL BEAR_PUT_SPREAD 0.65
+  IA : BEAR_CALL_SPREAD COIN | confiance 0.7 | COIN montre une forte tendance baissière, un RSI très bas, une volatilité élevée et un IV/HV supérieur à 1, ce qui rend la vente d'un spread bear call attractif et conforme aux règles de vente de prime.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
