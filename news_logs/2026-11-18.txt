@@ -1,0 +1,45 @@
+==============================================================================
+MODULE 13 — POULS DE MARCHÉ : ACTUALITÉ + CONTEXTE GÉOPOLITIQUE
+==============================================================================
+
+— Jauge de risque géopolitique (basée marché) —
+  VIX (indice de la peur) : 25.5 (93e percentile sur 2 ans)
+  Or sur 1 mois : -0.067 | Pétrole sur 1 mois : -0.127
+  NIVEAU : RISK-OFF — peur extrême : prudence, ne pas initier de nouveaux longs
+  → Nouvelles entrées : BLOQUÉES (défensif)
+
+— Sentiment d'actualité par actif (scraping RSS, contexte seulement) —
+  SPY    : neutre   (score -0.08, 12 titres)
+           ex: « The Overlooked JPMorgan ETF That Owns Nearly 300 of the Market’s Stron »
+  QQQ    : neutre   (score -0.14, 14 titres)
+           ex: « The Nasdaq-100 Is Doing Something It Did Only in 2000 and 2018. Here’s »
+  GLD    : positif  (score +0.20, 15 titres)
+           ex: « Defiance Goes Mad ‘Maxx’ on Single-Stock ETFs »
+  TLT    : neutre   (score +0.13, 15 titres) | 1 mention(s) géopolitique(s)
+           ex: « Which Long-Term Bond ETF Is the Better Buy: State Street’s SPLB or iSh »
+  XLK    : négatif  (score -0.53, 15 titres)
+           ex: « Consumer staples stocks benefiting from a powerful rotation as tech ge »
+  XLF    : négatif  (score -0.27, 15 titres)
+           ex: « State Street Fin Sel Sector SPDR (XLF) Buys $49.1 Million More BRK.B o »
+  XLE    : négatif  (score -0.20, 15 titres)
+           ex: « Sector Update: Energy Stocks Softer Late Afternoon »
+  XLV    : neutre   (score -0.13, 15 titres)
+           ex: « Your “Safe” Health Care ETF Just Got Hit by UnitedHealth Again »
+  XLY    : neutre   (score +0.07, 15 titres)
+           ex: « Are Wall Street Analysts Bullish on Hilton Stock? »
+  XLP    : neutre   (score -0.13, 15 titres)
+           ex: « Consumer staples stocks benefiting from a powerful rotation as tech ge »
+  XLI    : neutre   (score +0.00, 15 titres)
+           ex: « State Street Industrial Select Sector SPDR (XLI) Adds GE and Caterpill »
+  XLU    : neutre   (score +0.13, 15 titres)
+           ex: « 4 Utilities Mutual Fund Picks to Ride Rising Power Demand »
+  XLB    : positif  (score +0.20, 15 titres)
+           ex: « Should You Invest in the State Street Materials Select Sector SPDR ETF »
+  BTC-USD: négatif  (score -0.33, 15 titres)
+           ex: « Coinbase Exec Says AI IPOs Pulling Money From Bitcoin Is ‘A Reasonable »
+
+Total mentions géopolitiques dans les titres : 1
+
+Lecture : le sentiment d'actualité est un CONTEXTE bruité (à ne pas suivre
+aveuglément). Le filtre qui agit réellement sur le trading est la jauge de
+risque basée marché ci-dessus, pas l'interprétation des titres.

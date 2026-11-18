@@ -1,17 +1,7 @@
 {
-  "cash": 966.557797483083,
+  "cash": 1010.9724372512937,
   "initial_capital": 100000.0,
   "positions": {
-    "JPM": {
-      "symbol": "JPM",
-      "shares": 72.86797726968214,
-      "entry": 331.1400146484375,
-      "stop": 317.4165652339021,
-      "target": null,
-      "strategy": "breakout",
-      "entry_date": "2026-06-16",
-      "risk_amount": 1000.0
-    },
     "XLV": {
       "symbol": "XLV",
       "shares": 74.51817341166118,
@@ -31,6 +21,16 @@
       "strategy": "breakout",
       "entry_date": "2026-10-29",
       "risk_amount": 1010.16
+    },
+    "MSFT": {
+      "symbol": "MSFT",
+      "shares": 21.163775951824338,
+      "entry": 506.239990234375,
+      "stop": 460.059690285713,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-11-17",
+      "risk_amount": 977.35
     }
   },
   "history": [
@@ -513,10 +513,25 @@
       "reason": "stop",
       "pnl": -1015.53,
       "pnl_pct": -8.75
+    },
+    {
+      "symbol": "JPM",
+      "shares": 72.86797726968214,
+      "entry": 331.1400146484375,
+      "stop": 317.4165652339021,
+      "target": null,
+      "strategy": "breakout",
+      "entry_date": "2026-06-16",
+      "risk_amount": 1000.0,
+      "exit": 329.9599914550781,
+      "exit_date": "2026-11-17",
+      "reason": "signal",
+      "pnl": -110.07,
+      "pnl_pct": -0.36
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-11-17T04:42:25",
+  "last_cycle": "2026-11-18T03:47:20",
   "equity_curve": [
     [
       "2026-06-11",
@@ -945,17 +960,21 @@
     [
       "2026-11-16",
       99036.55
+    ],
+    [
+      "2026-11-17",
+      97722.96
     ]
   ],
   "treasury": {
     "SPY": {
       "shares": 39.97402025797929,
       "cost": 29690.723731749153,
-      "last": 739.9500122070312
+      "last": 732.4400024414062
     },
     "BIL": {
-      "shares": 140.24781381795327,
-      "cost": 12836.11890999805,
+      "shares": 285.09918508037606,
+      "cost": 26097.26239112416,
       "last": 91.55000305175781
     }
   }
