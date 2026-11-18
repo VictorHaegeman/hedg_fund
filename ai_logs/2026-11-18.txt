@@ -10,3 +10,15 @@ Exécuté : 2026-11-18T14:32:00 | équité 94,940.07 $ (-1.75 % jour) | bourse U
   IA : BEAR_CALL_SPREAD COIN | confiance 0.7 | COIN montre une forte tendance baissière, un RSI très bas, une volatilité élevée et un IV/HV supérieur à 1, ce qui rend la vente d'un spread bear call attractif et conforme aux règles de vente de prime.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-18T15:00:00 | équité 95,409.98 $ (-1.27 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +4,508 $ | Γ -69.74 (Δ$ -108 pour 1 %) | ν -6 $/pt | Θ +12 $/j | ρ -13 $/pt
+  Idées presse ajoutées : DUK, PEG, GRND*, HAS, REGN, G, GSK, AEE  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, INTC, COIN, WMT, ORCL, QCOM, GS, COST, AMD, PLTR, NKE, CAT, IWM, SOL/USD, ETH/USD, DOGE/USD, LTC/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : COIN (IV/HV 1.14, BEAR_CALL_SPREAD)
+  Notes IA : COST BUY_STOCK 0.8 · WMT BUY_STOCK 0.7 · AMD BULL_CALL_SPREAD 0.66
+  IA : BUY_STOCK COST | confiance 0.8 | COST montre une forte tendance haussière avec un RSI très élevé, une volatilité modérée et des options encore relativement chères, ce qui justifie un achat direct de l'action.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
