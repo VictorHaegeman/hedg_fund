@@ -22,3 +22,15 @@ Exécuté : 2026-11-18T15:00:00 | équité 95,409.98 $ (-1.27 % jour) | bourse U
   IA : BUY_STOCK COST | confiance 0.8 | COST montre une forte tendance haussière avec un RSI très élevé, une volatilité modérée et des options encore relativement chères, ce qui justifie un achat direct de l'action.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 3.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-18T15:30:20 | équité 95,396.97 $ (-1.28 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +5,199 $ | Γ -159.33 (Δ$ -245 pour 1 %) | ν -8 $/pt | Θ +11 $/j | ρ -13 $/pt
+  Idées presse ajoutées : SPCX, CHYM, BRBR*, JJSF*, BETR*, TTE, ACM, AEO  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BRBR, JJSF, CRM, INTC, COIN, CAT, ACM, BA, WMT, ORCL, QCOM, COST, IWM, SOL/USD, ETH/USD, DOGE/USD, LTC/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : COIN (IV/HV 1.15, BEAR_CALL_SPREAD)
+  Notes IA : BRBR BULL_CALL_SPREAD 0.72 · ACM BULL_CALL_SPREAD 0.71 · COIN BEAR_CALL_SPREAD 0.68
+  IA : BULL_CALL_SPREAD BRBR | confiance 0.72 | BRBR montre une forte tendance haussière avec un RSI très élevé, des options bon marché (IV/HV 0.77) et une volatilité importante, ce qui rend le bull call spread attractif pour capter un mouvement haussier limité tout en limitant le risque.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
