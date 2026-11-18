@@ -166,3 +166,15 @@ Exécuté : 2026-11-18T20:30:00 | équité 95,618.23 $ (-1.05 % jour) | bourse U
   IA : BEAR_CALL_SPREAD COIN | confiance 0.78 | COIN présente une forte tendance baissière, un RSI très bas et une volatilité implicite très élevée (IV/HV 1.12), ce qui rend la vente d'un bear call spread attractive et conforme aux règles de vente de prime chère.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.9 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-18T20:55:01 | équité 95,546.16 $ (-1.13 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +4,149 $ | Γ -256.23 (Δ$ -386 pour 1 %) | ν -16 $/pt | Θ +24 $/j | ρ -13 $/pt
+  Idées presse ajoutées : SPCX, BRBR*, JJSF*, CHYM, BETR*, TTE, ECL, AS  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BRBR, JJSF, COIN, CRM, INTC, UNH, CAT, WMT, NFLX, QCOM, GS, COST, IWM, ETH/USD, SOL/USD, DOGE/USD, LTC/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : COIN (IV/HV 1.14, BEAR_CALL_SPREAD)
+  Notes IA : WMT BUY_STOCK 0.71 · COIN BEAR_CALL_SPREAD 0.68 · ACHC COVERED_CALL 0.66
+  IA : BUY_STOCK WMT | confiance 0.71 | WMT montre une tendance haussière claire, RSI proche de 65 et une volatilité modérée, ce qui justifie un achat direct malgré une prime d'option chère.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.3 h, 15 idées)
