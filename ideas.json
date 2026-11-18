@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T06:01:12",
+  "updated_at": "2026-11-18T12:01:15",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -22,10 +22,33 @@
       "hv": 0.21238154927366662,
       "niche": false,
       "score": 6.789,
-      "why": "Une vente d'actions importante par un initié et une nouvelle structure tarifaire pour les data centers attirent l'attention.",
-      "risk": "Le risque réside dans la pression de vente des initiés et l'incertitude réglementaire autour des tarifs.",
-      "why_en": "A significant insider share sale and a new rate structure for data centers draw attention.",
-      "risk_en": "Risk stems from insider selling pressure and regulatory uncertainty over rates."
+      "why": "Des ventes d'actions internes et une nouvelle structure tarifaire pour les data centers attirent l'attention.",
+      "risk": "Le risque réside dans la pression sur le cours suite à la vente d'actions par les initiés.",
+      "why_en": "Insider share sale and a new rate structure for data centers draw attention.",
+      "risk_en": "Risk stems from potential price pressure due to insider selling."
+    },
+    {
+      "symbol": "PEG",
+      "mentions": 2,
+      "headlines": [
+        "Public Service Enterprise Group Declares Quarterly Dividend of $0.67 Per Share",
+        "PSE&G Reports Significant Growth in Demand Response Program Enrollment"
+      ],
+      "last_at": "2026-11-17T23:01:53Z",
+      "sentiment": 1.0,
+      "price": 74.62,
+      "adv_usd": 243386982.65346527,
+      "chg_5d": -0.1,
+      "chg_20d": 5.3,
+      "rsi": 56.9,
+      "trend": "haussiere",
+      "hv": 0.20834512406495403,
+      "niche": false,
+      "score": 6.177,
+      "why": "Annonce d'un dividende et forte croissance du programme de réponse à la demande suscitent l'intérêt.",
+      "risk": "Un ralentissement de la demande d'électricité pourrait affecter les revenus.",
+      "why_en": "Dividend announcement and strong demand‑response program growth attract interest.",
+      "risk_en": "A slowdown in electricity demand could hurt revenues."
     },
     {
       "symbol": "GRND",
@@ -46,22 +69,68 @@
       "hv": 0.5192655890534498,
       "niche": true,
       "score": 5.773,
-      "why": "L'augmentation du prix cible par Citi et le lancement d'une offre premium IA suscitent l'intérêt.",
-      "risk": "Le risque est lié à la dépendance à la monétisation de l'IA et à la volatilité du secteur des applications sociales.",
-      "why_en": "Citi's raised price target and the launch of an AI‑powered premium tier generate interest.",
-      "risk_en": "Risk lies in reliance on AI monetisation and volatility in the social app market."
+      "why": "Hausse du prix cible et lancement d'une offre premium IA montrent un dynamisme produit.",
+      "risk": "Le risque est lié à l'acceptation du nouveau service premium par les utilisateurs.",
+      "why_en": "Raised price target and AI‑powered premium tier launch indicate product momentum.",
+      "risk_en": "Risk lies in user adoption of the new premium service."
+    },
+    {
+      "symbol": "HAS",
+      "mentions": 2,
+      "headlines": [
+        "Hays plc Announces Upgraded Profit Guidance for H1 FY27",
+        "Hasbro Declares Dividend for November 2026"
+      ],
+      "last_at": "2026-11-18T09:01:24Z",
+      "sentiment": 1.0,
+      "price": 118.35,
+      "adv_usd": 274592280.35907745,
+      "chg_5d": -2.8,
+      "chg_20d": 8.1,
+      "rsi": 60.6,
+      "trend": "haussiere",
+      "hv": 0.26080638268564776,
+      "niche": false,
+      "score": 5.637,
+      "why": "Guidance de profit révisée à la hausse et dividende déclaré renforcent l'optimisme.",
+      "risk": "Une éventuelle sous‑performance des ventes pourrait freiner la progression.",
+      "why_en": "Upgraded profit guidance and declared dividend boost optimism.",
+      "risk_en": "Potential sales underperformance could curb momentum."
+    },
+    {
+      "symbol": "REGN",
+      "mentions": 2,
+      "headlines": [
+        "CytomX Therapeutics Achieves Preclinical Milestone in Regeneron Collaboration",
+        "Regeneron Genetics Center to Sequence 75,000 Samples for Multiethnic Cohort Study"
+      ],
+      "last_at": "2026-11-17T22:31:51Z",
+      "sentiment": 0.5,
+      "price": 957.76,
+      "adv_usd": 944409943.0700684,
+      "chg_5d": 4.6,
+      "chg_20d": 18.6,
+      "rsi": 68.7,
+      "trend": "haussiere",
+      "hv": 0.5385956365034757,
+      "niche": false,
+      "score": 5.617,
+      "why": "Progrès préclinique avec CytomX et grand projet de séquençage renforcent la perspective de croissance.",
+      "risk": "Les résultats cliniques futurs restent incertains et peuvent affecter la valorisation.",
+      "why_en": "Preclinical milestone with CytomX and large sequencing project enhance growth outlook.",
+      "risk_en": "Future clinical outcomes remain uncertain and could impact valuation."
     },
     {
       "symbol": "G",
       "mentions": 4,
       "headlines": [
+        "Generali Expects FY26 Adjusted EPS Growth Above Target",
         "Genpact Executive Recognized in 2026 Stevie Awards for Women in Business",
         "Barclays Raises Price Target for Generali",
-        "Banca Generali Celebrates 20th Anniversary of Stock Exchange Listing",
-        "Genpact Executive Marina Vernetti Recognized for Leadership"
+        "Banca Generali Celebrates 20th Anniversary of Stock Exchange Listing"
       ],
-      "last_at": "2026-11-17T23:01:53Z",
-      "sentiment": 0.25,
+      "last_at": "2026-11-18T08:32:05Z",
+      "sentiment": 0.5,
       "price": 42.64,
       "adv_usd": 92208758.8085556,
       "chg_5d": -1.0,
@@ -70,11 +139,11 @@
       "trend": "haussiere",
       "hv": 0.3509335895105338,
       "niche": false,
-      "score": 4.769,
-      "why": "Des reconnaissances et des augmentations de prix cible pour Generali renforcent la visibilité positive.",
-      "risk": "Le risque provient d'une possible décélération de la croissance des services de conseil et de la concurrence accrue.",
-      "why_en": "Awards recognitions and raised price targets for Generali boost positive visibility.",
-      "risk_en": "Risk stems from potential slowdown in consulting services growth and heightened competition."
+      "score": 5.519,
+      "why": "Prévisions de croissance EPS supérieures aux objectifs et reconnaissance d'exécutifs renforcent la confiance.",
+      "risk": "Des attentes élevées pourraient entraîner une déception si les résultats ne sont pas au rendez‑vous.",
+      "why_en": "EPS growth outlook above target and executive awards boost confidence.",
+      "risk_en": "High expectations could lead to disappointment if results fall short."
     },
     {
       "symbol": "GSK",
@@ -94,10 +163,10 @@
       "hv": 0.307974934655177,
       "niche": false,
       "score": 4.597,
-      "why": "L'approbation accélérée par la FDA d'un traitement contre le cancer du poumon attire l'attention.",
-      "risk": "Le risque réside dans les incertitudes liées aux performances commerciales du nouveau médicament et aux mouvements d'actionnaires.",
-      "why_en": "FDA accelerated approval of a lung‑cancer therapy draws attention.",
-      "risk_en": "Risk lies in commercial performance uncertainty of the new drug and shareholder transaction impacts."
+      "why": "Approbation accélérée d'un traitement contre le cancer du poumon attire l'attention.",
+      "risk": "Les transactions d'initiés peuvent signaler une incertitude interne sur la valorisation.",
+      "why_en": "Accelerated approval of a lung‑cancer drug draws attention.",
+      "risk_en": "Insider transactions may signal internal uncertainty about valuation."
     },
     {
       "symbol": "AEE",
@@ -117,10 +186,10 @@
       "hv": 0.17836938811060987,
       "niche": false,
       "score": 4.397,
-      "why": "L'approbation de tarifs de charge lourde et la baisse des prix du gaz naturel pour l'hiver sont perçues positivement.",
-      "risk": "Le risque est lié à la dépendance aux conditions climatiques et aux régulations tarifaires.",
-      "why_en": "Approval of large‑load tariffs and lower winter gas prices are seen positively.",
-      "risk_en": "Risk is tied to weather‑dependent demand and tariff regulatory risk."
+      "why": "Approbation de tarifs pour charges lourdes et baisse des prix du gaz naturel soutiennent la perspective tarifaire.",
+      "risk": "Une baisse prolongée des prix du gaz pourrait réduire les marges.",
+      "why_en": "Approval of large‑load tariffs and lower natural‑gas prices support rate outlook.",
+      "risk_en": "Prolonged gas price decline could compress margins."
     },
     {
       "symbol": "LUV",
@@ -140,10 +209,35 @@
       "hv": 0.44800274475743707,
       "niche": false,
       "score": 4.377,
-      "why": "L'estimation d'impact économique d'un arrêt au sol de la FAA et la hausse du prix cible UBS attirent l'attention.",
-      "risk": "Le risque demeure la sensibilité aux perturbations opérationnelles et aux coûts liés aux régulations aériennes.",
-      "why_en": "FAA ground‑stop impact estimate and UBS price‑target raise attract attention.",
-      "risk_en": "Risk remains operational disruption sensitivity and airline regulatory cost exposure."
+      "why": "Impact estimé d'un arrêt au sol de la FAA et révision à la hausse du target price suscitent l'intérêt.",
+      "risk": "Les perturbations opérationnelles liées à la FAA peuvent affecter la performance à court terme.",
+      "why_en": "Estimated FAA ground‑stop impact and raised price target attract interest.",
+      "risk_en": "FAA‑related operational disruptions may affect short‑term performance."
+    },
+    {
+      "symbol": "BLK",
+      "mentions": 4,
+      "headlines": [
+        "BlackRock's HPS Investment Partners Begins Marketing New Direct-Lending Fund",
+        "BlackRock Canada Announces November 2026 Cash Distributions for iShares ETFs",
+        "BlackRock, Inc. Files Disclosure of Voting Rights in ICG PLC",
+        "Generation Life Launches ConfidencePlus Annuity with BlackRock Alliance"
+      ],
+      "last_at": "2026-11-18T11:32:04Z",
+      "sentiment": 0.25,
+      "price": 1180.67,
+      "adv_usd": 765624800.1049805,
+      "chg_5d": -3.4,
+      "chg_20d": 4.6,
+      "rsi": 53.3,
+      "trend": "haussiere",
+      "hv": 0.34204899191486343,
+      "niche": false,
+      "score": 4.289,
+      "why": "Lancement d'un nouveau fonds de prêt direct et distribution de cash pour les ETF renforcent l'attractivité.",
+      "risk": "Les nouvelles initiatives de fonds peuvent exposer à des risques de crédit accrus.",
+      "why_en": "Launch of a new direct‑lending fund and cash distributions for ETFs enhance appeal.",
+      "risk_en": "New fund initiatives may expose the firm to heightened credit risk."
     },
     {
       "symbol": "HUBG",
@@ -163,34 +257,10 @@
       "hv": 0.435704190732379,
       "niche": true,
       "score": 4.217,
-      "why": "Le versement d'un dividende trimestriel et l'approbation Nasdaq pour le maintien de la cotation sont des nouvelles positives.",
-      "risk": "Le risque provient de la pression sur les marges dans un environnement logistique difficile.",
-      "why_en": "Quarterly dividend payout and Nasdaq approval for continued listing are positive news.",
-      "risk_en": "Risk arises from margin pressure in a challenging logistics environment."
-    },
-    {
-      "symbol": "SN",
-      "mentions": 3,
-      "headlines": [
-        "JD.com Highlights Partnership with SharkNinja in Q3 2026 Results",
-        "SharkNinja to Participate in the Morgan Stanley Global Consumer & Retail Conference",
-        "Stifel Initiates Coverage of SharkNinja with Buy Rating"
-      ],
-      "last_at": "2026-11-17T23:01:27Z",
-      "sentiment": 0.3333333333333333,
-      "price": 220.12,
-      "adv_usd": 332046875.67604065,
-      "chg_5d": -2.8,
-      "chg_20d": 10.8,
-      "rsi": 60.4,
-      "trend": "haussiere",
-      "hv": 0.34874759468683,
-      "niche": false,
-      "score": 4.213,
-      "why": "Les partenariats de SharkNinja avec JD.com et sa visibilité lors de conférences renforcent l'intérêt.",
-      "risk": "Le risque est lié à la dépendance aux ventes en ligne et à la concurrence intense dans le secteur des biens de consommation.",
-      "why_en": "SharkNinja's JD.com partnership and conference exposure boost interest.",
-      "risk_en": "Risk stems from reliance on e‑commerce sales and intense consumer‑goods competition."
+      "why": "Dividende trimestriel déclaré et maintien de la cotation Nasdaq rassurent les investisseurs.",
+      "risk": "Une tendance baissière du cours pourrait persister malgré le dividende.",
+      "why_en": "Quarterly dividend declaration and Nasdaq listing continuity reassure investors.",
+      "risk_en": "A downtrend in the share price may persist despite the dividend."
     },
     {
       "symbol": "ACM",
@@ -210,10 +280,10 @@
       "hv": 0.4259943243922055,
       "niche": false,
       "score": 4.197,
-      "why": "L'étude carbone d'AECOM et la hausse du prix cible de BofA soulignent un engagement durable et une valorisation accrue.",
-      "risk": "Le risque réside dans la dépendance aux projets d'infrastructure cycliques et aux incertitudes réglementaires environnementales.",
-      "why_en": "AECOM's carbon study and BofA price‑target raise highlight sustainability focus and higher valuation.",
-      "risk_en": "Risk lies in reliance on cyclical infrastructure projects and environmental regulatory uncertainty."
+      "why": "Étude carbone et hausse du price target soulignent l'engagement durable et la confiance du marché.",
+      "risk": "Le secteur de la construction reste sensible aux cycles économiques, ce qui peut affecter la demande.",
+      "why_en": "Carbon‑sequestration study and raised price target highlight sustainability focus and market confidence.",
+      "risk_en": "Construction sector remains cyclical, potentially impacting demand."
     },
     {
       "symbol": "BAX",
@@ -230,60 +300,13 @@
       "chg_20d": 5.1,
       "rsi": 54.4,
       "trend": "haussiere",
-      "hv": 0.4924961295718031,
+      "hv": 0.49249612957180305,
       "niche": false,
       "score": 4.197,
-      "why": "Les mises à jour sur la durabilité et le partenariat humanitaire renforcent l'image responsable de Baxter.",
-      "risk": "Le risque provient de la pression sur les marges des produits de santé et des éventuels changements réglementaires.",
-      "why_en": "Sustainability updates and humanitarian partnership enhance Baxter's responsible image.",
-      "risk_en": "Risk stems from margin pressure on healthcare products and potential regulatory changes."
-    },
-    {
-      "symbol": "HAS",
-      "mentions": 2,
-      "headlines": [
-        "Hasbro Declares Dividend for November 2026",
-        "Hasbro Features RuffleButts Pajama Collections in 2026 Holiday Gift Guide"
-      ],
-      "last_at": "2026-11-17T19:01:48Z",
-      "sentiment": 0.5,
-      "price": 118.35,
-      "adv_usd": 274592280.35907745,
-      "chg_5d": -2.8,
-      "chg_20d": 8.1,
-      "rsi": 60.6,
-      "trend": "haussiere",
-      "hv": 0.26080638268564776,
-      "niche": false,
-      "score": 4.137,
-      "why": "Le versement de dividende et la mise en avant d'une collection de pyjamas saisonnière attirent les investisseurs et les consommateurs.",
-      "risk": "Le risque est lié à la dépendance aux ventes saisonnières et à la concurrence dans le secteur du jouet.",
-      "why_en": "Dividend payout and seasonal pajama collection spotlight attract investors and consumers.",
-      "risk_en": "Risk is tied to reliance on seasonal sales and competition in the toy market."
-    },
-    {
-      "symbol": "BLK",
-      "mentions": 3,
-      "headlines": [
-        "BlackRock, Inc. Files Disclosure of Voting Rights in ICG PLC",
-        "Generation Life Launches ConfidencePlus Annuity with BlackRock Alliance",
-        "BlackRock Designated as Critical Third Party for UK Financial Sector"
-      ],
-      "last_at": "2026-11-18T01:01:22Z",
-      "sentiment": 0.3333333333333333,
-      "price": 1180.67,
-      "adv_usd": 765624800.1049805,
-      "chg_5d": -3.4,
-      "chg_20d": 4.6,
-      "rsi": 53.3,
-      "trend": "haussiere",
-      "hv": 0.34204899191486343,
-      "niche": false,
-      "score": 4.093,
-      "why": "Les divulgations de droits de vote, le lancement d'une annuité et le statut de tiers critique au Royaume‑Uni renforcent la visibilité de BlackRock.",
-      "risk": "Le risque réside dans les exigences réglementaires accrues et la complexité de la gestion d'actifs à l'échelle mondiale.",
-      "why_en": "Voting‑rights disclosure, new annuity launch, and UK critical‑third‑party status boost BlackRock's visibility.",
-      "risk_en": "Risk lies in heightened regulatory demands and complexity of global asset management."
+      "why": "Mises à jour sur la durabilité et partenariat humanitaire renforcent l'image ESG.",
+      "risk": "Les initiatives ESG peuvent ne pas se traduire immédiatement en création de valeur financière.",
+      "why_en": "Sustainability updates and humanitarian partnership boost ESG profile.",
+      "risk_en": "ESG initiatives may not immediately translate into financial value."
     },
     {
       "symbol": "DAL",
@@ -304,34 +327,10 @@
       "hv": 0.5001352167164905,
       "niche": false,
       "score": 3.773,
-      "why": "Les initiatives sociales de Delta et les restrictions temporaires sur le cargo, ainsi que la révision du prix cible, retiennent l'attention.",
-      "risk": "Le risque demeure la volatilité du trafic aérien et les perturbations opérationnelles continues.",
-      "why_en": "Delta's social initiatives, temporary cargo restrictions, and price‑target revision draw attention.",
-      "risk_en": "Risk remains airline traffic volatility and ongoing operational disruptions."
-    },
-    {
-      "symbol": "RBRK",
-      "mentions": 3,
-      "headlines": [
-        "Rubrik Included as a Top Holding in New Bitwise AI Cyber Defense ETF",
-        "Cantor Fitzgerald Raises Rubrik Price Target to $125",
-        "Oppenheimer Adjusts Rubrik Price Target to $150 From $120"
-      ],
-      "last_at": "2026-11-17T23:01:51Z",
-      "sentiment": 0.6666666666666666,
-      "price": 100.68,
-      "adv_usd": 345019944.58049774,
-      "chg_5d": -7.9,
-      "chg_20d": -12.1,
-      "rsi": 35.7,
-      "trend": "neutre",
-      "hv": 0.7361330254156732,
-      "niche": false,
-      "score": 3.773,
-      "why": "L'inclusion de Rubrik dans un ETF IA et les hausses de prix cible par plusieurs analystes stimulent l'intérêt.",
-      "risk": "Le risque provient de la concurrence intense dans le secteur de la cybersécurité et de la dépendance aux cycles d'investissement technologique.",
-      "why_en": "Rubrik's inclusion in an AI ETF and multiple analyst price‑target raises spur interest.",
-      "risk_en": "Risk stems from intense cybersecurity competition and reliance on tech investment cycles."
+      "why": "Initiatives sociales et restrictions temporaires sur le cargo montrent l'engagement opérationnel.",
+      "risk": "Les restrictions cargo et les incertitudes opérationnelles peuvent peser sur les revenus.",
+      "why_en": "Social initiatives and temporary cargo restrictions demonstrate operational engagement.",
+      "risk_en": "Cargo restrictions and operational uncertainties may weigh on revenues."
     },
     {
       "symbol": "CMCSA",
@@ -351,10 +350,10 @@
       "hv": 0.347288738770822,
       "niche": false,
       "score": 3.657,
-      "why": "Le soutien de NBCUniversal à un nouveau studio ciblant les audiences noires et le départ d'un animateur majeur sont des nouvelles marquantes.",
-      "risk": "Le risque réside dans la réussite commerciale du nouveau studio et la concurrence accrue dans le secteur du streaming.",
-      "why_en": "NBCUniversal's backing of a new studio for Black audiences and a high‑profile anchor departure are notable.",
-      "risk_en": "Risk lies in the new studio's commercial success and heightened streaming competition."
+      "why": "Lancement d'un nouveau studio ciblant les audiences noires et départ d'un animateur clé attirent l'attention.",
+      "risk": "Le succès du nouveau studio dépend de l'acceptation du public et de la concurrence accrue.",
+      "why_en": "New studio targeting Black audiences and key anchor departure draw attention.",
+      "risk_en": "Studio success hinges on audience acceptance amid heightened competition."
     }
   ]
 }
