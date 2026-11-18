@@ -58,3 +58,15 @@ Exécuté : 2026-11-18T16:30:01 | équité 95,270.97 $ (-1.41 % jour) | bourse U
   IA : BEAR_CALL_SPREAD COIN | confiance 0.71 | COIN montre une forte tendance baissière, une volatilité implicite élevée (IV/HV 1.15) et aucune annonce de résultats proche, ce qui rend la vente d'un bear call spread attractive.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-18T17:00:01 | équité 95,417.02 $ (-1.26 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +5,370 $ | Γ -177.14 (Δ$ -269 pour 1 %) | ν -12 $/pt | Θ +19 $/j | ρ -12 $/pt
+  Idées presse ajoutées : SPCX, CHYM, BRBR*, JJSF*, BETR*, TTE, ACM, AEO  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BRBR, JJSF, CRM, INTC, COIN, CAT, ACM, WMT, ORCL, GS, COST, AMD, IWM, ETH/USD, SOL/USD, DOGE/USD, LTC/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : COIN (IV/HV 1.18, BEAR_CALL_SPREAD)
+  Notes IA : COST BUY_STOCK 0.7 · WMT BUY_STOCK 0.65 · ACM BUY_STOCK 0.62
+  IA : BUY_STOCK COST | confiance 0.7 | Costco montre une tendance haussière claire, un RSI solide et une volatilité modérée, ce qui justifie un achat avec un risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
