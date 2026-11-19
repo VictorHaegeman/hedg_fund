@@ -35,3 +35,15 @@ Exécuté : 2026-11-19T15:30:01 | équité 93,631.21 $ (-2.16 % jour) | bourse U
   IA : BEAR_PUT_SPREAD INTC | confiance 0.72 | INTC montre une forte tendance baissière, un RSI très bas et des options très bon marché (IV/HV 0.55). Aucun résultat d'entreprise n'est prévu dans les 45 prochains jours, ce qui rend un spread put baissier à coût limité approprié.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-19T16:00:01 | équité 94,185.76 $ (-1.58 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +3,500 $ | Γ -198.28 (Δ$ -304 pour 1 %) | ν -10 $/pt | Θ +15 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ACM, SNY, MRSH, LOW, ACN, ECL, RKT, WFC  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, UNH, ACM, COIN, BA, CAT, WMT, INTC, JPM, GS, MRK, WFC, IWM, XRP/USD, SOL/USD, DOGE/USD, BCH/USD, ETH/USD | covered call possible sur : ACHC
+  Vente de prime possible : WFC (IV/HV 1.2, BEAR_CALL_SPREAD), COIN (IV/HV 1.12, BEAR_CALL_SPREAD)
+  Notes IA : CRM SHORT_STOCK 0.7 · COIN BEAR_CALL_SPREAD 0.68 · ACM BUY_STOCK 0.6
+  IA : SHORT_STOCK CRM | confiance 0.7 | CRM montre une forte baisse de 13,1% sur 5 jours, un RSI très bas (23,8) et une volatilité élevée, ce qui indique une pression baissière persistante ; aucune contrainte majeure autre que les résultats dans 13 jours, donc un short stock avec stop loss serré est justifié.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
