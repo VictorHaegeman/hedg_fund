@@ -11,3 +11,15 @@ Exécuté : 2026-11-19T14:32:11 | équité 95,804.17 $ (+0.11 % jour) | bourse U
   IA : BEAR_CALL_SPREAD WFC | confiance 0.71 | WFC présente une forte tendance baissière, un IV/HV de 1.12 le rend cher à l'achat mais intéressant à vendre, aucune annonce de résultats proche, ce qui correspond à la stratégie BEAR_CALL_SPREAD.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-19T15:00:01 | équité 95,401.27 $ (-0.31 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +8,398 $ | Γ -156.48 (Δ$ -242 pour 1 %) | ν -2 $/pt | Θ -7 $/j | ρ -10 $/pt
+  Idées presse ajoutées : ACM, SNY, MRSH, LOW, ACN, ECL, RKT, WFC  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, UNH, ACM, COIN, WMT, MRK, NKE, ORCL, ADBE, INTC, MU, SHOP, IWM, DOGE/USD, BCH/USD, ETH/USD, SOL/USD, XRP/USD | covered call possible sur : ACHC
+  Vente de prime possible : MRK (IV/HV 1.18, BEAR_CALL_SPREAD)
+  Notes IA : MRK BEAR_CALL_SPREAD 0.78 · INTC SHORT_STOCK 0.71 · WMT BUY_STOCK 0.66
+  IA : BEAR_CALL_SPREAD MRK | confiance 0.78 | Le MRK présente une forte tendance baissière, un RSI très bas et une volatilité implicite élevée (IV/HV 1.18), ce qui rend la vente d'un Bear Call Spread attractive pour encaisser une prime chère.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
