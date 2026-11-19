@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T05:35:09",
+  "updated_at": "2026-11-19T09:01:11",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -21,9 +21,9 @@
       "niche": false,
       "score": 4.417,
       "why": "L'approbation par la FDA d'un nouveau traitement pour la myasthénie grave attire l'attention.",
-      "risk": "Une vente d'actions par un initié peut signaler un manque de confiance interne.",
+      "risk": "La vente d'actions par un initié peut signaler un manque de confiance interne.",
       "why_en": "FDA approval of a new therapy for generalized myasthenia gravis draws attention.",
-      "risk_en": "Insider share sale may signal lack of internal confidence."
+      "risk_en": "Insider share sale may indicate reduced confidence from insiders."
     },
     {
       "symbol": "ENR",
@@ -43,10 +43,10 @@
       "hv": 0.5829244984162462,
       "niche": true,
       "score": 4.197,
-      "why": "La hausse du prix cible d'UBS et le contrat avec Siemens Gamesa renforcent la perspective de croissance.",
-      "risk": "Les attentes élevées peuvent être déçues si les projets éoliens rencontrent des retards.",
-      "why_en": "UBS price target raise and Siemens Gamesa contract boost growth outlook.",
-      "risk_en": "High expectations could be disappointed if wind projects face delays."
+      "why": "La hausse du prix cible d'UBS et le contrat avec Siemens Gamesa renforcent la perspective de croissance.",
+      "risk": "Une dépendance accrue aux projets éoliens expose l'entreprise aux risques réglementaires et de capacité.",
+      "why_en": "UBS price target raise and Siemens Gamesa contract boost growth outlook.",
+      "risk_en": "Increased reliance on wind projects exposes the company to regulatory and capacity risks."
     },
     {
       "symbol": "HLT",
@@ -68,10 +68,10 @@
       "hv": 0.24236455017029482,
       "niche": false,
       "score": 4.019,
-      "why": "Hilton développe de nouveaux hôtels et programmes de formation, montrant une expansion internationale.",
-      "risk": "La dépendance à l'égard du tourisme expose l'entreprise aux fluctuations de la demande.",
-      "why_en": "Hilton is expanding with new properties and staff training programs, indicating international growth.",
-      "risk_en": "Reliance on tourism makes the company vulnerable to demand fluctuations."
+      "why": "L'expansion de la marque Hilton en Asie du Sud-Est et les récompenses renforcent son image de marque.",
+      "risk": "Une expansion rapide peut entraîner des surcoûts opérationnels et une dilution de la qualité du service.",
+      "why_en": "Hilton's expansion in Southeast Asia and award recognitions strengthen its brand image.",
+      "risk_en": "Rapid expansion may lead to higher operational costs and potential service quality dilution."
     },
     {
       "symbol": "AWK",
@@ -92,10 +92,10 @@
       "hv": 0.2915160904479322,
       "niche": false,
       "score": 3.953,
-      "why": "American Water annonce de nouvelles productions et acquisitions, soulignant une croissance du réseau d'approvisionnement.",
-      "risk": "Les projets d'expansion peuvent être freinés par des contraintes réglementaires ou environnementales.",
-      "why_en": "American Water reports new production and acquisitions, highlighting network growth.",
-      "risk_en": "Expansion projects may be hampered by regulatory or environmental constraints."
+      "why": "Les nouvelles productions et acquisitions d'American Water montrent une croissance de l'infrastructure.",
+      "risk": "Les projets d'infrastructure sont exposés aux retards réglementaires et aux dépassements de coûts.",
+      "why_en": "American Water's new production wells and acquisitions indicate infrastructure growth.",
+      "risk_en": "Infrastructure projects face regulatory delays and cost overruns."
     },
     {
       "symbol": "T",
@@ -115,10 +115,10 @@
       "hv": 0.36800218776487753,
       "niche": false,
       "score": 3.917,
-      "why": "AT&T renforce son partenariat avec Microsoft pour l'IA, ce qui peut stimuler les revenus des petites entreprises.",
-      "risk": "Le rachat envisagé par Québecor crée de l'incertitude sur la gouvernance et la stratégie future.",
-      "why_en": "AT&T expands its Microsoft AI partnership, potentially boosting SMB revenues.",
-      "risk_en": "Quebecor's takeover proposal creates uncertainty over governance and future strategy."
+      "why": "L'intérêt d'AT&T pour l'IA et la proposition de rachat de TELUS suscitent l'intérêt des investisseurs.",
+      "risk": "Les collaborations technologiques peuvent ne pas générer les revenus attendus et la proposition de rachat crée incertitude.",
+      "why_en": "AT&T's AI partnership and TELUS takeover proposal attract investor interest.",
+      "risk_en": "Tech collaborations may fall short of revenue expectations and the takeover bid adds uncertainty."
     },
     {
       "symbol": "ABNB",
@@ -139,10 +139,10 @@
       "hv": 0.5520232524975044,
       "niche": false,
       "score": 3.673,
-      "why": "Airbnb fait face à de nouvelles régulations et limite les locations, ce qui attire l'attention des investisseurs.",
-      "risk": "Les restrictions de location et les exigences de divulgation peuvent réduire l'offre et la rentabilité.",
-      "why_en": "Airbnb encounters new regulations and rental limits, drawing investor focus.",
-      "risk_en": "Rental restrictions and disclosure requirements could curb supply and profitability."
+      "why": "Les ventes d'actions par un initié et les nouvelles régulations américaines sur l'IA chinoise attirent l'attention.",
+      "risk": "Les restrictions sur les locations et les exigences de divulgation peuvent freiner la croissance du volume.",
+      "why_en": "Insider share sale and potential US AI disclosure rules draw attention.",
+      "risk_en": "Rental limits and disclosure requirements could curb volume growth."
     },
     {
       "symbol": "DHI",
@@ -162,10 +162,10 @@
       "hv": 0.5124041820783739,
       "niche": false,
       "score": 3.337,
-      "why": "D.R. Horton bénéficie de données de construction résidentielles supérieures aux prévisions.",
-      "risk": "Une dépendance à la santé du marché immobilier américain expose l'entreprise à des ralentissements.",
-      "why_en": "D.R. Horton benefits from stronger‑than‑expected housing starts data.",
-      "risk_en": "Reliance on the US housing market exposes the company to potential slowdowns."
+      "why": "Des données de construction résidentielles supérieures aux prévisions soutiennent l'intérêt pour D.R. Horton.",
+      "risk": "Une dépendance aux cycles du marché immobilier expose l'entreprise à des ralentissements économiques.",
+      "why_en": "Stronger-than-expected housing starts data support interest in D.R. Horton.",
+      "risk_en": "Reliance on housing cycles exposes the company to economic slowdowns."
     },
     {
       "symbol": "IPAR",
@@ -185,10 +185,10 @@
       "hv": 0.42274330527025783,
       "niche": true,
       "score": 3.277,
-      "why": "Interparfums publie ses prévisions financières, offrant de la visibilité aux investisseurs.",
-      "risk": "Le litige juridique impliquant Coty pourrait entraîner des coûts ou des distractions opérationnelles.",
-      "why_en": "Interparfums releases its fiscal guidance, providing investor visibility.",
-      "risk_en": "Legal dispute involving Coty may lead to costs or operational distractions."
+      "why": "La publication des prévisions financières 2027 et la mention dans un litige juridique augmentent la visibilité.",
+      "risk": "Le différend juridique avec Coty pourrait entraîner des coûts ou des restrictions de marché.",
+      "why_en": "FY2027 guidance release and mention in a legal dispute raise visibility.",
+      "risk_en": "Legal dispute with Coty could lead to costs or market restrictions."
     },
     {
       "symbol": "EVR",
@@ -209,10 +209,10 @@
       "hv": 0.5884731614439582,
       "niche": false,
       "score": 3.213,
-      "why": "Evercore ISI ajuste à la hausse les objectifs de cours pour Nike et Home Depot, signalant une confiance accrue.",
-      "risk": "Les ajustements de prix cible peuvent être revus à la baisse si les conditions du marché se détériorent.",
-      "why_en": "Evercore ISI raises price targets for Nike and Home Depot, indicating increased confidence.",
-      "risk_en": "Price target adjustments may be lowered if market conditions deteriorate."
+      "why": "Les ajustements de prix cible d'Evercore ISI sur des géants comme Nike et Home Depot montrent un suivi actif.",
+      "risk": "Les multiples ajustements de cible peuvent refléter une volatilité sous-jacente du marché.",
+      "why_en": "Evercore ISI price target adjustments on Nike and Home Depot indicate active coverage.",
+      "risk_en": "Frequent target changes may reflect underlying market volatility."
     },
     {
       "symbol": "SYNA",
@@ -232,10 +232,10 @@
       "hv": 0.061277332990174065,
       "niche": false,
       "score": 3.157,
-      "why": "Synaptics obtient l'approbation des actionnaires pour une fusion avec ON Semiconductor, ouvrant des synergies technologiques.",
-      "risk": "L'intégration post‑fusion peut rencontrer des défis d'exécution et de culture d'entreprise.",
-      "why_en": "Synaptics receives shareholder approval for merger with ON Semiconductor, opening tech synergies.",
-      "risk_en": "Post‑merger integration may face execution and cultural challenges."
+      "why": "L'approbation de la fusion avec ON Semiconductor et la reconnaissance en connectivité rurale renforcent la position de Synaptics.",
+      "risk": "Les intégrations post-fusion peuvent entraîner des défis d'exécution et des coûts inattendus.",
+      "why_en": "Merger approval with ON Semiconductor and rural connectivity award boost Synaptics' position.",
+      "risk_en": "Post‑merger integration may bring execution challenges and unexpected costs."
     },
     {
       "symbol": "EXPD",
@@ -255,10 +255,10 @@
       "hv": 0.29860026574692866,
       "niche": false,
       "score": 3.117,
-      "why": "Expeditors annonce des prévisions de résultats et un nouveau contrat logistique spatial, montrant une diversification.",
-      "risk": "Les prévisions guidées peuvent être revues à la baisse si la demande de services logistiques ralentit.",
-      "why_en": "Expeditors provides earnings guidance and a new space logistics contract, showing diversification.",
-      "risk_en": "Guided forecasts may be cut if logistics demand slows."
+      "why": "Les prévisions de résultats du quatrième trimestre et le nouveau contrat logistique spatial augmentent l'intérêt.",
+      "risk": "Le secteur logistique reste sensible aux fluctuations du commerce mondial et aux retards de projets spatiaux.",
+      "why_en": "Q4 guidance and new space logistics contract raise interest.",
+      "risk_en": "Logistics sector remains sensitive to global trade swings and space project delays."
     },
     {
       "symbol": "DEO",
@@ -278,10 +278,33 @@
       "hv": 0.34709520230193897,
       "niche": false,
       "score": 3.077,
-      "why": "Diageo lance des éditions limitées et de nouvelles offres de cocktails, renforçant son positionnement premium.",
-      "risk": "Le succès de ces produits dépend de la réception du marché et de la saisonnalité des ventes.",
-      "why_en": "Diageo launches limited editions and new cocktail offerings, strengthening its premium positioning.",
-      "risk_en": "Success of these products depends on market reception and seasonal sales."
+      "why": "Les éditions limitées de Johnnie Walker et l'expansion de la collection de cocktails de Diageo stimulent la visibilité de la marque.",
+      "risk": "Le succès de ces lancements dépend de la demande des consommateurs, qui peut être volatile.",
+      "why_en": "Limited‑edition Johnnie Walker and Diageo cocktail collection expansions boost brand visibility.",
+      "risk_en": "Success of these launches depends on consumer demand, which can be volatile."
+    },
+    {
+      "symbol": "WSM",
+      "mentions": 2,
+      "headlines": [
+        "Williams-Sonoma Receives Failing Grade in 2026 Retailer Report Card",
+        "Williams-Sonoma Recognized as High Scorer in 2026 Wood Furniture Scorecard"
+      ],
+      "last_at": "2026-11-18T19:02:02Z",
+      "sentiment": 0.0,
+      "price": 260.09,
+      "adv_usd": 256761587.29522705,
+      "chg_5d": -0.8,
+      "chg_20d": 2.7,
+      "rsi": 55.1,
+      "trend": "haussiere",
+      "hv": 0.4660541233060904,
+      "niche": false,
+      "score": 3.037,
+      "why": "Les évaluations contrastées (faible note et haute note) attirent l'attention sur la performance de Williams‑Sonoma.",
+      "risk": "Des notes faibles dans les rapports de détail peuvent affecter la confiance des investisseurs.",
+      "why_en": "Contrasting scores (failing grade and high score) draw attention to Williams‑Sonoma's performance.",
+      "risk_en": "Low scores in retail reports may erode investor confidence."
     },
     {
       "symbol": "TXT",
@@ -302,33 +325,10 @@
       "hv": 0.4710991719749853,
       "niche": false,
       "score": 3.033,
-      "why": "Textron annonce une vente d'actif majeur et un programme de rachat d'actions, indiquant une gestion active du capital.",
-      "risk": "La vente d'une division industrielle pourrait réduire les revenus récurrents de l'entreprise.",
-      "why_en": "Textron announces a major asset sale and share buyback program, indicating active capital management.",
-      "risk_en": "Divesting an industrial segment could cut the company's recurring revenue."
-    },
-    {
-      "symbol": "BAM",
-      "mentions": 2,
-      "headlines": [
-        "Morgan Stanley Maintains Hold Rating and Raises Price Target for Brookfield Asset Management",
-        "X-ELIO Signs Agreements with Canadian Solar for Battery Energy Storage Projects"
-      ],
-      "last_at": "2026-11-18T19:01:38Z",
-      "sentiment": 0.5,
-      "price": 50.37,
-      "adv_usd": 161436215.19470215,
-      "chg_5d": -4.2,
-      "chg_20d": 9.4,
-      "rsi": 51.8,
-      "trend": "neutre",
-      "hv": 0.40816808975095625,
-      "niche": false,
-      "score": 2.857,
-      "why": "Brookfield bénéficie d'une recommandation stable et d'un nouveau partenariat pour le stockage d'énergie.",
-      "risk": "Les projets d'énergie renouvelable sont sensibles aux politiques gouvernementales et aux prix de l'électricité.",
-      "why_en": "Brookfield receives a stable rating and new battery storage partnership.",
-      "risk_en": "Renewable energy projects are sensitive to government policies and electricity pricing."
+      "why": "Le contrat autonome, la vente d'une division industrielle et le programme de rachat d'actions montrent une réorientation stratégique.",
+      "risk": "La vente d'actifs majeurs et le rachat d'actions peuvent indiquer des besoins de liquidité ou des incertitudes de croissance.",
+      "why_en": "Autonomous contract, industrial unit sale, and share buyback indicate strategic repositioning.",
+      "risk_en": "Major asset sales and buybacks may signal liquidity needs or growth uncertainties."
     },
     {
       "symbol": "CME",
@@ -348,10 +348,10 @@
       "hv": 0.2776894032978762,
       "niche": false,
       "score": 2.837,
-      "why": "CME Group annonce la diffusion d'un tournoi de golf majeur, augmentant la visibilité de la marque.",
-      "risk": "Un insider vendant des actions peut créer des doutes sur la confiance interne dans la performance future.",
-      "why_en": "CME Group announces coverage of a major golf tournament, boosting brand visibility.",
-      "risk_en": "Insider share sale may raise doubts about internal confidence in future performance."
+      "why": "La couverture du tournoi de golf et la vente d'actions par un initié augmentent la visibilité de CME Group.",
+      "risk": "La vente d'actions par un insider peut être perçue comme un signal négatif par le marché.",
+      "why_en": "Golf tournament coverage and insider share sale raise CME Group's visibility.",
+      "risk_en": "Insider share sale may be interpreted as a negative market signal."
     }
   ]
 }
