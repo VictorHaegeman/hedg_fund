@@ -1,28 +1,29 @@
 {
-  "updated_at": "2026-11-19T00:01:13",
+  "updated_at": "2026-11-19T05:35:09",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
-      "symbol": "A",
-      "mentions": 1,
+      "symbol": "REGN",
+      "mentions": 2,
       "headlines": [
-        "Agilent Technologies Increases Quarterly Dividend"
+        "FDA Approves Regeneron's Livsayis for Generalized Myasthenia Gravis",
+        "Regeneron Pharmaceuticals Insider Sold Shares Worth $1,917,945"
       ],
-      "last_at": "2026-11-18T22:32:05Z",
-      "sentiment": 1.0,
-      "price": 177.33,
-      "adv_usd": 359516945.8203522,
-      "chg_5d": 0.2,
-      "chg_20d": -0.2,
-      "rsi": 55.3,
+      "last_at": "2026-11-19T03:01:47Z",
+      "sentiment": 0.5,
+      "price": 945.53,
+      "adv_usd": 954339891.2493896,
+      "chg_5d": -1.4,
+      "chg_20d": 17.4,
+      "rsi": 63.8,
       "trend": "haussiere",
-      "hv": 0.30858889018918534,
+      "hv": 0.5427114422580178,
       "niche": false,
-      "score": 5.426,
-      "why": "Le dividende trimestriel augmenté d'Agilent attire l'attention des investisseurs recherchant des revenus stables.",
-      "risk": "Le risque principal est que la hausse du dividende ne soit pas soutenue si les résultats financiers se dégradent.",
-      "why_en": "Agilent's increased quarterly dividend draws attention from investors seeking stable income.",
-      "risk_en": "The main risk is that the dividend hike may not be sustainable if financial performance weakens."
+      "score": 4.417,
+      "why": "L'approbation par la FDA d'un nouveau traitement pour la myasthénie grave attire l'attention.",
+      "risk": "Une vente d'actions par un initié peut signaler un manque de confiance interne.",
+      "why_en": "FDA approval of a new therapy for generalized myasthenia gravis draws attention.",
+      "risk_en": "Insider share sale may signal lack of internal confidence."
     },
     {
       "symbol": "ENR",
@@ -34,7 +35,7 @@
       "last_at": "2026-11-18T22:32:11Z",
       "sentiment": 0.0,
       "price": 28.29,
-      "adv_usd": 29614258.189776994,
+      "adv_usd": 29614269.50577736,
       "chg_5d": 16.4,
       "chg_20d": 24.3,
       "rsi": 74.5,
@@ -42,10 +43,35 @@
       "hv": 0.5829244984162462,
       "niche": true,
       "score": 4.197,
-      "why": "Les ajustements de prix cible d'UBS sur Energizer et le contrat de Siemens Gamesa avec Vattenfall soulignent des opportunités de croissance dans l'énergie.",
-      "risk": "Le risque réside dans la dépendance aux politiques énergétiques et aux fluctuations des prix de l'énergie.",
-      "why_en": "UBS's price target lift for Energizer and Siemens Gamesa's wind turbine supply deal highlight growth prospects in the energy sector.",
-      "risk_en": "The risk lies in reliance on energy policy shifts and volatile energy prices."
+      "why": "La hausse du prix cible d'UBS et le contrat avec Siemens Gamesa renforcent la perspective de croissance.",
+      "risk": "Les attentes élevées peuvent être déçues si les projets éoliens rencontrent des retards.",
+      "why_en": "UBS price target raise and Siemens Gamesa contract boost growth outlook.",
+      "risk_en": "High expectations could be disappointed if wind projects face delays."
+    },
+    {
+      "symbol": "HLT",
+      "mentions": 4,
+      "headlines": [
+        "Hilton Announces First Tempo by Hilton Property in Southeast Asia",
+        "Hilton Expands Free Language Training Program for Global Franchise Staff",
+        "Embassy Suites by Hilton Aruba Resort Named Winner in Good Housekeeping 2027 Travel Awards",
+        "Homewood Suites by Hilton Amherst Completes Major Renovation"
+      ],
+      "last_at": "2026-11-19T03:01:46Z",
+      "sentiment": 0.0,
+      "price": 373.03,
+      "adv_usd": 701150821.2446594,
+      "chg_5d": -1.0,
+      "chg_20d": 3.0,
+      "rsi": 62.4,
+      "trend": "haussiere",
+      "hv": 0.24236455017029482,
+      "niche": false,
+      "score": 4.019,
+      "why": "Hilton développe de nouveaux hôtels et programmes de formation, montrant une expansion internationale.",
+      "risk": "La dépendance à l'égard du tourisme expose l'entreprise aux fluctuations de la demande.",
+      "why_en": "Hilton is expanding with new properties and staff training programs, indicating international growth.",
+      "risk_en": "Reliance on tourism makes the company vulnerable to demand fluctuations."
     },
     {
       "symbol": "AWK",
@@ -58,7 +84,7 @@
       "last_at": "2026-11-18T23:01:41Z",
       "sentiment": 0.0,
       "price": 150.13,
-      "adv_usd": 309367329.6378937,
+      "adv_usd": 309367262.0793915,
       "chg_5d": 0.9,
       "chg_20d": 12.1,
       "rsi": 62.7,
@@ -66,10 +92,10 @@
       "hv": 0.2915160904479322,
       "niche": false,
       "score": 3.953,
-      "why": "Les nouvelles productions et acquisitions d'American Water montrent une expansion de son réseau de services publics.",
-      "risk": "Le principal risque est lié à la régulation stricte du secteur de l'eau et aux possibles litiges de consommation.",
-      "why_en": "New production and acquisitions by American Water indicate expansion of its utility network.",
-      "risk_en": "The main risk stems from strict water utility regulation and potential consumer litigation."
+      "why": "American Water annonce de nouvelles productions et acquisitions, soulignant une croissance du réseau d'approvisionnement.",
+      "risk": "Les projets d'expansion peuvent être freinés par des contraintes réglementaires ou environnementales.",
+      "why_en": "American Water reports new production and acquisitions, highlighting network growth.",
+      "risk_en": "Expansion projects may be hampered by regulatory or environmental constraints."
     },
     {
       "symbol": "T",
@@ -81,7 +107,7 @@
       "last_at": "2026-11-18T23:01:44Z",
       "sentiment": 1.0,
       "price": 21.95,
-      "adv_usd": 1049176626.8071706,
+      "adv_usd": 1049181358.1298351,
       "chg_5d": -1.4,
       "chg_20d": 0.2,
       "rsi": 45.2,
@@ -89,10 +115,10 @@
       "hv": 0.36800218776487753,
       "niche": false,
       "score": 3.917,
-      "why": "L'intérêt pour TELUS suite à la proposition d'acquisition de Québecor et le partenariat AT&T‑Microsoft sur l'IA suscitent l'attention.",
-      "risk": "Le risque principal est l'incertitude autour de l'intégration de Québecor et de la réussite commerciale des solutions IA.",
-      "why_en": "Interest in TELUS due to the Quebecor takeover proposal and AT&T's AI partnership with Microsoft draws attention.",
-      "risk_en": "The main risk is uncertainty around Quebecor integration and the commercial success of AI solutions."
+      "why": "AT&T renforce son partenariat avec Microsoft pour l'IA, ce qui peut stimuler les revenus des petites entreprises.",
+      "risk": "Le rachat envisagé par Québecor crée de l'incertitude sur la gouvernance et la stratégie future.",
+      "why_en": "AT&T expands its Microsoft AI partnership, potentially boosting SMB revenues.",
+      "risk_en": "Quebecor's takeover proposal creates uncertainty over governance and future strategy."
     },
     {
       "symbol": "ABNB",
@@ -105,7 +131,7 @@
       "last_at": "2026-11-18T22:31:56Z",
       "sentiment": 0.0,
       "price": 180.21,
-      "adv_usd": 876115754.9861748,
+      "adv_usd": 876171142.5317383,
       "chg_5d": -0.5,
       "chg_20d": 3.8,
       "rsi": 53.5,
@@ -113,10 +139,10 @@
       "hv": 0.5520232524975044,
       "niche": false,
       "score": 3.673,
-      "why": "Les ventes d'actions d'Airbnb Insider, les nouvelles exigences de divulgation aux USA et les limites de location montrent des évolutions majeures pour la plateforme.",
-      "risk": "Le risque majeur est la possible réduction de l'offre de locations suite aux nouvelles restrictions réglementaires.",
-      "why_en": "Insider share sale, potential US disclosure rules, and new rental limits indicate major changes for Airbnb.",
-      "risk_en": "The key risk is a potential shrinkage of rental supply due to tighter regulatory limits."
+      "why": "Airbnb fait face à de nouvelles régulations et limite les locations, ce qui attire l'attention des investisseurs.",
+      "risk": "Les restrictions de location et les exigences de divulgation peuvent réduire l'offre et la rentabilité.",
+      "why_en": "Airbnb encounters new regulations and rental limits, drawing investor focus.",
+      "risk_en": "Rental restrictions and disclosure requirements could curb supply and profitability."
     },
     {
       "symbol": "DHI",
@@ -128,7 +154,7 @@
       "last_at": "2026-11-18T23:01:35Z",
       "sentiment": 0.5,
       "price": 144.39,
-      "adv_usd": 497662293.53134763,
+      "adv_usd": 497697986.7391968,
       "chg_5d": -1.8,
       "chg_20d": 4.2,
       "rsi": 48.0,
@@ -136,10 +162,10 @@
       "hv": 0.5124041820783739,
       "niche": false,
       "score": 3.337,
-      "why": "Les débuts plus forts que prévu des mises en chantier US et la reconnaissance de Donald Ray Horton renforcent la visibilité de D.R. Horton.",
-      "risk": "Le risque reste la sensibilité aux cycles du marché immobilier résidentiel.",
-      "why_en": "Stronger‑than‑expected US housing starts and Donald Ray Horton's honor boost D.R. Horton's profile.",
-      "risk_en": "The risk remains exposure to residential real‑estate cycle fluctuations."
+      "why": "D.R. Horton bénéficie de données de construction résidentielles supérieures aux prévisions.",
+      "risk": "Une dépendance à la santé du marché immobilier américain expose l'entreprise à des ralentissements.",
+      "why_en": "D.R. Horton benefits from stronger‑than‑expected housing starts data.",
+      "risk_en": "Reliance on the US housing market exposes the company to potential slowdowns."
     },
     {
       "symbol": "IPAR",
@@ -151,7 +177,7 @@
       "last_at": "2026-11-18T23:01:56Z",
       "sentiment": 0.0,
       "price": 133.73,
-      "adv_usd": 30931415.999484252,
+      "adv_usd": 30931175.285491943,
       "chg_5d": 0.4,
       "chg_20d": 18.1,
       "rsi": 65.7,
@@ -159,10 +185,10 @@
       "hv": 0.42274330527025783,
       "niche": true,
       "score": 3.277,
-      "why": "L'annonce de guidance 2027 et la mention dans un litige juridique attirent l'attention sur la stratégie et les risques d'Interparfums.",
-      "risk": "Le risque principal provient du litige potentiel qui pourrait affecter la réputation et les coûts.",
-      "why_en": "2027 guidance announcement and mention in a legal dispute draw focus to Interparfums' strategy and risks.",
-      "risk_en": "The main risk stems from the potential lawsuit, which could impact reputation and costs."
+      "why": "Interparfums publie ses prévisions financières, offrant de la visibilité aux investisseurs.",
+      "risk": "Le litige juridique impliquant Coty pourrait entraîner des coûts ou des distractions opérationnelles.",
+      "why_en": "Interparfums releases its fiscal guidance, providing investor visibility.",
+      "risk_en": "Legal dispute involving Coty may lead to costs or operational distractions."
     },
     {
       "symbol": "EVR",
@@ -175,7 +201,7 @@
       "last_at": "2026-11-18T19:04:15Z",
       "sentiment": 0.0,
       "price": 289.65,
-      "adv_usd": 147233955.14512482,
+      "adv_usd": 147601680.2948761,
       "chg_5d": -2.8,
       "chg_20d": 14.9,
       "rsi": 52.7,
@@ -183,10 +209,10 @@
       "hv": 0.5884731614439582,
       "niche": false,
       "score": 3.213,
-      "why": "Les ajustements de prix cible d'Evercore ISI sur Nike et Home Depot indiquent une réévaluation positive du secteur retail.",
-      "risk": "Le risque est que les attentes de hausse ne se concrétisent pas si la consommation reste volatile.",
-      "why_en": "Evercore ISI's price target upgrades for Nike and Home Depot signal a positive reassessment of retail.",
-      "risk_en": "The risk is that bullish expectations may not materialize if consumer spending stays volatile."
+      "why": "Evercore ISI ajuste à la hausse les objectifs de cours pour Nike et Home Depot, signalant une confiance accrue.",
+      "risk": "Les ajustements de prix cible peuvent être revus à la baisse si les conditions du marché se détériorent.",
+      "why_en": "Evercore ISI raises price targets for Nike and Home Depot, indicating increased confidence.",
+      "risk_en": "Price target adjustments may be lowered if market conditions deteriorate."
     },
     {
       "symbol": "SYNA",
@@ -198,7 +224,7 @@
       "last_at": "2026-11-18T19:02:10Z",
       "sentiment": 0.0,
       "price": 117.67,
-      "adv_usd": 133181503.87870331,
+      "adv_usd": 133223782.70904541,
       "chg_5d": -0.2,
       "chg_20d": 0.1,
       "rsi": 57.3,
@@ -206,10 +232,10 @@
       "hv": 0.061277332990174065,
       "niche": false,
       "score": 3.157,
-      "why": "L'approbation de la fusion avec ON Semiconductor et la reconnaissance en connectivité rurale mettent en avant la croissance de Synaptics.",
-      "risk": "Le risque principal est l'intégration post‑fusion qui pourrait entraîner des retards ou des coûts supplémentaires.",
-      "why_en": "Merger approval with ON Semiconductor and rural connectivity leadership highlight Synaptics' growth.",
-      "risk_en": "The main risk is post‑merger integration, which could cause delays or extra costs."
+      "why": "Synaptics obtient l'approbation des actionnaires pour une fusion avec ON Semiconductor, ouvrant des synergies technologiques.",
+      "risk": "L'intégration post‑fusion peut rencontrer des défis d'exécution et de culture d'entreprise.",
+      "why_en": "Synaptics receives shareholder approval for merger with ON Semiconductor, opening tech synergies.",
+      "risk_en": "Post‑merger integration may face execution and cultural challenges."
     },
     {
       "symbol": "EXPD",
@@ -221,7 +247,7 @@
       "last_at": "2026-11-18T23:01:36Z",
       "sentiment": 0.5,
       "price": 188.88,
-      "adv_usd": 287088858.541626,
+      "adv_usd": 287454605.78308105,
       "chg_5d": -2.9,
       "chg_20d": -4.1,
       "rsi": 42.8,
@@ -229,10 +255,10 @@
       "hv": 0.29860026574692866,
       "niche": false,
       "score": 3.117,
-      "why": "Les prévisions de résultats Q4 2026 et le contrat logistique pour le spaceport montrent des opportunités de revenus diversifiés.",
-      "risk": "Le risque réside dans la dépendance aux volumes de transport international et aux retards de projets spatiaux.",
-      "why_en": "Q4 2026 earnings guidance and the spaceport logistics contract indicate diversified revenue opportunities.",
-      "risk_en": "The risk lies in reliance on international freight volumes and potential space project delays."
+      "why": "Expeditors annonce des prévisions de résultats et un nouveau contrat logistique spatial, montrant une diversification.",
+      "risk": "Les prévisions guidées peuvent être revues à la baisse si la demande de services logistiques ralentit.",
+      "why_en": "Expeditors provides earnings guidance and a new space logistics contract, showing diversification.",
+      "risk_en": "Guided forecasts may be cut if logistics demand slows."
     },
     {
       "symbol": "DEO",
@@ -244,7 +270,7 @@
       "last_at": "2026-11-18T16:31:46Z",
       "sentiment": 0.0,
       "price": 99.69,
-      "adv_usd": 111079822.50946197,
+      "adv_usd": 111080056.78096771,
       "chg_5d": -0.6,
       "chg_20d": 7.4,
       "rsi": 58.9,
@@ -252,33 +278,10 @@
       "hv": 0.34709520230193897,
       "niche": false,
       "score": 3.077,
-      "why": "Les éditions limitées de Johnnie Walker et l'expansion de la collection de cocktails de Diageo renforcent l'attrait de la marque.",
-      "risk": "Le risque principal est la dépendance aux tendances de consommation de spiritueux premium, qui peuvent fluctuer.",
-      "why_en": "Limited‑edition Johnnie Walker releases and Diageo's cocktail collection expansion boost brand appeal.",
-      "risk_en": "The main risk is reliance on premium spirits consumption trends, which can be volatile."
-    },
-    {
-      "symbol": "WSM",
-      "mentions": 2,
-      "headlines": [
-        "Williams-Sonoma Receives Failing Grade in 2026 Retailer Report Card",
-        "Williams-Sonoma Recognized as High Scorer in 2026 Wood Furniture Scorecard"
-      ],
-      "last_at": "2026-11-18T19:02:02Z",
-      "sentiment": 0.0,
-      "price": 260.09,
-      "adv_usd": 256757269.80128783,
-      "chg_5d": -0.8,
-      "chg_20d": 2.7,
-      "rsi": 55.1,
-      "trend": "haussiere",
-      "hv": 0.4660541233060904,
-      "niche": false,
-      "score": 3.037,
-      "why": "Les notes contrastées du rapport Retailer Card et du scorecard bois montrent une visibilité mitigée pour Williams‑Sonoma.",
-      "risk": "Le risque principal est la perception négative des investisseurs suite à la note d'échec.",
-      "why_en": "Contrasting scores from the Retailer Report Card and wood furniture scorecard provide mixed visibility for Williams‑Sonoma.",
-      "risk_en": "The main risk is negative investor perception due to the failing grade."
+      "why": "Diageo lance des éditions limitées et de nouvelles offres de cocktails, renforçant son positionnement premium.",
+      "risk": "Le succès de ces produits dépend de la réception du marché et de la saisonnalité des ventes.",
+      "why_en": "Diageo launches limited editions and new cocktail offerings, strengthening its premium positioning.",
+      "risk_en": "Success of these products depends on market reception and seasonal sales."
     },
     {
       "symbol": "TXT",
@@ -291,7 +294,7 @@
       "last_at": "2026-11-18T19:01:54Z",
       "sentiment": 0.3333333333333333,
       "price": 82.79,
-      "adv_usd": 159914158.17203483,
+      "adv_usd": 159914369.28653717,
       "chg_5d": -3.7,
       "chg_20d": 7.1,
       "rsi": 51.0,
@@ -299,33 +302,10 @@
       "hv": 0.4710991719749853,
       "niche": false,
       "score": 3.033,
-      "why": "Le contrat autonome de livraison de carburant, la vente du segment industriel et le programme de rachat d'actions indiquent des mouvements stratégiques majeurs chez Textron.",
-      "risk": "Le risque majeur est l'incertitude sur la performance du segment vendu et sur l'impact du rachat d'actions sur la trésorerie.",
-      "why_en": "Autonomous fuel delivery contract, industrial segment sale, and share buyback program signal major strategic moves at Textron.",
-      "risk_en": "The key risk is uncertainty over the sold segment's performance and the buyback's impact on cash reserves."
-    },
-    {
-      "symbol": "HLT",
-      "mentions": 2,
-      "headlines": [
-        "Embassy Suites by Hilton Aruba Resort Named Winner in Good Housekeeping 2027 Travel Awards",
-        "Homewood Suites by Hilton Amherst Completes Major Renovation"
-      ],
-      "last_at": "2026-11-18T19:02:12Z",
-      "sentiment": 0.0,
-      "price": 373.03,
-      "adv_usd": 701050625.3869873,
-      "chg_5d": -1.0,
-      "chg_20d": 3.0,
-      "rsi": 62.4,
-      "trend": "haussiere",
-      "hv": 0.24236455017029482,
-      "niche": false,
-      "score": 2.997,
-      "why": "Les récompenses Good Housekeeping et les rénovations majeures renforcent la notoriété des marques Hilton.",
-      "risk": "Le risque principal est la dépendance à la demande touristique, sensible aux conditions économiques.",
-      "why_en": "Good Housekeeping award and major renovations boost Hilton brand visibility.",
-      "risk_en": "The main risk is reliance on tourism demand, which is sensitive to economic conditions."
+      "why": "Textron annonce une vente d'actif majeur et un programme de rachat d'actions, indiquant une gestion active du capital.",
+      "risk": "La vente d'une division industrielle pourrait réduire les revenus récurrents de l'entreprise.",
+      "why_en": "Textron announces a major asset sale and share buyback program, indicating active capital management.",
+      "risk_en": "Divesting an industrial segment could cut the company's recurring revenue."
     },
     {
       "symbol": "BAM",
@@ -337,7 +317,7 @@
       "last_at": "2026-11-18T19:01:38Z",
       "sentiment": 0.5,
       "price": 50.37,
-      "adv_usd": 161347591.70008144,
+      "adv_usd": 161436215.19470215,
       "chg_5d": -4.2,
       "chg_20d": 9.4,
       "rsi": 51.8,
@@ -345,10 +325,33 @@
       "hv": 0.40816808975095625,
       "niche": false,
       "score": 2.857,
-      "why": "Le maintien du rating Hold et le nouveau prix cible de Morgan Stanley pour Brookfield, ainsi que les accords de stockage d'énergie de X‑ELIO, soulignent des perspectives de stabilité et de croissance.",
-      "risk": "Le risque réside dans la volatilité des marchés d'actifs alternatifs et les défis d'exécution des projets de stockage.",
-      "why_en": "Morgan Stanley's Hold rating with a raised target for Brookfield and X‑ELIO's battery storage deals highlight stability and growth prospects.",
-      "risk_en": "The risk lies in volatility of alternative asset markets and execution challenges of storage projects."
+      "why": "Brookfield bénéficie d'une recommandation stable et d'un nouveau partenariat pour le stockage d'énergie.",
+      "risk": "Les projets d'énergie renouvelable sont sensibles aux politiques gouvernementales et aux prix de l'électricité.",
+      "why_en": "Brookfield receives a stable rating and new battery storage partnership.",
+      "risk_en": "Renewable energy projects are sensitive to government policies and electricity pricing."
+    },
+    {
+      "symbol": "CME",
+      "mentions": 2,
+      "headlines": [
+        "CME Group Tour Championship Coverage Announced",
+        "CME Group Insider Terrence Duffy Files Notice of Proposed Stock Sale"
+      ],
+      "last_at": "2026-11-19T01:01:55Z",
+      "sentiment": 0.0,
+      "price": 310.25,
+      "adv_usd": 587903499.4126892,
+      "chg_5d": -1.8,
+      "chg_20d": 4.9,
+      "rsi": 59.6,
+      "trend": "haussiere",
+      "hv": 0.2776894032978762,
+      "niche": false,
+      "score": 2.837,
+      "why": "CME Group annonce la diffusion d'un tournoi de golf majeur, augmentant la visibilité de la marque.",
+      "risk": "Un insider vendant des actions peut créer des doutes sur la confiance interne dans la performance future.",
+      "why_en": "CME Group announces coverage of a major golf tournament, boosting brand visibility.",
+      "risk_en": "Insider share sale may raise doubts about internal confidence in future performance."
     }
   ]
 }
