@@ -83,3 +83,15 @@ Exécuté : 2026-11-19T17:00:00 | équité 94,318.35 $ (-1.44 % jour) | bourse U
   IA : BUY_STOCK ACM | confiance 0.8 | ACM montre une forte dynamique haussière avec un RSI très élevé, un IV/HV inférieur à 1 et aucune annonce de résultats imminente, ce qui en fait le meilleur candidat pour un achat d'action prudent.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-19T17:30:00 | équité 94,469.32 $ (-1.28 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +4,659 $ | Γ -273.87 (Δ$ -411 pour 1 %) | ν -15 $/pt | Θ +23 $/j | ρ -12 $/pt
+  Idées presse ajoutées : ACM, SNY, MRSH, LOW, ACN, ECL, RKT, WFC  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, UNH, ACM, COIN, BA, CAT, WMT, INTC, JPM, GS, MRK, WFC, IWM, SOL/USD, LTC/USD, ADA/USD, ETH/USD, XRP/USD | covered call possible sur : ACHC
+  Vente de prime possible : WFC (IV/HV 1.2, BEAR_CALL_SPREAD), COIN (IV/HV 1.11, BEAR_CALL_SPREAD)
+  Notes IA : COIN BEAR_CALL_SPREAD 0.71 · WFC BEAR_CALL_SPREAD 0.68 · ACM BUY_STOCK 0.66
+  IA : BEAR_CALL_SPREAD COIN | confiance 0.71 | Vente d'un bear call spread sur COIN profite de la prime élevée (IV/HV 1.11) et de la tendance baissière, tout en limitant le risque maximal au crédit reçu.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
