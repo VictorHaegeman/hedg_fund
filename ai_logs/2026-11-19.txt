@@ -131,3 +131,15 @@ Exécuté : 2026-11-19T19:00:00 | équité 94,353.89 $ (-1.40 % jour) | bourse U
   IA : BEAR_CALL_SPREAD COIN | confiance 0.72 | Le spread BEAR_CALL_SPREAD sur COIN profite d'une prime élevée (IV/HV 1.14) et d'une forte tendance baissière, tout en respectant les règles de vente de prime lorsqu'aucun résultat n'est prévu prochainement.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-19T19:30:00 | équité 94,325.82 $ (-1.43 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +4,731 $ | Γ -364.91 (Δ$ -543 pour 1 %) | ν -19 $/pt | Θ +27 $/j | ρ -12 $/pt
+  Idées presse ajoutées : ACM, WWD, VSNT, CB, LOW, TGT, EXPD, ACN  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, COIN, BA, ACM, UNH, CAT, JPM, WMT, NKE, AMD, NFLX, ORCL, IWM, XRP/USD, ETH/USD, SOL/USD, LTC/USD, BCH/USD | covered call possible sur : ACHC
+  Vente de prime possible : NFLX (IV/HV 1.17, BEAR_CALL_SPREAD), COIN (IV/HV 1.15, BEAR_CALL_SPREAD)
+  Notes IA : COIN BEAR_CALL_SPREAD 0.72 · NFLX BEAR_CALL_SPREAD 0.68 · UNH BEAR_PUT_SPREAD 0.66
+  IA : BEAR_CALL_SPREAD COIN | confiance 0.72 | COIN présente une forte tendance baissière, un RSI très bas et une prime d'option chère (IV/HV 1.15), ce qui rend le BEAR_CALL_SPREAD approprié pour profiter d'une éventuelle poursuite de la baisse tout en limitant le risque.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
