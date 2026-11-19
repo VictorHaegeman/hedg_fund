@@ -23,3 +23,15 @@ Exécuté : 2026-11-19T15:00:01 | équité 95,401.27 $ (-0.31 % jour) | bourse U
   IA : BEAR_CALL_SPREAD MRK | confiance 0.78 | Le MRK présente une forte tendance baissière, un RSI très bas et une volatilité implicite élevée (IV/HV 1.18), ce qui rend la vente d'un Bear Call Spread attractive pour encaisser une prime chère.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-19T15:30:01 | équité 93,631.21 $ (-2.16 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +1,981 $ | Γ +140.46 (Δ$ +215 pour 1 %) | ν -11 $/pt | Θ +40 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ACM, SNY, MRSH, LOW, ACN, ECL, RKT, WFC  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, UNH, ACM, COIN, BA, CAT, WMT, INTC, JPM, MRK, WFC, QCOM, IWM, DOGE/USD, BCH/USD, ETH/USD, SOL/USD, XRP/USD | covered call possible sur : ACHC
+  Vente de prime possible : MRK (IV/HV 1.18, BEAR_CALL_SPREAD), WFC (IV/HV 1.17, BEAR_CALL_SPREAD), COIN (IV/HV 1.11, BEAR_CALL_SPREAD)
+  Notes IA : INTC BEAR_PUT_SPREAD 0.72 · UNH BEAR_PUT_SPREAD 0.7 · COIN BEAR_CALL_SPREAD 0.68
+  IA : BEAR_PUT_SPREAD INTC | confiance 0.72 | INTC montre une forte tendance baissière, un RSI très bas et des options très bon marché (IV/HV 0.55). Aucun résultat d'entreprise n'est prévu dans les 45 prochains jours, ce qui rend un spread put baissier à coût limité approprié.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
