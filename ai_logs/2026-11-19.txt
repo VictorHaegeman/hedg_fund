@@ -71,3 +71,15 @@ Exécuté : 2026-11-19T16:35:44 | équité 94,363.65 $ (-1.39 % jour) | bourse U
   IA : BEAR_CALL_SPREAD WFC | confiance 0.8 | Vente d'un BEAR_CALL_SPREAD sur WFC : tendance baissière claire, prime très chère (IV/HV 1.17) et aucun résultat prévu dans les 45 prochains jours, ce qui maximise le crédit tout en limitant le risque.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.1 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-19T17:00:00 | équité 94,318.35 $ (-1.44 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +3,597 $ | Γ -300.32 (Δ$ -452 pour 1 %) | ν -17 $/pt | Θ +25 $/j | ρ -13 $/pt
+  Idées presse ajoutées : ACM, SNY, MRSH, LOW, ACN, ECL, RKT, WFC  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, UNH, ACM, COIN, BA, CAT, WMT, INTC, JPM, GS, MRK, WFC, IWM, XRP/USD, SOL/USD, ADA/USD, ETH/USD, DOGE/USD | covered call possible sur : ACHC
+  Vente de prime possible : WFC (IV/HV 1.18, BEAR_CALL_SPREAD), COIN (IV/HV 1.14, BEAR_CALL_SPREAD)
+  Notes IA : ACM BUY_STOCK 0.8 · COIN BEAR_CALL_SPREAD 0.7 · WFC BEAR_CALL_SPREAD 0.68
+  IA : BUY_STOCK ACM | confiance 0.8 | ACM montre une forte dynamique haussière avec un RSI très élevé, un IV/HV inférieur à 1 et aucune annonce de résultats imminente, ce qui en fait le meilleur candidat pour un achat d'action prudent.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
