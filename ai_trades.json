@@ -173,7 +173,7 @@
   {
     "id": "673b09aedd",
     "opened_at": "2026-11-06T16:30:35",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "stock",
     "strategy": "BUY_STOCK",
     "underlying": "ACHC",
@@ -188,10 +188,12 @@
     "confidence": 0.82,
     "reasoning": "ACHC montre une forte hausse récente, un RSI élevé indiquant un momentum positif et des options bon marché (IV/HV 0.77), ce qui justifie un achat direct avec un risque limité.",
     "reasoning_en": "ACHC displays strong recent upside, high RSI indicating positive momentum, and cheap options (IV/HV 0.77), supporting a direct stock purchase with limited risk.",
-    "pnl": null,
+    "pnl": -289.17,
     "stop_order_id": "9907b786-95c3-4a09-b67b-dee63fb6904d",
     "stop_price": 34.56,
-    "stop_note": "vrai stop Alpaca à 34.56"
+    "stop_note": "vrai stop Alpaca à 34.56",
+    "closed_at": "2026-11-19T20:55:00",
+    "close_reason": "Stop-loss (vrai ordre Alpaca)"
   },
   {
     "id": "b97d917039",
@@ -301,19 +303,19 @@
     "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
     "pnl": null,
     "attr": {
-      "delta": 1880.78,
-      "gamma": -7.27,
-      "theta": -4.35,
-      "vega": -182.21
+      "delta": 1927.76,
+      "gamma": -7.55,
+      "theta": -3.84,
+      "vega": -99.48
     },
     "attr_prev": {
-      "at": "2026-11-19T20:30:00",
-      "S": 147.13,
-      "iv": 0.52925,
-      "delta": -102.12225892114742,
-      "gamma": -2.6064937673740065,
-      "theta_day": 29.321231463103224,
-      "vega_pt": -20.301352862729036
+      "at": "2026-11-19T20:55:01",
+      "S": 146.67,
+      "iv": 0.4885,
+      "delta": -105.80457547559621,
+      "gamma": -3.405923171241483,
+      "theta_day": 31.551914663702775,
+      "vega_pt": -24.00383542867824
     }
   }
 ]
