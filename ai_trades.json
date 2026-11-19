@@ -166,7 +166,7 @@
     "reasoning": "MCD montre une forte tendance haussière avec +7.7% sur 5 jours, un RSI élevé qui confirme le momentum, et des options bon marché (IV/HV 0.77), ce qui rend l'achat direct plus attractif que les stratégies d'options coûteuses.",
     "reasoning_en": "MCD displays a strong upward trend with +7.7% over 5 days, a high RSI confirming momentum, and cheap options (IV/HV 0.77), making a direct stock purchase more attractive than costly option strategies.",
     "pnl": null,
-    "stop_order_id": "b0b999cd-1061-4b31-b18e-ee1918c8d4d6",
+    "stop_order_id": null,
     "stop_price": 269.66,
     "stop_note": "vrai stop Alpaca à 269.66"
   },
@@ -301,19 +301,19 @@
     "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
     "pnl": null,
     "attr": {
-      "delta": 1442.97,
-      "gamma": 28.67,
-      "theta": -10.09,
-      "vega": -190.62
+      "delta": 997.12,
+      "gamma": 3.09,
+      "theta": -9.64,
+      "vega": -241.28
     },
     "attr_prev": {
-      "at": "2026-11-19T12:01:03",
-      "S": 150.1,
-      "iv": 0.6692,
-      "delta": -79.1912942013085,
-      "gamma": -1.614339041760756,
-      "theta_day": 4.309512271273447,
-      "vega_pt": -8.151546501665988
+      "at": "2026-11-19T14:32:12",
+      "S": 155.73,
+      "iv": 0.73135,
+      "delta": -78.02588356424451,
+      "gamma": -0.9057892754676047,
+      "theta_day": -10.661136740124434,
+      "vega_pt": -1.0863017636699077
     }
   }
 ]

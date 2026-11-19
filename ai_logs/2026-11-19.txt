@@ -1,0 +1,13 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-19T14:32:11 | équité 95,804.17 $ (+0.11 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  [!] gestion MCD : DELETE /v2/positions/MCD → 403: {"available":"0","code":40310000,"existing_qty":"34","held_for_orders":"34","message":"i
+  Grecques du portefeuille : Δ +8,964 $ | Γ -141.06 (Δ$ -220 pour 1 %) | ν -1 $/pt | Θ -11 $/j | ρ -10 $/pt
+  Idées presse ajoutées : ACM, SNY, MRSH, LOW, ACN, ECL, RKT, WFC  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, UNH, ACM, COIN, WMT, INTC, WFC, QCOM, NKE, ORCL, MU, JPM, IWM, DOGE/USD, ETH/USD, SOL/USD, XRP/USD, DOT/USD | covered call possible sur : ACHC
+  Vente de prime possible : WFC (IV/HV 1.12, BEAR_CALL_SPREAD)
+  Notes IA : WFC BEAR_CALL_SPREAD 0.71 · ACM BUY_STOCK 0.66 · INTC BEAR_PUT_SPREAD 0.65
+  IA : BEAR_CALL_SPREAD WFC | confiance 0.71 | WFC présente une forte tendance baissière, un IV/HV de 1.12 le rend cher à l'achat mais intéressant à vendre, aucune annonce de résultats proche, ce qui correspond à la stratégie BEAR_CALL_SPREAD.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
