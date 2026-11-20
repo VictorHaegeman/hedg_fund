@@ -1,0 +1,13 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-20T14:32:15 | équité 94,681.56 $ (+0.78 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  BEAR_PUT_SPREAD NVDA : clôture (Take-profit) non exécutée au prix juste, nouvel essai au prochain cycle
+  Grecques du portefeuille : Δ +6,098 $ | Γ -453.90 (Δ$ -643 pour 1 %) | ν -17 $/pt | Θ +19 $/j | ρ -8 $/pt
+  Idées presse ajoutées : TGT, BRBR*, G, EXPD, HLF*, TJX, ABBV, T  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BRBR, PLTR, CRM, INTC, COIN, CAT, META, GS, UNH, COST, NKE, BA, IWM, DOGE/USD, LTC/USD, BCH/USD, DOT/USD, ADA/USD
+  Vente de prime possible : META (IV/HV 1.27, BEAR_CALL_SPREAD), COIN (IV/HV 1.14, BEAR_CALL_SPREAD), PLTR (IV/HV 1.12, BEAR_CALL_SPREAD)
+  Notes IA : META BEAR_CALL_SPREAD 0.71 · PLTR BEAR_CALL_SPREAD 0.68 · COIN BEAR_CALL_SPREAD 0.66
+  IA : BEAR_CALL_SPREAD META | confiance 0.71 | META présente une tendance baissière claire, un IV/HV de 1.27 indiquant des options chères, et aucun résultat d'entreprise prévu dans les 45 prochains jours, ce qui rend le BEAR_CALL_SPREAD approprié.
+  OUVERT BEAR_CALL_SPREAD META | coût 3,890 $ | points morts [599.8589] | P(gain) 67% | Θ 6.88 $/j
+  Idées presse : 15 idées rafraîchies

@@ -303,19 +303,81 @@
     "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
     "pnl": null,
     "attr": {
-      "delta": 2059.18,
-      "gamma": -9.06,
-      "theta": 9.21,
-      "vega": -682.73
+      "delta": 2117.58,
+      "gamma": -54.58,
+      "theta": 5.66,
+      "vega": -723.87
     },
     "attr_prev": {
-      "at": "2026-11-20T12:01:04",
-      "S": 145.29,
-      "iv": 0.4871,
-      "delta": -16.087593500683113,
-      "gamma": -6.908551986687703,
-      "theta_day": -33.6528464729235,
-      "vega_pt": -4.07572913556276
+      "at": "2026-11-20T14:33:06",
+      "S": 141.66,
+      "iv": 0.58805,
+      "delta": -66.67802335950961,
+      "gamma": -3.204139424539533,
+      "theta_day": 19.195144439534936,
+      "vega_pt": -17.14444835064166
     }
+  },
+  {
+    "id": "eb6d71c04c",
+    "opened_at": "2026-11-20T14:33:47",
+    "status": "OPEN",
+    "kind": "options",
+    "strategy": "BEAR_CALL_SPREAD",
+    "underlying": "META",
+    "qty": 2,
+    "expiry": "2026-12-18",
+    "legs": [
+      {
+        "symbol": "META261218C00590000",
+        "side": "sell",
+        "strike": 590.0,
+        "type": "call",
+        "ratio": 1,
+        "iv": 0.4549,
+        "bid": 22.78,
+        "ask": 23.66
+      },
+      {
+        "symbol": "META261218C00620000",
+        "side": "buy",
+        "strike": 620.0,
+        "type": "call",
+        "ratio": 1,
+        "iv": 0.4387,
+        "bid": 12.22,
+        "ask": 12.57
+      }
+    ],
+    "cost": 3890.0,
+    "max_loss": 3890.0,
+    "max_gain": 2110.0,
+    "credit": 2042.0,
+    "tp_amount": 1055.0,
+    "sl_amount": 2110.0,
+    "spot_at_entry": 575.24,
+    "covers": null,
+    "delta_hedged": false,
+    "hedge_shares": 0,
+    "hedge_cash": 0.0,
+    "analysis": {
+      "iv": 0.4468,
+      "hv": 0.3689,
+      "delta": -15.11,
+      "gamma": -0.0667,
+      "vega_per_pt": -7.56,
+      "theta_per_day": 6.88,
+      "breakevens": [
+        599.8589
+      ],
+      "prob_profit": 0.669,
+      "vol_edge": 1.118
+    },
+    "source": null,
+    "niche": false,
+    "confidence": 0.71,
+    "reasoning": "META présente une tendance baissière claire, un IV/HV de 1.27 indiquant des options chères, et aucun résultat d'entreprise prévu dans les 45 prochains jours, ce qui rend le BEAR_CALL_SPREAD approprié.",
+    "reasoning_en": "META shows a clear downtrend, an IV/HV of 1.27 indicating expensive options, and no earnings within the next 45 days, making a BEAR_CALL_SPREAD suitable.",
+    "pnl": null
   }
 ]
