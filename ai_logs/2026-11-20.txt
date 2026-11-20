@@ -11,3 +11,16 @@ Exécuté : 2026-11-20T14:32:15 | équité 94,681.56 $ (+0.78 % jour) | bourse U
   IA : BEAR_CALL_SPREAD META | confiance 0.71 | META présente une tendance baissière claire, un IV/HV de 1.27 indiquant des options chères, et aucun résultat d'entreprise prévu dans les 45 prochains jours, ce qui rend le BEAR_CALL_SPREAD approprié.
   OUVERT BEAR_CALL_SPREAD META | coût 3,890 $ | points morts [599.8589] | P(gain) 67% | Θ 6.88 $/j
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-20T14:37:32 | équité 94,694.58 $ (+0.80 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  BEAR_PUT_SPREAD NVDA : clôture (Take-profit) non exécutée au prix juste, nouvel essai au prochain cycle
+  Grecques du portefeuille : Δ -12,268 $ | Γ -499.74 (Δ$ -884 pour 1 %) | ν -30 $/pt | Θ +35 $/j | ρ -21 $/pt
+  Idées presse ajoutées : TGT, BRBR*, G, EXPD, HLF*, TJX, ABBV, T  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BRBR, PLTR, CRM, COIN, CAT, GS, UNH, NKE, BA, NFLX, MU, SHOP, IWM, DOGE/USD, LTC/USD, BCH/USD, DOT/USD, ADA/USD
+  Vente de prime possible : NFLX (IV/HV 1.17, BEAR_CALL_SPREAD), PLTR (IV/HV 1.14, BEAR_CALL_SPREAD), COIN (IV/HV 1.13, BEAR_CALL_SPREAD)
+  Notes IA : PLTR BEAR_CALL_SPREAD 0.72 · COIN BEAR_CALL_SPREAD 0.7 · NFLX BEAR_CALL_SPREAD 0.68
+  IA : BEAR_CALL_SPREAD PLTR | confiance 0.72 | PLTR présente une forte tendance baissière, une volatilité implicite élevée (IV/HV 1.14) et aucune annonce de résultats dans les 45 prochains jours, ce qui en fait un bon candidat pour vendre un bear call spread et encaisser une prime.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.1 h, 15 idées)

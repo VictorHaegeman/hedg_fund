@@ -303,19 +303,19 @@
     "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
     "pnl": null,
     "attr": {
-      "delta": 2117.58,
-      "gamma": -54.58,
-      "theta": 5.66,
-      "vega": -723.87
+      "delta": 2186.93,
+      "gamma": -56.31,
+      "theta": 5.73,
+      "vega": -720.36
     },
     "attr_prev": {
-      "at": "2026-11-20T14:33:06",
-      "S": 141.66,
-      "iv": 0.58805,
-      "delta": -66.67802335950961,
-      "gamma": -3.204139424539533,
-      "theta_day": 19.195144439534936,
-      "vega_pt": -17.14444835064166
+      "at": "2026-11-20T14:38:16",
+      "S": 140.62,
+      "iv": 0.586,
+      "delta": -63.419518048245266,
+      "gamma": -3.260855734664836,
+      "theta_day": 19.72494234116815,
+      "vega_pt": -17.366961496044333
     }
   },
   {
@@ -378,6 +378,21 @@
     "confidence": 0.71,
     "reasoning": "META présente une tendance baissière claire, un IV/HV de 1.27 indiquant des options chères, et aucun résultat d'entreprise prévu dans les 45 prochains jours, ce qui rend le BEAR_CALL_SPREAD approprié.",
     "reasoning_en": "META shows a clear downtrend, an IV/HV of 1.27 indicating expensive options, and no earnings within the next 45 days, making a BEAR_CALL_SPREAD suitable.",
-    "pnl": null
+    "pnl": null,
+    "attr": {
+      "delta": 0.0,
+      "gamma": 0.0,
+      "theta": 0.0,
+      "vega": 0.0
+    },
+    "attr_prev": {
+      "at": "2026-11-20T14:38:16",
+      "S": 581.23,
+      "iv": 0.43655,
+      "delta": -32.629077669447014,
+      "gamma": -0.07088214910707125,
+      "theta_day": 15.518579632026157,
+      "vega_pt": -12.793828829083214
+    }
   }
 ]
