@@ -145,3 +145,15 @@ Exécuté : 2026-11-20T19:30:00 | équité 94,949.64 $ (+1.07 % jour) | bourse U
   IA : BEAR_CALL_SPREAD COIN | confiance 0.71 | COIN montre une forte tendance baissière, une volatilité élevée et un IV/HV de 1.24, ce qui rend la vente d'un bear call spread attractive et conforme aux règles de vente de prime chère.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-20T20:00:00 | équité 94,996.60 $ (+1.12 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -12,493 $ | Γ -336.33 (Δ$ -808 pour 1 %) | ν -39 $/pt | Θ +46 $/j | ρ -19 $/pt
+  Idées presse ajoutées : BRBR, TGT, T, BILL, ICE, ABBV, PG, CB  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BRBR, NFLX, MU, PLTR, SHOP, COIN, BAC, GS, BA, GOOGL, CRM, INTC, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, AVAX/USD
+  Vente de prime possible : NFLX (IV/HV 1.3, BEAR_CALL_SPREAD), COIN (IV/HV 1.23, BEAR_CALL_SPREAD), PLTR (IV/HV 1.2, BEAR_CALL_SPREAD), BAC (IV/HV 1.17, BEAR_CALL_SPREAD), IWM (IV/HV 1.11, BEAR_CALL_SPREAD)
+  Notes IA : BRBR BUY_STOCK 0.8 · MU BEAR_PUT_SPREAD 0.68 · COIN BEAR_CALL_SPREAD 0.66
+  IA : BUY_STOCK BRBR | confiance 0.8 | BRBR montre une forte tendance haussière, un RSI très élevé et une volatilité importante qui suggère un potentiel de hausse continu, justifiant un achat direct.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
