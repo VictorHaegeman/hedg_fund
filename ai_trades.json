@@ -244,7 +244,7 @@
   {
     "id": "15b2b460d1",
     "opened_at": "2026-11-12T17:00:41",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "options",
     "strategy": "BEAR_PUT_SPREAD",
     "underlying": "NVDA",
@@ -301,7 +301,7 @@
     "confidence": 0.7,
     "reasoning": "NVDA montre une forte tendance baissière avec un RSI très bas et une volatilité implicite élevée, ce qui rend un bear put spread attractif malgré la proximité des résultats.",
     "reasoning_en": "NVDA shows a strong downtrend with a very low RSI and high implied volatility, making a bear put spread attractive despite upcoming earnings.",
-    "pnl": null,
+    "pnl": 1770.0,
     "attr": {
       "delta": 2186.93,
       "gamma": -56.31,
@@ -316,7 +316,9 @@
       "gamma": -3.260855734664836,
       "theta_day": 19.72494234116815,
       "vega_pt": -17.366961496044333
-    }
+    },
+    "closed_at": "2026-11-20T15:00:26",
+    "close_reason": "Take-profit"
   },
   {
     "id": "eb6d71c04c",
@@ -380,19 +382,19 @@
     "reasoning_en": "META shows a clear downtrend, an IV/HV of 1.27 indicating expensive options, and no earnings within the next 45 days, making a BEAR_CALL_SPREAD suitable.",
     "pnl": null,
     "attr": {
-      "delta": 0.0,
-      "gamma": 0.0,
-      "theta": 0.0,
-      "vega": 0.0
+      "delta": -216.33,
+      "gamma": -1.56,
+      "theta": 0.24,
+      "vega": -1.66
     },
     "attr_prev": {
-      "at": "2026-11-20T14:38:16",
-      "S": 581.23,
-      "iv": 0.43655,
-      "delta": -32.629077669447014,
-      "gamma": -0.07088214910707125,
-      "theta_day": 15.518579632026157,
-      "vega_pt": -12.793828829083214
+      "at": "2026-11-20T15:00:26",
+      "S": 587.86,
+      "iv": 0.43785,
+      "delta": -33.15949869208771,
+      "gamma": -0.013043288886756432,
+      "theta_day": 13.48039345097603,
+      "vega_pt": -8.196506121419553
     }
   }
 ]
