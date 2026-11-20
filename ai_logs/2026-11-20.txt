@@ -49,3 +49,15 @@ Exécuté : 2026-11-20T15:30:01 | équité 94,695.79 $ (+0.80 % jour) | bourse U
   IA : BEAR_CALL_SPREAD NVDA | confiance 0.7 | NVDA montre une forte tendance baissière, un RSI très bas et une volatilité implicite supérieure à la réalisée, ce qui rend la vente d'un call spread (BEAR_CALL_SPREAD) attractive.
   OUVERT BEAR_CALL_SPREAD NVDA | coût 4,000 $ | points morts [144.7987] | P(gain) 64% | Θ 1.36 $/j
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-20T16:00:01 | équité 94,615.96 $ (+0.71 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -17,928 $ | Γ -205.49 (Δ$ -510 pour 1 %) | ν -28 $/pt | Θ +35 $/j | ρ -22 $/pt
+  Idées presse ajoutées : TGT, BRBR*, G, EXPD, HLF*, TJX, ABBV, T  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : BRBR, NFLX, PLTR, CRM, COIN, CAT, GS, UNH, COST, NKE, BA, MU, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, AVAX/USD
+  Vente de prime possible : NFLX (IV/HV 1.27, BEAR_CALL_SPREAD), PLTR (IV/HV 1.22, BEAR_CALL_SPREAD), COIN (IV/HV 1.2, BEAR_CALL_SPREAD)
+  Notes IA : NFLX BEAR_CALL_SPREAD 0.78 · BRBR BUY_STOCK 0.66 · COST BUY_STOCK 0.65
+  IA : BEAR_CALL_SPREAD NFLX | confiance 0.78 | Les options de NFLX sont très chères (IV/HV 1.27) et la tendance est clairement baissière avec un RSI très bas, ce qui rend le BEAR_CALL_SPREAD approprié.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
