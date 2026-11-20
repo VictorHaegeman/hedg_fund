@@ -37,3 +37,15 @@ Exécuté : 2026-11-20T15:00:01 | équité 94,467.39 $ (+0.55 % jour) | bourse U
   IA : BEAR_CALL_SPREAD NVDA | confiance 0.75 | Vente d'un spread bear call sur NVDA, car la tendance baissiere est forte, l'IV/HV >1.1 indique une prime chère, et aucun résultat d'entreprise imminent ne risque de faire rebondir le cours.
   Trade refusé : Options pas assez chères pour les vendre : prime = 0.96× leur valeur Black-Scholes à la vol réalisée (min 1.05)
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-20T15:30:01 | équité 94,695.79 $ (+0.80 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -2,563 $ | Γ -45.08 (Δ$ -260 pour 1 %) | ν -14 $/pt | Θ +17 $/j | ρ -12 $/pt
+  Idées presse ajoutées : TGT, BRBR*, G, EXPD, HLF*, TJX, ABBV, T  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NVDA, BRBR, PLTR, CRM, INTC, COIN, CAT, GS, UNH, COST, NKE, TGT, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, AVAX/USD
+  Vente de prime possible : PLTR (IV/HV 1.18, BEAR_CALL_SPREAD), NVDA (IV/HV 1.15, BEAR_CALL_SPREAD), COIN (IV/HV 1.15, BEAR_CALL_SPREAD)
+  Notes IA : NVDA BEAR_CALL_SPREAD 0.7 · PLTR BEAR_CALL_SPREAD 0.68 · COIN BEAR_CALL_SPREAD 0.66
+  IA : BEAR_CALL_SPREAD NVDA | confiance 0.7 | NVDA montre une forte tendance baissière, un RSI très bas et une volatilité implicite supérieure à la réalisée, ce qui rend la vente d'un call spread (BEAR_CALL_SPREAD) attractive.
+  OUVERT BEAR_CALL_SPREAD NVDA | coût 4,000 $ | points morts [144.7987] | P(gain) 64% | Θ 1.36 $/j
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
