@@ -73,3 +73,15 @@ Exécuté : 2026-11-20T16:30:00 | équité 94,702.37 $ (+0.80 % jour) | bourse U
   IA : BEAR_CALL_SPREAD PLTR | confiance 0.78 | PLTR montre une forte tendance baissière, un RSI très bas et une volatilité implicite supérieure à 1.1, ce qui rend la vente de call spread attractive et cohérente avec la règle de vente de prime chère.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-20T17:00:01 | équité 94,533.21 $ (+0.62 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -17,588 $ | Γ -205.28 (Δ$ -480 pour 1 %) | ν -29 $/pt | Θ +38 $/j | ρ -22 $/pt
+  Idées presse ajoutées : TGT, BRBR*, G, EXPD, HLF*, TJX, ABBV, T  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : PLTR, BA, BRBR, NFLX, CRM, INTC, COIN, CAT, UBER, JPM, GS, UNH, IWM, ETH/USD, XRP/USD, DOGE/USD, AVAX/USD, LINK/USD
+  Vente de prime possible : COIN (IV/HV 1.24, BEAR_CALL_SPREAD), NFLX (IV/HV 1.23, BEAR_CALL_SPREAD), PLTR (IV/HV 1.2, BEAR_CALL_SPREAD), UBER (IV/HV 1.18, BEAR_CALL_SPREAD)
+  Notes IA : PLTR BEAR_CALL_SPREAD 0.8 · COIN BEAR_CALL_SPREAD 0.7 · UBER BEAR_CALL_SPREAD 0.65
+  IA : BEAR_CALL_SPREAD PLTR | confiance 0.8 | PLTR montre une forte tendance baissière, un RSI très bas et un IV/HV supérieur à 1, ce qui rend la vente d'un bear call spread attractive avec un crédit limité et un risque maîtrisé.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
