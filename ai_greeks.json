@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T06:01:01",
+  "updated_at": "2026-11-20T09:01:15",
   "positions": [
     {
       "id": "b31a6cb905",
@@ -51,23 +51,23 @@
       "strategy": "BEAR_PUT_SPREAD",
       "underlying": "NVDA",
       "spot": 145.29,
-      "delta": -107.45,
-      "option_delta": -107.45,
+      "delta": -154.71,
+      "option_delta": -154.71,
       "hedge_shares": 0,
-      "delta_usd": -15611.98,
-      "gamma_usd": -622.3879,
-      "gamma_1pct": -904.27,
-      "vega": -28.46,
-      "theta_day": 38.58,
-      "rho": -11.66
+      "delta_usd": -22477.22,
+      "gamma_usd": -1331.0354,
+      "gamma_1pct": -1933.86,
+      "vega": -56.38,
+      "theta_day": 66.37,
+      "rho": -15.52
     }
   ],
   "total": {
-    "delta_usd": -253.09,
-    "gamma_usd": -622.39,
-    "gamma_1pct": -904.27,
-    "vega": -28.46,
-    "theta_day": 38.58,
-    "rho": -11.66
+    "delta_usd": -7118.33,
+    "gamma_usd": -1331.04,
+    "gamma_1pct": -1933.86,
+    "vega": -56.38,
+    "theta_day": 66.37,
+    "rho": -15.52
   }
 }

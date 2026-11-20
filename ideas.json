@@ -1,7 +1,32 @@
 {
-  "updated_at": "2026-11-20T03:01:09",
+  "updated_at": "2026-11-20T09:01:15",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
+    {
+      "symbol": "TGT",
+      "mentions": 4,
+      "headlines": [
+        "Target Reports Strong Third Quarter Results and Raises Full-Year Outlook",
+        "Target Expands AI-Enabled Inventory Management Tools",
+        "Kendra Scott and maxbone Debut Exclusive Pet Collection at Target",
+        "Haruharu Wonder Launches Exclusive Skincare Set at Target"
+      ],
+      "last_at": "2026-11-20T03:01:50Z",
+      "sentiment": 0.25,
+      "price": 167.46,
+      "adv_usd": 708610851.6544342,
+      "chg_5d": 4.1,
+      "chg_20d": 6.7,
+      "rsi": 63.7,
+      "trend": "haussiere",
+      "hv": 0.4012798089707022,
+      "niche": false,
+      "score": 5.789,
+      "why": "Les résultats du troisième trimestre supérieurs aux attentes et l'expansion des outils d'inventaire IA renforcent la perspective de croissance.",
+      "risk": "Une dépendance accrue à l'IA pourrait entraîner des coûts d'implémentation élevés et des risques technologiques.",
+      "why_en": "Strong Q3 results and AI-enabled inventory tools boost growth outlook.",
+      "risk_en": "Increased reliance on AI may lead to high implementation costs and technology risks."
+    },
     {
       "symbol": "HLF",
       "mentions": 2,
@@ -20,34 +45,10 @@
       "hv": 0.5205295858301742,
       "niche": true,
       "score": 5.177,
-      "why": "Lancement d'un guide nutritionnel et reconnaissance humanitaire au Vietnam suscite l'intérêt des investisseurs soucieux de la responsabilité sociale.",
-      "risk": "Le succès du guide dépend de l'adoption par les consommateurs, ce qui peut être incertain.",
-      "why_en": "Launch of a nutrition guide and humanitarian recognition in Vietnam draws investor attention to social responsibility.",
-      "risk_en": "The guide's success hinges on consumer adoption, which may be uncertain."
-    },
-    {
-      "symbol": "TGT",
-      "mentions": 3,
-      "headlines": [
-        "Target Expands AI-Enabled Inventory Management Tools",
-        "Kendra Scott and maxbone Debut Exclusive Pet Collection at Target",
-        "Haruharu Wonder Launches Exclusive Skincare Set at Target"
-      ],
-      "last_at": "2026-11-19T22:31:51Z",
-      "sentiment": 0.0,
-      "price": 167.46,
-      "adv_usd": 708610851.6544342,
-      "chg_5d": 4.1,
-      "chg_20d": 6.7,
-      "rsi": 63.7,
-      "trend": "haussiere",
-      "hv": 0.4012798089707022,
-      "niche": false,
-      "score": 4.593,
-      "why": "Expansion des outils d'IA pour la gestion des stocks et collaborations exclusives renforcent l'image innovante de Target.",
-      "risk": "Les projets d'IA et les collections exclusives peuvent ne pas générer les ventes attendues, affectant les marges.",
-      "why_en": "Expansion of AI inventory tools and exclusive collaborations boost Target's innovative image.",
-      "risk_en": "AI projects and exclusive lines may fail to meet sales expectations, impacting margins."
+      "why": "Le lancement d'un nouveau guide nutritionnel et la reconnaissance humanitaire au Vietnam renforcent l'image de marque.",
+      "risk": "La concurrence intense dans le secteur des compléments alimentaires pourrait limiter la croissance des ventes.",
+      "why_en": "New nutrition guide launch and humanitarian recognition enhance brand image.",
+      "risk_en": "Intense competition in the supplement market may limit sales growth."
     },
     {
       "symbol": "KR",
@@ -67,10 +68,10 @@
       "hv": 0.26256668141263156,
       "niche": false,
       "score": 4.277,
-      "why": "Partenariat de dons de repas et allégations de métaux lourds dans les aliments pour bébés créent un contraste médiatique notable.",
-      "risk": "Les accusations de contamination pourraient entraîner des rappels coûteux et nuire à la réputation.",
-      "why_en": "Meal donation partnership and allegations of heavy metals in baby food create notable media contrast.",
-      "risk_en": "Contamination accusations could lead to costly recalls and reputational damage."
+      "why": "Le partenariat de dons de repas de Thanksgiving montre l'engagement sociétal de Kroger.",
+      "risk": "Les allégations de métaux lourds dans les aliments pour bébés exposent l'entreprise à des poursuites et à une perte de confiance.",
+      "why_en": "Thanksgiving meal donation partnership highlights Kroger's social commitment.",
+      "risk_en": "Allegations of heavy metals in baby food expose the company to lawsuits and trust erosion."
     },
     {
       "symbol": "TJX",
@@ -91,10 +92,10 @@
       "hv": 0.4389651983236348,
       "niche": false,
       "score": 4.273,
-      "why": "Révisions à la hausse des objectifs de cours et résultats trimestriels solides renforcent la confiance des analystes.",
-      "risk": "Des attentes élevées pourraient être difficiles à maintenir si la consommation ralentit.",
-      "why_en": "Upward revisions of price targets and strong quarterly results boost analyst confidence.",
-      "risk_en": "High expectations may be hard to sustain if consumer spending slows."
+      "why": "Les ajustements à la hausse des objectifs de cours par plusieurs analystes reflètent de bons résultats trimestriels.",
+      "risk": "Une dépendance aux ventes physiques expose TJX aux pressions du commerce en ligne et aux changements de comportement des consommateurs.",
+      "why_en": "Analyst upgrades following strong quarterly results signal positive momentum.",
+      "risk_en": "Reliance on brick‑and‑mortar sales makes TJX vulnerable to e‑commerce pressure and shifting consumer habits."
     },
     {
       "symbol": "VIK",
@@ -105,19 +106,19 @@
       ],
       "last_at": "2026-11-19T23:02:05Z",
       "sentiment": 0.0,
-      "price": 100.37,
-      "adv_usd": 406633891.6094208,
-      "chg_5d": 11.4,
-      "chg_20d": 15.8,
-      "rsi": 73.6,
+      "price": 95.0,
+      "adv_usd": 416382616.6094208,
+      "chg_5d": 6.9,
+      "chg_20d": 11.8,
+      "rsi": 61.1,
       "trend": "haussiere",
-      "hv": 0.47810703889190964,
+      "hv": 0.5191318798058187,
       "niche": false,
       "score": 4.197,
-      "why": "Mises à jour d'analystes et hausse des objectifs de cours indiquent un fort optimisme sur Viking Holdings.",
-      "risk": "L'optimisme pourrait être basé sur des prévisions excessives, augmentant la volatilité.",
-      "why_en": "Analyst updates and higher price targets signal strong optimism on Viking Holdings.",
-      "risk_en": "Optimism may be based on overly optimistic forecasts, increasing volatility."
+      "why": "Les mises à jour d'analystes et les nouvelles cibles de cours indiquent un regain d'intérêt pour Viking Holdings.",
+      "risk": "Le manque de données fondamentales récentes rend difficile l'évaluation du véritable potentiel de croissance.",
+      "why_en": "Analyst updates and new price targets indicate renewed interest in Viking Holdings.",
+      "risk_en": "Lack of recent fundamental data makes it hard to assess true growth potential."
     },
     {
       "symbol": "HD",
@@ -137,10 +138,10 @@
       "hv": 0.35998539178172345,
       "niche": false,
       "score": 4.037,
-      "why": "Annonce de dividende trimestriel et révision à la baisse du target price attirent l'attention des investisseurs en revenu.",
-      "risk": "La réduction du target price reflète des inquiétudes sur la croissance future du chiffre d'affaires.",
-      "why_en": "Quarterly dividend announcement and target price cut draw income investors' attention.",
-      "risk_en": "Target price reduction reflects concerns about future revenue growth."
+      "why": "Le versement d'un dividende trimestriel renforce l'attrait pour les investisseurs à revenu.",
+      "risk": "La réduction du prix cible signale des inquiétudes sur les marges ou la demande du marché du bricolage.",
+      "why_en": "Quarterly dividend payout enhances appeal to income investors.",
+      "risk_en": "Lowered price target signals concerns about margins or demand in the home‑improvement market."
     },
     {
       "symbol": "WWD",
@@ -160,10 +161,10 @@
       "hv": 0.5300266230540617,
       "niche": false,
       "score": 3.957,
-      "why": "Ajustements d'objectifs de cours par les analystes montrent un intérêt soutenu pour Woodward.",
-      "risk": "Les changements d'objectifs restent modestes, indiquant une perspective neutre et potentielle stagnation du cours.",
-      "why_en": "Analyst price target adjustments show sustained interest in Woodward.",
-      "risk_en": "Modest target changes suggest a neutral outlook and possible price stagnation."
+      "why": "Les ajustements à la hausse des objectifs de cours par les analystes suggèrent une perspective favorable pour Woodward.",
+      "risk": "La neutralité de tendance indique que les catalyseurs de croissance restent incertains.",
+      "why_en": "Analyst price target upgrades suggest a favorable outlook for Woodward.",
+      "risk_en": "Neutral trend indicates that growth catalysts remain uncertain."
     },
     {
       "symbol": "TD",
@@ -185,10 +186,32 @@
       "hv": 0.250098570958103,
       "niche": false,
       "score": 3.892,
-      "why": "Distribution de liquidités, perspectives de crédit et engagement de 2 Mds $ renforcent la solidité financière de TD.",
-      "risk": "Les pressions sur le crédit des ménages canadiens pourraient affecter la rentabilité à moyen terme.",
-      "why_en": "Cash distributions, credit outlook, and $2 B commitment bolster TD's financial strength.",
-      "risk_en": "Canadian household credit pressures could impact medium‑term profitability."
+      "why": "L'engagement de 2 milliards de dollars pour renforcer la solidité financière montre la résilience de la banque.",
+      "risk": "Les perspectives de crédit des ménages canadiens pourraient affecter la rentabilité si le endettement augmente.",
+      "why_en": "A $2 billion commitment to financial strength demonstrates the bank's resilience.",
+      "risk_en": "Canadian household credit outlook could impact profitability if debt levels rise."
+    },
+    {
+      "symbol": "ABBV",
+      "mentions": 1,
+      "headlines": [
+        "AbbVie Announces $217 Million Investment in Puerto Rico Manufacturing Operations"
+      ],
+      "last_at": "2026-11-20T03:01:43Z",
+      "sentiment": 1.0,
+      "price": 283.54,
+      "adv_usd": 1488230127.2711182,
+      "chg_5d": -3.7,
+      "chg_20d": -0.6,
+      "rsi": 46.2,
+      "trend": "neutre",
+      "hv": 0.2093606448926028,
+      "niche": false,
+      "score": 3.646,
+      "why": "L'investissement de 217 M$ à Puerto Rico renforce la capacité de production d'AbbVie.",
+      "risk": "Le projet d'expansion comporte des risques opérationnels et de dépassement de coûts.",
+      "why_en": "The $217 M investment in Puerto Rico bolsters AbbVie's manufacturing capacity.",
+      "risk_en": "The expansion project carries operational and cost‑overrun risks."
     },
     {
       "symbol": "EXPD",
@@ -209,10 +232,10 @@
       "hv": 0.3107152972320808,
       "niche": false,
       "score": 3.513,
-      "why": "Multiples révisions à la hausse des objectifs de cours indiquent un regain d'optimisme pour Expeditors.",
-      "risk": "Les ajustements restent modestes et le secteur logistique reste sensible aux fluctuations économiques.",
-      "why_en": "Multiple upward price target revisions signal renewed optimism for Expeditors.",
-      "risk_en": "Revisions are modest and the logistics sector remains sensitive to economic swings."
+      "why": "Les révisions à la hausse des objectifs de cours par plusieurs banques indiquent un optimisme sur les performances d'Expeditors.",
+      "risk": "Des marges serrées dans le transport et la logistique pourraient limiter les bénéfices attendus.",
+      "why_en": "Multiple broker upgrades reflect optimism on Expeditors' performance.",
+      "risk_en": "Tight margins in transportation and logistics could curb expected earnings."
     },
     {
       "symbol": "T",
@@ -234,10 +257,34 @@
       "hv": 0.34104347131257906,
       "niche": false,
       "score": 3.484,
-      "why": "Présence du CEO d'AT&T à un forum et sponsoring du soccer US montrent un effort de visibilité et de diversification.",
-      "risk": "Les projets d'IA et le sponsoring ne compensent pas les pressions structurelles sur les revenus télécoms.",
-      "why_en": "AT&T CEO's forum appearance and US soccer sponsorship highlight visibility efforts.",
-      "risk_en": "AI projects and sponsorship may not offset structural telecom revenue pressures."
+      "why": "La participation du CEO d'AT&T à un grand forum et le sponsoring du soccer américain augmentent la visibilité de la marque.",
+      "risk": "Les coupes de projets IA et la tendance baissière du cours soulignent des défis stratégiques et financiers.",
+      "why_en": "AT&T CEO's forum appearance and U.S. soccer sponsorship raise brand visibility.",
+      "risk_en": "AI project cuts and a declining stock trend highlight strategic and financial challenges."
+    },
+    {
+      "symbol": "MAR",
+      "mentions": 3,
+      "headlines": [
+        "JW Marriott Panama Opens New Sky Bar",
+        "Marriott International Launches 'Endless Summer 2027' Offer for Maldives Resorts",
+        "Marriott International Expands Branded Residences Portfolio in EMEA"
+      ],
+      "last_at": "2026-11-20T03:01:32Z",
+      "sentiment": 0.0,
+      "price": 414.04,
+      "adv_usd": 680935567.7902222,
+      "chg_5d": -2.3,
+      "chg_20d": 4.5,
+      "rsi": 56.5,
+      "trend": "haussiere",
+      "hv": 0.2525281625665297,
+      "niche": false,
+      "score": 3.313,
+      "why": "L'ouverture d'un nouveau sky bar et le lancement d'offres exclusives renforcent l'attractivité des propriétés Marriott.",
+      "risk": "L'expansion rapide des résidences de marque peut entraîner une surcapacité et une pression sur les marges.",
+      "why_en": "New sky bar opening and exclusive offers boost Marriott's property appeal.",
+      "risk_en": "Rapid branded residence expansion may lead to overcapacity and margin pressure."
     },
     {
       "symbol": "AJG",
@@ -257,10 +304,33 @@
       "hv": 0.3259797998457824,
       "niche": false,
       "score": 3.217,
-      "why": "Lancement d'une plateforme de bien-être financier et acquisition d'AgriServ élargissent l'offre d'Arthur J. Gallagher.",
-      "risk": "Intégrer une nouvelle acquisition peut entraîner des coûts et des défis d'intégration.",
-      "why_en": "Launch of a financial wellbeing platform and AgriServ acquisition broaden AJG's offerings.",
-      "risk_en": "Integrating a new acquisition may bring costs and integration challenges."
+      "why": "Le lancement d'une plateforme de bien-être financier et l'acquisition d'AgriServ diversifient les services d'Arthur J. Gallagher.",
+      "risk": "L'intégration de l'acquisition pourrait être coûteuse et distraire la gestion principale.",
+      "why_en": "Financial wellbeing platform launch and AgriServ acquisition diversify AJG's services.",
+      "risk_en": "Integrating the acquisition may be costly and distract core management."
+    },
+    {
+      "symbol": "CRWD",
+      "mentions": 2,
+      "headlines": [
+        "CrowdStrike Holdings Insider Executes Share Sale",
+        "Jamf Integrates Apple Device Management and Security Apps with CrowdStrike Falcon Foundry"
+      ],
+      "last_at": "2026-11-19T21:32:21Z",
+      "sentiment": 0.0,
+      "price": 243.46,
+      "adv_usd": 2210799227.1173096,
+      "chg_5d": 5.9,
+      "chg_20d": 2.3,
+      "rsi": 53.6,
+      "trend": "neutre",
+      "hv": 0.6524374463402285,
+      "niche": false,
+      "score": 3.197,
+      "why": "L'intégration de Jamf renforce l'offre de sécurité pour les appareils Apple, élargissant le marché de CrowdStrike.",
+      "risk": "La vente d'actions par un insider peut être perçue comme un signal négatif par le marché.",
+      "why_en": "Jamf integration enhances CrowdStrike's security suite for Apple devices, expanding its market.",
+      "risk_en": "Insider share sale may be viewed as a negative signal by the market."
     },
     {
       "symbol": "SAM",
@@ -280,80 +350,10 @@
       "hv": 0.4584103295809625,
       "niche": true,
       "score": 3.097,
-      "why": "Nomination d'un nouveau CEO et guide cadeau 2026 renforcent la visibilité de Boston Beer.",
-      "risk": "Le marché des bières artisanales reste très concurrentiel, pouvant limiter la croissance.",
-      "why_en": "New CEO appointment and 2026 holiday guide boost Boston Beer's visibility.",
-      "risk_en": "Craft beer market remains highly competitive, potentially limiting growth."
-    },
-    {
-      "symbol": "CRWD",
-      "mentions": 2,
-      "headlines": [
-        "CrowdStrike Holdings Insider Executes Share Sale",
-        "Jamf Integrates Apple Device Management and Security Apps with CrowdStrike Falcon Foundry"
-      ],
-      "last_at": "2026-11-19T21:32:21Z",
-      "sentiment": 0.0,
-      "price": 237.03,
-      "adv_usd": 2190242591.767807,
-      "chg_5d": 3.5,
-      "chg_20d": -1.0,
-      "rsi": 50.2,
-      "trend": "neutre",
-      "hv": 0.645689991462366,
-      "niche": false,
-      "score": 2.897,
-      "why": "Vente d'actions par un insider et intégration de Jamf renforcent l'intérêt pour les solutions de cybersécurité de CrowdStrike.",
-      "risk": "La vente d'actions par un insider peut être perçue comme un signal négatif par le marché.",
-      "why_en": "Insider share sale and Jamf integration increase interest in CrowdStrike's cybersecurity solutions.",
-      "risk_en": "Insider share sale may be viewed as a negative market signal."
-    },
-    {
-      "symbol": "TYL",
-      "mentions": 2,
-      "headlines": [
-        "Tyler Technologies Launches MyArkansas Mobile App for Arkansas DFA",
-        "CHAMP Titles and Tyler Technologies Launch Title Vault in West Virginia"
-      ],
-      "last_at": "2026-11-19T23:01:47Z",
-      "sentiment": 0.5,
-      "price": 404.16,
-      "adv_usd": 348363240.6971741,
-      "chg_5d": -4.6,
-      "chg_20d": 3.0,
-      "rsi": 54.2,
-      "trend": "neutre",
-      "hv": 0.4055276977147604,
-      "niche": false,
-      "score": 2.777,
-      "why": "Lancements d'applications mobiles et de services de titres renforcent l'offre technologique de Tyler Technologies.",
-      "risk": "Le succès dépend de l'adoption par les administrations publiques, qui peut être lente.",
-      "why_en": "Mobile app and title service launches enhance Tyler Technologies' tech portfolio.",
-      "risk_en": "Success depends on public sector adoption, which can be slow."
-    },
-    {
-      "symbol": "ULS",
-      "mentions": 3,
-      "headlines": [
-        "UL Solutions R&D Engineer Wins 2026 CONVERGE CFD Conference Simulation Competition",
-        "Innovative Eyewear's Lucyd Armor Smart Safety Glasses Receive UL Solutions Certification",
-        "Wattsipper by Summit Appliance Achieves UL 858 Certification for New 120V Induction Range Line"
-      ],
-      "last_at": "2026-11-19T19:02:09Z",
-      "sentiment": 0.3333333333333333,
-      "price": 76.99,
-      "adv_usd": 57031209.49794769,
-      "chg_5d": -5.6,
-      "chg_20d": 3.6,
-      "rsi": 52.0,
-      "trend": "neutre",
-      "hv": 0.3982492991187684,
-      "niche": false,
-      "score": 2.773,
-      "why": "Certifications UL pour des produits innovants montrent l'engagement de l'entreprise envers la sécurité et la R&D.",
-      "risk": "Les certifications ne garantissent pas une adoption commerciale rapide, exposant l'entreprise à des coûts de R&D élevés.",
-      "why_en": "UL certifications for innovative products demonstrate commitment to safety and R&D.",
-      "risk_en": "Certifications do not guarantee rapid market adoption, exposing the firm to high R&D costs."
+      "why": "La nomination d'un nouveau CEO et le guide cadeau de Dogfish Head dynamisent l'image de marque de Boston Beer.",
+      "risk": "Le changement de direction peut entraîner une incertitude stratégique à court terme.",
+      "why_en": "New CEO appointment and Dogfish Head holiday guide boost Boston Beer’s brand image.",
+      "risk_en": "Leadership change may create short‑term strategic uncertainty."
     }
   ]
 }
