@@ -121,3 +121,15 @@ Exécuté : 2026-11-20T18:30:01 | équité 94,699.10 $ (+0.80 % jour) | bourse U
   IA : BEAR_CALL_SPREAD PLTR | confiance 0.8 | PLTR présente une forte tendance baissière, un RSI très bas et une volatilité implicite supérieure à 1.1, ce qui rend la vente de spread d'options (BEAR_CALL_SPREAD) attractive sans risque de résultats proches.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-20T19:00:01 | équité 94,693.99 $ (+0.80 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -16,808 $ | Γ -233.42 (Δ$ -634 pour 1 %) | ν -34 $/pt | Θ +42 $/j | ρ -22 $/pt
+  Idées presse ajoutées : BRBR, TGT, T, BILL, ICE, ABBV, PG, CB  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : PLTR, BA, BRBR, NFLX, CRM, INTC, COIN, CAT, JPM, UNH, BILL, MU, IWM, ETH/USD, SOL/USD, XRP/USD, DOGE/USD, AVAX/USD
+  Vente de prime possible : NFLX (IV/HV 1.24, BEAR_CALL_SPREAD), COIN (IV/HV 1.22, BEAR_CALL_SPREAD), PLTR (IV/HV 1.18, BEAR_CALL_SPREAD)
+  Notes IA : PLTR BEAR_CALL_SPREAD 0.72 · MU BEAR_PUT_SPREAD 0.66 · BRBR BUY_STOCK 0.58
+  IA : BEAR_CALL_SPREAD PLTR | confiance 0.72 | PLTR montre une forte tendance baissière, un RSI très bas et une volatilité implicite élevée (IV/HV 1.18), ce qui rend la vente d'un bear call spread attractive pour encaisser une prime chère.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
