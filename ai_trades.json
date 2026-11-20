@@ -382,19 +382,19 @@
     "reasoning_en": "META shows a clear downtrend, an IV/HV of 1.27 indicating expensive options, and no earnings within the next 45 days, making a BEAR_CALL_SPREAD suitable.",
     "pnl": null,
     "attr": {
-      "delta": 333.89,
-      "gamma": -3.48,
-      "theta": 2.04,
-      "vega": -19.78
+      "delta": 370.54,
+      "gamma": -3.56,
+      "theta": 2.48,
+      "vega": -6.36
     },
     "attr_prev": {
-      "at": "2026-11-20T17:30:01",
-      "S": 570.98,
-      "iv": 0.45655,
-      "delta": -30.80146356034897,
-      "gamma": -0.10782250675014171,
-      "theta_day": 20.845549512167224,
-      "vega_pt": -17.896776989911686
+      "at": "2026-11-20T18:00:16",
+      "S": 569.79,
+      "iv": 0.44905,
+      "delta": -30.63510641454559,
+      "gamma": -0.1314630541640185,
+      "theta_day": 20.213090599465385,
+      "vega_pt": -18.89646505423023
     }
   },
   {
@@ -459,19 +459,19 @@
     "reasoning_en": "NVDA shows a strong downtrend, very low RSI and implied volatility above realized, making a BEAR_CALL_SPREAD attractive.",
     "pnl": null,
     "attr": {
-      "delta": 225.06,
-      "gamma": -1.28,
-      "theta": 1.15,
-      "vega": -39.7
+      "delta": 190.37,
+      "gamma": -1.33,
+      "theta": 1.64,
+      "vega": -20.71
     },
     "attr_prev": {
-      "at": "2026-11-20T17:30:01",
-      "S": 135.37,
-      "iv": 0.59005,
-      "delta": -108.41779876744823,
-      "gamma": -1.0270006322751826,
-      "theta_day": 23.29374425686481,
-      "vega_pt": -14.665192202697744
+      "at": "2026-11-20T18:00:16",
+      "S": 135.69,
+      "iv": 0.5771,
+      "delta": -109.02437590943987,
+      "gamma": -1.181846866251508,
+      "theta_day": 21.584756079088233,
+      "vega_pt": -14.618343731907007
     }
   }
 ]
