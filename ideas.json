@@ -1,29 +1,7 @@
 {
-  "updated_at": "2026-11-21T18:01:13",
+  "updated_at": "2026-11-21T23:40:26",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
-    {
-      "symbol": "ACGL",
-      "mentions": 1,
-      "headlines": [
-        "AM Best Affirms Credit Ratings of Arch Capital Group Ltd. and Its Subsidiaries"
-      ],
-      "last_at": "2026-11-20T18:01:40Z",
-      "sentiment": 1.0,
-      "price": 108.82,
-      "adv_usd": 207361402.8527832,
-      "chg_5d": -0.7,
-      "chg_20d": 7.0,
-      "rsi": 60.4,
-      "trend": "haussiere",
-      "hv": 0.24559890174562812,
-      "niche": false,
-      "score": 5.246,
-      "why": "AM Best confirme les notations de crédit d'Arch Capital, renforçant la confiance des investisseurs.",
-      "risk": "Une détérioration future de la notation pourrait affecter le coût du financement.",
-      "why_en": "AM Best affirms Arch Capital's credit ratings, boosting investor confidence.",
-      "risk_en": "A future downgrade could increase financing costs."
-    },
     {
       "symbol": "T",
       "mentions": 5,
@@ -41,35 +19,13 @@
       "chg_20d": 6.6,
       "rsi": 51.3,
       "trend": "neutre",
-      "hv": 0.17081830962656866,
+      "hv": 0.17081830962656863,
       "niche": false,
       "score": 3.704,
-      "why": "Quebecor propose une offre d'acquisition améliorée pour TELUS, suscitant l'intérêt du secteur des télécoms.",
-      "risk": "Les incertitudes réglementaires autour des désactivations de services AT&T pourraient créer des perturbations.",
-      "why_en": "Quebecor submits an enhanced acquisition proposal for TELUS, drawing telecom sector attention.",
-      "risk_en": "Regulatory uncertainties regarding AT&T service discontinuations could cause disruptions."
-    },
-    {
-      "symbol": "ACM",
-      "mentions": 1,
-      "headlines": [
-        "Allied Critical Metals Inc. Announces Annual Meeting Results and Clarifies Technical Disclosure"
-      ],
-      "last_at": "2026-11-21T14:03:27Z",
-      "sentiment": 0.0,
-      "price": 78.65,
-      "adv_usd": 119416402.42132187,
-      "chg_5d": 11.6,
-      "chg_20d": 30.0,
-      "rsi": 73.3,
-      "trend": "haussiere",
-      "hv": 0.46183318077070895,
-      "niche": false,
-      "score": 3.386,
-      "why": "Allied Critical Metals publie les résultats de son assemblée annuelle et clarifie des informations techniques, augmentant la transparence.",
-      "risk": "Des incertitudes sur la mise en œuvre des divulgations techniques pourraient affecter la valorisation.",
-      "why_en": "Allied Critical Metals releases annual meeting results and clarifies technical disclosures, enhancing transparency.",
-      "risk_en": "Uncertainties around the implementation of technical disclosures could impact valuation."
+      "why": "Quebecor propose une offre d'acquisition améliorée pour TELUS, tandis qu'AT&T cherche à supprimer des services téléphoniques legacy, ce qui indique des mouvements stratégiques majeurs dans les télécoms.",
+      "risk": "Le risque principal réside dans l'incertitude réglementaire et l'intégration des actifs acquis, pouvant affecter la valeur de l'action.",
+      "why_en": "Quebecor submits an enhanced acquisition proposal for TELUS and AT&T files to discontinue legacy services, indicating major strategic moves in telecom.",
+      "risk_en": "The main risk is regulatory uncertainty and integration challenges of the acquired assets, which could impact the stock price."
     },
     {
       "symbol": "FE",
@@ -89,10 +45,10 @@
       "hv": 0.12102160748360669,
       "niche": false,
       "score": 3.217,
-      "why": "FirstEnergy met à jour son plan financier à long terme et annonce un processus d'enchères pour une entité en défaut, indiquant une possible restructuration.",
-      "risk": "Le processus d'enchères et les défauts associés peuvent entraîner des pertes pour les actionnaires.",
-      "why_en": "FirstEnergy updates its long‑term financial plan and announces an auction for a defaulted subsidiary, hinting at restructuring.",
-      "risk_en": "The auction process and associated defaults could lead to shareholder losses."
+      "why": "FirstEnergy publie une mise à jour de son plan financier à long terme et annonce une enchère pour son approvisionnement par défaut en Pennsylvanie, signalant une activité de restructuration.",
+      "risk": "Le risque principal est lié à la réussite de l'enchère et à la capacité de l'entreprise à respecter ses nouvelles prévisions financières.",
+      "why_en": "FirstEnergy updates its long‑term financial plan and announces an auction for its Pennsylvania default supply, indicating restructuring activity.",
+      "risk_en": "The main risk lies in the auction outcome and the company's ability to meet its revised financial outlook."
     },
     {
       "symbol": "KIE",
@@ -112,56 +68,10 @@
       "hv": 0.17641562858278956,
       "niche": false,
       "score": 3.217,
-      "why": "Kier Group réduit les droits de vote d'un trust et annonce des rachats d'actions hebdomadaires, montrant une gestion active du capital.",
-      "risk": "La réduction des droits de vote peut signaler des tensions de gouvernance et affecter la confiance des investisseurs.",
-      "why_en": "Kier Group cuts a trust's voting rights and reports weekly share buybacks, indicating active capital management.",
-      "risk_en": "Reduced voting rights may signal governance tensions and hurt investor confidence."
-    },
-    {
-      "symbol": "NVO",
-      "mentions": 2,
-      "headlines": [
-        "Novo Nordisk Receives FDA Approval for Sogroya® in Children with Turner Syndrome",
-        "FDA Approves Novo Nordisk's Sogroya® for Turner Syndrome in Children"
-      ],
-      "last_at": "2026-11-20T19:01:39Z",
-      "sentiment": 1.0,
-      "price": 37.82,
-      "adv_usd": 540088057.1408653,
-      "chg_5d": -9.2,
-      "chg_20d": -3.1,
-      "rsi": 38.0,
-      "trend": "baissiere",
-      "hv": 0.36235539790650256,
-      "niche": false,
-      "score": 3.197,
-      "why": "Novo Nordisk obtient l'approbation FDA pour Sogroya® chez les enfants atteints du syndrome de Turner, élargissant son portefeuille thérapeutique.",
-      "risk": "Le marché pédiatrique reste limité et la concurrence pourrait freiner la croissance des ventes.",
-      "why_en": "Novo Nordisk receives FDA approval for Sogroya® in children with Turner syndrome, expanding its therapeutic portfolio.",
-      "risk_en": "The pediatric market is limited and competition could curb sales growth."
-    },
-    {
-      "symbol": "CB",
-      "mentions": 2,
-      "headlines": [
-        "Mizuho Securities Reaffirms Buy Rating on Chubb Limited",
-        "BMO Capital Adjusts Price Target on Chubb"
-      ],
-      "last_at": "2026-11-20T21:02:22Z",
-      "sentiment": 0.0,
-      "price": 371.63,
-      "adv_usd": 575845214.1247559,
-      "chg_5d": -1.1,
-      "chg_20d": 4.7,
-      "rsi": 58.3,
-      "trend": "haussiere",
-      "hv": 0.17572046142974904,
-      "niche": false,
-      "score": 2.977,
-      "why": "Mizuho réaffirme son rating d'achat sur Chubb et BMO ajuste le prix cible, soutenant une perspective positive.",
-      "risk": "Une réévaluation négative du prix cible ou du rating pourrait entraîner une pression à la baisse du cours.",
-      "why_en": "Mizuho reaffirms a buy rating on Chubb and BMO adjusts the price target, supporting a positive outlook.",
-      "risk_en": "A negative revision of the price target or rating could pressure the share price lower."
+      "why": "Kier Group voit une réduction de droits de vote de son trustee et publie les résultats hebdomadaires de son programme de rachat d'actions, ce qui attire l'attention sur la gouvernance et le soutien aux actionnaires.",
+      "risk": "Le risque principal est la dilution du contrôle des actionnaires et la possible pression sur le cours si les rachats ne suffisent pas à soutenir le prix.",
+      "why_en": "Kier Group experiences a reduction in trustee voting rights and reports weekly share buyback results, highlighting governance and shareholder support.",
+      "risk_en": "The main risk is potential dilution of shareholder control and pressure on the share price if buybacks fail to sustain it."
     },
     {
       "symbol": "CMG",
@@ -182,10 +92,10 @@
       "hv": 0.47406305926013453,
       "niche": false,
       "score": 2.933,
-      "why": "Chipotle lance une promotion BOGO pour Thanksgiving et voit des ajustements de prix cible, attirant l'attention des investisseurs retail.",
-      "risk": "Les changements de recommandation à neutre et les incertitudes sur la demande post‑promotion peuvent freiner la hausse du cours.",
-      "why_en": "Chipotle introduces a Thanksgiving BOGO promotion and experiences price‑target adjustments, drawing retail investor interest.",
-      "risk_en": "Downgrades to neutral and uncertainty about post‑promotion demand could limit price upside."
+      "why": "Chipotle lance une promotion BOGO pour Thanksgiving Eve et voit son analyste ajuster le prix cible, reflétant un intérêt renouvelé pour la performance commerciale.",
+      "risk": "Le risque principal est que la promotion n'entraîne pas une hausse durable des ventes, ce qui pourrait décevoir les attentes des analystes.",
+      "why_en": "Chipotle announces a Thanksgiving Eve BOGO promotion and sees an analyst adjust its price target, reflecting renewed commercial interest.",
+      "risk_en": "The main risk is that the promotion fails to generate lasting sales growth, potentially disappointing analyst expectations."
     },
     {
       "symbol": "INCY",
@@ -206,33 +116,34 @@
       "hv": 0.32179568132824915,
       "niche": false,
       "score": 2.773,
-      "why": "Incyte avance un essai de phase III en Chine pour le povorcitinib et voit un relèvement du prix cible, soulignant des opportunités de croissance.",
-      "risk": "Les résultats cliniques incertains et la dépendance aux collaborations externes peuvent créer de la volatilité.",
-      "why_en": "Incyte moves a Phase III trial in China for povorcitinib forward and receives a price‑target raise, highlighting growth potential.",
-      "risk_en": "Uncertain clinical outcomes and reliance on external collaborations may cause volatility."
+      "why": "Incyte avance avec la phase III de son traitement Povorcitinib en Chine et bénéficie de rapports positifs de ses partenaires IA, ce qui suscite l'intérêt pour son pipeline.",
+      "risk": "Le risque principal est l'incertitude des résultats cliniques et la dépendance aux collaborations technologiques pour la valorisation future.",
+      "why_en": "Incyte moves its Povorcitinib into Phase III in China and receives positive AI collaboration reports, generating pipeline interest.",
+      "risk_en": "The main risk is clinical outcome uncertainty and reliance on tech partnerships for future valuation."
     },
     {
-      "symbol": "ICE",
-      "mentions": 2,
+      "symbol": "NVO",
+      "mentions": 3,
       "headlines": [
-        "Intercontinental Exchange Reports Highest Coffee Warehouse Stocks in Nearly Four Years",
-        "Intercontinental Exchange Announces Record Open Interest in North American Financial Power Futures and Options"
+        "Novo Nordisk Reports Reduction in Molecule Design Cycles via AI",
+        "Novo Nordisk Receives FDA Approval for Sogroya® in Children with Turner Syndrome",
+        "FDA Approves Novo Nordisk's Sogroya® for Turner Syndrome in Children"
       ],
-      "last_at": "2026-11-20T21:31:35Z",
-      "sentiment": 0.5,
-      "price": 170.0,
-      "adv_usd": 581613307.0425415,
-      "chg_5d": -4.8,
-      "chg_20d": 4.5,
-      "rsi": 52.1,
-      "trend": "neutre",
-      "hv": 0.32002520980641874,
+      "last_at": "2026-11-21T20:03:04Z",
+      "sentiment": 0.6666666666666666,
+      "price": 37.82,
+      "adv_usd": 540088057.1408653,
+      "chg_5d": -9.2,
+      "chg_20d": -3.1,
+      "rsi": 38.0,
+      "trend": "baissiere",
+      "hv": 0.36235539790650256,
       "niche": false,
-      "score": 2.737,
-      "why": "Intercontinental Exchange signale des stocks de café record et un intérêt ouvert record sur les futures financiers, indiquant une forte activité de marché.",
-      "risk": "Une surabondance de stocks ou un retournement de l'intérêt ouvert pourrait affecter les marges commerciales.",
-      "why_en": "Intercontinental Exchange reports record coffee warehouse stocks and record open interest on financial futures, indicating strong market activity.",
-      "risk_en": "Excessive inventories or a reversal in open interest could impact trading margins."
+      "score": 2.773,
+      "why": "Novo Nordisk annonce des gains d'efficacité grâce à l'IA et obtient l'approbation FDA de Sogroya® pour les enfants atteints du syndrome de Turner, soulignant l'innovation thérapeutique.",
+      "risk": "Le risque principal réside dans la concurrence accrue dans le secteur du diabète et des traitements hormonaux, pouvant limiter la croissance.",
+      "why_en": "Novo Nordisk reports AI‑driven efficiency gains and receives FDA approval for Sogroya® in children with Turner syndrome, highlighting therapeutic innovation.",
+      "risk_en": "The main risk is heightened competition in diabetes and hormonal therapies, potentially limiting growth."
     },
     {
       "symbol": "LMT",
@@ -252,10 +163,10 @@
       "hv": 0.4204959930437367,
       "niche": false,
       "score": 2.697,
-      "why": "Lockheed Martin obtient une modification de contrat de 1,53 md USD avec la marine américaine, renforçant ses revenus futurs.",
-      "risk": "La dépendance aux contrats gouvernementaux expose l'entreprise aux coupes budgétaires potentielles.",
-      "why_en": "Lockheed Martin receives a $1.53 billion U.S. Navy contract modification, bolstering future revenues.",
-      "risk_en": "Reliance on government contracts exposes the company to potential budget cuts."
+      "why": "Lockheed Martin obtient une modification de contrat de 1,53 milliard $ avec la marine américaine, renforçant ses revenus de défense.",
+      "risk": "Le risque principal est la dépendance aux budgets de défense gouvernementaux, qui peuvent fluctuer avec les politiques publiques.",
+      "why_en": "Lockheed Martin secures a $1.53 billion U.S. Navy contract modification, bolstering defense revenues.",
+      "risk_en": "The main risk is reliance on government defense budgets, which can vary with policy changes."
     },
     {
       "symbol": "M",
@@ -275,10 +186,10 @@
       "hv": 0.6254645652127175,
       "niche": false,
       "score": 2.697,
-      "why": "Macy's attire l'attention avec un commentaire d'UBS sur les résultats à venir et un partenariat saisonnier avec UGG, stimulant l'intérêt des consommateurs.",
-      "risk": "Les performances du trimestre et la saisonnalité des ventes peuvent créer une volatilité importante.",
-      "why_en": "Macy's draws attention with UBS commentary on upcoming results and a holiday partnership with UGG, boosting consumer interest.",
-      "risk_en": "Quarterly performance and sales seasonality may cause significant volatility."
+      "why": "Macy's attire l'attention avec les commentaires d'UBS sur ses résultats Q3 à venir et un partenariat saisonnier entre UGG et Bloomingdale's.",
+      "risk": "Le risque principal est la volatilité des ventes au détail pendant les périodes de fêtes, qui peut affecter les prévisions de revenus.",
+      "why_en": "Macy's draws attention with UBS commentary on upcoming Q3 results and a seasonal UGG‑Bloomingdale's partnership.",
+      "risk_en": "The main risk is retail sales volatility during holiday periods, which could impact revenue forecasts."
     },
     {
       "symbol": "GEHC",
@@ -298,10 +209,10 @@
       "hv": 0.40257496314868124,
       "niche": false,
       "score": 2.617,
-      "why": "GE HealthCare annonce de nouveaux bénéficiaires de subventions 2026 et lance des capacités d'IA pour l'imagerie, montrant une innovation continue.",
-      "risk": "L'adoption de nouvelles technologies d'IA peut être plus lente que prévu, affectant les revenus attendus.",
-      "why_en": "GE HealthCare announces 2026 grant recipients and unveils AI‑assisted imaging capabilities, demonstrating ongoing innovation.",
-      "risk_en": "Adoption of new AI technologies may be slower than expected, impacting projected revenues."
+      "why": "GE HealthCare annonce les bénéficiaires de ses subventions 2026 et lance de nouvelles capacités d'IA pour l'imagerie, montrant un engagement continu en innovation médicale.",
+      "risk": "Le risque principal est la dépendance à l'adoption rapide de l'IA par les clients, qui pourrait ralentir les revenus attendus.",
+      "why_en": "GE HealthCare announces 2026 grant recipients and unveils new AI‑assisted imaging capabilities, demonstrating ongoing medical innovation.",
+      "risk_en": "The main risk is reliance on rapid AI adoption by customers, which could slow expected revenue growth."
     },
     {
       "symbol": "SNY",
@@ -321,10 +232,10 @@
       "hv": 0.263892831711136,
       "niche": false,
       "score": 2.437,
-      "why": "Sanofi démarre un essai CAR‑T de première génération et progresse sur un candidat asthme avec IA, soulignant son pipeline avancé.",
-      "risk": "Les essais cliniques de première phase comportent un risque élevé d'échec qui pourrait freiner la valorisation.",
-      "why_en": "Sanofi initiates a first‑in‑human CAR‑T trial and advances an asthma candidate using AI, highlighting an advanced pipeline.",
-      "risk_en": "First‑in‑human trials carry a high failure risk that could dampen valuation."
+      "why": "Sanofi démarre un essai CAR‑T de première génération et progresse sur un candidat asthme grâce à l'IA, soulignant son portefeuille de thérapies avancées.",
+      "risk": "Le risque principal est l'incertitude des résultats cliniques et les délais de mise sur le marché qui peuvent affecter la valorisation.",
+      "why_en": "Sanofi initiates a first‑in‑human CAR‑T trial and advances an asthma candidate using AI, highlighting its advanced pipeline.",
+      "risk_en": "The main risk is clinical outcome uncertainty and time‑to‑market delays that could affect valuation."
     },
     {
       "symbol": "AA",
@@ -343,10 +254,107 @@
       "hv": 0.5037203992049807,
       "niche": false,
       "score": 2.386,
-      "why": "BofA/Merrill Lynch passe Alcoa en recommandation d'achat, ce qui attire l'attention sur le secteur de l'aluminium.",
-      "risk": "La forte baisse récente du cours indique une volatilité élevée et un risque de poursuite de la chute.",
-      "why_en": "BofA/Merrill Lynch upgrades Alcoa to Buy, drawing focus to the aluminum sector.",
-      "risk_en": "The recent steep price decline signals high volatility and risk of further downside."
+      "why": "Alcoa bénéficie d'une mise à jour d'upgrade à 'Buy' par BofA/Merrill Lynch, ce qui attire l'attention sur une perspective positive du secteur de l'aluminium.",
+      "risk": "Le risque principal reste la sensibilité aux cycles économiques et aux prix des matières premières, pouvant affecter la rentabilité.",
+      "why_en": "Alcoa receives a BofA/Merrill Lynch upgrade to 'Buy', drawing attention to a positive outlook for the aluminium sector.",
+      "risk_en": "The main risk remains sensitivity to economic cycles and commodity price fluctuations, which can impact profitability."
+    },
+    {
+      "symbol": "BSP",
+      "mentions": 2,
+      "headlines": [
+        "Bending Spoons Provides Q4 2026 Earnings Guidance",
+        "Bending Spoons to Acquire Mailchimp from Intuit"
+      ],
+      "last_at": "2026-11-21T20:01:47Z",
+      "sentiment": 0.0,
+      "price": 41.05,
+      "adv_usd": 88437740.8793068,
+      "chg_5d": -0.1,
+      "chg_20d": -6.9,
+      "rsi": 45.6,
+      "trend": "neutre",
+      "hv": 0.473048777000108,
+      "niche": false,
+      "score": 2.177,
+      "why": "Bending Spoons donne ses prévisions de résultats pour le quatrième trimestre 2026 et annonce l'acquisition de Mailchimp, signalant une expansion stratégique.",
+      "risk": "Le risque principal est l'intégration réussie de Mailchimp et la capacité à atteindre les objectifs de croissance annoncés.",
+      "why_en": "Bending Spoons provides Q4 2026 earnings guidance and announces the acquisition of Mailchimp, indicating strategic expansion.",
+      "risk_en": "The main risk is successful integration of Mailchimp and meeting the stated growth targets."
+    },
+    {
+      "symbol": "UL",
+      "mentions": 3,
+      "headlines": [
+        "Unilever Philippines Recognized for Gender-Inclusive Workplace Practices",
+        "German Court Bans Sustainability Claim on Unilever's Pfanni Product",
+        "Leandro Barreto Inducted into CMO Hall of Fame"
+      ],
+      "last_at": "2026-11-21T21:01:25Z",
+      "sentiment": 0.0,
+      "price": 63.82,
+      "adv_usd": 269526102.3119354,
+      "chg_5d": -3.6,
+      "chg_20d": -2.9,
+      "rsi": 46.7,
+      "trend": "neutre",
+      "hv": 0.2554317001020538,
+      "niche": false,
+      "score": 2.053,
+      "why": "Unilever Philippines est reconnue pour ses pratiques inclusives, tandis qu'un tribunal allemand interdit une allégation de durabilité sur un produit Pfanni, mettant en avant les enjeux ESG.",
+      "risk": "Le risque principal est la pression réglementaire et les litiges liés aux allégations de durabilité, pouvant affecter la réputation.",
+      "why_en": "Unilever Philippines is recognized for gender‑inclusive practices, while a German court bans a sustainability claim on a Pfanni product, highlighting ESG challenges.",
+      "risk_en": "The main risk is regulatory pressure and litigation over sustainability claims, which could impact reputation."
+    },
+    {
+      "symbol": "AAL",
+      "mentions": 4,
+      "headlines": [
+        "American Airlines Announces Partnership with Israir Airlines",
+        "American Airlines COO David Seymour to Retire; JonCarlo Gulbranson Named Successor",
+        "American Airlines Promotes Brandon Rakestraw to Vice President of Procurement",
+        "EU Reportedly Provides New Evidence Against MMG's Anglo American Deal"
+      ],
+      "last_at": "2026-11-20T19:02:03Z",
+      "sentiment": 0.25,
+      "price": 11.9,
+      "adv_usd": 796083061.0839844,
+      "chg_5d": -9.6,
+      "chg_20d": -1.7,
+      "rsi": 37.7,
+      "trend": "baissiere",
+      "hv": 0.5701067800133628,
+      "niche": false,
+      "score": 1.969,
+      "why": "American Airlines annonce un partenariat avec Israir, le départ du COO et la promotion d'un vice‑président des achats, indiquant des changements opérationnels majeurs.",
+      "risk": "Le risque principal est la perturbation potentielle liée aux transitions de direction et aux nouvelles alliances, pouvant affecter la performance à court terme.",
+      "why_en": "American Airlines announces a partnership with Israir, a COO retirement, and a VP procurement promotion, indicating major operational changes.",
+      "risk_en": "The main risk is potential disruption from leadership transitions and new alliances, which could affect short‑term performance."
+    },
+    {
+      "symbol": "MS",
+      "mentions": 6,
+      "headlines": [
+        "Morgan Stanley Files SEC Documents Regarding Accounting Policy Changes",
+        "Morgan Stanley Files Voting Rights Notification for AUTO1 Group SE",
+        "Morgan Stanley Adjusts Price Target on PPL Corporation",
+        "Morgan Stanley Adjusts Price Target on Southern Company"
+      ],
+      "last_at": "2026-11-21T14:02:05Z",
+      "sentiment": 0.0,
+      "price": 165.67,
+      "adv_usd": 1179334041.70372,
+      "chg_5d": -13.1,
+      "chg_20d": -7.1,
+      "rsi": 29.9,
+      "trend": "baissiere",
+      "hv": 0.4239884287258831,
+      "niche": false,
+      "score": 1.892,
+      "why": "Morgan Stanley dépose des documents SEC sur des changements de politique comptable et ajuste le prix cible de PPL, ce qui attire l'attention sur sa gouvernance et ses perspectives sectorielles.",
+      "risk": "Le risque principal est l'impact des changements comptables sur les résultats déclarés et la perception des investisseurs.",
+      "why_en": "Morgan Stanley files SEC documents on accounting policy changes and adjusts the PPL price target, drawing attention to its governance and sector outlook.",
+      "risk_en": "The main risk is the effect of accounting changes on reported results and investor perception."
     }
   ]
 }
