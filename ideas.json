@@ -1,18 +1,40 @@
 {
-  "updated_at": "2026-11-21T12:01:13",
+  "updated_at": "2026-11-21T18:01:13",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
+    {
+      "symbol": "ACGL",
+      "mentions": 1,
+      "headlines": [
+        "AM Best Affirms Credit Ratings of Arch Capital Group Ltd. and Its Subsidiaries"
+      ],
+      "last_at": "2026-11-20T18:01:40Z",
+      "sentiment": 1.0,
+      "price": 108.82,
+      "adv_usd": 207361402.8527832,
+      "chg_5d": -0.7,
+      "chg_20d": 7.0,
+      "rsi": 60.4,
+      "trend": "haussiere",
+      "hv": 0.24559890174562812,
+      "niche": false,
+      "score": 5.246,
+      "why": "AM Best confirme les notations de crédit d'Arch Capital, renforçant la confiance des investisseurs.",
+      "risk": "Une détérioration future de la notation pourrait affecter le coût du financement.",
+      "why_en": "AM Best affirms Arch Capital's credit ratings, boosting investor confidence.",
+      "risk_en": "A future downgrade could increase financing costs."
+    },
     {
       "symbol": "T",
       "mentions": 5,
       "headlines": [
+        "Quebecor Submits Enhanced Acquisition Proposal for TELUS",
         "AT&T Files FCC Applications to Discontinue Legacy Services",
         "AT&T Services Files to Discontinue Legacy POTS Voice Services in Illinois",
-        "AT&T Files to Discontinue Legacy Special Access Services",
-        "AT&T Files to Discontinue Dedicated SONET Ring Service in Texas and Wisconsin"
+        "AT&T Files to Discontinue Legacy Special Access Services"
       ],
-      "last_at": "2026-11-21T03:01:44Z",
-      "sentiment": 0.2,
+      "last_at": "2026-11-21T14:01:41Z",
+      "sentiment": 0.0,
       "price": 22.31,
       "adv_usd": 994186524.7288513,
       "chg_5d": 0.6,
@@ -21,42 +43,40 @@
       "trend": "neutre",
       "hv": 0.17081830962656866,
       "niche": false,
-      "score": 4.304,
-      "why": "AT&T dépose des demandes à la FCC pour mettre fin à des services téléphoniques legacy, ce qui indique une rationalisation de son portefeuille.",
-      "risk": "Le retrait de services legacy pourrait entraîner des pertes de revenus et des mécontentements client.",
-      "why_en": "AT&T files FCC applications to discontinue legacy services, signalling portfolio rationalisation.",
-      "risk_en": "Discontinuing legacy services may lead to revenue loss and customer dissatisfaction."
+      "score": 3.704,
+      "why": "Quebecor propose une offre d'acquisition améliorée pour TELUS, suscitant l'intérêt du secteur des télécoms.",
+      "risk": "Les incertitudes réglementaires autour des désactivations de services AT&T pourraient créer des perturbations.",
+      "why_en": "Quebecor submits an enhanced acquisition proposal for TELUS, drawing telecom sector attention.",
+      "risk_en": "Regulatory uncertainties regarding AT&T service discontinuations could cause disruptions."
     },
     {
-      "symbol": "ENR",
-      "mentions": 2,
+      "symbol": "ACM",
+      "mentions": 1,
       "headlines": [
-        "Siemens Energy AG Reports Director Dealing by Board Member Vinod Philip",
-        "Siemens Energy Participates in ORO Labs Leadership Panel on Digital Transformation"
+        "Allied Critical Metals Inc. Announces Annual Meeting Results and Clarifies Technical Disclosure"
       ],
-      "last_at": "2026-11-20T19:01:43Z",
+      "last_at": "2026-11-21T14:03:27Z",
       "sentiment": 0.0,
-      "price": 28.56,
-      "adv_usd": 32139896.547613144,
-      "chg_5d": 18.4,
-      "chg_20d": 26.5,
-      "rsi": 76.0,
+      "price": 78.65,
+      "adv_usd": 119416402.42132187,
+      "chg_5d": 11.6,
+      "chg_20d": 30.0,
+      "rsi": 73.3,
       "trend": "haussiere",
-      "hv": 0.5532692054672181,
-      "niche": true,
-      "score": 4.197,
-      "why": "Siemens Energy met en avant la gouvernance et la transformation digitale, deux thèmes clés pour son futur.",
-      "risk": "Des problèmes de gouvernance ou une transformation digitale lente pourraient freiner la performance.",
-      "why_en": "Siemens Energy highlights board governance and digital transformation, key themes for its future.",
-      "risk_en": "Governance issues or slow digital transformation could hamper performance."
+      "hv": 0.46183318077070895,
+      "niche": false,
+      "score": 3.386,
+      "why": "Allied Critical Metals publie les résultats de son assemblée annuelle et clarifie des informations techniques, augmentant la transparence.",
+      "risk": "Des incertitudes sur la mise en œuvre des divulgations techniques pourraient affecter la valorisation.",
+      "why_en": "Allied Critical Metals releases annual meeting results and clarifies technical disclosures, enhancing transparency.",
+      "risk_en": "Uncertainties around the implementation of technical disclosures could impact valuation."
     },
     {
       "symbol": "FE",
-      "mentions": 3,
+      "mentions": 2,
       "headlines": [
         "FirstEnergy Updates Long-Term Financial Plan and Earnings Outlook",
-        "Auction Process Announced for FirstEnergy Pennsylvania Electric Company Default Supply",
-        "Morgan Stanley Adjusts FirstEnergy Rating and Price Target"
+        "Auction Process Announced for FirstEnergy Pennsylvania Electric Company Default Supply"
       ],
       "last_at": "2026-11-20T23:02:06Z",
       "sentiment": 0.0,
@@ -68,34 +88,11 @@
       "trend": "haussiere",
       "hv": 0.12102160748360669,
       "niche": false,
-      "score": 3.793,
-      "why": "FirstEnergy publie son plan financier à long terme et annonce une vente aux enchères liée à un défaut d'approvisionnement, attirant l'attention sur sa situation financière.",
-      "risk": "Le défaut d'approvisionnement et la révision de notation peuvent accentuer la pression financière.",
-      "why_en": "FirstEnergy releases its long‑term financial plan and announces an auction tied to a supply default, drawing focus to its finances.",
-      "risk_en": "The supply default and rating adjustment could increase financial pressure."
-    },
-    {
-      "symbol": "VZ",
-      "mentions": 2,
-      "headlines": [
-        "Verizon Retirees Association Opposes SEC Rule Change",
-        "LALIGA and Verizon Extend Long-Term Partnership"
-      ],
-      "last_at": "2026-11-21T03:01:50Z",
-      "sentiment": 0.5,
-      "price": 46.48,
-      "adv_usd": 1072528630.894165,
-      "chg_5d": 0.3,
-      "chg_20d": 4.1,
-      "rsi": 57.0,
-      "trend": "neutre",
-      "hv": 0.22163395083227636,
-      "niche": false,
-      "score": 3.757,
-      "why": "Verizon fait face à l'opposition d'une association de retraités à une règle SEC tout en prolongeant un partenariat sportif, montrant des enjeux réglementaires et de marque.",
-      "risk": "Les tensions réglementaires pourraient entraîner des coûts de conformité ou nuire à l'image.",
-      "why_en": "Verizon faces retiree opposition to an SEC rule change while extending a sports partnership, highlighting regulatory and branding issues.",
-      "risk_en": "Regulatory tensions could bring compliance costs or reputational damage."
+      "score": 3.217,
+      "why": "FirstEnergy met à jour son plan financier à long terme et annonce un processus d'enchères pour une entité en défaut, indiquant une possible restructuration.",
+      "risk": "Le processus d'enchères et les défauts associés peuvent entraîner des pertes pour les actionnaires.",
+      "why_en": "FirstEnergy updates its long‑term financial plan and announces an auction for a defaulted subsidiary, hinting at restructuring.",
+      "risk_en": "The auction process and associated defaults could lead to shareholder losses."
     },
     {
       "symbol": "KIE",
@@ -115,33 +112,10 @@
       "hv": 0.17641562858278956,
       "niche": false,
       "score": 3.217,
-      "why": "Kier Group voit une réduction de droits de vote d'un trustee et annonce des rachats d'actions hebdomadaires, indiquant des mouvements de gouvernance et de liquidité.",
-      "risk": "La perte de droits de vote peut affaiblir le contrôle des actionnaires et la confiance du marché.",
-      "why_en": "Kier Group experiences a trustee reducing voting rights and announces weekly share buybacks, indicating governance and liquidity moves.",
-      "risk_en": "Loss of voting rights may weaken shareholder control and market confidence."
-    },
-    {
-      "symbol": "INCY",
-      "mentions": 2,
-      "headlines": [
-        "Genesis Molecular AI Reports Performance Gains in Incyte Collaboration Programs",
-        "Mizuho Securities Raises Incyte Price Target to $148"
-      ],
-      "last_at": "2026-11-20T19:02:03Z",
-      "sentiment": 1.0,
-      "price": 114.63,
-      "adv_usd": 208251534.2975235,
-      "chg_5d": -5.2,
-      "chg_20d": -0.9,
-      "rsi": 41.5,
-      "trend": "baissiere",
-      "hv": 0.32179568132824915,
-      "niche": false,
-      "score": 3.197,
-      "why": "Incyte annonce des gains de performance dans ses programmes de collaboration avec Genesis Molecular AI et voit son objectif de cours relevé par Mizuho.",
-      "risk": "Les attentes élevées autour de l'IA et des collaborations peuvent ne pas se matérialiser, affectant le cours.",
-      "why_en": "Incyte reports performance gains in its Genesis Molecular AI collaboration and receives a higher price target from Mizuho.",
-      "risk_en": "High expectations around AI collaborations may not materialise, impacting the stock."
+      "why": "Kier Group réduit les droits de vote d'un trust et annonce des rachats d'actions hebdomadaires, montrant une gestion active du capital.",
+      "risk": "La réduction des droits de vote peut signaler des tensions de gouvernance et affecter la confiance des investisseurs.",
+      "why_en": "Kier Group cuts a trust's voting rights and reports weekly share buybacks, indicating active capital management.",
+      "risk_en": "Reduced voting rights may signal governance tensions and hurt investor confidence."
     },
     {
       "symbol": "NVO",
@@ -162,9 +136,9 @@
       "niche": false,
       "score": 3.197,
       "why": "Novo Nordisk obtient l'approbation FDA pour Sogroya® chez les enfants atteints du syndrome de Turner, élargissant son portefeuille thérapeutique.",
-      "risk": "Le lancement dans une indication rare peut limiter l'impact commercial et exposer la société à des risques de remboursement.",
+      "risk": "Le marché pédiatrique reste limité et la concurrence pourrait freiner la croissance des ventes.",
       "why_en": "Novo Nordisk receives FDA approval for Sogroya® in children with Turner syndrome, expanding its therapeutic portfolio.",
-      "risk_en": "Launching in a rare indication may limit commercial impact and expose the company to reimbursement risks."
+      "risk_en": "The pediatric market is limited and competition could curb sales growth."
     },
     {
       "symbol": "CB",
@@ -184,10 +158,10 @@
       "hv": 0.17572046142974904,
       "niche": false,
       "score": 2.977,
-      "why": "Chubb bénéficie d'une recommandation d'achat maintenue et d'un ajustement de cible de prix, soutenant une perspective positive.",
-      "risk": "Toute détérioration du climat d'assurance ou des sinistres majeurs pourrait inverser la tendance.",
-      "why_en": "Chubb receives a maintained buy rating and price‑target adjustment, supporting a positive outlook.",
-      "risk_en": "A worsening insurance environment or large claims could reverse the trend."
+      "why": "Mizuho réaffirme son rating d'achat sur Chubb et BMO ajuste le prix cible, soutenant une perspective positive.",
+      "risk": "Une réévaluation négative du prix cible ou du rating pourrait entraîner une pression à la baisse du cours.",
+      "why_en": "Mizuho reaffirms a buy rating on Chubb and BMO adjusts the price target, supporting a positive outlook.",
+      "risk_en": "A negative revision of the price target or rating could pressure the share price lower."
     },
     {
       "symbol": "CMG",
@@ -208,34 +182,34 @@
       "hv": 0.47406305926013453,
       "niche": false,
       "score": 2.933,
-      "why": "Chipotle lance une promotion BOGO pour Thanksgiving et voit des ajustements de cible de prix, reflétant l'intérêt des analystes pour ses ventes saisonnières.",
-      "risk": "Une promotion trop agressive pourrait éroder les marges et la rentabilité.",
-      "why_en": "Chipotle introduces a Thanksgiving BOGO promotion and sees price‑target adjustments, reflecting analyst interest in seasonal sales.",
-      "risk_en": "An overly aggressive promotion could erode margins and profitability."
+      "why": "Chipotle lance une promotion BOGO pour Thanksgiving et voit des ajustements de prix cible, attirant l'attention des investisseurs retail.",
+      "risk": "Les changements de recommandation à neutre et les incertitudes sur la demande post‑promotion peuvent freiner la hausse du cours.",
+      "why_en": "Chipotle introduces a Thanksgiving BOGO promotion and experiences price‑target adjustments, drawing retail investor interest.",
+      "risk_en": "Downgrades to neutral and uncertainty about post‑promotion demand could limit price upside."
     },
     {
-      "symbol": "SO",
+      "symbol": "INCY",
       "mentions": 3,
       "headlines": [
-        "Morgan Stanley Downgrades Southern Company to Neutral",
-        "Alabama Power Files to Reduce Customer Rates by $160 Million",
-        "Morgan Stanley Adjusts Price Target on Southern Company to $90 From $84"
+        "Incyte's Povorcitinib Enters Phase III Clinical Trial in China for Non-Segmental Vitiligo",
+        "Genesis Molecular AI Reports Performance Gains in Incyte Collaboration Programs",
+        "Mizuho Securities Raises Incyte Price Target to $148"
       ],
-      "last_at": "2026-11-21T00:02:30Z",
-      "sentiment": -0.3333333333333333,
-      "price": 93.13,
-      "adv_usd": 800319720.8004761,
-      "chg_5d": 0.3,
-      "chg_20d": 1.1,
-      "rsi": 56.7,
-      "trend": "haussiere",
-      "hv": 0.16563289895365915,
+      "last_at": "2026-11-21T14:01:34Z",
+      "sentiment": 0.6666666666666666,
+      "price": 114.63,
+      "adv_usd": 208251534.2975235,
+      "chg_5d": -5.2,
+      "chg_20d": -0.9,
+      "rsi": 41.5,
+      "trend": "baissiere",
+      "hv": 0.32179568132824915,
       "niche": false,
-      "score": 2.833,
-      "why": "Southern Company fait l'objet d'un downgrade à neutre et d'une réduction de tarifs clients, indiquant des pressions sur les revenus et la notation.",
-      "risk": "Le downgrade et la baisse de tarifs peuvent réduire les flux de trésorerie et la confiance des investisseurs.",
-      "why_en": "Southern Company receives a neutral downgrade and announces customer rate reductions, indicating revenue and rating pressures.",
-      "risk_en": "The downgrade and rate cuts may reduce cash flow and investor confidence."
+      "score": 2.773,
+      "why": "Incyte avance un essai de phase III en Chine pour le povorcitinib et voit un relèvement du prix cible, soulignant des opportunités de croissance.",
+      "risk": "Les résultats cliniques incertains et la dépendance aux collaborations externes peuvent créer de la volatilité.",
+      "why_en": "Incyte moves a Phase III trial in China for povorcitinib forward and receives a price‑target raise, highlighting growth potential.",
+      "risk_en": "Uncertain clinical outcomes and reliance on external collaborations may cause volatility."
     },
     {
       "symbol": "ICE",
@@ -255,10 +229,10 @@
       "hv": 0.32002520980641874,
       "niche": false,
       "score": 2.737,
-      "why": "Intercontinental Exchange signale des stocks de café record et un intérêt ouvert record sur les futures financiers, montrant une forte activité de marché.",
-      "risk": "Des niveaux élevés de stocks ou d'intérêt ouvert peuvent précéder une correction de prix si la demande faiblit.",
+      "why": "Intercontinental Exchange signale des stocks de café record et un intérêt ouvert record sur les futures financiers, indiquant une forte activité de marché.",
+      "risk": "Une surabondance de stocks ou un retournement de l'intérêt ouvert pourrait affecter les marges commerciales.",
       "why_en": "Intercontinental Exchange reports record coffee warehouse stocks and record open interest on financial futures, indicating strong market activity.",
-      "risk_en": "High stock or open‑interest levels could precede price correction if demand wanes."
+      "risk_en": "Excessive inventories or a reversal in open interest could impact trading margins."
     },
     {
       "symbol": "LMT",
@@ -278,10 +252,10 @@
       "hv": 0.4204959930437367,
       "niche": false,
       "score": 2.697,
-      "why": "Lockheed Martin obtient une modification de contrat naval de 1,53 mrd $ et voit son objectif de cours relevé, soutenant la dynamique de défense.",
-      "risk": "La dépendance aux contrats gouvernementaux expose l'entreprise à des coupes budgétaires potentielles.",
-      "why_en": "Lockheed Martin receives a $1.53 billion U.S. Navy contract modification and a higher price target, supporting defense momentum.",
-      "risk_en": "Reliance on government contracts exposes the firm to potential budget cuts."
+      "why": "Lockheed Martin obtient une modification de contrat de 1,53 md USD avec la marine américaine, renforçant ses revenus futurs.",
+      "risk": "La dépendance aux contrats gouvernementaux expose l'entreprise aux coupes budgétaires potentielles.",
+      "why_en": "Lockheed Martin receives a $1.53 billion U.S. Navy contract modification, bolstering future revenues.",
+      "risk_en": "Reliance on government contracts exposes the company to potential budget cuts."
     },
     {
       "symbol": "M",
@@ -301,56 +275,78 @@
       "hv": 0.6254645652127175,
       "niche": false,
       "score": 2.697,
-      "why": "Macy's attire l'attention avec des commentaires d'analystes UBS sur les résultats à venir et un partenariat saisonnier avec UGG, soulignant les stratégies de vente.",
-      "risk": "Des résultats décevants ou un partenariat qui ne génère pas de trafic supplémentaire pourraient peser sur les ventes.",
-      "why_en": "Macy's draws attention with UBS analyst commentary on upcoming results and a seasonal UGG partnership, highlighting sales strategies.",
-      "risk_en": "Disappointing results or a partnership that fails to drive traffic could weigh on sales."
+      "why": "Macy's attire l'attention avec un commentaire d'UBS sur les résultats à venir et un partenariat saisonnier avec UGG, stimulant l'intérêt des consommateurs.",
+      "risk": "Les performances du trimestre et la saisonnalité des ventes peuvent créer une volatilité importante.",
+      "why_en": "Macy's draws attention with UBS commentary on upcoming results and a holiday partnership with UGG, boosting consumer interest.",
+      "risk_en": "Quarterly performance and sales seasonality may cause significant volatility."
     },
     {
-      "symbol": "NVS",
+      "symbol": "GEHC",
       "mentions": 2,
       "headlines": [
-        "Novartis Reports Significant R&D Efficiency Gains Through AI Integration",
-        "Novartis CEO Comments on US Restrictions on China Biotech Investments"
+        "GE HealthCare Foundation Announces 2026 Grant Recipients",
+        "GE HealthCare Introduces New AI-Assisted Capabilities for Imaging 360"
       ],
-      "last_at": "2026-11-20T19:01:46Z",
-      "sentiment": 0.5,
-      "price": 150.47,
-      "adv_usd": 355145540.25276184,
-      "chg_5d": -6.2,
-      "chg_20d": -0.4,
-      "rsi": 38.2,
-      "trend": "neutre",
-      "hv": 0.2655252266355366,
-      "niche": false,
-      "score": 2.697,
-      "why": "Novartis met en avant des gains d'efficacité R&D grâce à l'IA et commente les restrictions américaines sur les investissements biotech chinois, montrant à la fois innovation et risques géopolitiques.",
-      "risk": "Les restrictions géopolitiques pourraient limiter les opportunités de collaboration et affecter la croissance.",
-      "why_en": "Novartis highlights R&D efficiency gains from AI and comments on US restrictions on Chinese biotech investments, showing both innovation and geopolitical risk.",
-      "risk_en": "Geopolitical restrictions could limit collaboration opportunities and affect growth."
-    },
-    {
-      "symbol": "DTE",
-      "mentions": 2,
-      "headlines": [
-        "Deutsche Telekom Deploys 'Business GPT' for Kreis Bergstraße Administration",
-        "Morgan Stanley Adjusts Price Target on DTE Energy to $150 From $139"
-      ],
-      "last_at": "2026-11-20T18:05:42Z",
+      "last_at": "2026-11-21T14:01:38Z",
       "sentiment": 0.0,
-      "price": 135.92,
-      "adv_usd": 183485274.33372498,
-      "chg_5d": -2.7,
-      "chg_20d": 3.1,
-      "rsi": 53.4,
+      "price": 80.64,
+      "adv_usd": 357192132.9751587,
+      "chg_5d": -2.9,
+      "chg_20d": 12.9,
+      "rsi": 56.3,
       "trend": "haussiere",
-      "hv": 0.1959210320935865,
+      "hv": 0.40257496314868124,
       "niche": false,
-      "score": 2.657,
-      "why": "DTE Energy déploie 'Business GPT' pour une administration locale et voit son objectif de cours relevé, illustrant l'adoption de l'IA dans les services publics.",
-      "risk": "L'adoption de nouvelles technologies IA comporte des risques d'implémentation et de cybersécurité.",
-      "why_en": "DTE Energy rolls out 'Business GPT' for local administration and receives a higher price target, illustrating AI adoption in utilities.",
-      "risk_en": "Adopting new AI technologies carries implementation and cybersecurity risks."
+      "score": 2.617,
+      "why": "GE HealthCare annonce de nouveaux bénéficiaires de subventions 2026 et lance des capacités d'IA pour l'imagerie, montrant une innovation continue.",
+      "risk": "L'adoption de nouvelles technologies d'IA peut être plus lente que prévu, affectant les revenus attendus.",
+      "why_en": "GE HealthCare announces 2026 grant recipients and unveils AI‑assisted imaging capabilities, demonstrating ongoing innovation.",
+      "risk_en": "Adoption of new AI technologies may be slower than expected, impacting projected revenues."
+    },
+    {
+      "symbol": "SNY",
+      "mentions": 2,
+      "headlines": [
+        "Sanofi Initiates First-in-Human CAR-T Therapy Trial via PrIME Trials",
+        "Sanofi Advances Asthma Candidate Lunsekimig Using AI-Driven R&D"
+      ],
+      "last_at": "2026-11-20T21:01:54Z",
+      "sentiment": 0.0,
+      "price": 46.52,
+      "adv_usd": 206455847.1301651,
+      "chg_5d": -3.8,
+      "chg_20d": 11.8,
+      "rsi": 57.3,
+      "trend": "haussiere",
+      "hv": 0.263892831711136,
+      "niche": false,
+      "score": 2.437,
+      "why": "Sanofi démarre un essai CAR‑T de première génération et progresse sur un candidat asthme avec IA, soulignant son pipeline avancé.",
+      "risk": "Les essais cliniques de première phase comportent un risque élevé d'échec qui pourrait freiner la valorisation.",
+      "why_en": "Sanofi initiates a first‑in‑human CAR‑T trial and advances an asthma candidate using AI, highlighting an advanced pipeline.",
+      "risk_en": "First‑in‑human trials carry a high failure risk that could dampen valuation."
+    },
+    {
+      "symbol": "AA",
+      "mentions": 1,
+      "headlines": [
+        "BofA/Merrill Lynch Upgrades Alcoa to Buy"
+      ],
+      "last_at": "2026-11-20T23:02:11Z",
+      "sentiment": 1.0,
+      "price": 33.42,
+      "adv_usd": 184932074.64422226,
+      "chg_5d": -15.9,
+      "chg_20d": -11.6,
+      "rsi": 27.9,
+      "trend": "baissiere",
+      "hv": 0.5037203992049807,
+      "niche": false,
+      "score": 2.386,
+      "why": "BofA/Merrill Lynch passe Alcoa en recommandation d'achat, ce qui attire l'attention sur le secteur de l'aluminium.",
+      "risk": "La forte baisse récente du cours indique une volatilité élevée et un risque de poursuite de la chute.",
+      "why_en": "BofA/Merrill Lynch upgrades Alcoa to Buy, drawing focus to the aluminum sector.",
+      "risk_en": "The recent steep price decline signals high volatility and risk of further downside."
     }
   ]
 }
