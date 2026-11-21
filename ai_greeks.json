@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T21:01:15",
+  "updated_at": "2026-11-21T00:01:01",
   "positions": [
     {
       "id": "b31a6cb905",
@@ -51,38 +51,38 @@
       "strategy": "BEAR_CALL_SPREAD",
       "underlying": "META",
       "spot": 562.71,
-      "delta": -29.92,
-      "option_delta": -29.92,
+      "delta": -30.18,
+      "option_delta": -30.18,
       "hedge_shares": 0,
-      "delta_usd": -16834.55,
-      "gamma_usd": -66.1008,
-      "gamma_1pct": -371.96,
-      "vega": -21.47,
-      "theta_day": 26.55,
-      "rho": -11.35
+      "delta_usd": -16984.15,
+      "gamma_usd": -82.0737,
+      "gamma_1pct": -461.84,
+      "vega": -22.29,
+      "theta_day": 26.37,
+      "rho": -11.14
     },
     {
       "id": "05448a4562",
       "strategy": "BEAR_CALL_SPREAD",
       "underlying": "NVDA",
-      "spot": 126.24,
-      "delta": -75.7,
-      "option_delta": -75.7,
+      "spot": 129.17,
+      "delta": -84.45,
+      "option_delta": -84.45,
       "hedge_shares": 0,
-      "delta_usd": -9556.62,
-      "gamma_usd": -258.5865,
-      "gamma_1pct": -326.44,
-      "vega": -17.41,
-      "theta_day": 22.51,
-      "rho": -6.34
+      "delta_usd": -10907.9,
+      "gamma_usd": -324.9798,
+      "gamma_1pct": -419.78,
+      "vega": -18.51,
+      "theta_day": 21.47,
+      "rho": -7.09
     }
   ],
   "total": {
-    "delta_usd": -11049.87,
-    "gamma_usd": -324.69,
-    "gamma_1pct": -698.4,
-    "vega": -38.88,
-    "theta_day": 49.06,
-    "rho": -17.69
+    "delta_usd": -12550.75,
+    "gamma_usd": -407.05,
+    "gamma_1pct": -881.62,
+    "vega": -40.8,
+    "theta_day": 47.84,
+    "rho": -18.23
   }
 }
