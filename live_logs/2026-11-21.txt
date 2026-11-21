@@ -1,0 +1,39 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-21T03:22:21 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, AAPL, MSFT, GOOGM, GOOGN, GOOG, GOOGL, NVDA, AMZN, SPCX, TSM, METAM, AVGO, META, TSLA, LLY, BRK-B
+==============================================================================
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOGN, GOOG, GOOGL
+  Contexte risque : VIX 35.9 (99e pct) → RISK-OFF  (information seulement : filtre VIX désactivé, testé défavorable)
+  Trésorerie : vente 4,472 $ de SPY pour financer une entrée
+  ACHAT AAPL @ 342.56 [meanrev] — 13.1541 u | stop 318.03 | target suiveur | risque 322.68 $
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-21T03:22:32
+  Équité : 94,877.84 $ (-5.12% depuis le départ) | Cash : 0.00 $
+  Positions ouvertes :
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +3.73 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent -315.85 $
+    MSFT     21.1638 u @ 506.24 [meanrev] | stop 460.06 | latent -459.68 $
+    XLE      201.3278 u @ 61.29 [meanrev] | stop 56.47 | latent -157.04 $
+    BRK-B    33.5366 u @ 574.62 [meanrev] | stop 545.70 | latent -154.94 $
+    XLP      216.7784 u @ 89.86 [meanrev] | stop 85.46 | latent +130.07 $
+    AAPL     13.1541 u @ 342.56 [meanrev] | stop 318.03 | latent +0.00 $
+  Trades clôturés : 33 | win rate 55% | PnL réalisé total : -2,722.74 $
+  5 derniers trades :
+    2026-11-05 TSLA     [meanrev] 385.19 → 342.92 (stop) PnL -1,039.82 $
+    2026-11-06 MSFT     [breakout] 555.80 → 525.69 (stop) PnL -1,064.91 $
+    2026-11-11 XLE      [meanrev] 63.52 → 63.37 (signal) PnL -44.89 $
+    2026-11-14 BTC-USD  [meanrev] 74,472.77 → 67,957.92 (stop) PnL -1,015.53 $
+    2026-11-17 JPM      [breakout] 331.14 → 329.96 (signal) PnL -110.07 $
+Variation du cycle : -4.49 $
+
+— MIROIR ALPACA —
+  4 stop(s) Alpaca du fonds annulé(s) pour être reposés
+  ALPACA achète 9 AAPL + stop 318.02 (nouvelle position)
+  ALPACA BRK-B : achat avec stop refusé (POST /v2/orders → 422: {"code":42210000,"message":"asset \"BRK-B\" not found"}), achat simple
+  [!] ALPACA BRK-B : ordre refusé — POST /v2/orders → 422: {"code":42210000,"message":"asset \"BRK-B\" not found"}
+  ALPACA ferme SPY (position fermée par le fonds)
+  ALPACA stop XLP : 160 parts à 85.45
+  Ordres en attente (exécution à l'ouverture) : BDX, ENOV, LLY, MSFT, XLE, XLV
+  Équité Alpaca : 94,431.30 $ | cash 3,021.41 $
