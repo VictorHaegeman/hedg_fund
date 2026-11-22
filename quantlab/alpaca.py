@@ -58,9 +58,13 @@ def load_env(path: str | None = None) -> bool:
 
 
 def to_alpaca_symbol(symbol: str) -> str:
-    """Ticker Yahoo → symbole d'ordre Alpaca (BTC-USD → BTC/USD)."""
+    """Ticker Yahoo → symbole d'ordre Alpaca (BTC-USD → BTC/USD, BRK-B → BRK.B).
+    Les classes d'actions s'écrivent avec un tiret chez Yahoo et un point chez Alpaca
+    (le 18/11, « asset BRK-B not found » : la ligne BRK-B du fonds n'a jamais été copiée)."""
     if symbol.endswith("-USD"):
         return symbol[:-4] + "/USD"
+    if "-" in symbol and "/" not in symbol:
+        return symbol.replace("-", ".")
     return symbol
 
 
