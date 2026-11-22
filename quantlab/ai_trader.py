@@ -1275,15 +1275,34 @@ def place_ai_stop(client: Alpaca, t: dict) -> str:
         return f"vrai stop refusé ({str(e)[:80]}) : surveillé à chaque cycle"
 
 
-def cancel_ai_stop(client: Alpaca, t: dict) -> None:
+def cancel_ai_stop(client: Alpaca, t: dict, sleep=time.sleep, tries: int = 10) -> dict | None:
+    """Annule le vrai stop du trade et ATTEND la confirmation d'Alpaca (l'annulation n'est pas
+    immédiate : le 19/11, MCD « held_for_orders 34 » → vente refusée et stop perdu).
+    Renvoie l'ordre s'il a été exécuté pendant l'annulation (il ne faut alors pas revendre :
+    ce serait un doublon). Lève AlpacaError si l'annulation n'est pas confirmée (le stop
+    reste alors en place et enregistré)."""
     oid = t.get("stop_order_id")
     if not oid:
-        return
+        return None
     try:
         client.cancel_order(oid)
     except AlpacaError:
         pass
+    for i in range(tries):
+        try:
+            o = client.get_order(oid)
+        except (AlpacaError, AttributeError):
+            break                                # état inconnu : comportement d'avant
+        st = o.get("status")
+        if st == "filled":
+            return o
+        if st in ("canceled", "expired", "rejected", "replaced", "done_for_day"):
+            break
+        if i == tries - 1:
+            raise AlpacaError(f"annulation du stop {oid} non confirmée (statut {st})")
+        sleep(1)
     t["stop_order_id"] = None
+    return None
 
 
 def stop_fill(client: Alpaca, t: dict) -> dict | None:
@@ -1485,11 +1504,30 @@ def manage_positions(client: Alpaca, trades: list[dict], market_open: bool,
                             cpnl = sum(_num(x["unrealized_pl"], 0.0) for x in cl if x)
                             if not close_option(c, cpnl, f"Action vendue ({reason})"):
                                 raise AlpacaError("rachat du covered call non exécuté")
-                    cancel_ai_stop(client, t)          # sinon les actions restent bloquées
-                    client.close_position(t["underlying"])
+                    f = cancel_ai_stop(client, t, sleep=sleep)   # sinon les actions restent bloquées
+                    if f:                                  # le stop est parti entre-temps
+                        px, q = _num(f.get("filled_avg_price"), 0.0), _num(f.get("filled_qty"), 0.0)
+                        entry = _num(t.get("entry_price"), 0.0)
+                        pnl = round((entry - px if t["kind"] == "short" else px - entry) * q, 2)
+                        _close_record(trades, t["id"], pnl, "Stop-loss (vrai ordre Alpaca)")
+                        lines.append(f"  FERME {t['strategy']} {t['underlying']} (Stop-loss, vrai "
+                                     f"ordre Alpaca à {px:,.4g}) PnL {pnl:+,.2f} $")
+                        continue
+                    try:
+                        client.close_position(t["underlying"])
+                    except AlpacaError:
+                        t["stop_note"] = place_ai_stop(client, t)   # ne jamais rester sans stop
+                        raise
                     _close_record(trades, t["id"], pnl, reason)
                     lines.append(f"  FERME {t['strategy']} {t['underlying']} "
                                  f"({reason}) PnL {pnl:+,.2f} $")
+                elif (not t.get("stop_order_id") and t["kind"] in ("stock", "short", "crypto")
+                      and not str(t.get("stop_note", "")).startswith("vrai stop refusé")
+                      and not any(c["status"] == "OPEN" and c.get("covers") == t["id"] for c in trades)
+                      and ai_stop_body(t) is not None):
+                    # position encore ouverte mais sans vrai stop (annulation ratée, etc.) : on le repose
+                    t["stop_note"] = place_ai_stop(client, t)
+                    lines.append(f"  {t['underlying']} : vrai stop manquant reposé ({t['stop_note']})")
         except Exception as e:
             lines.append(f"  [!] gestion {t['underlying']} : {str(e)[:120]}")
     return lines
