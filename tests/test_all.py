@@ -1601,3 +1601,67 @@ def test_ai_real_stop_orders_and_crypto_cap(tmp_path):
            "equity": 100_000, "crypto_open": 2}
     ok, why = ai.validate({"strategy": "BUY_CRYPTO", "underlying": "ETH/USD", "confidence": 0.9}, ctx)
     assert not ok and "2 cryptos" in why
+
+
+def test_alpaca_share_class_symbol():
+    """Classes d'actions : BRK-B (Yahoo) → BRK.B (Alpaca) ; le 18/11 l'ordre BRK-B était refusé."""
+    from quantlab import alpaca as ap
+    assert ap.to_alpaca_symbol("BRK-B") == "BRK.B" and ap.position_symbol("BRK-B") == "BRK.B"
+    assert ap.to_alpaca_symbol("BTC-USD") == "BTC/USD" and ap.to_alpaca_symbol("ETH/USD") == "ETH/USD"
+    assert ap.to_alpaca_symbol("AAPL") == "AAPL"
+
+
+def test_ai_exit_waits_for_stop_cancel_and_never_loses_stop():
+    """Sortie d'une action IA : on attend que l'annulation du stop soit confirmée ; si le stop
+    est exécuté pendant l'annulation on ne revend pas (doublon) ; si la vente échoue, le stop
+    est reposé ; un trade ouvert sans stop retrouve un vrai stop (cas MCD du 19/11)."""
+    from quantlab import ai_trader as ai
+    from quantlab.alpaca import AlpacaError
+
+    def trade(**kw):
+        t = {"id": "t1", "status": "OPEN", "kind": "stock", "strategy": "BUY_STOCK",
+             "underlying": "MCD", "position_symbol": "MCD", "entry_price": 278.0, "qty": 34.0,
+             "sl_pct": 0.03, "tp_pct": 0.06, "stop_order_id": "s1", "cost": 9452.0}
+        t.update(kw)
+        return t
+
+    class C(FakeAlpaca):
+        def __init__(self, cancel_status="canceled", close_fails=False):
+            super().__init__(positions={"MCD": {"unrealized_pl": "-300", "cost_basis": "9452", "qty": "34"}})
+            self.cancel_status, self.close_fails, self.st = cancel_status, close_fails, {"s1": "new"}
+        def cancel_order(self, oid):
+            super().cancel_order(oid)
+            self.st[oid] = self.cancel_status
+        def get_order(self, oid):
+            return {"status": self.st.get(oid, "new"), "filled_avg_price": "269.5", "filled_qty": "34"}
+        def close_position(self, s):
+            if self.close_fails:
+                raise AlpacaError("403 held_for_orders")
+            return super().close_position(s)
+
+    nosleep = lambda s: None
+    # 1) cas normal : annulation confirmée puis vente
+    c, trades = C(), [trade()]
+    ai.manage_positions(c, trades, True, sleep=nosleep)
+    assert trades[0]["status"] == "CLOSED" and c.closed == ["MCD"]
+    # 2) stop exécuté pendant l'annulation : pas de seconde vente, P&L du vrai stop
+    c, trades = C(cancel_status="filled"), [trade()]
+    out = ai.manage_positions(c, trades, True, sleep=nosleep)
+    assert trades[0]["status"] == "CLOSED" and c.closed == [] and trades[0]["pnl"] == -289.0
+    assert any("vrai ordre Alpaca" in l for l in out)
+    # 3) annulation jamais confirmée : on ne vend pas, le stop reste enregistré
+    c, trades = C(cancel_status="pending_cancel"), [trade()]
+    ai.manage_positions(c, trades, True, sleep=nosleep)
+    assert trades[0]["status"] == "OPEN" and trades[0]["stop_order_id"] == "s1" and c.closed == []
+    # 4) vente refusée : le stop est reposé, le trade reste ouvert
+    c, trades = C(close_fails=True), [trade()]
+    ai.manage_positions(c, trades, True, sleep=nosleep)
+    assert trades[0]["status"] == "OPEN" and trades[0]["stop_order_id"]
+    assert c.orders[-1]["type"] == "stop" and c.orders[-1]["qty"] == "34"
+    # 5) trade ouvert sans stop et sans signal de sortie : le vrai stop est reposé
+    c = C()
+    c.pos["MCD"]["unrealized_pl"] = "-100"
+    trades = [trade(stop_order_id=None)]
+    out = ai.manage_positions(c, trades, True, sleep=nosleep)
+    assert trades[0]["status"] == "OPEN" and trades[0]["stop_order_id"]
+    assert c.orders[-1]["stop_price"] in ("269.65", "269.66") and any("reposé" in l for l in out)
