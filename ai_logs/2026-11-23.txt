@@ -56,3 +56,10 @@ Exécuté : 2026-11-23T18:00:01 | équité 91,150.23 $ (-4.07 % jour) | bourse U
   Grecques du portefeuille : Δ -4,498 $ | Γ +8.85 (Δ$ +53 pour 1 %) | ν -3 $/pt | Θ +8 $/j | ρ -12 $/pt
   ⛔ Pause : perte du jour -4.07 % ≤ -3%
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-23T18:30:02 | équité 91,288.75 $ (-3.92 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -4,673 $ | Γ +25.82 (Δ$ +154 pour 1 %) | ν -1 $/pt | Θ +8 $/j | ρ -12 $/pt
+  ⛔ Pause : perte du jour -3.92 % ≤ -3%
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
