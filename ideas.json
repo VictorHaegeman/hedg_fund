@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T08:42:42",
+  "updated_at": "2026-11-23T12:01:14",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -19,10 +19,81 @@
       "hv": 0.1607937430496378,
       "niche": false,
       "score": 5.826,
-      "why": "Wells Fargo maintient son avis d'achat et augmente l'objectif de cours, ce qui soutient la dynamique positive.",
-      "risk": "Une révision à la baisse de la note ou du prix cible pourrait freiner la hausse.",
-      "why_en": "Wells Fargo maintains a buy rating and raises the price target, supporting the positive momentum.",
-      "risk_en": "A downgrade or lower price target could curb the upside."
+      "why": "Le titre attire l'attention car Wells Fargo maintient son avis d'achat et augmente l'objectif de cours pour Agree Realty.",
+      "risk": "Le principal risque est que la hausse de l'objectif de cours ne se traduise pas en performance réelle du cours.",
+      "why_en": "The stock draws attention because Wells Fargo maintains a buy rating and raises the price target for Agree Realty.",
+      "risk_en": "The main risk is that the higher price target may not materialize into actual share price appreciation."
+    },
+    {
+      "symbol": "PG",
+      "mentions": 2,
+      "headlines": [
+        "Morgan Stanley Adjusts Price Target and Rating for Procter & Gamble",
+        "Procter & Gamble Expands Autonomous Manufacturing Operations"
+      ],
+      "last_at": "2026-11-23T11:32:32Z",
+      "sentiment": 0.5,
+      "price": 169.37,
+      "adv_usd": 1609332661.062622,
+      "chg_5d": -0.3,
+      "chg_20d": 5.2,
+      "rsi": 62.0,
+      "trend": "haussiere",
+      "hv": 0.1932524838934881,
+      "niche": false,
+      "score": 4.637,
+      "why": "Procter & Gamble est sous les projecteurs suite à l'ajustement du prix cible et de la notation par Morgan Stanley ainsi qu'à l'expansion de ses opérations de fabrication autonome.",
+      "risk": "Le risque principal réside dans l'incertitude autour de la rentabilité de la production autonome et des attentes du marché suite aux nouvelles prévisions.",
+      "why_en": "Procter & Gamble is highlighted due to Morgan Stanley's price target and rating adjustment and the company's expansion of autonomous manufacturing operations.",
+      "risk_en": "The main risk lies in uncertainty over the profitability of autonomous production and market expectations after the new forecasts."
+    },
+    {
+      "symbol": "ZTO",
+      "mentions": 2,
+      "headlines": [
+        "Alibaba Cloud VoicePica Deepens Partnership with ZTO Express for AI Customer Service",
+        "Jefferies Maintains Buy Rating and Raises Price Target for ZTO Express"
+      ],
+      "last_at": "2026-11-23T10:01:31Z",
+      "sentiment": 1.0,
+      "price": 20.28,
+      "adv_usd": 40380004.47052002,
+      "chg_5d": -0.2,
+      "chg_20d": 2.2,
+      "rsi": 48.8,
+      "trend": "baissiere",
+      "hv": 0.1508187245780693,
+      "niche": true,
+      "score": 4.157,
+      "why": "ZTO Express attire l'attention grâce à son partenariat renforcé avec Alibaba Cloud pour le service client IA et à la recommandation d'achat de Jefferies avec un objectif de cours relevé.",
+      "risk": "Le risque principal est que l'intégration de l'IA ne génère pas les gains d'efficacité attendus, affectant les marges.",
+      "why_en": "ZTO Express draws attention due to its deepened partnership with Alibaba Cloud for AI customer service and Jefferies' buy rating with a raised price target.",
+      "risk_en": "The main risk is that AI integration may not deliver the expected efficiency gains, impacting margins."
+    },
+    {
+      "symbol": "MCO",
+      "mentions": 4,
+      "headlines": [
+        "Moody's Improves Outlook for Hungary",
+        "Moody's Upgrades Portugal's Credit Rating to A2",
+        "Moody's Ratings Assigns Aa2 Rating to New York State Housing Finance Agency Bonds",
+        "Moody's Ratings Reaffirms AFFIN Group's A3 Long-Term Credit Rating"
+      ],
+      "last_at": "2026-11-23T11:31:44Z",
+      "sentiment": 0.5,
+      "price": 466.83,
+      "adv_usd": 440291338.62594604,
+      "chg_5d": -7.9,
+      "chg_20d": -3.2,
+      "rsi": 38.5,
+      "trend": "neutre",
+      "hv": 0.32482390239843556,
+      "niche": false,
+      "score": 3.719,
+      "why": "Le portefeuille de Moody's montre plusieurs améliorations de notation, ce qui met en lumière les perspectives positives pour la Hongrie, le Portugal et l'agence de financement du logement de New York.",
+      "risk": "Le risque principal est que les améliorations de notation ne se traduisent pas immédiatement en bénéfices pour les titres concernés.",
+      "why_en": "Moody's portfolio shows several rating upgrades, highlighting positive outlooks for Hungary, Portugal, and the New York State Housing Finance Agency bonds.",
+      "risk_en": "The main risk is that rating improvements may not immediately translate into benefits for the affected securities."
     },
     {
       "symbol": "SBGI",
@@ -42,32 +113,10 @@
       "hv": 0.47580214694658335,
       "niche": true,
       "score": 3.697,
-      "why": "Guggenheim relève le prix cible de Sinclair, indiquant une perspective optimiste, tandis que Sinclair engage une procédure FCC qui montre une activité stratégique.",
-      "risk": "Les incertitudes réglementaires liées aux règles de propriété des médias pourraient affecter le cours.",
-      "why_en": "Guggenheim raises Sinclair's price target, indicating optimism, and Sinclair's FCC filing shows strategic activity.",
-      "risk_en": "Regulatory uncertainties around broadcast ownership rules could impact the share price."
-    },
-    {
-      "symbol": "AMT",
-      "mentions": 1,
-      "headlines": [
-        "AmeriTrust Announces Third Quarter 2026 Financial Results"
-      ],
-      "last_at": "2026-11-21T14:03:26Z",
-      "sentiment": 1.0,
-      "price": 184.21,
-      "adv_usd": 530772158.69148254,
-      "chg_5d": -3.9,
-      "chg_20d": -2.5,
-      "rsi": 49.3,
-      "trend": "neutre",
-      "hv": 0.27562629854498927,
-      "niche": false,
-      "score": 3.606,
-      "why": "La publication des résultats du troisième trimestre 2026 d'AmeriTrust attire l'attention des investisseurs.",
-      "risk": "Des performances inférieures aux attentes pourraient peser sur le titre.",
-      "why_en": "AmeriTrust's Q3 2026 financial results release draws investor attention.",
-      "risk_en": "Results below expectations could weigh on the stock."
+      "why": "Sinclair attire l'attention grâce à la hausse du prix cible à 20 $ par Guggenheim et à son action réglementaire auprès de la FCC.",
+      "risk": "Le risque principal est lié à l'incertitude réglementaire autour des règles de propriété des diffuseurs.",
+      "why_en": "Sinclair draws attention due to Guggenheim raising its price target to $20 and the company's FCC filing regarding broadcast ownership rules.",
+      "risk_en": "The main risk stems from regulatory uncertainty surrounding broadcast ownership rules."
     },
     {
       "symbol": "ACM",
@@ -86,33 +135,10 @@
       "hv": 0.46183318077070895,
       "niche": false,
       "score": 3.386,
-      "why": "Allied Critical Metals clarifie une divulgation technique lors de son assemblée annuelle, renforçant la transparence.",
-      "risk": "Des incertitudes sur la viabilité technique des projets pourraient freiner la valorisation.",
-      "why_en": "Allied Critical Metals clarifies technical disclosure at its annual meeting, enhancing transparency.",
-      "risk_en": "Uncertainty about the technical viability of projects could limit valuation."
-    },
-    {
-      "symbol": "KIE",
-      "mentions": 2,
-      "headlines": [
-        "JTC Employer Solutions Trustee Limited Reduces Voting Rights in Kier Group",
-        "Kier Group Announces Weekly Share Buyback Results"
-      ],
-      "last_at": "2026-11-21T09:01:53Z",
-      "sentiment": 0.5,
-      "price": 64.07,
-      "adv_usd": 82386063.3089447,
-      "chg_5d": -2.4,
-      "chg_20d": 1.8,
-      "rsi": 50.7,
-      "trend": "neutre",
-      "hv": 0.17641562858278956,
-      "niche": false,
-      "score": 3.217,
-      "why": "Kier Group annonce une réduction des droits de vote et un rachat d'actions hebdomadaire, signalant des actions de gouvernance et de soutien au cours.",
-      "risk": "La réduction des droits de vote pourrait inquiéter les actionnaires sur le contrôle de l'entreprise.",
-      "why_en": "Kier Group announces reduced voting rights and a weekly share buyback, indicating governance actions and price support.",
-      "risk_en": "Reduced voting rights may concern shareholders about corporate control."
+      "why": "Allied Critical Metals attire l'attention en publiant les résultats de son assemblée annuelle et en clarifiant une divulgation technique.",
+      "risk": "Le risque principal est que les clarifications techniques n'apaisent pas les inquiétudes des investisseurs sur la viabilité du projet.",
+      "why_en": "Allied Critical Metals draws attention by releasing its annual meeting results and clarifying a technical disclosure.",
+      "risk_en": "The main risk is that the technical clarifications may not alleviate investor concerns about project viability."
     },
     {
       "symbol": "JD",
@@ -132,10 +158,56 @@
       "hv": 0.42288479008458296,
       "niche": false,
       "score": 3.197,
-      "why": "JD.com signe un accord stratégique avec Kingdee et signale une forte croissance d'un service de soins pour animaux, montrant diversification et expansion.",
-      "risk": "Une dépendance accrue aux partenaires ou à des services de niche pourrait augmenter la volatilité.",
-      "why_en": "JD.com signs a strategic agreement with Kingdee and reports strong growth in a pet grooming service, showing diversification and expansion.",
-      "risk_en": "Increased reliance on partners or niche services could raise volatility."
+      "why": "JD.com se démarque avec un accord stratégique avec Kingdee et une forte croissance d'un service de retrait de poils d'animaux pendant le Singles' Day.",
+      "risk": "Le risque principal est que la dépendance à des promotions saisonnières comme le Singles' Day rende la croissance non durable.",
+      "why_en": "JD.com stands out with a strategic cooperation agreement with Kingdee and significant growth of a pet hair removal service during Singles' Day.",
+      "risk_en": "The main risk is that reliance on seasonal promotions like Singles' Day makes growth potentially unsustainable."
+    },
+    {
+      "symbol": "PAX",
+      "mentions": 2,
+      "headlines": [
+        "Carnegie Raises Valuation Range for Paxman Following Quarterly Results",
+        "Paxman AB Reports Quarterly Financial Results"
+      ],
+      "last_at": "2026-11-23T09:01:48Z",
+      "sentiment": 1.0,
+      "price": 8.7,
+      "adv_usd": 16356478.060388565,
+      "chg_5d": -5.1,
+      "chg_20d": -24.6,
+      "rsi": 35.6,
+      "trend": "baissiere",
+      "hv": 0.751430642613959,
+      "niche": true,
+      "score": 3.197,
+      "why": "Paxman attire l'attention suite à la hausse de la fourchette de valorisation par Carnegie après les résultats trimestriels.",
+      "risk": "Le risque principal est que les résultats trimestriels ne confirment pas les attentes du marché, limitant la valorisation future.",
+      "why_en": "Paxman draws attention after Carnegie raised its valuation range following quarterly results.",
+      "risk_en": "The main risk is that quarterly results may not meet market expectations, limiting future valuation."
+    },
+    {
+      "symbol": "CRWD",
+      "mentions": 2,
+      "headlines": [
+        "CrowdStrike to Acquire Zscaler in $43.9 Billion All-Stock Transaction",
+        "CrowdStrike Reports Third Quarter Fiscal Year 2027 Financial Results"
+      ],
+      "last_at": "2026-11-23T11:31:30Z",
+      "sentiment": 0.5,
+      "price": 229.44,
+      "adv_usd": 2185400870.1319885,
+      "chg_5d": 1.2,
+      "chg_20d": -10.9,
+      "rsi": 46.0,
+      "trend": "baissiere",
+      "hv": 0.6168164501951122,
+      "niche": false,
+      "score": 2.937,
+      "why": "CrowdStrike attire l'attention avec l'annonce d'une acquisition de Zscaler d'une valeur de 43,9 milliards de dollars en actions et la publication de ses résultats du troisième trimestre FY2027.",
+      "risk": "Le risque principal réside dans les défis d'intégration post‑acquisition qui pourraient affecter la performance financière.",
+      "why_en": "CrowdStrike draws attention with the announcement of a $43.9 billion all‑stock acquisition of Zscaler and its FY2027 Q3 results release.",
+      "risk_en": "The main risk lies in post‑acquisition integration challenges that could impact financial performance."
     },
     {
       "symbol": "CME",
@@ -155,32 +227,10 @@
       "hv": 0.2564350071558621,
       "niche": false,
       "score": 2.537,
-      "why": "CME augmente les exigences de marge sur l'or et l'argent et atteint un jalon de 81 M$ de volume sur les futures XRP, soulignant une activité accrue sur les produits dérivés.",
-      "risk": "Des exigences de marge plus strictes pourraient réduire la liquidité et la participation des traders.",
-      "why_en": "CME raises margin requirements for gold and silver futures and hits a $81 M trading milestone for XRP futures, highlighting increased derivatives activity.",
-      "risk_en": "Stricter margin requirements could dampen liquidity and trader participation."
-    },
-    {
-      "symbol": "AMP",
-      "mentions": 1,
-      "headlines": [
-        "AM Best Affirms Credit Ratings of Ameriprise Financial, Inc. and Its Subsidiaries"
-      ],
-      "last_at": "2026-11-21T14:01:56Z",
-      "sentiment": 1.0,
-      "price": 480.29,
-      "adv_usd": 308183842.8689575,
-      "chg_5d": -7.5,
-      "chg_20d": -2.1,
-      "rsi": 38.1,
-      "trend": "baissiere",
-      "hv": 0.31796814812335955,
-      "niche": false,
-      "score": 2.386,
-      "why": "AM Best confirme les notations de crédit d'Ameriprise Financial, renforçant la confiance des investisseurs.",
-      "risk": "Une éventuelle révision à la baisse des notations pourrait affecter la perception de solidité financière.",
-      "why_en": "AM Best affirms Ameriprise Financial's credit ratings, bolstering investor confidence.",
-      "risk_en": "A potential downgrade could affect perceptions of financial strength."
+      "why": "CME Group attire l'attention en augmentant les exigences de marge pour les contrats or et argent et en atteignant un jalon de 81 millions de dollars de volume de trading pour les futures XRP.",
+      "risk": "Le risque principal est que des marges plus élevées puissent réduire l'activité de trading et la liquidité sur les contrats concernés.",
+      "why_en": "CME Group draws attention by raising margin requirements for gold and silver futures and hitting an $81 million trading milestone for XRP futures.",
+      "risk_en": "The main risk is that higher margins could dampen trading activity and liquidity in the affected contracts."
     },
     {
       "symbol": "T",
@@ -200,10 +250,10 @@
       "hv": 0.17081830962656863,
       "niche": false,
       "score": 2.317,
-      "why": "AT&T sponsorise un hackathon IA et Quebecor propose une offre d'acquisition améliorée pour TELUS, montrant des initiatives d'innovation et de consolidation.",
-      "risk": "Les projets d'IA et les fusions potentielles comportent des incertitudes d'exécution et de synergies.",
-      "why_en": "AT&T sponsors an AI hackathon and Quebecor submits an enhanced acquisition proposal for TELUS, indicating innovation and consolidation moves.",
-      "risk_en": "AI projects and potential mergers carry execution and synergy uncertainties."
+      "why": "AT&T attire l'attention en sponsorisant un hackathon IA pour les jeunes et Quebecor propose une offre d'acquisition améliorée pour TELUS.",
+      "risk": "Le risque principal est que les initiatives de sponsoring n'entraînent pas de retours financiers tangibles, tandis que l'offre d'acquisition peut être rejetée.",
+      "why_en": "AT&T draws attention by sponsoring a youth AI innovation hackathon and Quebecor submitting an enhanced acquisition proposal for TELUS.",
+      "risk_en": "The main risk is that sponsorship initiatives may not yield tangible financial returns, and the acquisition offer could be rejected."
     },
     {
       "symbol": "AFL",
@@ -222,10 +272,33 @@
       "hv": 0.13351316898326804,
       "niche": false,
       "score": 1.966,
-      "why": "Aflac soutient les bourses HPRA ¡BRAVO! 2026, renforçant son image de responsabilité sociale.",
-      "risk": "L'impact limité de ce sponsoring sur les résultats financiers pourrait être perçu comme négligeable.",
-      "why_en": "Aflac sponsors the 2026 HPRA ¡BRAVO! scholarships, enhancing its corporate social responsibility image.",
-      "risk_en": "The limited financial impact of this sponsorship may be seen as negligible."
+      "why": "Aflac attire l'attention en étant le sponsor principal des bourses d'études HPRA ¡BRAVO! 2026.",
+      "risk": "Le risque principal est limité, mais la visibilité du sponsoring ne garantit pas d'impact sur les résultats financiers.",
+      "why_en": "Aflac draws attention by serving as the presenting sponsor for the 2026 HPRA ¡BRAVO! Awards scholarships.",
+      "risk_en": "The main risk is minimal; however, sponsorship visibility does not guarantee impact on financial results."
+    },
+    {
+      "symbol": "MS",
+      "mentions": 2,
+      "headlines": [
+        "Morgan Stanley Strategist Issues Bullish Market Outlook",
+        "Morgan Stanley Files SEC Documents Regarding Accounting Policy Changes"
+      ],
+      "last_at": "2026-11-23T11:31:35Z",
+      "sentiment": 0.5,
+      "price": 165.67,
+      "adv_usd": 1179334041.70372,
+      "chg_5d": -13.1,
+      "chg_20d": -7.1,
+      "rsi": 29.9,
+      "trend": "baissiere",
+      "hv": 0.4239884287258831,
+      "niche": false,
+      "score": 1.697,
+      "why": "Morgan Stanley attire l'attention avec un point de vue haussier sur le marché et la divulgation de changements de politique comptable auprès de la SEC.",
+      "risk": "Le risque principal est que les changements comptables puissent entraîner des ajustements inattendus des résultats, affectant la perception du marché.",
+      "why_en": "Morgan Stanley draws attention with a bullish market outlook and filing SEC documents on accounting policy changes.",
+      "risk_en": "The main risk is that accounting changes could lead to unexpected adjustments in results, affecting market perception."
     },
     {
       "symbol": "ROST",
@@ -245,102 +318,33 @@
       "hv": 0.42194356648344783,
       "niche": false,
       "score": 1.697,
-      "why": "Ross Stores annonce un dividende et voit des analystes réviser leurs notes et objectifs, attirant l'attention des investisseurs en revenu.",
-      "risk": "Une baisse du trafic en magasin ou des marges pourrait rendre le dividende insoutenable.",
-      "why_en": "Ross Stores declares a dividend and sees analysts update ratings and price targets, drawing income‑focused investor interest.",
-      "risk_en": "A decline in store traffic or margins could make the dividend unsustainable."
+      "why": "Ross Stores attire l'attention grâce à l'annonce d'un dividende payable en décembre 2026 et aux mises à jour d'analystes sur les cibles de cours.",
+      "risk": "Le risque principal est que le dividende ne soit pas soutenu par une croissance suffisante des bénéfices.",
+      "why_en": "Ross Stores draws attention with the announcement of a dividend payable in December 2026 and analyst updates on price targets.",
+      "risk_en": "The main risk is that the dividend may not be supported by sufficient earnings growth."
     },
     {
-      "symbol": "WERN",
+      "symbol": "SNOW",
       "mentions": 2,
       "headlines": [
-        "Werner Enterprises Leverages AI Telematics for Crash Prevention",
-        "Werner Enterprises Declares Quarterly Cash Dividend"
+        "Snowflake Insider Sold Shares Worth $13,844,500",
+        "BofA Securities Reports Favorable Demand Trends for Snowflake Ahead of Fiscal Q3 Results"
       ],
-      "last_at": "2026-11-21T14:02:31Z",
+      "last_at": "2026-11-23T11:31:53Z",
       "sentiment": 0.5,
-      "price": 25.75,
-      "adv_usd": 28918151.226053238,
-      "chg_5d": -8.2,
-      "chg_20d": -10.6,
-      "rsi": 29.7,
+      "price": 254.82,
+      "adv_usd": 1270822372.4209595,
+      "chg_5d": -12.4,
+      "chg_20d": -21.7,
+      "rsi": 31.4,
       "trend": "baissiere",
-      "hv": 0.4803336604624042,
-      "niche": true,
+      "hv": 0.5779056425381359,
+      "niche": false,
       "score": 1.697,
-      "why": "Werner Enterprises déploie l'IA télématique pour prévenir les accidents et annonce un dividende trimestriel, combinant innovation et rendement pour les actionnaires.",
-      "risk": "Les coûts d'implémentation de l'IA et la dépendance aux marchés de transport pourraient peser sur la rentabilité.",
-      "why_en": "Werner Enterprises leverages AI telematics for crash prevention and declares a quarterly dividend, blending innovation with shareholder yield.",
-      "risk_en": "Implementation costs of AI and reliance on transport markets could pressure profitability."
-    },
-    {
-      "symbol": "BETR",
-      "mentions": 2,
-      "headlines": [
-        "BetterLife Pharma Engages Integral Wealth Securities as Market Maker",
-        "Better Home & Finance Adds Two Mortgage Advisors to NEO Home Loans"
-      ],
-      "last_at": "2026-11-21T14:03:55Z",
-      "sentiment": 0.0,
-      "price": 14.15,
-      "adv_usd": 11411995.147762299,
-      "chg_5d": -8.4,
-      "chg_20d": -15.4,
-      "rsi": 42.5,
-      "trend": "neutre",
-      "hv": 1.2435992990976044,
-      "niche": true,
-      "score": 1.197,
-      "why": "BetterLife Pharma engage un market maker et Better Home & Finance renforce son équipe de conseillers hypothécaires, indiquant un soutien à la liquidité et à la croissance du crédit.",
-      "risk": "La dépendance à des partenaires de marché et à la demande de prêts hypothécaires expose à des fluctuations sectorielles.",
-      "why_en": "BetterLife Pharma engages a market maker and Better Home & Finance adds mortgage advisors, indicating support for liquidity and credit growth.",
-      "risk_en": "Reliance on market partners and mortgage demand exposes the firms to sectoral fluctuations."
-    },
-    {
-      "symbol": "MCO",
-      "mentions": 2,
-      "headlines": [
-        "Moody's Ratings Assigns Aa2 Rating to New York State Housing Finance Agency Bonds",
-        "Moody's Ratings Reaffirms AFFIN Group's A3 Long-Term Credit Rating"
-      ],
-      "last_at": "2026-11-22T02:02:06Z",
-      "sentiment": 0.0,
-      "price": 466.83,
-      "adv_usd": 440291338.62594604,
-      "chg_5d": -7.9,
-      "chg_20d": -3.2,
-      "rsi": 38.5,
-      "trend": "neutre",
-      "hv": 0.32482390239843556,
-      "niche": false,
-      "score": 1.197,
-      "why": "Moody's attribue une notation Aa2 aux obligations de la NY State Housing Finance Agency et réaffirme la note A3 d'AFFIN, soulignant la solidité de ces émetteurs.",
-      "risk": "Des changements macroéconomiques pouvant affecter les marchés obligataires pourraient impacter ces notations.",
-      "why_en": "Moody's assigns an Aa2 rating to NY State Housing Finance Agency bonds and reaffirms AFFIN's A3 rating, highlighting issuer strength.",
-      "risk_en": "Macroeconomic shifts affecting bond markets could impact these ratings."
-    },
-    {
-      "symbol": "YOU",
-      "mentions": 2,
-      "headlines": [
-        "YouGov Releases 'Travel Decision Journey 2027' Research Report",
-        "IHG Hotels & Resorts and YouGov Publish Research on Hosting Habits"
-      ],
-      "last_at": "2026-11-21T21:01:53Z",
-      "sentiment": 0.0,
-      "price": 52.43,
-      "adv_usd": 93774277.34874725,
-      "chg_5d": -8.4,
-      "chg_20d": 15.5,
-      "rsi": 54.1,
-      "trend": "neutre",
-      "hv": 0.8392008710579487,
-      "niche": false,
-      "score": 1.197,
-      "why": "YouGov publie des études sur les tendances de voyage 2027 et les habitudes d'hébergement, offrant des insights précieux aux secteurs du tourisme et de l'hôtellerie.",
-      "risk": "La pertinence des données dépend de la précision des enquêtes et de l'évolution des comportements post‑pandémie.",
-      "why_en": "YouGov releases research on 2027 travel trends and hosting habits, providing valuable insights for tourism and hospitality sectors.",
-      "risk_en": "Data relevance depends on survey accuracy and post‑pandemic behavior shifts."
+      "why": "Snowflake attire l'attention avec la vente d'actions par un initié d'une valeur de 13,8 M$ et un rapport de BofA indiquant une demande favorable avant les résultats du troisième trimestre fiscal.",
+      "risk": "Le risque principal est que la vente d'actions par l'initié puisse être perçue comme un manque de confiance et affecter le cours.",
+      "why_en": "Snowflake draws attention with an insider selling shares worth $13.8 million and a BofA report showing favorable demand ahead of FY Q3 results.",
+      "risk_en": "The main risk is that the insider sale may be seen as a lack of confidence, potentially impacting the share price."
     }
   ]
 }
