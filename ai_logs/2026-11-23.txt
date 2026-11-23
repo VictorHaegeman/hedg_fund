@@ -1,0 +1,9 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-23T14:32:01 | équité 90,616.23 $ (-4.63 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  MCD : vrai stop manquant reposé (vrai stop Alpaca à 269.66)
+  FERME BEAR_CALL_SPREAD NVDA (Stop-loss) PnL -2,880.00 $
+  Grecques du portefeuille : Δ -4,412 $ | Γ -3.11 (Δ$ -18 pour 1 %) | ν -5 $/pt | Θ +11 $/j | ρ -12 $/pt
+  ⛔ Pause : perte du jour -4.63 % ≤ -3%
+  Idées presse : à jour (il y a 2.5 h, 15 idées)

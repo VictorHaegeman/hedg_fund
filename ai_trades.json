@@ -166,7 +166,7 @@
     "reasoning": "MCD montre une forte tendance haussière avec +7.7% sur 5 jours, un RSI élevé qui confirme le momentum, et des options bon marché (IV/HV 0.77), ce qui rend l'achat direct plus attractif que les stratégies d'options coûteuses.",
     "reasoning_en": "MCD displays a strong upward trend with +7.7% over 5 days, a high RSI confirming momentum, and cheap options (IV/HV 0.77), making a direct stock purchase more attractive than costly option strategies.",
     "pnl": null,
-    "stop_order_id": null,
+    "stop_order_id": "e27231b2-9e07-4123-922c-319f4a393b2c",
     "stop_price": 269.66,
     "stop_note": "vrai stop Alpaca à 269.66"
   },
@@ -382,25 +382,25 @@
     "reasoning_en": "META shows a clear downtrend, an IV/HV of 1.27 indicating expensive options, and no earnings within the next 45 days, making a BEAR_CALL_SPREAD suitable.",
     "pnl": null,
     "attr": {
-      "delta": -453.06,
-      "gamma": -209.72,
-      "theta": 77.69,
-      "vega": -74.82
+      "delta": -316.65,
+      "gamma": -208.97,
+      "theta": 77.92,
+      "vega": -75.12
     },
     "attr_prev": {
-      "at": "2026-11-23T14:12:55",
-      "S": 595.98,
-      "iv": 0.45675,
-      "delta": -34.273463513597875,
-      "gamma": 0.09406770568585365,
-      "theta_day": 16.404061149720945,
-      "vega_pt": -2.7351033457478477
+      "at": "2026-11-23T14:32:47",
+      "S": 592.0,
+      "iv": 0.45785,
+      "delta": -33.26784673593016,
+      "gamma": -0.005253384865787414,
+      "theta_day": 10.622439811303567,
+      "vega_pt": -5.070994742894327
     }
   },
   {
     "id": "05448a4562",
     "opened_at": "2026-11-20T15:30:36",
-    "status": "OPEN",
+    "status": "CLOSED",
     "kind": "options",
     "strategy": "BEAR_CALL_SPREAD",
     "underlying": "NVDA",
@@ -457,7 +457,7 @@
     "confidence": 0.7,
     "reasoning": "NVDA montre une forte tendance baissière, un RSI très bas et une volatilité implicite supérieure à la réalisée, ce qui rend la vente d'un call spread (BEAR_CALL_SPREAD) attractive.",
     "reasoning_en": "NVDA shows a strong downtrend, very low RSI and implied volatility above realized, making a BEAR_CALL_SPREAD attractive.",
-    "pnl": null,
+    "pnl": -2880.0,
     "attr": {
       "delta": -1629.84,
       "gamma": -2585.09,
@@ -472,6 +472,8 @@
       "gamma": 2.6812304266076445,
       "theta_day": -23.75188587027409,
       "vega_pt": 24.643438609236746
-    }
+    },
+    "closed_at": "2026-11-23T14:32:47",
+    "close_reason": "Stop-loss"
   }
 ]
