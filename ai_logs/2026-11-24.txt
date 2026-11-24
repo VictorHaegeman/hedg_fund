@@ -9,3 +9,14 @@ Exécuté : 2026-11-24T14:32:00 | équité 91,597.44 $ (+0.74 % jour) | bourse U
   IA : BUY_STOCK NTSK | confiance 0.72 | NTSK montre une forte hausse récente, un RSI modéré et un sentiment presse positif, sans résultat imminent, ce qui en fait le meilleur candidat pour un achat direct.
   Trade refusé : Ordre non rempli, annule
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-24T15:00:01 | équité 92,510.09 $ (+1.75 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -4,919 $ | Γ +35.57 (Δ$ +213 pour 1 %) | ν -0 $/pt | Θ +9 $/j | ρ -12 $/pt
+  Idées presse ajoutées : BC, NTSK, DG, AEP, RYAAY, RTX, INSM, SAIL  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : NTSK, COIN, DG, INSM, CRM, AMD, GS, SAIL, AVGO, MU, UBER, UNH, IWM, AAVE/USD, DOT/USD, ETH/USD, SOL/USD, XRP/USD
+  Notes IA : NTSK BUY_STOCK 0.78 · COIN SHORT_STOCK 0.66 · INSM HOLD 0.55
+  IA : BUY_STOCK NTSK | confiance 0.78 | NTSK montre une forte hausse récente, un RSI modéré et aucune contrainte de résultats, ce qui en fait le meilleur candidat pour un achat direct.
+  Trade refusé : Ordre non rempli, annule
+  Idées presse : à jour (il y a 3.0 h, 15 idées)
