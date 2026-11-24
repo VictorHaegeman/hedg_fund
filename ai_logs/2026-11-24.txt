@@ -64,3 +64,14 @@ Exécuté : 2026-11-24T17:00:00 | équité 93,013.80 $ (+2.30 % jour) | bourse U
   IA : BEAR_PUT_SPREAD AMD | confiance 0.72 | AMD montre une forte tendance baissière, un RSI sous 40 et des options très bon marché (IV/HV 0.66), ce qui rend le BEAR_PUT_SPREAD approprié pour profiter d'une baisse limitée du risque.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-24T17:30:01 | équité 93,200.11 $ (+2.50 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -486 $ | Γ -7.48 (Δ$ -44 pour 1 %) | ν -5 $/pt | Θ +10 $/j | ρ -11 $/pt
+  Idées presse ajoutées : ANF, YUM, HRL, GIII*, AMGN, NOC, LMT, SPG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ANF, COIN, HRL, CRM, AMD, UBER, AVGO, MU, SHOP, GS, JPM, UNH, IWM, SOL/USD, DOGE/USD, DOT/USD, ADA/USD, AAVE/USD
+  Notes IA : ANF BUY_STOCK 0.81 · HRL BUY_STOCK 0.66 · COIN BEAR_PUT_SPREAD 0.65
+  IA : BUY_STOCK ANF | confiance 0.81 | ANF montre une forte hausse récente, RSI dans la zone neutre-haussière et des options très bon marché (IV/HV 0.48), ce qui justifie un achat direct avec risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
