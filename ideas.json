@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T06:01:13",
+  "updated_at": "2026-11-24T12:01:16",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -20,10 +20,10 @@
       "hv": 0.46070456664203185,
       "niche": false,
       "score": 5.737,
-      "why": "L'ouverture du premier magasin phare de Brunello Cucinelli en Chine montre une expansion de la marque sur un marché haut de gamme en croissance.",
-      "risk": "Le succès dépend fortement de la demande locale et des tensions commerciales entre la Chine et l'Occident.",
-      "why_en": "The opening of Brunello Cucinelli's first flagship store in mainland China signals brand expansion into a high‑end market.",
-      "risk_en": "Success hinges on local demand and potential China‑Western trade tensions."
+      "why": "L'ouverture du premier magasin phare de Brunello Cucinelli en Chine montre une expansion géographique majeure.",
+      "risk": "Le marché chinois reste volatile et les performances peuvent être affectées par la demande locale.",
+      "why_en": "Opening Brunello Cucinelli's first flagship store in mainland China signals a major geographic expansion.",
+      "risk_en": "The Chinese market is volatile and performance may be impacted by local demand."
     },
     {
       "symbol": "NTSK",
@@ -43,56 +43,10 @@
       "hv": 0.8613677263347169,
       "niche": false,
       "score": 5.697,
-      "why": "Les nouvelles de consolidation du secteur cybersécurité et la hausse du prix cible d'Oppenheimer renforcent l'optimisme autour de Netskope.",
-      "risk": "Le titre reste sensible aux résultats d'intégration et à la concurrence accrue dans le domaine de la cybersécurité.",
-      "why_en": "Cybersecurity consolidation news and an increased Oppenheimer price target boost optimism for Netskope.",
-      "risk_en": "The stock is vulnerable to integration outcomes and heightened competition in cybersecurity."
-    },
-    {
-      "symbol": "PDD",
-      "mentions": 2,
-      "headlines": [
-        "Bernstein Upgrades PDD Holdings to Buy",
-        "Nomura Adjusts PDD Holdings Price Target to $94"
-      ],
-      "last_at": "2026-11-23T14:02:13Z",
-      "sentiment": 0.5,
-      "price": 87.14,
-      "adv_usd": 632813297.7305603,
-      "chg_5d": 11.6,
-      "chg_20d": 11.5,
-      "rsi": 63.7,
-      "trend": "haussiere",
-      "hv": 0.4966125066925594,
-      "niche": false,
-      "score": 5.697,
-      "why": "Les upgrades de Bernstein et Nomura, ainsi que le nouveau prix cible, soulignent une perspective positive pour PDD Holdings.",
-      "risk": "Le risque principal provient de la dépendance aux performances du e‑commerce en Chine et aux régulations locales.",
-      "why_en": "Upgrades from Bernstein and Nomura and a higher price target highlight a positive outlook for PDD Holdings.",
-      "risk_en": "The main risk stems from reliance on Chinese e‑commerce performance and local regulatory changes."
-    },
-    {
-      "symbol": "TEL",
-      "mentions": 2,
-      "headlines": [
-        "UBS Adjusts Telenor Price Target to 163 NOK",
-        "Telenor ASA Provides Status Update on Share Buyback Program"
-      ],
-      "last_at": "2026-11-23T13:01:52Z",
-      "sentiment": 0.5,
-      "price": 212.97,
-      "adv_usd": 458070351.6848755,
-      "chg_5d": 0.1,
-      "chg_20d": -0.0,
-      "rsi": 50.1,
-      "trend": "haussiere",
-      "hv": 0.5149181550438908,
-      "niche": false,
-      "score": 4.717,
-      "why": "UBS relève le prix cible et Telenor communique sur son programme de rachat d'actions, ce qui soutient le cours.",
-      "risk": "Le risque réside dans la volatilité des marchés télécoms et les incertitudes géopolitiques affectant les opérations internationales.",
-      "why_en": "UBS raises the price target and Telenor updates its share‑buyback program, supporting the stock.",
-      "risk_en": "Risk lies in telecom market volatility and geopolitical uncertainties impacting international operations."
+      "why": "La hausse des actions Netskope suite à la consolidation du secteur cybersécurité et à la révision à la hausse du prix cible attire l'attention.",
+      "risk": "Le titre reste sensible aux changements rapides du paysage concurrentiel en cybersécurité.",
+      "why_en": "Netskope's share rise after cybersecurity sector consolidation news and an upgraded price target draws interest.",
+      "risk_en": "The stock is vulnerable to rapid shifts in the competitive cybersecurity landscape."
     },
     {
       "symbol": "DG",
@@ -112,34 +66,79 @@
       "hv": 0.44174911162603697,
       "niche": false,
       "score": 4.397,
-      "why": "Vinci annonce des rachats d'actions, tandis que Gatwick Funding met fin à son accord de notation, ce qui attire l'attention des investisseurs.",
-      "risk": "Le risque principal est lié à la possible détérioration du crédit de Gatwick Funding et à l'impact sur la perception du groupe.",
-      "why_en": "Vinci announces share buybacks, and Gatwick Funding terminates its rating agreement, drawing investor interest.",
-      "risk_en": "The main risk is potential credit deterioration of Gatwick Funding and its effect on group perception."
+      "why": "VINCI annonce un rachat d'actions, ce qui peut soutenir le cours, tandis que la rupture de l'accord de notation de Gatwick indique un risque de financement.",
+      "risk": "La perte de notation de crédit pour Gatwick pourrait affecter la perception de stabilité du groupe.",
+      "why_en": "VINCI's share buyback could support the price, while Gatwick's termination of its rating agreement signals financing risk.",
+      "risk_en": "The loss of a credit rating for Gatwick may affect the group's perceived stability."
     },
     {
-      "symbol": "ALV",
-      "mentions": 3,
+      "symbol": "AEP",
+      "mentions": 2,
       "headlines": [
-        "Fitch Ratings Affirms Allianz SE Financial Strength and Issuer Default Ratings",
-        "Allianz Joins European AI Evidence Alliance",
-        "Allianz Global Investors ETF ICAV Net Asset Value Announcement"
+        "AEP Plantations Plc Announces Share Buyback Transaction",
+        "AEP Texas Inc. Involved in Proposed AI Data Center Joint Venture"
       ],
-      "last_at": "2026-11-23T18:01:19Z",
-      "sentiment": 0.0,
-      "price": 119.72,
-      "adv_usd": 97426821.68533325,
-      "chg_5d": 2.9,
-      "chg_20d": 4.7,
-      "rsi": 53.1,
+      "last_at": "2026-11-24T09:02:03Z",
+      "sentiment": 0.5,
+      "price": 127.19,
+      "adv_usd": 549125933.3717728,
+      "chg_5d": -1.7,
+      "chg_20d": -0.8,
+      "rsi": 52.7,
       "trend": "haussiere",
-      "hv": 0.3892669001040737,
+      "hv": 0.17591187813037648,
       "niche": false,
-      "score": 4.353,
-      "why": "Allianz voit ses notations renforcées par Fitch et s'engage dans l'AI Evidence Alliance, montrant une diversification stratégique.",
-      "risk": "Le risque provient de l'exposition aux marchés financiers volatils et aux incertitudes réglementaires autour de l'IA.",
-      "why_en": "Allianz receives affirmed ratings from Fitch and joins the AI Evidence Alliance, indicating strategic diversification.",
-      "risk_en": "Risk stems from exposure to volatile financial markets and regulatory uncertainty around AI."
+      "score": 4.357,
+      "why": "Le rachat d'actions d'AEP Plantations et le projet de joint‑venture IA pour un centre de données attirent les investisseurs.",
+      "risk": "Le projet IA implique des incertitudes technologiques et réglementaires.",
+      "why_en": "AEP Plantations' share buyback and the proposed AI data‑center joint venture catch investors' eye.",
+      "risk_en": "The AI project carries technological and regulatory uncertainties."
+    },
+    {
+      "symbol": "RYAAY",
+      "mentions": 2,
+      "headlines": [
+        "Ryanair Proposes Growth Plan for Germany Contingent on Tax Reform",
+        "Ryanair Increases Capacity for Greece Christmas Flights"
+      ],
+      "last_at": "2026-11-24T09:31:51Z",
+      "sentiment": 0.5,
+      "price": 56.5,
+      "adv_usd": 86841554.36834335,
+      "chg_5d": -1.9,
+      "chg_20d": 6.6,
+      "rsi": 51.4,
+      "trend": "haussiere",
+      "hv": 0.4389464859688677,
+      "niche": false,
+      "score": 4.317,
+      "why": "Ryanair propose un plan de croissance en Allemagne conditionné à une réforme fiscale et augmente la capacité pour la saison de Noël en Grèce.",
+      "risk": "La dépendance à des changements fiscaux en Allemagne crée une incertitude sur la réalisation du plan.",
+      "why_en": "Ryanair proposes a Germany growth plan tied to tax reform and raises capacity for Greek Christmas flights.",
+      "risk_en": "Reliance on tax changes in Germany creates uncertainty about the plan's execution."
+    },
+    {
+      "symbol": "RTX",
+      "mentions": 2,
+      "headlines": [
+        "Bernstein Raises Price Target on RTX Corporation",
+        "RTX Partners with Cohen Veterans Network to Address Food Insecurity"
+      ],
+      "last_at": "2026-11-24T11:31:56Z",
+      "sentiment": 1.0,
+      "price": 194.77,
+      "adv_usd": 1027440197.8469849,
+      "chg_5d": 0.3,
+      "chg_20d": -1.0,
+      "rsi": 50.3,
+      "trend": "baissiere",
+      "hv": 0.29310943186835403,
+      "niche": false,
+      "score": 4.257,
+      "why": "Bernstein relève le prix cible de RTX et le partenariat avec Cohen Veterans Network montre un engagement sociétal.",
+      "risk": "Les attentes de hausse de prix peuvent être limitées si les résultats opérationnels ne suivent pas.",
+      "why_en": "Bernstein raises RTX's price target and the partnership with Cohen Veterans Network highlights social commitment.",
+      "risk_en": "Price target expectations may be constrained if operational results do not keep pace."
     },
     {
       "symbol": "INSM",
@@ -159,10 +158,10 @@
       "hv": 0.8855648904655237,
       "niche": false,
       "score": 4.197,
-      "why": "RBC met en avant le potentiel du candidat INS1148 d'Insmed, tandis que Berenberg maintient une recommandation d'achat sur Sanofi, créant un contexte favorable pour le secteur biotech.",
-      "risk": "Le risque majeur reste l'incertitude clinique et les résultats des essais du médicament, qui peuvent fortement impacter le cours.",
-      "why_en": "RBC highlights the potential of Insmed's INS1148 candidate, and Berenberg reaffirms a buy rating on Sanofi, creating a favorable biotech backdrop.",
-      "risk_en": "The major risk remains clinical uncertainty and trial outcomes, which can heavily affect the share price."
+      "why": "RBC met en avant le potentiel du candidat INS1148 d'Insmed, tandis que Berenberg maintient une note d'achat sur Sanofi, créant un contexte de valorisation positive.",
+      "risk": "Le développement clinique du INS1148 comporte des incertitudes de succès.",
+      "why_en": "RBC highlights the potential of Insmed's INS1148 candidate, and Berenberg reaffirms a buy rating on Sanofi, creating a positive valuation backdrop.",
+      "risk_en": "The clinical development of INS1148 carries success uncertainties."
     },
     {
       "symbol": "SAIL",
@@ -182,10 +181,10 @@
       "hv": 0.722041131321638,
       "niche": false,
       "score": 4.097,
-      "why": "SailPoint est reconnu leader dans le IDC MarketScape 2026, renforçant sa position sur le marché de l'identité augmentée.",
-      "risk": "Le risque réside dans la rapidité d'évolution des menaces d'IA et la capacité de l'entreprise à rester à la pointe technologique.",
-      "why_en": "SailPoint is named a leader in the IDC MarketScape 2026, strengthening its position in augmented identity security.",
-      "risk_en": "Risk lies in the fast‑evolving AI threat landscape and the company's ability to stay technologically ahead."
+      "why": "SailPoint est reconnu leader dans le IDC MarketScape 2026 pour la sécurité d'identité augmentée, renforçant sa position de marché.",
+      "risk": "La gouvernance des identités IA non humaines reste un domaine émergent avec des risques réglementaires.",
+      "why_en": "SailPoint is named a leader in the 2026 IDC MarketScape for augmented identity security, strengthening its market position.",
+      "risk_en": "Governance of non‑human AI identities is an emerging area with regulatory risks."
     },
     {
       "symbol": "AIR",
@@ -207,44 +206,21 @@
       "hv": 0.5396758075813971,
       "niche": true,
       "score": 4.049,
-      "why": "Airbus annonce un programme de rachat d'actions et un investissement public de 350 M€ en recherche aviation, soutenant la confiance des actionnaires.",
-      "risk": "Le risque principal est lié aux retards potentiels de projets aéronautiques et aux pressions budgétaires gouvernementales.",
-      "why_en": "Airbus announces a share‑buyback program and a €350 million public investment in aviation research, bolstering shareholder confidence.",
-      "risk_en": "The main risk is potential delays in aerospace projects and governmental budget pressures."
-    },
-    {
-      "symbol": "WEN",
-      "mentions": 3,
-      "headlines": [
-        "Wendy's Launches First-Ever Merchandise Store",
-        "Wendy's Opens First Location in Italy",
-        "Wendy's Launches Maple Sriracha Baconator in Canada"
-      ],
-      "last_at": "2026-11-23T22:31:40Z",
-      "sentiment": 0.0,
-      "price": 8.54,
-      "adv_usd": 66132963.66730213,
-      "chg_5d": 0.8,
-      "chg_20d": 38.0,
-      "rsi": 67.6,
-      "trend": "haussiere",
-      "hv": 0.5627432147404425,
-      "niche": false,
-      "score": 3.933,
-      "why": "Wendy's lance son premier magasin de produits dérivés et s'étend en Italie, tout en introduisant un nouveau produit au Canada, montrant une diversification de revenus.",
-      "risk": "Le risque est la dépendance à la performance des nouvelles offres et à l'acceptation du marché international.",
-      "why_en": "Wendy's opens its first merchandise store, expands to Italy, and launches a new menu item in Canada, indicating revenue diversification.",
-      "risk_en": "Risk lies in the performance of new offerings and international market acceptance."
+      "why": "Airbus annonce un programme de rachat d'actions et un investissement public de 350 M€ en recherche aviation, signalant confiance et soutien gouvernemental.",
+      "risk": "Les acquisitions comme celle de Dante Metals peuvent diluer le focus opérationnel d'Airbus.",
+      "why_en": "Airbus announces a share buyback program and a €350 million public investment in aviation research, indicating confidence and government support.",
+      "risk_en": "Acquisitions such as Dante Metals' purchase may dilute Airbus's operational focus."
     },
     {
       "symbol": "TRN",
-      "mentions": 2,
+      "mentions": 3,
       "headlines": [
+        "Trainline Partners with Meta for New AI Agent 'Muse'",
         "JPMorgan Asset Management Reports Change in Voting Rights in Trainline plc",
         "Trainline plc Announces Share Buyback Update"
       ],
-      "last_at": "2026-11-23T17:31:46Z",
-      "sentiment": 0.5,
+      "last_at": "2026-11-24T09:01:29Z",
+      "sentiment": 0.3333333333333333,
       "price": 29.05,
       "adv_usd": 26769348.491182327,
       "chg_5d": -4.8,
@@ -253,23 +229,69 @@
       "trend": "haussiere",
       "hv": 0.5561513723408477,
       "niche": true,
-      "score": 3.737,
-      "why": "Trainline publie un changement de droits de vote et met à jour son programme de rachat d'actions, ce qui attire l'attention des investisseurs institutionnels.",
-      "risk": "Le risque principal est la sensibilité aux fluctuations du trafic de transport et aux régulations européennes du secteur.",
-      "why_en": "Trainline reports a voting‑rights change and updates its share‑buyback program, drawing institutional investor interest.",
-      "risk_en": "The main risk is sensitivity to transport traffic fluctuations and European sector regulations."
+      "score": 3.813,
+      "why": "Trainline lance un agent IA avec Meta et met à jour son programme de rachat d'actions, montrant innovation et retour de capital aux actionnaires.",
+      "risk": "Les changements de droits de vote et la dépendance à des partenaires technologiques peuvent créer de l'instabilité de gouvernance.",
+      "why_en": "Trainline introduces an AI agent with Meta and updates its share buyback, showing innovation and capital return to shareholders.",
+      "risk_en": "Changes in voting rights and reliance on tech partners may create governance instability."
+    },
+    {
+      "symbol": "VTRS",
+      "mentions": 2,
+      "headlines": [
+        "Viatris Appoints Paul Duffy to Lead Global Supply Organization",
+        "Scotiabank Initiates Coverage of Viatris with Outperform Rating"
+      ],
+      "last_at": "2026-11-23T23:01:40Z",
+      "sentiment": 0.5,
+      "price": 19.65,
+      "adv_usd": 201587555.05904198,
+      "chg_5d": -4.7,
+      "chg_20d": 8.1,
+      "rsi": 54.1,
+      "trend": "haussiere",
+      "hv": 0.29738623923631946,
+      "niche": false,
+      "score": 3.757,
+      "why": "Viatris nomme un nouveau responsable mondial de la chaîne d'approvisionnement et bénéficie d'une couverture avec notation Outperform, ce qui renforce la perspective de performance.",
+      "risk": "Les attentes élevées autour de la chaîne d'approvisionnement peuvent être difficiles à tenir en cas de perturbations globales.",
+      "why_en": "Viatris appoints a new global supply head and receives Outperform coverage, bolstering performance outlook.",
+      "risk_en": "High expectations on the supply chain may be hard to meet amid global disruptions."
+    },
+    {
+      "symbol": "CLX",
+      "mentions": 2,
+      "headlines": [
+        "Calnex Solutions plc Reports First-Half Revenue",
+        "Clorox Purell ProCare Wins 2026 ISSA Innovation Award"
+      ],
+      "last_at": "2026-11-24T09:02:29Z",
+      "sentiment": 0.5,
+      "price": 104.11,
+      "adv_usd": 380935254.8725891,
+      "chg_5d": -5.5,
+      "chg_20d": 21.7,
+      "rsi": 61.3,
+      "trend": "haussiere",
+      "hv": 0.36089015261318963,
+      "niche": false,
+      "score": 3.697,
+      "why": "Calnex Solutions publie ses revenus du premier semestre, tandis que le produit Purell ProCare de Clorox remporte un prix d'innovation, soulignant la dynamique produit.",
+      "risk": "Le marché des solutions de test et des désinfectants reste concurrentiel, pouvant limiter la croissance.",
+      "why_en": "Calnex Solutions reports first‑half revenue, and Clorox's Purell ProCare wins an innovation award, highlighting product momentum.",
+      "risk_en": "The testing solutions and disinfectant markets remain competitive, potentially limiting growth."
     },
     {
       "symbol": "CSCO",
-      "mentions": 4,
+      "mentions": 5,
       "headlines": [
+        "BNP Paribas Adjusts Price Target on Cisco Systems",
         "Cisco and OpenAI Launch Open Source Project \"Shirudo\" for Self-Defending Infrastructure",
         "Cisco Collaborates with Dragos to Enhance Industrial Cybersecurity",
-        "Cisco Issues Security Advisory for 25 Products Regarding Java Vulnerability",
-        "Cisco Extends Partnership with APGA Tour"
+        "Cisco Issues Security Advisory for 25 Products Regarding Java Vulnerability"
       ],
-      "last_at": "2026-11-23T22:31:34Z",
-      "sentiment": 0.25,
+      "last_at": "2026-11-24T11:31:44Z",
+      "sentiment": 0.2,
       "price": 96.8,
       "adv_usd": 2239451173.587303,
       "chg_5d": 2.4,
@@ -278,11 +300,11 @@
       "trend": "baissiere",
       "hv": 0.5618422799125582,
       "niche": false,
-      "score": 3.449,
-      "why": "Cisco lance un projet open source avec OpenAI et renforce sa cybersécurité industrielle, montrant une orientation vers l'IA et la sécurité.",
-      "risk": "Le risque majeur est la propagation de vulnérabilités comme celle du Java, qui peut affecter la confiance des clients.",
-      "why_en": "Cisco launches an open‑source project with OpenAI and bolsters industrial cybersecurity, highlighting an AI and security focus.",
-      "risk_en": "The major risk is the spread of vulnerabilities such as the Java issue, which could erode customer confidence."
+      "score": 3.664,
+      "why": "Cisco voit plusieurs initiatives majeures : ajustement du prix cible, lancement d'un projet open source avec OpenAI et renforcement de la cybersécurité industrielle avec Dragos.",
+      "risk": "Le nombre d'annonces peut refléter une tentative de compenser des pressions sur les marges ou la croissance.",
+      "why_en": "Cisco has multiple major initiatives: price target adjustment, an open‑source project with OpenAI, and enhanced industrial cybersecurity with Dragos.",
+      "risk_en": "The volume of announcements may reflect attempts to offset margin or growth pressures."
     },
     {
       "symbol": "AB",
@@ -302,56 +324,33 @@
       "hv": 0.1769479002968236,
       "niche": true,
       "score": 3.397,
-      "why": "AllianceBernstein renforce son offre ETF en Europe avec un nouveau spécialiste, ce qui peut attirer les flux d'investissement passifs.",
-      "risk": "Le risque provient de la concurrence accrue dans le secteur des ETF et de la dépendance aux performances du marché obligataire.",
-      "why_en": "AllianceBernstein expands its European ETF offering with a new specialist, potentially attracting passive inflows.",
-      "risk_en": "Risk stems from heightened competition in the ETF space and reliance on bond market performance."
+      "why": "AllianceBernstein renforce son offre ETF en Europe et lance un nouveau fonds equity income, élargissant son portefeuille produit.",
+      "risk": "Le lancement de nouveaux ETF expose le groupe aux fluctuations de la demande des investisseurs institutionnels.",
+      "why_en": "AllianceBernstein expands its European ETF offering and launches a new equity income fund, broadening its product suite.",
+      "risk_en": "Launching new ETFs exposes the firm to fluctuations in institutional investor demand."
     },
     {
-      "symbol": "NVT",
+      "symbol": "HPE",
       "mentions": 2,
       "headlines": [
-        "nVent Announces Participation in Upcoming Investor Conferences",
-        "nVent Electric Rating Maintained at Outperform by Baird"
+        "Nvidia and Hewlett Packard Enterprise to Develop AI Foundation for Sunway Group",
+        "Hewlett Packard Enterprise Reports Fiscal 2026 Fourth Quarter Results"
       ],
-      "last_at": "2026-11-23T23:01:38Z",
+      "last_at": "2026-11-24T11:32:16Z",
       "sentiment": 0.5,
-      "price": 111.92,
-      "adv_usd": 419222294.97184753,
-      "chg_5d": 2.3,
-      "chg_20d": -13.4,
-      "rsi": 42.4,
+      "price": 48.02,
+      "adv_usd": 802213586.4527702,
+      "chg_5d": 3.1,
+      "chg_20d": -18.2,
+      "rsi": 45.1,
       "trend": "baissiere",
-      "hv": 1.0220931434023213,
+      "hv": 1.006051605978296,
       "niche": false,
-      "score": 3.157,
-      "why": "nVent participe à plusieurs conférences investisseurs et voit son rating maintenu à Outperform, soutenant la visibilité auprès des analystes.",
-      "risk": "Le risque principal est la sensibilité aux cycles de l'industrie électrique et aux fluctuations des prix des matières premières.",
-      "why_en": "nVent engages in investor conferences and retains an Outperform rating, enhancing analyst visibility.",
-      "risk_en": "The main risk is sensitivity to electrical industry cycles and raw‑material price fluctuations."
-    },
-    {
-      "symbol": "MSI",
-      "mentions": 2,
-      "headlines": [
-        "Motorola Solutions to Participate in 2026 UBS Global Technology & AI Conference",
-        "Motorola Solutions Insider Sells Shares"
-      ],
-      "last_at": "2026-11-24T03:02:51Z",
-      "sentiment": 0.0,
-      "price": 529.87,
-      "adv_usd": 636200105.5386353,
-      "chg_5d": -0.8,
-      "chg_20d": 9.1,
-      "rsi": 68.9,
-      "trend": "haussiere",
-      "hv": 0.21331946393413803,
-      "niche": false,
-      "score": 3.037,
-      "why": "Motorola Solutions participe à la conférence UBS sur la technologie et l'IA, ce qui souligne son positionnement dans les solutions de sécurité publique.",
-      "risk": "Le risque réside dans la dépendance aux contrats gouvernementaux et aux budgets de défense, qui peuvent être volatils.",
-      "why_en": "Motorola Solutions takes part in the UBS Technology & AI conference, highlighting its public‑security positioning.",
-      "risk_en": "Risk lies in reliance on government contracts and defense budgets, which can be volatile."
+      "score": 3.317,
+      "why": "HPE collabore avec Nvidia pour développer une fondation IA destinée au groupe Sunway, montrant une orientation technologique forte.",
+      "risk": "Les résultats financiers du quatrième trimestre peuvent être affectés par des marges compressées dans le secteur IA.",
+      "why_en": "HPE partners with Nvidia to develop an AI foundation for Sunway Group, indicating a strong tech focus.",
+      "risk_en": "Q4 financial results may be impacted by compressed margins in the AI sector."
     }
   ]
 }
