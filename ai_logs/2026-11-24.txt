@@ -119,3 +119,14 @@ Exécuté : 2026-11-24T19:00:16 | équité 92,938.23 $ (+2.22 % jour) | bourse U
   IA : BUY_STOCK ANF | confiance 0.85 | ANF montre une forte hausse récente, un RSI favorable et des options bon marché, ce qui en fait le meilleur candidat pour un achat direct.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-24T19:30:01 | équité 93,006.07 $ (+2.29 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -954 $ | Γ +5.69 (Δ$ +34 pour 1 %) | ν -4 $/pt | Θ +11 $/j | ρ -12 $/pt
+  Idées presse ajoutées : ANF, GIII*, HRL, BBY, DTE, ATO, SPG, JD  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ANF, COIN, BBY, HRL, CRM, AMD, UBER, AVGO, ORCL, SHOP, XOM, MU, IWM, SOL/USD, BCH/USD, DOT/USD, AAVE/USD, ETH/USD
+  Notes IA : ANF BUY_STOCK 0.8
+  IA : BUY_STOCK ANF | confiance 0.8 | ANF présente une tendance haussière claire avec un RSI bien au-dessus de 50 et une volatilité implicite très faible, indiquant un potentiel de hausse sans surévaluation excessive.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
