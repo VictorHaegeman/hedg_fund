@@ -53,3 +53,14 @@ Exécuté : 2026-11-24T16:30:00 | équité 93,088.51 $ (+2.38 % jour) | bourse U
   IA : BUY_STOCK ANF | confiance 0.78 | ANF montre une forte dynamique haussière avec +22.8% sur 5 jours, un RSI favorable et une volatilité implicite très basse (IV/HV 0.5), ce qui rend l'achat direct attractif malgré la forte volatilité historique.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-24T17:00:00 | équité 93,013.80 $ (+2.30 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -297 $ | Γ -16.53 (Δ$ -97 pour 1 %) | ν -9 $/pt | Θ +16 $/j | ρ -11 $/pt
+  Idées presse ajoutées : ANF, YUM, HRL, GIII*, AMGN, NOC, LMT, SPG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ANF, COIN, HRL, CRM, AMD, UBER, AVGO, ORCL, MU, SHOP, GS, XOM, IWM, ETH/USD, SOL/USD, DOGE/USD, DOT/USD, ADA/USD
+  Notes IA : AMD BEAR_PUT_SPREAD 0.72 · ANF BUY_STOCK 0.7 · HRL BUY_STOCK 0.68
+  IA : BEAR_PUT_SPREAD AMD | confiance 0.72 | AMD montre une forte tendance baissière, un RSI sous 40 et des options très bon marché (IV/HV 0.66), ce qui rend le BEAR_PUT_SPREAD approprié pour profiter d'une baisse limitée du risque.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.5 h, 15 idées)
