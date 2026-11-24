@@ -86,3 +86,14 @@ Exécuté : 2026-11-24T17:45:12 | équité 93,162.86 $ (+2.46 % jour) | bourse U
   IA : BUY_STOCK ANF | confiance 0.78 | ANF montre une tendance haussière claire, un RSI favorable et des options très bon marché (IV/HV 0.47), sans résultats imminents, ce qui justifie un achat direct.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.3 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-24T18:00:01 | équité 93,068.51 $ (+2.36 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -855 $ | Γ +25.98 (Δ$ +155 pour 1 %) | ν -3 $/pt | Θ +12 $/j | ρ -11 $/pt
+  Idées presse ajoutées : ANF, YUM, HRL, GIII*, AMGN, NOC, LMT, SPG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ANF, COIN, HRL, CRM, AMD, AVGO, MU, SHOP, GS, XOM, UBER, JPM, IWM, SOL/USD, DOGE/USD, DOT/USD, AAVE/USD, ETH/USD
+  Notes IA : ANF BULL_CALL_SPREAD 0.8 · HRL BUY_STOCK 0.65 · COIN SHORT_STOCK 0.65
+  IA : BULL_CALL_SPREAD ANF | confiance 0.8 | ANF montre une forte tendance haussière, un RSI élevé et des options très bon marché (IV/HV 0.47), ce qui rend le BULL_CALL_SPREAD optimal pour profiter d’une hausse modérée avec risque limité.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.5 h, 15 idées)
