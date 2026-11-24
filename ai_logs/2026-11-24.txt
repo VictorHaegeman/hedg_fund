@@ -20,3 +20,14 @@ Exécuté : 2026-11-24T15:00:01 | équité 92,510.09 $ (+1.75 % jour) | bourse U
   IA : BUY_STOCK NTSK | confiance 0.78 | NTSK montre une forte hausse récente, un RSI modéré et aucune contrainte de résultats, ce qui en fait le meilleur candidat pour un achat direct.
   Trade refusé : Ordre non rempli, annule
   Idées presse : à jour (il y a 3.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-24T15:30:12 | équité 92,751.77 $ (+2.01 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -4,449 $ | Γ +2.65 (Δ$ +16 pour 1 %) | ν -5 $/pt | Θ +12 $/j | ρ -12 $/pt
+  Idées presse ajoutées : ANF, YUM, HRL, GIII*, AMGN, NOC, LMT, SPG  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : ANF, COIN, HRL, CRM, WMT, AMD, GS, AVGO, MU, UBER, JPM, UNH, IWM, AAVE/USD, SOL/USD, DOT/USD, ETH/USD, XRP/USD
+  Notes IA : WMT BUY_STOCK 0.82 · ANF BUY_STOCK 0.68 · HRL BUY_STOCK 0.66
+  IA : BUY_STOCK WMT | confiance 0.82 | Walmart montre une forte tendance haussière avec +3.4% sur 5 jours, RSI élevé mais encore sous le seuil de surachat critique, volatilité basse et IV/HV < 1, ce qui rend l'achat direct plus avantageux que les stratégies d'options.
+  OUVERT BUY_STOCK WMT | coût 3,558 $
+  Idées presse : 15 idées rafraîchies

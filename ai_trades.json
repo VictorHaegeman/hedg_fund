@@ -382,19 +382,19 @@
     "reasoning_en": "META shows a clear downtrend, an IV/HV of 1.27 indicating expensive options, and no earnings within the next 45 days, making a BEAR_CALL_SPREAD suitable.",
     "pnl": null,
     "attr": {
-      "delta": -590.71,
-      "gamma": -205.15,
-      "theta": 89.88,
-      "vega": -74.02
+      "delta": -358.2,
+      "gamma": -203.81,
+      "theta": 90.06,
+      "vega": -74.32
     },
     "attr_prev": {
-      "at": "2026-11-24T15:00:02",
-      "S": 599.04,
-      "iv": 0.4497,
-      "delta": -34.59981327163814,
-      "gamma": 0.05938348175640362,
-      "theta_day": 8.707080227002974,
-      "vega_pt": -0.4628104374537725
+      "at": "2026-11-24T15:30:13",
+      "S": 592.32,
+      "iv": 0.4561,
+      "delta": -34.23933856292376,
+      "gamma": 0.004480847174645364,
+      "theta_day": 12.367045635161706,
+      "vega_pt": -5.260761298012112
     }
   },
   {
@@ -475,5 +475,28 @@
     },
     "closed_at": "2026-11-23T14:32:47",
     "close_reason": "Stop-loss"
+  },
+  {
+    "id": "a4ec02eba3",
+    "opened_at": "2026-11-24T15:30:28",
+    "status": "OPEN",
+    "kind": "stock",
+    "strategy": "BUY_STOCK",
+    "underlying": "WMT",
+    "position_symbol": "WMT",
+    "cost": 3558.46,
+    "entry_price": 131.798889,
+    "qty": 27.0,
+    "sl_pct": 0.03,
+    "tp_pct": 0.06,
+    "source": null,
+    "niche": false,
+    "confidence": 0.82,
+    "reasoning": "Walmart montre une forte tendance haussière avec +3.4% sur 5 jours, RSI élevé mais encore sous le seuil de surachat critique, volatilité basse et IV/HV < 1, ce qui rend l'achat direct plus avantageux que les stratégies d'options.",
+    "reasoning_en": "Walmart exhibits a strong upward trend with +3.4% over 5 days, RSI high but still below critical overbought level, low volatility and IV/HV < 1, making a direct stock purchase more favorable than option strategies.",
+    "pnl": null,
+    "stop_order_id": "7936b250-0eb4-4431-a0b1-2936eeaf8341",
+    "stop_price": 127.84,
+    "stop_note": "vrai stop Alpaca à 127.84"
   }
 ]
