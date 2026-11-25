@@ -160,3 +160,14 @@ Exécuté : 2026-11-25T20:30:01 | équité 93,130.26 $ (-0.05 % jour) | bourse U
   IA : BUY_STOCK SPGI | confiance 0.78 | SPGI montre une tendance haussière claire, un IV/HV inférieur à 1 indiquant des options bon marché et un RSI modéré, ce qui en fait le meilleur candidat pour un achat d'action.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-25T20:55:00 | équité 92,587.33 $ (-0.63 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -421 $ | Γ +84.41 (Δ$ +513 pour 1 %) | ν +6 $/pt | Θ +6 $/j | ρ -10 $/pt
+  Idées presse ajoutées : DKS, SPGI, PG, CL, BN, BBY, CTSH, DOCS  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : COIN, CRM, GS, AVGO, ORCL, MU, AMZN, AMD, QCOM, DKS, SPGI, CTSH, IWM, ETH/USD, DOGE/USD, LINK/USD, LTC/USD, BCH/USD
+  Notes IA : SPGI BUY_STOCK 0.78 · DKS BUY_STOCK 0.71 · AVGO BEAR_PUT_SPREAD 0.66
+  IA : BUY_STOCK SPGI | confiance 0.78 | SPGI montre une tendance haussière claire, un RSI modéré et des options sous-évaluées (IV/HV <1), ce qui en fait le meilleur candidat pour un achat d'action.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.9 h, 15 idées)
