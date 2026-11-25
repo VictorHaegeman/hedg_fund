@@ -1,5 +1,5 @@
 {
-  "cash": 0.0,
+  "cash": 949.1935070228574,
   "initial_capital": 100000.0,
   "positions": {
     "XLV": {
@@ -41,36 +41,6 @@
       "strategy": "meanrev",
       "entry_date": "2026-11-18",
       "risk_amount": 969.87
-    },
-    "BRK-B": {
-      "symbol": "BRK-B",
-      "shares": 33.53659256206521,
-      "entry": 574.6199951171875,
-      "stop": 545.7038505389914,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-11-18",
-      "risk_amount": 969.75
-    },
-    "XLP": {
-      "symbol": "XLP",
-      "shares": 216.7783565803566,
-      "entry": 89.86000061035156,
-      "stop": 85.45728804259335,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-11-19",
-      "risk_amount": 954.41
-    },
-    "AAPL": {
-      "symbol": "AAPL",
-      "shares": 13.154130035681765,
-      "entry": 342.55999755859375,
-      "stop": 318.0291376475131,
-      "target": null,
-      "strategy": "meanrev",
-      "entry_date": "2026-11-20",
-      "risk_amount": 322.68
     }
   },
   "history": [
@@ -568,10 +538,55 @@
       "reason": "signal",
       "pnl": -110.07,
       "pnl_pct": -0.36
+    },
+    {
+      "symbol": "BRK-B",
+      "shares": 33.53659256206521,
+      "entry": 574.6199951171875,
+      "stop": 545.7038505389914,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-11-18",
+      "risk_amount": 969.75,
+      "exit": 577.2100219726562,
+      "exit_date": "2026-11-24",
+      "reason": "signal",
+      "pnl": 67.55,
+      "pnl_pct": 0.45
+    },
+    {
+      "symbol": "XLP",
+      "shares": 216.7783565803566,
+      "entry": 89.86000061035156,
+      "stop": 85.45728804259335,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-11-19",
+      "risk_amount": 954.41,
+      "exit": 91.87999725341797,
+      "exit_date": "2026-11-24",
+      "reason": "signal",
+      "pnl": 418.19,
+      "pnl_pct": 2.25
+    },
+    {
+      "symbol": "AAPL",
+      "shares": 13.154130035681765,
+      "entry": 342.55999755859375,
+      "stop": 318.0291376475131,
+      "target": null,
+      "strategy": "meanrev",
+      "entry_date": "2026-11-20",
+      "risk_amount": 322.68,
+      "exit": 354.07000732421875,
+      "exit_date": "2026-11-24",
+      "reason": "signal",
+      "pnl": 146.82,
+      "pnl_pct": 3.36
     }
   ],
   "created": "2026-06-11T15:45:35",
-  "last_cycle": "2026-11-24T06:16:28",
+  "last_cycle": "2026-11-25T04:59:09",
   "equity_curve": [
     [
       "2026-06-11",
@@ -1020,7 +1035,22 @@
     [
       "2026-11-23",
       95435.65
+    ],
+    [
+      "2026-11-24",
+      97044.89
     ]
   ],
-  "treasury": {}
+  "treasury": {
+    "BIL": {
+      "shares": 150.85905739684358,
+      "cost": 13820.198340201903,
+      "last": 91.61000061035156
+    },
+    "SPY": {
+      "shares": 40.51296029480456,
+      "cost": 29119.906787602755,
+      "last": 718.780029296875
+    }
+  }
 }
