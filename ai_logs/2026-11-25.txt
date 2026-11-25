@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-25T14:32:18 | équité 93,018.28 $ (-0.17 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +220 $ | Γ -60.69 (Δ$ -349 pour 1 %) | ν -17 $/pt | Θ +26 $/j | ρ -11 $/pt
+  Idées presse ajoutées : ABG, SPGI, PG, CL, BBY, BX, PLD, MFG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : COIN, CRM, MFG, NVDA, ORCL, GS, MSFT, GOOGL, AMZN, AMD, AVGO, INTC, IWM, AAVE/USD, SOL/USD, DOT/USD, ETH/USD, XRP/USD
+  Vente de prime possible : COIN (IV/HV 1.13, BEAR_CALL_SPREAD)
+  Notes IA : COIN BEAR_CALL_SPREAD 0.71 · ORCL BEAR_PUT_SPREAD 0.62 · NVDA BEAR_PUT_SPREAD 0.58
+  IA : HOLD | confiance 0.0 | Aucun des candidats n'atteint le seuil de 0.65 requis pour ouvrir une position prudente.
+  Idées presse : 15 idées rafraîchies
