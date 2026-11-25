@@ -116,3 +116,14 @@ Exécuté : 2026-11-25T18:30:01 | équité 93,127.39 $ (-0.05 % jour) | bourse U
   IA : BEAR_CALL_SPREAD COIN | confiance 0.71 | COIN montre une forte tendance baissière, un RSI très bas et une volatilité implicite supérieure à 1, ce qui justifie la vente d'un call spread pour profiter de la décote des options.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 0.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-25T19:00:01 | équité 93,109.43 $ (-0.07 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +308 $ | Γ +42.12 (Δ$ +255 pour 1 %) | ν +4 $/pt | Θ +2 $/j | ρ -10 $/pt
+  Idées presse ajoutées : DKS, SPGI, PG, CL, BN, BBY, CTSH, DOCS  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, COIN, GS, AVGO, ORCL, MU, AMZN, AMD, QCOM, DKS, SPGI, CTSH, IWM, ETH/USD, AAVE/USD, SOL/USD, DOGE/USD, DOT/USD
+  Notes IA : AVGO BEAR_PUT_SPREAD 0.7 · ORCL BEAR_PUT_SPREAD 0.68 · ETH BUY_CRYPTO 0.66
+  IA : BEAR_PUT_SPREAD AVGO | confiance 0.7 | AVGO montre une forte tendance baissière, un RSI bas et une volatilité implicite nettement inférieure à la volatilité réalisée, ce qui rend un BEAR_PUT_SPREAD attractif avec perte maximale connue.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 1.0 h, 15 idées)
