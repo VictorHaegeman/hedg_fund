@@ -32,3 +32,15 @@ Exécuté : 2026-11-25T15:30:01 | équité 92,645.06 $ (-0.57 % jour) | bourse U
   Notes IA : NVDA SHORT_STOCK 0.62 · ORCL SHORT_STOCK 0.58 · COIN BEAR_CALL_SPREAD 0.55
   IA : HOLD | confiance 0.0 | Aucun des candidats n'atteint le seuil de 0.65, donc aucune position n'est ouverte.
   Idées presse : à jour (il y a 1.0 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-25T15:47:03 | équité 92,597.06 $ (-0.62 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +824 $ | Γ -42.94 (Δ$ -248 pour 1 %) | ν -14 $/pt | Θ +24 $/j | ρ -10 $/pt
+  Idées presse ajoutées : ABG, SPGI, PG, CL, BBY, BX, PLD, MFG*  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : COIN, CRM, MFG, MSFT, NVDA, ORCL, GS, GOOGL, AMZN, TSLA, AMD, AVGO, IWM, DOT/USD, AAVE/USD, SOL/USD, DOGE/USD, ADA/USD
+  Vente de prime possible : COIN (IV/HV 1.18, BEAR_CALL_SPREAD)
+  Notes IA : ORCL BEAR_CALL_SPREAD 0.7 · NVDA BEAR_CALL_SPREAD 0.66 · AMD BEAR_CALL_SPREAD 0.65
+  IA : BEAR_CALL_SPREAD ORCL | confiance 0.7 | ORCL montre une tendance baissière claire, un RSI bas et une volatilité élevée, tandis que l'IV/HV > 1 rend la vente de call spread attractive pour encaisser une prime.
+  Trade refusé : Résultats de ORCL dans 19 j : pas de vente d'options avant l'échéance
+  Idées presse : à jour (il y a 1.2 h, 15 idées)
