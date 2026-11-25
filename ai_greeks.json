@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T06:01:01",
+  "updated_at": "2026-11-25T09:01:11",
   "positions": [
     {
       "id": "b31a6cb905",
@@ -51,15 +51,15 @@
       "strategy": "BEAR_CALL_SPREAD",
       "underlying": "META",
       "spot": 590.02,
-      "delta": -33.15,
-      "option_delta": -33.15,
+      "delta": -30.37,
+      "option_delta": -30.37,
       "hedge_shares": 0,
-      "delta_usd": -19557.53,
-      "gamma_usd": 12.7891,
-      "gamma_1pct": 75.46,
-      "vega": -6.15,
-      "theta_day": 17.41,
-      "rho": -10.54
+      "delta_usd": -17919.23,
+      "gamma_usd": 32.527,
+      "gamma_1pct": 191.92,
+      "vega": -4.57,
+      "theta_day": 20.3,
+      "rho": -9.37
     },
     {
       "id": "a4ec02eba3",
@@ -78,11 +78,11 @@
     }
   ],
   "total": {
-    "delta_usd": -73.6,
-    "gamma_usd": 12.79,
-    "gamma_1pct": 75.46,
-    "vega": -6.15,
-    "theta_day": 17.41,
-    "rho": -10.54
+    "delta_usd": 1564.7,
+    "gamma_usd": 32.53,
+    "gamma_1pct": 191.92,
+    "vega": -4.57,
+    "theta_day": 20.3,
+    "rho": -9.37
   }
 }
