@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T23:15:52",
+  "updated_at": "2026-11-25T03:01:14",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -12,7 +12,7 @@
       "last_at": "2026-11-24T14:34:20Z",
       "sentiment": 1.0,
       "price": 168.1,
-      "adv_usd": 187227921.023024,
+      "adv_usd": 187242638.17855835,
       "chg_5d": 17.7,
       "chg_20d": 1.6,
       "rsi": 64.4,
@@ -20,10 +20,10 @@
       "hv": 0.8851122612891624,
       "niche": false,
       "score": 7.197,
-      "why": "Les résultats du troisième trimestre et la hausse des prévisions de bénéfices 2026 renforcent l'optimisme.",
-      "risk": "Une dépendance à la mode rapide pourrait entraîner une volatilité des ventes.",
-      "why_en": "Third‑quarter results and raised FY2026 earnings outlook boost optimism.",
-      "risk_en": "Reliance on fast‑fashion trends could cause sales volatility."
+      "why": "Les résultats du troisième trimestre et la hausse des prévisions de bénéfices 2026 suscitent l'intérêt.",
+      "risk": "Le risque réside dans une possible dégradation de la demande de mode qui pourrait freiner la croissance.",
+      "why_en": "The Q3 results and the raised FY2026 earnings outlook attract attention.",
+      "risk_en": "The risk lies in a potential slowdown in apparel demand that could curb growth."
     },
     {
       "symbol": "CWK",
@@ -35,7 +35,7 @@
       "last_at": "2026-11-24T23:02:00Z",
       "sentiment": 0.5,
       "price": 13.3,
-      "adv_usd": 45649270.34572597,
+      "adv_usd": 45649297.61072636,
       "chg_5d": 2.6,
       "chg_20d": 10.2,
       "rsi": 52.0,
@@ -43,10 +43,10 @@
       "hv": 0.640222235943963,
       "niche": true,
       "score": 5.217,
-      "why": "L'obtention d'un mandat industriel et l'analyse du data‑center montrent une diversification du portefeuille.",
-      "risk": "L'exposition au secteur industriel peut être affectée par un ralentissement économique.",
-      "why_en": "Securing an industrial landlord mandate and data‑center leasing analysis highlight portfolio diversification.",
-      "risk_en": "Industrial exposure may suffer in an economic slowdown."
+      "why": "L'implication dans un nouveau projet industriel et l'analyse sur l'impact des data centers renforcent la visibilité.",
+      "risk": "Un ralentissement du marché de l'immobilier industriel pourrait réduire les opportunités de location.",
+      "why_en": "Involvement in a new industrial project and analysis of data‑center impact boost visibility.",
+      "risk_en": "A slowdown in the industrial real‑estate market could limit leasing opportunities."
     },
     {
       "symbol": "GIII",
@@ -58,7 +58,7 @@
       "last_at": "2026-11-24T14:02:33Z",
       "sentiment": 0.5,
       "price": 31.69,
-      "adv_usd": 10934905.826553155,
+      "adv_usd": 10934947.023553848,
       "chg_5d": 2.6,
       "chg_20d": 6.4,
       "rsi": 56.4,
@@ -66,10 +66,10 @@
       "hv": 0.41263767654545586,
       "niche": true,
       "score": 5.217,
-      "why": "L'annonce de la date des résultats du T3 2027 et le maintien du dividende rassurent les investisseurs.",
-      "risk": "Le secteur de l'habillement reste sensible aux changements de consommation.",
-      "why_en": "Announcement of Q3 FY2027 results date and dividend continuation reassure investors.",
-      "risk_en": "Apparel sector remains sensitive to consumer spending shifts."
+      "why": "L'annonce de la date des résultats du troisième trimestre et le maintien du dividende attirent les investisseurs.",
+      "risk": "Une baisse des ventes de vêtements pourrait affecter la capacité à soutenir le dividende.",
+      "why_en": "The announcement of Q3 results date and the continued dividend draw investor interest.",
+      "risk_en": "A decline in apparel sales could impair the ability to sustain the dividend."
     },
     {
       "symbol": "DTE",
@@ -82,7 +82,7 @@
       "last_at": "2026-11-24T21:01:25Z",
       "sentiment": 0.3333333333333333,
       "price": 137.7,
-      "adv_usd": 183435378.66867217,
+      "adv_usd": 183435475.05867004,
       "chg_5d": 0.9,
       "chg_20d": 3.8,
       "rsi": 58.8,
@@ -90,10 +90,10 @@
       "hv": 0.19665527348667614,
       "niche": false,
       "score": 4.953,
-      "why": "Des partenariats durables avec Nokia et des projets d'infrastructure renforcent la perspective de croissance.",
-      "risk": "Les régulations énergétiques et les prix de l'électricité peuvent impacter la rentabilité.",
-      "why_en": "Sustainable partnership with Nokia and infrastructure projects bolster growth outlook.",
-      "risk_en": "Energy regulations and electricity pricing could affect profitability."
+      "why": "Le partenariat durable avec Nokia, le projet d'infrastructure en Allemagne et le maintien du rating buy renforcent la perception positive.",
+      "risk": "Des retards ou des coûts imprévus dans les projets d'infrastructure pourraient peser sur les marges.",
+      "why_en": "The sustainability partnership with Nokia, the German tower pilot, and a buy rating boost the positive view.",
+      "risk_en": "Delays or unexpected costs in infrastructure projects could pressure margins."
     },
     {
       "symbol": "ATO",
@@ -106,7 +106,7 @@
       "last_at": "2026-11-24T16:31:48Z",
       "sentiment": 0.3333333333333333,
       "price": 171.73,
-      "adv_usd": 192125710.44646376,
+      "adv_usd": 192605378.08403015,
       "chg_5d": 0.5,
       "chg_20d": 0.9,
       "rsi": 55.2,
@@ -114,10 +114,10 @@
       "hv": 0.17348950641484998,
       "niche": false,
       "score": 4.873,
-      "why": "Le lancement d'un studio souverain en Chine et l'expansion avec Microsoft montrent une stratégie d'innovation.",
-      "risk": "Les tensions géopolitiques et les risques de cybersécurité en Chine sont élevés.",
-      "why_en": "Launch of a sovereign studio in China and expanded Microsoft partnership signal innovation strategy.",
-      "risk_en": "Geopolitical tensions and cybersecurity risks in China are heightened."
+      "why": "Le lancement d'un studio souverain en Chine et l'expansion du partenariat avec Microsoft montrent une stratégie d'innovation.",
+      "risk": "Les tensions géopolitiques ou les régulations locales pourraient freiner l'exécution en Chine.",
+      "why_en": "The launch of a sovereign studio in China and expanded Microsoft partnership signal an innovation strategy.",
+      "risk_en": "Geopolitical tensions or local regulations could hinder execution in China."
     },
     {
       "symbol": "CME",
@@ -130,7 +130,7 @@
       "last_at": "2026-11-24T19:02:40Z",
       "sentiment": 0.3333333333333333,
       "price": 309.25,
-      "adv_usd": 602277390.9903381,
+      "adv_usd": 602379335.2528381,
       "chg_5d": -0.7,
       "chg_20d": 5.4,
       "rsi": 57.0,
@@ -138,10 +138,33 @@
       "hv": 0.19149478421730134,
       "niche": false,
       "score": 4.633,
-      "why": "Le lancement de nouveaux contrats laitiers européens et de futures NBA indique une expansion de l'offre produit.",
-      "risk": "Une faible adoption de ces nouveaux produits pourrait limiter les revenus attendus.",
-      "why_en": "New European dairy contracts and NBA futures launch indicate product‑line expansion.",
-      "risk_en": "Weak market uptake of new products could limit expected revenue."
+      "why": "Le lancement de nouveaux contrats laitiers européens et le record de volume quotidien indiquent une activité accrue.",
+      "risk": "Une volatilité excessive ou un manque de liquidité sur les nouveaux produits pourrait décourager les participants.",
+      "why_en": "The rollout of new European dairy contracts and a daily volume record signal heightened activity.",
+      "risk_en": "Excessive volatility or insufficient liquidity in the new products could deter participants."
+    },
+    {
+      "symbol": "LMT",
+      "mentions": 2,
+      "headlines": [
+        "Lockheed Martin CEO and CFO to Participate in UBS Global Industrials & Transportation Conference",
+        "Mizuho Initiates Lockheed Martin at Outperform With $765 Price Target"
+      ],
+      "last_at": "2026-11-25T01:01:42Z",
+      "sentiment": 0.5,
+      "price": 586.63,
+      "adv_usd": 822902193.6291504,
+      "chg_5d": -0.6,
+      "chg_20d": -5.8,
+      "rsi": 52.0,
+      "trend": "haussiere",
+      "hv": 0.3866389084891101,
+      "niche": false,
+      "score": 4.577,
+      "why": "La participation du CEO et CFO à une conférence industrielle et le rating outperform renforcent la visibilité auprès des investisseurs.",
+      "risk": "Des retards dans les programmes de défense ou des coupes budgétaires gouvernementales pourraient affecter les revenus.",
+      "why_en": "CEO and CFO participation in an industrial conference and an outperform rating raise investor visibility.",
+      "risk_en": "Delays in defense programs or government budget cuts could impact revenue."
     },
     {
       "symbol": "TOL",
@@ -154,7 +177,7 @@
       "last_at": "2026-11-24T19:02:43Z",
       "sentiment": 0.0,
       "price": 148.94,
-      "adv_usd": 152550217.21166077,
+      "adv_usd": 152550597.008667,
       "chg_5d": 3.6,
       "chg_20d": 4.9,
       "rsi": 54.8,
@@ -162,10 +185,10 @@
       "hv": 0.4151328028911434,
       "niche": false,
       "score": 4.493,
-      "why": "L'ouverture de plusieurs nouveaux projets résidentiels montre une dynamique de construction solide.",
-      "risk": "Le ralentissement du marché immobilier résidentiel pourrait réduire les ventes.",
-      "why_en": "Opening of several new residential projects demonstrates strong construction momentum.",
-      "risk_en": "A slowdown in the residential real‑estate market could curb sales."
+      "why": "L'ouverture de nouveaux projets résidentiels dans plusieurs États montre une expansion géographique.",
+      "risk": "Un ralentissement du marché immobilier résidentiel ou des coûts de construction élevés pourraient réduire les marges.",
+      "why_en": "The launch of new residential projects in several states demonstrates geographic expansion.",
+      "risk_en": "A slowdown in the residential real‑estate market or high construction costs could squeeze margins."
     },
     {
       "symbol": "H",
@@ -177,7 +200,7 @@
       "last_at": "2026-11-24T19:03:08Z",
       "sentiment": 0.5,
       "price": 187.4,
-      "adv_usd": 141605013.27824098,
+      "adv_usd": 141604675.95825195,
       "chg_5d": -1.3,
       "chg_20d": 8.4,
       "rsi": 56.3,
@@ -185,10 +208,10 @@
       "hv": 0.38375823073971954,
       "niche": false,
       "score": 4.437,
-      "why": "L'investissement de 39,6 M$ dans la modernisation des services publics et l'approbation d'un projet hôtelier renforcent la diversification.",
-      "risk": "Les projets d'infrastructure sont exposés aux retards réglementaires et aux dépassements de coûts.",
-      "why_en": "$39.6 M investment in utility modernization and hotel project approval enhance diversification.",
-      "risk_en": "Infrastructure projects face regulatory delays and cost overruns."
+      "why": "L'investissement de 39,6 M$ dans la modernisation des services publics et l'approbation d'un projet hôtelier attirent l'attention.",
+      "risk": "Des dépassements de coûts ou des retards dans les projets d'infrastructure pourraient affecter la rentabilité.",
+      "why_en": "The $39.6 M investment in utility modernization and approval of a hotel project draw attention.",
+      "risk_en": "Cost overruns or delays in infrastructure projects could impact profitability."
     },
     {
       "symbol": "T",
@@ -201,7 +224,7 @@
       "last_at": "2026-11-24T23:02:12Z",
       "sentiment": 0.3333333333333333,
       "price": 22.88,
-      "adv_usd": 981975681.8769516,
+      "adv_usd": 981979220.2688217,
       "chg_5d": 2.6,
       "chg_20d": 9.3,
       "rsi": 58.0,
@@ -209,10 +232,10 @@
       "hv": 0.18703704051094347,
       "niche": false,
       "score": 4.293,
-      "why": "Les discussions de partenariat avec Quebecor et TELUS ainsi que le soutien du gouvernement soulignent des opportunités de synergies.",
-      "risk": "Le secteur des télécoms reste soumis à une forte concurrence et à des exigences de capitaux élevés.",
-      "why_en": "Partnership talks with Quebecor and TELUS and government backing highlight synergy opportunities.",
-      "risk_en": "Telecom sector faces intense competition and high capital requirements."
+      "why": "Les discussions de partenariat potentiel avec Quebecor et les rencontres avec le ministre soulignent l'importance stratégique du secteur.",
+      "risk": "Des incertitudes réglementaires ou des retards dans les accords de partenariat pourraient freiner la croissance.",
+      "why_en": "Potential partnership talks with Quebecor and ministerial meetings highlight strategic importance.",
+      "risk_en": "Regulatory uncertainties or delays in partnership agreements could hinder growth."
     },
     {
       "symbol": "M",
@@ -224,7 +247,7 @@
       "last_at": "2026-11-24T23:01:57Z",
       "sentiment": 0.0,
       "price": 24.48,
-      "adv_usd": 137339165.91936684,
+      "adv_usd": 137339290.7673645,
       "chg_5d": 4.7,
       "chg_20d": 2.6,
       "rsi": 53.3,
@@ -232,10 +255,33 @@
       "hv": 0.6587453339118137,
       "niche": false,
       "score": 4.137,
-      "why": "La célébration du 100e défilé de Thanksgiving attire l'attention médiatique et renforce la notoriété de la marque.",
-      "risk": "Une mauvaise météo pourrait impacter les ventes liées à l'événement.",
-      "why_en": "Centennial Thanksgiving Parade celebration draws media attention and boosts brand visibility.",
-      "risk_en": "Adverse weather could affect event‑related sales."
+      "why": "La célébration du centenaire du défilé Macy's et la surveillance météo montrent une forte visibilité médiatique.",
+      "risk": "Des conditions météorologiques défavorables pourraient impacter les ventes liées à l'événement.",
+      "why_en": "The centennial Macy's Parade celebration and weather monitoring provide high media visibility.",
+      "risk_en": "Adverse weather conditions could affect sales tied to the event."
+    },
+    {
+      "symbol": "ENR",
+      "mentions": 2,
+      "headlines": [
+        "Siemens Energy Participates in LeverX Executive Roundtable on AI Strategy",
+        "Update on Strategic Corporate Actions: Acquisition and Capital Increase"
+      ],
+      "last_at": "2026-11-24T18:01:30Z",
+      "sentiment": 0.0,
+      "price": 27.98,
+      "adv_usd": 33411920.028381348,
+      "chg_5d": 3.2,
+      "chg_20d": 24.4,
+      "rsi": 70.6,
+      "trend": "haussiere",
+      "hv": 0.5610718433176333,
+      "niche": true,
+      "score": 3.837,
+      "why": "La participation de Siemens Energy à un round‑table IA et les annonces d'acquisition et d'augmentation de capital soulignent une dynamique de croissance.",
+      "risk": "L'intégration des acquisitions ou la mise en œuvre de la stratégie IA pourraient rencontrer des obstacles opérationnels.",
+      "why_en": "Siemens Energy's AI round‑table participation and acquisition/capital‑raise announcements highlight growth momentum.",
+      "risk_en": "Integrating acquisitions or executing the AI strategy could face operational hurdles."
     },
     {
       "symbol": "SYM",
@@ -248,7 +294,7 @@
       "last_at": "2026-11-24T19:02:43Z",
       "sentiment": 0.0,
       "price": 37.39,
-      "adv_usd": 74469950.46493149,
+      "adv_usd": 74473184.6998787,
       "chg_5d": 13.1,
       "chg_20d": -4.1,
       "rsi": 52.4,
@@ -256,33 +302,10 @@
       "hv": 0.7038606184670431,
       "niche": false,
       "score": 3.773,
-      "why": "Les analystes maintiennent ou ajustent leurs recommandations, reflétant un intérêt soutenu pour la robotique d'entrepôt.",
-      "risk": "La valorisation élevée et la concurrence croissante dans l'automatisation posent des risques de surévaluation.",
-      "why_en": "Analysts maintain or adjust ratings, reflecting continued interest in warehouse robotics.",
-      "risk_en": "High valuation and growing competition in automation pose overvaluation risks."
-    },
-    {
-      "symbol": "ENR",
-      "mentions": 2,
-      "headlines": [
-        "Siemens Energy Participates in LeverX Executive Roundtable on AI Strategy",
-        "Update on Strategic Corporate Actions: Acquisition and Capital Increase"
-      ],
-      "last_at": "2026-11-24T18:01:30Z",
-      "sentiment": 0.0,
-      "price": 27.98,
-      "adv_usd": 33742573.38029842,
-      "chg_5d": 2.1,
-      "chg_20d": 23.2,
-      "rsi": 68.1,
-      "trend": "haussiere",
-      "hv": 0.5708874297370646,
-      "niche": true,
-      "score": 3.617,
-      "why": "La participation à un round‑table IA et les annonces d'acquisition montrent une orientation stratégique vers l'innovation.",
-      "risk": "Les projets d'acquisition et de hausse de capital peuvent diluer les actionnaires existants.",
-      "why_en": "AI round‑table participation and acquisition announcements signal strategic innovation focus.",
-      "risk_en": "Acquisition and capital‑raise projects may dilute existing shareholders."
+      "why": "Les ajustements de target price par plusieurs analystes montrent un intérêt soutenu des analystes.",
+      "risk": "Le cours pourrait être sensible aux résultats opérationnels décevants ou à une concurrence accrue dans la robotique.",
+      "why_en": "Target‑price adjustments by several analysts indicate sustained analyst interest.",
+      "risk_en": "The stock could be vulnerable to disappointing operational results or heightened competition in robotics."
     },
     {
       "symbol": "AWK",
@@ -294,7 +317,7 @@
       "last_at": "2026-11-24T23:01:41Z",
       "sentiment": 0.0,
       "price": 150.4,
-      "adv_usd": 313023450.2214157,
+      "adv_usd": 313023442.701416,
       "chg_5d": 1.5,
       "chg_20d": 7.2,
       "rsi": 60.5,
@@ -302,10 +325,10 @@
       "hv": 0.22793852379034213,
       "niche": false,
       "score": 3.497,
-      "why": "Les communications sur la préparation au froid et le soutien communautaire renforcent l'image de responsabilité sociale.",
-      "risk": "Des conditions climatiques extrêmes peuvent augmenter les coûts d'exploitation.",
-      "why_en": "Cold‑weather preparation advisory and community support enhance social responsibility image.",
-      "risk_en": "Extreme weather conditions may raise operating costs."
+      "why": "L'avis de préparation au froid et la subvention charitable renforcent l'image de responsabilité sociale.",
+      "risk": "Des conditions climatiques extrêmes pourraient entraîner des coûts opérationnels imprévus.",
+      "why_en": "Cold‑weather advisory and charitable grant reinforce the company's social responsibility image.",
+      "risk_en": "Extreme weather conditions could lead to unforeseen operational costs."
     },
     {
       "symbol": "NDAQ",
@@ -317,7 +340,7 @@
       "last_at": "2026-11-24T21:31:40Z",
       "sentiment": 0.0,
       "price": 106.42,
-      "adv_usd": 380084981.68860704,
+      "adv_usd": 380085242.41760254,
       "chg_5d": 1.2,
       "chg_20d": 2.0,
       "rsi": 56.2,
@@ -325,33 +348,10 @@
       "hv": 0.2508809476865193,
       "niche": false,
       "score": 3.437,
-      "why": "La publication du short interest et le maintien de la décision de retrait d'Onfolio montrent une transparence du marché.",
-      "risk": "Un short interest élevé peut indiquer une pression baissière potentielle sur le titre.",
-      "why_en": "Short‑interest disclosure and continued delisting decision demonstrate market transparency.",
-      "risk_en": "High short interest may signal potential downward pressure on the stock."
-    },
-    {
-      "symbol": "GEHC",
-      "mentions": 2,
-      "headlines": [
-        "GE HealthCare Announces New CT Platform and AI-Powered Workflow Enhancements",
-        "GE HealthCare Launches InteleOrchestrator Clarity AI Workflow Tool"
-      ],
-      "last_at": "2026-11-24T19:02:44Z",
-      "sentiment": 0.0,
-      "price": 82.52,
-      "adv_usd": 352829792.12521094,
-      "chg_5d": 0.8,
-      "chg_20d": 16.0,
-      "rsi": 60.8,
-      "trend": "haussiere",
-      "hv": 0.397751177606455,
-      "niche": false,
-      "score": 3.357,
-      "why": "Le lancement d'une nouvelle plateforme CT et d'outils IA souligne l'innovation médicale.",
-      "risk": "L'adoption de nouvelles technologies médicales peut être freinée par les processus de validation réglementaire.",
-      "why_en": "Launch of new CT platform and AI tools highlights medical innovation.",
-      "risk_en": "Adoption of new medical technologies may be slowed by regulatory approval processes."
+      "why": "La publication des positions d'intérêt court et le maintien de l'action de retrait soulignent l'activité de marché.",
+      "risk": "Une hausse du short‑interest ou des pressions réglementaires pourraient entraîner une volatilité accrue.",
+      "why_en": "Release of short‑interest positions and continuation of delisting action highlight market activity.",
+      "risk_en": "Rising short‑interest or regulatory pressure could increase volatility."
     }
   ]
 }
