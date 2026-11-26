@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T06:01:16",
+  "updated_at": "2026-11-26T12:01:12",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -21,10 +21,10 @@
       "hv": 0.9157844608454697,
       "niche": false,
       "score": 7.773,
-      "why": "Les analystes majeurs (JPMorgan, BofA, UBS) augmentent leurs objectifs de cours, ce qui soutient la tendance haussière.",
-      "risk": "Une hausse des objectifs de cours pourrait être limitée si les ventes de magasins n'augmentent pas.",
-      "why_en": "Major analysts (JPMorgan, BofA, UBS) raise price targets, supporting the upward trend.",
-      "risk_en": "The price target upgrades may be constrained if store sales fail to improve."
+      "why": "Les analystes de JPMorgan, BofA et UBS augmentent leurs objectifs de cours, ce qui soutient l'optimisme autour de Kohl's.",
+      "risk": "Une hausse rapide des attentes pourrait être difficile à tenir si les ventes restent faibles.",
+      "why_en": "Analysts at JPMorgan, BofA and UBS raise their price targets, fueling optimism for Kohl's.",
+      "risk_en": "Rapidly rising expectations may be hard to meet if sales remain weak."
     },
     {
       "symbol": "ANF",
@@ -44,10 +44,10 @@
       "hv": 0.896843893198854,
       "niche": false,
       "score": 5.697,
-      "why": "UBS relève son objectif à 220 $, tandis que BMO passe la note à Market Perform, indiquant un regain d'optimisme.",
-      "risk": "Le downgrade de BMO montre une incertitude sur la capacité de la marque à maintenir sa croissance.",
-      "why_en": "UBS lifts its target to $220 and BMO moves the rating to Market Perform, indicating renewed optimism.",
-      "risk_en": "BMO's downgrade reflects uncertainty about the brand's ability to sustain growth."
+      "why": "UBS relève son objectif de cours à 220 $, tandis que BMO passe l'action en Market Perform, indiquant un regain d'intérêt pour Abercrombie & Fitch.",
+      "risk": "Le downgrade de BMO montre une incertitude sur la capacité de l'entreprise à soutenir la croissance.",
+      "why_en": "UBS lifts its price target to $220 and BMO moves the stock to Market Perform, indicating renewed interest in Abercrombie & Fitch.",
+      "risk_en": "BMO's downgrade signals uncertainty about the company's ability to sustain growth."
     },
     {
       "symbol": "UL",
@@ -67,33 +67,10 @@
       "hv": 0.26961792166908943,
       "niche": false,
       "score": 5.417,
-      "why": "JPMorgan relève son objectif de cours alors que l'entreprise fait face à une amende antitrust, montrant une confiance sous-jacente.",
-      "risk": "Les sanctions antitrust pourraient entraîner des coûts juridiques et de conformité supplémentaires.",
-      "why_en": "JPMorgan raises the price target while the company faces an antitrust fine, showing underlying confidence.",
-      "risk_en": "Antitrust sanctions could bring additional legal and compliance costs."
-    },
-    {
-      "symbol": "BBY",
-      "mentions": 2,
-      "headlines": [
-        "Best Buy Announces Regular Quarterly Cash Dividend",
-        "Berenberg Adjusts Balfour Beatty Estimates and Price Target Following Updated FY26 Guidance"
-      ],
-      "last_at": "2026-11-25T23:01:48Z",
-      "sentiment": 0.5,
-      "price": 102.58,
-      "adv_usd": 329067732.2924423,
-      "chg_5d": 2.3,
-      "chg_20d": 5.8,
-      "rsi": 56.2,
-      "trend": "haussiere",
-      "hv": 0.5159689427774228,
-      "niche": false,
-      "score": 5.157,
-      "why": "Best Buy annonce un dividende trimestriel régulier, ce qui attire les investisseurs à revenu fixe.",
-      "risk": "Les ajustements de prévisions de Balfour Beatty pourraient refléter des incertitudes sectorielles qui affectent le marché.",
-      "why_en": "Best Buy announces a regular quarterly dividend, attracting income‑focused investors.",
-      "risk_en": "Balfour Beatty forecast adjustments may signal sector uncertainties that could impact the market."
+      "why": "JPMorgan augmente son objectif de cours pour Unilever, reflétant une perspective positive malgré une amende antitrust.",
+      "risk": "L'amende pour violation antitrust pourrait entraîner des coûts juridiques et de réputation supplémentaires.",
+      "why_en": "JPMorgan raises its price target for Unilever, reflecting a positive outlook despite an antitrust fine.",
+      "risk_en": "The antitrust fine could lead to additional legal and reputational costs."
     },
     {
       "symbol": "HD",
@@ -114,33 +91,10 @@
       "hv": 0.35969607789032126,
       "niche": false,
       "score": 4.773,
-      "why": "Des ventes d'actions par des initiés et une subvention de 150 000 $ pour le logement abordable montrent une activité de marché et un engagement sociétal.",
-      "risk": "Les ventes d'initiés peuvent être perçues comme un manque de confiance des dirigeants.",
-      "why_en": "Insider share sales and a $150,000 grant for affordable housing demonstrate market activity and social commitment.",
-      "risk_en": "Insider sales may be viewed as a lack of confidence from management."
-    },
-    {
-      "symbol": "MGM",
-      "mentions": 2,
-      "headlines": [
-        "MGM Resorts International to Receive Approximately $200 Million from MGM China Special Dividend",
-        "Maple Gold Mines Enters into Definitive Agreement with SOQUEM to Consolidate 100% Ownership of Douay"
-      ],
-      "last_at": "2026-11-25T19:01:55Z",
-      "sentiment": 0.5,
-      "price": 34.65,
-      "adv_usd": 180315719.93023872,
-      "chg_5d": 2.7,
-      "chg_20d": 27.1,
-      "rsi": 63.5,
-      "trend": "neutre",
-      "hv": 0.35641543574804946,
-      "niche": false,
-      "score": 4.237,
-      "why": "MGM Resorts recevra un dividende spécial de 200 M$ de MGM China, renforçant les flux de trésorerie.",
-      "risk": "L'accord de Maple Gold avec SOQUEM expose l'entreprise à des risques liés aux projets miniers internationaux.",
-      "why_en": "MGM Resorts will receive a $200 million special dividend from MGM China, boosting cash flow.",
-      "risk_en": "Maple Gold's agreement with SOQUEM exposes the company to risks from international mining projects."
+      "why": "Un insider de Home Depot vend des actions, mais la fondation de l'entreprise annonce une subvention de 150 000 $ pour le logement abordable, montrant un engagement sociétal.",
+      "risk": "Les ventes d'actions par des insiders peuvent être perçues comme un manque de confiance à court terme.",
+      "why_en": "A Home Depot insider sells shares, yet the company's foundation announces a $150,000 grant for affordable housing, showing social commitment.",
+      "risk_en": "Insider share sales may be viewed as short‑term lack of confidence."
     },
     {
       "symbol": "ARES",
@@ -160,10 +114,10 @@
       "hv": 0.45428881934823,
       "niche": false,
       "score": 4.137,
-      "why": "Ares Management participe à la recapitalisation de FORTNA et rejoint une initiative d'infrastructure européenne, élargissant son exposition.",
-      "risk": "Ces engagements augmentent l'exposition à des projets d'infrastructure qui peuvent être sensibles aux cycles économiques.",
-      "why_en": "Ares Management participates in FORTNA recapitalization and joins a European infrastructure initiative, expanding exposure.",
-      "risk_en": "These commitments increase exposure to infrastructure projects that can be sensitive to economic cycles."
+      "why": "Ares Management participe au recapitalisation de FORTNA et rejoint une initiative européenne d'infrastructure NBA, élargissant son exposition au secteur.",
+      "risk": "Ces engagements peuvent augmenter l'exposition à des projets à long terme et à des risques de marché spécifiques.",
+      "why_en": "Ares Management participates in FORTNA recapitalization and joins a European NBA infrastructure initiative, expanding sector exposure.",
+      "risk_en": "These commitments may increase exposure to long‑term projects and sector‑specific market risks."
     },
     {
       "symbol": "SPGI",
@@ -183,10 +137,10 @@
       "hv": 0.2935602955677239,
       "niche": false,
       "score": 3.877,
-      "why": "S&P Global place NVIDIA sous surveillance négative et attribue une note A+ au fonds souverain, montrant son rôle de notation clé.",
-      "risk": "La surveillance négative de NVIDIA pourrait affecter la perception du secteur technologique dans son portefeuille.",
-      "why_en": "S&P Global puts NVIDIA on CreditWatch Negative and assigns an A+ rating to the sovereign fund, highlighting its pivotal rating role.",
-      "risk_en": "The negative watch on NVIDIA could affect perception of the tech sector within its portfolio."
+      "why": "S&P Global attribue une note A+ au fonds souverain saoudien, mais place NVIDIA en surveillance de crédit négative, soulignant son rôle d'évaluateur clé.",
+      "risk": "Le placement de NVIDIA en CreditWatch négatif peut affecter la perception du risque du portefeuille de S&P Global.",
+      "why_en": "S&P Global gives an A+ rating to the Saudi sovereign fund while placing NVIDIA on CreditWatch Negative, highlighting its key evaluator role.",
+      "risk_en": "Putting NVIDIA on CreditWatch Negative could affect perception of risk in S&P Global's portfolio."
     },
     {
       "symbol": "OKTA",
@@ -206,10 +160,34 @@
       "hv": 0.9252850431361264,
       "niche": false,
       "score": 3.817,
-      "why": "Okta identifie des liens potentiels avec des hackers, renforçant la vigilance en cybersécurité, tandis que JPMorgan relève son objectif.",
-      "risk": "Les menaces de cybersécurité peuvent entraîner des coûts de remédiation et nuire à la confiance des clients.",
-      "why_en": "Okta identifies potential hacker links, enhancing cybersecurity vigilance, while JPMorgan raises its target.",
-      "risk_en": "Cybersecurity threats could lead to remediation costs and erode client confidence."
+      "why": "Okta identifie des liens potentiels avec des hackers et JPMorgan relève son objectif de cours à 214 $, ce qui attire l'attention sur la cybersécurité.",
+      "risk": "Les investigations sur des failles de sécurité peuvent entraîner des coûts de mitigation et nuire à la confiance des clients.",
+      "why_en": "Okta spots potential links to hackers and JPMorgan raises its price target to $214, drawing attention to cybersecurity.",
+      "risk_en": "Security investigations may lead to mitigation costs and erode client confidence."
+    },
+    {
+      "symbol": "RTX",
+      "mentions": 3,
+      "headlines": [
+        "RTX A/S Reports Financial Results for the Quarter Ended September 30, 2026",
+        "RTX's Pratt & Whitney Awarded $2.53 Billion U.S. Navy Contract",
+        "Analysts Update Coverage and Price Targets for RTX Corporation"
+      ],
+      "last_at": "2026-11-26T08:02:06Z",
+      "sentiment": 0.3333333333333333,
+      "price": 196.19,
+      "adv_usd": 1023630074.7078705,
+      "chg_5d": -0.3,
+      "chg_20d": 0.6,
+      "rsi": 52.1,
+      "trend": "neutre",
+      "hv": 0.28797051107563515,
+      "niche": false,
+      "score": 3.713,
+      "why": "RTX publie ses résultats trimestriels et remporte un contrat naval de 2,53 milliards de dollars, montrant une activité robuste.",
+      "risk": "Le placement de NVIDIA en CreditWatch négatif par S&P Global pourrait refléter des tensions sectorielles affectant RTX.",
+      "why_en": "RTX releases quarterly results and wins a $2.53 billion U.S. Navy contract, indicating strong activity.",
+      "risk_en": "S&P Global's negative CreditWatch on NVIDIA may signal sector tensions that could affect RTX."
     },
     {
       "symbol": "BN",
@@ -229,10 +207,35 @@
       "hv": 0.43090260680133435,
       "niche": false,
       "score": 3.677,
-      "why": "Brookfield annonce des dividendes sur ses unités privilégiées, et Danone lance une nouvelle campagne de marque, stimulant l'intérêt des investisseurs.",
-      "risk": "Le lancement de nouvelles marques comporte le risque de ne pas rencontrer les attentes du marché.",
-      "why_en": "Brookfield declares dividends on preferred units, and Danone launches a new brand campaign, boosting investor interest.",
-      "risk_en": "Launching new brands carries the risk of not meeting market expectations."
+      "why": "Brookfield Property annonce des dividendes sur ses unités privilégiées et Danone lance une nouvelle campagne OIKOS, montrant des initiatives de croissance et de rendement.",
+      "risk": "Les dividendes élevés peuvent être difficiles à maintenir si les revenus immobiliers stagnent.",
+      "why_en": "Brookfield Property declares dividends on preferred units and Danone launches a new OIKOS campaign, showing growth and yield initiatives.",
+      "risk_en": "High dividends may be hard to sustain if real‑estate revenues stall."
+    },
+    {
+      "symbol": "BLK",
+      "mentions": 4,
+      "headlines": [
+        "BlackRock, Inc. Files Major Holdings Notification for Symrise AG",
+        "BlackRock Canada Announces Estimated 2026 Annual Reinvested Capital Gains Distributions for iShares ETFs",
+        "BlackRock, Inc. Discloses Change in Voting Rights in SAP SE",
+        "BlackRock, Inc. Discloses Change in Voting Rights in Brenntag SE"
+      ],
+      "last_at": "2026-11-26T11:31:33Z",
+      "sentiment": 0.25,
+      "price": 1141.86,
+      "adv_usd": 797678155.1989746,
+      "chg_5d": -2.3,
+      "chg_20d": -1.4,
+      "rsi": 46.8,
+      "trend": "neutre",
+      "hv": 0.382284864569873,
+      "niche": false,
+      "score": 3.509,
+      "why": "BlackRock dépose une notification de participation majeure dans Symrise et communique des distributions de gains réinvestis, soulignant son influence sur les marchés.",
+      "risk": "Les changements de droits de vote et les notifications importantes peuvent attirer l'attention des régulateurs.",
+      "why_en": "BlackRock files a major holdings notification for Symrise and announces reinvested capital gains distributions, highlighting its market influence.",
+      "risk_en": "Voting‑rights changes and major filings may draw regulatory scrutiny."
     },
     {
       "symbol": "MAR",
@@ -253,34 +256,10 @@
       "hv": 0.2568383075871493,
       "niche": false,
       "score": 3.333,
-      "why": "Marriott organise des événements prestigieux et signe des accords de gestion hôtelière en Chine, renforçant sa visibilité internationale.",
-      "risk": "La dépendance à l'égard du marché chinois expose l'entreprise aux risques géopolitiques et réglementaires.",
-      "why_en": "Marriott hosts high‑profile events and signs hotel management deals in China, enhancing international visibility.",
-      "risk_en": "Reliance on the Chinese market exposes the company to geopolitical and regulatory risks."
-    },
-    {
-      "symbol": "BLK",
-      "mentions": 3,
-      "headlines": [
-        "BlackRock Canada Announces Estimated 2026 Annual Reinvested Capital Gains Distributions for iShares ETFs",
-        "BlackRock, Inc. Discloses Change in Voting Rights in SAP SE",
-        "BlackRock, Inc. Discloses Change in Voting Rights in Brenntag SE"
-      ],
-      "last_at": "2026-11-26T00:01:27Z",
-      "sentiment": 0.3333333333333333,
-      "price": 1141.86,
-      "adv_usd": 797678155.1989746,
-      "chg_5d": -2.3,
-      "chg_20d": -1.4,
-      "rsi": 46.8,
-      "trend": "neutre",
-      "hv": 0.382284864569873,
-      "niche": false,
-      "score": 3.313,
-      "why": "BlackRock communique sur les distributions de gains en capital et des changements de droits de vote, montrant une gouvernance active.",
-      "risk": "Les changements de droits de vote peuvent entraîner des tensions avec les actionnaires et affecter la perception de la gouvernance.",
-      "why_en": "BlackRock reports capital gains distributions and voting‑rights changes, indicating active governance.",
-      "risk_en": "Voting‑rights changes may cause shareholder tensions and affect governance perception."
+      "why": "Marriott accueille les Masters of the Craft 2026 et signe des accords de gestion hôtelière avec un investisseur chinois, renforçant sa visibilité internationale.",
+      "risk": "Les projets d'expérience immersive et les partenariats étrangers peuvent comporter des risques d'exécution et de perception locale.",
+      "why_en": "Marriott hosts the 2026 Masters of the Craft and signs hotel management deals with a Chinese investor, boosting international visibility.",
+      "risk_en": "Immersive projects and foreign partnerships may carry execution and local perception risks."
     },
     {
       "symbol": "IFF",
@@ -300,10 +279,10 @@
       "hv": 0.38365297052138164,
       "niche": false,
       "score": 3.197,
-      "why": "IFF fait face à des amendes importantes pour collusion, mais reste sous le radar des investisseurs grâce à son positionnement sectoriel.",
-      "risk": "Les amendes antitrust de 85 M£ représentent un risque financier et de réputation significatif.",
-      "why_en": "IFF faces substantial fines for collusion but remains on investors' radar due to its sector position.",
-      "risk_en": "The £85 million antitrust fines pose a significant financial and reputational risk."
+      "why": "International Flavors & Fragrances est sanctionnée pour collusion, mais reste au centre de l'industrie des arômes, attirant l'attention réglementaire.",
+      "risk": "Les amendes importantes peuvent peser sur la rentabilité et la réputation de l'entreprise.",
+      "why_en": "International Flavors & Fragrances is fined for collusion, yet remains central to the flavor industry, drawing regulatory focus.",
+      "risk_en": "Large fines can weigh on profitability and corporate reputation."
     },
     {
       "symbol": "DOO",
@@ -323,10 +302,10 @@
       "hv": 0.4073228131771819,
       "niche": true,
       "score": 3.117,
-      "why": "BRP voit son prix cible ajusté par National Bank Financial, reflétant un intérêt analyste continu.",
-      "risk": "L'initiative anti‑harcèlement 'Yellow Day' n'affecte pas directement les résultats financiers, mais la perception publique reste un facteur.",
-      "why_en": "BRP's price target is adjusted by National Bank Financial, reflecting ongoing analyst interest.",
-      "risk_en": "The 'Yellow Day' anti‑bullying initiative does not directly impact financial results, but public perception remains a factor."
+      "why": "National Bank Financial ajuste l'objectif de cours de BRP, tandis que BRP célèbre son initiative anti‑harcèlement, montrant un engagement sociétal.",
+      "risk": "L'ajustement à la baisse du prix cible reflète des attentes de performance plus modestes.",
+      "why_en": "National Bank Financial adjusts BRP's price target, while BRP marks its anti‑bullying initiative anniversary, showing social commitment.",
+      "risk_en": "The downward price‑target adjustment reflects more modest performance expectations."
     },
     {
       "symbol": "UNP",
@@ -346,10 +325,33 @@
       "hv": 0.28709684558288834,
       "niche": false,
       "score": 3.037,
-      "why": "Union Pacific s'oppose à la fusion proposée avec Norfolk Southern, ce qui pourrait préserver son autonomie stratégique.",
-      "risk": "L'opposition à la fusion crée de l'incertitude réglementaire et peut retarder des synergies potentielles.",
-      "why_en": "Union Pacific opposes the proposed merger with Norfolk Southern, potentially preserving strategic autonomy.",
-      "risk_en": "Opposition to the merger creates regulatory uncertainty and may delay potential synergies."
+      "why": "Union Pacific s'oppose à la fusion proposée avec Norfolk Southern, et son dirigeant intervient à une conférence industrielle, soulignant son rôle stratégique.",
+      "risk": "L'opposition à la fusion peut créer des incertitudes réglementaires et opérationnelles.",
+      "why_en": "Union Pacific opposes the proposed merger with Norfolk Southern, and its CEO speaks at an industrial conference, highlighting strategic role.",
+      "risk_en": "Opposition to the merger may create regulatory and operational uncertainties."
+    },
+    {
+      "symbol": "DOCS",
+      "mentions": 2,
+      "headlines": [
+        "Barclays Issues Sell Rating on Dr. Martens plc",
+        "Dr. Martens Announces Collaboration with Slipknot"
+      ],
+      "last_at": "2026-11-25T17:32:32Z",
+      "sentiment": 0.5,
+      "price": 29.6,
+      "adv_usd": 74613673.90604973,
+      "chg_5d": -3.5,
+      "chg_20d": -13.6,
+      "rsi": 41.1,
+      "trend": "neutre",
+      "hv": 0.424545701076056,
+      "niche": false,
+      "score": 2.997,
+      "why": "Barclays émet une recommandation de vente sur Dr. Martens, tandis que la marque lance une collaboration avec Slipknot, créant un contraste entre avis analyste et initiative marketing.",
+      "risk": "La recommandation de vente peut décourager les investisseurs malgré la visibilité accrue du partenariat.",
+      "why_en": "Barclays issues a sell rating on Dr. Martens, while the brand launches a Slipknot collaboration, creating a contrast between analyst opinion and marketing initiative.",
+      "risk_en": "The sell rating may deter investors despite the partnership's increased visibility."
     }
   ]
 }
