@@ -382,19 +382,19 @@
     "reasoning_en": "META shows a clear downtrend, an IV/HV of 1.27 indicating expensive options, and no earnings within the next 45 days, making a BEAR_CALL_SPREAD suitable.",
     "pnl": null,
     "attr": {
-      "delta": -915.34,
-      "gamma": -205.13,
-      "theta": 109.12,
-      "vega": -124.54
+      "delta": -936.65,
+      "gamma": -205.1,
+      "theta": 109.45,
+      "vega": -134.25
     },
     "attr_prev": {
-      "at": "2026-11-25T21:17:32",
-      "S": 608.54,
-      "iv": 0.4883,
-      "delta": -31.79992580327965,
-      "gamma": 0.11568256536291155,
-      "theta_day": 2.9217644840948145,
-      "vega_pt": 6.034122820946614
+      "at": "2026-11-26T00:01:02",
+      "S": 609.21,
+      "iv": 0.47219999999999995,
+      "delta": -33.492356093500874,
+      "gamma": 0.1187175099094615,
+      "theta_day": 0.9310594438437663,
+      "vega_pt": 6.704420033892929
     }
   },
   {
