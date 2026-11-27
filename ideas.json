@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T00:01:14",
+  "updated_at": "2026-11-27T06:01:15",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -21,10 +21,10 @@
       "hv": 0.896843893198854,
       "niche": false,
       "score": 5.773,
-      "why": "Les analystes de Wall Street révisent leurs notes et objectifs, tandis que BMO et UBS modifient leurs recommandations, ce qui suscite l'intérêt des investisseurs.",
-      "risk": "Le désaccord entre les analystes sur la valorisation crée une incertitude sur la direction future du cours.",
-      "why_en": "Wall Street analysts are updating ratings and price targets, with BMO downgrading and UBS raising, drawing investor attention.",
-      "risk_en": "The split among analysts on valuation adds uncertainty to the stock's future direction."
+      "why": "Les analystes de Wall Street ajustent leurs notes et objectifs de cours, tandis que BMO et UBS modifient leurs recommandations, ce qui attire l'attention.",
+      "risk": "Le risque principal est une possible volatilité due aux divergences d'opinion entre les analystes.",
+      "why_en": "Wall Street analysts are updating ratings and price targets, and both BMO and UBS have changed their recommendations, drawing attention.",
+      "risk_en": "The main risk is potential volatility from differing analyst opinions."
     },
     {
       "symbol": "ACN",
@@ -44,10 +44,10 @@
       "hv": 0.44261442028497394,
       "niche": false,
       "score": 5.697,
-      "why": "Accenture annonce de nouveaux partenariats stratégiques avec Siemens, IFS et Workday, renforçant son positionnement dans l'industrie et les solutions cloud.",
-      "risk": "La dépendance à des collaborations externes expose l'entreprise aux risques de mise en œuvre et de partage de revenus.",
-      "why_en": "Accenture announces strategic collaborations with Siemens, IFS and Workday, bolstering its industrial and cloud positioning.",
-      "risk_en": "Reliance on external partnerships exposes the firm to implementation risks and revenue sharing."
+      "why": "Accenture annonce des partenariats stratégiques avec Siemens, IFS et Workday, renforçant sa position dans les solutions industrielles et les services cloud.",
+      "risk": "Le risque réside dans la dépendance aux succès de ces collaborations et à l'adoption par les clients.",
+      "why_en": "Accenture announces strategic partnerships with Siemens, IFS and Workday, strengthening its position in industrial solutions and cloud services.",
+      "risk_en": "The risk lies in reliance on the success of these collaborations and client adoption."
     },
     {
       "symbol": "CWK",
@@ -68,9 +68,9 @@
       "niche": true,
       "score": 5.697,
       "why": "Cushman & Wakefield publie des rapports sur la demande croissante d'immobilier pour les sciences de la vie en Chine, un secteur en expansion.",
-      "risk": "Une surévaluation de la demande chinoise pourrait entraîner des investissements immobiliers excessifs.",
-      "why_en": "Cushman & Wakefield releases reports on rising life‑science real‑estate demand in China, a growing sector.",
-      "risk_en": "Overestimating Chinese demand could lead to excessive real‑estate investments."
+      "risk": "Le principal risque est une éventuelle surévaluation du marché chinois des sciences de la vie.",
+      "why_en": "Cushman & Wakefield releases reports on growing demand for life‑science real estate in China, a expanding sector.",
+      "risk_en": "The main risk is a possible overvaluation of the Chinese life‑science real estate market."
     },
     {
       "symbol": "GSK",
@@ -90,34 +90,10 @@
       "hv": 0.28412365175828247,
       "niche": false,
       "score": 5.597,
-      "why": "GSK annonce l'acquisition d'actions déposées par une dirigeante et obtient l'approbation chinoise d'un traitement contre l'hépatite B, renforçant son pipeline.",
-      "risk": "Les acquisitions internes et les dépendances réglementaires en Chine peuvent créer des incertitudes de mise sur le marché.",
-      "why_en": "GSK reports a senior executive acquiring ADS and gains Chinese approval for a hepatitis B therapy, strengthening its pipeline.",
-      "risk_en": "Internal acquisitions and regulatory reliance in China may create market‑entry uncertainties."
-    },
-    {
-      "symbol": "TRP",
-      "mentions": 3,
-      "headlines": [
-        "TC Energy Announces Second Indigenous Investment in Coastal GasLink",
-        "TC Energy Threatens to Cancel Gas Pipeline Expansion Due to Proposed Alberta Legislation",
-        "Alberta Bill Poses Potential Risk to TC Energy Growth Plans, CIBC Analysts Say"
-      ],
-      "last_at": "2026-11-26T22:31:39Z",
-      "sentiment": 1.0,
-      "price": 62.88,
-      "adv_usd": 134365562.67810822,
-      "chg_5d": -1.4,
-      "chg_20d": -0.4,
-      "rsi": 50.3,
-      "trend": "neutre",
-      "hv": 0.16951626497061023,
-      "niche": false,
-      "score": 5.493,
-      "why": "TC Energy communique sur un nouvel investissement autochtone et sur des tensions législatives en Alberta qui pourraient affecter son projet de gazoduc.",
-      "risk": "Le risque législatif en Alberta pourrait retarder ou annuler l'expansion du gazoduc, impactant les revenus futurs.",
-      "why_en": "TC Energy announces a new Indigenous investment and faces Alberta legislative pressure on its gas‑pipeline expansion.",
-      "risk_en": "Alberta legislation risk could delay or cancel the pipeline expansion, affecting future revenues."
+      "why": "GSK annonce l'acquisition d'actions déposées par une dirigeante et obtient l'approbation chinoise d'un traitement contre l'hépatite B, deux nouvelles positives.",
+      "risk": "Le risque principal est lié aux incertitudes réglementaires et à l'exécution de la commercialisation du nouveau traitement.",
+      "why_en": "GSK announces a senior executive acquiring depository shares and receives Chinese approval for a hepatitis B treatment, two positive developments.",
+      "risk_en": "The main risk stems from regulatory uncertainties and the rollout of the new treatment."
     },
     {
       "symbol": "NOC",
@@ -137,33 +113,10 @@
       "hv": 0.25874156397969383,
       "niche": false,
       "score": 5.177,
-      "why": "Northrop Grumman obtient une modification de contrat de 1,13 Md $ avec la marine et voit une adaptation réglementaire de la FTC concernant une acquisition passée.",
-      "risk": "Les modifications de contrats gouvernementaux et les revues antitrust peuvent entraîner des incertitudes de revenus et de conformité.",
-      "why_en": "Northrop Grumman secures a $1.13 bn contract amendment with the Navy and sees a FTC order adjustment on a past acquisition.",
-      "risk_en": "Government contract changes and antitrust reviews may create revenue and compliance uncertainties."
-    },
-    {
-      "symbol": "NGG",
-      "mentions": 2,
-      "headlines": [
-        "National Grid Announces Scrip Dividend Reference Price for 2026/27 Interim Dividend",
-        "Analysts Update Price Targets for National Grid plc"
-      ],
-      "last_at": "2026-11-26T22:01:18Z",
-      "sentiment": 0.5,
-      "price": 82.54,
-      "adv_usd": 78656408.75865936,
-      "chg_5d": 1.8,
-      "chg_20d": 1.8,
-      "rsi": 55.9,
-      "trend": "haussiere",
-      "hv": 0.24415634910923192,
-      "niche": false,
-      "score": 5.057,
-      "why": "National Grid fixe le prix de référence du dividende en actions pour 2026/27 et voit ses objectifs de cours révisés à la hausse par les analystes.",
-      "risk": "Le rendement du dividende en actions dépend de la performance future de l'entreprise et des conditions de marché, ce qui peut être volatile.",
-      "why_en": "National Grid sets the 2026/27 scrip‑dividend reference price and receives analyst price‑target upgrades.",
-      "risk_en": "The scrip‑dividend yield depends on future performance and market conditions, which can be volatile."
+      "why": "Northrop Grumman remporte un contrat de plus d'un milliard de dollars pour la marine et voit une modification de l'ordre FTC concernant une acquisition, ce qui renforce sa perspective de croissance.",
+      "risk": "Le risque réside dans les possibles retards ou contestations liées aux exigences réglementaires de la FTC.",
+      "why_en": "Northrop Grumman secures a >$1 billion Navy contract and sees an FTC order modification on an acquisition, boosting growth outlook.",
+      "risk_en": "The risk lies in potential delays or challenges from FTC regulatory requirements."
     },
     {
       "symbol": "F",
@@ -185,10 +138,10 @@
       "hv": 0.3362920631752008,
       "niche": false,
       "score": 4.969,
-      "why": "Ford dévoile un hypercar pour Le Mans 2027, lance une stratégie produit pour le Brésil et étend son portefeuille SUV avec un modèle hybride, montrant une diversification produit.",
-      "risk": "Le lancement de nouveaux modèles, surtout hybrides, comporte des risques de coûts de développement et d'acceptation du marché.",
-      "why_en": "Ford unveils a 2027 Le Mans hypercar, announces a Brazil product strategy, and expands its SUV line with a hybrid model, indicating product diversification.",
-      "risk_en": "New model launches, especially hybrids, carry development cost and market‑acceptance risks."
+      "why": "Ford dévoile un hypercar pour Le Mans 2027, lance une stratégie produit pour le Brésil et étend son portefeuille SUV avec un modèle hybride, montrant une diversification de son offre.",
+      "risk": "Le risque principal est la capacité à convertir ces annonces en ventes réelles dans un marché automobile compétitif.",
+      "why_en": "Ford unveils a Le Mans hypercar for 2027, launches a Brazil product strategy, and expands its SUV lineup with a hybrid, indicating diversification.",
+      "risk_en": "The main risk is the ability to translate these announcements into actual sales in a competitive auto market."
     },
     {
       "symbol": "HLT",
@@ -208,10 +161,10 @@
       "hv": 0.250391715017829,
       "niche": false,
       "score": 4.337,
-      "why": "Hilton renforce son partenariat avec Sun Group en ouvrant quatre hôtels au Vietnam et lance une nouvelle propriété à Hong Kong, élargissant sa présence en Asie.",
-      "risk": "L'expansion rapide en Asie expose Hilton aux risques géopolitiques, réglementaires et de surcapacité locale.",
-      "why_en": "Hilton expands its Sun Group partnership with four new Vietnam hotels and opens a new property in Hong Kong, growing its Asian footprint.",
-      "risk_en": "Rapid Asian expansion exposes Hilton to geopolitical, regulatory and local over‑capacity risks."
+      "why": "Hilton renforce sa présence en Asie avec de nouveaux hôtels au Vietnam et à Hong Kong, signalant une expansion internationale.",
+      "risk": "Le risque est lié à l'exposition aux fluctuations du tourisme et aux incertitudes géopolitiques dans la région.",
+      "why_en": "Hilton expands its Asian footprint with new hotels in Vietnam and Hong Kong, signaling international growth.",
+      "risk_en": "The risk relates to exposure to tourism fluctuations and geopolitical uncertainties in the region."
     },
     {
       "symbol": "EL",
@@ -231,33 +184,10 @@
       "hv": 0.45925310515426726,
       "niche": false,
       "score": 4.197,
-      "why": "EssilorLuxottica fait l'objet d'une analyse d'exposition aux tarifs US et voit son objectif de cours abaissé par UBS, attirant l'attention sur ses perspectives tarifaires.",
-      "risk": "L'incertitude autour des tarifs américains pourrait affecter les marges et la chaîne d'approvisionnement de l'entreprise.",
-      "why_en": "EssilorLuxottica is examined for US tariff exposure and receives a UBS price‑target cut, highlighting tariff‑related concerns.",
-      "risk_en": "Uncertainty over US tariffs could impact the company's margins and supply chain."
-    },
-    {
-      "symbol": "HD",
-      "mentions": 2,
-      "headlines": [
-        "Home Depot Insider Executes Sale of Company Shares",
-        "Home Depot Insider Executes Share Sale"
-      ],
-      "last_at": "2026-11-26T03:02:11Z",
-      "sentiment": 0.0,
-      "price": 361.26,
-      "adv_usd": 1852806506.1447144,
-      "chg_5d": 7.0,
-      "chg_20d": 13.8,
-      "rsi": 67.9,
-      "trend": "haussiere",
-      "hv": 0.35969607789032126,
-      "niche": false,
-      "score": 4.197,
-      "why": "Des initiés de Home Depot vendent des actions, ce qui peut être interprété comme un signal de confiance ou de prise de bénéfices.",
-      "risk": "Les ventes d'initiés peuvent être perçues comme un manque de confiance et entraîner une pression à la baisse sur le cours.",
-      "why_en": "Home Depot insiders sell shares, which may be read as a confidence signal or profit‑taking.",
-      "risk_en": "Insider sales can be seen as a lack of confidence and may pressure the stock lower."
+      "why": "EssilorLuxottica fait l'objet d'une analyse d'exposition aux tarifs US et voit son objectif de cours revu à la baisse par UBS, ce qui attire l'attention des investisseurs.",
+      "risk": "Le risque principal est la sensibilité aux politiques tarifaires américaines qui pourraient affecter les marges.",
+      "why_en": "EssilorLuxottica is examined for US tariff exposure and has its price target lowered by UBS, drawing investor focus.",
+      "risk_en": "The main risk is sensitivity to US tariff policies that could impact margins."
     },
     {
       "symbol": "MCO",
@@ -278,10 +208,10 @@
       "hv": 0.3338996212935011,
       "niche": false,
       "score": 3.993,
-      "why": "Moody's publie plusieurs mises à jour de notation, dont le maintien du rating Aa1 pour NVIDIA et l'introduction d'une nouvelle catégorie d'émetteurs, montrant son influence sur les marchés de crédit.",
-      "risk": "Les changements de notation peuvent entraîner des réallocations de portefeuille et augmenter la volatilité des titres notés.",
-      "why_en": "Moody's releases several rating updates, maintaining NVIDIA's Aa1 and adding a new issuer category, underscoring its credit‑market influence.",
-      "risk_en": "Rating changes can trigger portfolio reallocations and increase volatility of the affected securities."
+      "why": "Moody's publie plusieurs mises à jour de notation, dont le maintien du rating Aa1 pour NVIDIA, ce qui influence la perception du crédit dans le secteur technologique.",
+      "risk": "Le risque réside dans la possible révision future des notations si les conditions de marché se détériorent.",
+      "why_en": "Moody's releases several rating updates, including maintaining NVIDIA's Aa1 rating, influencing credit perception in tech.",
+      "risk_en": "The risk lies in potential future rating revisions if market conditions worsen."
     },
     {
       "symbol": "RIO",
@@ -301,34 +231,10 @@
       "hv": 0.3729899975719364,
       "niche": false,
       "score": 3.857,
-      "why": "Rio Tinto annonce un partenariat avec XCMG en Chine et célèbre un accord modernisé avec les communautés locales, renforçant son image sociale et ses opérations en Asie.",
-      "risk": "Les projets en Chine comportent des risques géopolitiques et de conformité réglementaire qui peuvent affecter les marges.",
-      "why_en": "Rio Tinto announces a partnership with XCMG in China and celebrates a modernised community agreement, boosting its social image and Asian operations.",
-      "risk_en": "China projects carry geopolitical and regulatory compliance risks that could impact margins."
-    },
-    {
-      "symbol": "RTX",
-      "mentions": 3,
-      "headlines": [
-        "RTX A/S Reports Financial Results for the Quarter Ended September 30, 2026",
-        "RTX's Pratt & Whitney Awarded $2.53 Billion U.S. Navy Contract",
-        "Analysts Update Coverage and Price Targets for RTX Corporation"
-      ],
-      "last_at": "2026-11-26T08:02:06Z",
-      "sentiment": 0.3333333333333333,
-      "price": 196.19,
-      "adv_usd": 1023630074.7078705,
-      "chg_5d": -0.3,
-      "chg_20d": 0.6,
-      "rsi": 52.1,
-      "trend": "neutre",
-      "hv": 0.28797051107563515,
-      "niche": false,
-      "score": 3.713,
-      "why": "RTX publie ses résultats trimestriels, obtient un contrat naval de 2,53 Md $ et voit ses analystes mettre à jour leurs couvertures et objectifs, suscitant l'intérêt des investisseurs.",
-      "risk": "La dépendance aux contrats gouvernementaux et aux cycles d'armement expose l'entreprise à des fluctuations de demande.",
-      "why_en": "RTX reports quarterly results, secures a $2.53 bn U.S. Navy contract, and receives analyst coverage updates, drawing investor interest.",
-      "risk_en": "Reliance on government contracts and defense cycles exposes the firm to demand fluctuations."
+      "why": "Rio Tinto annonce un partenariat avec XCMG en Chine et célèbre un accord modernisé avec les communautés locales, soulignant son engagement en Asie.",
+      "risk": "Le principal risque est l'exposition aux tensions géopolitiques et aux exigences réglementaires locales.",
+      "why_en": "Rio Tinto announces a partnership with XCMG in China and celebrates a modernized agreement with local communities, highlighting Asian engagement.",
+      "risk_en": "The main risk is exposure to geopolitical tensions and local regulatory demands."
     },
     {
       "symbol": "BN",
@@ -348,10 +254,103 @@
       "hv": 0.43090260680133435,
       "niche": false,
       "score": 3.677,
-      "why": "Brookfield soutient l'expansion de Red Box Storage à Hong Kong, tandis que Chobani fait face à un litige avec Danone, créant un contraste entre croissance et risques juridiques.",
-      "risk": "Le procès de Danone contre Chobani pourrait entraîner des coûts juridiques et nuire à la réputation de la société.",
-      "why_en": "Brookfield backs Red Box Storage's Hong Kong expansion, while Chobani faces a lawsuit from Danone, juxtaposing growth with legal risk.",
-      "risk_en": "The Danone lawsuit could bring legal costs and reputational damage to the company."
+      "why": "Brookfield soutient l'expansion de Red Box Storage à Hong Kong, tandis que Chobani fait face à un litige avec Danone, deux événements qui retiennent l'attention.",
+      "risk": "Le risque principal est l'impact potentiel du litige sur la réputation et les finances de Chobani.",
+      "why_en": "Brookfield backs Red Box Storage's Hong Kong expansion, while Chobani faces a lawsuit from Danone, two attention‑grabbing events.",
+      "risk_en": "The main risk is the potential impact of the lawsuit on Chobani's reputation and finances."
+    },
+    {
+      "symbol": "RTX",
+      "mentions": 2,
+      "headlines": [
+        "RTX A/S Reports Financial Results for the Quarter Ended September 30, 2026",
+        "RTX's Pratt & Whitney Awarded $2.53 Billion U.S. Navy Contract"
+      ],
+      "last_at": "2026-11-26T08:02:06Z",
+      "sentiment": 0.5,
+      "price": 196.19,
+      "adv_usd": 1023630074.7078705,
+      "chg_5d": -0.3,
+      "chg_20d": 0.6,
+      "rsi": 52.1,
+      "trend": "neutre",
+      "hv": 0.28797051107563515,
+      "niche": false,
+      "score": 3.637,
+      "why": "RTX publie ses résultats financiers du trimestre et obtient un important contrat de 2,53 milliards de dollars avec la marine américaine, ce qui attire les analystes.",
+      "risk": "Le risque réside dans la pression sur les marges si les coûts de production augmentent ou si le contrat subit des retards.",
+      "why_en": "RTX releases quarterly financial results and secures a $2.53 billion U.S. Navy contract, drawing analyst interest.",
+      "risk_en": "The risk lies in margin pressure if production costs rise or the contract faces delays."
+    },
+    {
+      "symbol": "KDP",
+      "mentions": 2,
+      "headlines": [
+        "Keurig Dr Pepper Completes Redemption of Chobani Equity Stake",
+        "Goldman Sachs Analyst Adjusts Keurig Dr Pepper Price Target"
+      ],
+      "last_at": "2026-11-26T19:01:44Z",
+      "sentiment": 0.0,
+      "price": 35.63,
+      "adv_usd": 871249325.8640099,
+      "chg_5d": 1.8,
+      "chg_20d": 2.0,
+      "rsi": 52.4,
+      "trend": "haussiere",
+      "hv": 0.473106704705586,
+      "niche": false,
+      "score": 3.557,
+      "why": "Keurig Dr Pepper finalise le rachat de la participation de Chobani et voit son objectif de cours ajusté par un analyste de Goldman Sachs, deux mouvements de capital importants.",
+      "risk": "Le risque principal est l'intégration réussie de la participation et la réaction du marché à l'ajustement du target.",
+      "why_en": "Keurig Dr Pepper completes the redemption of Chobani's equity stake and has its price target adjusted by a Goldman Sachs analyst, two significant capital moves.",
+      "risk_en": "The main risk is successful integration of the stake and market reaction to the target adjustment."
+    },
+    {
+      "symbol": "BLK",
+      "mentions": 3,
+      "headlines": [
+        "BlackRock Discloses Increased Voting Rights in ADTRAN Holdings",
+        "BlackRock, Inc. Files Major Holdings Notification for Symrise AG",
+        "BlackRock Canada Announces Estimated 2026 Annual Reinvested Capital Gains Distributions for iShares ETFs"
+      ],
+      "last_at": "2026-11-26T12:31:24Z",
+      "sentiment": 0.3333333333333333,
+      "price": 1141.86,
+      "adv_usd": 797678155.1989746,
+      "chg_5d": -2.3,
+      "chg_20d": -1.4,
+      "rsi": 46.8,
+      "trend": "neutre",
+      "hv": 0.382284864569873,
+      "niche": false,
+      "score": 3.313,
+      "why": "BlackRock annonce une augmentation des droits de vote dans ADTRAN, déclare des participations majeures dans Symrise et communique les distributions de gains réinvestis pour 2026, ce qui suscite l'intérêt des investisseurs.",
+      "risk": "Le risque principal est la sensibilité aux fluctuations des marchés actions qui peuvent affecter la valeur de ces participations.",
+      "why_en": "BlackRock announces increased voting rights in ADTRAN, major holdings in Symrise, and 2026 reinvested capital gains distributions, attracting investor interest.",
+      "risk_en": "The main risk is sensitivity to equity market fluctuations that could affect the value of these holdings."
+    },
+    {
+      "symbol": "HPQ",
+      "mentions": 2,
+      "headlines": [
+        "HSBC Downgrades HP Inc. to Hold, Citing Quality of Earnings Concerns",
+        "HPQ Silicon Secures Second Conditional Purchase Reservation for ENDURA+ MiniMax Systems"
+      ],
+      "last_at": "2026-11-26T23:02:04Z",
+      "sentiment": 0.0,
+      "price": 31.15,
+      "adv_usd": 459559950.1505947,
+      "chg_5d": 8.7,
+      "chg_20d": -4.0,
+      "rsi": 56.9,
+      "trend": "neutre",
+      "hv": 0.6502273110198858,
+      "niche": false,
+      "score": 3.197,
+      "why": "HSBC dégrade HP Inc. à 'Hold' en raison de préoccupations sur la qualité des bénéfices, tandis que HPQ Silicon obtient une seconde réservation conditionnelle, deux nouvelles contrastées qui retiennent l'attention.",
+      "risk": "Le risque principal est la persistance des problèmes de qualité des bénéfices qui pourraient freiner la performance de l'action.",
+      "why_en": "HSBC downgrades HP Inc. to Hold over earnings quality concerns, while HPQ Silicon secures a second conditional reservation, two contrasting news items drawing attention.",
+      "risk_en": "The main risk is the persistence of earnings quality issues that could hamper the stock's performance."
     }
   ]
 }
