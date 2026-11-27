@@ -20,3 +20,14 @@ Exécuté : 2026-11-27T15:00:11 | équité 92,711.14 $ (-0.88 % jour) | bourse U
   IA : BUY_STOCK MA | confiance 0.81 | Mastercard montre une tendance haussière claire avec +5.9% sur 5 jours, RSI 62 indique encore de la marge, volatilité modérée et IV/HV <1 rendent l'achat direct plus efficace que les spreads.
   Trade refusé : Nombre max de positions atteint
   Idées presse : 15 idées rafraîchies
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-27T15:30:00 | équité 92,774.96 $ (-0.81 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +341 $ | Γ +134.77 (Δ$ +850 pour 1 %) | ν +20 $/pt | Θ -18 $/j | ρ -9 $/pt
+  Idées presse ajoutées : TRP, BLK, OMC, HBAN, BEN, ROP, HON, TGT  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, DIS, TSLA, OMC, ORCL, MU, MA, UNH, AMD, AVGO, ADBE, SHOP, IWM, ETH/USD, LTC/USD, BCH/USD, DOT/USD, AAVE/USD
+  Notes IA : MA BUY_STOCK 0.78 · DIS BULL_CALL_SPREAD 0.7 · LTC/USD BUY_CRYPTO 0.66
+  IA : BUY_STOCK MA | confiance 0.78 | Mastercard montre une forte dynamique haussière avec +6.6% sur 5 jours, RSI raisonnable et une volatilité modérée ; les options sont bon marché (IV/HV 0.83), ce qui rend un achat direct plus efficace que des spreads.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 0.5 h, 15 idées)
