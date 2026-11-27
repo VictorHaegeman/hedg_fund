@@ -1,0 +1,11 @@
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-27T14:32:00 | équité 92,844.54 $ (-0.74 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +578 $ | Γ +148.01 (Δ$ +930 pour 1 %) | ν +18 $/pt | Θ -11 $/j | ρ -9 $/pt
+  Idées presse ajoutées : ACN, CWK*, MCO, TRP, F, EL, MRNA, TGT  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, DIS, EL, MRNA, MU, SHOP, MA, ACN, CWK, AMZN, TSLA, AMD, IWM, DOGE/USD, LINK/USD, LTC/USD, BCH/USD, SOL/USD
+  Notes IA : MA BUY_STOCK 0.8 · ACN BULL_CALL_SPREAD 0.68 · CRM BEAR_PUT_SPREAD 0.65
+  IA : BUY_STOCK MA | confiance 0.8 | MA montre une tendance haussière claire, un RSI solide au-dessus de 60 et une volatilité implicite inférieure à la volatilité réalisée (IV/HV 0.88), ce qui rend l'achat direct plus avantageux que les stratégies d'options coûteuses.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.7 h, 15 idées)
