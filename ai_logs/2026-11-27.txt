@@ -9,3 +9,14 @@ Exécuté : 2026-11-27T14:32:00 | équité 92,844.54 $ (-0.74 % jour) | bourse U
   IA : BUY_STOCK MA | confiance 0.8 | MA montre une tendance haussière claire, un RSI solide au-dessus de 60 et une volatilité implicite inférieure à la volatilité réalisée (IV/HV 0.88), ce qui rend l'achat direct plus avantageux que les stratégies d'options coûteuses.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 2.7 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-27T15:00:11 | équité 92,711.14 $ (-0.88 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ -342 $ | Γ +108.84 (Δ$ +678 pour 1 %) | ν +16 $/pt | Θ -13 $/j | ρ -9 $/pt
+  Idées presse ajoutées : TRP, BLK, OMC, HBAN, BEN, ROP, HON, TGT  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, DIS, COIN, GS, OMC, ORCL, MU, MA, UNH, AMZN, TSLA, AMD, IWM, ETH/USD, DOGE/USD, LINK/USD, LTC/USD, BCH/USD
+  Notes IA : MA BUY_STOCK 0.81 · TSLA BULL_CALL_SPREAD 0.66 · AMD SHORT_STOCK 0.65
+  IA : BUY_STOCK MA | confiance 0.81 | Mastercard montre une tendance haussière claire avec +5.9% sur 5 jours, RSI 62 indique encore de la marge, volatilité modérée et IV/HV <1 rendent l'achat direct plus efficace que les spreads.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : 15 idées rafraîchies
