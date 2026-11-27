@@ -53,3 +53,14 @@ Exécuté : 2026-11-27T16:30:00 | équité 92,885.06 $ (-0.70 % jour) | bourse U
   IA : BUY_STOCK TSLA | confiance 0.72 | TSLA montre une tendance haussière claire, RSI modéré et une volatilité implicite basse (IV/HV 0.69), ce qui rend l'achat direct plus avantageux que les spreads coûteux.
   Trade refusé : Nombre max de positions atteint
   Idées presse : à jour (il y a 1.5 h, 15 idées)
+==============================================================================
+MODULE 14 — POCHE IA (Alpaca paper · LLM Groq) — EXPÉRIMENTAL
+Exécuté : 2026-11-27T17:00:00 | équité 93,140.19 $ (-0.42 % jour) | bourse US OUVERTE | compte partagé avec le fonds (univers disjoints)
+==============================================================================
+  Grecques du portefeuille : Δ +2 $ | Γ +130.21 (Δ$ +820 pour 1 %) | ν +20 $/pt | Θ -19 $/j | ρ -9 $/pt
+  Idées presse ajoutées : TRP, BLK, OMC, HBAN, BEN, ROP, HON, TGT  (* = niche, taille ÷ 2)
+  Candidats envoyés à l'IA : CRM, DIS, TSLA, MU, MA, UNH, OMC, AMD, AVGO, ADBE, SHOP, GS, IWM, ETH/USD, LTC/USD, DOT/USD, DOGE/USD, AVAX/USD
+  Notes IA : TSLA BUY_STOCK 0.8 · DIS BUY_STOCK 0.68 · MA BUY_STOCK 0.68
+  IA : BUY_STOCK TSLA | confiance 0.8 | TSLA montre une tendance haussière claire, un RSI modéré et des options bon marché (IV/HV 0.68), ce qui rend un achat direct plus efficace que des spreads.
+  Trade refusé : Nombre max de positions atteint
+  Idées presse : à jour (il y a 2.0 h, 15 idées)
