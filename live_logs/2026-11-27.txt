@@ -1,0 +1,33 @@
+==============================================================================
+MODE LIVE — CYCLE DE TRADING PAPIER (données de marché réelles)
+Exécuté : 2026-11-27T04:25:43 | Univers : SPY, QQQ, GLD, TLT, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, BTC-USD, AAPL, MSFT, NVDA, GOOGM, GOOGN, GOOGL, GOOG, AMZN, SPCX, TSM, METAM, META, TSLA, AVGO, LLY
+==============================================================================
+  [!] METAM : données réelles indisponibles → symbole IGNORÉ ce cycle (aucun ordre sur prix synthétiques)
+  Doublons d'émetteur écartés : GOOGN, GOOGL, GOOG
+  Contexte risque : VIX 26.8 (94e pct) → RISK-OFF  (information seulement : filtre VIX désactivé, testé défavorable)
+  Aucun ordre ce cycle (positions inchangées, pas de signal).
+
+— COMPTE PAPIER —
+  Créé : 2026-06-11T15:45:35 | Dernier cycle : 2026-11-27T04:25:51
+  Équité : 96,652.18 $ (-3.35% depuis le départ) | Cash : 922.30 $
+  Positions ouvertes :
+    XLV      74.5182 u @ 177.19 [breakout] | stop 171.44 | latent +483.62 $
+    LLY      11.8787 u @ 1,373.70 [breakout] | stop 1,288.66 | latent +219.99 $
+    MSFT     21.1638 u @ 506.24 [meanrev] | stop 460.06 | latent -345.18 $
+  Trésorerie placée : BIL 26,100 $ (+5 $) | SPY 29,036 $ (-84 $)
+  Trades clôturés : 37 | win rate 57% | PnL réalisé total : -2,181.00 $
+  5 derniers trades :
+    2026-11-17 JPM      [breakout] 331.14 → 329.96 (signal) PnL -110.07 $
+    2026-11-24 BRK-B    [meanrev] 574.62 → 577.21 (signal) PnL +67.55 $
+    2026-11-24 XLP      [meanrev] 89.86 → 91.88 (signal) PnL +418.19 $
+    2026-11-24 AAPL     [meanrev] 342.56 → 354.07 (signal) PnL +146.82 $
+    2026-11-25 XLE      [meanrev] 61.29 → 60.90 (signal) PnL -90.82 $
+
+— MIROIR ALPACA —
+  3 stop(s) Alpaca du fonds annulé(s) pour être reposés
+  Alpaca déjà aligné sur le fonds.
+  ALPACA stop LLY : 8 parts à 1,288.66
+  ALPACA stop MSFT : 15 parts à 460.05
+  ALPACA stop XLV : 53 parts à 171.43
+  Ordres en attente (exécution à l'ouverture) : BDX, BIL, ENOV, MCD, WMT, XLE
+  Équité Alpaca : 93,504.88 $ | cash -858.24 $
