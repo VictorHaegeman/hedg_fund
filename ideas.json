@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T03:01:16",
+  "updated_at": "2026-11-28T09:01:16",
   "source": "Benzinga via Alpaca (gratuit)",
   "ideas": [
     {
@@ -21,9 +21,9 @@
       "niche": false,
       "score": 5.917,
       "why": "Moody's a relevé la note souveraine du Vietnam à Ba1, ce qui renforce la perception de stabilité du pays.",
-      "risk": "Un rebond de la notation pourrait être limité si les réformes économiques du Vietnam tardent à porter leurs fruits.",
-      "why_en": "Moody's upgraded Vietnam's sovereign rating to Ba1, enhancing the country's perceived stability.",
-      "risk_en": "The rating uplift could be constrained if Vietnam's economic reforms take longer to materialize."
+      "risk": "Un rebond de la notation pourrait être limité si les réformes économiques du Vietnam tardent à se concrétiser.",
+      "why_en": "Moody's upgraded Vietnam's sovereign rating to Ba1, enhancing the perception of the country's stability.",
+      "risk_en": "The rating improvement could be limited if Vietnam's economic reforms are delayed."
     },
     {
       "symbol": "TJX",
@@ -43,10 +43,10 @@
       "hv": 0.440485558452164,
       "niche": false,
       "score": 5.317,
-      "why": "TJX anticipe une accélération du momentum des ventes, soutenue par des prévisions positives de Daiwa.",
-      "risk": "Une surévaluation du potentiel de ventes pourrait entraîner une correction si la demande ralentit.",
-      "why_en": "TJX expects accelerating sales momentum, backed by positive Daiwa forecasts.",
-      "risk_en": "Overestimating sales potential could lead to a pullback if demand weakens."
+      "why": "TJX anticipe une accélération du momentum des ventes, soutenue par des prévisions optimistes.",
+      "risk": "Une surévaluation du potentiel de ventes pourrait entraîner une déception si la demande n'augmente pas comme prévu.",
+      "why_en": "TJX expects sales momentum to accelerate, backed by optimistic forecasts.",
+      "risk_en": "Overestimating sales potential could lead to disappointment if demand does not rise as expected."
     },
     {
       "symbol": "BLK",
@@ -68,10 +68,10 @@
       "hv": 0.38628587163293104,
       "niche": false,
       "score": 5.124,
-      "why": "BlackRock signale plusieurs initiatives stratégiques, dont la réduction de droits de vote et des mandats de gestion de fonds publics.",
-      "risk": "Des changements de gouvernance ou des performances décevantes des fonds pourraient freiner la dynamique positive.",
-      "why_en": "BlackRock highlights several strategic moves, including voting‑rights reductions and public‑pension fund mandates.",
-      "risk_en": "Governance changes or underperforming funds could dampen the positive momentum."
+      "why": "BlackRock annonce plusieurs initiatives, dont la réduction de droits de vote et de nouveaux mandats de gestion, signalant une activité stratégique accrue.",
+      "risk": "Ces mouvements pourraient être perçus comme une dilution de contrôle ou une exposition accrue à des partenaires, augmentant le risque opérationnel.",
+      "why_en": "BlackRock disclosed several initiatives, including voting-rights reductions and new management mandates, indicating heightened strategic activity.",
+      "risk_en": "These moves could be seen as a dilution of control or increased exposure to partners, raising operational risk."
     },
     {
       "symbol": "SBLK",
@@ -91,10 +91,10 @@
       "hv": 0.3597515561631704,
       "niche": true,
       "score": 4.697,
-      "why": "Star Bulk annonce la distribution ex‑dividende et son inclusion dans le FTSE 25, ce qui attire l’attention des investisseurs en transport maritime.",
-      "risk": "La sensibilité aux cycles du transport maritime expose l’action à une volatilité accrue.",
-      "why_en": "Star Bulk announces an ex‑dividend and inclusion in the FTSE 25, drawing investor interest.",
-      "risk_en": "Exposure to shipping cycles makes the stock vulnerable to heightened volatility."
+      "why": "Star Bulk verra ses actions négociées ex-dividende à Athènes et son inclusion au FTSE 25, ce qui attire l'attention des investisseurs en quête de liquidité et de visibilité.",
+      "risk": "La perte du dividende et la volatilité liée à l'ex-dividende peuvent peser sur le cours à court terme.",
+      "why_en": "Star Bulk's shares will trade ex-dividend on the Athens exchange and join the FTSE 25, drawing investor interest for liquidity and visibility.",
+      "risk_en": "The dividend loss and short‑term volatility around the ex‑dividend date could pressure the share price."
     },
     {
       "symbol": "T",
@@ -116,10 +116,10 @@
       "hv": 0.17727254772444384,
       "niche": false,
       "score": 4.219,
-      "why": "TELUS lance une bourse d’études de 1 M$ et fait face à des pressions réglementaires sur les frais, ce qui crée un débat public.",
-      "risk": "Des sanctions ou des exigences de conformité supplémentaires pourraient affecter la rentabilité.",
-      "why_en": "TELUS announces a $1 M scholarship fund and faces regulatory pressure on fees, sparking public debate.",
-      "risk_en": "Additional sanctions or compliance demands could impact profitability."
+      "why": "TELUS lance une bourse d'études de 1 M$ et fait face à des exigences réglementaires, ce qui montre son engagement sociétal et les défis de conformité.",
+      "risk": "Les pressions réglementaires, comme les ordonnances de suppression de frais, peuvent affecter la rentabilité.",
+      "why_en": "TELUS announced a $1 million scholarship fund and faces regulatory demands, highlighting its societal commitment and compliance challenges.",
+      "risk_en": "Regulatory pressures, such as orders to remove fees, could impact profitability."
     },
     {
       "symbol": "HBAN",
@@ -140,10 +140,10 @@
       "hv": 0.2755282194066896,
       "niche": false,
       "score": 4.213,
-      "why": "Huntington ajuste ses objectifs de cours pour plusieurs REIT, indiquant un réexamen du secteur immobilier.",
-      "risk": "Des révisions à la baisse pourraient refléter des pressions sur les actifs immobiliers et affecter la valorisation.",
-      "why_en": "Huntington updates price targets for several REITs, signaling a sector reassessment.",
-      "risk_en": "Downward revisions may reflect pressure on real‑estate assets and weigh on valuation."
+      "why": "Huntington ajuste les objectifs de cours pour plusieurs REIT, reflétant un suivi actif du secteur immobilier.",
+      "risk": "Des révisions à la baisse pourraient signaler des inquiétudes sur la performance des actifs immobiliers sous-jacents.",
+      "why_en": "Huntington adjusts price targets for several REITs, reflecting active monitoring of the real‑estate sector.",
+      "risk_en": "Downward revisions could signal concerns about the performance of underlying real‑estate assets."
     },
     {
       "symbol": "LOW",
@@ -163,10 +163,10 @@
       "hv": 0.37854283512565834,
       "niche": false,
       "score": 4.197,
-      "why": "Lowe's met en avant le lancement d’une collection décorative saisonnière et publie de bons résultats de ventes de novembre.",
-      "risk": "Une dépendance aux ventes saisonnières expose l’entreprise à des fluctuations de la demande.",
-      "why_en": "Lowe's highlights a seasonal décor launch and reports solid November sales.",
-      "risk_en": "Reliance on seasonal sales makes the company vulnerable to demand swings."
+      "why": "Lowe's lance une collection décorative saisonnière et publie ses résultats de ventes de novembre, attirant l'attention sur son dynamisme commercial.",
+      "risk": "Une dépendance aux ventes saisonnières peut créer une volatilité si la demande diminue après les fêtes.",
+      "why_en": "Lowe's introduced a seasonal décor collection and reported November sales, highlighting commercial momentum.",
+      "risk_en": "Reliance on seasonal sales can cause volatility if demand wanes after the holidays."
     },
     {
       "symbol": "VZ",
@@ -186,10 +186,10 @@
       "hv": 0.14754112583664727,
       "niche": false,
       "score": 3.977,
-      "why": "Verizon répond aux interrogatoires de la FCC et explore l’acquisition de Fidium, signalant une stratégie d’expansion technologique.",
-      "risk": "L’acquisition envisagée pourrait être retardée ou bloquée, affectant les perspectives de croissance.",
-      "why_en": "Verizon answers FCC inquiries and explores acquiring Fidium, indicating a tech‑expansion strategy.",
-      "risk_en": "The proposed acquisition could be delayed or blocked, hurting growth outlook."
+      "why": "Verizon répond aux interrogatoires de la FCC et explore l'acquisition de Fidium, montrant une stratégie d'expansion et de conformité.",
+      "risk": "L'acquisition envisagée comporte des incertitudes d'intégration et de financement qui pourraient peser sur le cours.",
+      "why_en": "Verizon is responding to FCC interrogatories and exploring the acquisition of Fidium, indicating an expansion and compliance strategy.",
+      "risk_en": "The contemplated acquisition carries integration and financing uncertainties that could weigh on the stock."
     },
     {
       "symbol": "TGT",
@@ -209,10 +209,10 @@
       "hv": 0.39842725259476514,
       "niche": false,
       "score": 3.737,
-      "why": "Target annonce des ventes du Cyber Monday et de nouveaux outils d’achat alimentés par l’IA, renforçant son attractivité saisonnière.",
-      "risk": "Des problèmes d’exécution ou de cybersécurité pourraient nuire à la confiance des consommateurs.",
-      "why_en": "Target announces Cyber Monday sales and AI‑powered shopping tools, boosting seasonal appeal.",
-      "risk_en": "Execution or cybersecurity issues could erode consumer confidence."
+      "why": "Target annonce des ventes du Cyber Monday et de nouveaux outils d'IA, soulignant son innovation digitale et son attractivité saisonnière.",
+      "risk": "Des attentes élevées autour des ventes et de l'IA peuvent créer une pression si les résultats ne sont pas à la hauteur.",
+      "why_en": "Target announced Cyber Monday sales and new AI‑powered shopping tools, emphasizing digital innovation and seasonal appeal.",
+      "risk_en": "High expectations around sales and AI could create pressure if results fall short."
     },
     {
       "symbol": "NET",
@@ -232,10 +232,10 @@
       "hv": 0.9271337126914067,
       "niche": false,
       "score": 3.237,
-      "why": "Cloudflare oriente sa stratégie vers l’infrastructure IA et signale un pic de trafic lié au lancement de GTA 6.",
-      "risk": "Une dépendance accrue à la demande de services IA pourrait entraîner une volatilité si le volume de trafic diminue.",
-      "why_en": "Cloudflare pivots to AI infrastructure and notes traffic spikes from the GTA 6 launch.",
-      "risk_en": "Increased reliance on AI demand could cause volatility if traffic volumes fall."
+      "why": "Cloudflare oriente sa stratégie vers l'infrastructure IA et signale un trafic internet record lié à GTA 6, ce qui capte l'intérêt du marché technologique.",
+      "risk": "Un virage vers l'IA implique des investissements importants et des risques de surcapacité si la demande n'augmente pas comme prévu.",
+      "why_en": "Cloudflare is shifting its strategy toward AI infrastructure and reports record internet traffic from GTA 6, attracting tech‑market interest.",
+      "risk_en": "A pivot to AI entails significant investment and the risk of overcapacity if demand does not grow as expected."
     },
     {
       "symbol": "RIO",
@@ -255,10 +255,10 @@
       "hv": 0.37767111870564596,
       "niche": false,
       "score": 3.177,
-      "why": "Rio Tinto célèbre la première expédition de minerai du projet Simandou, marquant une avancée majeure.",
-      "risk": "Des retards ou des obstacles réglementaires dans le projet Simandou pourraient freiner la croissance.",
-      "why_en": "Rio Tinto celebrates the first iron‑ore shipment from the Simandou project, a major milestone.",
-      "risk_en": "Regulatory delays or obstacles at Simandou could curb growth."
+      "why": "Rio Tinto a expédié son premier chargement de minerai du projet Simandou, marquant une avancée majeure dans l'exploitation minière.",
+      "risk": "Les projets d'extraction à grande échelle comportent des risques géopolitiques et environnementaux qui peuvent retarder la production.",
+      "why_en": "Rio Tinto shipped its first iron‑ore load from the Simandou project, marking a major mining milestone.",
+      "risk_en": "Large‑scale extraction projects carry geopolitical and environmental risks that could delay production."
     },
     {
       "symbol": "SAN",
@@ -278,10 +278,10 @@
       "hv": 0.4685445891134765,
       "niche": false,
       "score": 3.137,
-      "why": "Santander UK annonce le rachat de ses obligations 2028 et participe à un projet de plateforme d’actifs numériques au Brésil.",
-      "risk": "L’exposition aux projets numériques émergents comporte des incertitudes technologiques et réglementaires.",
-      "why_en": "Santander UK announces redemption of 2028 notes and joins a Brazilian digital‑asset platform project.",
-      "risk_en": "Exposure to emerging digital‑asset projects carries technological and regulatory uncertainties."
+      "why": "Santander UK annonce le rachat de ses obligations 2028 et rejoint un projet brésilien d'infrastructure d'actifs numériques, montrant une diversification financière.",
+      "risk": "L'exposition aux actifs numériques peut introduire une volatilité supplémentaire dans le portefeuille bancaire.",
+      "why_en": "Santander UK announced redemption of its 2028 notes and joined a Brazilian digital‑asset infrastructure project, indicating financial diversification.",
+      "risk_en": "Exposure to digital assets may introduce additional volatility into the banking portfolio."
     },
     {
       "symbol": "LYG",
@@ -302,10 +302,10 @@
       "hv": 0.37593185607684687,
       "niche": false,
       "score": 3.093,
-      "why": "Lloyds Banking Group communique sur un programme de rachat d’actions et un financement important avec Together Housing Group.",
-      "risk": "Des problèmes opérationnels, comme la récente panne en ligne, pourraient affecter la confiance des investisseurs.",
-      "why_en": "Lloyds Banking Group reports a share‑buyback programme and a sizable financing deal with Together Housing Group.",
-      "risk_en": "Operational issues, such as the recent online outage, could undermine investor confidence."
+      "why": "Lloyds Banking Group lance un programme de rachat d'actions et obtient un financement de 265 M£, signalant une confiance en sa trésorerie.",
+      "risk": "Les rachats d'actions peuvent réduire la liquidité disponible et augmenter le risque en cas de détérioration du crédit.",
+      "why_en": "Lloyds Banking Group initiated a share buyback program and secured £265 million financing, signaling confidence in its cash position.",
+      "risk_en": "Share buybacks can reduce available liquidity and raise risk if credit conditions worsen."
     },
     {
       "symbol": "SHEL",
@@ -318,7 +318,7 @@
       "last_at": "2026-11-27T17:31:53Z",
       "sentiment": 0.3333333333333333,
       "price": 95.47,
-      "adv_usd": 495330065.88547134,
+      "adv_usd": 495329894.0394691,
       "chg_5d": 1.6,
       "chg_20d": -10.6,
       "rsi": 42.9,
@@ -326,10 +326,10 @@
       "hv": 0.22161049865741367,
       "niche": false,
       "score": 3.093,
-      "why": "Shell‑backed Raízen explore la vente de son unité de distribution de carburant, tandis que Shell poursuit des rachats d’actions quotidiens.",
-      "risk": "La vente potentielle d’actifs clés pourrait réduire les flux de trésorerie à long terme.",
-      "why_en": "Shell‑backed Raízen explores selling its fuel‑distribution unit, while Shell continues daily share buybacks.",
-      "risk_en": "Potential divestiture of key assets could diminish long‑term cash flow."
+      "why": "Shell explore la vente de l'unité de distribution de carburant de Raízen et poursuit des rachats d'actions quotidiens, reflétant une gestion active de son portefeuille d'actifs.",
+      "risk": "La cession d'actifs stratégiques peut réduire les flux de revenus récurrents et affecter la valorisation.",
+      "why_en": "Shell is exploring the sale of Raízen's fuel distribution unit and continues daily share buybacks, reflecting active asset‑portfolio management.",
+      "risk_en": "Divesting strategic assets may reduce recurring revenue streams and impact valuation."
     },
     {
       "symbol": "SRAD",
@@ -349,10 +349,10 @@
       "hv": 0.658123364208609,
       "niche": true,
       "score": 2.997,
-      "why": "Stelrad bénéficie d’une recommandation d’achat réaffirmée et d’un achat d’actions par son président, ce qui soutient le cours.",
-      "risk": "Le secteur du vitrage reste sensible aux cycles de construction, ce qui peut affecter la demande.",
-      "why_en": "Stelrad receives a reaffirmed buy recommendation and a share purchase by its chairman, supporting the price.",
-      "risk_en": "The glazing sector is cyclical and tied to construction activity, which may impact demand."
+      "why": "Stelrad bénéficie d'une recommandation d'achat réaffirmée et d'un achat d'actions par son président, renforçant la confiance des investisseurs.",
+      "risk": "La concentration de l'action entre les mains du dirigeant peut soulever des questions de gouvernance et de liquidité.",
+      "why_en": "Stelrad receives a reaffirmed buy recommendation and a share purchase by its chairman, boosting investor confidence.",
+      "risk_en": "Share concentration in the hands of the chairman may raise governance and liquidity concerns."
     }
   ]
 }
